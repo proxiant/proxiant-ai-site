@@ -3,946 +3,794 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ProxiAlpha — AI-Powered Multi-Strategy Trading</title>
+  <title>ProxiAlpha — AI-Powered Multi-Strategy Trading Platform | Proxiant Labs</title>
+  <meta name="description" content="ProxiAlpha combines 15 quantitative trading strategies with LLM-powered analysis (Claude, GPT-4, Gemini) for real-time signals, backtesting, and automated execution. Self-hosted free or managed from $499/mo.">
+  <meta name="keywords" content="AI trading platform, algorithmic trading, LLM trading, multi-strategy trading, quantitative trading, trading signals, Claude AI trading, backtesting, ProxiAlpha, Proxiant Labs, automated trading">
+  <meta name="author" content="Proxiant Labs">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://proxiant.ai/proxialpha.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="product">
+  <meta property="og:title" content="ProxiAlpha — AI-Powered Multi-Strategy Trading Platform">
+  <meta property="og:description" content="15 LLM-integrated trading strategies with real-time signals, backtesting, and portfolio management. Self-hosted free.">
+  <meta property="og:url" content="https://proxiant.ai/proxialpha.html">
+  <meta property="og:site_name" content="Proxiant">
+  <meta property="og:image" content="https://proxiant.ai/assets/og-image.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ProxiAlpha — AI-Powered Multi-Strategy Trading">
+  <meta name="twitter:description" content="15 LLM-integrated trading strategies. Real-time signals. Backtesting. Self-hosted free or managed from $499/mo.">
+  <meta name="twitter:image" content="https://proxiant.ai/assets/og-image.png">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "ProxiAlpha",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Web, iOS, Android",
+    "url": "https://proxiant.ai/proxialpha.html",
+    "description": "AI-powered multi-strategy trading platform combining 15 quantitative strategies with LLM analysis from Claude, GPT-4, Gemini, and Ollama.",
+    "publisher": { "@type": "Organization", "name": "Proxiant Labs", "url": "https://proxiant.ai" },
+    "offers": [
+      { "@type": "Offer", "name": "Self-Hosted", "price": "0", "priceCurrency": "USD", "description": "Free forever — run on your own infrastructure with full source access." },
+      { "@type": "Offer", "name": "Managed", "price": "499", "priceCurrency": "USD", "billingIncrement": "P1M", "description": "Cloud hosted with priority support and custom strategies." }
+    ],
+    "featureList": [
+      "15 concurrent trading strategies",
+      "Multi-LLM integration (Claude, OpenAI, Gemini, Ollama)",
+      "Real-time signal generation via WebSocket",
+      "Full backtesting engine",
+      "Paper trading simulator",
+      "Live trading via Alpaca",
+      "Risk management and position sizing",
+      "REST API and WebSocket API"
+    ]
+  }
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --ink: #0f1419;
-      --ink-secondary: #536471;
-      --ink-muted: #8899a6;
-      --surface: #ffffff;
-      --surface-raised: #f7f9fa;
-      --surface-subtle: #eff3f4;
-      --accent: #1d4ed8;
-      --accent-light: #dbeafe;
-      --border: #e1e8ed;
-      --green: #059669;
-      --green-light: #d1fae5;
-      --dark-bg: #0a0e14;
+      --bg: #06080c;
+      --surface: #0d1117;
+      --surface-raised: #161b22;
+      --border: rgba(255,255,255,0.06);
+      --border-glow: rgba(0,229,255,0.15);
+      --cyan: #00e5ff;
+      --cyan-dim: rgba(0,229,255,0.15);
+      --purple: #7c3aed;
+      --green: #22c55e;
+      --green-dim: rgba(34,197,94,0.12);
+      --amber: #f59e0b;
+      --red: #ef4444;
+      --text: #e6edf3;
+      --text-secondary: #8b949e;
+      --text-muted: #484f58;
+      --font-display: 'Bricolage Grotesque', sans-serif;
+      --font-body: 'Outfit', sans-serif;
+      --font-mono: 'Space Mono', monospace;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+    body { font-family: var(--font-body); background: var(--bg); color: var(--text); line-height: 1.6; overflow-x: hidden; }
+
+    /* GRAIN */
+    body::before {
+      content: '';
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+      pointer-events: none; z-index: 9999;
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    .mesh-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; overflow: hidden; }
+    .mesh-orb { position: absolute; border-radius: 50%; filter: blur(140px); opacity: 0.12; animation: orbFloat 25s ease-in-out infinite; }
+    .mesh-orb:nth-child(1) { width: 600px; height: 600px; background: var(--cyan); top: -200px; right: -100px; }
+    .mesh-orb:nth-child(2) { width: 500px; height: 500px; background: var(--purple); bottom: -150px; left: -100px; animation-delay: -8s; }
+    @keyframes orbFloat { 0%,100%{transform:translate(0,0) scale(1)} 33%{transform:translate(30px,-40px) scale(1.05)} 66%{transform:translate(-20px,20px) scale(0.95)} }
+
+    .grid-pattern {
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background-image: linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px);
+      background-size: 60px 60px; z-index: -1;
     }
 
-    html {
-      scroll-behavior: smooth;
+    .wrap { max-width: 1200px; margin: 0 auto; padding: 0 clamp(1rem, 4vw, 2rem); }
+    .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1); }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+
+    /* NAV */
+    header {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      background: rgba(6,8,12,0.8); backdrop-filter: blur(20px) saturate(180%);
+      border-bottom: 1px solid var(--border); transition: all 0.3s;
+    }
+    header.scrolled { background: rgba(6,8,12,0.95); border-bottom-color: var(--border-glow); }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+    .nav-brand { font-family: var(--font-display); font-weight: 800; font-size: 1.3rem; color: var(--text); text-decoration: none; letter-spacing: -0.03em; display: inline-flex; align-items: center; gap: 10px; }
+    .nav-brand span { color: var(--cyan); }
+    .nav-logo { width: 32px; height: 32px; flex-shrink: 0; }
+    .nav-links { display: flex; align-items: center; gap: clamp(1.5rem,3vw,2.5rem); list-style: none; }
+    .nav-links a { color: var(--text-secondary); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--text); }
+    .nav-links a.active { color: var(--cyan); }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 24px; border-radius: 6px; font-size: 0.875rem; font-weight: 600; font-family: var(--font-body); text-decoration: none; transition: all 0.25s cubic-bezier(0.16,1,0.3,1); cursor: pointer; border: none; }
+    .btn-cyan { background: var(--cyan); color: var(--bg); }
+    .btn-cyan:hover { background: #33ebff; box-shadow: 0 0 30px rgba(0,229,255,0.3); transform: translateY(-1px); }
+    .btn-ghost { background: transparent; color: var(--text); border: 1px solid var(--border); }
+    .btn-ghost:hover { border-color: var(--cyan-dim); background: rgba(0,229,255,0.04); }
+    .mobile-toggle { display: none; background: none; border: none; color: var(--text); font-size: 1.5rem; cursor: pointer; }
+
+    /* HERO */
+    .hero { padding: 160px 0 100px; }
+    .hero-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 60px; align-items: center; }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--cyan); margin-bottom: 24px; padding: 6px 14px;
+      border: 1px solid var(--cyan-dim); border-radius: 100px; background: rgba(0,229,255,0.04);
+    }
+    .hero-badge .dot { width: 6px; height: 6px; background: var(--cyan); border-radius: 50%; animation: pulse 2s ease-in-out infinite; }
+    @keyframes pulse { 0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(0,229,255,0.4)} 50%{opacity:0.7;box-shadow:0 0 0 6px rgba(0,229,255,0)} }
+    .hero h1 { font-family: var(--font-display); font-size: clamp(2.5rem,5vw,3.5rem); font-weight: 800; line-height: 1.08; letter-spacing: -0.04em; margin-bottom: 20px; }
+    .hero h1 em { font-style: normal; color: var(--cyan); }
+    .hero p { font-size: 1.15rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 36px; max-width: 460px; }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+
+    /* DASHBOARD MOCK */
+    .dashboard {
+      background: var(--surface); border: 1px solid var(--border); border-radius: 16px;
+      overflow: hidden; position: relative;
+    }
+    .dashboard::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--cyan-dim), transparent);
+    }
+    .dash-header {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 16px 20px; border-bottom: 1px solid var(--border);
+    }
+    .dash-title { font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; }
+    .dash-status { display: flex; align-items: center; gap: 6px; font-size: 0.7rem; color: var(--green); }
+    .dash-status .dot { width: 5px; height: 5px; background: var(--green); border-radius: 50%; animation: pulse-g 2s ease-in-out infinite; }
+    @keyframes pulse-g { 0%,100%{opacity:1} 50%{opacity:0.5} }
+
+    .dash-metrics {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px;
+      background: var(--border); border-bottom: 1px solid var(--border);
+    }
+    .dash-metric {
+      background: var(--surface); padding: 16px 18px; text-align: center;
+    }
+    .dash-metric .val {
+      font-family: var(--font-display); font-size: 1.35rem; font-weight: 700;
+    }
+    .dash-metric .val.green { color: var(--green); }
+    .dash-metric .val.cyan { color: var(--cyan); }
+    .dash-metric .val.amber { color: var(--amber); }
+    .dash-metric .lbl {
+      font-size: 0.65rem; color: var(--text-muted); text-transform: uppercase;
+      letter-spacing: 0.06em; margin-top: 4px; font-family: var(--font-mono);
     }
 
-    body {
-      font-family: 'DM Sans', sans-serif;
-      color: var(--ink);
-      background: var(--surface);
-      line-height: 1.6;
-    }
+    .dash-chart { padding: 20px; height: 160px; position: relative; }
+    .chart-canvas { width: 100%; height: 100%; }
 
-    /* Navigation */
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(255, 255, 255, 0.8);
-      backdrop-filter: blur(12px);
+    .dash-signals {
+      border-top: 1px solid var(--border); padding: 0;
+    }
+    .signal-row {
+      display: grid; grid-template-columns: 80px 1fr 80px 80px 60px;
+      gap: 12px; padding: 10px 20px; border-bottom: 1px solid var(--border);
+      align-items: center; font-size: 0.8rem; transition: background 0.2s;
+    }
+    .signal-row:hover { background: var(--surface-raised); }
+    .signal-row:last-child { border-bottom: none; }
+    .signal-ticker { font-family: var(--font-mono); font-weight: 700; color: var(--text); }
+    .signal-strategy { color: var(--text-secondary); font-size: 0.75rem; }
+    .signal-price { font-family: var(--font-mono); color: var(--text-secondary); font-size: 0.78rem; }
+    .signal-badge {
+      font-size: 0.65rem; font-weight: 600; padding: 3px 10px;
+      border-radius: 100px; text-align: center; text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .signal-badge.buy { background: rgba(34,197,94,0.1); color: var(--green); border: 1px solid rgba(34,197,94,0.2); }
+    .signal-badge.sell { background: rgba(239,68,68,0.1); color: var(--red); border: 1px solid rgba(239,68,68,0.2); }
+    .signal-badge.hold { background: rgba(249,115,22,0.1); color: var(--amber); border: 1px solid rgba(249,115,22,0.2); }
+    .signal-conf { font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted); }
+
+    /* SECTIONS */
+    section { padding: 120px 0; }
+    .section-label { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--cyan); margin-bottom: 16px; }
+    .section-heading { font-family: var(--font-display); font-size: clamp(2rem,4vw,2.75rem); font-weight: 700; letter-spacing: -0.03em; line-height: 1.15; margin-bottom: 16px; }
+    .section-sub { font-size: 1.1rem; color: var(--text-secondary); max-width: 520px; line-height: 1.65; margin-bottom: 56px; }
+
+    /* HOW IT WORKS */
+    .how-steps {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
+    }
+    .how-step {
+      background: var(--surface); border: 1px solid var(--border); border-radius: 14px;
+      padding: 36px 28px; transition: all 0.4s; position: relative; overflow: hidden;
+    }
+    .how-step::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, var(--cyan), var(--purple)); opacity: 0; transition: opacity 0.4s;
+    }
+    .how-step:hover::before { opacity: 1; }
+    .how-step:hover { border-color: var(--border-glow); transform: translateY(-3px); box-shadow: 0 16px 48px rgba(0,0,0,0.3); }
+    .how-step .num { font-family: var(--font-mono); font-size: 0.8rem; color: var(--cyan); margin-bottom: 16px; }
+    .how-step h3 { font-family: var(--font-display); font-size: 1.3rem; font-weight: 700; margin-bottom: 10px; }
+    .how-step p { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6; }
+
+    /* STRATEGIES */
+    .strat-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; }
+    .strat-group h3 {
+      font-family: var(--font-mono); font-size: 0.68rem; text-transform: uppercase;
+      letter-spacing: 0.08em; color: var(--text-muted); margin-bottom: 16px;
+      padding-bottom: 12px; border-bottom: 1px solid var(--border);
+    }
+    .strat-item {
+      display: flex; gap: 10px; padding: 8px 0; font-size: 0.85rem;
       border-bottom: 1px solid var(--border);
     }
+    .strat-item:last-child { border-bottom: none; }
+    .strat-num { font-family: var(--font-mono); color: var(--cyan); font-weight: 700; font-size: 0.78rem; min-width: 22px; }
+    .strat-name { color: var(--text-secondary); }
 
-    nav .container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 2rem;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: var(--ink);
-      font-weight: 500;
-      font-size: clamp(0.9rem, 2vw, 1rem);
-    }
-
-    nav a:hover {
-      color: var(--accent);
-    }
-
-    nav .logo {
-      font-family: 'DM Mono', monospace;
-      font-weight: 600;
-      font-size: 1.25rem;
-    }
-
-    nav .nav-links {
-      display: flex;
-      gap: 2.5rem;
-      list-style: none;
-    }
-
-    nav .cta {
-      background: var(--ink);
-      color: var(--surface);
-      padding: 0.5rem 1.25rem;
-      border: 1px solid var(--ink);
-      border-radius: 2px;
-      cursor: pointer;
-      font-weight: 500;
-    }
-
-    nav .cta:hover {
-      background: var(--surface);
-      color: var(--ink);
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 2rem;
-    }
-
-    /* Hero Section */
-    .hero {
-      padding: 8rem 0;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: center;
-    }
-
-    .hero h1 {
-      font-size: clamp(2.5rem, 6vw, 4rem);
-      font-weight: 700;
-      line-height: 1.2;
-      margin-bottom: 1.5rem;
-      color: var(--ink);
-    }
-
-    .hero p {
-      font-size: clamp(1rem, 2vw, 1.125rem);
-      color: var(--ink-secondary);
-      margin-bottom: 2rem;
-      max-width: 500px;
-    }
-
-    .hero .cta-group {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      padding: 0.75rem 1.75rem;
-      border: 1px solid var(--border);
-      background: var(--surface);
-      color: var(--ink);
-      text-decoration: none;
-      cursor: pointer;
-      font-weight: 500;
-      font-size: 0.95rem;
-      border-radius: 2px;
-      transition: all 0.2s;
-    }
-
-    .btn:hover {
-      border-color: var(--ink);
-      background: var(--surface-raised);
-    }
-
-    .btn.primary {
-      background: var(--accent);
-      color: white;
-      border-color: var(--accent);
-    }
-
-    .btn.primary:hover {
-      background: #1a3fa8;
-    }
-
-    /* Dashboard mock */
-    .dashboard-mock {
-      border: 1px solid var(--border);
-      border-radius: 2px;
-      padding: 2rem;
-      background: var(--surface-raised);
-    }
-
-    .chart-bars {
-      display: flex;
-      gap: 0.5rem;
-      align-items: flex-end;
-      height: 100px;
-      margin-bottom: 2rem;
-    }
-
-    .bar {
-      flex: 1;
-      background: var(--accent);
-      border-radius: 1px;
-    }
-
-    .bar:nth-child(1) { height: 40%; }
-    .bar:nth-child(2) { height: 65%; }
-    .bar:nth-child(3) { height: 55%; }
-    .bar:nth-child(4) { height: 80%; }
-    .bar:nth-child(5) { height: 45%; }
-
-    .stats {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
-    }
-
-    .stat {
-      border-top: 1px solid var(--border);
-      padding-top: 1rem;
-    }
-
-    .stat-label {
-      font-size: 0.75rem;
-      color: var(--ink-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin-bottom: 0.5rem;
-      font-family: 'DM Mono', monospace;
-    }
-
-    .stat-value {
-      font-size: clamp(1.25rem, 3vw, 1.75rem);
-      font-weight: 700;
-      color: var(--ink);
-    }
-
-    /* How It Works */
-    .how-it-works {
-      background: var(--dark-bg);
-      color: var(--surface);
-      padding: 6rem 0;
-      margin: 6rem 0;
-    }
-
-    .how-it-works h2 {
-      font-size: clamp(2rem, 5vw, 3rem);
-      margin-bottom: 4rem;
-      text-align: center;
-    }
-
-    .steps {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 3rem;
-    }
-
-    .step {
-      border-left: 1px solid rgba(255, 255, 255, 0.2);
-      padding-left: 2rem;
-    }
-
-    .step-number {
-      font-family: 'DM Mono', monospace;
-      font-size: 1.25rem;
-      color: var(--accent-light);
-      margin-bottom: 1rem;
-    }
-
-    .step h3 {
-      font-size: 1.25rem;
-      margin-bottom: 0.75rem;
-    }
-
-    .step p {
-      color: rgba(255, 255, 255, 0.7);
-      line-height: 1.6;
-    }
-
-    /* Strategies Section */
-    .strategies {
-      padding: 6rem 0;
-    }
-
-    .strategies h2 {
-      font-size: clamp(2rem, 5vw, 3rem);
-      margin-bottom: 4rem;
-    }
-
-    .strategy-groups {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 3rem;
-    }
-
-    .strategy-group h3 {
-      font-size: 1rem;
-      color: var(--ink-secondary);
-      margin-bottom: 1.5rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      font-weight: 600;
-      border-bottom: 1px solid var(--border);
-      padding-bottom: 1rem;
-    }
-
-    .strategy-list {
-      list-style: none;
-    }
-
-    .strategy-item {
-      padding: 0.75rem 0;
-      border-bottom: 1px solid var(--surface-subtle);
-      display: flex;
-      gap: 1rem;
-    }
-
-    .strategy-item:last-child {
-      border-bottom: none;
-    }
-
-    .strategy-num {
-      font-family: 'DM Mono', monospace;
-      color: var(--accent);
-      font-weight: 600;
-      font-size: 0.85rem;
-      min-width: 25px;
-    }
-
-    .strategy-name {
-      color: var(--ink);
-      font-weight: 500;
-    }
-
-    /* Features Section */
-    .features {
-      padding: 6rem 0;
-      display: grid;
-      grid-template-columns: 1.5fr 1fr;
-      gap: 4rem;
-      align-items: start;
-    }
-
-    .features h2 {
-      grid-column: 1 / -1;
-      font-size: clamp(2rem, 5vw, 3rem);
-      margin-bottom: 2rem;
-    }
-
-    .feature-list {
-      list-style: none;
-    }
-
+    /* FEATURES */
+    .features-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 48px; align-items: start; }
+    .feature-list { list-style: none; }
     .feature-item {
-      padding: 1.5rem 0;
-      border-bottom: 1px solid var(--border);
-      display: flex;
-      gap: 1rem;
+      padding: 18px 0; border-bottom: 1px solid var(--border);
+      display: flex; gap: 14px; align-items: flex-start; transition: padding-left 0.3s;
     }
-
-    .feature-item:last-child {
-      border-bottom: none;
-    }
-
-    .feature-icon {
-      color: var(--green);
-      font-family: 'DM Mono', monospace;
-      font-weight: 600;
-      min-width: 20px;
-    }
-
-    .feature-text {
-      font-size: clamp(0.95rem, 2vw, 1.05rem);
-      color: var(--ink);
-    }
-
+    .feature-item:hover { padding-left: 8px; }
+    .feature-item:last-child { border-bottom: none; }
+    .feature-icon { color: var(--green); font-family: var(--font-mono); font-weight: 700; font-size: 0.9rem; min-width: 24px; }
+    .feature-text { font-size: 1rem; color: var(--text-secondary); }
     .feature-visual {
-      border: 1px solid var(--border);
-      padding: 2rem;
-      background: var(--surface-raised);
-      border-radius: 2px;
-      font-family: 'DM Mono', monospace;
-      font-size: 0.8rem;
-      line-height: 1.8;
-      color: var(--ink-secondary);
-      overflow-x: auto;
+      background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+      padding: 24px; font-family: var(--font-mono); font-size: 0.78rem; line-height: 2;
+      color: var(--text-secondary); overflow-x: auto;
     }
+    .feature-visual .kw { color: var(--cyan); }
+    .feature-visual .str { color: var(--green); }
+    .feature-visual .num { color: var(--amber); }
+    .feature-visual .comment { color: var(--text-muted); }
 
-    /* Architecture */
-    .architecture {
-      padding: 6rem 0;
-      text-align: center;
-    }
-
-    .architecture h2 {
-      font-size: clamp(2rem, 5vw, 3rem);
-      margin-bottom: 3rem;
-    }
-
+    /* ARCHITECTURE */
     .arch-flow {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-      max-width: 900px;
-      margin: 0 auto;
+      display: flex; justify-content: space-between; align-items: center;
+      gap: 12px; flex-wrap: wrap; max-width: 960px; margin: 0 auto;
     }
-
     .arch-box {
-      border: 1px solid var(--border);
-      padding: 1.5rem 2rem;
-      background: var(--surface-raised);
-      min-width: 140px;
-      border-radius: 2px;
-      font-weight: 500;
+      background: var(--surface); border: 1px solid var(--border); border-radius: 10px;
+      padding: 20px 28px; font-weight: 600; font-size: 0.9rem; min-width: 140px;
+      text-align: center; transition: all 0.3s;
     }
+    .arch-box:hover { border-color: var(--cyan-dim); box-shadow: 0 0 20px rgba(0,229,255,0.08); }
+    .arch-arrow { color: var(--text-muted); font-size: 1.2rem; }
 
-    .arch-arrow {
-      color: var(--ink-muted);
-      font-size: 1.25rem;
+    /* METRICS */
+    .metrics-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    .metric-card {
+      background: var(--surface); border: 1px solid var(--border); border-radius: 14px;
+      padding: 32px; text-align: center; transition: all 0.4s;
     }
+    .metric-card:hover { border-color: var(--border-glow); transform: translateY(-2px); }
+    .metric-val { font-family: var(--font-display); font-size: 2.5rem; font-weight: 800; color: var(--cyan); letter-spacing: -0.03em; }
+    .metric-lbl { color: var(--text-secondary); font-size: 0.9rem; margin-top: 6px; }
 
-    /* Performance */
-    .performance {
-      padding: 6rem 0;
-    }
-
-    .performance h2 {
-      font-size: clamp(2rem, 5vw, 3rem);
-      margin-bottom: 3rem;
-    }
-
-    .metrics {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 2rem;
-    }
-
-    .metric {
-      border: 1px solid var(--border);
-      padding: 2rem;
-      border-radius: 2px;
-      text-align: center;
-    }
-
-    .metric-value {
-      font-size: clamp(2rem, 4vw, 2.5rem);
-      font-weight: 700;
-      color: var(--accent);
-      margin-bottom: 0.5rem;
-    }
-
-    .metric-label {
-      color: var(--ink-secondary);
-      font-size: 0.95rem;
-    }
-
-    /* Pricing */
-    .pricing {
-      padding: 6rem 0;
-    }
-
-    .pricing h2 {
-      font-size: clamp(2rem, 5vw, 3rem);
-      margin-bottom: 3rem;
-    }
-
-    .pricing-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-    }
-
+    /* PRICING */
+    .pricing-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 720px; }
     .pricing-card {
-      border: 1px solid var(--border);
-      padding: 2.5rem;
-      border-radius: 2px;
-      background: var(--surface);
+      background: var(--surface); border: 1px solid var(--border); border-radius: 16px;
+      padding: 40px; transition: all 0.4s;
     }
-
-    .pricing-card.featured {
-      border: 1px solid var(--accent);
-      background: var(--accent-light);
+    .pricing-card.featured { border-color: var(--cyan-dim); }
+    .pricing-card.featured::before {
+      content: 'Popular'; position: absolute; top: -1px; right: 24px;
+      background: var(--cyan); color: var(--bg); font-size: 0.65rem; font-weight: 700;
+      padding: 4px 12px; border-radius: 0 0 6px 6px; text-transform: uppercase; letter-spacing: 0.06em;
     }
-
-    .pricing-tier {
-      font-size: 1.25rem;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-      color: var(--ink);
-    }
-
-    .pricing-price {
-      font-size: 2rem;
-      font-weight: 700;
-      margin-bottom: 0.25rem;
-      color: var(--accent);
-    }
-
-    .pricing-period {
-      color: var(--ink-muted);
-      font-size: 0.9rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .pricing-features {
-      list-style: none;
-      margin-bottom: 2rem;
-    }
-
+    .pricing-card { position: relative; overflow: hidden; }
+    .pricing-tier { font-family: var(--font-display); font-size: 1.3rem; font-weight: 700; margin-bottom: 6px; }
+    .pricing-price { font-family: var(--font-display); font-size: 2.25rem; font-weight: 800; color: var(--cyan); margin-bottom: 4px; }
+    .pricing-period { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 24px; }
+    .pricing-features { list-style: none; margin-bottom: 28px; }
     .pricing-features li {
-      padding: 0.5rem 0;
-      border-bottom: 1px solid var(--border);
-      color: var(--ink-secondary);
-      font-size: 0.95rem;
+      padding: 8px 0; border-bottom: 1px solid var(--border);
+      color: var(--text-secondary); font-size: 0.9rem;
     }
+    .pricing-features li:last-child { border-bottom: none; }
 
-    .pricing-features li:last-child {
-      border-bottom: none;
+    /* CTA */
+    .cta-section { text-align: center; }
+    .cta-box {
+      background: var(--surface); border: 1px solid var(--border); border-radius: 24px;
+      padding: 72px 48px; position: relative; overflow: hidden;
     }
-
-    /* CTA Section */
-    .final-cta {
-      background: var(--dark-bg);
-      color: var(--surface);
-      padding: 4rem;
-      border-radius: 2px;
-      text-align: center;
-      margin: 6rem 0;
+    .cta-box::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, var(--cyan), var(--purple), var(--cyan));
+      background-size: 200% 100%; animation: shimmer 4s ease-in-out infinite;
     }
+    @keyframes shimmer { 0%{background-position:200% 0} 100%{background-position:-200% 0} }
+    .cta-box h2 { font-family: var(--font-display); font-size: 2rem; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 12px; }
+    .cta-box p { color: var(--text-secondary); font-size: 1rem; margin-bottom: 32px; }
 
-    .final-cta h2 {
-      font-size: clamp(1.75rem, 4vw, 2.5rem);
-      margin-bottom: 2rem;
-    }
+    /* FOOTER */
+    footer { padding: 72px 0 36px; border-top: 1px solid var(--border); }
+    .footer-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; margin-bottom: 56px; }
+    footer h4 { font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 16px; }
+    footer ul { list-style: none; }
+    footer li { margin-bottom: 10px; }
+    footer a { color: var(--text-secondary); text-decoration: none; font-size: 0.88rem; transition: color 0.2s; }
+    footer a:hover { color: var(--cyan); }
+    .footer-bottom { border-top: 1px solid var(--border); padding-top: 24px; font-size: 0.75rem; color: var(--text-muted); display: flex; justify-content: space-between; }
 
-    .final-cta .cta-group {
-      justify-content: center;
-      gap: 1.5rem;
-    }
-
-    .final-cta .btn {
-      color: var(--surface);
-      border-color: var(--surface);
-    }
-
-    .final-cta .btn.primary {
-      background: var(--accent);
-      border-color: var(--accent);
-    }
-
-    /* Footer */
-    footer {
-      background: var(--surface-raised);
-      border-top: 1px solid var(--border);
-      padding: 4rem 0 2rem;
-      margin-top: 6rem;
-    }
-
-    footer .container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 2rem;
-      margin-bottom: 3rem;
-    }
-
-    footer h4 {
-      font-size: 0.9rem;
-      color: var(--ink-secondary);
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin-bottom: 1rem;
-    }
-
-    footer a {
-      display: block;
-      color: var(--ink-secondary);
-      text-decoration: none;
-      margin-bottom: 0.75rem;
-      font-size: 0.95rem;
-    }
-
-    footer a:hover {
-      color: var(--accent);
-    }
-
-    footer .copyright {
-      border-top: 1px solid var(--border);
-      padding-top: 2rem;
-      text-align: center;
-      color: var(--ink-muted);
-      font-size: 0.85rem;
-    }
-
-    /* Responsive */
     @media (max-width: 900px) {
-      nav .nav-links {
-        gap: 1.5rem;
-      }
-
-      .hero {
-        grid-template-columns: 1fr;
-        padding: 4rem 0;
-      }
-
-      .features {
-        grid-template-columns: 1fr;
-      }
-
-      .stats {
-        grid-template-columns: 1fr;
-      }
-
-      .strategy-groups {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .arch-flow {
-        flex-direction: column;
-        gap: 1rem;
-      }
-
-      .arch-arrow {
-        transform: rotate(90deg);
-      }
+      .hero-grid { grid-template-columns: 1fr; gap: 48px; }
+      .how-steps { grid-template-columns: 1fr; }
+      .strat-grid { grid-template-columns: repeat(2, 1fr); }
+      .features-grid { grid-template-columns: 1fr; }
+      .metrics-grid { grid-template-columns: 1fr 1fr; }
+      .pricing-grid { grid-template-columns: 1fr; }
+      .arch-flow { flex-direction: column; }
+      .arch-arrow { transform: rotate(90deg); }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .dash-metrics { grid-template-columns: repeat(2, 1fr); }
+      .signal-row { grid-template-columns: 60px 1fr 60px; }
+      .signal-price, .signal-conf { display: none; }
     }
-
     @media (max-width: 600px) {
-      nav .container {
-        flex-direction: column;
-        gap: 1rem;
-      }
-
-      nav .nav-links {
-        flex-direction: column;
-        gap: 0.75rem;
-        width: 100%;
-      }
-
-      nav .cta {
-        width: 100%;
-        text-align: center;
-      }
-
-      .container {
-        padding: 0 1rem;
-      }
-
-      .hero {
-        padding: 3rem 0;
-      }
-
-      .hero h1 {
-        margin-bottom: 1rem;
-      }
-
-      .hero .cta-group {
-        flex-direction: column;
-      }
-
-      .strategies-grid,
-      .strategy-groups,
-      .metrics,
-      .pricing-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .feature-visual {
-        font-size: 0.7rem;
-      }
-
-      .final-cta {
-        padding: 2rem;
-      }
-
-      .final-cta .cta-group {
-        flex-direction: column;
-      }
-
-      footer .container {
-        grid-template-columns: 1fr;
-      }
+      .nav-links { display: none; }
+      .mobile-toggle { display: block; }
+      .strat-grid { grid-template-columns: 1fr; }
+      .metrics-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; gap: 8px; }
     }
   </style>
 </head>
 <body>
-  <!-- Navigation -->
-  <nav>
-    <div class="container">
-      <div class="logo">PROXIANT</div>
+  <div class="mesh-bg"><div class="mesh-orb"></div><div class="mesh-orb"></div></div>
+  <div class="grid-pattern"></div>
+
+  <header id="header">
+    <div class="wrap nav-inner">
+      <a href="index.html" class="nav-brand">
+        <svg class="nav-logo" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="40" height="40" rx="10" fill="rgba(255,255,255,0.06)"/>
+          <line x1="10" y1="10" x2="30" y2="30" stroke="#d4622b" stroke-width="1.2" stroke-linecap="round" opacity="0.3"/>
+          <line x1="30" y1="10" x2="10" y2="30" stroke="#d4622b" stroke-width="1.2" stroke-linecap="round" opacity="0.3"/>
+          <path d="M14 9L14 32" stroke="white" stroke-width="3.5" stroke-linecap="round"/>
+          <path d="M14 9L22 9C28 9 32 12.5 32 16.5C32 20.5 28 23.5 22 23.5L14 23.5" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <circle cx="30" cy="16.5" r="2.5" fill="#d4622b"/>
+          <circle cx="14" cy="32" r="2.5" fill="#00e5ff"/>
+        </svg>
+        Proxiant<span>.</span>
+      </a>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="solutions.html">Solutions</a></li>
         <li><a href="labs.html">Labs</a></li>
-        <li><a href="proxialpha.html">ProxiAlpha</a></li>
+        <li><a href="proxialpha.html" class="active">ProxiAlpha</a></li>
+        <li><a href="mailto:sendpavan@gmail.com" class="btn btn-cyan">Get in touch</a></li>
       </ul>
-      <a href="mailto:sendpavan@gmail.com" class="cta">Get in touch</a>
+      <button class="mobile-toggle" aria-label="Menu">&#9776;</button>
     </div>
-  </nav>
+  </header>
 
-  <main>
-    <!-- Hero Section -->
-    <section class="hero">
-      <div class="container" style="grid-column: 1;">
-        <h1>AI-Powered Trading. 15 Strategies. One Platform.</h1>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="reveal">
+        <div class="hero-badge"><span class="dot"></span> Proxiant Labs Product</div>
+        <h1>AI-Powered Trading. <em>15 Strategies.</em> One Platform.</h1>
         <p>ProxiAlpha combines quantitative analysis with large language models to generate real-time trading signals across multiple strategies.</p>
-        <div class="cta-group">
-          <a href="mailto:sendpavan@gmail.com" class="btn primary">Request Access</a>
-          <a href="#docs" class="btn">View Documentation</a>
+        <div class="hero-actions">
+          <a href="terminal.html" class="btn btn-cyan">Launch Terminal &rarr;</a>
+          <a href="#docs" class="btn btn-ghost">View Documentation</a>
         </div>
       </div>
-      <div class="dashboard-mock">
-        <div class="chart-bars">
-          <div class="bar"></div>
-          <div class="bar"></div>
-          <div class="bar"></div>
-          <div class="bar"></div>
-          <div class="bar"></div>
-        </div>
-        <div class="stats">
-          <div class="stat">
-            <div class="stat-label">Win Rate</div>
-            <div class="stat-value">68%</div>
-          </div>
-          <div class="stat">
-            <div class="stat-label">Active Strategies</div>
-            <div class="stat-value">15</div>
-          </div>
-          <div class="stat">
-            <div class="stat-label">Signals Today</div>
-            <div class="stat-value">47</div>
-          </div>
-          <div class="stat">
-            <div class="stat-label">Uptime</div>
-            <div class="stat-value">99.5%</div>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- How It Works -->
-    <section class="how-it-works">
-      <div class="container">
-        <h2>How It Works</h2>
-        <div class="steps">
-          <div class="step">
-            <div class="step-number">01</div>
-            <h3>Scan</h3>
-            <p>Real-time market scanning across multiple timeframes and strategies</p>
+      <!-- LIVE TRADING TERMINAL MOCK -->
+      <div class="dashboard reveal reveal-delay-2">
+        <div class="dash-header">
+          <div style="display:flex;align-items:center;gap:8px;">
+            <span class="dash-title">ProxiAlpha Terminal</span>
+            <span style="font-family:var(--font-mono);font-size:0.6rem;padding:2px 8px;border-radius:3px;background:rgba(38,166,154,0.12);color:#26a69a;border:1px solid rgba(38,166,154,0.2);letter-spacing:0.08em;">PAPER</span>
           </div>
-          <div class="step">
-            <div class="step-number">02</div>
-            <h3>Analyze</h3>
-            <p>LLM-powered analysis combining technical signals with market context</p>
+          <span class="dash-status"><span class="dot"></span> Live</span>
+        </div>
+        <div class="dash-metrics">
+          <div class="dash-metric"><div class="val green" id="winRate">0%</div><div class="lbl">Win Rate</div></div>
+          <div class="dash-metric"><div class="val cyan">15</div><div class="lbl">Strategies</div></div>
+          <div class="dash-metric"><div class="val" id="signalCount">0</div><div class="lbl">Signals</div></div>
+          <div class="dash-metric"><div class="val green">1.92</div><div class="lbl">Sharpe</div></div>
+        </div>
+        <div class="dash-chart" style="position:relative;">
+          <canvas class="chart-canvas" id="liveChart"></canvas>
+          <div style="position:absolute;top:12px;left:16px;display:flex;align-items:center;gap:8px;">
+            <span style="font-family:var(--font-mono);font-size:0.75rem;font-weight:700;color:var(--text);">COIN</span>
+            <span style="font-family:var(--font-mono);font-size:0.7rem;color:var(--text-secondary);">$215.30</span>
+            <span style="font-family:var(--font-mono);font-size:0.65rem;color:#ef5350;">-1.10%</span>
           </div>
-          <div class="step">
-            <div class="step-number">03</div>
-            <h3>Execute</h3>
-            <p>Automated or manual trade execution with risk management</p>
+          <div style="position:absolute;top:12px;right:16px;display:flex;gap:4px;">
+            <span style="font-family:var(--font-mono);font-size:0.6rem;padding:2px 6px;border-radius:3px;background:rgba(41,98,255,0.12);color:#2962ff;">1D</span>
+            <span style="font-family:var(--font-mono);font-size:0.6rem;padding:2px 6px;border-radius:3px;color:var(--text-muted);">1W</span>
+            <span style="font-family:var(--font-mono);font-size:0.6rem;padding:2px 6px;border-radius:3px;color:var(--text-muted);">1M</span>
+            <span style="font-family:var(--font-mono);font-size:0.6rem;padding:2px 6px;border-radius:3px;color:var(--text-muted);">3M</span>
+          </div>
+        </div>
+        <div class="dash-signals">
+          <div class="signal-row">
+            <span class="signal-ticker">COIN</span>
+            <span class="signal-strategy">DipBuyer + Technical + AI</span>
+            <span class="signal-price">$215.30</span>
+            <span class="signal-badge buy">Strong Buy</span>
+            <span class="signal-conf">0.92</span>
+          </div>
+          <div class="signal-row">
+            <span class="signal-ticker">NKE</span>
+            <span class="signal-strategy">Momentum + MeanRev</span>
+            <span class="signal-price">$71.40</span>
+            <span class="signal-badge buy">Strong Buy</span>
+            <span class="signal-conf">0.85</span>
+          </div>
+          <div class="signal-row">
+            <span class="signal-ticker">HIMS</span>
+            <span class="signal-strategy">Breakout + TrendFollow</span>
+            <span class="signal-price">$25.80</span>
+            <span class="signal-badge buy">Buy</span>
+            <span class="signal-conf">0.76</span>
+          </div>
+          <div class="signal-row">
+            <span class="signal-ticker">MSTR</span>
+            <span class="signal-strategy">AI_Claude + Scalping</span>
+            <span class="signal-price">$1,685.00</span>
+            <span class="signal-badge hold">Hold</span>
+            <span class="signal-conf">0.50</span>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Strategies -->
-    <section class="strategies">
-      <div class="container">
-        <h2>15 Built-In Strategies</h2>
-        <div class="strategy-groups">
-          <div>
-            <h3>Momentum</h3>
-            <ul class="strategy-list">
-              <li class="strategy-item"><span class="strategy-num">1</span><span class="strategy-name">RSI Divergence</span></li>
-              <li class="strategy-item"><span class="strategy-num">2</span><span class="strategy-name">MACD Crossover</span></li>
-              <li class="strategy-item"><span class="strategy-num">3</span><span class="strategy-name">Stochastic Pop</span></li>
-              <li class="strategy-item"><span class="strategy-num">4</span><span class="strategy-name">ADX Breakout</span></li>
-            </ul>
-          </div>
-          <div>
-            <h3>Mean Reversion</h3>
-            <ul class="strategy-list">
-              <li class="strategy-item"><span class="strategy-num">5</span><span class="strategy-name">Bollinger Bounce</span></li>
-              <li class="strategy-item"><span class="strategy-num">6</span><span class="strategy-name">VWAP Reversion</span></li>
-              <li class="strategy-item"><span class="strategy-num">7</span><span class="strategy-name">Keltner Squeeze</span></li>
-            </ul>
-          </div>
-          <div>
-            <h3>Breakout</h3>
-            <ul class="strategy-list">
-              <li class="strategy-item"><span class="strategy-num">8</span><span class="strategy-name">Volume Breakout</span></li>
-              <li class="strategy-item"><span class="strategy-num">9</span><span class="strategy-name">Range Expansion</span></li>
-              <li class="strategy-item"><span class="strategy-num">10</span><span class="strategy-name">Opening Range</span></li>
-            </ul>
-          </div>
-          <div>
-            <h3>Pattern</h3>
-            <ul class="strategy-list">
-              <li class="strategy-item"><span class="strategy-num">11</span><span class="strategy-name">Harmonic Patterns</span></li>
-              <li class="strategy-item"><span class="strategy-num">12</span><span class="strategy-name">Candlestick Recognition</span></li>
-              <li class="strategy-item"><span class="strategy-num">13</span><span class="strategy-name">Support/Resistance</span></li>
-            </ul>
-          </div>
-          <div>
-            <h3>AI-Enhanced</h3>
-            <ul class="strategy-list">
-              <li class="strategy-item"><span class="strategy-num">14</span><span class="strategy-name">LLM Sentiment</span></li>
-              <li class="strategy-item"><span class="strategy-num">15</span><span class="strategy-name">Multi-Model Consensus</span></li>
-            </ul>
-          </div>
+  <!-- HOW IT WORKS -->
+  <section>
+    <div class="wrap">
+      <div class="section-label reveal">How it works</div>
+      <h2 class="section-heading reveal">Three steps to smarter trading.</h2>
+      <p class="section-sub reveal">Real-time scanning, LLM-powered analysis, and automated execution.</p>
+      <div class="how-steps">
+        <div class="how-step reveal reveal-delay-1"><div class="num">01</div><h3>Scan</h3><p>Real-time market scanning across multiple timeframes and 15 strategies simultaneously.</p></div>
+        <div class="how-step reveal reveal-delay-2"><div class="num">02</div><h3>Analyze</h3><p>LLM-powered analysis combining technical signals with market context from Claude, GPT-4, and Gemini.</p></div>
+        <div class="how-step reveal reveal-delay-3"><div class="num">03</div><h3>Execute</h3><p>Automated or manual trade execution with risk management, position sizing, and safety rails.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STRATEGIES -->
+  <section>
+    <div class="wrap">
+      <div class="section-label reveal">Strategies</div>
+      <h2 class="section-heading reveal">15 Built-In Strategies</h2>
+      <p class="section-sub reveal">From momentum to AI-enhanced consensus, every angle covered.</p>
+      <div class="strat-grid reveal">
+        <div class="strat-group">
+          <h3>Momentum</h3>
+          <div class="strat-item"><span class="strat-num">1</span><span class="strat-name">RSI Divergence</span></div>
+          <div class="strat-item"><span class="strat-num">2</span><span class="strat-name">MACD Crossover</span></div>
+          <div class="strat-item"><span class="strat-num">3</span><span class="strat-name">Stochastic Pop</span></div>
+          <div class="strat-item"><span class="strat-num">4</span><span class="strat-name">ADX Breakout</span></div>
+        </div>
+        <div class="strat-group">
+          <h3>Mean Reversion</h3>
+          <div class="strat-item"><span class="strat-num">5</span><span class="strat-name">Bollinger Bounce</span></div>
+          <div class="strat-item"><span class="strat-num">6</span><span class="strat-name">VWAP Reversion</span></div>
+          <div class="strat-item"><span class="strat-num">7</span><span class="strat-name">Keltner Squeeze</span></div>
+        </div>
+        <div class="strat-group">
+          <h3>Breakout</h3>
+          <div class="strat-item"><span class="strat-num">8</span><span class="strat-name">Volume Breakout</span></div>
+          <div class="strat-item"><span class="strat-num">9</span><span class="strat-name">Range Expansion</span></div>
+          <div class="strat-item"><span class="strat-num">10</span><span class="strat-name">Opening Range</span></div>
+        </div>
+        <div class="strat-group">
+          <h3>Pattern</h3>
+          <div class="strat-item"><span class="strat-num">11</span><span class="strat-name">Harmonic Patterns</span></div>
+          <div class="strat-item"><span class="strat-num">12</span><span class="strat-name">Candlestick Recog</span></div>
+          <div class="strat-item"><span class="strat-num">13</span><span class="strat-name">Support/Resistance</span></div>
+        </div>
+        <div class="strat-group">
+          <h3>AI-Enhanced</h3>
+          <div class="strat-item"><span class="strat-num">14</span><span class="strat-name">LLM Sentiment</span></div>
+          <div class="strat-item"><span class="strat-num">15</span><span class="strat-name">Multi-Model Consensus</span></div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Features -->
-    <section class="features">
-      <div class="container" style="grid-column: 1 / -1;">
-        <h2>Powerful Features Built for Traders</h2>
-      </div>
-      <div>
+  <!-- FEATURES -->
+  <section id="docs">
+    <div class="wrap">
+      <div class="section-label reveal">Features</div>
+      <h2 class="section-heading reveal">Powerful Features Built for Traders</h2>
+      <div class="features-grid reveal" style="margin-top:48px;">
         <ul class="feature-list">
-          <li class="feature-item"><span class="feature-icon">[+]</span><span class="feature-text">Real-time signal generation</span></li>
-          <li class="feature-item"><span class="feature-icon">[+]</span><span class="feature-text">Multi-LLM integration (OpenAI, Anthropic, Google, Ollama)</span></li>
-          <li class="feature-item"><span class="feature-icon">[+]</span><span class="feature-text">Professional dashboard with live charts</span></li>
-          <li class="feature-item"><span class="feature-icon">[+]</span><span class="feature-text">Risk management and position sizing</span></li>
-          <li class="feature-item"><span class="feature-icon">[+]</span><span class="feature-text">Backtesting engine</span></li>
-          <li class="feature-item"><span class="feature-icon">[+]</span><span class="feature-text">API access for custom integrations</span></li>
+          <li class="feature-item"><span class="feature-icon">+</span><span class="feature-text">Real-time signal generation with WebSocket streaming</span></li>
+          <li class="feature-item"><span class="feature-icon">+</span><span class="feature-text">Multi-LLM integration (Claude, OpenAI, Gemini, Ollama)</span></li>
+          <li class="feature-item"><span class="feature-icon">+</span><span class="feature-text">TradingView-powered candlestick charts with technical indicators</span></li>
+          <li class="feature-item"><span class="feature-icon">+</span><span class="feature-text">Risk management with position sizing and safety rails</span></li>
+          <li class="feature-item"><span class="feature-icon">+</span><span class="feature-text">Full backtesting engine with historical analysis</span></li>
+          <li class="feature-item"><span class="feature-icon">+</span><span class="feature-text">REST API + WebSocket for custom integrations</span></li>
+          <li class="feature-item"><span class="feature-icon">+</span><span class="feature-text">Paper trading simulator with state persistence</span></li>
+          <li class="feature-item"><span class="feature-icon">+</span><span class="feature-text">Live trading via Alpaca integration</span></li>
         </ul>
-      </div>
-      <div class="feature-visual">
-POST /api/signals<br>
-Content-Type: application/json<br>
-<br>
-{<br>
-&nbsp;&nbsp;"strategy": "RSI_DIVERGENCE",<br>
-&nbsp;&nbsp;"symbol": "AAPL",<br>
-&nbsp;&nbsp;"timeframe": "5m",<br>
-&nbsp;&nbsp;"models": ["openai", "anthropic"]<br>
-}<br>
-<br>
-200 OK<br>
-{<br>
-&nbsp;&nbsp;"signal": "BUY",<br>
-&nbsp;&nbsp;"confidence": 0.87,<br>
-&nbsp;&nbsp;"timestamp": "2026-04-06T14:32:00Z"<br>
-}
-      </div>
-    </section>
-
-    <!-- Architecture -->
-    <section class="architecture">
-      <div class="container">
-        <h2>Simple, Scalable Architecture</h2>
-        <div class="arch-flow">
-          <div class="arch-box">Market Data</div>
-          <div class="arch-arrow">→</div>
-          <div class="arch-box">Signal Engine</div>
-          <div class="arch-arrow">→</div>
-          <div class="arch-box">LLM Analysis</div>
-          <div class="arch-arrow">→</div>
-          <div class="arch-box">Trade Execution</div>
-          <div class="arch-arrow">→</div>
-          <div class="arch-box">Dashboard</div>
+        <div class="feature-visual">
+          <span class="comment">// POST /api/trade</span><br>
+          {<br>
+          &nbsp;&nbsp;<span class="kw">"strategy"</span>: <span class="str">"DipBuyer"</span>,<br>
+          &nbsp;&nbsp;<span class="kw">"symbol"</span>: <span class="str">"COIN"</span>,<br>
+          &nbsp;&nbsp;<span class="kw">"action"</span>: <span class="str">"BUY"</span>,<br>
+          &nbsp;&nbsp;<span class="kw">"confidence"</span>: <span class="num">0.92</span>,<br>
+          &nbsp;&nbsp;<span class="kw">"models"</span>: [<span class="str">"claude"</span>, <span class="str">"openai"</span>]<br>
+          }<br><br>
+          <span class="comment">// 200 OK</span><br>
+          {<br>
+          &nbsp;&nbsp;<span class="kw">"signal"</span>: <span class="str">"STRONG_BUY"</span>,<br>
+          &nbsp;&nbsp;<span class="kw">"consensus"</span>: <span class="num">0.87</span>,<br>
+          &nbsp;&nbsp;<span class="kw">"timestamp"</span>: <span class="str">"2026-04-06T14:32Z"</span><br>
+          }
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Performance -->
-    <section class="performance">
-      <div class="container">
-        <h2>Built for Performance</h2>
-        <div class="metrics">
-          <div class="metric">
-            <div class="metric-value">15</div>
-            <div class="metric-label">concurrent strategies</div>
-          </div>
-          <div class="metric">
-            <div class="metric-value">&lt;100ms</div>
-            <div class="metric-label">signal generation</div>
-          </div>
-          <div class="metric">
-            <div class="metric-value">4</div>
-            <div class="metric-label">LLM providers</div>
-          </div>
-          <div class="metric">
-            <div class="metric-value">99.5%</div>
-            <div class="metric-label">uptime</div>
-          </div>
+  <!-- ARCHITECTURE -->
+  <section>
+    <div class="wrap" style="text-align:center;">
+      <div class="section-label reveal">Architecture</div>
+      <h2 class="section-heading reveal">Simple, Scalable Architecture</h2>
+      <div class="arch-flow reveal" style="margin-top:48px;">
+        <div class="arch-box">Market Data</div>
+        <div class="arch-arrow">&rarr;</div>
+        <div class="arch-box">Signal Engine</div>
+        <div class="arch-arrow">&rarr;</div>
+        <div class="arch-box">LLM Analysis</div>
+        <div class="arch-arrow">&rarr;</div>
+        <div class="arch-box">Trade Execution</div>
+        <div class="arch-arrow">&rarr;</div>
+        <div class="arch-box">Dashboard</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- METRICS -->
+  <section>
+    <div class="wrap">
+      <div class="section-label reveal">Performance</div>
+      <h2 class="section-heading reveal">Built for Performance</h2>
+      <div class="metrics-grid reveal" style="margin-top:48px;">
+        <div class="metric-card"><div class="metric-val">15</div><div class="metric-lbl">Concurrent strategies</div></div>
+        <div class="metric-card"><div class="metric-val">&lt;100ms</div><div class="metric-lbl">Signal generation</div></div>
+        <div class="metric-card"><div class="metric-val">4</div><div class="metric-lbl">LLM providers</div></div>
+        <div class="metric-card"><div class="metric-val">99.5%</div><div class="metric-lbl">Uptime</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section>
+    <div class="wrap">
+      <div class="section-label reveal">Pricing</div>
+      <h2 class="section-heading reveal">Simple Pricing</h2>
+      <div class="pricing-grid reveal" style="margin-top:48px;">
+        <div class="pricing-card">
+          <div class="pricing-tier">Self-Hosted</div>
+          <div class="pricing-price">Free</div>
+          <div class="pricing-period">Forever</div>
+          <ul class="pricing-features">
+            <li>Run on your own infrastructure</li>
+            <li>Full source access</li>
+            <li>Community support</li>
+            <li>15 built-in strategies</li>
+          </ul>
+          <a href="mailto:sendpavan@gmail.com" class="btn btn-cyan" style="width:100%;justify-content:center;">Get Started</a>
+        </div>
+        <div class="pricing-card featured">
+          <div class="pricing-tier">Managed</div>
+          <div class="pricing-price">$499</div>
+          <div class="pricing-period">per month</div>
+          <ul class="pricing-features">
+            <li>Cloud hosted</li>
+            <li>Priority support</li>
+            <li>Custom strategies</li>
+            <li>Dedicated instance</li>
+          </ul>
+          <a href="mailto:sendpavan@gmail.com" class="btn btn-cyan" style="width:100%;justify-content:center;">Request Access</a>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Pricing -->
-    <section class="pricing">
-      <div class="container">
-        <h2>Simple Pricing</h2>
-        <div class="pricing-grid">
-          <div class="pricing-card">
-            <div class="pricing-tier">Self-Hosted</div>
-            <div class="pricing-price">Free</div>
-            <div class="pricing-period">Forever</div>
-            <ul class="pricing-features">
-              <li>Run on your own infrastructure</li>
-              <li>Full source access</li>
-              <li>Community support</li>
-              <li>15 built-in strategies</li>
-            </ul>
-            <a href="mailto:sendpavan@gmail.com" class="btn primary" style="width: 100%; text-align: center;">Get Started</a>
-          </div>
-          <div class="pricing-card featured">
-            <div class="pricing-tier">Managed</div>
-            <div class="pricing-price">$499</div>
-            <div class="pricing-period">per month</div>
-            <ul class="pricing-features">
-              <li>Cloud hosted</li>
-              <li>Priority support</li>
-              <li>Custom strategies</li>
-              <li>Dedicated instance</li>
-            </ul>
-            <a href="mailto:sendpavan@gmail.com" class="btn primary" style="width: 100%; text-align: center;">Request Access</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Final CTA -->
-    <div class="container">
-      <section class="final-cta">
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="wrap">
+      <div class="cta-box reveal">
         <h2>Ready to trade smarter?</h2>
-        <div class="cta-group">
-          <a href="mailto:sendpavan@gmail.com" class="btn primary">Request Access</a>
-          <a href="labs.html" class="btn">Back to Labs</a>
+        <p>Get access to ProxiAlpha and start leveraging AI-powered trading signals.</p>
+        <div style="display:flex;gap:12px;justify-content:center;">
+          <a href="mailto:sendpavan@gmail.com" class="btn btn-cyan">Request Access &rarr;</a>
+          <a href="labs.html" class="btn btn-ghost">Back to Labs</a>
         </div>
-      </section>
+      </div>
     </div>
-  </main>
+  </section>
 
-  <!-- Footer -->
+  <!-- FOOTER -->
   <footer>
-    <div class="container">
-      <div>
-        <h4>Product</h4>
-        <a href="proxialpha.html">ProxiAlpha</a>
-        <a href="labs.html">Labs</a>
+    <div class="wrap">
+      <div class="footer-grid">
+        <div><h4>Product</h4><ul><li><a href="proxialpha.html">ProxiAlpha</a></li><li><a href="labs.html">Labs</a></li></ul></div>
+        <div><h4>Company</h4><ul><li><a href="index.html">Home</a></li><li><a href="solutions.html">Solutions</a></li></ul></div>
+        <div><h4>Legal</h4><ul><li><a href="#">Privacy Policy</a></li><li><a href="#">Terms of Service</a></li></ul></div>
+        <div><h4>Contact</h4><ul><li><a href="mailto:sendpavan@gmail.com">sendpavan@gmail.com</a></li></ul></div>
       </div>
-      <div>
-        <h4>Company</h4>
-        <a href="index.html">Home</a>
-        <a href="solutions.html">Solutions</a>
-      </div>
-      <div>
-        <h4>Legal</h4>
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms of Service</a>
-      </div>
-      <div>
-        <h4>Contact</h4>
-        <a href="mailto:sendpavan@gmail.com">sendpavan@gmail.com</a>
-      </div>
-    </div>
-    <div class="container">
-      <div class="copyright">
-        © 2026 Proxiant Labs. All rights reserved. | ProxiAlpha is an AI-powered trading platform.
+      <div class="footer-bottom">
+        <span>&copy; 2026 Proxiant Labs. All rights reserved.</span>
+        <span>ProxiAlpha is an AI-powered trading platform.</span>
       </div>
     </div>
   </footer>
+
+  <script>
+    // Scroll reveal
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    window.addEventListener('scroll', () => {
+      document.getElementById('header').classList.toggle('scrolled', window.scrollY > 20);
+    });
+
+    // Animate counters
+    function animateVal(el, target, suffix) {
+      let cur = 0;
+      const step = target / 30;
+      const timer = setInterval(() => {
+        cur += step;
+        if (cur >= target) { cur = target; clearInterval(timer); }
+        el.textContent = Math.floor(cur) + suffix;
+      }, 40);
+    }
+    const dashObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          animateVal(document.getElementById('winRate'), 68, '%');
+          animateVal(document.getElementById('signalCount'), 47, '');
+          dashObs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.3 });
+    dashObs.observe(document.querySelector('.dashboard'));
+
+    // Live chart - animated line
+    const canvas = document.getElementById('liveChart');
+    if (canvas) {
+      const ctx = canvas.getContext('2d');
+      const dpr = window.devicePixelRatio || 1;
+      function resizeCanvas() {
+        const rect = canvas.parentElement.getBoundingClientRect();
+        canvas.width = rect.width * dpr;
+        canvas.height = rect.height * dpr;
+        canvas.style.width = rect.width + 'px';
+        canvas.style.height = rect.height + 'px';
+        ctx.scale(dpr, dpr);
+      }
+      resizeCanvas();
+      window.addEventListener('resize', resizeCanvas);
+
+      // Generate candlestick data
+      const candles = [];
+      let price = 215;
+      for (let i = 0; i < 40; i++) {
+        const vol = 2 + Math.random() * 3;
+        const open = price + (Math.random() - 0.48) * vol;
+        const close = open + (Math.random() - 0.47) * vol;
+        const high = Math.max(open, close) + Math.random() * vol * 0.4;
+        const low = Math.min(open, close) - Math.random() * vol * 0.4;
+        candles.push({ open, close, high, low });
+        price = close;
+      }
+
+      // SMA line
+      const sma = [];
+      for (let i = 4; i < candles.length; i++) {
+        sma.push(candles.slice(i-4, i+1).reduce((a,c) => a + c.close, 0) / 5);
+      }
+
+      function drawChart() {
+        const w = canvas.width / dpr;
+        const h = canvas.height / dpr;
+        ctx.clearRect(0, 0, w, h);
+
+        const allPrices = candles.flatMap(c => [c.high, c.low]);
+        const minP = Math.min(...allPrices) - 2;
+        const maxP = Math.max(...allPrices) + 2;
+        const range = maxP - minP;
+        const padT = 28, padB = 8;
+        const chartH = h - padT - padB;
+        const toY = (p) => padT + chartH - ((p - minP) / range) * chartH;
+
+        // Grid
+        ctx.strokeStyle = 'rgba(255,255,255,0.03)';
+        ctx.lineWidth = 1;
+        for (let i = 0; i < 5; i++) {
+          const y = padT + (chartH / 4) * i;
+          ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(w, y); ctx.stroke();
+        }
+
+        // Candlesticks
+        const candleW = (w - 20) / candles.length;
+        const bodyW = Math.max(2, candleW * 0.6);
+        candles.forEach((c, i) => {
+          const x = 10 + i * candleW + candleW / 2;
+          const bull = c.close >= c.open;
+          const color = bull ? '#26a69a' : '#ef5350';
+
+          // Wick
+          ctx.strokeStyle = color;
+          ctx.lineWidth = 1;
+          ctx.beginPath();
+          ctx.moveTo(x, toY(c.high));
+          ctx.lineTo(x, toY(c.low));
+          ctx.stroke();
+
+          // Body
+          const top = toY(Math.max(c.open, c.close));
+          const bot = toY(Math.min(c.open, c.close));
+          const bodyH = Math.max(1, bot - top);
+          ctx.fillStyle = color;
+          ctx.fillRect(x - bodyW/2, top, bodyW, bodyH);
+        });
+
+        // SMA line
+        ctx.strokeStyle = '#2962ff';
+        ctx.lineWidth = 1.5;
+        ctx.lineJoin = 'round';
+        ctx.beginPath();
+        sma.forEach((v, i) => {
+          const x = 10 + (i + 5) * candleW + candleW / 2;
+          const y = toY(v);
+          if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+        });
+        ctx.stroke();
+
+        // Animate last candle
+        const last = candles[candles.length - 1];
+        last.close += (Math.random() - 0.48) * 0.3;
+        last.high = Math.max(last.high, last.close, last.open);
+        last.low = Math.min(last.low, last.close, last.open);
+        sma[sma.length-1] = candles.slice(-5).reduce((a,c)=>a+c.close,0)/5;
+
+        requestAnimationFrame(drawChart);
+      }
+      drawChart();
+    }
+  </script>
 </body>
 </html>
