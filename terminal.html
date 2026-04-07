@@ -13,7 +13,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.9/babel.min.js"></script>
   <!-- Recharts for portfolio/radar/pie -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/recharts/2.10.4/Recharts.min.js"></script>
-  <!-- TradingView Lightweight Charts -->
+  <!-- Lightweight Charts (OHLC Candlestick) -->
   <script src="https://unpkg.com/lightweight-charts@4.1.3/dist/lightweight-charts.standalone.production.js"></script>
   <!-- Framer Motion -->
   <script src="https://cdn.jsdelivr.net/npm/framer-motion@11.0.3/dist/framer-motion.js"></script>
@@ -104,7 +104,7 @@
 
     // ============================================================
     // PROXIALPHA — AI TRADING TERMINAL
-    // TradingView-inspired professional dashboard
+    // ProxiAlpha professional trading dashboard
     // ============================================================
 
     // Configure your DGX station IP/hostname here when the backend is running.
@@ -129,7 +129,7 @@
       textMuted:   "#6b7280",
       textDim:     "#454d5e",
 
-      // TradingView-style colors
+      // Market colors
       bullish:     "#26a69a",
       bullishDim:  "rgba(38,166,154,0.12)",
       bullishMid:  "rgba(38,166,154,0.25)",
@@ -418,7 +418,7 @@
       </div>
     );
 
-    // ---- CANDLESTICK CHART (TradingView Lightweight Charts) ----
+    // ---- CANDLESTICK CHART ----
     const CandlestickChart = memo(({ ticker = "COIN", height = 420 }) => {
       const containerRef = useRef(null);
       const chartRef = useRef(null);
