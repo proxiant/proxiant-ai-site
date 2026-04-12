@@ -208,15 +208,24 @@
       color: white;
     }
 
-    nav:not(.scrolled) .nav-links a,
-    nav:not(.scrolled) .nav-links button,
+    nav:not(.scrolled) .nav-links > a,
+    nav:not(.scrolled) .nav-links > .dropdown-item > button,
     nav:not(.scrolled) .nav-logo {
       color: white;
     }
 
-    nav:not(.scrolled) .nav-links a:hover,
-    nav:not(.scrolled) .nav-links button:hover {
+    nav:not(.scrolled) .nav-links > a:hover,
+    nav:not(.scrolled) .nav-links > .dropdown-item > button:hover {
       color: var(--primary-light);
+    }
+
+    .dropdown-menu a {
+      color: var(--charcoal) !important;
+    }
+
+    .dropdown-menu a:hover {
+      color: var(--primary) !important;
+      background: var(--primary-subtle);
     }
 
     nav:not(.scrolled) .hamburger span {
