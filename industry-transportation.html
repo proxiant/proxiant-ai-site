@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Transportation & Logistics Solutions | Proxiant</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@300;600;800&family=Outfit:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #BF5700;
+            --primary-light: #E87511;
+            --primary-dark: #9E4A00;
+            --charcoal: #1C1C1E;
+            --pearl: #F5F3F0;
+            --cream: #FAF8F5;
+            --navy: #1B3A4B;
+            --teal: #2A9D8F;
+        }
+
+        * {
+            font-family: 'Outfit', sans-serif;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Bricolage Grotesque', sans-serif;
+        }
+
+        .mono {
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .text-primary { color: var(--primary); }
+        .text-primary-light { color: var(--primary-light); }
+        .text-charcoal { color: var(--charcoal); }
+        .text-navy { color: var(--navy); }
+        .text-teal { color: var(--teal); }
+
+        .bg-primary { background-color: var(--primary); }
+        .bg-primary-light { background-color: var(--primary-light); }
+        .bg-pearl { background-color: var(--pearl); }
+        .bg-cream { background-color: var(--cream); }
+        .bg-navy { background-color: var(--navy); }
+        .bg-teal { background-color: var(--teal); }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(191, 87, 0, 0.3);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--primary);
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-weight: 600;
+            border: 2px solid var(--primary);
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--primary);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Navigation Styles */
+        nav {
+            background-color: white;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-toggle {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 12px;
+            color: var(--charcoal);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .dropdown-toggle:hover {
+            color: var(--primary);
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: white;
+            border-radius: 6px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+            min-width: 220px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            z-index: 100;
+            padding-top: 8px;
+        }
+
+        .dropdown:hover .dropdown-menu,
+        .dropdown:focus-within .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-item {
+            display: block;
+            padding: 12px 20px;
+            color: var(--charcoal);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: all 0.2s ease;
+        }
+
+        .dropdown-item:hover {
+            background-color: var(--cream);
+            color: var(--primary);
+            padding-left: 24px;
+        }
+
+        .dropdown-item:first-child {
+            border-radius: 6px 6px 0 0;
+        }
+
+        .dropdown-item:last-child {
+            border-radius: 0 0 6px 6px;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        .animate-fade-in-up {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 0.6s ease forwards;
+        }
+
+        .animate-slide-in-left {
+            animation: slideInLeft 0.6s ease forwards;
+        }
+
+        .animate-slide-in-right {
+            animation: slideInRight 0.6s ease forwards;
+        }
+
+        .animate-pulse {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+
+        /* Stagger animations */
+        .animate-stagger-1 { animation-delay: 0.1s; }
+        .animate-stagger-2 { animation-delay: 0.2s; }
+        .animate-stagger-3 { animation-delay: 0.3s; }
+        .animate-stagger-4 { animation-delay: 0.4s; }
+        .animate-stagger-5 { animation-delay: 0.5s; }
+        .animate-stagger-6 { animation-delay: 0.6s; }
+
+        /* Card hover effect */
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 16px 32px rgba(0, 0, 0, 0.12);
+        }
+
+        /* Stats counter */
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            font-family: 'Bricolage Grotesque', sans-serif;
+            color: var(--primary);
+        }
+
+        /* Solution cards */
+        .solution-card {
+            background: linear-gradient(135deg, rgba(191, 87, 0, 0.05) 0%, rgba(42, 157, 143, 0.05) 100%);
+            border-left: 4px solid var(--primary);
+            transition: all 0.3s ease;
+        }
+
+        .solution-card:hover {
+            border-left-color: var(--teal);
+            background: linear-gradient(135deg, rgba(191, 87, 0, 0.1) 0%, rgba(42, 157, 143, 0.1) 100%);
+        }
+
+        /* Badge styles */
+        .badge {
+            display: inline-block;
+            padding: 8px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            background-color: var(--cream);
+            color: var(--primary);
+            margin: 4px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .stat-number { font-size: 2rem; }
+            .dropdown-menu {
+                position: static;
+                opacity: 0;
+                visibility: hidden;
+                height: 0;
+                overflow: hidden;
+                box-shadow: none;
+                padding: 0;
+            }
+            .dropdown:focus-within .dropdown-menu {
+                opacity: 1;
+                visibility: visible;
+                height: auto;
+                overflow: visible;
+                padding-top: 8px;
+            }
+        }
+    </style>
+</head>
+<body class="bg-cream text-charcoal">
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center gap-2">
+                    <div class="w-8 h-8 bg-primary rounded flex items-center justify-center text-white font-bold text-sm">P</div>
+                    <span class="font-bold text-lg text-charcoal">Proxiant</span>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center gap-8">
+                    <!-- Services Dropdown -->
+                    <div class="dropdown">
+                        <a href="solutions.html#sections" class="dropdown-toggle">
+                            Services
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+                            </svg>
+                        </a>
+                        <div class="dropdown-menu">
+                            <a href="solutions.html#sections" class="dropdown-item">Optimization Engine</a>
+                            <a href="solutions.html#sections" class="dropdown-item">Analytics Platform</a>
+                            <a href="solutions.html#sections" class="dropdown-item">Predictive Modeling</a>
+                            <a href="solutions.html#sections" class="dropdown-item">Integration Services</a>
+                        </div>
+                    </div>
+
+                    <!-- Industries Dropdown -->
+                    <div class="dropdown">
+                        <a href="#" class="dropdown-toggle">
+                            Industries
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+                            </svg>
+                        </a>
+                        <div class="dropdown-menu">
+                            <a href="industry-financial-services.html" class="dropdown-item">Financial Services</a>
+                            <a href="industry-healthcare.html" class="dropdown-item">Healthcare</a>
+                            <a href="industry-manufacturing.html" class="dropdown-item">Manufacturing</a>
+                            <a href="industry-retail.html" class="dropdown-item">Retail & E-commerce</a>
+                            <a href="industry-energy.html" class="dropdown-item">Energy & Utilities</a>
+                            <a href="industry-telecom.html" class="dropdown-item">Telecommunications</a>
+                            <a href="industry-insurance.html" class="dropdown-item">Insurance</a>
+                            <a href="industry-transportation.html" class="dropdown-item">Transportation & Logistics</a>
+                        </div>
+                    </div>
+
+                    <a href="#" class="text-charcoal hover:text-primary transition-colors">Labs</a>
+                    <a href="#" class="text-charcoal hover:text-primary transition-colors">Insights</a>
+                    <a href="#" class="text-charcoal hover:text-primary transition-colors">About</a>
+
+                    <a href="contact.html" class="btn-primary">Get Started</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden flex flex-col gap-1">
+                    <div class="w-6 h-0.5 bg-charcoal"></div>
+                    <div class="w-6 h-0.5 bg-charcoal"></div>
+                    <div class="w-6 h-0.5 bg-charcoal"></div>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-[600px] flex items-center overflow-hidden bg-navy">
+        <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1600&q=80" alt="Logistics and shipping" class="absolute inset-0 w-full h-full object-cover opacity-30">
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
+            <div class="max-w-2xl animate-fade-in-up">
+                <h1 class="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
+                    AI-Optimized Transportation & Logistics
+                </h1>
+                <p class="text-xl text-gray-200 mb-8 font-light">
+                    Unlock supply chain intelligence with predictive analytics, real-time visibility, and autonomous optimization across your entire logistics network.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="contact.html" class="btn-primary text-center">Start Optimization</a>
+                    <button class="btn-secondary text-white border-white hover:bg-white hover:text-navy text-center">Watch Demo</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="bg-white py-16 md:py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Stat 1 -->
+                <div class="text-center animate-fade-in-up animate-stagger-1">
+                    <p class="stat-number">$10.6T</p>
+                    <p class="text-gray-600 text-lg font-light">Global logistics market opportunity</p>
+                </div>
+
+                <!-- Stat 2 -->
+                <div class="text-center animate-fade-in-up animate-stagger-2">
+                    <p class="stat-number">82%</p>
+                    <p class="text-gray-600 text-lg font-light">3PLs investing in AI solutions</p>
+                </div>
+
+                <!-- Stat 3 -->
+                <div class="text-center animate-fade-in-up animate-stagger-3">
+                    <p class="stat-number">22%</p>
+                    <p class="text-gray-600 text-lg font-light">Cost reduction in fleet operations</p>
+                </div>
+
+                <!-- Stat 4 -->
+                <div class="text-center animate-fade-in-up animate-stagger-4">
+                    <p class="stat-number">30%</p>
+                    <p class="text-gray-600 text-lg font-light">Faster delivery times achieved</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Challenges Section -->
+    <section class="bg-pearl py-16 md:py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 animate-fade-in-up">
+                <h2 class="text-4xl md:text-5xl font-bold text-charcoal mb-4">Transportation & Logistics Challenges</h2>
+                <p class="text-xl text-gray-600 font-light">The complexities of modern supply chains demand intelligent solutions</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Challenge 1 -->
+                <div class="bg-white p-8 rounded-lg card-hover animate-fade-in-up animate-stagger-1 shadow-sm">
+                    <div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-charcoal mb-3">Route Optimization Complexity</h3>
+                    <p class="text-gray-600 font-light">Complex multi-stop routes with thousands of variables requiring real-time adaptation to traffic, weather, and demand patterns.</p>
+                </div>
+
+                <!-- Challenge 2 -->
+                <div class="bg-white p-8 rounded-lg card-hover animate-fade-in-up animate-stagger-2 shadow-sm">
+                    <div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-charcoal mb-3">Last-Mile Delivery Costs</h3>
+                    <p class="text-gray-600 font-light">Last-mile logistics accounts for 50% of total shipping costs. Rising fuel prices and labor shortages compound margin pressures.</p>
+                </div>
+
+                <!-- Challenge 3 -->
+                <div class="bg-white p-8 rounded-lg card-hover animate-fade-in-up animate-stagger-3 shadow-sm">
+                    <div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-charcoal mb-3">Fleet Utilization & Maintenance</h3>
+                    <p class="text-gray-600 font-light">Predicting component failures, scheduling preventive maintenance, and maximizing vehicle ROI across heterogeneous fleets.</p>
+                </div>
+
+                <!-- Challenge 4 -->
+                <div class="bg-white p-8 rounded-lg card-hover animate-fade-in-up animate-stagger-4 shadow-sm">
+                    <div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-charcoal mb-3">Warehouse Labor Shortages</h3>
+                    <p class="text-gray-600 font-light">Critical skill gaps in warehousing. Optimizing pick/pack processes and integrating robotics coordination requires intelligent orchestration.</p>
+                </div>
+
+                <!-- Challenge 5 -->
+                <div class="bg-white p-8 rounded-lg card-hover animate-fade-in-up animate-stagger-5 shadow-sm">
+                    <div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-charcoal mb-3">Visibility Across Supply Chain</h3>
+                    <p class="text-gray-600 font-light">Fragmented systems create blind spots. Real-time tracking, ETA prediction, and exception management across partners is critical.</p>
+                </div>
+
+                <!-- Challenge 6 -->
+                <div class="bg-white p-8 rounded-lg card-hover animate-fade-in-up animate-stagger-6 shadow-sm">
+                    <div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1m-16 0H1m15.364 1.636l.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-charcoal mb-3">Fuel & Sustainability Pressures</h3>
+                    <p class="text-gray-600 font-light">ESG mandates and fuel volatility demand carbon-aware routing, electric vehicle optimization, and sustainable logistics planning.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solutions Section -->
+    <section class="bg-white py-16 md:py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 animate-fade-in-up">
+                <h2 class="text-4xl md:text-5xl font-bold text-charcoal mb-4">AI-Powered Solutions</h2>
+                <p class="text-xl text-gray-600 font-light">Comprehensive platform for modern supply chain optimization</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Solution 1 -->
+                <div class="solution-card p-8 rounded-lg animate-fade-in-up animate-stagger-1 card-hover">
+                    <h3 class="text-2xl font-bold text-charcoal mb-4">Route & Fleet Optimization</h3>
+                    <ul class="space-y-3 text-gray-700 font-light">
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-teal flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span><strong>Dynamic routing</strong> - Real-time optimization for TMS and fleet management</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-teal flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span><strong>Load optimization</strong> - LTL/FTL consolidation and cross-dock planning</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-teal flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span><strong>Fuel efficiency</strong> - Carbon-aware and eco-routing algorithms</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-teal flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span><strong>Multi-modal planning</strong> - Drayage, rail, and inter-modal optimization</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Solution 2 -->
+                <div class="solution-card p-8 rounded-lg animate-fade-in-up animate-stagger-2 card-hover">
+                    <h3 class="text-2xl font-bold text-charcoal mb-4">Warehouse Intelligence</h3>
+                    <ul class="space-y-3 text-gray-700 font-light">
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-teal flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span><strong>Pick/pack optimization</strong> - WMS task sequencing and efficiency</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-teal flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span><strong>Slotting optimization</strong> - Intelligent inventory positioning</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-teal flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span><strong>Robotics orchestration</strong> - Automated system coordination</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-teal flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span><strong>Labor planning</strong> - Demand-driven workforce forecasting</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Solution 3 -->
+                <div class="solution-card p-8 rounded-lg animate-fade-in-up animate-stagger-3 card-hover">
+                    <h3 class="text-2xl font-bold text-charcoal mb-4">Predictive Fleet Maintenance</h3>
+                    <ul class="space-y-3 text-gray-700 font-light">
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-teal flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span><strong>Telematics analytics</strong> - Real-time sensor data processing</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-teal flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span><strong>Component failure prediction</strong> - AI-driven maintenance alerts</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-teal flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span><strong>Maintenance scheduling</strong> - Minimize downtime and maximize availability</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-teal flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span><strong>Vehicle lifecycle optimization</strong> - Maximize ROI and resale value</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Solution 4 -->
+                <div class="solution-card p-8 rounded-lg animate-fade-in-up animate-stagger-4 card-hover">
+                    <h3 class="text-2xl font-bold text-charcoal mb-4">Supply Chain Visibility Platform</h3>
+                    <ul class="space-y-3 text-gray-700 font-light">
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-teal flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span><strong>Real-time tracking</strong> - End-to-end shipment monitoring</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-teal flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span><strong>ETA prediction</strong> - Machine learning-powered delivery timing</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-teal flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span><strong>Exception management</strong> - Proactive deviation handling</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-teal flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span><strong>Partner integration</strong> - 3PL and carrier ecosystem connectivity</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Solution 5 -->
+                <div class="solution-card p-8 rounded-lg animate-fade-in-up animate-stagger-5 card-hover">
+                    <h3 class="text-2xl font-bold text-charcoal mb-4">Demand & Capacity Planning</h3>
+                    <ul class="space-y-3 text-gray-700 font-light">
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-teal flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span><strong>Volume forecasting</strong> - Predictive modeling for shipment demand</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-teal flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span><strong>Capacity allocation</strong> - Right-size transportation assets</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-teal flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span><strong>Seasonal planning</strong> - Peak season readiness and off-season optimization</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-teal flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span><strong>Network modeling</strong> - Facility location and consolidation analysis</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Solution 6 -->
+                <div class="solution-card p-8 rounded-lg animate-fade-in-up animate-stagger-6 card-hover">
+                    <h3 class="text-2xl font-bold text-charcoal mb-4">Autonomous & Safety Systems</h3>
+                    <ul class="space-y-3 text-gray-700 font-light">
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-teal flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span><strong>Driver behavior analytics</strong> - Real-time coaching and safety scoring</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-teal flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span><strong>ADAS integration</strong> - Advanced driver assistance system connectivity</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-teal flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span><strong>Safety scoring</strong> - FMCSA compliance and incident prevention</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-teal flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span><strong>Autonomous readiness</strong> - Prepare operations for Level 4+ vehicles</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Study Section -->
+    <section class="bg-navy text-white py-16 md:py-24 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-5">
+            <svg class="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 100 100" preserveAspectRatio="none">
+                <defs>
+                    <pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse">
+                        <path d="M 10 0 L 0 0 0 10" fill="none" stroke="white"/>
+                    </pattern>
+                </defs>
+                <rect width="100" height="100" fill="url(#grid)"/>
+            </svg>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <!-- Case Study Content -->
+                <div class="animate-slide-in-left">
+                    <span class="badge bg-primary text-white">Case Study</span>
+                    <h2 class="text-4xl md:text-5xl font-bold mt-6 mb-6">
+                        How a National 3PL Reduced Delivery Costs by 22% with AI Routing
+                    </h2>
+                    <p class="text-xl text-gray-200 font-light mb-8">
+                        A leading third-party logistics provider serving 500+ enterprise clients implemented Proxiant's AI routing engine across their 2,000-vehicle fleet, operating 45 distribution centers nationwide.
+                    </p>
+
+                    <div class="space-y-6 mb-8">
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 rounded-full bg-primary-light flex items-center justify-center flex-shrink-0">
+                                <span class="font-bold">1</span>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-1">Challenge</h4>
+                                <p class="text-gray-300 font-light">Fragmented TMS data across legacy systems, manual routing consuming 40+ hours/week, 12% capacity underutilization on standard routes.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 rounded-full bg-primary-light flex items-center justify-center flex-shrink-0">
+                                <span class="font-bold">2</span>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-1">Solution</h4>
+                                <p class="text-gray-300 font-light">Deployed Proxiant's dynamic routing with real-time load optimization, integrated with their WMS and telematics platform, trained 300+ dispatchers on new workflows.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 rounded-full bg-primary-light flex items-center justify-center flex-shrink-0">
+                                <span class="font-bold">3</span>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-1">Results</h4>
+                                <p class="text-gray-300 font-light">22% cost reduction ($8.2M annual), 18% improvement in on-time delivery, 15% reduction in fleet size needed, 92% dispatcher time savings on routing.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="contact.html" class="btn-primary">View Full Case Study</a>
+                </div>
+
+                <!-- Metrics Visualization -->
+                <div class="grid grid-cols-2 gap-6 animate-slide-in-right">
+                    <div class="bg-white bg-opacity-10 backdrop-blur border border-white border-opacity-20 rounded-lg p-8 text-center">
+                        <p class="text-5xl font-bold text-primary-light mb-2">22%</p>
+                        <p class="text-gray-300 font-light">Cost Reduction</p>
+                    </div>
+                    <div class="bg-white bg-opacity-10 backdrop-blur border border-white border-opacity-20 rounded-lg p-8 text-center">
+                        <p class="text-5xl font-bold text-teal mb-2">18%</p>
+                        <p class="text-gray-300 font-light">Delivery Improvement</p>
+                    </div>
+                    <div class="bg-white bg-opacity-10 backdrop-blur border border-white border-opacity-20 rounded-lg p-8 text-center">
+                        <p class="text-5xl font-bold text-primary-light mb-2">$8.2M</p>
+                        <p class="text-gray-300 font-light">Annual Savings</p>
+                    </div>
+                    <div class="bg-white bg-opacity-10 backdrop-blur border border-white border-opacity-20 rounded-lg p-8 text-center">
+                        <p class="text-5xl font-bold text-teal mb-2">92%</p>
+                        <p class="text-gray-300 font-light">Time Savings</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Standards & Certifications -->
+    <section class="bg-pearl py-16 md:py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 animate-fade-in-up">
+                <h2 class="text-4xl md:text-5xl font-bold text-charcoal mb-4">Industry Standards & Compliance</h2>
+                <p class="text-xl text-gray-600 font-light">Meeting the highest security and compliance requirements</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- ISO 28000 -->
+                <div class="bg-white p-8 rounded-lg text-center card-hover animate-fade-in-up animate-stagger-1 shadow-sm">
+                    <div class="w-16 h-16 bg-primary rounded-lg flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-charcoal mb-2">ISO 28000</h3>
+                    <p class="text-gray-600 font-light text-sm">Supply chain security management</p>
+                </div>
+
+                <!-- C-TPAT -->
+                <div class="bg-white p-8 rounded-lg text-center card-hover animate-fade-in-up animate-stagger-2 shadow-sm">
+                    <div class="w-16 h-16 bg-primary rounded-lg flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-charcoal mb-2">C-TPAT</h3>
+                    <p class="text-gray-600 font-light text-sm">Customs-Trade Partnership Against Terrorism</p>
+                </div>
+
+                <!-- FMCSA -->
+                <div class="bg-white p-8 rounded-lg text-center card-hover animate-fade-in-up animate-stagger-3 shadow-sm">
+                    <div class="w-16 h-16 bg-primary rounded-lg flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-charcoal mb-2">FMCSA</h3>
+                    <p class="text-gray-600 font-light text-sm">Federal Motor Carrier Safety Administration</p>
+                </div>
+
+                <!-- SmartWay -->
+                <div class="bg-white p-8 rounded-lg text-center card-hover animate-fade-in-up animate-stagger-4 shadow-sm">
+                    <div class="w-16 h-16 bg-primary rounded-lg flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-charcoal mb-2">SmartWay</h3>
+                    <p class="text-gray-600 font-light text-sm">EPA sustainability initiative</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="bg-primary text-white py-16 md:py-24 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <svg class="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 100 100" preserveAspectRatio="none">
+                <defs>
+                    <pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse">
+                        <circle cx="10" cy="10" r="2" fill="white"/>
+                    </pattern>
+                </defs>
+                <rect width="100" height="100" fill="url(#dots)"/>
+            </svg>
+        </div>
+
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 animate-fade-in-up">
+            <h2 class="text-4xl md:text-5xl font-bold mb-6">Optimize Your Supply Chain Today</h2>
+            <p class="text-xl text-gray-100 font-light mb-10">
+                Join leading 3PLs, carriers, and shippers leveraging AI to transform transportation and logistics operations.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="contact.html" class="btn-primary bg-white text-primary hover:bg-cream">Schedule a Demo</a>
+                <a href="contact.html" class="btn-secondary border-white text-white hover:bg-white hover:text-primary">Get Started</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-charcoal text-gray-300 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <!-- Company -->
+                <div>
+                    <h4 class="font-bold text-white mb-4">Company</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-primary transition-colors">About</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Careers</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Press</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Blog</a></li>
+                    </ul>
+                </div>
+
+                <!-- Solutions -->
+                <div>
+                    <h4 class="font-bold text-white mb-4">Solutions</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-primary transition-colors">Optimization</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Analytics</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Visibility</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Forecasting</a></li>
+                    </ul>
+                </div>
+
+                <!-- Resources -->
+                <div>
+                    <h4 class="font-bold text-white mb-4">Resources</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-primary transition-colors">Documentation</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">API Reference</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Case Studies</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Support</a></li>
+                    </ul>
+                </div>
+
+                <!-- Legal -->
+                <div>
+                    <h4 class="font-bold text-white mb-4">Legal</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-primary transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Terms of Service</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Cookie Policy</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Security</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 pt-8 flex flex-col md:flex-row items-center justify-between">
+                <div class="flex items-center gap-2 mb-4 md:mb-0">
+                    <div class="w-8 h-8 bg-primary rounded flex items-center justify-center text-white font-bold text-sm">P</div>
+                    <span class="font-bold text-white">Proxiant</span>
+                </div>
+                <p class="text-sm text-gray-400">© 2026 Proxiant. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

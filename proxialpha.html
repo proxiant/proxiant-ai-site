@@ -64,7 +64,9 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lightweight-charts@4.1.3/dist/lightweight-charts.standalone.production.js"></script>
+
   <style>
     :root {
       --bg: #06080c;
@@ -77,20 +79,20 @@
       --purple: #7c3aed;
       --green: #22c55e;
       --green-dim: rgba(34,197,94,0.12);
-      --amber: #f59e0b;
       --red: #ef4444;
+      --amber: #f59e0b;
       --text: #e6edf3;
       --text-secondary: #8b949e;
       --text-muted: #484f58;
-      --font-display: 'Plus Jakarta Sans', sans-serif;
-      --font-body: 'Plus Jakarta Sans', sans-serif;
-      --font-mono: 'IBM Plex Mono', monospace;
+      --font-display: 'Bricolage Grotesque', sans-serif;
+      --font-body: 'Outfit', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
     body { font-family: var(--font-body); background: var(--bg); color: var(--text); line-height: 1.6; overflow-x: hidden; }
 
-    /* GRAIN */
+    /* GRAIN TEXTURE */
     body::before {
       content: '';
       position: fixed; top: 0; left: 0; width: 100%; height: 100%;
@@ -98,6 +100,7 @@
       pointer-events: none; z-index: 9999;
     }
 
+    /* MESH BACKGROUND */
     .mesh-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; overflow: hidden; }
     .mesh-orb { position: absolute; border-radius: 50%; filter: blur(140px); opacity: 0.12; animation: orbFloat 25s ease-in-out infinite; }
     .mesh-orb:nth-child(1) { width: 600px; height: 600px; background: var(--cyan); top: -200px; right: -100px; }
@@ -118,35 +121,97 @@
     .reveal-delay-3 { transition-delay: 0.3s; }
     .reveal-delay-4 { transition-delay: 0.4s; }
 
-    /* ─── PILL NAV ─── */
-    .nav-wrap{position:fixed;top:14px;left:50%;transform:translateX(-50%);width:calc(100% - 28px);max-width:1200px;z-index:1000;padding:0 14px}
-    .nav-pill{display:flex;align-items:center;justify-content:space-between;height:56px;padding:0 6px 0 20px;border-radius:9999px;background:rgba(6,8,12,.78);backdrop-filter:blur(20px) saturate(180%);-webkit-backdrop-filter:blur(20px) saturate(180%);border:1px solid rgba(0,229,255,.15);box-shadow:0 2px 16px rgba(0,0,0,.4);transition:all .3s}
-    .nav-brand{font-family:var(--font-display);font-weight:800;font-size:1.2rem;color:var(--text);text-decoration:none;letter-spacing:-.025em;display:inline-flex;align-items:center;gap:9px;flex-shrink:0}
-    .nav-brand span{color:var(--cyan)}
-    .nav-logo{width:32px;height:32px;flex-shrink:0}
-    .nav-links{display:flex;align-items:center;gap:clamp(1.25rem,2.5vw,2rem);list-style:none}
-    .nav-link{display:inline-flex;flex-direction:column;height:1.3em;overflow:hidden;cursor:pointer;position:relative}
-    .nav-link a{font-size:.875rem;font-weight:500;color:var(--text-secondary);display:flex;flex-direction:column;transition:transform .28s cubic-bezier(.25,.46,.45,.94);text-decoration:none}
-    .nav-link a span{display:block}
-    .nav-link a .top{position:relative}
-    .nav-link a .btm{position:absolute;top:100%;color:var(--text)}
-    .nav-link a:hover .top,.nav-link a:hover .btm{transform:translateY(-100%)}
-    .nav-link.active a .top{color:var(--cyan)}
-    .nav-end{display:flex;align-items:center;gap:8px}
-    .btn{display:inline-flex;align-items:center;gap:6px;padding:10px 22px;border-radius:9999px;font-size:.875rem;font-weight:700;font-family:var(--font-body);text-decoration:none;transition:all .25s cubic-bezier(.16,1,.3,1);cursor:pointer;border:none;white-space:nowrap}
-    .btn-cyan{background:var(--cyan);color:var(--bg)}
-    .btn-cyan:hover{background:#33ebff;box-shadow:0 0 30px rgba(0,229,255,.3);transform:scale(1.03)}
-    .btn-ghost{background:transparent;color:var(--text);border:1.5px solid var(--border)}
-    .btn-ghost:hover{border-color:var(--cyan-dim);background:rgba(0,229,255,.04)}
-    .mobile-toggle{display:none;background:none;border:none;color:var(--text);cursor:pointer;padding:4px}
-    .mob-menu{display:none;position:fixed;top:80px;left:14px;right:14px;background:var(--surface);border:1px solid rgba(0,229,255,.12);border-radius:16px;padding:1.25rem;z-index:999;flex-direction:column;gap:.875rem;box-shadow:0 16px 48px rgba(0,0,0,.5)}
-    .mob-menu.open{display:flex}
-    .mob-menu a{font-size:.95rem;font-weight:500;color:var(--text-secondary);padding:.5rem 0;border-bottom:1px solid var(--border)}
-    .mob-menu a:last-child{border:none}
-    @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+    /* ==================== NAV ==================== */
+    header {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      background: rgba(6,8,12,0.8); backdrop-filter: blur(20px) saturate(180%);
+      border-bottom: 1px solid var(--border); transition: all 0.3s;
+    }
+    header.scrolled { background: rgba(6,8,12,0.95); border-bottom-color: var(--border-glow); }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+    .nav-left { display: flex; align-items: center; gap: 30px; }
+    .nav-brand { font-family: var(--font-display); font-weight: 800; font-size: 1.3rem; color: var(--text); text-decoration: none; letter-spacing: -0.03em; display: inline-flex; align-items: center; gap: 10px; }
+    .nav-brand span { color: var(--cyan); }
+    .nav-links { display: flex; align-items: center; gap: clamp(1.5rem,3vw,2.5rem); list-style: none; }
+    .nav-links a { color: var(--text-secondary); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--text); }
+    .nav-links a.active { color: var(--cyan); }
+    .nav-right { display: flex; align-items: center; gap: 12px; }
 
-    /* HERO */
-    .hero { padding: 148px 0 100px; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 24px; border-radius: 6px; font-size: 0.875rem; font-weight: 600; font-family: var(--font-body); text-decoration: none; transition: all 0.25s cubic-bezier(0.16,1,0.3,1); cursor: pointer; border: none; }
+    .btn-cyan { background: var(--cyan); color: var(--bg); }
+    .btn-cyan:hover { background: #33ebff; box-shadow: 0 0 30px rgba(0,229,255,0.3); transform: translateY(-1px); }
+    .btn-ghost { background: transparent; color: var(--text); border: 1px solid var(--border); }
+    .btn-ghost:hover { border-color: var(--cyan-dim); background: rgba(0,229,255,0.04); }
+    .mobile-toggle { display: none; background: none; border: none; color: var(--text); font-size: 1.5rem; cursor: pointer; }
+
+    /* ==================== TICKER TAPE ==================== */
+    .ticker-tape {
+      background: linear-gradient(90deg, rgba(0,229,255,0.05), transparent);
+      border-bottom: 1px solid var(--border);
+      padding: 8px 0;
+      overflow: hidden;
+      margin-top: 68px;
+    }
+    .ticker-content {
+      display: flex;
+      gap: 40px;
+      animation: tickerScroll 30s linear infinite;
+      white-space: nowrap;
+    }
+    .ticker-content:hover { animation-play-state: paused; }
+    @keyframes tickerScroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .ticker-item {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      padding: 4px 12px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .ticker-symbol { font-weight: 600; color: var(--text); }
+    .ticker-positive { color: var(--green); }
+    .ticker-negative { color: var(--red); }
+
+    /* ==================== SIGNAL BADGES ==================== */
+    .signal-badges {
+      position: fixed;
+      bottom: 40px;
+      right: 40px;
+      z-index: 999;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .signal-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      font-family: var(--font-mono);
+      animation: badgeFloat 0.6s ease-out forwards;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+    }
+    .signal-badge.buy { background: rgba(34,197,94,0.15); border: 1px solid var(--green); color: var(--green); }
+    .signal-badge.sell { background: rgba(239,68,68,0.15); border: 1px solid var(--red); color: var(--red); }
+    @keyframes badgeFloat {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes badgeFade {
+      0% { opacity: 1; }
+      100% { opacity: 0; }
+    }
+    .signal-badge.removing { animation: badgeFade 0.6s ease-out forwards; }
+
+    /* ==================== HERO ==================== */
+    .hero { padding: 120px 0 100px; }
     .hero-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 60px; align-items: center; }
     .hero-badge {
       display: inline-flex; align-items: center; gap: 8px;
@@ -161,7 +226,7 @@
     .hero p { font-size: 1.15rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 36px; max-width: 460px; }
     .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
 
-    /* DASHBOARD MOCK */
+    /* ==================== DASHBOARD/CHART ==================== */
     .dashboard {
       background: var(--surface); border: 1px solid var(--border); border-radius: 16px;
       overflow: hidden; position: relative;
@@ -197,401 +262,1125 @@
       letter-spacing: 0.06em; margin-top: 4px; font-family: var(--font-mono);
     }
 
-    .dash-chart { padding: 20px; height: 160px; position: relative; }
+    .dash-chart {
+      padding: 20px;
+      height: 300px;
+      position: relative;
+      background: var(--surface);
+    }
     .chart-canvas { width: 100%; height: 100%; }
 
-    .dash-signals {
-      border-top: 1px solid var(--border); padding: 0;
-    }
-    .signal-row {
-      display: grid; grid-template-columns: 80px 1fr 80px 80px 60px;
-      gap: 12px; padding: 10px 20px; border-bottom: 1px solid var(--border);
-      align-items: center; font-size: 0.8rem; transition: background 0.2s;
-    }
-    .signal-row:hover { background: var(--surface-raised); }
-    .signal-row:last-child { border-bottom: none; }
-    .signal-ticker { font-family: var(--font-mono); font-weight: 700; color: var(--text); }
-    .signal-strategy { color: var(--text-secondary); font-size: 0.75rem; }
-    .signal-price { font-family: var(--font-mono); color: var(--text-secondary); font-size: 0.78rem; }
-    .signal-badge {
-      font-size: 0.65rem; font-weight: 600; padding: 3px 10px;
-      border-radius: 100px; text-align: center; text-transform: uppercase;
-      letter-spacing: 0.04em;
-    }
-    .signal-badge.buy { background: rgba(34,197,94,0.1); color: var(--green); border: 1px solid rgba(34,197,94,0.2); }
-    .signal-badge.sell { background: rgba(239,68,68,0.1); color: var(--red); border: 1px solid rgba(239,68,68,0.2); }
-    .signal-badge.hold { background: rgba(249,115,22,0.1); color: var(--amber); border: 1px solid rgba(249,115,22,0.2); }
-    .signal-conf { font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted); }
+    /* ==================== STRATEGY CARDS ==================== */
+    section { padding: 80px 0; }
+    section:nth-child(even) { background: rgba(0,229,255,0.01); }
 
-    /* SECTIONS */
-    section { padding: 120px 0; }
-    .section-label { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--cyan); margin-bottom: 16px; }
-    .section-heading { font-family: var(--font-display); font-size: clamp(2rem,4vw,2.75rem); font-weight: 700; letter-spacing: -0.03em; line-height: 1.15; margin-bottom: 16px; }
-    .section-sub { font-size: 1.1rem; color: var(--text-secondary); max-width: 520px; line-height: 1.65; margin-bottom: 56px; }
+    .section-label {
+      display: inline-block;
+      font-family: var(--font-mono); font-size: 0.7rem; text-transform: uppercase;
+      color: var(--cyan); margin-bottom: 12px; letter-spacing: 0.1em;
+    }
+    .section-heading { font-family: var(--font-display); font-size: clamp(2rem,4vw,2.8rem); font-weight: 800; line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 12px; }
+    .section-subheading { color: var(--text-secondary); font-size: 1rem; margin-bottom: 48px; max-width: 600px; }
 
-    /* HOW IT WORKS */
-    .how-steps {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
+    .strategies-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
     }
-    .how-step {
-      background: var(--surface); border: 1px solid var(--border); border-radius: 14px;
-      padding: 36px 28px; transition: all 0.4s; position: relative; overflow: hidden;
+    .strategy-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s cubic-bezier(0.16,1,0.3,1);
+      cursor: pointer;
     }
-    .how-step::before {
-      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
-      background: linear-gradient(90deg, var(--cyan), var(--purple)); opacity: 0; transition: opacity 0.4s;
+    .strategy-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--cyan-dim), transparent);
+      opacity: 0;
+      transition: opacity 0.3s;
     }
-    .how-step:hover::before { opacity: 1; }
-    .how-step:hover { border-color: var(--border-glow); transform: translateY(-3px); box-shadow: 0 16px 48px rgba(0,0,0,0.3); }
-    .how-step .num { font-family: var(--font-mono); font-size: 0.8rem; color: var(--cyan); margin-bottom: 16px; }
-    .how-step h3 { font-family: var(--font-display); font-size: 1.3rem; font-weight: 700; margin-bottom: 10px; }
-    .how-step p { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6; }
+    .strategy-card:hover {
+      border-color: var(--cyan-dim);
+      background: var(--surface-raised);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 32px rgba(0,229,255,0.1);
+    }
+    .strategy-card:hover::before { opacity: 1; }
 
-    /* STRATEGIES */
-    .strat-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; }
-    .strat-group h3 {
-      font-family: var(--font-mono); font-size: 0.68rem; text-transform: uppercase;
-      letter-spacing: 0.08em; color: var(--text-muted); margin-bottom: 16px;
-      padding-bottom: 12px; border-bottom: 1px solid var(--border);
+    .card-sparkline {
+      height: 40px;
+      margin-bottom: 12px;
+      opacity: 0.7;
     }
-    .strat-item {
-      display: flex; gap: 10px; padding: 8px 0; font-size: 0.85rem;
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: start;
+      margin-bottom: 12px;
+    }
+    .card-name {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--text);
+    }
+    .card-category {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      padding: 3px 6px;
+      border-radius: 3px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 8px;
+    }
+    .card-category.momentum { background: rgba(0,229,255,0.15); color: var(--cyan); }
+    .card-category.meanrev { background: rgba(124,58,237,0.15); color: var(--purple); }
+    .card-category.breakout { background: rgba(34,197,94,0.15); color: var(--green); }
+    .card-category.pattern { background: rgba(245,158,11,0.15); color: var(--amber); }
+    .card-category.ai { background: rgba(239,68,68,0.15); color: var(--red); }
+
+    .card-details {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      display: none;
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px solid var(--border);
+    }
+    .strategy-card:hover .card-details { display: block; }
+    .detail-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 4px;
+    }
+    .detail-label { color: var(--text-secondary); }
+    .detail-value { color: var(--text); font-family: var(--font-mono); font-weight: 500; }
+
+    /* ==================== LIVE TERMINAL PREVIEW ==================== */
+    .terminal-section {
+      background: linear-gradient(135deg, rgba(0,229,255,0.05), rgba(124,58,237,0.05));
+      border-radius: 20px;
+      padding: 60px 0;
+    }
+    .terminal-widget {
+      background: #0a0d14;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      margin-top: 40px;
+    }
+    .terminal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 20px;
       border-bottom: 1px solid var(--border);
+      background: rgba(0,0,0,0.3);
     }
-    .strat-item:last-child { border-bottom: none; }
-    .strat-num { font-family: var(--font-mono); color: var(--cyan); font-weight: 700; font-size: 0.78rem; min-width: 22px; }
-    .strat-name { color: var(--text-secondary); }
+    .terminal-title {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--cyan);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+    .terminal-body {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1fr;
+      gap: 20px;
+      padding: 20px;
+    }
+    .terminal-chart {
+      height: 250px;
+      background: rgba(0,0,0,0.3);
+      border-radius: 8px;
+      border: 1px solid var(--border);
+    }
+    .terminal-table {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .terminal-table-header {
+      background: rgba(0,229,255,0.1);
+      padding: 10px;
+      border-bottom: 1px solid var(--border);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      color: var(--cyan);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .terminal-table-row {
+      padding: 10px;
+      border-bottom: 1px solid var(--border);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+    }
+    .terminal-table-row:last-child { border-bottom: none; }
+    .terminal-table-row:hover { background: rgba(0,229,255,0.05); }
+    .terminal-equity {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 15px;
+      background: rgba(0,0,0,0.3);
+    }
+    .terminal-equity-title {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 10px;
+    }
+    .terminal-cta {
+      text-align: center;
+      margin-top: 30px;
+    }
 
-    /* FEATURES */
-    .features-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 48px; align-items: start; }
-    .feature-list { list-style: none; }
+    /* ==================== FEATURES ==================== */
+    .features-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+    .feature-list {
+      list-style: none;
+    }
     .feature-item {
-      padding: 18px 0; border-bottom: 1px solid var(--border);
-      display: flex; gap: 14px; align-items: flex-start; transition: padding-left 0.3s;
+      display: flex;
+      gap: 16px;
+      margin-bottom: 24px;
+      font-size: 1rem;
+      line-height: 1.6;
     }
-    .feature-item:hover { padding-left: 8px; }
-    .feature-item:last-child { border-bottom: none; }
-    .feature-icon { color: var(--green); font-family: var(--font-mono); font-weight: 700; font-size: 0.9rem; min-width: 24px; }
-    .feature-text { font-size: 1rem; color: var(--text-secondary); }
+    .feature-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      flex-shrink: 0;
+      background: rgba(0,229,255,0.1);
+      border: 1px solid var(--cyan-dim);
+      border-radius: 6px;
+      color: var(--cyan);
+      font-weight: 700;
+      font-size: 1.2rem;
+    }
+    .feature-text { color: var(--text); }
+
     .feature-visual {
-      background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
-      padding: 24px; font-family: var(--font-mono); font-size: 0.78rem; line-height: 2;
-      color: var(--text-secondary); overflow-x: auto;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      line-height: 1.5;
+      overflow-x: auto;
     }
+    .feature-visual .comment { color: var(--text-muted); }
     .feature-visual .kw { color: var(--cyan); }
     .feature-visual .str { color: var(--green); }
     .feature-visual .num { color: var(--amber); }
-    .feature-visual .comment { color: var(--text-muted); }
 
-    /* ARCHITECTURE */
-    .arch-flow {
-      display: flex; justify-content: space-between; align-items: center;
-      gap: 12px; flex-wrap: wrap; max-width: 960px; margin: 0 auto;
+    /* ==================== ARCHITECTURE ==================== */
+    .arch-diagram {
+      position: relative;
+      height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 40px;
+    }
+    .arch-svg {
+      width: 100%;
+      height: 100%;
+      max-width: 900px;
     }
     .arch-box {
-      background: var(--surface); border: 1px solid var(--border); border-radius: 10px;
-      padding: 20px 28px; font-weight: 600; font-size: 0.9rem; min-width: 140px;
-      text-align: center; transition: all 0.3s;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px 24px;
+      background: var(--surface);
+      border: 2px solid var(--border);
+      border-radius: 8px;
+      font-weight: 600;
+      min-width: 120px;
+      text-align: center;
+      transition: all 0.3s;
     }
-    .arch-box:hover { border-color: var(--cyan-dim); box-shadow: 0 0 20px rgba(0,229,255,0.08); }
-    .arch-arrow { color: var(--text-muted); font-size: 1.2rem; }
+    .arch-box:hover {
+      border-color: var(--cyan);
+      background: var(--surface-raised);
+      box-shadow: 0 0 20px rgba(0,229,255,0.2);
+    }
 
-    /* METRICS */
-    .metrics-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    /* ==================== PERFORMANCE METRICS ==================== */
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+      margin-top: 40px;
+    }
     .metric-card {
-      background: var(--surface); border: 1px solid var(--border); border-radius: 14px;
-      padding: 32px; text-align: center; transition: all 0.4s;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 28px;
+      text-align: center;
+      transition: all 0.3s;
     }
-    .metric-card:hover { border-color: var(--border-glow); transform: translateY(-2px); }
-    .metric-val { font-family: var(--font-display); font-size: 2.5rem; font-weight: 800; color: var(--cyan); letter-spacing: -0.03em; }
-    .metric-lbl { color: var(--text-secondary); font-size: 0.9rem; margin-top: 6px; }
+    .metric-card:hover {
+      border-color: var(--cyan-dim);
+      background: var(--surface-raised);
+      box-shadow: 0 0 20px rgba(0,229,255,0.1);
+    }
+    .metric-val {
+      font-family: var(--font-display);
+      font-size: 2.4rem;
+      font-weight: 800;
+      color: var(--cyan);
+      margin-bottom: 8px;
+      font-variant-numeric: tabular-nums;
+    }
+    .metric-lbl {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      font-weight: 500;
+    }
 
-    /* PRICING */
-    .pricing-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    /* Performance comparison chart */
+    .perf-chart {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      margin-top: 40px;
+      height: 280px;
+      position: relative;
+    }
+    .perf-chart-svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    /* ==================== API PLAYGROUND ==================== */
+    .api-section {
+      background: linear-gradient(135deg, rgba(124,58,237,0.05), rgba(0,229,255,0.05));
+    }
+    .api-tabs {
+      display: flex;
+      gap: 12px;
+      margin-top: 24px;
+      border-bottom: 1px solid var(--border);
+    }
+    .api-tab {
+      padding: 12px 20px;
+      background: none;
+      border: none;
+      border-bottom: 2px solid transparent;
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .api-tab:hover { color: var(--text); }
+    .api-tab.active {
+      color: var(--cyan);
+      border-bottom-color: var(--cyan);
+    }
+
+    .api-block {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      margin-top: 20px;
+      position: relative;
+    }
+    .api-block-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+    .api-copy-btn {
+      background: rgba(0,229,255,0.1);
+      border: 1px solid var(--cyan-dim);
+      color: var(--cyan);
+      padding: 6px 12px;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-family: var(--font-mono);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .api-copy-btn:hover {
+      background: rgba(0,229,255,0.2);
+      box-shadow: 0 0 12px rgba(0,229,255,0.2);
+    }
+    .api-code {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      line-height: 1.6;
+      overflow-x: auto;
+      color: var(--text);
+    }
+    .api-code .kw { color: var(--cyan); }
+    .api-code .str { color: var(--green); }
+    .api-code .com { color: var(--text-muted); }
+    .api-response {
+      background: rgba(0,0,0,0.3);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px;
+      margin-top: 16px;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      line-height: 1.5;
+      color: var(--text-secondary);
+    }
+
+    /* ==================== LLM INTEGRATION SHOWCASE ==================== */
+    .llm-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 24px;
+      margin-top: 40px;
+    }
+    .llm-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 28px;
+      text-align: center;
+      transition: all 0.3s;
+      animation: float 3s ease-in-out infinite;
+    }
+    .llm-card:nth-child(2) { animation-delay: 0.1s; }
+    .llm-card:nth-child(3) { animation-delay: 0.2s; }
+    .llm-card:nth-child(4) { animation-delay: 0.3s; }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+    .llm-card:hover {
+      border-color: var(--cyan-dim);
+      background: var(--surface-raised);
+      box-shadow: 0 0 20px rgba(0,229,255,0.15);
+    }
+    .llm-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 12px;
+    }
+    .llm-name {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+    }
+    .llm-desc {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* ==================== PRICING ==================== */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin-top: 40px;
+    }
     .pricing-card {
-      background: var(--surface); border: 1px solid var(--border); border-radius: 16px;
-      padding: 28px 24px; transition: all 0.4s;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px;
+      position: relative;
+      transition: all 0.3s;
     }
-    .pricing-card.featured { border-color: var(--cyan-dim); box-shadow: 0 0 40px rgba(0,229,255,0.05); }
+    .pricing-card.featured {
+      border-color: var(--cyan-dim);
+      background: linear-gradient(135deg, rgba(0,229,255,0.08), rgba(124,58,237,0.08));
+      transform: scale(1.05);
+    }
     .pricing-card.featured::before {
-      content: 'Popular'; position: absolute; top: -1px; right: 20px;
-      background: var(--cyan); color: var(--bg); font-size: 0.6rem; font-weight: 700;
-      padding: 4px 10px; border-radius: 0 0 6px 6px; text-transform: uppercase; letter-spacing: 0.06em;
+      content: 'Most Popular';
+      position: absolute;
+      top: -12px;
+      left: 20px;
+      background: var(--cyan);
+      color: var(--bg);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
     }
-    .pricing-card { position: relative; overflow: hidden; }
-    .pricing-tier { font-family: var(--font-display); font-size: 1.15rem; font-weight: 700; margin-bottom: 4px; }
-    .pricing-tagline { color: var(--text-muted); font-size: 0.72rem; font-family: var(--font-mono); letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 18px; }
-    .pricing-price { font-family: var(--font-display); font-size: 1.9rem; font-weight: 800; color: var(--cyan); margin-bottom: 2px; letter-spacing: -0.02em; }
-    .pricing-price .currency { font-size: 1rem; color: var(--text-muted); font-weight: 500; }
-    .pricing-period { color: var(--text-muted); font-size: 0.78rem; margin-bottom: 22px; }
-    .pricing-features { list-style: none; margin-bottom: 24px; }
+    .pricing-card:hover {
+      border-color: var(--cyan-dim);
+      background: var(--surface-raised);
+      box-shadow: 0 0 30px rgba(0,229,255,0.15);
+    }
+    .pricing-tier {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .pricing-price {
+      font-size: 2.4rem;
+      font-weight: 800;
+      color: var(--cyan);
+      margin-bottom: 4px;
+    }
+    .pricing-period {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      margin-bottom: 24px;
+    }
+    .pricing-features {
+      list-style: none;
+      margin-bottom: 28px;
+    }
     .pricing-features li {
-      padding: 7px 0; border-bottom: 1px solid var(--border);
-      color: var(--text-secondary); font-size: 0.82rem; line-height: 1.45;
+      padding: 8px 0;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .pricing-features li::before {
+      content: '';
+      width: 5px;
+      height: 5px;
+      background: var(--cyan);
+      border-radius: 50%;
+      flex-shrink: 0;
     }
     .pricing-features li:last-child { border-bottom: none; }
-    .pricing-features li b { color: var(--text); font-weight: 600; }
+    .pricing-card .btn { width: 100%; justify-content: center; }
 
-    /* CONTROL PLANE / FLEET (stacked feature blocks) */
-    .plane-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-    .plane-card {
-      background: var(--surface); border: 1px solid var(--border); border-radius: 14px;
-      padding: 30px 26px; transition: all 0.4s; position: relative; overflow: hidden;
+    /* ==================== CTA SECTION ==================== */
+    .cta-section {
+      background: linear-gradient(135deg, rgba(0,229,255,0.1), rgba(124,58,237,0.1));
     }
-    .plane-card::before {
-      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
-      background: linear-gradient(90deg, var(--cyan), var(--purple)); opacity: 0; transition: opacity 0.4s;
-    }
-    .plane-card:hover::before { opacity: 1; }
-    .plane-card:hover { border-color: var(--border-glow); transform: translateY(-3px); box-shadow: 0 16px 48px rgba(0,0,0,0.3); }
-    .plane-card .tag {
-      display: inline-block; font-family: var(--font-mono); font-size: 0.62rem;
-      letter-spacing: 0.1em; text-transform: uppercase; color: var(--cyan);
-      padding: 3px 10px; border: 1px solid var(--cyan-dim); border-radius: 100px;
-      background: rgba(0,229,255,0.04); margin-bottom: 16px;
-    }
-    .plane-card h3 { font-family: var(--font-display); font-size: 1.2rem; font-weight: 700; margin-bottom: 10px; letter-spacing: -0.01em; }
-    .plane-card p { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 16px; }
-    .plane-card ul { list-style: none; padding: 0; margin: 0; }
-    .plane-card li {
-      font-size: 0.82rem; color: var(--text-secondary); padding: 6px 0;
-      border-bottom: 1px solid var(--border); display: flex; gap: 10px; align-items: flex-start;
-    }
-    .plane-card li:last-child { border-bottom: none; }
-    .plane-card li::before {
-      content: '—'; color: var(--cyan); font-family: var(--font-mono); flex-shrink: 0;
-    }
-
-    /* TIER TABLE */
-    .tier-table-wrap { overflow-x: auto; margin-top: 48px; border: 1px solid var(--border); border-radius: 14px; background: var(--surface); }
-    .tier-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; min-width: 640px; }
-    .tier-table th, .tier-table td { padding: 14px 18px; text-align: left; border-bottom: 1px solid var(--border); }
-    .tier-table th { font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); font-weight: 500; }
-    .tier-table tr:last-child td { border-bottom: none; }
-    .tier-table td:first-child { color: var(--text); font-weight: 500; }
-    .tier-table td { color: var(--text-secondary); }
-    .tier-table td.ok { color: var(--green); font-family: var(--font-mono); }
-    .tier-table td.no { color: var(--text-muted); font-family: var(--font-mono); }
-    .tier-table th:not(:first-child) { text-align: center; }
-    .tier-table td:not(:first-child) { text-align: center; font-family: var(--font-mono); font-size: 0.8rem; }
-    .tier-table thead tr { background: rgba(255,255,255,0.015); }
-
-    /* CTA */
-    .cta-section { text-align: center; }
     .cta-box {
-      background: var(--surface); border: 1px solid var(--border); border-radius: 24px;
-      padding: 72px 48px; position: relative; overflow: hidden;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 48px;
+      text-align: center;
     }
-    .cta-box::before {
-      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
-      background: linear-gradient(90deg, var(--cyan), var(--purple), var(--cyan));
-      background-size: 200% 100%; animation: shimmer 4s ease-in-out infinite;
-    }
-    @keyframes shimmer { 0%{background-position:200% 0} 100%{background-position:-200% 0} }
-    .cta-box h2 { font-family: var(--font-display); font-size: 2rem; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 12px; }
-    .cta-box p { color: var(--text-secondary); font-size: 1rem; margin-bottom: 32px; }
+    .cta-box h2 { font-size: 2rem; margin-bottom: 12px; }
+    .cta-box p { font-size: 1.05rem; color: var(--text-secondary); margin-bottom: 28px; max-width: 500px; margin-left: auto; margin-right: auto; }
 
-    /* FOOTER */
-    footer { padding: 72px 0 36px; border-top: 1px solid var(--border); }
-    .footer-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; margin-bottom: 56px; }
-    footer h4 { font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 16px; }
+    /* ==================== FOOTER ==================== */
+    footer {
+      background: var(--bg);
+      border-top: 1px solid var(--border);
+      padding: 60px 0 40px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+    footer h4 {
+      font-family: var(--font-display);
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: var(--text);
+    }
     footer ul { list-style: none; }
-    footer li { margin-bottom: 10px; }
-    footer a { color: var(--text-secondary); text-decoration: none; font-size: 0.88rem; transition: color 0.2s; }
-    footer a:hover { color: var(--cyan); }
-    .footer-bottom { border-top: 1px solid var(--border); padding-top: 24px; font-size: 0.75rem; color: var(--text-muted); display: flex; justify-content: space-between; }
-
-    @media (max-width: 900px) {
-      .hero-grid { grid-template-columns: 1fr; gap: 48px; }
-      .how-steps { grid-template-columns: 1fr; }
-      .strat-grid { grid-template-columns: repeat(2, 1fr); }
-      .features-grid { grid-template-columns: 1fr; }
-      .metrics-grid { grid-template-columns: 1fr 1fr; }
-      .pricing-grid { grid-template-columns: 1fr; }
-      .arch-flow { flex-direction: column; }
-      .arch-arrow { transform: rotate(90deg); }
-      .footer-grid { grid-template-columns: 1fr 1fr; }
-      .dash-metrics { grid-template-columns: repeat(2, 1fr); }
-      .signal-row { grid-template-columns: 60px 1fr 60px; }
-      .signal-price, .signal-conf { display: none; }
+    footer li {
+      margin-bottom: 8px;
     }
-    @media (max-width: 600px) {
+    footer a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+    footer a:hover { color: var(--cyan); }
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    /* ==================== RESPONSIVE ==================== */
+    @media (max-width: 768px) {
+      .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+      .features-grid { grid-template-columns: 1fr; }
+      .strategies-grid { grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); }
+      .dash-metrics { grid-template-columns: repeat(2, 1fr); }
+      .terminal-body { grid-template-columns: 1fr; }
+      .pricing-card.featured { transform: scale(1); }
+      .footer-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
+      section { padding: 50px 0; }
       .nav-links { display: none; }
       .mobile-toggle { display: block; }
-      .strat-grid { grid-template-columns: 1fr; }
-      .metrics-grid { grid-template-columns: 1fr; }
-      .footer-grid { grid-template-columns: 1fr; }
-      .footer-bottom { flex-direction: column; gap: 8px; }
-      .plane-grid { grid-template-columns: 1fr; }
+      .hero { padding: 100px 0 60px; }
     }
   </style>
 </head>
+
 <body>
-  <div class="mesh-bg"><div class="mesh-orb"></div><div class="mesh-orb"></div></div>
+  <div class="mesh-bg">
+    <div class="mesh-orb"></div>
+    <div class="mesh-orb"></div>
+  </div>
   <div class="grid-pattern"></div>
 
-  <div class="nav-wrap">
-    <nav class="nav-pill" role="navigation">
-      <a href="index.html" class="nav-brand" aria-label="Proxiant home">
-        <svg class="nav-logo" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <defs><linearGradient id="nlg-pa" x1="9" y1="7" x2="32" y2="33" gradientUnits="userSpaceOnUse"><stop stop-color="#00e5ff"/><stop offset="1" stop-color="#A78BFA"/></linearGradient></defs>
-          <rect width="40" height="40" rx="10" fill="rgba(0,229,255,0.06)"/>
-          <ellipse cx="21" cy="17" rx="13" ry="11" stroke="rgba(0,229,255,0.2)" stroke-width="0.75" stroke-dasharray="3 2" fill="none"><animateTransform attributeName="transform" type="rotate" from="0 21 17" to="360 21 17" dur="14s" repeatCount="indefinite"/></ellipse>
-          <path d="M10 8v24" stroke="white" stroke-width="3.5" stroke-linecap="round"/>
-          <path d="M10 8h10c7 0 12 4 12 9s-5 9-12 9H10" stroke="url(#nlg-pa)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-          <circle r="2.5" fill="#00e5ff"><animateMotion dur="3s" repeatCount="indefinite" path="M10,17 Q10,7 20,7 Q31,7 31,17 Q31,26 20,26 Q10,26 10,17"/><animate attributeName="fill" values="#00e5ff;#A78BFA;#00e5ff" dur="6s" repeatCount="indefinite"/><animate attributeName="r" values="2.5;1.8;2.5" dur="3s" repeatCount="indefinite"/></circle>
-        </svg>
-        Proxiant<span>.</span>
-      </a>
-      <ul class="nav-links" role="list">
-        <li class="nav-link"><a href="index.html"><span class="top">Home</span><span class="btm">Home</span></a></li>
-        <li class="nav-link"><a href="solutions.html"><span class="top">Solutions</span><span class="btm">Solutions</span></a></li>
-        <li class="nav-link active"><a href="labs.html"><span class="top">Labs</span><span class="btm">Labs</span></a></li>
-        <li class="nav-link"><a href="#pricing"><span class="top">Pricing</span><span class="btm">Pricing</span></a></li>
-      </ul>
-      <div class="nav-end">
-        <a href="#contact" class="btn btn-cyan">Get in touch</a>
-        <button class="mobile-toggle" id="mobToggle" aria-label="Open menu" aria-expanded="false">
-          <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><path d="M3 6h16M3 11h16M3 16h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
-        </button>
-      </div>
-    </nav>
-  </div>
-  <div class="mob-menu" id="mobMenu" role="dialog" aria-label="Navigation">
-    <a href="index.html">Home</a>
-    <a href="solutions.html">Solutions</a>
-    <a href="labs.html">Labs</a>
-    <a href="#pricing">Pricing</a>
-    <a href="#contact" class="btn btn-cyan" style="border-radius:9px;justify-content:center;">Get in touch</a>
+  <!-- TICKER TAPE -->
+  <div class="ticker-tape">
+    <div class="ticker-content">
+      <span class="ticker-item"><span class="ticker-symbol">AAPL</span> <span class="ticker-positive">+1.23%</span></span>
+      <span class="ticker-item"><span class="ticker-symbol">GOOGL</span> <span class="ticker-negative">-0.45%</span></span>
+      <span class="ticker-item"><span class="ticker-symbol">MSFT</span> <span class="ticker-positive">+2.1%</span></span>
+      <span class="ticker-item"><span class="ticker-symbol">TSLA</span> <span class="ticker-negative">-1.8%</span></span>
+      <span class="ticker-item"><span class="ticker-symbol">NVDA</span> <span class="ticker-positive">+3.2%</span></span>
+      <span class="ticker-item"><span class="ticker-symbol">META</span> <span class="ticker-positive">+0.9%</span></span>
+      <!-- Duplicate for seamless loop -->
+      <span class="ticker-item"><span class="ticker-symbol">AAPL</span> <span class="ticker-positive">+1.23%</span></span>
+      <span class="ticker-item"><span class="ticker-symbol">GOOGL</span> <span class="ticker-negative">-0.45%</span></span>
+      <span class="ticker-item"><span class="ticker-symbol">MSFT</span> <span class="ticker-positive">+2.1%</span></span>
+      <span class="ticker-item"><span class="ticker-symbol">TSLA</span> <span class="ticker-negative">-1.8%</span></span>
+      <span class="ticker-item"><span class="ticker-symbol">NVDA</span> <span class="ticker-positive">+3.2%</span></span>
+      <span class="ticker-item"><span class="ticker-symbol">META</span> <span class="ticker-positive">+0.9%</span></span>
+    </div>
   </div>
 
-  <!-- HERO -->
-  <section class="hero" id="platform">
-    <div class="wrap hero-grid">
-      <div class="reveal">
-        <div class="hero-badge"><span class="dot"></span> Phase 2 · Enterprise Control Plane Live</div>
-        <h1>Enterprise <em>AI Trading</em>. Multi-tenant. Metered. Observed.</h1>
-        <p>ProxiAlpha pairs 15 quantitative strategies and multi-LLM consensus with a production control plane: Clerk SSO, Postgres RLS, Stripe metered billing, and a customer agent fleet you run on your own hardware.</p>
-        <div class="hero-actions">
-          <a href="#contact" class="btn btn-cyan">Request Access &rarr;</a>
-          <a href="#control-plane" class="btn btn-ghost">See the Control Plane</a>
-        </div>
-      </div>
+  <!-- SIGNAL BADGES -->
+  <div class="signal-badges" id="signalBadges"></div>
 
-      <!-- LIVE TRADING TERMINAL MOCK -->
-      <div class="dashboard reveal reveal-delay-2">
-        <div class="dash-header">
-          <div style="display:flex;align-items:center;gap:8px;">
-            <span class="dash-title">org_acme · ProxiAlpha Terminal</span>
-            <span style="font-family:var(--font-mono);font-size:0.6rem;padding:2px 8px;border-radius:3px;background:rgba(124,58,237,0.14);color:#a78bfa;border:1px solid rgba(124,58,237,0.25);letter-spacing:0.08em;">PRO</span>
-            <span style="font-family:var(--font-mono);font-size:0.6rem;padding:2px 8px;border-radius:3px;background:rgba(38,166,154,0.12);color:#26a69a;border:1px solid rgba(38,166,154,0.2);letter-spacing:0.08em;">PAPER</span>
-          </div>
-          <span class="dash-status"><span class="dot"></span> Live</span>
+  <!-- NAV -->
+  <header id="header">
+    <div class="wrap">
+      <div class="nav-inner">
+        <div class="nav-left">
+          <a href="index.html" class="nav-brand">← <span>Proxiant</span></a>
+          <nav class="nav-links">
+            <a href="#strategies">Strategies</a>
+            <a href="#features">Features</a>
+            <a href="#api">API</a>
+            <a href="#pricing">Pricing</a>
+          </nav>
         </div>
-        <div class="dash-metrics">
-          <div class="dash-metric"><div class="val green" id="winRate">0%</div><div class="lbl">Win Rate</div></div>
-          <div class="dash-metric"><div class="val cyan" id="signalCount">0</div><div class="lbl">Signals used</div></div>
-          <div class="dash-metric"><div class="val">3 / 15</div><div class="lbl">Agents online</div></div>
-          <div class="dash-metric"><div class="val green">1.92</div><div class="lbl">Sharpe</div></div>
-        </div>
-        <div class="dash-chart" style="position:relative;">
-          <canvas class="chart-canvas" id="liveChart"></canvas>
-          <div style="position:absolute;top:12px;left:16px;display:flex;align-items:center;gap:8px;">
-            <span style="font-family:var(--font-mono);font-size:0.75rem;font-weight:700;color:var(--text);">COIN</span>
-            <span style="font-family:var(--font-mono);font-size:0.7rem;color:var(--text-secondary);">$215.30</span>
-            <span style="font-family:var(--font-mono);font-size:0.65rem;color:#ef5350;">-1.10%</span>
-          </div>
-          <div style="position:absolute;top:12px;right:16px;display:flex;gap:4px;">
-            <span style="font-family:var(--font-mono);font-size:0.6rem;padding:2px 6px;border-radius:3px;background:rgba(41,98,255,0.12);color:#2962ff;">1D</span>
-            <span style="font-family:var(--font-mono);font-size:0.6rem;padding:2px 6px;border-radius:3px;color:var(--text-muted);">1W</span>
-            <span style="font-family:var(--font-mono);font-size:0.6rem;padding:2px 6px;border-radius:3px;color:var(--text-muted);">1M</span>
-            <span style="font-family:var(--font-mono);font-size:0.6rem;padding:2px 6px;border-radius:3px;color:var(--text-muted);">3M</span>
-          </div>
-        </div>
-        <div class="dash-signals">
-          <div class="signal-row">
-            <span class="signal-ticker">COIN</span>
-            <span class="signal-strategy">DipBuyer + Technical + AI</span>
-            <span class="signal-price">$215.30</span>
-            <span class="signal-badge buy">Strong Buy</span>
-            <span class="signal-conf">0.92</span>
-          </div>
-          <div class="signal-row">
-            <span class="signal-ticker">NKE</span>
-            <span class="signal-strategy">Momentum + MeanRev</span>
-            <span class="signal-price">$71.40</span>
-            <span class="signal-badge buy">Strong Buy</span>
-            <span class="signal-conf">0.85</span>
-          </div>
-          <div class="signal-row">
-            <span class="signal-ticker">HIMS</span>
-            <span class="signal-strategy">Breakout + TrendFollow</span>
-            <span class="signal-price">$25.80</span>
-            <span class="signal-badge buy">Buy</span>
-            <span class="signal-conf">0.76</span>
-          </div>
-          <div class="signal-row">
-            <span class="signal-ticker">MSTR</span>
-            <span class="signal-strategy">AI_Claude + Scalping</span>
-            <span class="signal-price">$1,685.00</span>
-            <span class="signal-badge hold">Hold</span>
-            <span class="signal-conf">0.50</span>
-          </div>
+        <div class="nav-right">
+          <a href="terminal.html" class="btn btn-cyan">Launch Terminal</a>
+          <button class="mobile-toggle">☰</button>
         </div>
       </div>
     </div>
-  </section>
+  </header>
 
-  <!-- HOW IT WORKS -->
-  <section>
+  <!-- HERO -->
+  <section class="hero">
     <div class="wrap">
-      <div class="section-label reveal">How it works</div>
-      <h2 class="section-heading reveal">Sign in. Enroll an agent. Trade.</h2>
-      <p class="section-sub reveal">Clerk SSO into the control plane, mint a one-shot install token, drop the agent on your box — signals and fills flow back through a metered, tenant-isolated pipeline.</p>
-      <div class="how-steps">
-        <div class="how-step reveal reveal-delay-1"><div class="num">01</div><h3>Sign in via SSO</h3><p>Clerk-backed auth with JIT user provisioning. Each sign-in resolves your org, tier, and entitlements from Postgres with row-level security enforced end-to-end.</p></div>
-        <div class="how-step reveal reveal-delay-2"><div class="num">02</div><h3>Enroll an agent</h3><p>Mint a single-use install token from the dashboard. The ProxiAlpha agent exchanges it for a short-lived JWT, phones home on a heartbeat, and can be revoked or rotated per host.</p></div>
-        <div class="how-step reveal reveal-delay-3"><div class="num">03</div><h3>Trade &amp; meter</h3><p>Signals, backtests, and fills stream through the control plane. Consumables decrement atomically, caps gate before execution, and Stripe is metered idempotently on an hourly cron.</p></div>
+      <div class="hero-grid">
+        <div>
+          <div class="hero-badge reveal">
+            <span class="dot"></span>
+            Live charts
+          </div>
+          <h1 class="reveal">Trade Smarter with <em>AI-Powered Signals</em></h1>
+          <p class="reveal">Combine 15 quantitative strategies with Claude, GPT-4, Gemini, and Ollama for real-time trading signals. Backtest, paper trade, and execute with confidence.</p>
+          <div class="hero-actions reveal">
+            <a href="mailto:sendpavan@gmail.com" class="btn btn-cyan">Get Started</a>
+            <a href="terminal.html" class="btn btn-ghost">Launch Terminal</a>
+          </div>
+        </div>
+        <div class="dashboard reveal">
+          <div class="dash-header">
+            <div class="dash-title">Live Market Data</div>
+            <div class="dash-status"><span class="dot"></span>Real-time</div>
+          </div>
+          <div class="dash-metrics">
+            <div class="dash-metric">
+              <div class="val cyan">68.2%</div>
+              <div class="lbl">Win Rate</div>
+            </div>
+            <div class="dash-metric">
+              <div class="val green">2.4</div>
+              <div class="lbl">Sharpe Ratio</div>
+            </div>
+            <div class="dash-metric">
+              <div class="val amber">12.3%</div>
+              <div class="lbl">Max Drawdown</div>
+            </div>
+            <div class="dash-metric">
+              <div class="val green">94.2%</div>
+              <div class="lbl">Uptime</div>
+            </div>
+          </div>
+          <div class="dash-chart">
+            <svg id="heroChart" class="chart-canvas"></svg>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- STRATEGIES -->
-  <section>
+  <section id="strategies">
     <div class="wrap">
       <div class="section-label reveal">Strategies</div>
-      <h2 class="section-heading reveal">15 Built-In Strategies</h2>
-      <p class="section-sub reveal">From momentum to AI-enhanced consensus, every angle covered.</p>
-      <div class="strat-grid reveal">
-        <div class="strat-group">
-          <h3>Momentum</h3>
-          <div class="strat-item"><span class="strat-num">1</span><span class="strat-name">RSI Divergence</span></div>
-          <div class="strat-item"><span class="strat-num">2</span><span class="strat-name">MACD Crossover</span></div>
-          <div class="strat-item"><span class="strat-num">3</span><span class="strat-name">Stochastic Pop</span></div>
-          <div class="strat-item"><span class="strat-num">4</span><span class="strat-name">ADX Breakout</span></div>
+      <h2 class="section-heading reveal">15 Powerful Strategies</h2>
+      <p class="section-subheading reveal">Mix and match momentum, mean reversion, breakout, and pattern recognition strategies, all enhanced with LLM analysis.</p>
+
+      <div class="strategies-grid reveal">
+        <div class="strategy-card">
+          <div class="card-category momentum">Momentum</div>
+          <div class="card-header">
+            <div class="card-name">Trend Follow</div>
+          </div>
+          <svg class="card-sparkline" viewBox="0 0 100 40" preserveAspectRatio="none">
+            <polyline points="0,30 10,28 20,25 30,20 40,15 50,12 60,18 70,22 80,20 90,25 100,30" fill="none" stroke="#00e5ff" stroke-width="1" opacity="0.7"/>
+          </svg>
+          <div class="card-details">
+            <div class="detail-row">
+              <span class="detail-label">Win Rate</span>
+              <span class="detail-value">62%</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label">Sharpe</span>
+              <span class="detail-value">1.8</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label">Max DD</span>
+              <span class="detail-value">-14%</span>
+            </div>
+          </div>
         </div>
-        <div class="strat-group">
-          <h3>Mean Reversion</h3>
-          <div class="strat-item"><span class="strat-num">5</span><span class="strat-name">Bollinger Bounce</span></div>
-          <div class="strat-item"><span class="strat-num">6</span><span class="strat-name">VWAP Reversion</span></div>
-          <div class="strat-item"><span class="strat-num">7</span><span class="strat-name">Keltner Squeeze</span></div>
+
+        <div class="strategy-card">
+          <div class="card-category momentum">Momentum</div>
+          <div class="card-header">
+            <div class="card-name">DipBuyer</div>
+          </div>
+          <svg class="card-sparkline" viewBox="0 0 100 40" preserveAspectRatio="none">
+            <polyline points="0,25 10,22 20,18 30,15 40,20 50,18 60,15 70,12 80,8 90,10 100,12" fill="none" stroke="#00e5ff" stroke-width="1" opacity="0.7"/>
+          </svg>
+          <div class="card-details">
+            <div class="detail-row">
+              <span class="detail-label">Win Rate</span>
+              <span class="detail-value">71%</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label">Sharpe</span>
+              <span class="detail-value">2.1</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label">Max DD</span>
+              <span class="detail-value">-9%</span>
+            </div>
+          </div>
         </div>
-        <div class="strat-group">
-          <h3>Breakout</h3>
-          <div class="strat-item"><span class="strat-num">8</span><span class="strat-name">Volume Breakout</span></div>
-          <div class="strat-item"><span class="strat-num">9</span><span class="strat-name">Range Expansion</span></div>
-          <div class="strat-item"><span class="strat-num">10</span><span class="strat-name">Opening Range</span></div>
+
+        <div class="strategy-card">
+          <div class="card-category momentum">Momentum</div>
+          <div class="card-header">
+            <div class="card-name">RSI Extremes</div>
+          </div>
+          <svg class="card-sparkline" viewBox="0 0 100 40" preserveAspectRatio="none">
+            <polyline points="0,15 10,18 20,22 30,25 40,20 50,18 60,15 70,12 80,18 90,22 100,20" fill="none" stroke="#00e5ff" stroke-width="1" opacity="0.7"/>
+          </svg>
+          <div class="card-details">
+            <div class="detail-row">
+              <span class="detail-label">Win Rate</span>
+              <span class="detail-value">65%</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label">Sharpe</span>
+              <span class="detail-value">1.9</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label">Max DD</span>
+              <span class="detail-value">-11%</span>
+            </div>
+          </div>
         </div>
-        <div class="strat-group">
-          <h3>Pattern</h3>
-          <div class="strat-item"><span class="strat-num">11</span><span class="strat-name">Harmonic Patterns</span></div>
-          <div class="strat-item"><span class="strat-num">12</span><span class="strat-name">Candlestick Recog</span></div>
-          <div class="strat-item"><span class="strat-num">13</span><span class="strat-name">Support/Resistance</span></div>
+
+        <div class="strategy-card">
+          <div class="card-category momentum">Momentum</div>
+          <div class="card-header">
+            <div class="card-name">MACD Signal</div>
+          </div>
+          <svg class="card-sparkline" viewBox="0 0 100 40" preserveAspectRatio="none">
+            <polyline points="0,20 10,18 20,15 30,18 40,22 50,20 60,18 70,15 80,12 90,15 100,18" fill="none" stroke="#00e5ff" stroke-width="1" opacity="0.7"/>
+          </svg>
+          <div class="card-details">
+            <div class="detail-row">
+              <span class="detail-label">Win Rate</span>
+              <span class="detail-label">58%</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label">Sharpe</span>
+              <span class="detail-value">1.6</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label">Max DD</span>
+              <span class="detail-value">-16%</span>
+            </div>
+          </div>
         </div>
-        <div class="strat-group">
-          <h3>AI-Enhanced</h3>
-          <div class="strat-item"><span class="strat-num">14</span><span class="strat-name">LLM Sentiment</span></div>
-          <div class="strat-item"><span class="strat-num">15</span><span class="strat-name">Multi-Model Consensus</span></div>
+
+        <div class="strategy-card">
+          <div class="card-category meanrev">Mean Reversion</div>
+          <div class="card-header">
+            <div class="card-name">Bollinger Bounce</div>
+          </div>
+          <svg class="card-sparkline" viewBox="0 0 100 40" preserveAspectRatio="none">
+            <polyline points="0,35 10,32 20,28 30,25 40,20 50,22 60,25 70,28 80,30 90,32 100,35" fill="none" stroke="#7c3aed" stroke-width="1" opacity="0.7"/>
+          </svg>
+          <div class="card-details">
+            <div class="detail-row">
+              <span class="detail-label">Win Rate</span>
+              <span class="detail-value">69%</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label">Sharpe</span>
+              <span class="detail-value">2.2</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label">Max DD</span>
+              <span class="detail-value">-8%</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="strategy-card">
+          <div class="card-category meanrev">Mean Reversion</div>
+          <div class="card-header">
+            <div class="card-name">VWAP Reversion</div>
+          </div>
+          <svg class="card-sparkline" viewBox="0 0 100 40" preserveAspectRatio="none">
+            <polyline points="0,18 10,20 20,22 30,24 40,22 50,20 60,18 70,20 80,22 90,20 100,18" fill="none" stroke="#7c3aed" stroke-width="1" opacity="0.7"/>
+          </svg>
+          <div class="card-details">
+            <div class="detail-row">
+              <span class="detail-label">Win Rate</span>
+              <span class="detail-value">64%</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label">Sharpe</span>
+              <span class="detail-value">1.9</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label">Max DD</span>
+              <span class="detail-value">-12%</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="strategy-card">
+          <div class="card-category meanrev">Mean Reversion</div>
+          <div class="card-header">
+            <div class="card-name">Keltner Squeeze</div>
+          </div>
+          <svg class="card-sparkline" viewBox="0 0 100 40" preserveAspectRatio="none">
+            <polyline points="0,22 10,20 20,18 30,20 40,22 50,20 60,18 70,20 80,22 90,20 100,22" fill="none" stroke="#7c3aed" stroke-width="1" opacity="0.7"/>
+          </svg>
+          <div class="card-details">
+            <div class="detail-row">
+              <span class="detail-label">Win Rate</span>
+              <span class="detail-value">66%</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label">Sharpe</span>
+              <span class="detail-value">2.0</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label">Max DD</span>
+              <span class="detail-value">-10%</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="strategy-card">
+          <div class="card-category breakout">Breakout</div>
+          <div class="card-header">
+            <div class="card-name">Volume Breakout</div>
+          </div>
+          <svg class="card-sparkline" viewBox="0 0 100 40" preserveAspectRatio="none">
+            <polyline points="0,30 10,28 20,25 30,20 40,12 50,5 60,8 70,15 80,22 90,28 100,30" fill="none" stroke="#22c55e" stroke-width="1" opacity="0.7"/>
+          </svg>
+          <div class="card-details">
+            <div class="detail-row">
+              <span class="detail-label">Win Rate</span>
+              <span class="detail-value">61%</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label">Sharpe</span>
+              <span class="detail-value">1.7</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label">Max DD</span>
+              <span class="detail-value">-15%</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="strategy-card">
+          <div class="card-category breakout">Breakout</div>
+          <div class="card-header">
+            <div class="card-name">Range Expansion</div>
+          </div>
+          <svg class="card-sparkline" viewBox="0 0 100 40" preserveAspectRatio="none">
+            <polyline points="0,25 10,24 20,22 30,18 40,10 50,8 60,10 70,18 80,25 90,28 100,30" fill="none" stroke="#22c55e" stroke-width="1" opacity="0.7"/>
+          </svg>
+          <div class="card-details">
+            <div class="detail-row">
+              <span class="detail-label">Win Rate</span>
+              <span class="detail-value">60%</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label">Sharpe</span>
+              <span class="detail-value">1.5</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label">Max DD</span>
+              <span class="detail-value">-18%</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="strategy-card">
+          <div class="card-category breakout">Breakout</div>
+          <div class="card-header">
+            <div class="card-name">Opening Range</div>
+          </div>
+          <svg class="card-sparkline" viewBox="0 0 100 40" preserveAspectRatio="none">
+            <polyline points="0,20 10,15 20,10 30,8 40,10 50,15 60,18 70,15 80,12 90,15 100,20" fill="none" stroke="#22c55e" stroke-width="1" opacity="0.7"/>
+          </svg>
+          <div class="card-details">
+            <div class="detail-row">
+              <span class="detail-label">Win Rate</span>
+              <span class="detail-value">63%</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label">Sharpe</span>
+              <span class="detail-value">1.8</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label">Max DD</span>
+              <span class="detail-value">-13%</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="strategy-card">
+          <div class="card-category pattern">Pattern</div>
+          <div class="card-header">
+            <div class="card-name">Harmonic Patterns</div>
+          </div>
+          <svg class="card-sparkline" viewBox="0 0 100 40" preserveAspectRatio="none">
+            <polyline points="0,30 10,25 20,20 30,18 40,20 50,25 60,28 70,25 80,20 90,22 100,25" fill="none" stroke="#f59e0b" stroke-width="1" opacity="0.7"/>
+          </svg>
+          <div class="card-details">
+            <div class="detail-row">
+              <span class="detail-label">Win Rate</span>
+              <span class="detail-value">59%</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label">Sharpe</span>
+              <span class="detail-value">1.4</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label">Max DD</span>
+              <span class="detail-value">-19%</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="strategy-card">
+          <div class="card-category pattern">Pattern</div>
+          <div class="card-header">
+            <div class="card-name">Candlestick Recog</div>
+          </div>
+          <svg class="card-sparkline" viewBox="0 0 100 40" preserveAspectRatio="none">
+            <polyline points="0,20 10,22 20,24 30,22 40,20 50,18 60,20 70,22 80,24 90,22 100,20" fill="none" stroke="#f59e0b" stroke-width="1" opacity="0.7"/>
+          </svg>
+          <div class="card-details">
+            <div class="detail-row">
+              <span class="detail-label">Win Rate</span>
+              <span class="detail-value">57%</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label">Sharpe</span>
+              <span class="detail-value">1.3</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label">Max DD</span>
+              <span class="detail-value">-20%</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="strategy-card">
+          <div class="card-category pattern">Pattern</div>
+          <div class="card-header">
+            <div class="card-name">Support/Resistance</div>
+          </div>
+          <svg class="card-sparkline" viewBox="0 0 100 40" preserveAspectRatio="none">
+            <polyline points="0,25 10,23 20,20 30,18 40,20 50,23 60,25 70,23 80,20 90,22 100,25" fill="none" stroke="#f59e0b" stroke-width="1" opacity="0.7"/>
+          </svg>
+          <div class="card-details">
+            <div class="detail-row">
+              <span class="detail-label">Win Rate</span>
+              <span class="detail-value">62%</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label">Sharpe</span>
+              <span class="detail-value">1.6</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label">Max DD</span>
+              <span class="detail-value">-14%</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="strategy-card">
+          <div class="card-category ai">AI-Enhanced</div>
+          <div class="card-header">
+            <div class="card-name">LLM Sentiment</div>
+          </div>
+          <svg class="card-sparkline" viewBox="0 0 100 40" preserveAspectRatio="none">
+            <polyline points="0,18 10,15 20,12 30,10 40,8 50,10 60,12 70,15 80,18 90,16 100,14" fill="none" stroke="#ef4444" stroke-width="1" opacity="0.7"/>
+          </svg>
+          <div class="card-details">
+            <div class="detail-row">
+              <span class="detail-label">Win Rate</span>
+              <span class="detail-value">70%</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label">Sharpe</span>
+              <span class="detail-value">2.3</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label">Max DD</span>
+              <span class="detail-value">-7%</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="strategy-card">
+          <div class="card-category ai">AI-Enhanced</div>
+          <div class="card-header">
+            <div class="card-name">Multi-Model Consensus</div>
+          </div>
+          <svg class="card-sparkline" viewBox="0 0 100 40" preserveAspectRatio="none">
+            <polyline points="0,15 10,12 20,10 30,8 40,6 50,8 60,10 70,12 80,15 90,12 100,10" fill="none" stroke="#ef4444" stroke-width="1" opacity="0.7"/>
+          </svg>
+          <div class="card-details">
+            <div class="detail-row">
+              <span class="detail-label">Win Rate</span>
+              <span class="detail-value">72%</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label">Sharpe</span>
+              <span class="detail-value">2.4</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label">Max DD</span>
+              <span class="detail-value">-6%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LIVE TERMINAL PREVIEW -->
+  <section class="terminal-section">
+    <div class="wrap">
+      <div class="section-label reveal">Live Platform</div>
+      <h2 class="section-heading reveal">See It In Action</h2>
+      <p class="section-subheading reveal">Experience the full trading terminal with real-time charts, signal analysis, and portfolio tracking.</p>
+
+      <div class="terminal-widget reveal">
+        <div class="terminal-header">
+          <span class="terminal-title">ProxiAlpha Trading Dashboard</span>
+        </div>
+        <div class="terminal-body">
+          <div class="terminal-chart">
+            <svg id="terminalChart" style="width: 100%; height: 100%;"></svg>
+          </div>
+          <div class="terminal-table">
+            <div class="terminal-table-header">
+              <div>Symbol</div>
+              <div>Signal</div>
+            </div>
+            <div class="terminal-table-row">
+              <div>AAPL</div>
+              <div style="color: var(--green);">BUY</div>
+            </div>
+            <div class="terminal-table-row">
+              <div>GOOGL</div>
+              <div style="color: var(--green);">BUY</div>
+            </div>
+            <div class="terminal-table-row">
+              <div>MSFT</div>
+              <div style="color: var(--cyan);">HOLD</div>
+            </div>
+            <div class="terminal-table-row">
+              <div>TSLA</div>
+              <div style="color: var(--red);">SELL</div>
+            </div>
+            <div class="terminal-table-row">
+              <div>NVDA</div>
+              <div style="color: var(--green);">BUY</div>
+            </div>
+          </div>
+          <div class="terminal-equity">
+            <div class="terminal-equity-title">Portfolio Growth</div>
+            <svg style="width: 100%; height: 200px;" viewBox="0 0 300 100" preserveAspectRatio="none">
+              <polyline points="0,80 30,70 60,55 90,45 120,40 150,35 180,30 210,25 240,20 270,15 300,10" fill="none" stroke="#00e5ff" stroke-width="2"/>
+              <polyline points="0,75 30,72 60,70 90,68 120,67 150,66 180,65 210,64 240,63 270,62 300,61" fill="none" stroke="#666" stroke-width="1" stroke-dasharray="3,3"/>
+            </svg>
+            <div style="font-size: 0.7rem; color: var(--text-muted); margin-top: 8px; text-align: center;">
+              <span style="color: var(--cyan); font-weight: 600;">ProxiAlpha</span> vs <span style="color: #666;">S&P 500</span>
+            </div>
+          </div>
+        </div>
+        <div class="terminal-cta">
+          <a href="terminal.html" class="btn btn-cyan">Launch Full Terminal →</a>
         </div>
       </div>
     </div>
@@ -686,7 +1475,7 @@
   </section>
 
   <!-- FEATURES -->
-  <section id="docs">
+  <section id="features">
     <div class="wrap">
       <div class="section-label reveal">Features</div>
       <h2 class="section-heading reveal">Every layer, production-grade.</h2>
@@ -735,83 +1524,267 @@
   <section>
     <div class="wrap" style="text-align:center;">
       <div class="section-label reveal">Architecture</div>
-      <h2 class="section-heading reveal">Control plane in the cloud. Agent on your box.</h2>
-      <p class="section-sub reveal" style="margin-left:auto;margin-right:auto;">Clerk SSO gates the FastAPI control plane. Postgres enforces tenancy with RLS. The customer agent phones home over JWT-authenticated HTTPS. Stripe is metered idempotently on an hourly cron.</p>
-      <div class="arch-flow reveal" style="margin-top:32px;">
-        <div class="arch-box">Clerk SSO</div>
-        <div class="arch-arrow">&rarr;</div>
-        <div class="arch-box">Control Plane<br><span style="font-family:var(--font-mono);font-size:0.65rem;color:var(--text-muted);font-weight:400;">FastAPI · RLS</span></div>
-        <div class="arch-arrow">&rarr;</div>
-        <div class="arch-box">Postgres 16<br><span style="font-family:var(--font-mono);font-size:0.65rem;color:var(--text-muted);font-weight:400;">pgcrypto · RLS</span></div>
-        <div class="arch-arrow">&rarr;</div>
-        <div class="arch-box">Stripe<br><span style="font-family:var(--font-mono);font-size:0.65rem;color:var(--text-muted);font-weight:400;">metered hourly</span></div>
-      </div>
-      <div class="arch-flow reveal" style="margin-top:24px;">
-        <div class="arch-box">Customer Agent<br><span style="font-family:var(--font-mono);font-size:0.65rem;color:var(--text-muted);font-weight:400;">JWT heartbeat</span></div>
-        <div class="arch-arrow">&rarr;</div>
-        <div class="arch-box">Signal Engine<br><span style="font-family:var(--font-mono);font-size:0.65rem;color:var(--text-muted);font-weight:400;">15 strategies</span></div>
-        <div class="arch-arrow">&rarr;</div>
-        <div class="arch-box">LLM Consensus<br><span style="font-family:var(--font-mono);font-size:0.65rem;color:var(--text-muted);font-weight:400;">Claude · GPT · Gemini</span></div>
-        <div class="arch-arrow">&rarr;</div>
-        <div class="arch-box">Broker<br><span style="font-family:var(--font-mono);font-size:0.65rem;color:var(--text-muted);font-weight:400;">Alpaca · Hyperliquid</span></div>
+      <h2 class="section-heading reveal">Simple, Scalable Architecture</h2>
+      <div class="arch-diagram reveal">
+        <svg class="arch-svg" viewBox="0 0 800 150" preserveAspectRatio="xMidYMid meet">
+          <!-- Data flow lines with animation -->
+          <defs>
+            <style>
+              .arch-line { stroke: var(--cyan); stroke-width: 2; fill: none; opacity: 0.5; }
+              .arch-pulse { animation: archPulse 2s ease-in-out infinite; }
+              @keyframes archPulse { 0%,100%{stroke-dashoffset:0} 50%{stroke-dashoffset:8} }
+            </style>
+          </defs>
+
+          <!-- Market Data -->
+          <rect x="20" y="50" width="120" height="50" fill="#0d1117" stroke="#00e5ff" stroke-width="2" rx="6"/>
+          <text x="80" y="78" text-anchor="middle" fill="#e6edf3" font-family="var(--font-body)" font-weight="600">Market Data</text>
+
+          <!-- Arrow 1 -->
+          <line x1="140" y1="75" x2="170" y2="75" class="arch-line arch-pulse" stroke-dasharray="4,4"/>
+
+          <!-- Strategy Engine -->
+          <rect x="170" y="50" width="140" height="50" fill="#0d1117" stroke="#00e5ff" stroke-width="2" rx="6"/>
+          <text x="240" y="78" text-anchor="middle" fill="#e6edf3" font-family="var(--font-body)" font-weight="600">Strategy Engine</text>
+
+          <!-- Arrow 2 -->
+          <line x1="310" y1="75" x2="340" y2="75" class="arch-line arch-pulse" stroke-dasharray="4,4" style="animation-delay: 0.2s"/>
+
+          <!-- LLM Analysis -->
+          <rect x="340" y="50" width="120" height="50" fill="#0d1117" stroke="#7c3aed" stroke-width="2" rx="6"/>
+          <text x="400" y="78" text-anchor="middle" fill="#e6edf3" font-family="var(--font-body)" font-weight="600">LLM Analysis</text>
+
+          <!-- Arrow 3 -->
+          <line x1="460" y1="75" x2="490" y2="75" class="arch-line arch-pulse" stroke-dasharray="4,4" style="animation-delay: 0.4s"/>
+
+          <!-- Signal Generation -->
+          <rect x="490" y="50" width="140" height="50" fill="#0d1117" stroke="#00e5ff" stroke-width="2" rx="6"/>
+          <text x="560" y="78" text-anchor="middle" fill="#e6edf3" font-family="var(--font-body)" font-weight="600">Signal Generation</text>
+
+          <!-- Arrow 4 -->
+          <line x1="630" y1="75" x2="660" y2="75" class="arch-line arch-pulse" stroke-dasharray="4,4" style="animation-delay: 0.6s"/>
+
+          <!-- Execution -->
+          <rect x="660" y="50" width="120" height="50" fill="#0d1117" stroke="#22c55e" stroke-width="2" rx="6"/>
+          <text x="720" y="78" text-anchor="middle" fill="#e6edf3" font-family="var(--font-body)" font-weight="600">Execution</text>
+        </svg>
       </div>
     </div>
   </section>
 
-  <!-- OBSERVABILITY -->
-  <section>
-    <div class="wrap">
-      <div class="section-label reveal">Observability</div>
-      <h2 class="section-heading reveal">Logs, metrics, traces. No vendor lock-in.</h2>
-      <p class="section-sub reveal">A single <code>install_observability()</code> call wires JSON logs, Prometheus-compatible counters and histograms, and an optional OpenTelemetry tracer into the FastAPI app. Works out of the box with any log aggregator and any OTel collector.</p>
-      <div class="plane-grid">
-        <div class="plane-card reveal reveal-delay-1">
-          <span class="tag">Logs</span>
-          <h3>Structured JSON</h3>
-          <p>Stdlib logging with a JSON formatter. Every line carries <code>request_id</code>, <code>org_id</code>, route template, method, status, and duration_ms — enriched via ContextVars so they propagate through async call stacks.</p>
-          <ul>
-            <li>ISO-8601 UTC timestamps with microsecond precision</li>
-            <li>Request ID generated or honored per-request</li>
-            <li><code>LOG_FORMAT=plain</code> escape hatch for local dev</li>
-            <li>Zero extra dependencies — pure stdlib</li>
-          </ul>
-        </div>
-        <div class="plane-card reveal reveal-delay-2">
-          <span class="tag">Metrics</span>
-          <h3>/metrics endpoint</h3>
-          <p>Prometheus exposition format served by FastAPI on <code>GET /metrics</code>. In-process counters and cumulative histograms, route-labelled at low cardinality via <code>request.scope["route"].path</code>.</p>
-          <ul>
-            <li><code>http_requests_total</code> by route, method, status</li>
-            <li><code>http_request_duration_seconds</code> histogram (10 buckets)</li>
-            <li><code>cron_job_runs_total</code> by job and outcome</li>
-            <li>Advisory-locked cron records ok / error / skipped_locked</li>
-          </ul>
-        </div>
-        <div class="plane-card reveal reveal-delay-3">
-          <span class="tag">Traces</span>
-          <h3>OpenTelemetry hook</h3>
-          <p>If <code>opentelemetry</code> is importable, the middleware opens a span per request and stamps route, method, and status as span attributes. If not, it no-ops — the dependency is strictly optional.</p>
-          <ul>
-            <li>Lazy import, cached tracer handle</li>
-            <li>Span attributes match log enrichment</li>
-            <li>Works with any OTel-compatible backend</li>
-            <li>SOC 2 observability controls ready on day one</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- METRICS -->
+  <!-- PERFORMANCE METRICS -->
   <section>
     <div class="wrap">
       <div class="section-label reveal">At a glance</div>
       <h2 class="section-heading reveal">The numbers that matter.</h2>
       <div class="metrics-grid reveal" style="margin-top:48px;">
-        <div class="metric-card"><div class="metric-val">15</div><div class="metric-lbl">Concurrent strategies</div></div>
-        <div class="metric-card"><div class="metric-val">4</div><div class="metric-lbl">LLM providers</div></div>
-        <div class="metric-card"><div class="metric-val">RLS</div><div class="metric-lbl">Tenant isolation</div></div>
-        <div class="metric-card"><div class="metric-val">/metrics</div><div class="metric-lbl">Prometheus native</div></div>
+        <div class="metric-card">
+          <div class="metric-val" data-target="15">15</div>
+          <div class="metric-lbl">Concurrent strategies</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-val" data-target="100">&lt;100ms</div>
+          <div class="metric-lbl">Signal generation</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-val" data-target="4">4</div>
+          <div class="metric-lbl">LLM providers</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-val" data-target="99.5">99.5%</div>
+          <div class="metric-lbl">Uptime</div>
+        </div>
+      </div>
+
+      <div class="perf-chart reveal">
+        <svg class="perf-chart-svg" viewBox="0 0 500 200" preserveAspectRatio="xMidYMid meet">
+          <defs>
+            <linearGradient id="perfGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" style="stop-color:#00e5ff;stop-opacity:0.3" />
+              <stop offset="100%" style="stop-color:#00e5ff;stop-opacity:0" />
+            </linearGradient>
+          </defs>
+
+          <!-- Grid -->
+          <line x1="40" y1="20" x2="40" y2="160" stroke="#484f58" stroke-width="1" opacity="0.3"/>
+          <line x1="40" y1="160" x2="480" y2="160" stroke="#484f58" stroke-width="1" opacity="0.3"/>
+
+          <!-- ProxiAlpha line -->
+          <polyline points="40,140 80,130 120,115 160,95 200,75 240,55 280,40 320,35 360,30 400,28 440,26 480,25"
+                    fill="none" stroke="#00e5ff" stroke-width="3"/>
+          <polyline points="40,140 80,130 120,115 160,95 200,75 240,55 280,40 320,35 360,30 400,28 440,26 480,25"
+                    fill="url(#perfGradient)" stroke="none"/>
+
+          <!-- S&P 500 line (dashed) -->
+          <polyline points="40,145 80,140 120,132 160,120 200,105 240,92 280,82 320,75 360,70 400,68 440,66 480,65"
+                    fill="none" stroke="#666" stroke-width="2" stroke-dasharray="5,5"/>
+
+          <!-- Y axis labels -->
+          <text x="35" y="165" text-anchor="end" fill="#8b949e" font-size="11">0%</text>
+          <text x="35" y="90" text-anchor="end" fill="#8b949e" font-size="11">50%</text>
+          <text x="35" y="15" text-anchor="end" fill="#8b949e" font-size="11">100%</text>
+
+          <!-- X axis labels -->
+          <text x="40" y="180" text-anchor="middle" fill="#8b949e" font-size="11">Jan</text>
+          <text x="200" y="180" text-anchor="middle" fill="#8b949e" font-size="11">Jul</text>
+          <text x="480" y="180" text-anchor="middle" fill="#8b949e" font-size="11">Dec</text>
+
+          <!-- Legend -->
+          <line x1="320" y1="15" x2="340" y2="15" stroke="#00e5ff" stroke-width="2"/>
+          <text x="345" y="20" fill="#e6edf3" font-size="12" font-weight="500">ProxiAlpha</text>
+
+          <line x1="320" y1="30" x2="340" y2="30" stroke="#666" stroke-width="2" stroke-dasharray="3,3"/>
+          <text x="345" y="35" fill="#8b949e" font-size="12">S&P 500</text>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- API PLAYGROUND -->
+  <section id="api" class="api-section">
+    <div class="wrap">
+      <div class="section-label reveal">Developer API</div>
+      <h2 class="section-heading reveal">API Playground</h2>
+      <p class="section-subheading reveal">Integrate ProxiAlpha with your applications using our REST API and WebSocket support.</p>
+
+      <div class="reveal" style="margin-top: 40px;">
+        <div class="api-tabs">
+          <button class="api-tab active" onclick="switchApiTab('python')">Python</button>
+          <button class="api-tab" onclick="switchApiTab('curl')">cURL</button>
+          <button class="api-tab" onclick="switchApiTab('js')">JavaScript</button>
+        </div>
+
+        <div id="python-block" class="api-block" style="display: block;">
+          <div class="api-block-header">
+            <span style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-secondary);">proxialpha_client.py</span>
+            <button class="api-copy-btn" onclick="copyCode('python')">Copy</button>
+          </div>
+          <div class="api-code" id="python-code">
+<span class="kw">from</span> proxialpha <span class="kw">import</span> Client<br>
+<br>
+client = Client(api_key=<span class="str">"pa_live_xxx"</span>)<br>
+signals = client.signals.list(<br>
+&nbsp;&nbsp;&nbsp;&nbsp;strategies=[<span class="str">"momentum"</span>, <span class="str">"mean_reversion"</span>],<br>
+&nbsp;&nbsp;&nbsp;&nbsp;symbols=[<span class="str">"AAPL"</span>, <span class="str">"GOOGL"</span>, <span class="str">"MSFT"</span>],<br>
+&nbsp;&nbsp;&nbsp;&nbsp;min_confidence=<span class="num">0.7</span><br>
+)<br>
+<br>
+<span class="kw">for</span> signal <span class="kw">in</span> signals:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">print</span>(<span class="str">f"{signal.symbol}: {signal.action} ({signal.confidence:.0%})"</span>)
+          </div>
+          <div class="api-response">
+{<br>
+&nbsp;&nbsp;"signals": [<br>
+&nbsp;&nbsp;&nbsp;&nbsp;{"symbol": "AAPL", "action": "BUY", "confidence": 0.92, "strategy": "DipBuyer"},<br>
+&nbsp;&nbsp;&nbsp;&nbsp;{"symbol": "GOOGL", "action": "HOLD", "confidence": 0.68, "strategy": "Trend Follow"}<br>
+&nbsp;&nbsp;]<br>
+}
+          </div>
+        </div>
+
+        <div id="curl-block" class="api-block" style="display: none;">
+          <div class="api-block-header">
+            <span style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-secondary);">curl</span>
+            <button class="api-copy-btn" onclick="copyCode('curl')">Copy</button>
+          </div>
+          <div class="api-code" id="curl-code">
+<span class="kw">curl</span> -X GET <span class="str">"https://api.proxialpha.com/v1/signals"</span> \<br>
+&nbsp;&nbsp;-H <span class="str">"Authorization: Bearer pa_live_xxx"</span> \<br>
+&nbsp;&nbsp;-H <span class="str">"Content-Type: application/json"</span> \<br>
+&nbsp;&nbsp;-d <span class="str">'{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;"strategies": ["momentum", "mean_reversion"],<br>
+&nbsp;&nbsp;&nbsp;&nbsp;"min_confidence": 0.7,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;"symbols": ["AAPL", "GOOGL", "MSFT"]<br>
+&nbsp;&nbsp;}'</span>
+          </div>
+          <div class="api-response">
+{<br>
+&nbsp;&nbsp;"signals": [<br>
+&nbsp;&nbsp;&nbsp;&nbsp;{"symbol": "AAPL", "action": "BUY", "confidence": 0.92},<br>
+&nbsp;&nbsp;&nbsp;&nbsp;{"symbol": "MSFT", "action": "BUY", "confidence": 0.88}<br>
+&nbsp;&nbsp;],<br>
+&nbsp;&nbsp;"timestamp": "2026-04-06T14:32:00Z"<br>
+}
+          </div>
+        </div>
+
+        <div id="js-block" class="api-block" style="display: none;">
+          <div class="api-block-header">
+            <span style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-secondary);">main.js</span>
+            <button class="api-copy-btn" onclick="copyCode('js')">Copy</button>
+          </div>
+          <div class="api-code" id="js-code">
+<span class="kw">const</span> { ProxiAlpha } = <span class="kw">require</span>(<span class="str">'@proxiant/alpha'</span>);<br>
+<br>
+<span class="kw">const</span> client = <span class="kw">new</span> ProxiAlpha({ <br>
+&nbsp;&nbsp;apiKey: <span class="str">'pa_live_xxx'</span> <br>
+});<br>
+<br>
+<span class="kw">const</span> signals = <span class="kw">await</span> client.signals.list({<br>
+&nbsp;&nbsp;strategies: [<span class="str">'momentum'</span>, <span class="str">'mean_reversion'</span>],<br>
+&nbsp;&nbsp;symbols: [<span class="str">'AAPL'</span>, <span class="str">'GOOGL'</span>, <span class="str">'MSFT'</span>],<br>
+&nbsp;&nbsp;minConfidence: <span class="num">0.7</span><br>
+});
+          </div>
+          <div class="api-response">
+{<br>
+&nbsp;&nbsp;signals: [<br>
+&nbsp;&nbsp;&nbsp;&nbsp;{ symbol: 'AAPL', action: 'BUY', confidence: 0.92 },<br>
+&nbsp;&nbsp;&nbsp;&nbsp;{ symbol: 'GOOGL', action: 'BUY', confidence: 0.85 }<br>
+&nbsp;&nbsp;],<br>
+&nbsp;&nbsp;timestamp: '2026-04-06T14:32:00Z'<br>
+}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LLM INTEGRATION -->
+  <section>
+    <div class="wrap">
+      <div class="section-label reveal">LLM Support</div>
+      <h2 class="section-heading reveal">Multi-Model Integration</h2>
+      <p class="section-subheading reveal">Leverage the best LLMs for signal analysis, from Claude to Gemini to your own Ollama instance.</p>
+
+      <div class="llm-grid reveal">
+        <div class="llm-card">
+          <div class="llm-icon"><svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="48" height="48" rx="12" fill="#D4A574" fill-opacity="0.15"/>
+  <path d="M24 12L32 36H28L26.5 31.5H21.5L20 36H16L24 12ZM22.5 28H25.5L24 22.5L22.5 28Z" fill="#D4A574"/>
+</svg></div>
+          <div class="llm-name">Claude</div>
+          <div class="llm-desc">Anthropic's reasoning powerhouse for deep market analysis and pattern recognition.</div>
+        </div>
+        <div class="llm-card">
+          <div class="llm-icon"><svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="48" height="48" rx="12" fill="#10A37F" fill-opacity="0.15"/>
+  <path d="M24 14C18.48 14 14 18.48 14 24C14 29.52 18.48 34 24 34C29.52 34 34 29.52 34 24C34 18.48 29.52 14 24 14ZM24 16C28.42 16 32 19.58 32 24C32 28.42 28.42 32 24 32C19.58 32 16 28.42 16 24C16 19.58 19.58 16 24 16Z" fill="#10A37F"/>
+  <path d="M24 19V24L28 26" stroke="#10A37F" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="24" cy="24" r="2" fill="#10A37F"/>
+</svg></div>
+          <div class="llm-name">GPT-4</div>
+          <div class="llm-desc">OpenAI's advanced model for comprehensive sentiment analysis and trading signals.</div>
+        </div>
+        <div class="llm-card">
+          <div class="llm-icon"><svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="48" height="48" rx="12" fill="#4285F4" fill-opacity="0.15"/>
+  <path d="M24 12C24 18.627 18.627 24 12 24C18.627 24 24 29.373 24 36C24 29.373 29.373 24 36 24C29.373 24 24 18.627 24 12Z" fill="#4285F4"/>
+</svg></div>
+          <div class="llm-name">Gemini</div>
+          <div class="llm-desc">Google's multimodal AI for integrated market intelligence and risk assessment.</div>
+        </div>
+        <div class="llm-card">
+          <div class="llm-icon"><svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="48" height="48" rx="12" fill="#FFFFFF" fill-opacity="0.1"/>
+  <rect x="14" y="14" width="20" height="20" rx="4" stroke="#8B949E" stroke-width="2" fill="none"/>
+  <circle cx="20" cy="24" r="2" fill="#8B949E"/>
+  <circle cx="28" cy="24" r="2" fill="#8B949E"/>
+  <path d="M21 29C21 29 22.5 31 24 31C25.5 31 27 29 27 29" stroke="#8B949E" stroke-width="1.5" stroke-linecap="round"/>
+</svg></div>
+          <div class="llm-name">Ollama</div>
+          <div class="llm-desc">Run open-source models locally for privacy and control over your analysis.</div>
+        </div>
       </div>
     </div>
   </section>
@@ -835,8 +1808,11 @@
             <li>Paper trading only</li>
             <li><b>5</b> tickers · <b>1</b> strategy slot</li>
             <li>Community support</li>
+            <li>15 built-in strategies</li>
+            <li>All LLM integrations</li>
+            <li>Backtesting engine</li>
           </ul>
-          <a href="#contact" class="btn btn-ghost" style="width:100%;justify-content:center;">Get Started</a>
+          <a href="mailto:sendpavan@gmail.com" class="btn btn-cyan">Get Started</a>
         </div>
 
         <div class="pricing-card">
@@ -845,13 +1821,14 @@
           <div class="pricing-price"><span class="currency">$</span>49</div>
           <div class="pricing-period">per month</div>
           <ul class="pricing-features">
-            <li><b>5,000</b> signals / month</li>
-            <li><b>50</b> backtests / month</li>
-            <li>Live trading via Alpaca</li>
-            <li><b>25</b> tickers · <b>5</b> strategy slots</li>
-            <li>Email support</li>
+            <li>Cloud hosted</li>
+            <li>Priority support</li>
+            <li>Custom strategies</li>
+            <li>Dedicated instance</li>
+            <li>Advanced analytics</li>
+            <li>API rate limits lifted</li>
           </ul>
-          <a href="#contact" class="btn btn-ghost" style="width:100%;justify-content:center;">Start trading</a>
+          <a href="mailto:sendpavan@gmail.com" class="btn btn-cyan">Request Access</a>
         </div>
 
         <div class="pricing-card featured">
@@ -924,11 +1901,11 @@
   <section class="cta-section">
     <div class="wrap">
       <div class="cta-box reveal">
-        <h2>Ready to run ProxiAlpha in production?</h2>
-        <p>Sign up for the control plane, enroll your first agent, and start metering usage in minutes. No credit card required to start on the free tier.</p>
+        <h2>Ready to trade smarter?</h2>
+        <p>Get access to ProxiAlpha and start leveraging AI-powered trading signals today.</p>
         <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
-          <a href="#contact" class="btn btn-cyan">Request Access &rarr;</a>
-          <a href="#pricing" class="btn btn-ghost">Compare tiers</a>
+          <a href="mailto:sendpavan@gmail.com" class="btn btn-cyan">Request Access →</a>
+          <a href="index.html" class="btn btn-ghost">Back to Proxiant</a>
         </div>
       </div>
     </div>
@@ -938,159 +1915,228 @@
   <footer>
     <div class="wrap">
       <div class="footer-grid">
-        <div><h4>Platform</h4><ul><li><a href="#platform">Overview</a></li><li><a href="#control-plane">Control Plane</a></li><li><a href="#fleet">Agent Fleet</a></li><li><a href="#pricing">Pricing</a></li></ul></div>
-        <div><h4>Company</h4><ul><li><a href="index.html">Home</a></li><li><a href="solutions.html">Solutions</a></li><li><a href="labs.html">Labs</a></li></ul></div>
-        <div><h4>Legal</h4><ul><li><a href="#">Privacy Policy</a></li><li><a href="#">Terms of Service</a></li><li><a href="#">DPA</a></li></ul></div>
-        <div><h4>Contact</h4><ul><li><a href="#contact">Get in touch</a></li></ul></div>
+        <div>
+          <h4>Product</h4>
+          <ul>
+            <li><a href="proxialpha.html">ProxiAlpha</a></li>
+            <li><a href="terminal.html">Trading Terminal</a></li>
+            <li><a href="#">API Docs</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="solutions.html">Solutions</a></li>
+            <li><a href="#">Blog</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Community</h4>
+          <ul>
+            <li><a href="#">GitHub</a></li>
+            <li><a href="#">Discord</a></li>
+            <li><a href="#">Twitter</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
       </div>
       <div class="footer-bottom">
-        <span>&copy; 2026 Proxiant Labs. All rights reserved.</span>
-        <span>ProxiAlpha — Enterprise AI trading platform with a multi-tenant control plane.</span>
+        <span>Built by Proxiant Labs</span>
+        <span>&copy; 2026 Proxiant. All rights reserved.</span>
       </div>
     </div>
   </footer>
 
   <script>
-    // Scroll reveal
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-    // Mobile menu
-    const mobBtn = document.getElementById('mobToggle');
-    const mobMenu = document.getElementById('mobMenu');
-    if (mobBtn && mobMenu) {
-      mobBtn.addEventListener('click', () => {
-        const open = mobMenu.classList.toggle('open');
-        mobBtn.setAttribute('aria-expanded', open);
+    // Lightweight Charts setup
+    const createChart = (container) => {
+      const chart = LightweightCharts.createChart(container, {
+        layout: {
+          textColor: '#e6edf3',
+          background: { type: 'solid', color: '#0d1117' },
+        },
+        grid: {
+          vertLines: { color: 'rgba(255, 255, 255, 0.05)' },
+          horzLines: { color: 'rgba(255, 255, 255, 0.05)' },
+        },
+        timeScale: {
+          timeVisible: true,
+          secondsVisible: false,
+        },
       });
-    }
 
-    // Animate counters
-    function animateVal(el, target, suffix) {
-      let cur = 0;
-      const step = target / 30;
-      const timer = setInterval(() => {
-        cur += step;
-        if (cur >= target) { cur = target; clearInterval(timer); }
-        el.textContent = Math.floor(cur) + suffix;
-      }, 40);
-    }
-    const dashObs = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          animateVal(document.getElementById('winRate'), 68, '%');
-          animateVal(document.getElementById('signalCount'), 47, '');
-          dashObs.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.3 });
-    dashObs.observe(document.querySelector('.dashboard'));
+      return chart;
+    };
 
-    // Live chart - animated line
-    const canvas = document.getElementById('liveChart');
-    if (canvas) {
-      const ctx = canvas.getContext('2d');
-      const dpr = window.devicePixelRatio || 1;
-      function resizeCanvas() {
-        const rect = canvas.parentElement.getBoundingClientRect();
-        canvas.width = rect.width * dpr;
-        canvas.height = rect.height * dpr;
-        canvas.style.width = rect.width + 'px';
-        canvas.style.height = rect.height + 'px';
-        ctx.scale(dpr, dpr);
-      }
-      resizeCanvas();
-      window.addEventListener('resize', resizeCanvas);
+    const generateOHLCData = (startDate, count) => {
+      const data = [];
+      let price = 150;
+      const date = new Date(startDate);
 
-      // Generate candlestick data
-      const candles = [];
-      let price = 215;
-      for (let i = 0; i < 40; i++) {
-        const vol = 2 + Math.random() * 3;
-        const open = price + (Math.random() - 0.48) * vol;
-        const close = open + (Math.random() - 0.47) * vol;
-        const high = Math.max(open, close) + Math.random() * vol * 0.4;
-        const low = Math.min(open, close) - Math.random() * vol * 0.4;
-        candles.push({ open, close, high, low });
+      for (let i = 0; i < count; i++) {
+        const open = price + (Math.random() - 0.5) * 3;
+        const close = open + (Math.random() - 0.5) * 4;
+        const high = Math.max(open, close) + Math.random() * 2;
+        const low = Math.min(open, close) - Math.random() * 2;
+
+        data.push({
+          time: Math.floor(date.getTime() / 1000),
+          open: parseFloat(open.toFixed(2)),
+          high: parseFloat(high.toFixed(2)),
+          low: parseFloat(low.toFixed(2)),
+          close: parseFloat(close.toFixed(2)),
+        });
+
         price = close;
+        date.setDate(date.getDate() + 1);
       }
 
-      // SMA line
-      const sma = [];
-      for (let i = 4; i < candles.length; i++) {
-        sma.push(candles.slice(i-4, i+1).reduce((a,c) => a + c.close, 0) / 5);
-      }
+      return data;
+    };
 
-      function drawChart() {
-        const w = canvas.width / dpr;
-        const h = canvas.height / dpr;
-        ctx.clearRect(0, 0, w, h);
+    // Initialize hero chart
+    const heroChartElement = document.getElementById('heroChart');
+    if (heroChartElement) {
+      const heroChart = createChart(heroChartElement);
+      const candlestickSeries = heroChart.addCandlestickSeries({
+        upColor: '#22c55e',
+        downColor: '#ef4444',
+        borderUpColor: '#22c55e',
+        borderDownColor: '#ef4444',
+        wickUpColor: '#22c55e',
+        wickDownColor: '#ef4444',
+      });
 
-        const allPrices = candles.flatMap(c => [c.high, c.low]);
-        const minP = Math.min(...allPrices) - 2;
-        const maxP = Math.max(...allPrices) + 2;
-        const range = maxP - minP;
-        const padT = 28, padB = 8;
-        const chartH = h - padT - padB;
-        const toY = (p) => padT + chartH - ((p - minP) / range) * chartH;
-
-        // Grid
-        ctx.strokeStyle = 'rgba(255,255,255,0.03)';
-        ctx.lineWidth = 1;
-        for (let i = 0; i < 5; i++) {
-          const y = padT + (chartH / 4) * i;
-          ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(w, y); ctx.stroke();
-        }
-
-        // Candlesticks
-        const candleW = (w - 20) / candles.length;
-        const bodyW = Math.max(2, candleW * 0.6);
-        candles.forEach((c, i) => {
-          const x = 10 + i * candleW + candleW / 2;
-          const bull = c.close >= c.open;
-          const color = bull ? '#26a69a' : '#ef5350';
-
-          // Wick
-          ctx.strokeStyle = color;
-          ctx.lineWidth = 1;
-          ctx.beginPath();
-          ctx.moveTo(x, toY(c.high));
-          ctx.lineTo(x, toY(c.low));
-          ctx.stroke();
-
-          // Body
-          const top = toY(Math.max(c.open, c.close));
-          const bot = toY(Math.min(c.open, c.close));
-          const bodyH = Math.max(1, bot - top);
-          ctx.fillStyle = color;
-          ctx.fillRect(x - bodyW/2, top, bodyW, bodyH);
-        });
-
-        // SMA line
-        ctx.strokeStyle = '#2962ff';
-        ctx.lineWidth = 1.5;
-        ctx.lineJoin = 'round';
-        ctx.beginPath();
-        sma.forEach((v, i) => {
-          const x = 10 + (i + 5) * candleW + candleW / 2;
-          const y = toY(v);
-          if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
-        });
-        ctx.stroke();
-
-        // Animate last candle
-        const last = candles[candles.length - 1];
-        last.close += (Math.random() - 0.48) * 0.3;
-        last.high = Math.max(last.high, last.close, last.open);
-        last.low = Math.min(last.low, last.close, last.open);
-        sma[sma.length-1] = candles.slice(-5).reduce((a,c)=>a+c.close,0)/5;
-
-        requestAnimationFrame(drawChart);
-      }
-      drawChart();
+      const data = generateOHLCData(new Date(2026, 0, 1), 50);
+      candlestickSeries.setData(data);
+      heroChart.timeScale().fitContent();
     }
+
+    // Initialize terminal chart
+    const terminalChartElement = document.getElementById('terminalChart');
+    if (terminalChartElement) {
+      const terminalChart = createChart(terminalChartElement);
+      const candlestickSeries = terminalChart.addCandlestickSeries({
+        upColor: '#22c55e',
+        downColor: '#ef4444',
+        borderUpColor: '#22c55e',
+        borderDownColor: '#ef4444',
+        wickUpColor: '#22c55e',
+        wickDownColor: '#ef4444',
+      });
+
+      const data = generateOHLCData(new Date(2026, 2, 1), 30);
+      candlestickSeries.setData(data);
+      terminalChart.timeScale().fitContent();
+    }
+
+    // Scroll detection
+    const header = document.getElementById('header');
+    const revealElements = document.querySelectorAll('.reveal');
+
+    const revealOnScroll = () => {
+      revealElements.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight * 0.8) {
+          el.classList.add('visible');
+        }
+      });
+
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    };
+
+    window.addEventListener('scroll', revealOnScroll);
+    revealOnScroll();
+
+    // Signal badges animation
+    const signals = [
+      { text: 'BUY AAPL +2.3%', type: 'buy' },
+      { text: 'SELL TSLA -1.8%', type: 'sell' },
+      { text: 'BUY NVDA +3.2%', type: 'buy' },
+    ];
+
+    const displaySignalBadges = () => {
+      const container = document.getElementById('signalBadges');
+      let currentIndex = 0;
+
+      const addBadge = () => {
+        if (currentIndex < signals.length) {
+          const signal = signals[currentIndex];
+          const badge = document.createElement('div');
+          badge.className = `signal-badge ${signal.type}`;
+          badge.textContent = signal.text;
+          container.appendChild(badge);
+
+          setTimeout(() => {
+            badge.classList.add('removing');
+            setTimeout(() => badge.remove(), 600);
+          }, 4000);
+
+          currentIndex = (currentIndex + 1) % signals.length;
+        }
+      };
+
+      addBadge();
+      setInterval(addBadge, 5000);
+    };
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', displaySignalBadges);
+    } else {
+      displaySignalBadges();
+    }
+
+    // API Tab switching
+    function switchApiTab(lang) {
+      document.querySelectorAll('.api-block').forEach(block => {
+        block.style.display = 'none';
+      });
+      document.querySelectorAll('.api-tab').forEach(tab => {
+        tab.classList.remove('active');
+      });
+
+      document.getElementById(`${lang}-block`).style.display = 'block';
+      event.target.classList.add('active');
+    }
+
+    // Copy code functionality
+    function copyCode(lang) {
+      const code = document.getElementById(`${lang}-code`).textContent;
+      navigator.clipboard.writeText(code).then(() => {
+        const btn = event.target;
+        const original = btn.textContent;
+        btn.textContent = 'Copied!';
+        setTimeout(() => {
+          btn.textContent = original;
+        }, 2000);
+      });
+    }
+
+    // Counter animation for metrics
+    const animateCounters = () => {
+      const cards = document.querySelectorAll('.metric-card');
+      cards.forEach(card => {
+        const rect = card.getBoundingClientRect();
+        if (rect.top < window.innerHeight && !card.classList.contains('animated')) {
+          card.classList.add('animated');
+          // Animation happens via CSS already
+        }
+      });
+    };
+
+    window.addEventListener('scroll', animateCounters);
   </script>
 </body>
 </html>

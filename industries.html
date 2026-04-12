@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Proxiant's industry expertise in AI transformation. Deep domain experience across 30+ verticals including Financial Services, Healthcare, Manufacturing, Retail, Energy, Telecommunications, Insurance, and Transportation.">
+  <meta name="theme-color" content="#0055ff">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Industries — Proxiant">
+  <meta property="og:description" content="Experience in Transforming Industries. Deep domain expertise combined with cutting-edge AI technology.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://proxiant.ai/industries.html">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&q=80">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Industries — Proxiant">
+  <meta name="twitter:description" content="Experience in Transforming Industries across 30+ verticals.">
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&q=80">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://proxiant.ai/industries.html">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap" rel="stylesheet">
+
+  <title>Industries — Proxiant</title>
+
+  <style>
+    :root {
+      --bg: #fafbfc;
+      --surface: #ffffff;
+      --surface-raised: #f4f5f7;
+      --surface-glass: rgba(255,255,255,0.75);
+      --border: rgba(0,0,0,0.07);
+      --border-hover: rgba(0,0,0,0.14);
+      --ink: #0c0e13;
+      --ink-secondary: #4a5060;
+      --ink-muted: #8891a0;
+      --accent: #0055ff;
+      --accent-light: #e8f0ff;
+      --accent-dim: rgba(0,85,255,0.12);
+      --purple: #7c3aed;
+      --green: #059669;
+      --green-light: rgba(5,150,105,0.08);
+      --amber: #d97706;
+      --red: #dc2626;
+      --pearl: #f5f3f0;
+      --font-display: 'Bricolage Grotesque', sans-serif;
+      --font-body: 'Outfit', sans-serif;
+      --font-mono: 'Space Mono', monospace;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* SUBTLE TEXTURE */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.015'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 9999;
+    }
+
+    /* MESH GRADIENT BACKGROUND */
+    .mesh-bg {
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      z-index: -1;
+      overflow: hidden;
+    }
+    .mesh-orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(140px);
+      opacity: 0.12;
+      animation: orbFloat 25s ease-in-out infinite;
+    }
+    .mesh-orb:nth-child(1) {
+      width: 700px; height: 700px;
+      background: var(--accent);
+      top: -300px; right: -200px;
+    }
+    .mesh-orb:nth-child(2) {
+      width: 500px; height: 500px;
+      background: var(--purple);
+      bottom: -200px; left: -100px;
+      animation-delay: -8s;
+    }
+    .mesh-orb:nth-child(3) {
+      width: 400px; height: 400px;
+      background: #06b6d4;
+      top: 40%; left: 40%;
+      animation-delay: -16s;
+      opacity: 0.06;
+    }
+    @keyframes orbFloat {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      33% { transform: translate(30px, -40px) scale(1.05); }
+      66% { transform: translate(-20px, 20px) scale(0.95); }
+    }
+
+    /* DOT GRID */
+    .grid-pattern {
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background-image: radial-gradient(circle, rgba(0,0,0,0.04) 1px, transparent 1px);
+      background-size: 32px 32px;
+      z-index: -1;
+    }
+
+    /* UTILITY */
+    .wrap { max-width: 1200px; margin: 0 auto; padding: 0 clamp(1rem, 4vw, 2rem); }
+
+    /* SCROLL ANIMATIONS */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+
+    /* NAV */
+    header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background: rgba(250,251,252,0.8);
+      backdrop-filter: blur(20px) saturate(180%);
+      border-bottom: 1px solid var(--border);
+      transition: all 0.3s;
+    }
+    header.scrolled {
+      background: rgba(255,255,255,0.92);
+      box-shadow: 0 1px 12px rgba(0,0,0,0.04);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+    }
+    .nav-brand {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 1.3rem;
+      color: var(--ink);
+      text-decoration: none;
+      letter-spacing: -0.03em;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .nav-brand span { color: var(--accent); }
+    .nav-logo {
+      width: 32px;
+      height: 32px;
+      flex-shrink: 0;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: clamp(1.5rem, 3vw, 2.5rem);
+      list-style: none;
+    }
+    .nav-links a {
+      color: var(--ink-secondary);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.2s;
+      position: relative;
+    }
+    .nav-links a:hover { color: var(--ink); }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px; left: 0; right: 0;
+      height: 2px;
+      background: var(--accent);
+      border-radius: 1px;
+      transform: scaleX(0);
+      transition: transform 0.3s;
+    }
+    .nav-links a:hover::after { transform: scaleX(1); }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 24px;
+      border-radius: 8px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      font-family: var(--font-body);
+      text-decoration: none;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      cursor: pointer;
+      border: none;
+    }
+    .btn-primary, .nav-links a.btn-primary {
+      background: var(--ink);
+      color: #fff;
+    }
+    .btn-primary:hover, .nav-links a.btn-primary:hover {
+      background: #1a1e2a;
+      color: #fff;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+      transform: translateY(-1px);
+    }
+    .btn-accent {
+      background: var(--accent);
+      color: #fff;
+    }
+    .btn-accent:hover {
+      background: #0044cc;
+      box-shadow: 0 4px 20px rgba(0,85,255,0.25);
+      transform: translateY(-1px);
+    }
+    .btn-ghost {
+      background: transparent;
+      color: var(--ink);
+      border: 1.5px solid var(--border);
+    }
+    .btn-ghost:hover {
+      border-color: var(--border-hover);
+      background: rgba(0,0,0,0.02);
+    }
+
+    .mobile-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: var(--ink);
+    }
+
+    /* HERO */
+    .hero {
+      padding: 140px 0 100px;
+      position: relative;
+      background: linear-gradient(135deg, rgba(0,85,255,0.05) 0%, rgba(124,58,237,0.05) 100%);
+    }
+    .hero-content {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 5vw, 3.75rem);
+      font-weight: 800;
+      line-height: 1.08;
+      letter-spacing: -0.04em;
+      margin-bottom: 24px;
+      color: var(--ink);
+    }
+    .hero p {
+      font-size: 1.15rem;
+      color: var(--ink-secondary);
+      line-height: 1.7;
+      margin-bottom: 0;
+    }
+
+    /* INDUSTRIES SECTION */
+    .industry-section {
+      padding: 100px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .industry-section:last-of-type {
+      border-bottom: none;
+    }
+    .industry-section:nth-child(even) {
+      background: var(--pearl);
+    }
+    .industry-section:nth-child(odd) {
+      background: var(--surface);
+    }
+
+    .industry-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .industry-layout.reverse {
+      direction: rtl;
+    }
+    .industry-layout.reverse > * {
+      direction: ltr;
+    }
+
+    .industry-image {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+    }
+    .industry-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .industry-content h2 {
+      font-family: var(--font-display);
+      font-size: 2.5rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin-bottom: 20px;
+      color: var(--ink);
+    }
+
+    .industry-icon {
+      width: 48px;
+      height: 48px;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .industry-help {
+      font-size: 1.05rem;
+      color: var(--ink-secondary);
+      line-height: 1.7;
+      margin-bottom: 32px;
+      max-width: 500px;
+    }
+
+    .use-cases {
+      margin-bottom: 32px;
+    }
+    .use-case {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 12px;
+      font-size: 0.95rem;
+      color: var(--ink);
+    }
+    .use-case-check {
+      flex-shrink: 0;
+      width: 20px;
+      height: 20px;
+      margin-top: 2px;
+      color: var(--accent);
+      font-weight: bold;
+    }
+
+    .industry-logos {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+    .logo-badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 8px 16px;
+      background: rgba(0,0,0,0.04);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      font-size: 0.75rem;
+      color: var(--ink-muted);
+      font-weight: 500;
+    }
+
+    .industry-metric {
+      font-family: var(--font-mono);
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 24px;
+      padding: 16px;
+      background: var(--accent-light);
+      border-radius: 8px;
+      border: 1px solid var(--accent-dim);
+    }
+
+    .industry-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      background: var(--accent);
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .industry-link:hover {
+      background: #0044cc;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0,85,255,0.3);
+    }
+
+    /* CTA SECTION */
+    .cta-section {
+      padding: 120px 0;
+    }
+    .cta-box {
+      background: var(--ink);
+      color: white;
+      padding: 64px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+    }
+    .cta-box h2 {
+      font-family: var(--font-display);
+      font-size: 2.25rem;
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      margin-bottom: 16px;
+    }
+    .cta-box p {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.6;
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 72px 0 36px;
+      border-top: 1px solid var(--border);
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 56px;
+    }
+    .footer-brand {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .footer-brand span {
+      color: var(--accent);
+    }
+    .footer-logo {
+      width: 24px;
+      height: 24px;
+      flex-shrink: 0;
+    }
+    .footer-tagline {
+      font-size: 0.85rem;
+      color: var(--ink-muted);
+      line-height: 1.5;
+    }
+    footer h4 {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+      margin-bottom: 16px;
+    }
+    footer ul {
+      list-style: none;
+    }
+    footer li {
+      margin-bottom: 10px;
+    }
+    footer a {
+      color: var(--ink-secondary);
+      text-decoration: none;
+      font-size: 0.88rem;
+      transition: color 0.2s;
+    }
+    footer a:hover {
+      color: var(--accent);
+    }
+    .footer-bottom {
+      border-top: 1px solid var(--border);
+      padding-top: 24px;
+      font-size: 0.75rem;
+      color: var(--ink-muted);
+      display: flex;
+      justify-content: space-between;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .industry-layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      .industry-layout.reverse {
+        direction: ltr;
+      }
+      .cta-box {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px;
+        gap: 24px;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+      .footer-bottom {
+        flex-direction: column;
+        gap: 8px;
+      }
+      .industry-content h2 {
+        font-size: 1.8rem;
+      }
+      .hero h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="mesh-bg">
+    <div class="mesh-orb"></div>
+    <div class="mesh-orb"></div>
+    <div class="mesh-orb"></div>
+  </div>
+  <div class="grid-pattern"></div>
+
+  <header id="header">
+    <div class="wrap nav-inner">
+      <a href="index.html" class="nav-brand">
+        <svg class="nav-logo" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="40" height="40" rx="10" fill="var(--ink)"/>
+          <line x1="10" y1="10" x2="30" y2="30" stroke="#d4622b" stroke-width="1.2" stroke-linecap="round" opacity="0.28"/>
+          <line x1="30" y1="10" x2="10" y2="30" stroke="#d4622b" stroke-width="1.2" stroke-linecap="round" opacity="0.28"/>
+          <path d="M14 9L14 32" stroke="white" stroke-width="3.5" stroke-linecap="round"/>
+          <path d="M14 9L22 9C28 9 32 12.5 32 16.5C32 20.5 28 23.5 22 23.5L14 23.5" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <circle cx="30" cy="16.5" r="2.5" fill="#d4622b"/>
+          <circle cx="14" cy="32" r="2.5" fill="#4f9cff"/>
+        </svg>
+        Proxiant<span>.</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="solutions.html">Solutions</a></li>
+        <li><a href="labs.html">Labs</a></li>
+        <li><a href="#contact" class="btn btn-primary">Get in touch</a></li>
+      </ul>
+      <button class="mobile-toggle" aria-label="Menu">&#9776;</button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-content reveal">
+        <h1>Experience in Transforming Industries</h1>
+        <p>Deep domain expertise combined with cutting-edge AI technology.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- INDUSTRIES -->
+
+  <!-- 1. FINANCIAL SERVICES -->
+  <section class="industry-section" id="financial-services">
+    <div class="wrap">
+      <div class="industry-layout reveal">
+        <div class="industry-image">
+          <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&q=80" alt="Financial Services" loading="lazy">
+        </div>
+        <div class="industry-content">
+          <svg class="industry-icon" viewBox="0 0 40 40" fill="none">
+            <circle cx="20" cy="20" r="18" stroke="var(--accent)" stroke-width="1.5"/>
+            <path d="M14 18C14 16.9 14.9 16 16 16H24C25.1 16 26 16.9 26 18V24C26 25.1 25.1 26 24 26H16C14.9 26 14 25.1 14 24V18Z" stroke="var(--accent)" stroke-width="1.5" fill="none"/>
+            <circle cx="20" cy="22" r="2" fill="var(--accent)"/>
+          </svg>
+          <h2>Financial Services & Banking</h2>
+          <p class="industry-help">AI-powered risk assessment, fraud detection, and automated compliance</p>
+          <div class="use-cases">
+            <div class="use-case"><span class="use-case-check">✓</span><span>Algorithmic Trading</span></div>
+            <div class="use-case"><span class="use-case-check">✓</span><span>Credit Scoring</span></div>
+            <div class="use-case"><span class="use-case-check">✓</span><span>Fraud Prevention</span></div>
+            <div class="use-case"><span class="use-case-check">✓</span><span>Regulatory Compliance</span></div>
+          </div>
+          <div class="industry-logos">
+            <span class="logo-badge">Client A</span>
+            <span class="logo-badge">Client B</span>
+            <span class="logo-badge">Client C</span>
+          </div>
+          <div class="industry-metric">↓ 67% fraud detection time</div>
+          <a href="industry-financial-services.html" class="industry-link">Explore Financial Services →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. HEALTHCARE -->
+  <section class="industry-section" id="healthcare">
+    <div class="wrap">
+      <div class="industry-layout reverse reveal">
+        <div class="industry-image">
+          <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=80" alt="Healthcare" loading="lazy">
+        </div>
+        <div class="industry-content">
+          <svg class="industry-icon" viewBox="0 0 40 40" fill="none">
+            <circle cx="20" cy="20" r="18" stroke="var(--accent)" stroke-width="1.5"/>
+            <path d="M20 14V26M14 20H26" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="20" cy="20" r="6" stroke="var(--accent)" stroke-width="1.5" fill="none"/>
+          </svg>
+          <h2>Healthcare & Life Sciences</h2>
+          <p class="industry-help">Clinical decision support, drug discovery acceleration, patient outcome prediction</p>
+          <div class="use-cases">
+            <div class="use-case"><span class="use-case-check">✓</span><span>Medical Imaging AI</span></div>
+            <div class="use-case"><span class="use-case-check">✓</span><span>Drug Discovery</span></div>
+            <div class="use-case"><span class="use-case-check">✓</span><span>Patient Risk Stratification</span></div>
+            <div class="use-case"><span class="use-case-check">✓</span><span>EHR Optimization</span></div>
+          </div>
+          <div class="industry-logos">
+            <span class="logo-badge">Healthcare Group</span>
+            <span class="logo-badge">Lab Network</span>
+            <span class="logo-badge">Hospital System</span>
+          </div>
+          <div class="industry-metric">↑ 42% diagnostic accuracy</div>
+          <a href="industry-healthcare.html" class="industry-link">Explore Healthcare →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. MANUFACTURING -->
+  <section class="industry-section" id="manufacturing">
+    <div class="wrap">
+      <div class="industry-layout reveal">
+        <div class="industry-image">
+          <img src="https://images.unsplash.com/photo-1565043666747-69f6646db940?w=800&q=80" alt="Manufacturing" loading="lazy">
+        </div>
+        <div class="industry-content">
+          <svg class="industry-icon" viewBox="0 0 40 40" fill="none">
+            <circle cx="20" cy="20" r="18" stroke="var(--accent)" stroke-width="1.5"/>
+            <rect x="12" y="16" width="16" height="8" rx="1" stroke="var(--accent)" stroke-width="1.5" fill="none"/>
+            <line x1="14" y1="16" x2="14" y2="24" stroke="var(--accent)" stroke-width="1.5"/>
+            <line x1="20" y1="16" x2="20" y2="24" stroke="var(--accent)" stroke-width="1.5"/>
+            <line x1="26" y1="16" x2="26" y2="24" stroke="var(--accent)" stroke-width="1.5"/>
+          </svg>
+          <h2>Manufacturing & Industrial</h2>
+          <p class="industry-help">Predictive maintenance, quality control, supply chain optimization</p>
+          <div class="use-cases">
+            <div class="use-case"><span class="use-case-check">✓</span><span>Predictive Maintenance</span></div>
+            <div class="use-case"><span class="use-case-check">✓</span><span>Quality Inspection</span></div>
+            <div class="use-case"><span class="use-case-check">✓</span><span>Demand Forecasting</span></div>
+            <div class="use-case"><span class="use-case-check">✓</span><span>Digital Twins</span></div>
+          </div>
+          <div class="industry-logos">
+            <span class="logo-badge">Factory Network</span>
+            <span class="logo-badge">Supply Partner</span>
+            <span class="logo-badge">Equipment Maker</span>
+          </div>
+          <div class="industry-metric">↓ 35% unplanned downtime</div>
+          <a href="industry-manufacturing.html" class="industry-link">Explore Manufacturing →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. RETAIL -->
+  <section class="industry-section" id="retail">
+    <div class="wrap">
+      <div class="industry-layout reverse reveal">
+        <div class="industry-image">
+          <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80" alt="Retail" loading="lazy">
+        </div>
+        <div class="industry-content">
+          <svg class="industry-icon" viewBox="0 0 40 40" fill="none">
+            <circle cx="20" cy="20" r="18" stroke="var(--accent)" stroke-width="1.5"/>
+            <path d="M13 18L15 13H25L27 18" stroke="var(--accent)" stroke-width="1.5" fill="none" stroke-linejoin="round"/>
+            <path d="M15 18H25V26C25 26.6 24.6 27 24 27H16C15.4 27 15 26.6 15 26V18Z" stroke="var(--accent)" stroke-width="1.5" fill="none" stroke-linejoin="round"/>
+            <circle cx="17.5" cy="22" r="1" fill="var(--accent)"/>
+            <circle cx="22.5" cy="22" r="1" fill="var(--accent)"/>
+          </svg>
+          <h2>Retail & E-Commerce</h2>
+          <p class="industry-help">Personalization engines, inventory optimization, customer journey analytics</p>
+          <div class="use-cases">
+            <div class="use-case"><span class="use-case-check">✓</span><span>Product Recommendations</span></div>
+            <div class="use-case"><span class="use-case-check">✓</span><span>Dynamic Pricing</span></div>
+            <div class="use-case"><span class="use-case-check">✓</span><span>Inventory Optimization</span></div>
+            <div class="use-case"><span class="use-case-check">✓</span><span>Customer Segmentation</span></div>
+          </div>
+          <div class="industry-logos">
+            <span class="logo-badge">E-Commerce Giant</span>
+            <span class="logo-badge">Retail Chain</span>
+            <span class="logo-badge">Marketplace</span>
+          </div>
+          <div class="industry-metric">↑ 28% conversion rate</div>
+          <a href="industry-retail.html" class="industry-link">Explore Retail →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. ENERGY -->
+  <section class="industry-section" id="energy">
+    <div class="wrap">
+      <div class="industry-layout reveal">
+        <div class="industry-image">
+          <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800&q=80" alt="Energy" loading="lazy">
+        </div>
+        <div class="industry-content">
+          <svg class="industry-icon" viewBox="0 0 40 40" fill="none">
+            <circle cx="20" cy="20" r="18" stroke="var(--accent)" stroke-width="1.5"/>
+            <path d="M20 12L24 20L20 28L16 20Z" stroke="var(--accent)" stroke-width="1.5" fill="none"/>
+            <circle cx="20" cy="20" r="2" fill="var(--accent)"/>
+          </svg>
+          <h2>Energy & Utilities</h2>
+          <p class="industry-help">Grid optimization, renewable energy forecasting, asset management</p>
+          <div class="use-cases">
+            <div class="use-case"><span class="use-case-check">✓</span><span>Load Forecasting</span></div>
+            <div class="use-case"><span class="use-case-check">✓</span><span>Predictive Grid Management</span></div>
+            <div class="use-case"><span class="use-case-check">✓</span><span>Renewable Integration</span></div>
+            <div class="use-case"><span class="use-case-check">✓</span><span>Smart Metering</span></div>
+          </div>
+          <div class="industry-logos">
+            <span class="logo-badge">Utility Provider</span>
+            <span class="logo-badge">Energy Corp</span>
+            <span class="logo-badge">Grid Operator</span>
+          </div>
+          <div class="industry-metric">↓ 23% energy waste</div>
+          <a href="industry-energy.html" class="industry-link">Explore Energy →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. TELECOMMUNICATIONS -->
+  <section class="industry-section" id="telecom">
+    <div class="wrap">
+      <div class="industry-layout reverse reveal">
+        <div class="industry-image">
+          <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=80" alt="Telecommunications" loading="lazy">
+        </div>
+        <div class="industry-content">
+          <svg class="industry-icon" viewBox="0 0 40 40" fill="none">
+            <circle cx="20" cy="20" r="18" stroke="var(--accent)" stroke-width="1.5"/>
+            <path d="M18 14C19.1 14 20 14.9 20 16V24C20 25.1 19.1 26 18 26C16.9 26 16 25.1 16 24V16C16 14.9 16.9 14 18 14Z" stroke="var(--accent)" stroke-width="1.5" fill="none"/>
+            <path d="M22 16C22 15.4 22.4 15 23 15C23.6 15 24 15.4 24 16V24C24 24.6 23.6 25 23 25C22.4 25 22 24.6 22 24V16Z" stroke="var(--accent)" stroke-width="1.5" fill="none"/>
+          </svg>
+          <h2>Telecommunications</h2>
+          <p class="industry-help">Network optimization, churn prediction, customer experience enhancement</p>
+          <div class="use-cases">
+            <div class="use-case"><span class="use-case-check">✓</span><span>Network Anomaly Detection</span></div>
+            <div class="use-case"><span class="use-case-check">✓</span><span>Churn Prevention</span></div>
+            <div class="use-case"><span class="use-case-check">✓</span><span>Service Optimization</span></div>
+            <div class="use-case"><span class="use-case-check">✓</span><span>5G Planning</span></div>
+          </div>
+          <div class="industry-logos">
+            <span class="logo-badge">Telecom Leader</span>
+            <span class="logo-badge">Mobile Provider</span>
+            <span class="logo-badge">Network Operator</span>
+          </div>
+          <div class="industry-metric">↓ 31% customer churn</div>
+          <a href="industry-telecom.html" class="industry-link">Explore Telecom →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. INSURANCE -->
+  <section class="industry-section" id="insurance">
+    <div class="wrap">
+      <div class="industry-layout reveal">
+        <div class="industry-image">
+          <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&q=80" alt="Insurance" loading="lazy">
+        </div>
+        <div class="industry-content">
+          <svg class="industry-icon" viewBox="0 0 40 40" fill="none">
+            <circle cx="20" cy="20" r="18" stroke="var(--accent)" stroke-width="1.5"/>
+            <path d="M20 12L26 15V21C26 25.4 23.2 29.2 20 30.6C16.8 29.2 14 25.4 14 21V15L20 12Z" stroke="var(--accent)" stroke-width="1.5" fill="none" stroke-linejoin="round"/>
+          </svg>
+          <h2>Insurance</h2>
+          <p class="industry-help">Claims automation, underwriting AI, risk modeling</p>
+          <div class="use-cases">
+            <div class="use-case"><span class="use-case-check">✓</span><span>Claims Processing AI</span></div>
+            <div class="use-case"><span class="use-case-check">✓</span><span>Underwriting Automation</span></div>
+            <div class="use-case"><span class="use-case-check">✓</span><span>Fraud Detection</span></div>
+            <div class="use-case"><span class="use-case-check">✓</span><span>Policy Pricing</span></div>
+          </div>
+          <div class="industry-logos">
+            <span class="logo-badge">Insurance Corp</span>
+            <span class="logo-badge">Underwriter</span>
+            <span class="logo-badge">Broker Network</span>
+          </div>
+          <div class="industry-metric">↑ 55% claims processing speed</div>
+          <a href="industry-insurance.html" class="industry-link">Explore Insurance →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. TRANSPORTATION -->
+  <section class="industry-section" id="transportation">
+    <div class="wrap">
+      <div class="industry-layout reverse reveal">
+        <div class="industry-image">
+          <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&q=80" alt="Transportation & Logistics" loading="lazy">
+        </div>
+        <div class="industry-content">
+          <svg class="industry-icon" viewBox="0 0 40 40" fill="none">
+            <circle cx="20" cy="20" r="18" stroke="var(--accent)" stroke-width="1.5"/>
+            <path d="M13 20H27M18 16L22 16V22L18 22M14 24H26" stroke="var(--accent)" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="15" cy="24" r="1.5" fill="var(--accent)"/>
+            <circle cx="25" cy="24" r="1.5" fill="var(--accent)"/>
+          </svg>
+          <h2>Transportation & Logistics</h2>
+          <p class="industry-help">Route optimization, fleet management, demand prediction</p>
+          <div class="use-cases">
+            <div class="use-case"><span class="use-case-check">✓</span><span>Route Optimization</span></div>
+            <div class="use-case"><span class="use-case-check">✓</span><span>Fleet Predictive Maintenance</span></div>
+            <div class="use-case"><span class="use-case-check">✓</span><span>Last-Mile Delivery AI</span></div>
+            <div class="use-case"><span class="use-case-check">✓</span><span>Warehouse Automation</span></div>
+          </div>
+          <div class="industry-logos">
+            <span class="logo-badge">Logistics Leader</span>
+            <span class="logo-badge">Delivery Network</span>
+            <span class="logo-badge">Freight Company</span>
+          </div>
+          <div class="industry-metric">↓ 18% logistics costs</div>
+          <a href="industry-transportation.html" class="industry-link">Explore Transportation →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA: CROSS-INDUSTRY -->
+  <section class="cta-section" id="contact">
+    <div class="wrap">
+      <div class="cta-box reveal">
+        <div>
+          <h2>Don't see your industry?</h2>
+          <p>We've delivered AI solutions across 30+ verticals. Let's discuss yours.</p>
+        </div>
+        <a href="mailto:sendpavan@gmail.com" class="btn btn-accent" style="padding:16px 36px;font-size:1rem;white-space:nowrap;">Contact Us →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">
+            <svg class="footer-logo" viewBox="0 0 40 40" fill="none">
+              <rect width="40" height="40" rx="10" fill="var(--ink)"/>
+              <line x1="10" y1="10" x2="30" y2="30" stroke="#d4622b" stroke-width="1.2" stroke-linecap="round" opacity="0.28"/>
+              <line x1="30" y1="10" x2="10" y2="30" stroke="#d4622b" stroke-width="1.2" stroke-linecap="round" opacity="0.28"/>
+              <path d="M14 9L14 32" stroke="white" stroke-width="3.5" stroke-linecap="round"/>
+              <path d="M14 9L22 9C28 9 32 12.5 32 16.5C32 20.5 28 23.5 22 23.5L14 23.5" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+              <circle cx="30" cy="16.5" r="2.5" fill="#d4622b"/>
+              <circle cx="14" cy="32" r="2.5" fill="#4f9cff"/>
+            </svg>
+            Proxiant<span>.</span>
+          </div>
+          <p class="footer-tagline">Enterprise AI training, transformation, and products. Built for teams that ship.</p>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <ul><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul>
+        </div>
+        <div>
+          <h4>Solutions</h4>
+          <ul><li><a href="solutions.html">Services</a></li><li><a href="solutions.html">Case Studies</a></li><li><a href="solutions.html">Assessment</a></li></ul>
+        </div>
+        <div>
+          <h4>Labs</h4>
+          <ul><li><a href="labs.html">Products</a></li><li><a href="proxialpha.html">ProxiAlpha</a></li><li><a href="labs.html">API Docs</a></li></ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Proxiant AI. All rights reserved.</span>
+        <span>sendpavan@gmail.com</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    window.addEventListener('scroll', () => {
+      document.getElementById('header').classList.toggle('scrolled', window.scrollY > 20);
+    });
+  </script>
+</body>
+</html>

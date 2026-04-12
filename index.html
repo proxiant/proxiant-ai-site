@@ -3,6 +3,1493 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Enterprise AI consulting, engineering, and products. From strategy to deployment, Proxiant helps organizations harness AI for measurable business outcomes.">
+  <meta name="theme-color" content="#BF5700">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Proxiant — Enterprise AI Consulting, Engineering & Products">
+  <meta property="og:description" content="Enterprise AI consulting, engineering, and products. Trusted by industry leaders.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://proxiant.ai/">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&q=80">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Proxiant — Enterprise AI Consulting, Engineering & Products">
+  <meta name="twitter:description" content="Enterprise AI consulting, engineering, and products. Trusted by industry leaders.">
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&q=80">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://proxiant.ai/">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@300;600;800&family=Outfit:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <title>Proxiant — Enterprise AI Consulting, Engineering & Products</title>
+
+  <!-- Schema.org Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Proxiant",
+    "url": "https://proxiant.ai",
+    "logo": "https://proxiant.ai/logo.png",
+    "description": "Enterprise AI consulting, engineering, and products",
+    "foundingDate": "2018",
+    "sameAs": [
+      "https://linkedin.com/company/proxiant",
+      "https://twitter.com/proxiant",
+      "https://github.com/proxiant"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "Sales",
+      "email": "hello@proxiant.ai"
+    }
+  }
+  </script>
+
+  <style>
+    :root {
+      --primary: #BF5700;
+      --primary-light: #E87511;
+      --primary-dark: #9E4A00;
+      --primary-subtle: rgba(191, 87, 0, 0.08);
+      --primary-glow: rgba(191, 87, 0, 0.25);
+      --charcoal: #1C1C1E;
+      --graphite: #2C2C2E;
+      --slate: #48484A;
+      --ash: #8E8E93;
+      --pearl: #F5F3F0;
+      --cream: #FAF8F5;
+      --navy: #1B3A4B;
+      --teal: #2A9D8F;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      color: var(--charcoal);
+      background: #fff;
+      line-height: 1.6;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Bricolage Grotesque', sans-serif;
+    }
+
+    .font-display {
+      font-family: 'Bricolage Grotesque', sans-serif;
+    }
+
+    .font-mono {
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    /* Tailwind Color Overrides */
+    .text-primary { color: var(--primary); }
+    .bg-primary { background-color: var(--primary); }
+    .border-primary { border-color: var(--primary); }
+
+    /* Hero Background Pattern */
+    .hero-pattern {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-pattern::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 20% 50%, rgba(191, 87, 0, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(42, 157, 143, 0.06) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .hero-dots {
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(circle, rgba(191, 87, 0, 0.04) 1px, transparent 1px);
+      background-size: 40px 40px;
+      pointer-events: none;
+    }
+
+    /* Reveal Animation */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .reveal.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+
+    /* Fade In Animation */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate-fade-in {
+      animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .animate-fade-in-delay-1 { animation-delay: 0s; }
+    .animate-fade-in-delay-2 { animation-delay: 0.2s; }
+    .animate-fade-in-delay-3 { animation-delay: 0.4s; }
+    .animate-fade-in-delay-4 { animation-delay: 0.6s; }
+
+    /* Slide in from right */
+    @keyframes slideInRight {
+      from {
+        opacity: 0;
+        transform: translateX(100px) scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+      }
+    }
+
+    .animate-slide-in {
+      animation: slideInRight 1s cubic-bezier(0.16, 1, 0.3, 1) 0.4s both;
+    }
+
+    /* Navigation Styles */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 50;
+      transition: all 0.3s ease;
+    }
+
+    nav.scrolled {
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(16px);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+
+    nav:not(.scrolled) {
+      background: transparent;
+    }
+
+    .nav-links a {
+      color: inherit;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .nav-cta {
+      background: var(--primary);
+      color: white;
+      padding: 0.5rem 1.25rem;
+      border-radius: 0.5rem;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+
+    .nav-cta:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 16px rgba(191, 87, 0, 0.25);
+    }
+
+    /* Dropdown Menu */
+    .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: white;
+      border-radius: 0.75rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      min-width: 250px;
+      padding: 0.5rem;
+      padding-top: 1rem;
+      margin-top: 0;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-10px);
+      transition: all 0.3s ease;
+      pointer-events: none;
+      border: 1px solid rgba(191, 87, 0, 0.1);
+      z-index: 100;
+    }
+
+    .dropdown-item {
+      position: relative;
+      padding-bottom: 0.75rem;
+    }
+
+    .dropdown-item:hover .dropdown-menu,
+    .dropdown-item:focus-within .dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    .dropdown-menu a {
+      display: block;
+      padding: 0.625rem 1rem;
+      color: #1C1C1E;
+      text-decoration: none;
+      border-radius: 0.375rem;
+      transition: all 0.2s ease;
+      font-size: 0.9375rem;
+    }
+
+    .dropdown-menu a:hover {
+      background: rgba(191, 87, 0, 0.08);
+      color: #BF5700;
+    }
+
+    /* Mobile Menu */
+    .mobile-menu {
+      position: fixed;
+      inset: 0;
+      background: white;
+      z-index: 40;
+      display: none;
+      flex-direction: column;
+      padding: 6rem 2rem 2rem;
+      overflow-y: auto;
+    }
+
+    .mobile-menu.active {
+      display: flex;
+    }
+
+    .mobile-menu a {
+      padding: 1rem 0;
+      color: var(--charcoal);
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px solid rgba(191, 87, 0, 0.1);
+    }
+
+    /* Button Styles */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.875rem 2rem;
+      border-radius: 0.5rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+      cursor: pointer;
+      gap: 0.5rem;
+      font-size: 1rem;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      border-color: var(--primary-dark);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 24px var(--primary-glow);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--charcoal);
+      border-color: var(--charcoal);
+    }
+
+    .btn-outline:hover {
+      background: var(--charcoal);
+      color: white;
+      transform: translateY(-3px);
+    }
+
+    .btn-white {
+      background: white;
+      color: var(--primary);
+      border-color: white;
+    }
+
+    .btn-white:hover {
+      background: var(--cream);
+      border-color: var(--cream);
+    }
+
+    .btn-outline-white {
+      background: transparent;
+      color: white;
+      border-color: white;
+    }
+
+    .btn-outline-white:hover {
+      background: white;
+      color: var(--primary);
+    }
+
+    /* Badge Styles */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      border-radius: 9999px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .badge-primary {
+      background: var(--primary-subtle);
+      color: var(--primary);
+    }
+
+    .badge-dark {
+      background: rgba(0, 0, 0, 0.08);
+      color: var(--charcoal);
+    }
+
+    /* Card Styles */
+    .card {
+      background: white;
+      border: 1px solid #E5E7EB;
+      border-radius: 1rem;
+      padding: 2rem;
+      transition: all 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      border-color: rgba(191, 87, 0, 0.2);
+    }
+
+    /* Link Hover Arrow */
+    .arrow-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+      color: var(--primary);
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .arrow-link:hover {
+      gap: 0.75rem;
+    }
+
+    /* Icon Styles */
+    .icon {
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+
+    .icon svg {
+      width: 100%;
+      height: 100%;
+      color: var(--primary);
+    }
+
+    /* Parallax */
+    .parallax-image {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .parallax-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    /* Counter Animation */
+    .counter-value {
+      display: block;
+    }
+
+    /* Terminal Mockup */
+    .terminal-card {
+      background: #0A0D14;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 1rem;
+      padding: 2rem;
+      font-family: 'JetBrains Mono', monospace;
+      color: #00E5FF;
+      font-size: 0.875rem;
+      line-height: 1.6;
+      position: relative;
+      box-shadow: 0 0 30px rgba(0, 229, 255, 0.15);
+    }
+
+    .terminal-header {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .terminal-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+    }
+
+    .terminal-dot.red { background: #FF5F57; }
+    .terminal-dot.yellow { background: #FFBD2E; }
+    .terminal-dot.green { background: #28C840; }
+
+    .terminal-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .terminal-table th,
+    .terminal-table td {
+      padding: 0.75rem 0;
+      text-align: left;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .terminal-table th {
+      color: #A0AEC0;
+      font-weight: 600;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* Floating Badge Animation */
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .float-badge {
+      position: absolute;
+      top: 2rem;
+      right: 2rem;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    /* Gradient Text */
+    .gradient-text {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* Glow Effect */
+    .glow {
+      box-shadow: 0 0 30px var(--primary-glow);
+    }
+
+    /* Image Hover Zoom */
+    .image-zoom {
+      overflow: hidden;
+      border-radius: 0.75rem;
+    }
+
+    .image-zoom img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .image-zoom:hover img {
+      transform: scale(1.08);
+    }
+
+    /* Section Spacing */
+    section {
+      scroll-margin-top: 80px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero-split {
+        flex-direction: column;
+      }
+
+      .nav-links {
+        display: none !important;
+      }
+
+      .hamburger {
+        display: block !important;
+      }
+
+      h1 {
+        font-size: 2.5rem !important;
+      }
+
+      h2 {
+        font-size: 1.875rem !important;
+      }
+    }
+
+    /* Hamburger Menu */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 6px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 0.5rem;
+    }
+
+    .hamburger span {
+      width: 24px;
+      height: 2px;
+      background: var(--charcoal);
+      transition: all 0.3s ease;
+      border-radius: 1px;
+    }
+
+    .hamburger.active span:nth-child(1) {
+      transform: rotate(45deg) translate(12px, 12px);
+    }
+
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(8px, -8px);
+    }
+
+    /* Newsletter Input */
+    .newsletter-input {
+      display: flex;
+      gap: 0.5rem;
+      flex: 1;
+    }
+
+    .newsletter-input input {
+      flex: 1;
+      padding: 0.75rem 1rem;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 0.5rem;
+      background: rgba(255, 255, 255, 0.08);
+      color: white;
+      font-family: inherit;
+      transition: all 0.3s ease;
+    }
+
+    .newsletter-input input::placeholder {
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    .newsletter-input input:focus {
+      outline: none;
+      background: rgba(255, 255, 255, 0.12);
+      border-color: rgba(191, 87, 0, 0.3);
+    }
+
+    .newsletter-input button {
+      padding: 0.75rem 1.5rem;
+      background: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 0.5rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .newsletter-input button:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+
+    /* Greyscale to Color Transition */
+    .logo-badge {
+      filter: grayscale(1);
+      transition: filter 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      border-radius: 0.75rem;
+      background: var(--cream);
+    }
+
+    .logo-badge:hover {
+      filter: grayscale(0);
+    }
+
+    /* Gradient Animated Background */
+    @keyframes gradientShift {
+      0%, 100% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+    }
+
+    .gradient-animated {
+      background: linear-gradient(
+        90deg,
+        var(--primary) 0%,
+        var(--primary-light) 50%,
+        var(--primary) 100%
+      );
+      background-size: 200% 100%;
+      animation: gradientShift 6s ease infinite;
+    }
+
+    .scale-108 {
+      transform: scale(1.08);
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="nav-bar">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <!-- Logo -->
+        <div class="flex items-center">
+          <a href="#" class="font-display font-bold text-2xl text-charcoal">Proxiant</a>
+        </div>
+
+        <!-- Desktop Navigation -->
+        <div class="nav-links hidden md:flex items-center gap-8">
+          <div class="dropdown-item relative">
+            <button class="text-charcoal hover:text-primary transition-colors cursor-pointer bg-transparent border-none">Services</button>
+            <div class="dropdown-menu">
+              <a href="#services">AI Consulting & Strategy</a>
+              <a href="#services">Product Engineering</a>
+              <a href="#services">Cloud & Infrastructure</a>
+              <a href="#services">Data & Analytics</a>
+              <a href="#services">Managed Operations</a>
+            </div>
+          </div>
+          <div class="dropdown-item relative">
+            <button class="text-charcoal hover:text-primary transition-colors cursor-pointer bg-transparent border-none">Industries</button>
+            <div class="dropdown-menu">
+              <a href="industry-financial-services.html">Financial Services</a>
+              <a href="industry-healthcare.html">Healthcare</a>
+              <a href="industry-manufacturing.html">Manufacturing</a>
+              <a href="industry-retail.html">Retail & E-Commerce</a>
+              <a href="industry-energy.html">Energy & Utilities</a>
+              <a href="industry-telecom.html">Telecommunications</a>
+              <a href="industry-insurance.html">Insurance</a>
+              <a href="industry-transportation.html">Transportation & Logistics</a>
+            </div>
+          </div>
+          <a href="labs.html" class="text-charcoal hover:text-primary transition-colors">Labs</a>
+          <a href="insights.html" class="text-charcoal hover:text-primary transition-colors">Insights</a>
+          <a href="about.html" class="text-charcoal hover:text-primary transition-colors">About</a>
+        </div>
+
+        <!-- CTA Button & Hamburger -->
+        <div class="flex items-center gap-4">
+          <a href="#cta" class="nav-cta hidden md:inline-block">Contact Us</a>
+          <button class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#services">Services</a>
+    <a href="#industries">Industries</a>
+    <a href="#proxialpha">Labs</a>
+    <a href="#insights">Insights</a>
+    <a href="#about">About</a>
+    <a href="#cta" class="mt-8 text-primary font-bold">Contact Us</a>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero-pattern min-h-screen pt-20 flex items-center relative overflow-hidden" id="hero">
+    <div class="hero-dots"></div>
+    <div class="absolute inset-0 z-0"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <!-- Left Content -->
+        <div>
+          <div class="badge badge-primary animate-fade-in mb-6">
+            Enterprise AI Partner
+          </div>
+
+          <h1 class="font-display font-extrabold text-5xl lg:text-7xl leading-tight text-charcoal mb-6 animate-fade-in animate-fade-in-delay-2">
+            We Build AI That Actually Works.
+          </h1>
+
+          <p class="text-lg lg:text-xl text-slate mb-8 max-w-lg animate-fade-in animate-fade-in-delay-3">
+            From strategy to deployment — Proxiant helps enterprises harness AI for measurable business outcomes.
+          </p>
+
+          <div class="flex flex-col sm:flex-row gap-4 animate-fade-in animate-fade-in-delay-4">
+            <a href="#cta" class="btn btn-primary">
+              Talk to an Expert
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+            <a href="#work" class="btn btn-outline">
+              View Our Work
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Image -->
+        <div class="relative animate-slide-in">
+          <div class="rounded-2xl overflow-hidden shadow-2xl">
+            <img
+              src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80"
+              alt="Team collaboration"
+              class="w-full h-auto object-cover"
+              loading="lazy"
+            >
+          </div>
+          <!-- Decorative shadow -->
+          <div class="absolute -bottom-8 -right-8 w-64 h-64 bg-primary/10 rounded-full blur-3xl -z-10"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Bar -->
+  <section class="bg-pearl py-12 md:py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <p class="text-center text-ash text-sm font-medium mb-8 reveal">
+        Trusted by industry leaders
+      </p>
+
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+        <div class="logo-badge reveal reveal-delay-1 text-center font-mono font-bold text-slate">AWS</div>
+        <div class="logo-badge reveal reveal-delay-2 text-center font-mono font-bold text-slate">Google Cloud</div>
+        <div class="logo-badge reveal reveal-delay-3 text-center font-mono font-bold text-slate">Microsoft</div>
+        <div class="logo-badge reveal reveal-delay-4 text-center font-mono font-bold text-slate">Salesforce</div>
+        <div class="logo-badge reveal reveal-delay-1 text-center font-mono font-bold text-slate">Databricks</div>
+        <div class="logo-badge reveal reveal-delay-2 text-center font-mono font-bold text-slate">Snowflake</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="py-20 md:py-32 bg-white" id="services">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-16 text-center reveal">
+        <h2 class="font-display font-bold text-4xl lg:text-5xl text-charcoal mb-6">What We Do</h2>
+        <p class="text-lg text-slate max-w-2xl mx-auto">
+          End-to-end AI solutions that drive business transformation and competitive advantage.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Card 1 -->
+        <div class="card reveal reveal-delay-1">
+          <div class="icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2v20M2 12h20M7 7l10 10M17 7L7 17"/>
+            </svg>
+          </div>
+          <h3 class="font-display font-semibold text-xl text-charcoal mb-3">AI Consulting & Strategy</h3>
+          <p class="text-slate mb-6">Navigate the AI landscape with a clear, actionable roadmap tailored to your business goals.</p>
+          <a href="#" class="arrow-link">Learn More →</a>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card reveal reveal-delay-2">
+          <div class="icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="16 18 22 12 16 6"></polyline>
+              <polyline points="8 6 2 12 8 18"></polyline>
+            </svg>
+          </div>
+          <h3 class="font-display font-semibold text-xl text-charcoal mb-3">Product Engineering</h3>
+          <p class="text-slate mb-6">Build production-grade AI systems designed to scale with your growth and evolving needs.</p>
+          <a href="#" class="arrow-link">Learn More →</a>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card reveal reveal-delay-3">
+          <div class="icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="9"></circle>
+              <polyline points="12 7v5l3 2"></polyline>
+            </svg>
+          </div>
+          <h3 class="font-display font-semibold text-xl text-charcoal mb-3">Managed AI Operations</h3>
+          <p class="text-slate mb-6">Continuous optimization, monitoring, and support after launch to maximize performance.</p>
+          <a href="#" class="arrow-link">Learn More →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Case Study -->
+  <section class="py-20 md:py-32 bg-cream" id="work">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-white rounded-2xl overflow-hidden shadow-xl reveal">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-0">
+          <!-- Image -->
+          <div class="lg:col-span-2 h-96 lg:h-auto parallax-image">
+            <img
+              src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80"
+              alt="Data dashboard"
+              class="w-full h-full object-cover"
+              loading="lazy"
+            >
+          </div>
+
+          <!-- Content -->
+          <div class="p-8 md:p-12 flex flex-col justify-center reveal reveal-delay-2">
+            <div class="badge badge-primary mb-6">Case Study</div>
+
+            <h3 class="font-display font-bold text-2xl lg:text-3xl text-charcoal mb-6">
+              How a Fortune 500 Bank Achieved 3x Pipeline Efficiency with AI
+            </h3>
+
+            <div class="grid grid-cols-3 gap-4 mb-8">
+              <div>
+                <p class="font-mono font-bold text-xl text-primary">↑ 312%</p>
+                <p class="text-sm text-slate">Efficiency Gain</p>
+              </div>
+              <div>
+                <p class="font-mono font-bold text-xl text-primary">↓ 47%</p>
+                <p class="text-sm text-slate">Cost Reduction</p>
+              </div>
+              <div>
+                <p class="font-mono font-bold text-xl text-primary">&lt; 90d</p>
+                <p class="text-sm text-slate">To Impact</p>
+              </div>
+            </div>
+
+            <a href="#" class="arrow-link">Read the Full Story →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Industries Section -->
+  <section class="py-20 md:py-32 bg-white" id="industries">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display font-bold text-4xl lg:text-5xl text-charcoal text-center mb-16 reveal">
+        Industries We Transform
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Financial Services -->
+        <div class="h-80 rounded-2xl overflow-hidden relative group reveal reveal-delay-1">
+          <img
+            src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=600&q=80"
+            alt="Financial Services"
+            class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-500"
+            loading="lazy"
+          >
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+            <h3 class="font-display font-bold text-xl mb-2">Financial Services</h3>
+            <p class="text-sm opacity-90">Secure, compliant AI solutions</p>
+          </div>
+        </div>
+
+        <!-- Healthcare -->
+        <div class="h-80 rounded-2xl overflow-hidden relative group reveal reveal-delay-2">
+          <img
+            src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&q=80"
+            alt="Healthcare"
+            class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-500"
+            loading="lazy"
+          >
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+            <h3 class="font-display font-bold text-xl mb-2">Healthcare</h3>
+            <p class="text-sm opacity-90">Precision medicine & operations</p>
+          </div>
+        </div>
+
+        <!-- Manufacturing -->
+        <div class="h-80 rounded-2xl overflow-hidden relative group reveal reveal-delay-3">
+          <img
+            src="https://images.unsplash.com/photo-1565043666747-69f6646db940?w=600&q=80"
+            alt="Manufacturing"
+            class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-500"
+            loading="lazy"
+          >
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+            <h3 class="font-display font-bold text-xl mb-2">Manufacturing</h3>
+            <p class="text-sm opacity-90">Smart factories & predictive maintenance</p>
+          </div>
+        </div>
+
+        <!-- Retail & E-Commerce -->
+        <div class="h-80 rounded-2xl overflow-hidden relative group reveal reveal-delay-1">
+          <img
+            src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&q=80"
+            alt="Retail"
+            class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-500"
+            loading="lazy"
+          >
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+            <h3 class="font-display font-bold text-xl mb-2">Retail & E-Commerce</h3>
+            <p class="text-sm opacity-90">Personalization & optimization</p>
+          </div>
+        </div>
+
+        <!-- Energy & Utilities -->
+        <div class="h-80 rounded-2xl overflow-hidden relative group reveal reveal-delay-2">
+          <img
+            src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=600&q=80"
+            alt="Energy"
+            class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-500"
+            loading="lazy"
+          >
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+            <h3 class="font-display font-bold text-xl mb-2">Energy & Utilities</h3>
+            <p class="text-sm opacity-90">Grid optimization & forecasting</p>
+          </div>
+        </div>
+
+        <!-- Telecommunications -->
+        <div class="h-80 rounded-2xl overflow-hidden relative group reveal reveal-delay-3">
+          <img
+            src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&q=80"
+            alt="Telecommunications"
+            class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-500"
+            loading="lazy"
+          >
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+            <h3 class="font-display font-bold text-xl mb-2">Telecommunications</h3>
+            <p class="text-sm opacity-90">Network intelligence & 5G</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="bg-charcoal py-20 md:py-32">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- Stat 1 -->
+        <div class="text-center reveal">
+          <p class="font-mono font-bold text-4xl lg:text-6xl text-primary mb-2">
+            <span class="counter" data-target="150">0</span>+
+          </p>
+          <p class="text-ash">Projects Delivered</p>
+        </div>
+
+        <!-- Stat 2 -->
+        <div class="text-center reveal reveal-delay-1">
+          <p class="font-mono font-bold text-4xl lg:text-6xl text-primary mb-2">
+            <span class="counter" data-target="6000">0</span>+
+          </p>
+          <p class="text-ash">AI Models Deployed</p>
+        </div>
+
+        <!-- Stat 3 -->
+        <div class="text-center reveal reveal-delay-2">
+          <p class="font-mono font-bold text-4xl lg:text-6xl text-primary mb-2">
+            $<span class="counter" data-target="2">0</span>B+
+          </p>
+          <p class="text-ash">Revenue Impact</p>
+        </div>
+
+        <!-- Stat 4 -->
+        <div class="text-center reveal reveal-delay-3">
+          <p class="font-mono font-bold text-4xl lg:text-6xl text-primary mb-2">
+            <span class="counter" data-target="98">0</span>%
+          </p>
+          <p class="text-ash">Client Retention</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ProxiAlpha Spotlight -->
+  <section class="py-20 md:py-32 bg-cream" id="proxialpha">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <!-- Left Content -->
+        <div class="reveal">
+          <p class="badge badge-primary mb-6">From Proxiant Labs</p>
+          <h2 class="font-display font-bold text-4xl lg:text-5xl text-charcoal mb-6">
+            Meet ProxiAlpha
+          </h2>
+          <p class="text-lg text-slate mb-8">
+            An AI-powered trading platform that combines institutional-grade analysis with cutting-edge machine learning. ProxiAlpha delivers real-time market insights and signal generation for sophisticated traders and funds.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="#" class="btn btn-primary">Launch Terminal →</a>
+            <a href="#" class="btn btn-outline">Learn More →</a>
+          </div>
+        </div>
+
+        <!-- Right Terminal -->
+        <div class="reveal reveal-delay-2">
+          <div class="terminal-card relative">
+            <div class="terminal-header">
+              <div class="terminal-dot red"></div>
+              <div class="terminal-dot yellow"></div>
+              <div class="terminal-dot green"></div>
+            </div>
+
+            <table class="terminal-table">
+              <thead>
+                <tr>
+                  <th>Symbol</th>
+                  <th>Signal</th>
+                  <th>Confidence</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>AAPL</td>
+                  <td style="color: #4ADE80;">BUY</td>
+                  <td>94.2%</td>
+                </tr>
+                <tr>
+                  <td>MSFT</td>
+                  <td style="color: #4ADE80;">BUY</td>
+                  <td>87.6%</td>
+                </tr>
+                <tr>
+                  <td>TSLA</td>
+                  <td style="color: #F87171;">SELL</td>
+                  <td>79.3%</td>
+                </tr>
+                <tr>
+                  <td>NVDA</td>
+                  <td style="color: #FBBF24;">HOLD</td>
+                  <td>65.8%</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <!-- Floating Badge -->
+            <div class="float-badge bg-emerald-500 text-white px-3 py-1 rounded-full text-sm font-mono">
+              ↑ BUY AAPL +2.3%
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Insights / Blog -->
+  <section class="py-20 md:py-32 bg-white" id="insights">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between mb-16 reveal">
+        <h2 class="font-display font-bold text-4xl lg:text-5xl text-charcoal">Latest Insights</h2>
+        <a href="#" class="arrow-link hidden md:inline-flex">View All →</a>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Article 1 -->
+        <div class="reveal reveal-delay-1">
+          <div class="image-zoom h-48 mb-6">
+            <img
+              src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&q=80"
+              alt="AI Trends"
+              loading="lazy"
+            >
+          </div>
+          <div class="badge badge-dark mb-4">AI & ML</div>
+          <h3 class="font-display font-semibold text-lg text-charcoal mb-3">
+            The Future of Generative AI in Enterprise
+          </h3>
+          <p class="text-sm text-ash">Apr 2026 · 6 min read</p>
+        </div>
+
+        <!-- Article 2 -->
+        <div class="reveal reveal-delay-2">
+          <div class="image-zoom h-48 mb-6">
+            <img
+              src="https://images.unsplash.com/photo-1639322537228-f710d846310a?w=600&q=80"
+              alt="Blockchain"
+              loading="lazy"
+            >
+          </div>
+          <div class="badge badge-dark mb-4">Technology</div>
+          <h3 class="font-display font-semibold text-lg text-charcoal mb-3">
+            Building Trustworthy AI Systems
+          </h3>
+          <p class="text-sm text-ash">Apr 2026 · 5 min read</p>
+        </div>
+
+        <!-- Article 3 -->
+        <div class="reveal reveal-delay-3">
+          <div class="image-zoom h-48 mb-6">
+            <img
+              src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=600&q=80"
+              alt="Team"
+              loading="lazy"
+            >
+          </div>
+          <div class="badge badge-dark mb-4">Culture</div>
+          <h3 class="font-display font-semibold text-lg text-charcoal mb-3">
+            Scaling AI Teams: Lessons from Our Growth
+          </h3>
+          <p class="text-sm text-ash">Mar 2026 · 7 min read</p>
+        </div>
+      </div>
+
+      <a href="#" class="arrow-link md:hidden mt-12 block text-center">View All Articles →</a>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section class="bg-primary py-20 md:py-32 relative overflow-hidden" id="cta">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute top-0 right-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
+      <div class="absolute bottom-0 left-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
+    </div>
+
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 reveal">
+      <h2 class="font-display font-bold text-4xl lg:text-5xl text-white mb-6">
+        Ready to Transform Your Business with AI?
+      </h2>
+      <p class="text-lg text-white/80 mb-12 max-w-2xl mx-auto">
+        Let's discuss how Proxiant can accelerate your AI journey and deliver measurable results.
+      </p>
+
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="#" class="btn btn-white">Schedule a Consultation →</a>
+        <a href="tel:+1234567890" class="btn btn-outline-white">Call Us →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-charcoal text-white py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Top Section: Logo & Newsletter -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16 pb-16 border-b border-white/10">
+        <div>
+          <h3 class="font-display font-bold text-2xl mb-2">Proxiant</h3>
+          <p class="text-gray-400">Enterprise AI Consulting & Engineering</p>
+        </div>
+        <div>
+          <p class="text-sm text-gray-400 mb-4">Subscribe to our newsletter</p>
+          <div class="newsletter-input">
+            <input type="email" placeholder="Enter your email" required>
+            <button>Subscribe</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Links Section -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
+        <!-- Services -->
+        <div>
+          <h4 class="font-semibold mb-6">Services</h4>
+          <ul class="space-y-3">
+            <li><a href="#" class="text-sm text-gray-400 hover:text-white transition-colors">AI Consulting</a></li>
+            <li><a href="#" class="text-sm text-gray-400 hover:text-white transition-colors">Product Engineering</a></li>
+            <li><a href="#" class="text-sm text-gray-400 hover:text-white transition-colors">Cloud & Infra</a></li>
+            <li><a href="#" class="text-sm text-gray-400 hover:text-white transition-colors">Data & Analytics</a></li>
+            <li><a href="#" class="text-sm text-gray-400 hover:text-white transition-colors">Managed Operations</a></li>
+          </ul>
+        </div>
+
+        <!-- Industries -->
+        <div>
+          <h4 class="font-semibold mb-6">Industries</h4>
+          <ul class="space-y-3">
+            <li><a href="#" class="text-sm text-gray-400 hover:text-white transition-colors">Financial Services</a></li>
+            <li><a href="#" class="text-sm text-gray-400 hover:text-white transition-colors">Healthcare</a></li>
+            <li><a href="#" class="text-sm text-gray-400 hover:text-white transition-colors">Manufacturing</a></li>
+            <li><a href="#" class="text-sm text-gray-400 hover:text-white transition-colors">Retail</a></li>
+            <li><a href="#" class="text-sm text-gray-400 hover:text-white transition-colors">Energy</a></li>
+          </ul>
+        </div>
+
+        <!-- Company -->
+        <div>
+          <h4 class="font-semibold mb-6">Company</h4>
+          <ul class="space-y-3">
+            <li><a href="#" class="text-sm text-gray-400 hover:text-white transition-colors">About Us</a></li>
+            <li><a href="#" class="text-sm text-gray-400 hover:text-white transition-colors">Careers</a></li>
+            <li><a href="#" class="text-sm text-gray-400 hover:text-white transition-colors">Partners</a></li>
+            <li><a href="#" class="text-sm text-gray-400 hover:text-white transition-colors">Contact</a></li>
+            <li><a href="#" class="text-sm text-gray-400 hover:text-white transition-colors">Locations</a></li>
+          </ul>
+        </div>
+
+        <!-- Resources -->
+        <div>
+          <h4 class="font-semibold mb-6">Resources</h4>
+          <ul class="space-y-3">
+            <li><a href="#" class="text-sm text-gray-400 hover:text-white transition-colors">Blog</a></li>
+            <li><a href="#" class="text-sm text-gray-400 hover:text-white transition-colors">Case Studies</a></li>
+            <li><a href="#" class="text-sm text-gray-400 hover:text-white transition-colors">Whitepapers</a></li>
+            <li><a href="#" class="text-sm text-gray-400 hover:text-white transition-colors">API Docs</a></li>
+            <li><a href="#" class="text-sm text-gray-400 hover:text-white transition-colors">Changelog</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom Section -->
+      <div class="flex flex-col md:flex-row items-center justify-between gap-8 border-t border-white/10 pt-8">
+        <p class="text-sm text-gray-400">© 2026 Proxiant AI. All rights reserved.</p>
+
+        <div class="flex gap-6">
+          <a href="#" class="text-sm text-gray-400 hover:text-white transition-colors">Privacy Policy</a>
+          <a href="#" class="text-sm text-gray-400 hover:text-white transition-colors">Terms</a>
+          <a href="#" class="text-sm text-gray-400 hover:text-white transition-colors">Cookie Settings</a>
+        </div>
+
+        <div class="flex gap-6">
+          <a href="#" class="text-gray-400 hover:text-white transition-colors" aria-label="LinkedIn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.39v-1.2h-2.84v8.37h2.84v-4.13c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.13h2.84M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+            </svg>
+          </a>
+          <a href="#" class="text-gray-400 hover:text-white transition-colors" aria-label="Twitter">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2s9 5 20 5a9.5 9.5 0 00-9-5.5c4.75 2.25 7-7 7-7"/>
+            </svg>
+          </a>
+          <a href="#" class="text-gray-400 hover:text-white transition-colors" aria-label="GitHub">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.868-.013-1.703-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.544 2.914 1.19.092-.926.35-1.546.636-1.903-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll to Top Button -->
+  <a href="#hero" id="scrollToTop" style="display: none;" class="fixed bottom-8 right-8 bg-primary text-white p-3 rounded-full shadow-lg hover:bg-primary-dark transition-all z-40">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M12 19V5M5 12l7-7 7 7"/>
+    </svg>
+  </a>
+
+  <script>
+    // Tailwind Config
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: { DEFAULT: '#BF5700', light: '#E87511', dark: '#9E4A00' },
+            charcoal: '#1C1C1E',
+            graphite: '#2C2C2E',
+            slate: '#48484A',
+            ash: '#8E8E93',
+            pearl: '#F5F3F0',
+            cream: '#FAF8F5',
+            navy: '#1B3A4B',
+            teal: '#2A9D8F',
+          },
+          fontFamily: {
+            display: ['Bricolage Grotesque', 'sans-serif'],
+            body: ['Outfit', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+        },
+      },
+    };
+
+    // Mobile Menu Toggle
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      mobileMenu.classList.toggle('active');
+    });
+
+    // Close mobile menu when link is clicked
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        mobileMenu.classList.remove('active');
+      });
+    });
+
+    // Navigation scroll effect
+    const nav = document.querySelector('nav');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+    });
+
+    // Scroll to top button
+    const scrollToTopBtn = document.getElementById('scrollToTop');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        scrollToTopBtn.style.display = 'flex';
+      } else {
+        scrollToTopBtn.style.display = 'none';
+      }
+    });
+
+    // Intersection Observer for scroll reveals
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    reveals.forEach(el => observer.observe(el));
+
+    // Counter Animation
+    const counters = document.querySelectorAll('.counter');
+    let counterStarted = false;
+
+    const startCounters = () => {
+      counters.forEach(counter => {
+        const target = parseInt(counter.getAttribute('data-target'));
+        let current = 0;
+        const increment = target / 60;
+
+        const updateCounter = () => {
+          current += increment;
+          if (current < target) {
+            counter.textContent = Math.floor(current);
+            requestAnimationFrame(updateCounter);
+          } else {
+            counter.textContent = target;
+          }
+        };
+
+        updateCounter();
+      });
+    };
+
+    // Trigger counter animation when stats section is visible
+    const statsSection = document.querySelector('.bg-charcoal');
+    const statsObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !counterStarted) {
+          counterStarted = true;
+          startCounters();
+          statsObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    if (statsSection) {
+      statsObserver.observe(statsSection);
+    }
+
+    // Parallax effect (subtle)
+    window.addEventListener('scroll', () => {
+      const parallaxImages = document.querySelectorAll('.parallax-image img');
+      parallaxImages.forEach(img => {
+        const rect = img.getBoundingClientRect();
+        const scrollPercent = (window.innerHeight - rect.top) / window.innerHeight;
+        if (scrollPercent > 0 && scrollPercent < 1) {
+          img.style.transform = `translateY(${scrollPercent * 20}px)`;
+        }
+      });
+    });
+
+    // Smooth scroll behavior (already in CSS)
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (href !== '#' && document.querySelector(href)) {
+          e.preventDefault();
+          const target = document.querySelector(href);
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+
+    // Floating animation for ProxiAlpha badge
+    const floatBadge = document.querySelector('.float-badge');
+    if (floatBadge) {
+      let opacity = 1;
+      let direction = -0.02;
+
+      setInterval(() => {
+        opacity += direction;
+        if (opacity <= 0.3 || opacity >= 1) {
+          direction *= -1;
+        }
+        floatBadge.style.opacity = opacity;
+      }, 30);
+    }
+  </script>
+</body>
+</html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Proxiant — Enterprise AI Training, Consulting & Products</title>
   <meta name="description" content="Proxiant delivers enterprise AI training, consulting, and products. We help organizations build real AI capability — from assessment to deployment.">
   <meta name="robots" content="index, follow">

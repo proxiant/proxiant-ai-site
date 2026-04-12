@@ -1,0 +1,1353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Learn about Proxiant's mission to democratize enterprise AI. Our story, team, and offices serving global enterprises.">
+  <meta name="theme-color" content="#BF5700">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="About Proxiant — Our Story & Mission">
+  <meta property="og:description" content="Building the future of enterprise AI — one partnership at a time.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://proxiant.ai/about">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=80">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="About Proxiant — Our Story & Mission">
+  <meta name="twitter:description" content="Building the future of enterprise AI — one partnership at a time.">
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=80">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://proxiant.ai/about">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@300;600;800&family=Outfit:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <title>About Proxiant — Enterprise AI Consulting & Engineering</title>
+
+  <!-- Schema.org Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Proxiant",
+    "url": "https://proxiant.ai",
+    "logo": "https://proxiant.ai/logo.png",
+    "description": "Enterprise AI consulting, engineering, and products",
+    "foundingDate": "2022",
+    "sameAs": [
+      "https://linkedin.com/company/proxiant",
+      "https://twitter.com/proxiant",
+      "https://github.com/proxiant"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "Sales",
+      "email": "hello@proxiant.ai"
+    }
+  }
+  </script>
+
+  <style>
+    :root {
+      --primary: #BF5700;
+      --primary-light: #E87511;
+      --primary-dark: #9E4A00;
+      --primary-subtle: rgba(191, 87, 0, 0.08);
+      --primary-glow: rgba(191, 87, 0, 0.25);
+      --charcoal: #1C1C1E;
+      --graphite: #2C2C2E;
+      --slate: #48484A;
+      --ash: #8E8E93;
+      --pearl: #F5F3F0;
+      --cream: #FAF8F5;
+      --navy: #1B3A4B;
+      --teal: #2A9D8F;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      color: var(--charcoal);
+      background: #fff;
+      line-height: 1.6;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Bricolage Grotesque', sans-serif;
+    }
+
+    .font-display {
+      font-family: 'Bricolage Grotesque', sans-serif;
+    }
+
+    .font-mono {
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    /* Tailwind Color Overrides */
+    .text-primary { color: var(--primary); }
+    .bg-primary { background-color: var(--primary); }
+    .border-primary { border-color: var(--primary); }
+
+    /* Hero Background Pattern */
+    .hero-pattern {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-pattern::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 20% 50%, rgba(191, 87, 0, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(42, 157, 143, 0.06) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .hero-dots {
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(circle, rgba(191, 87, 0, 0.04) 1px, transparent 1px);
+      background-size: 40px 40px;
+      pointer-events: none;
+    }
+
+    /* Reveal Animation */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .reveal.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+
+    /* Fade In Animation */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate-fade-in {
+      animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .animate-fade-in-delay-1 { animation-delay: 0s; }
+    .animate-fade-in-delay-2 { animation-delay: 0.2s; }
+    .animate-fade-in-delay-3 { animation-delay: 0.4s; }
+    .animate-fade-in-delay-4 { animation-delay: 0.6s; }
+
+    /* Slide in from right */
+    @keyframes slideInRight {
+      from {
+        opacity: 0;
+        transform: translateX(100px) scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+      }
+    }
+
+    .animate-slide-in {
+      animation: slideInRight 1s cubic-bezier(0.16, 1, 0.3, 1) 0.4s both;
+    }
+
+    /* Navigation Styles */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 50;
+      transition: all 0.3s ease;
+    }
+
+    nav.scrolled {
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(16px);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+
+    nav:not(.scrolled) {
+      background: transparent;
+    }
+
+    .nav-links a {
+      color: inherit;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .nav-cta {
+      background: var(--primary);
+      color: white;
+      padding: 0.5rem 1.25rem;
+      border-radius: 0.5rem;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+
+    .nav-cta:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 16px rgba(191, 87, 0, 0.25);
+    }
+
+    /* Dropdown Menu */
+    .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: white;
+      border-radius: 0.75rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      min-width: 250px;
+      padding: 0.5rem;
+      padding-top: 1rem;
+      margin-top: 0;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-10px);
+      transition: all 0.3s ease;
+      pointer-events: none;
+      border: 1px solid rgba(191, 87, 0, 0.1);
+      z-index: 100;
+    }
+
+    .dropdown-item {
+      position: relative;
+      padding-bottom: 0.75rem;
+    }
+
+    .dropdown-item:hover .dropdown-menu,
+    .dropdown-item:focus-within .dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    .dropdown-menu a {
+      display: block;
+      padding: 0.625rem 1rem;
+      color: #1C1C1E;
+      text-decoration: none;
+      border-radius: 0.375rem;
+      transition: all 0.2s ease;
+      font-size: 0.9375rem;
+    }
+
+    .dropdown-menu a:hover {
+      background: rgba(191, 87, 0, 0.08);
+      color: #BF5700;
+    }
+
+    /* Mobile Menu */
+    .mobile-menu {
+      position: fixed;
+      inset: 0;
+      background: white;
+      z-index: 40;
+      display: none;
+      flex-direction: column;
+      padding: 6rem 2rem 2rem;
+      overflow-y: auto;
+    }
+
+    .mobile-menu.active {
+      display: flex;
+    }
+
+    .mobile-menu a {
+      padding: 1rem 0;
+      color: var(--charcoal);
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px solid rgba(191, 87, 0, 0.1);
+    }
+
+    /* Button Styles */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.875rem 2rem;
+      border-radius: 0.5rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+      cursor: pointer;
+      gap: 0.5rem;
+      font-size: 1rem;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      border-color: var(--primary-dark);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 24px var(--primary-glow);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--charcoal);
+      border-color: var(--charcoal);
+    }
+
+    .btn-outline:hover {
+      background: var(--charcoal);
+      color: white;
+      transform: translateY(-3px);
+    }
+
+    /* Card Styles */
+    .card {
+      background: white;
+      border: 1px solid #E5E7EB;
+      border-radius: 1rem;
+      padding: 2rem;
+      transition: all 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      border-color: rgba(191, 87, 0, 0.2);
+    }
+
+    /* Link Hover Arrow */
+    .arrow-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+      color: var(--primary);
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .arrow-link:hover {
+      gap: 0.75rem;
+    }
+
+    /* Timeline Styles */
+    .timeline-item {
+      position: relative;
+      padding-left: 120px;
+      margin-bottom: 3rem;
+    }
+
+    .timeline-year {
+      position: absolute;
+      left: 0;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      font-weight: 800;
+      font-family: 'Bricolage Grotesque', sans-serif;
+    }
+
+    .timeline-content h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+      color: var(--charcoal);
+    }
+
+    .timeline-content p {
+      color: var(--slate);
+      line-height: 1.6;
+    }
+
+    /* Counter Animation */
+    .counter-value {
+      display: block;
+    }
+
+    /* Image Hover Zoom */
+    .image-zoom {
+      overflow: hidden;
+      border-radius: 0.75rem;
+    }
+
+    .image-zoom img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .image-zoom:hover img {
+      transform: scale(1.08);
+    }
+
+    /* Team Member Card */
+    .team-card {
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .team-card:hover {
+      transform: translateY(-8px);
+    }
+
+    .team-photo {
+      position: relative;
+      overflow: hidden;
+      border-radius: 1rem;
+      aspect-ratio: 1;
+      margin-bottom: 1.5rem;
+    }
+
+    .team-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .team-card:hover .team-photo img {
+      transform: scale(1.05);
+    }
+
+    .team-name {
+      font-family: 'Bricolage Grotesque', sans-serif;
+      font-weight: 600;
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+      color: var(--charcoal);
+    }
+
+    .team-title {
+      font-size: 0.875rem;
+      color: var(--ash);
+      margin-bottom: 1rem;
+    }
+
+    .team-bio {
+      font-size: 0.875rem;
+      color: var(--slate);
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+
+    .team-social {
+      display: inline-flex;
+      gap: 1rem;
+    }
+
+    .team-social a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--primary-subtle);
+      color: var(--primary);
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+
+    .team-social a:hover {
+      background: var(--primary);
+      color: white;
+      transform: translateY(-3px);
+    }
+
+    /* Location Card */
+    .location-card {
+      border-radius: 1rem;
+      overflow: hidden;
+      background: white;
+      border: 1px solid #E5E7EB;
+      transition: all 0.3s ease;
+    }
+
+    .location-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    }
+
+    .location-image {
+      width: 100%;
+      height: 250px;
+      overflow: hidden;
+    }
+
+    .location-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .location-card:hover .location-image img {
+      transform: scale(1.05);
+    }
+
+    .location-content {
+      padding: 2rem;
+    }
+
+    .location-city {
+      font-family: 'Bricolage Grotesque', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: var(--charcoal);
+    }
+
+    .location-address {
+      font-size: 0.875rem;
+      color: var(--slate);
+      line-height: 1.6;
+    }
+
+    /* Partner Logo Grid */
+    .logo-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem 1.25rem;
+      border-radius: 0.75rem;
+      background: var(--cream);
+      font-weight: 600;
+      font-size: 0.875rem;
+      color: var(--ash);
+      filter: grayscale(1);
+      transition: all 0.3s ease;
+    }
+
+    .logo-badge:hover {
+      filter: grayscale(0);
+      background: var(--primary-subtle);
+      color: var(--primary);
+    }
+
+    /* Perk Grid */
+    .perk-item {
+      text-align: center;
+    }
+
+    .perk-icon {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .perk-title {
+      font-family: 'Bricolage Grotesque', sans-serif;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: var(--charcoal);
+    }
+
+    .perk-description {
+      font-size: 0.875rem;
+      color: var(--slate);
+    }
+
+    /* Section Spacing */
+    section {
+      scroll-margin-top: 80px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none !important;
+      }
+
+      .hamburger {
+        display: block !important;
+      }
+
+      h1 {
+        font-size: 2.5rem !important;
+      }
+
+      h2 {
+        font-size: 1.875rem !important;
+      }
+
+      .timeline-item {
+        padding-left: 0;
+        padding-top: 120px;
+      }
+
+      .timeline-year {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .timeline-content {
+        text-align: center;
+      }
+    }
+
+    /* Hamburger Menu */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 6px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 0.5rem;
+    }
+
+    .hamburger span {
+      width: 24px;
+      height: 2px;
+      background: var(--charcoal);
+      transition: all 0.3s ease;
+      border-radius: 1px;
+    }
+
+    .hamburger.active span:nth-child(1) {
+      transform: rotate(45deg) translate(12px, 12px);
+    }
+
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(8px, -8px);
+    }
+
+    /* Newsletter Input */
+    .newsletter-input {
+      display: flex;
+      gap: 0.5rem;
+      flex: 1;
+    }
+
+    .newsletter-input input {
+      flex: 1;
+      padding: 0.75rem 1rem;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 0.5rem;
+      background: rgba(255, 255, 255, 0.08);
+      color: white;
+      font-family: inherit;
+      transition: all 0.3s ease;
+    }
+
+    .newsletter-input input::placeholder {
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    .newsletter-input input:focus {
+      outline: none;
+      background: rgba(255, 255, 255, 0.12);
+      border-color: rgba(191, 87, 0, 0.3);
+    }
+
+    .newsletter-input button {
+      padding: 0.75rem 1.5rem;
+      background: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 0.5rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .newsletter-input button:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="nav-bar">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <!-- Logo -->
+        <div class="flex items-center">
+          <a href="index.html" class="font-display font-bold text-2xl text-charcoal">Proxiant</a>
+        </div>
+
+        <!-- Desktop Navigation -->
+        <div class="nav-links hidden md:flex items-center gap-8">
+          <div class="dropdown-item relative">
+            <button class="text-charcoal hover:text-primary transition-colors cursor-pointer bg-transparent border-none">Services</button>
+            <div class="dropdown-menu">
+              <a href="solutions.html#ai-consulting">AI Consulting & Strategy</a>
+              <a href="solutions.html#product-engineering">Product Engineering</a>
+              <a href="solutions.html#cloud-infrastructure">Cloud & Infrastructure</a>
+              <a href="solutions.html#data-analytics">Data & Analytics</a>
+              <a href="solutions.html#managed-operations">Managed Operations</a>
+            </div>
+          </div>
+          <div class="dropdown-item relative">
+            <button class="text-charcoal hover:text-primary transition-colors cursor-pointer bg-transparent border-none">Industries</button>
+            <div class="dropdown-menu">
+              <a href="industry-financial-services.html">Financial Services</a>
+              <a href="industry-healthcare.html">Healthcare</a>
+              <a href="industry-manufacturing.html">Manufacturing</a>
+              <a href="industry-retail.html">Retail & E-Commerce</a>
+              <a href="industry-energy.html">Energy & Utilities</a>
+              <a href="industry-telecom.html">Telecommunications</a>
+              <a href="industry-insurance.html">Insurance</a>
+              <a href="industry-transportation.html">Transportation & Logistics</a>
+            </div>
+          </div>
+          <a href="labs.html" class="text-charcoal hover:text-primary transition-colors">Labs</a>
+          <a href="insights.html" class="text-charcoal hover:text-primary transition-colors">Insights</a>
+          <a href="about.html" class="text-charcoal hover:text-primary transition-colors">About</a>
+        </div>
+
+        <!-- CTA Button & Hamburger -->
+        <div class="flex items-center gap-4">
+          <a href="contact.html" class="nav-cta hidden md:inline-block">Contact Us</a>
+          <button class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="solutions.html">Services</a>
+    <a href="industries.html">Industries</a>
+    <a href="labs.html">Labs</a>
+    <a href="insights.html">Insights</a>
+    <a href="about.html">About</a>
+    <a href="contact.html" class="mt-8 text-primary font-bold">Contact Us</a>
+  </div>
+
+  <!-- Hero Section -->
+  <section id="hero" class="hero-pattern pt-32 pb-16 md:pt-40 md:pb-24">
+    <div class="absolute inset-0 hero-dots"></div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Background Image with Overlay -->
+      <div class="absolute inset-0 -z-10 overflow-hidden rounded-2xl" style="height: 50vh;">
+        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1400&q=80" alt="Modern office" class="w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-gradient-to-r from-charcoal via-charcoal/80 to-charcoal/40"></div>
+      </div>
+
+      <div class="relative z-10 py-20 md:py-32 text-white">
+        <h1 class="font-display font-bold text-5xl md:text-6xl mb-6 leading-tight reveal">Our Story</h1>
+        <p class="text-xl md:text-2xl font-light opacity-80 max-w-2xl reveal reveal-delay-1">Building the future of enterprise AI — one partnership at a time.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission & Vision Section -->
+  <section id="mission" class="py-20 md:py-32 bg-pearl">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <!-- Left: Quote -->
+        <div class="reveal">
+          <blockquote class="font-display text-3xl md:text-4xl italic text-charcoal leading-tight">
+            "We believe AI should work for everyone — not just those with PhD teams and billion-dollar budgets."
+          </blockquote>
+        </div>
+
+        <!-- Right: Content -->
+        <div class="space-y-6 reveal reveal-delay-1">
+          <p class="text-lg text-slate leading-relaxed">
+            Proxiant was founded on a simple belief: enterprise AI shouldn't be the exclusive domain of tech giants and well-funded startups. We saw brilliant organizations with real business problems, but lacked the expertise and partnerships to navigate the AI landscape.
+          </p>
+          <p class="text-lg text-slate leading-relaxed">
+            Our mission is to democratize access to world-class AI expertise and production-grade AI products. We partner with enterprises to move from AI curiosity to AI competency — delivering measurable business outcomes at scale.
+          </p>
+          <p class="text-lg text-slate leading-relaxed">
+            We envision a future where every organization, regardless of size or industry, can harness AI as a sustainable competitive advantage. That's why we invest in deep partnerships, build tools that stick, and mentor teams to thrive in an AI-first world.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Timeline Section -->
+  <section id="timeline" class="py-20 md:py-32 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-16 reveal">
+        <h2 class="font-display font-bold text-4xl md:text-5xl text-charcoal mb-4">Our Journey</h2>
+        <p class="text-lg text-slate">From a consulting practice to a global AI powerhouse — here's how we got here.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <!-- Timeline Items -->
+        <div class="timeline-item reveal reveal-delay-1">
+          <div class="timeline-year">2022</div>
+          <div class="timeline-content">
+            <h3>Founded</h3>
+            <p>Started as an AI consulting practice with a mission to help enterprises move beyond pilots and proofs of concept.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal reveal-delay-2">
+          <div class="timeline-year">2023</div>
+          <div class="timeline-content">
+            <h3>First Enterprise Client</h3>
+            <p>Delivered comprehensive AI strategy transformation for a Fortune 500 financial services organization, setting the blueprint for our enterprise practice.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal reveal-delay-3">
+          <div class="timeline-year">2023</div>
+          <div class="timeline-content">
+            <h3>Proxiant Labs Launched</h3>
+            <p>Released ProxiFlow and ProxiAgent, our flagship AI platforms designed to accelerate enterprise deployment and reduce time-to-value.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal reveal-delay-4">
+          <div class="timeline-year">2024</div>
+          <div class="timeline-content">
+            <h3>ProxiAlpha Launched</h3>
+            <p>Introduced our AI-powered trading platform featuring 15+ proprietary strategies, bringing AI to the financial markets with measurable returns.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-year">2025</div>
+          <div class="timeline-content">
+            <h3>100+ Projects</h3>
+            <p>Crossed the milestone of 100 enterprise AI implementations, serving customers across finance, healthcare, manufacturing, and beyond.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal reveal-delay-1">
+          <div class="timeline-year">2026</div>
+          <div class="timeline-content">
+            <h3>Global Expansion</h3>
+            <p>Opened offices in Austin (HQ), New York, and London to better serve our global enterprise customer base and strengthen our engineering teams.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section id="stats" class="bg-charcoal text-white py-20 md:py-32">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
+        <div class="text-center reveal">
+          <div class="font-display font-bold text-5xl md:text-6xl mb-2">
+            <span class="counter" data-target="150">0</span>+
+          </div>
+          <p class="text-lg text-gray-300">Projects Delivered</p>
+        </div>
+
+        <div class="text-center reveal reveal-delay-1">
+          <div class="font-display font-bold text-5xl md:text-6xl mb-2">
+            <span class="counter" data-target="50">0</span>+
+          </div>
+          <p class="text-lg text-gray-300">Enterprise Clients</p>
+        </div>
+
+        <div class="text-center reveal reveal-delay-2">
+          <div class="font-display font-bold text-5xl md:text-6xl mb-2">
+            <span class="counter" data-target="6">0</span>
+          </div>
+          <p class="text-lg text-gray-300">Products Built</p>
+        </div>
+
+        <div class="text-center reveal reveal-delay-3">
+          <div class="font-display font-bold text-5xl md:text-6xl mb-2">
+            <span class="counter" data-target="3">0</span>
+          </div>
+          <p class="text-lg text-gray-300">Global Offices</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Leadership Team Section -->
+  <section id="team" class="py-20 md:py-32 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-16 reveal">
+        <h2 class="font-display font-bold text-4xl md:text-5xl text-charcoal mb-4">Leadership</h2>
+        <p class="text-lg text-slate">Meet the team driving AI innovation across the enterprise.</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- Team Member 1 -->
+        <div class="team-card reveal reveal-delay-1">
+          <div class="team-photo">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80" alt="Pavan Kumar" />
+          </div>
+          <h3 class="team-name">Pavan Kumar</h3>
+          <p class="team-title">CEO & Co-Founder</p>
+          <p class="team-bio">15 years of enterprise AI strategy and deployment. Former VP of AI at a top consulting firm. Stanford PhD in Machine Learning.</p>
+          <div class="team-social">
+            <a href="#" aria-label="LinkedIn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.39v-1.2h-2.84v8.37h2.84v-4.13c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.13h2.84M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Team Member 2 -->
+        <div class="team-card reveal reveal-delay-2">
+          <div class="team-photo">
+            <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=400&q=80" alt="Sarah Chen" />
+          </div>
+          <h3 class="team-name">Sarah Chen</h3>
+          <p class="team-title">CTO & Co-Founder</p>
+          <p class="team-bio">12 years building production AI systems at scale. Led ML infrastructure at a unicorn startup. Passionate about responsible AI.</p>
+          <div class="team-social">
+            <a href="#" aria-label="LinkedIn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.39v-1.2h-2.84v8.37h2.84v-4.13c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.13h2.84M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Team Member 3 -->
+        <div class="team-card reveal reveal-delay-3">
+          <div class="team-photo">
+            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&q=80" alt="Marcus Rodriguez" />
+          </div>
+          <h3 class="team-name">Marcus Rodriguez</h3>
+          <p class="team-title">VP Engineering</p>
+          <p class="team-bio">10 years of full-stack engineering leadership. Built distributed systems serving millions. Obsessed with code quality and developer experience.</p>
+          <div class="team-social">
+            <a href="#" aria-label="LinkedIn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.39v-1.2h-2.84v8.37h2.84v-4.13c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.13h2.84M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Team Member 4 -->
+        <div class="team-card reveal reveal-delay-4">
+          <div class="team-photo">
+            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&q=80" alt="Aisha Patel" />
+          </div>
+          <h3 class="team-name">Aisha Patel</h3>
+          <p class="team-title">VP Product</p>
+          <p class="team-bio">9 years defining products that users love. Built products serving 50M+ users. Data-driven, customer-obsessed, detail-oriented.</p>
+          <div class="team-social">
+            <a href="#" aria-label="LinkedIn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.39v-1.2h-2.84v8.37h2.84v-4.13c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.13h2.84M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Office Locations Section -->
+  <section id="offices" class="py-20 md:py-32 bg-pearl">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-16 reveal">
+        <h2 class="font-display font-bold text-4xl md:text-5xl text-charcoal mb-4">Our Offices</h2>
+        <p class="text-lg text-slate">Serving enterprises across the globe from three strategic hubs.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Austin -->
+        <div class="location-card reveal reveal-delay-1">
+          <div class="location-image">
+            <img src="https://images.unsplash.com/photo-1531218150217-54595bc2b934?w=600&q=80" alt="Austin, Texas skyline" />
+          </div>
+          <div class="location-content">
+            <h3 class="location-city">Austin, TX</h3>
+            <p class="location-address">
+              1000 Congress Avenue<br/>
+              Austin, TX 78701<br/>
+              United States<br/>
+              <span class="text-primary font-semibold">Headquarters</span>
+            </p>
+          </div>
+        </div>
+
+        <!-- New York -->
+        <div class="location-card reveal reveal-delay-2">
+          <div class="location-image">
+            <img src="https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?w=600&q=80" alt="New York City skyline" />
+          </div>
+          <div class="location-content">
+            <h3 class="location-city">New York, NY</h3>
+            <p class="location-address">
+              875 Third Avenue<br/>
+              New York, NY 10022<br/>
+              United States<br/>
+              <span class="text-primary font-semibold">Finance Hub</span>
+            </p>
+          </div>
+        </div>
+
+        <!-- London -->
+        <div class="location-card reveal reveal-delay-3">
+          <div class="location-image">
+            <img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=600&q=80" alt="London, UK skyline" />
+          </div>
+          <div class="location-content">
+            <h3 class="location-city">London, UK</h3>
+            <p class="location-address">
+              30 St Mary Axe<br/>
+              London EC3A 8BF<br/>
+              United Kingdom<br/>
+              <span class="text-primary font-semibold">EMEA Hub</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Partners Section -->
+  <section id="partners" class="py-20 md:py-32 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-16 reveal text-center">
+        <h2 class="font-display font-bold text-4xl md:text-5xl text-charcoal mb-4">Partners & Certifications</h2>
+        <p class="text-lg text-slate">Trusted technology partners and industry certifications.</p>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+        <div class="logo-badge reveal reveal-delay-1">AWS Partner</div>
+        <div class="logo-badge reveal reveal-delay-2">Google Cloud Partner</div>
+        <div class="logo-badge reveal reveal-delay-3">Microsoft Partner</div>
+        <div class="logo-badge reveal reveal-delay-4">Salesforce Partner</div>
+        <div class="logo-badge reveal">Databricks Partner</div>
+        <div class="logo-badge reveal reveal-delay-1">NVIDIA Partner</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Careers CTA Section -->
+  <section id="careers" class="py-20 md:py-32 bg-pearl">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="reveal">
+        <h2 class="font-display font-bold text-4xl md:text-5xl text-charcoal mb-6">Join Our Team</h2>
+        <p class="text-xl text-slate mb-12">We're always looking for curious minds who want to push the boundaries of AI.</p>
+
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
+          <a href="#" class="btn btn-primary">View Open Positions →</a>
+          <div class="text-lg font-semibold text-primary">20+ open roles</div>
+        </div>
+
+        <!-- Perks -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
+          <div class="perk-item reveal reveal-delay-1">
+            <div class="perk-icon">🌍</div>
+            <h3 class="perk-title">Remote-First</h3>
+            <p class="perk-description">Work from anywhere. We have teams distributed across continents.</p>
+          </div>
+
+          <div class="perk-item reveal reveal-delay-2">
+            <div class="perk-icon">📈</div>
+            <h3 class="perk-title">Competitive Equity</h3>
+            <p class="perk-description">Own a piece of Proxiant. We believe in sharing the upside with our team.</p>
+          </div>
+
+          <div class="perk-item reveal reveal-delay-3">
+            <div class="perk-icon">🧠</div>
+            <h3 class="perk-title">Continuous Learning</h3>
+            <p class="perk-description">Education budget, conferences, and mentorship from industry leaders.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-charcoal text-white py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Top Section: Logo & Newsletter -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16 pb-16 border-b border-white/10">
+        <div>
+          <h3 class="font-display font-bold text-2xl mb-2">Proxiant</h3>
+          <p class="text-gray-400">Enterprise AI Consulting & Engineering</p>
+        </div>
+        <div>
+          <p class="text-sm text-gray-400 mb-4">Subscribe to our newsletter</p>
+          <div class="newsletter-input">
+            <input type="email" placeholder="Enter your email" required>
+            <button>Subscribe</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Links Section -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
+        <!-- Services -->
+        <div>
+          <h4 class="font-semibold mb-6">Services</h4>
+          <ul class="space-y-3">
+            <li><a href="#" class="text-sm text-gray-400 hover:text-white transition-colors">AI Consulting</a></li>
+            <li><a href="#" class="text-sm text-gray-400 hover:text-white transition-colors">Product Engineering</a></li>
+            <li><a href="#" class="text-sm text-gray-400 hover:text-white transition-colors">Cloud & Infra</a></li>
+            <li><a href="#" class="text-sm text-gray-400 hover:text-white transition-colors">Data & Analytics</a></li>
+            <li><a href="#" class="text-sm text-gray-400 hover:text-white transition-colors">Managed Operations</a></li>
+          </ul>
+        </div>
+
+        <!-- Industries -->
+        <div>
+          <h4 class="font-semibold mb-6">Industries</h4>
+          <ul class="space-y-3">
+            <li><a href="#" class="text-sm text-gray-400 hover:text-white transition-colors">Financial Services</a></li>
+            <li><a href="#" class="text-sm text-gray-400 hover:text-white transition-colors">Healthcare</a></li>
+            <li><a href="#" class="text-sm text-gray-400 hover:text-white transition-colors">Manufacturing</a></li>
+            <li><a href="#" class="text-sm text-gray-400 hover:text-white transition-colors">Retail</a></li>
+            <li><a href="#" class="text-sm text-gray-400 hover:text-white transition-colors">Energy</a></li>
+          </ul>
+        </div>
+
+        <!-- Company -->
+        <div>
+          <h4 class="font-semibold mb-6">Company</h4>
+          <ul class="space-y-3">
+            <li><a href="about.html" class="text-sm text-gray-400 hover:text-white transition-colors">About Us</a></li>
+            <li><a href="#" class="text-sm text-gray-400 hover:text-white transition-colors">Careers</a></li>
+            <li><a href="#" class="text-sm text-gray-400 hover:text-white transition-colors">Partners</a></li>
+            <li><a href="#" class="text-sm text-gray-400 hover:text-white transition-colors">Contact</a></li>
+            <li><a href="#" class="text-sm text-gray-400 hover:text-white transition-colors">Locations</a></li>
+          </ul>
+        </div>
+
+        <!-- Resources -->
+        <div>
+          <h4 class="font-semibold mb-6">Resources</h4>
+          <ul class="space-y-3">
+            <li><a href="#" class="text-sm text-gray-400 hover:text-white transition-colors">Blog</a></li>
+            <li><a href="#" class="text-sm text-gray-400 hover:text-white transition-colors">Case Studies</a></li>
+            <li><a href="#" class="text-sm text-gray-400 hover:text-white transition-colors">Whitepapers</a></li>
+            <li><a href="#" class="text-sm text-gray-400 hover:text-white transition-colors">API Docs</a></li>
+            <li><a href="#" class="text-sm text-gray-400 hover:text-white transition-colors">Changelog</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom Section -->
+      <div class="flex flex-col md:flex-row items-center justify-between gap-8 border-t border-white/10 pt-8">
+        <p class="text-sm text-gray-400">© 2026 Proxiant AI. All rights reserved.</p>
+
+        <div class="flex gap-6">
+          <a href="#" class="text-sm text-gray-400 hover:text-white transition-colors">Privacy Policy</a>
+          <a href="#" class="text-sm text-gray-400 hover:text-white transition-colors">Terms</a>
+          <a href="#" class="text-sm text-gray-400 hover:text-white transition-colors">Cookie Settings</a>
+        </div>
+
+        <div class="flex gap-6">
+          <a href="#" class="text-gray-400 hover:text-white transition-colors" aria-label="LinkedIn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.39v-1.2h-2.84v8.37h2.84v-4.13c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.13h2.84M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+            </svg>
+          </a>
+          <a href="#" class="text-gray-400 hover:text-white transition-colors" aria-label="Twitter">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2s9 5 20 5a9.5 9.5 0 00-9-5.5c4.75 2.25 7-7 7-7"/>
+            </svg>
+          </a>
+          <a href="#" class="text-gray-400 hover:text-white transition-colors" aria-label="GitHub">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.868-.013-1.703-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.544 2.914 1.19.092-.926.35-1.546.636-1.903-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll to Top Button -->
+  <a href="#hero" id="scrollToTop" style="display: none;" class="fixed bottom-8 right-8 bg-primary text-white p-3 rounded-full shadow-lg hover:bg-primary-dark transition-all z-40">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M12 19V5M5 12l7-7 7 7"/>
+    </svg>
+  </a>
+
+  <script>
+    // Tailwind Config
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: { DEFAULT: '#BF5700', light: '#E87511', dark: '#9E4A00' },
+            charcoal: '#1C1C1E',
+            graphite: '#2C2C2E',
+            slate: '#48484A',
+            ash: '#8E8E93',
+            pearl: '#F5F3F0',
+            cream: '#FAF8F5',
+            navy: '#1B3A4B',
+            teal: '#2A9D8F',
+          },
+          fontFamily: {
+            display: ['Bricolage Grotesque', 'sans-serif'],
+            body: ['Outfit', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+        },
+      },
+    };
+
+    // Mobile Menu Toggle
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      mobileMenu.classList.toggle('active');
+    });
+
+    // Close mobile menu when link is clicked
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        mobileMenu.classList.remove('active');
+      });
+    });
+
+    // Navigation scroll effect
+    const nav = document.querySelector('nav');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+    });
+
+    // Scroll to top button
+    const scrollToTopBtn = document.getElementById('scrollToTop');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        scrollToTopBtn.style.display = 'flex';
+      } else {
+        scrollToTopBtn.style.display = 'none';
+      }
+    });
+
+    // Intersection Observer for scroll reveals
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    reveals.forEach(el => observer.observe(el));
+
+    // Counter Animation
+    const counters = document.querySelectorAll('.counter');
+    let counterStarted = false;
+
+    const startCounters = () => {
+      counters.forEach(counter => {
+        const target = parseInt(counter.getAttribute('data-target'));
+        let current = 0;
+        const increment = target / 60;
+
+        const updateCounter = () => {
+          current += increment;
+          if (current < target) {
+            counter.textContent = Math.floor(current);
+            requestAnimationFrame(updateCounter);
+          } else {
+            counter.textContent = target;
+          }
+        };
+
+        updateCounter();
+      });
+    };
+
+    // Trigger counter animation when stats section is visible
+    const statsSection = document.querySelector('#stats');
+    const statsObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !counterStarted) {
+          counterStarted = true;
+          startCounters();
+          statsObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    if (statsSection) {
+      statsObserver.observe(statsSection);
+    }
+
+    // Smooth scroll behavior for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (href !== '#' && document.querySelector(href)) {
+          e.preventDefault();
+          const target = document.querySelector(href);
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+  </script>
+</body>
+</html>

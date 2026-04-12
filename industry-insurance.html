@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insurance Industry Solutions | Proxiant.ai</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@300;600;800&family=Outfit:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --primary: #BF5700;
+            --primary-light: #E87511;
+            --primary-dark: #9E4A00;
+            --charcoal: #1C1C1E;
+            --pearl: #F5F3F0;
+            --cream: #FAF8F5;
+            --navy: #1B3A4B;
+            --teal: #2A9D8F;
+        }
+
+        * {
+            --tw-primary: var(--primary);
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            color: var(--charcoal);
+            background-color: var(--cream);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Bricolage Grotesque', sans-serif;
+        }
+
+        .font-mono {
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .text-primary {
+            color: var(--primary);
+        }
+
+        .bg-primary {
+            background-color: var(--primary);
+        }
+
+        .bg-primary-light {
+            background-color: var(--primary-light);
+        }
+
+        .border-primary {
+            border-color: var(--primary);
+        }
+
+        .hover-primary:hover {
+            color: var(--primary);
+        }
+
+        /* Navigation */
+        .nav-dropdown {
+            padding-top: 0;
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            z-index: 100;
+            min-width: 200px;
+            padding: 0.5rem;
+        }
+
+        .nav-item:hover .nav-dropdown,
+        .nav-item:focus-within .nav-dropdown {
+            visibility: visible;
+            opacity: 1;
+            padding-top: 0.5rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes pulse-slow {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.7;
+            }
+        }
+
+        .animate-fade-in-up {
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        .animate-slide-in-left {
+            animation: slideInLeft 0.6s ease-out forwards;
+        }
+
+        .animate-slide-in-right {
+            animation: slideInRight 0.6s ease-out forwards;
+        }
+
+        .animate-scale-in {
+            animation: scaleIn 0.5s ease-out forwards;
+        }
+
+        .animate-pulse-slow {
+            animation: pulse-slow 3s ease-in-out infinite;
+        }
+
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+        .delay-400 { animation-delay: 0.4s; }
+        .delay-500 { animation-delay: 0.5s; }
+
+        /* Card hover effects */
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Gradient text */
+        .gradient-text {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Stats counter animation */
+        .stat-number {
+            font-weight: 800;
+            font-size: 2.5rem;
+            color: var(--primary);
+        }
+
+        /* Badge styles */
+        .badge-compliance {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 80px;
+            height: 80px;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            font-size: 0.75rem;
+            text-align: center;
+            background: var(--cream);
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            transition: all 0.3s ease;
+        }
+
+        .badge-compliance:hover {
+            background: var(--primary);
+            color: white;
+            transform: scale(1.05);
+        }
+
+        /* Section backgrounds */
+        .bg-pearl {
+            background-color: var(--pearl);
+        }
+
+        .bg-cream {
+            background-color: var(--cream);
+        }
+
+        .text-navy {
+            color: var(--navy);
+        }
+
+        .text-teal {
+            color: var(--teal);
+        }
+
+        /* Button styles */
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+            padding: 0.75rem 2rem;
+            border-radius: 0.375rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-decoration: none;
+            border: 2px solid var(--primary);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            border-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(191, 87, 0, 0.2);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--primary);
+            padding: 0.75rem 2rem;
+            border-radius: 0.375rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-decoration: none;
+            border: 2px solid var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--primary);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(191, 87, 0, 0.2);
+        }
+
+        /* Solution block gradient overlay */
+        .solution-block {
+            position: relative;
+            overflow: hidden;
+            border-radius: 0.75rem;
+            border: 1px solid rgba(191, 87, 0, 0.1);
+        }
+
+        .solution-block::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--primary-light));
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .stat-number {
+                font-size: 2rem;
+            }
+
+            .nav-dropdown {
+                position: static;
+                visibility: visible;
+                opacity: 1;
+                background: transparent;
+                box-shadow: none;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease;
+                padding: 0;
+            }
+
+            .nav-item:hover .nav-dropdown,
+            .nav-item:focus-within .nav-dropdown {
+                max-height: 500px;
+                padding: 0.5rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="bg-white border-b border-gray-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center">
+                    <span class="text-2xl font-bold gradient-text">Proxiant.ai</span>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-1">
+                    <!-- Services Dropdown -->
+                    <div class="nav-item relative">
+                        <button class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-primary transition">
+                            Services
+                        </button>
+                        <div class="nav-dropdown">
+                            <a href="solutions.html#sections" class="block px-4 py-2 text-sm text-gray-700 hover:text-primary">
+                                View All Services
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Industries Dropdown -->
+                    <div class="nav-item relative">
+                        <button class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-primary transition">
+                            Industries
+                        </button>
+                        <div class="nav-dropdown">
+                            <a href="industry-financial-services.html" class="block px-4 py-2 text-sm text-gray-700 hover:text-primary">Financial Services</a>
+                            <a href="industry-healthcare.html" class="block px-4 py-2 text-sm text-gray-700 hover:text-primary">Healthcare</a>
+                            <a href="industry-manufacturing.html" class="block px-4 py-2 text-sm text-gray-700 hover:text-primary">Manufacturing</a>
+                            <a href="industry-retail.html" class="block px-4 py-2 text-sm text-gray-700 hover:text-primary">Retail & E-Commerce</a>
+                            <a href="industry-energy.html" class="block px-4 py-2 text-sm text-gray-700 hover:text-primary">Energy & Utilities</a>
+                            <a href="industry-telecom.html" class="block px-4 py-2 text-sm text-gray-700 hover:text-primary">Telecommunications</a>
+                            <a href="industry-insurance.html" class="block px-4 py-2 text-sm font-semibold text-primary">Insurance</a>
+                            <a href="industry-transportation.html" class="block px-4 py-2 text-sm text-gray-700 hover:text-primary">Transportation & Logistics</a>
+                        </div>
+                    </div>
+
+                    <a href="labs.html" class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-primary transition">Labs</a>
+                    <a href="insights.html" class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-primary transition">Insights</a>
+                    <a href="about.html" class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-primary transition">About</a>
+                </div>
+
+                <!-- CTA Button -->
+                <a href="contact.html" class="btn-primary text-sm">Get Started</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden bg-cream">
+        <div class="absolute inset-0 opacity-10">
+            <svg class="w-full h-full" viewBox="0 0 1200 600" preserveAspectRatio="none">
+                <defs>
+                    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                        <path d="M 40 0 L 0 0 0 40" fill="none" stroke="currentColor" stroke-width="0.5"/>
+                    </pattern>
+                </defs>
+                <rect width="1200" height="600" fill="url(#grid)" class="text-primary" />
+            </svg>
+        </div>
+
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="animate-slide-in-left">
+                    <h1 class="text-5xl sm:text-6xl font-bold text-navy mb-6 leading-tight">
+                        AI-Powered Insurance <span class="gradient-text">Innovation</span>
+                    </h1>
+                    <p class="text-xl text-gray-600 mb-8 leading-relaxed">
+                        Transform underwriting, claims processing, and customer experience with intelligent automation. Reduce cycle times, improve accuracy, and drive profitability across your insurance operations.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="contact.html" class="btn-primary text-center">Start Your Transformation</a>
+                        <a href="#challenges" class="btn-secondary text-center">Learn More</a>
+                    </div>
+                </div>
+
+                <div class="animate-slide-in-right">
+                    <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1600&q=80" alt="Insurance operations" class="w-full rounded-lg shadow-lg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="bg-navy text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center animate-scale-in delay-100">
+                    <div class="stat-number text-primary-light">$6.3T</div>
+                    <p class="text-lg text-gray-300">Global insurance premiums</p>
+                </div>
+                <div class="text-center animate-scale-in delay-200">
+                    <div class="stat-number text-primary-light">78%</div>
+                    <p class="text-lg text-gray-300">Of insurers investing in AI</p>
+                </div>
+                <div class="text-center animate-scale-in delay-300">
+                    <div class="stat-number text-primary-light">50%</div>
+                    <p class="text-lg text-gray-300">Faster claims processing</p>
+                </div>
+                <div class="text-center animate-scale-in delay-400">
+                    <div class="stat-number text-primary-light">25%</div>
+                    <p class="text-lg text-gray-300">Improvement in loss ratios</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Challenges Section -->
+    <section id="challenges" class="bg-cream py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl sm:text-5xl font-bold text-navy mb-4">Insurance Industry Challenges</h2>
+                <p class="text-xl text-gray-600">Navigate complex operational obstacles with AI-driven solutions</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Challenge 1: Claims Fraud -->
+                <div class="card-hover bg-white p-8 rounded-lg border border-gray-200 animate-fade-in-up">
+                    <div class="mb-4">
+                        <span class="inline-block bg-primary bg-opacity-10 text-primary px-4 py-2 rounded-full text-sm font-semibold">
+                            Claims Fraud
+                        </span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-navy mb-3">Fraud Losses</h3>
+                    <p class="text-gray-600">
+                        Insurance fraud costs the industry <strong>$40B+ annually</strong>, impacting loss ratios and combined ratios. Manual SIU investigations are slow and inefficient.
+                    </p>
+                </div>
+
+                <!-- Challenge 2: Manual Underwriting -->
+                <div class="card-hover bg-white p-8 rounded-lg border border-gray-200 animate-fade-in-up delay-100">
+                    <div class="mb-4">
+                        <span class="inline-block bg-primary bg-opacity-10 text-primary px-4 py-2 rounded-full text-sm font-semibold">
+                            Underwriting
+                        </span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-navy mb-3">Manual Bottlenecks</h3>
+                    <p class="text-gray-600">
+                        Labor-intensive underwriting processes delay policy issuance. Risk scoring and pricing optimization remain fragmented across legacy systems.
+                    </p>
+                </div>
+
+                <!-- Challenge 3: Policy Administration -->
+                <div class="card-hover bg-white p-8 rounded-lg border border-gray-200 animate-fade-in-up delay-200">
+                    <div class="mb-4">
+                        <span class="inline-block bg-primary bg-opacity-10 text-primary px-4 py-2 rounded-full text-sm font-semibold">
+                            Administration
+                        </span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-navy mb-3">Legacy Systems</h3>
+                    <p class="text-gray-600">
+                        Outdated policy administration systems hinder renewal processing, endorsement handling, and regulatory compliance tracking.
+                    </p>
+                </div>
+
+                <!-- Challenge 4: Customer Experience -->
+                <div class="card-hover bg-white p-8 rounded-lg border border-gray-200 animate-fade-in-up delay-300">
+                    <div class="mb-4">
+                        <span class="inline-block bg-primary bg-opacity-10 text-primary px-4 py-2 rounded-full text-sm font-semibold">
+                            Customer Experience
+                        </span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-navy mb-3">Experience Gaps</h3>
+                    <p class="text-gray-600">
+                        Limited self-service capabilities and poor omnichannel engagement result in customer frustration and higher attrition rates.
+                    </p>
+                </div>
+
+                <!-- Challenge 5: Catastrophe Modeling -->
+                <div class="card-hover bg-white p-8 rounded-lg border border-gray-200 animate-fade-in-up delay-400">
+                    <div class="mb-4">
+                        <span class="inline-block bg-primary bg-opacity-10 text-primary px-4 py-2 rounded-full text-sm font-semibold">
+                            Risk Modeling
+                        </span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-navy mb-3">CAT Modeling Gaps</h3>
+                    <p class="text-gray-600">
+                        Traditional catastrophe and climate risk modeling lack real-time data integration and scenario flexibility for portfolio exposure assessment.
+                    </p>
+                </div>
+
+                <!-- Challenge 6: Regulatory Compliance -->
+                <div class="card-hover bg-white p-8 rounded-lg border border-gray-200 animate-fade-in-up delay-500">
+                    <div class="mb-4">
+                        <span class="inline-block bg-primary bg-opacity-10 text-primary px-4 py-2 rounded-full text-sm font-semibold">
+                            Compliance
+                        </span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-navy mb-3">Regulatory Complexity</h3>
+                    <p class="text-gray-600">
+                        NAIC, Solvency II, and IFRS 17 compliance requirements increase operational overhead and require continuous audit trails.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solutions Section -->
+    <section class="bg-white py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl sm:text-5xl font-bold text-navy mb-4">AI-Powered Solutions</h2>
+                <p class="text-xl text-gray-600">Comprehensive automation across the insurance value chain</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Solution 1: Intelligent Claims Processing -->
+                <div class="solution-block bg-cream p-8 animate-fade-in-up">
+                    <h3 class="text-2xl font-bold text-navy mb-4">Intelligent Claims Processing</h3>
+                    <p class="text-gray-600 mb-6">
+                        Accelerate FNOL (First Notice of Loss) with automated intake, damage assessment via computer vision, and straight-through processing for routine claims.
+                    </p>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <span class="text-primary font-bold mr-3">•</span>
+                            <span class="text-gray-700">Automated FNOL workflows and documentation validation</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-primary font-bold mr-3">•</span>
+                            <span class="text-gray-700">Computer vision for damage assessment and triage</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-primary font-bold mr-3">•</span>
+                            <span class="text-gray-700">Straight-through processing for low-complexity claims</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-primary font-bold mr-3">•</span>
+                            <span class="text-gray-700">Real-time reserve estimation and settlement prediction</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Solution 2: AI Underwriting Engine -->
+                <div class="solution-block bg-cream p-8 animate-fade-in-up delay-100">
+                    <h3 class="text-2xl font-bold text-navy mb-4">AI Underwriting Engine</h3>
+                    <p class="text-gray-600 mb-6">
+                        Deploy intelligent risk scoring, pricing optimization, and automated decisioning to compress underwriting cycles and improve profitability.
+                    </p>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <span class="text-primary font-bold mr-3">•</span>
+                            <span class="text-gray-700">Predictive risk scoring and policy acceptance decisions</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-primary font-bold mr-3">•</span>
+                            <span class="text-gray-700">Dynamic pricing optimization for loss ratio improvement</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-primary font-bold mr-3">•</span>
+                            <span class="text-gray-700">Automated decisioning with compliance audit trails</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-primary font-bold mr-3">•</span>
+                            <span class="text-gray-700">Multi-line integration for holistic risk assessment</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Solution 3: Fraud Detection & Prevention -->
+                <div class="solution-block bg-cream p-8 animate-fade-in-up delay-200">
+                    <h3 class="text-2xl font-bold text-navy mb-4">Fraud Detection & Prevention</h3>
+                    <p class="text-gray-600 mb-6">
+                        Leverage network analysis and behavioral pattern detection to identify suspicious claims and prioritize SIU investigations efficiently.
+                    </p>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <span class="text-primary font-bold mr-3">•</span>
+                            <span class="text-gray-700">Network graph analysis for fraud rings and collusion</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-primary font-bold mr-3">•</span>
+                            <span class="text-gray-700">Behavioral anomaly detection and pattern matching</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-primary font-bold mr-3">•</span>
+                            <span class="text-gray-700">SIU prioritization scoring and investigation guidance</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-primary font-bold mr-3">•</span>
+                            <span class="text-gray-700">Real-time claim monitoring and alert systems</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Solution 4: Customer Journey Optimization -->
+                <div class="solution-block bg-cream p-8 animate-fade-in-up delay-300">
+                    <h3 class="text-2xl font-bold text-navy mb-4">Customer Journey Optimization</h3>
+                    <p class="text-gray-600 mb-6">
+                        Enhance customer engagement through intelligent chatbots, self-service portals, and personalized product recommendations.
+                    </p>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <span class="text-primary font-bold mr-3">•</span>
+                            <span class="text-gray-700">AI-powered chatbots for 24/7 policy and claims support</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-primary font-bold mr-3">•</span>
+                            <span class="text-gray-700">Self-service portals for policy management and claims filing</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-primary font-bold mr-3">•</span>
+                            <span class="text-gray-700">Personalized product recommendations and cross-sell insights</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-primary font-bold mr-3">•</span>
+                            <span class="text-gray-700">Omnichannel engagement and sentiment analysis</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Solution 5: CAT & Climate Risk Modeling -->
+                <div class="solution-block bg-cream p-8 animate-fade-in-up delay-400">
+                    <h3 class="text-2xl font-bold text-navy mb-4">Catastrophe & Climate Risk Modeling</h3>
+                    <p class="text-gray-600 mb-6">
+                        Integrate geospatial analytics and climate scenario modeling for comprehensive portfolio exposure assessment and loss prediction.
+                    </p>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <span class="text-primary font-bold mr-3">•</span>
+                            <span class="text-gray-700">Geospatial analytics for exposure mapping and heatmaps</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-primary font-bold mr-3">•</span>
+                            <span class="text-gray-700">Climate scenario modeling and forward-looking risk assessment</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-primary font-bold mr-3">•</span>
+                            <span class="text-gray-700">Portfolio-level CAT and aggregate exposure monitoring</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-primary font-bold mr-3">•</span>
+                            <span class="text-gray-700">Reinsurance optimization and retention strategies</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Solution 6: Policy Administration Modernization -->
+                <div class="solution-block bg-cream p-8 animate-fade-in-up delay-500">
+                    <h3 class="text-2xl font-bold text-navy mb-4">Policy Administration Modernization</h3>
+                    <p class="text-gray-600 mb-6">
+                        Automate renewal workflows, endorsement processing, and regulatory compliance with intelligent document handling and audit logging.
+                    </p>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <span class="text-primary font-bold mr-3">•</span>
+                            <span class="text-gray-700">Automated renewal and endorsement processing workflows</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-primary font-bold mr-3">•</span>
+                            <span class="text-gray-700">Intelligent document processing and policy extraction</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-primary font-bold mr-3">•</span>
+                            <span class="text-gray-700">NAIC, Solvency II, IFRS 17 compliance automation</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-primary font-bold mr-3">•</span>
+                            <span class="text-gray-700">Immutable audit trails and regulatory reporting</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Study Section -->
+    <section class="bg-pearl py-20">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white rounded-lg overflow-hidden shadow-lg">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 p-8 md:p-12">
+                    <div class="animate-slide-in-left">
+                        <h3 class="text-sm font-semibold text-primary uppercase tracking-wide mb-3">Case Study</h3>
+                        <h2 class="text-4xl font-bold text-navy mb-6">
+                            How a P&C Insurer Reduced Claims Cycle Time by 62%
+                        </h2>
+                        <p class="text-gray-600 mb-4">
+                            A regional property & casualty insurer implemented Proxiant.ai's intelligent claims processing platform to streamline FNOL workflows and automate damage assessment.
+                        </p>
+                        <p class="text-gray-600 mb-8">
+                            Within six months, claims were processed 62% faster, straight-through processing rates reached 35%, and operational costs decreased by 28%. Customer satisfaction scores improved by 18%, and loss cycle metrics stabilized despite increased claims volume.
+                        </p>
+                        <div class="space-y-4">
+                            <div>
+                                <p class="text-sm text-gray-500 font-semibold">Combined Ratio Improvement</p>
+                                <p class="text-2xl font-bold text-primary">+4.2 points</p>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500 font-semibold">Claims ROI</p>
+                                <p class="text-2xl font-bold text-primary">320% in Year 1</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="animate-slide-in-right">
+                        <div class="bg-gradient-to-br from-primary to-primary-light rounded-lg p-8 text-white flex flex-col justify-center">
+                            <div class="mb-8">
+                                <p class="text-sm uppercase tracking-widest opacity-90 mb-2">Key Metrics</p>
+                                <div class="space-y-6">
+                                    <div>
+                                        <p class="text-5xl font-bold mb-2">62%</p>
+                                        <p class="text-lg opacity-90">Faster claims cycle</p>
+                                    </div>
+                                    <div>
+                                        <p class="text-5xl font-bold mb-2">35%</p>
+                                        <p class="text-lg opacity-90">STP rate achieved</p>
+                                    </div>
+                                    <div>
+                                        <p class="text-5xl font-bold mb-2">$8.2M</p>
+                                        <p class="text-lg opacity-90">Annual cost savings</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Compliance Section -->
+    <section class="bg-cream py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl sm:text-5xl font-bold text-navy mb-4">Regulatory Compliance</h2>
+                <p class="text-xl text-gray-600">Built-in compliance for global insurance frameworks</p>
+            </div>
+
+            <div class="flex flex-wrap justify-center gap-8">
+                <div class="badge-compliance animate-scale-in">
+                    <span>NAIC</span>
+                </div>
+                <div class="badge-compliance animate-scale-in delay-100">
+                    <span>Solvency II</span>
+                </div>
+                <div class="badge-compliance animate-scale-in delay-200">
+                    <span>IFRS 17</span>
+                </div>
+                <div class="badge-compliance animate-scale-in delay-300">
+                    <span>SOC 2</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="bg-navy text-white py-20">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center animate-fade-in-up">
+            <h2 class="text-4xl sm:text-5xl font-bold mb-6">Modernize Your Insurance Operations</h2>
+            <p class="text-xl text-gray-300 mb-8">
+                Join leading insurers transforming their underwriting, claims, and customer experience with Proxiant.ai's intelligent automation platform.
+            </p>
+            <a href="contact.html" class="btn-primary inline-block">Schedule a Demo</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-charcoal text-gray-300 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h4 class="text-white font-bold mb-4">Proxiant.ai</h4>
+                    <p class="text-sm">AI-powered automation for enterprise operations.</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Solutions</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-primary transition">Automation</a></li>
+                        <li><a href="#" class="hover:text-primary transition">Analytics</a></li>
+                        <li><a href="#" class="hover:text-primary transition">Integration</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Resources</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-primary transition">Documentation</a></li>
+                        <li><a href="#" class="hover:text-primary transition">Blog</a></li>
+                        <li><a href="#" class="hover:text-primary transition">Webinars</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Legal</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-primary transition">Privacy</a></li>
+                        <li><a href="#" class="hover:text-primary transition">Terms</a></li>
+                        <li><a href="#" class="hover:text-primary transition">Security</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-sm">&copy; 2026 Proxiant.ai. All rights reserved.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="text-gray-400 hover:text-primary transition">Twitter</a>
+                    <a href="#" class="text-gray-400 hover:text-primary transition">LinkedIn</a>
+                    <a href="#" class="text-gray-400 hover:text-primary transition">GitHub</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Intersection Observer for staggered animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.animate-fade-in-up, .animate-slide-in-left, .animate-slide-in-right, .animate-scale-in').forEach(el => {
+            el.style.opacity = '0';
+            observer.observe(el);
+        });
+
+        // Mobile menu toggle
+        const navDropdowns = document.querySelectorAll('.nav-dropdown');
+        navDropdowns.forEach(dropdown => {
+            const button = dropdown.previousElementSibling;
+            if (button) {
+                button.addEventListener('click', (e) => {
+                    if (window.innerWidth < 768) {
+                        e.preventDefault();
+                        dropdown.style.maxHeight = dropdown.style.maxHeight === '500px' ? '0' : '500px';
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

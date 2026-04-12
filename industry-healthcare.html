@@ -1,0 +1,1129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthcare Industry Solutions | Proxiant AI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@300;600;800&family=Outfit:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #BF5700;
+            --primary-light: #E87511;
+            --primary-dark: #9E4A00;
+            --charcoal: #1C1C1E;
+            --pearl: #F5F3F0;
+            --cream: #FAF8F5;
+            --navy: #1B3A4B;
+            --teal: #2A9D8F;
+        }
+
+        * {
+            font-family: 'Outfit', sans-serif;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Bricolage Grotesque', sans-serif;
+        }
+
+        code, pre {
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        /* Navigation Styles */
+        .nav-bar {
+            background: white;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+
+        .nav-links a, .dropdown-item button {
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+
+        .dropdown-item {
+            position: relative;
+        }
+
+        .dropdown-item button {
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            color: var(--charcoal);
+            padding: 0;
+        }
+
+        .dropdown-item button:hover {
+            color: var(--primary);
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            min-width: 250px;
+            padding: 0.5rem;
+            padding-top: 1rem;
+            margin-top: 0;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            pointer-events: none;
+            border: 1px solid rgba(191, 87, 0, 0.1);
+            z-index: 100;
+        }
+
+        .dropdown-item:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 0.75rem 1rem;
+            color: var(--charcoal);
+            text-decoration: none;
+            border-radius: 0.5rem;
+            transition: all 0.2s ease;
+        }
+
+        .dropdown-menu a:hover {
+            background: var(--cream);
+            color: var(--primary);
+        }
+
+        .nav-cta {
+            background: var(--primary);
+            color: white;
+            padding: 0.5rem 1.25rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .nav-cta:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(191, 87, 0, 0.3);
+        }
+
+        /* Mobile Menu */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            gap: 5px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: var(--charcoal);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(8px, 8px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            .mobile-menu {
+                display: none;
+                position: absolute;
+                top: 80px;
+                left: 0;
+                right: 0;
+                background: white;
+                border-bottom: 1px solid var(--pearl);
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease;
+            }
+
+            .mobile-menu.active {
+                display: block;
+                max-height: 500px;
+            }
+
+            .mobile-menu a, .mobile-menu button {
+                display: block;
+                width: 100%;
+                padding: 1rem;
+                text-align: left;
+                color: var(--charcoal);
+                text-decoration: none;
+                border: none;
+                background: transparent;
+                cursor: pointer;
+                border-bottom: 1px solid var(--pearl);
+            }
+
+            .mobile-menu a:hover, .mobile-menu button:hover {
+                background: var(--cream);
+                color: var(--primary);
+            }
+        }
+
+        /* Reveal Animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Hero Section */
+        .hero-section {
+            position: relative;
+            height: 600px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1600&q=80') center/cover;
+            z-index: 0;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(28, 28, 30, 0.65) 0%, rgba(27, 58, 75, 0.55) 100%);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: white;
+            max-w-3xl px-4;
+        }
+
+        .breadcrumb {
+            display: inline-block;
+            font-size: 0.875rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.85;
+            gap: 0.5rem;
+        }
+
+        .breadcrumb span {
+            margin: 0 0.5rem;
+        }
+
+        .hero-content h1 {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            line-height: 1.1;
+        }
+
+        .hero-content p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        /* Stats Bar */
+        .stats-bar {
+            background: var(--charcoal);
+            color: white;
+            padding: 4rem 1rem;
+        }
+
+        .stats-container {
+            max-width: 7xl;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary-light);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-item p {
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+
+        /* Challenges Section */
+        .challenges-section {
+            padding: 6rem 1rem;
+            background: var(--cream);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+            max-width: 2xl;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .section-header h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: var(--charcoal);
+        }
+
+        .section-header p {
+            font-size: 1.1rem;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .challenges-grid {
+            max-width: 7xl;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .challenge-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            border-left: 4px solid var(--primary);
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .challenge-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+        }
+
+        .challenge-icon {
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(191, 87, 0, 0.08);
+            border-radius: 12px;
+            color: #BF5700;
+            margin-bottom: 1rem;
+        }
+
+        .challenge-icon svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .challenge-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+            color: var(--charcoal);
+            font-weight: 600;
+        }
+
+        .challenge-card p {
+            color: #666;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        /* Solutions Section */
+        .solutions-section {
+            padding: 6rem 1rem;
+            background: white;
+        }
+
+        .solutions-grid {
+            max-width: 7xl;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .solution-block {
+            background: linear-gradient(135deg, var(--cream) 0%, var(--pearl) 100%);
+            padding: 2.5rem;
+            border-radius: 1rem;
+            border: 1px solid rgba(191, 87, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .solution-block:hover {
+            transform: translateY(-6px);
+            border-color: var(--primary);
+            box-shadow: 0 20px 40px rgba(191, 87, 0, 0.15);
+        }
+
+        .solution-number {
+            display: inline-block;
+            width: 45px;
+            height: 45px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+        }
+
+        .solution-block h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--charcoal);
+            font-weight: 600;
+        }
+
+        .solution-block ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .solution-block li {
+            padding: 0.6rem 0 0.6rem 1.75rem;
+            position: relative;
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .solution-block li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        /* Case Study Section */
+        .case-study-section {
+            padding: 6rem 1rem;
+            background: linear-gradient(135deg, var(--navy) 0%, var(--charcoal) 100%);
+            color: white;
+        }
+
+        .case-study-container {
+            max-width: 7xl;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .case-study-content h2 {
+            font-size: clamp(1.8rem, 3vw, 2.5rem);
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+        }
+
+        .case-study-metric {
+            display: flex;
+            gap: 1rem;
+            margin: 1.5rem 0;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-left: 3px solid var(--primary-light);
+            border-radius: 0.5rem;
+        }
+
+        .case-study-metric-value {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary-light);
+            min-width: 80px;
+        }
+
+        .case-study-metric-text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .case-study-metric-text strong {
+            margin-bottom: 0.25rem;
+            display: block;
+        }
+
+        .case-study-image {
+            background: linear-gradient(135deg, rgba(42, 157, 143, 0.2) 0%, rgba(191, 87, 0, 0.2) 100%);
+            height: 350px;
+            border-radius: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .case-study-image svg {
+            width: 80%;
+            height: 80%;
+            opacity: 0.3;
+        }
+
+        @media (max-width: 768px) {
+            .case-study-container {
+                grid-template-columns: 1fr;
+            }
+
+            .case-study-image {
+                height: 250px;
+            }
+        }
+
+        /* Compliance Section */
+        .compliance-section {
+            padding: 6rem 1rem;
+            background: var(--cream);
+        }
+
+        .compliance-container {
+            max-width: 7xl;
+            margin: 0 auto;
+        }
+
+        .compliance-badges {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .compliance-badge {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            text-align: center;
+            border: 2px solid rgba(191, 87, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .compliance-badge:hover {
+            border-color: var(--primary);
+            box-shadow: 0 8px 20px rgba(191, 87, 0, 0.1);
+        }
+
+        .compliance-badge-icon {
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(191, 87, 0, 0.08);
+            border-radius: 12px;
+            color: #BF5700;
+            margin: 0 auto 1rem;
+        }
+
+        .compliance-badge-icon svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .compliance-badge h4 {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            color: var(--charcoal);
+            font-weight: 600;
+        }
+
+        .compliance-badge p {
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 5rem 1rem;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .cta-content {
+            max-width: 3xl;
+            margin: 0 auto;
+        }
+
+        .cta-content h2 {
+            font-size: clamp(1.8rem, 3vw, 2.5rem);
+            margin-bottom: 1rem;
+            font-weight: 800;
+        }
+
+        .cta-content p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            line-height: 1.6;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: var(--primary);
+            padding: 0.875rem 2rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid white;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+            background: var(--cream);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--charcoal);
+            color: white;
+            padding: 4rem 1rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 7xl;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-column h4 {
+            font-weight: 600;
+            margin-bottom: 1.25rem;
+            color: white;
+        }
+
+        .footer-column a {
+            display: block;
+            color: #ccc;
+            text-decoration: none;
+            margin-bottom: 0.75rem;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-column a:hover {
+            color: var(--primary-light);
+        }
+
+        .footer-bottom {
+            max-width: 7xl;
+            margin: 0 auto;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .footer-logo {
+            font-family: 'Bricolage Grotesque', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+        }
+
+        .footer-copyright {
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+
+        /* Counter Animation */
+        .counter {
+            font-variant-numeric: tabular-nums;
+        }
+
+        /* Responsive */
+        @media (max-width: 640px) {
+            .hero-section {
+                height: 450px;
+            }
+
+            .hero-content h1 {
+                font-size: 1.875rem;
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+            }
+
+            .section-header h2 {
+                font-size: 1.75rem;
+            }
+
+            .stats-container {
+                grid-template-columns: 1fr;
+            }
+
+            .solution-block {
+                padding: 2rem;
+            }
+
+            .case-study-metric {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body class="bg-white text-charcoal">
+    <!-- Navigation -->
+    <nav class="nav-bar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center">
+                    <a href="index.html" class="font-display font-bold text-2xl text-charcoal">Proxiant</a>
+                </div>
+                <div class="nav-links hidden md:flex items-center gap-8">
+                    <div class="dropdown-item relative">
+                        <button class="text-charcoal hover:text-primary transition-colors cursor-pointer bg-transparent border-none">Services</button>
+                        <div class="dropdown-menu">
+                            <a href="solutions.html#ai-consulting">AI Consulting & Strategy</a>
+                            <a href="solutions.html#product-engineering">Product Engineering</a>
+                            <a href="solutions.html#cloud-infrastructure">Cloud & Infrastructure</a>
+                            <a href="solutions.html#data-analytics">Data & Analytics</a>
+                            <a href="solutions.html#managed-ops">Managed Operations</a>
+                        </div>
+                    </div>
+                    <div class="dropdown-item relative">
+                        <button class="text-charcoal hover:text-primary transition-colors cursor-pointer bg-transparent border-none">Industries</button>
+                        <div class="dropdown-menu">
+                            <a href="industry-financial-services.html">Financial Services</a>
+                            <a href="industry-healthcare.html">Healthcare</a>
+                            <a href="industry-manufacturing.html">Manufacturing</a>
+                            <a href="industry-retail.html">Retail & E-Commerce</a>
+                            <a href="industry-energy.html">Energy & Utilities</a>
+                            <a href="industry-telecom.html">Telecommunications</a>
+                            <a href="industry-insurance.html">Insurance</a>
+                            <a href="industry-transportation.html">Transportation & Logistics</a>
+                        </div>
+                    </div>
+                    <a href="labs.html" class="text-charcoal hover:text-primary transition-colors">Labs</a>
+                    <a href="insights.html" class="text-charcoal hover:text-primary transition-colors">Insights</a>
+                    <a href="about.html" class="text-charcoal hover:text-primary transition-colors">About</a>
+                    <a href="contact.html" class="nav-cta">Get in Touch</a>
+                </div>
+                <button class="hamburger md:hidden" onclick="document.querySelector('.mobile-menu').classList.toggle('active'); this.classList.toggle('active');"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+        <div class="mobile-menu md:hidden">
+            <a href="solutions.html">Services</a>
+            <a href="industry-healthcare.html">Industries</a>
+            <a href="labs.html">Labs</a>
+            <a href="insights.html">Insights</a>
+            <a href="about.html">About</a>
+            <a href="contact.html" class="nav-cta" style="color: white;">Get in Touch</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content reveal">
+            <div class="breadcrumb">
+                <a href="index.html" style="color: white; text-decoration: none;">Home</a>
+                <span>/</span>
+                <a href="#" style="color: white; opacity: 0.7;">Healthcare</a>
+            </div>
+            <h1>AI-Powered Healthcare Transformation</h1>
+            <p>Improve patient outcomes, reduce operational costs, and enhance clinical workflows with intelligent automation and predictive analytics built for healthcare complexity.</p>
+        </div>
+    </section>
+
+    <!-- Stats Bar -->
+    <section class="stats-bar">
+        <div class="stats-container">
+            <div class="stat-item reveal">
+                <h3 class="counter">$4.5T</h3>
+                <p>US Healthcare Annual Spending</p>
+            </div>
+            <div class="stat-item reveal">
+                <h3 class="counter">86%</h3>
+                <p>Health Systems Investing in AI</p>
+            </div>
+            <div class="stat-item reveal">
+                <h3 class="counter">30%</h3>
+                <p>Reduction in Administrative Costs</p>
+            </div>
+            <div class="stat-item reveal">
+                <h3 class="counter">5.6x</h3>
+                <p>Faster Patient Intake Processing</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Challenges Section -->
+    <section class="challenges-section">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="section-header reveal">
+                <h2>Healthcare's Critical Challenges</h2>
+                <p>Health systems face mounting pressure to deliver better outcomes while managing complexity, compliance burden, and resource constraints.</p>
+            </div>
+            <div class="challenges-grid">
+                <div class="challenge-card reveal">
+                    <div class="challenge-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div>
+                    <h3>HIPAA & Regulatory Compliance</h3>
+                    <p>Navigating HIPAA, HITECH, and state privacy regulations while maintaining patient data security and audit trails across systems.</p>
+                </div>
+                <div class="challenge-card reveal">
+                    <div class="challenge-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></div>
+                    <h3>Clinical Workflow Inefficiencies</h3>
+                    <p>Manual clinical processes, paper-based documentation, and fragmented workflows consuming 25-30% of clinician time.</p>
+                </div>
+                <div class="challenge-card reveal">
+                    <div class="challenge-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></div>
+                    <h3>EHR Interoperability Gaps</h3>
+                    <p>Legacy systems and incompatible EHR platforms preventing data exchange per 21st Century Cures Act requirements and HL7 FHIR standards.</p>
+                </div>
+                <div class="challenge-card reveal">
+                    <div class="challenge-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/><path d="M3.22 12H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27"/></svg></div>
+                    <h3>Staff Burnout & Shortages</h3>
+                    <p>Healthcare worker shortages, burnout from administrative tasks, and difficulty recruiting specialized clinical talent.</p>
+                </div>
+                <div class="challenge-card reveal">
+                    <div class="challenge-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+                    <h3>Rising Operational Costs</h3>
+                    <p>Labor costs, supply chain management, and revenue cycle inefficiencies reducing margins and limiting care expansion.</p>
+                </div>
+                <div class="challenge-card reveal">
+                    <div class="challenge-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+                    <h3>Patient Experience Gaps</h3>
+                    <p>Limited access to care information, long wait times, and fragmented communication reducing patient satisfaction and retention.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solutions Section -->
+    <section class="solutions-section">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="section-header reveal">
+                <h2>AI-Driven Healthcare Solutions</h2>
+                <p>Deploy targeted AI solutions across clinical operations, revenue cycle, and patient engagement to unlock healthcare value at scale.</p>
+            </div>
+            <div class="solutions-grid">
+                <div class="solution-block reveal">
+                    <div class="solution-number">1</div>
+                    <h3>Clinical Decision Support</h3>
+                    <ul>
+                        <li>Diagnosis assistance using medical imaging and clinical data</li>
+                        <li>Evidence-based treatment recommendations at point of care</li>
+                        <li>Risk stratification for patient populations</li>
+                        <li>Real-time clinical alerts for safety events</li>
+                    </ul>
+                </div>
+                <div class="solution-block reveal">
+                    <div class="solution-number">2</div>
+                    <h3>Patient Flow Optimization</h3>
+                    <ul>
+                        <li>Automated patient intake and pre-registration</li>
+                        <li>Intelligent bed management and allocation</li>
+                        <li>Discharge planning and transition support</li>
+                        <li>Wait time prediction and resource scheduling</li>
+                    </ul>
+                </div>
+                <div class="solution-block reveal">
+                    <div class="solution-number">3</div>
+                    <h3>Medical Document Intelligence</h3>
+                    <ul>
+                        <li>Automated clinical note summarization</li>
+                        <li>Insurance claim processing and coding accuracy</li>
+                        <li>Prior authorization workflow acceleration</li>
+                        <li>ICD-10 and CPT code recommendation engine</li>
+                    </ul>
+                </div>
+                <div class="solution-block reveal">
+                    <div class="solution-number">4</div>
+                    <h3>Population Health Analytics</h3>
+                    <ul>
+                        <li>Predictive risk modeling for chronic disease</li>
+                        <li>Disease surveillance and outbreak detection</li>
+                        <li>Care gap identification and closure tracking</li>
+                        <li>Health equity analysis and intervention targeting</li>
+                    </ul>
+                </div>
+                <div class="solution-block reveal">
+                    <div class="solution-number">5</div>
+                    <h3>Revenue Cycle Optimization</h3>
+                    <ul>
+                        <li>Automated medical coding and billing validation</li>
+                        <li>Denial management and prediction</li>
+                        <li>Insurance eligibility verification</li>
+                        <li>Payment forecasting and cash flow optimization</li>
+                    </ul>
+                </div>
+                <div class="solution-block reveal">
+                    <div class="solution-number">6</div>
+                    <h3>Telehealth & Remote Monitoring</h3>
+                    <ul>
+                        <li>RPM (Remote Patient Monitoring) integration</li>
+                        <li>Virtual triage and patient intake automation</li>
+                        <li>Predictive alerts for high-risk patients</li>
+                        <li>Digital therapeutics and patient engagement tools</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Study Section -->
+    <section class="case-study-section">
+        <div class="case-study-container">
+            <div class="case-study-content reveal">
+                <h2>12-Hospital Network Reduces Patient Intake Time by 82%</h2>
+                <p style="margin-bottom: 2rem;">A large Midwest health system implemented Proxiant's patient flow optimization platform across 12 hospitals and 47 ambulatory clinics, automating intake workflows and pre-registration processes.</p>
+
+                <div class="case-study-metric">
+                    <div class="case-study-metric-value">82%</div>
+                    <div class="case-study-metric-text">
+                        <strong>Faster Patient Intake</strong>
+                        Reduced from 45 minutes to 8 minutes average
+                    </div>
+                </div>
+
+                <div class="case-study-metric">
+                    <div class="case-study-metric-value">$2.1M</div>
+                    <div class="case-study-metric-text">
+                        <strong>Annual Labor Savings</strong>
+                        Redirected staff to higher-value clinical activities
+                    </div>
+                </div>
+
+                <div class="case-study-metric">
+                    <div class="case-study-metric-value">24%</div>
+                    <div class="case-study-metric-text">
+                        <strong>Increase in Patient Satisfaction</strong>
+                        Improved HCAHPS scores across all sites
+                    </div>
+                </div>
+
+                <div class="case-study-metric">
+                    <div class="case-study-metric-value">15%</div>
+                    <div class="case-study-metric-text">
+                        <strong>Revenue Cycle Improvement</strong>
+                        Better first-pass claim accuracy and faster payment
+                    </div>
+                </div>
+            </div>
+
+            <div class="case-study-image reveal">
+                <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="100" cy="100" r="80" fill="none" stroke="currentColor" stroke-width="2" opacity="0.3"/>
+                    <circle cx="100" cy="100" r="60" fill="none" stroke="currentColor" stroke-width="2" opacity="0.2"/>
+                    <circle cx="100" cy="100" r="40" fill="none" stroke="currentColor" stroke-width="2" opacity="0.1"/>
+                    <path d="M 100 20 Q 150 100 100 180 Q 50 100 100 20" fill="currentColor" opacity="0.2"/>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- Compliance & Security Section -->
+    <section class="compliance-section">
+        <div class="compliance-container">
+            <div class="section-header reveal">
+                <h2>Built for Healthcare Compliance</h2>
+                <p>Enterprise-grade security and compliance certifications designed to meet the strictest healthcare data protection requirements.</p>
+            </div>
+            <div class="compliance-badges">
+                <div class="compliance-badge reveal">
+                    <div class="compliance-badge-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+                    <h4>HIPAA Compliant</h4>
+                    <p>Full HIPAA Privacy and Security Rule compliance with BAA agreements and audit controls</p>
+                </div>
+                <div class="compliance-badge reveal">
+                    <div class="compliance-badge-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"/><path d="M5 7l7-4 7 4"/><path d="M2 12l3-5 3 5"/><path d="M16 12l3-5 3 5"/><path d="M2 12h6"/><path d="M16 12h6"/></svg></div>
+                    <h4>HITECH Act Ready</h4>
+                    <p>Enhanced breach notification and enforcement compliance under HITECH requirements</p>
+                </div>
+                <div class="compliance-badge reveal">
+                    <div class="compliance-badge-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+                    <h4>SOC 2 Type II</h4>
+                    <p>Independent audit certification for security, availability, and confidentiality controls</p>
+                </div>
+                <div class="compliance-badge reveal">
+                    <div class="compliance-badge-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="6" height="6"/><rect x="16" y="16" width="6" height="6"/><rect x="2" y="16" width="6" height="6"/><path d="M5 16v-4h14v4"/><path d="M12 12V8"/></svg></div>
+                    <h4>HL7 FHIR Standard</h4>
+                    <p>Full compliance with Fast Healthcare Interoperability Resources for data exchange</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-content reveal">
+            <h2>Transform Patient Care with AI</h2>
+            <p>Schedule a consultation with our healthcare AI specialists to explore how Proxiant can optimize your clinical operations, improve patient outcomes, and drive financial performance.</p>
+            <a href="contact.html" class="cta-button">Start Your Healthcare AI Journey</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h4>Services</h4>
+                <a href="solutions.html#ai-consulting">AI Consulting & Strategy</a>
+                <a href="solutions.html#product-engineering">Product Engineering</a>
+                <a href="solutions.html#cloud-infrastructure">Cloud & Infrastructure</a>
+                <a href="solutions.html#data-analytics">Data & Analytics</a>
+                <a href="solutions.html#managed-ops">Managed Operations</a>
+            </div>
+            <div class="footer-column">
+                <h4>Industries</h4>
+                <a href="industry-financial-services.html">Financial Services</a>
+                <a href="industry-healthcare.html">Healthcare</a>
+                <a href="industry-manufacturing.html">Manufacturing</a>
+                <a href="industry-retail.html">Retail & E-Commerce</a>
+                <a href="industry-energy.html">Energy & Utilities</a>
+            </div>
+            <div class="footer-column">
+                <h4>Company</h4>
+                <a href="about.html">About Us</a>
+                <a href="labs.html">Labs & Innovation</a>
+                <a href="insights.html">Insights & Resources</a>
+                <a href="careers.html">Careers</a>
+                <a href="press.html">Press Kit</a>
+            </div>
+            <div class="footer-column">
+                <h4>Resources</h4>
+                <a href="contact.html">Get in Touch</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+                <a href="security.html">Security</a>
+                <a href="sitemap.html">Sitemap</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-logo">Proxiant</div>
+            <div class="footer-copyright">&copy; 2026 Proxiant AI. All rights reserved.</div>
+        </div>
+    </footer>
+
+    <script>
+        // Intersection Observer for Reveal Animation
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        revealElements.forEach(el => revealObserver.observe(el));
+
+        // Counter Animation
+        function animateCounter(element, target, duration = 2000) {
+            let current = 0;
+            const increment = target / (duration / 16);
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    current = target;
+                    clearInterval(timer);
+                }
+                element.textContent = Math.floor(current);
+            }, 16);
+        }
+
+        // Trigger counters when stats section is visible
+        const statElements = document.querySelectorAll('.counter');
+        let countersStarted = false;
+
+        const statsObserver = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting && !countersStarted) {
+                countersStarted = true;
+                statElements.forEach((el, index) => {
+                    const text = el.textContent;
+                    const number = parseInt(text.replace(/[^0-9]/g, ''));
+                    animateCounter(el, number);
+                });
+            }
+        }, { threshold: 0.5 });
+
+        const statsBar = document.querySelector('.stats-bar');
+        if (statsBar) statsObserver.observe(statsBar);
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Add scroll effect to navigation
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('.nav-bar');
+            if (window.scrollY > 50) {
+                nav.style.boxShadow = '0 4px 12px rgba(0,0,0,0.15)';
+            } else {
+                nav.style.boxShadow = '0 1px 3px rgba(0,0,0,0.08)';
+            }
+        });
+    </script>
+</body>
+</html>
