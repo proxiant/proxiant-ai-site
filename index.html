@@ -923,7 +923,7 @@
               </div>
             </div>
 
-            <a href="#" class="arrow-link">Read the Full Story →</a>
+            <a href="case-study-fortune500-bank.html" class="arrow-link">Read the Full Story →</a>
           </div>
         </div>
       </div>
@@ -1145,12 +1145,12 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between mb-16 reveal">
         <h2 class="font-display font-bold text-4xl lg:text-5xl text-charcoal">Latest Insights</h2>
-        <a href="#" class="arrow-link hidden md:inline-flex">View All →</a>
+        <a href="insights.html" class="arrow-link hidden md:inline-flex">View All →</a>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <!-- Article 1 -->
-        <div class="reveal reveal-delay-1">
+        <a href="insight-generative-ai-enterprise.html" class="reveal reveal-delay-1 block" style="text-decoration:none;color:inherit;">
           <div class="image-zoom h-48 mb-6">
             <img
               src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&q=80"
@@ -1163,10 +1163,10 @@
             The Future of Generative AI in Enterprise
           </h3>
           <p class="text-sm text-ash">Apr 2026 · 6 min read</p>
-        </div>
+        </a>
 
         <!-- Article 2 -->
-        <div class="reveal reveal-delay-2">
+        <a href="insight-trustworthy-ai.html" class="reveal reveal-delay-2 block" style="text-decoration:none;color:inherit;">
           <div class="image-zoom h-48 mb-6">
             <img
               src="https://images.unsplash.com/photo-1639322537228-f710d846310a?w=600&q=80"
@@ -1179,10 +1179,10 @@
             Building Trustworthy AI Systems
           </h3>
           <p class="text-sm text-ash">Apr 2026 · 5 min read</p>
-        </div>
+        </a>
 
         <!-- Article 3 -->
-        <div class="reveal reveal-delay-3">
+        <a href="insight-scaling-ai-teams.html" class="reveal reveal-delay-3 block" style="text-decoration:none;color:inherit;">
           <div class="image-zoom h-48 mb-6">
             <img
               src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=600&q=80"
@@ -1195,10 +1195,10 @@
             Scaling AI Teams: Lessons from Our Growth
           </h3>
           <p class="text-sm text-ash">Mar 2026 · 7 min read</p>
-        </div>
+        </a>
       </div>
 
-      <a href="#" class="arrow-link md:hidden mt-12 block text-center">View All Articles →</a>
+      <a href="insights.html" class="arrow-link md:hidden mt-12 block text-center">View All Articles →</a>
     </div>
   </section>
 
@@ -2034,7 +2034,7 @@
   document.querySelectorAll('.hero .r').forEach(el=>setTimeout(()=>el.classList.add('in'),80));
 
   // Counters
-  document.querySelectorAll('.counter').forEach(el=>{
+  document.querySelectorAll('.counter[data-t]').forEach(el=>{
     const co=new IntersectionObserver(([e])=>{if(e.isIntersecting){
       const t=+el.dataset.t,s=t/50;let c=0;
       const run=()=>{c+=s;if(c>=t){el.textContent=t;return}el.textContent=Math.floor(c);requestAnimationFrame(run)};
