@@ -44,7 +44,7 @@
       "@type": "ContactPoint",
       "contactType": "Sales",
       "email": "helloproxiant@gmail.com",
-      "telephone": "+1-512-555-0100"
+      "telephone": "+1-214-402-2256"
     }
   }
   </script>
@@ -879,7 +879,7 @@
             </div>
             <div class="contact-card-content flex-1">
               <h3>Phone</h3>
-              <a href="tel:+15125550100">+1 (512) 555-0100</a>
+              <a href="tel:+12144022256">+1 (214) 402-2256</a>
             </div>
           </div>
 
@@ -1080,8 +1080,8 @@
       <p class="text-xl text-gray-400 mb-8">
         Give us a call
       </p>
-      <a href="tel:+15125550100" class="font-mono text-2xl lg:text-3xl text-primary font-bold hover:text-primary-light transition-colors">
-        +1 (512) 555-0100
+      <a href="tel:+12144022256" class="font-mono text-2xl lg:text-3xl text-primary font-bold hover:text-primary-light transition-colors">
+        +1 (214) 402-2256
       </a>
       <p class="text-gray-400 mt-8">
         Or email us at
@@ -1258,13 +1258,33 @@
     contactForm.addEventListener('submit', (e) => {
       e.preventDefault();
 
-      // Simulate form submission (in a real scenario, this would send to a server)
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const company = document.getElementById('company').value || 'Not specified';
+      const phone = document.getElementById('phone').value || 'Not provided';
+      const service = document.getElementById('service').value || 'Not selected';
+      const budget = document.getElementById('budget').value || 'Not selected';
+      const message = document.getElementById('message').value || 'No message';
+
+      const subject = encodeURIComponent('New Inquiry from ' + name + (company !== 'Not specified' ? ' (' + company + ')' : ''));
+      const body = encodeURIComponent(
+        'Name: ' + name + '\n' +
+        'Email: ' + email + '\n' +
+        'Company: ' + company + '\n' +
+        'Phone: ' + phone + '\n' +
+        'Service Interest: ' + service + '\n' +
+        'Budget Range: ' + budget + '\n\n' +
+        'Message:\n' + message
+      );
+
+      // Open email client with pre-filled details
+      window.location.href = 'mailto:helloproxiant@gmail.com?subject=' + subject + '&body=' + body;
+
+      // Show success message
       setTimeout(() => {
-        // Hide form
         contactForm.style.display = 'none';
-        // Show success message
         formSuccess.classList.add('show');
-      }, 300);
+      }, 500);
     });
 
     // Accordion Toggle
