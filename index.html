@@ -110,6 +110,7 @@
     .hero-pattern {
       position: relative;
       overflow: hidden;
+      background: var(--charcoal);
     }
 
     .hero-pattern::before {
@@ -698,8 +699,8 @@
   </style>
 </head>
 <body>
-  <!-- Navigation -->
-  <nav class="nav-bar">
+  <!-- Navigation (hidden - using pill nav from second design) -->
+  <nav class="nav-bar" style="display:none;">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-20">
         <!-- Logo -->
@@ -750,8 +751,8 @@
     </div>
   </nav>
 
-  <!-- Mobile Menu -->
-  <div class="mobile-menu" id="mobileMenu">
+  <!-- Mobile Menu (hidden - using pill nav from second design) -->
+  <div class="mobile-menu" id="mobileMenu" style="display:none !important;">
     <a href="#services">Services</a>
     <a href="#industries">Industries</a>
     <a href="#proxialpha">Labs</a>
@@ -773,11 +774,11 @@
             Enterprise AI Partner
           </div>
 
-          <h1 class="font-display font-extrabold text-5xl lg:text-7xl leading-tight text-charcoal mb-6 animate-fade-in animate-fade-in-delay-2">
+          <h1 class="font-display font-extrabold text-5xl lg:text-7xl leading-tight text-white mb-6 animate-fade-in animate-fade-in-delay-2">
             We Build AI That Actually Works.
           </h1>
 
-          <p class="text-lg lg:text-xl text-slate mb-8 max-w-lg animate-fade-in animate-fade-in-delay-3">
+          <p class="text-lg lg:text-xl text-gray-300 mb-8 max-w-lg animate-fade-in animate-fade-in-delay-3">
             From strategy to deployment — Proxiant helps enterprises harness AI for measurable business outcomes.
           </p>
 
@@ -788,7 +789,7 @@
                 <path d="M5 12h14M12 5l7 7-7 7"/>
               </svg>
             </a>
-            <a href="#work" class="btn btn-outline">
+            <a href="#work" class="btn btn-outline-white">
               View Our Work
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M5 12h14M12 5l7 7-7 7"/>

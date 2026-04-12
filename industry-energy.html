@@ -12,6 +12,10 @@
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
+    <script>
+    tailwind.config = { theme: { extend: { colors: { primary: { DEFAULT:'#BF5700', light:'#E87511', dark:'#9E4A00' }, charcoal:'#1C1C1E', pearl:'#F5F3F0', cream:'#FAF8F5', navy:'#1B3A4B', teal:'#2A9D8F' }, fontFamily: { display:['Bricolage Grotesque','sans-serif'], body:['Outfit','sans-serif'], mono:['JetBrains Mono','monospace'] } } } };
+    </script>
+
     <style>
         :root {
             --primary: #BF5700;
@@ -68,24 +72,61 @@
         .bg-teal { background-color: var(--teal); }
 
         body {
-            @apply font-body text-charcoal;
+            font-family: 'Outfit', sans-serif;
+            color: #1C1C1E;
         }
 
         h1, h2, h3, h4, h5, h6 {
-            @apply font-display;
+            font-family: 'Bricolage Grotesque', sans-serif;
         }
 
         /* Navigation Styles */
         .dropdown-menu {
-            @apply absolute left-0 mt-0 pt-4 invisible opacity-0 group-hover:visible group-hover:opacity-100 focus-within:visible focus-within:opacity-100 transition-all duration-200 z-100;
-        }
-
-        .dropdown-content {
-            @apply bg-white shadow-lg rounded-lg py-3 min-w-max;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            min-width: 250px;
+            padding: 0.5rem;
+            padding-top: 1rem;
+            margin-top: 0;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            pointer-events: none;
+            border: 1px solid rgba(191,87,0,0.1);
+            z-index: 100;
         }
 
         .dropdown-item {
-            @apply block px-4 py-2 text-charcoal hover:bg-pearl hover:text-primary transition-colors;
+            position: relative;
+            padding-bottom: 0.75rem;
+        }
+
+        .dropdown-item:hover .dropdown-menu,
+        .dropdown-item:focus-within .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 0.625rem 1rem;
+            color: #1C1C1E;
+            text-decoration: none;
+            border-radius: 0.375rem;
+            transition: all 0.2s ease;
+            font-size: 0.9375rem;
+        }
+
+        .dropdown-menu a:hover {
+            background: rgba(191,87,0,0.08);
+            color: #BF5700;
         }
 
         /* Hero Animations */
@@ -151,201 +192,341 @@
 
         /* Card Hover Effects */
         .card-hover {
-            @apply transition-all duration-300 hover:shadow-lg hover:scale-105;
+            transition: all 0.3s ease;
+        }
+
+        .card-hover:hover {
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+            transform: scale(1.05);
         }
 
         /* Gradient Overlays */
         .gradient-overlay-primary {
-            @apply relative overflow-hidden;
+            position: relative;
+            overflow: hidden;
         }
 
         .gradient-overlay-primary::after {
             content: '';
-            @apply absolute inset-0 bg-gradient-to-t from-charcoal via-transparent to-transparent pointer-events-none;
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, #1C1C1E, transparent, transparent);
+            pointer-events: none;
         }
 
         /* Stats Counter */
         .stat-card {
-            @apply bg-pearl rounded-lg p-6 text-center card-hover;
+            background: #F5F3F0;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+            transform: scale(1.05);
         }
 
         .stat-number {
-            @apply text-primary text-4xl font-display font-800 leading-none mb-2;
+            color: #BF5700;
+            font-size: 2.25rem;
+            font-family: 'Bricolage Grotesque', sans-serif;
+            font-weight: 800;
+            line-height: 1;
+            margin-bottom: 0.5rem;
         }
 
         .stat-label {
-            @apply text-charcoal text-sm font-body font-500;
+            color: #1C1C1E;
+            font-size: 0.875rem;
+            font-weight: 500;
         }
 
         /* Solution Blocks */
         .solution-block {
-            @apply bg-white rounded-lg p-8 border-2 border-pearl card-hover;
+            background: white;
+            border-radius: 0.5rem;
+            padding: 2rem;
+            border: 2px solid #F5F3F0;
+            transition: all 0.3s ease;
+        }
+
+        .solution-block:hover {
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+            transform: scale(1.05);
         }
 
         .solution-title {
-            @apply text-primary font-display font-600 text-lg mb-4;
+            color: #BF5700;
+            font-family: 'Bricolage Grotesque', sans-serif;
+            font-weight: 600;
+            font-size: 1.125rem;
+            margin-bottom: 1rem;
         }
 
         .solution-description {
-            @apply text-charcoal text-sm leading-relaxed mb-4;
+            color: #1C1C1E;
+            font-size: 0.875rem;
+            line-height: 1.5;
+            margin-bottom: 1rem;
         }
 
         .feature-list {
-            @apply list-none space-y-2;
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
         }
 
         .feature-item {
-            @apply text-charcoal text-sm flex items-start;
+            color: #1C1C1E;
+            font-size: 0.875rem;
+            display: flex;
+            align-items: flex-start;
         }
 
         .feature-item::before {
             content: '→';
-            @apply text-primary font-bold mr-2 flex-shrink-0;
+            color: #BF5700;
+            font-weight: bold;
+            margin-right: 0.5rem;
+            flex-shrink: 0;
         }
 
         /* Compliance Badges */
         .badge {
-            @apply inline-block bg-pearl rounded-full px-4 py-2 text-primary font-mono text-xs font-600;
+            display: inline-block;
+            background: #F5F3F0;
+            border-radius: 9999px;
+            padding: 0.5rem 1rem;
+            color: #BF5700;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            font-weight: 600;
         }
 
         /* Mobile Menu */
         .mobile-menu {
-            @apply hidden fixed inset-0 bg-charcoal bg-opacity-95 z-50 overflow-y-auto;
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(28, 28, 30, 0.95);
+            z-index: 50;
+            overflow-y: auto;
         }
 
         .mobile-menu.active {
-            @apply block;
+            display: block;
         }
 
         .mobile-menu-item {
-            @apply px-6 py-3 text-white hover:bg-primary-dark transition-colors;
+            padding: 0.75rem 1.5rem;
+            color: white;
+            transition: background-color 0.2s ease;
+        }
+
+        .mobile-menu-item:hover {
+            background-color: #9E4A00;
         }
 
         .mobile-submenu {
-            @apply pl-6 bg-charcoal bg-opacity-50;
+            padding-left: 1.5rem;
+            background: rgba(28, 28, 30, 0.5);
         }
 
         .mobile-submenu-item {
-            @apply text-pearl hover:text-primary;
+            color: #F5F3F0;
+        }
+
+        .mobile-submenu-item:hover {
+            color: #BF5700;
         }
 
         /* CTA Button Variations */
         .btn-primary {
-            @apply bg-primary hover:bg-primary-dark text-white px-8 py-3 rounded-lg font-600 transition-all duration-300 inline-block;
+            background: #BF5700;
+            color: white;
+            padding: 0.75rem 1.25rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .btn-primary:hover {
+            background: #9E4A00;
         }
 
         .btn-secondary {
-            @apply bg-pearl hover:bg-cream text-primary px-8 py-3 rounded-lg font-600 border-2 border-primary transition-all duration-300 inline-block;
+            background: #F5F3F0;
+            color: #BF5700;
+            padding: 0.75rem 1.25rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            border: 2px solid #BF5700;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .btn-secondary:hover {
+            background: #FAF8F5;
         }
 
         .btn-outline {
-            @apply border-2 border-white text-white hover:bg-white hover:text-primary px-8 py-3 rounded-lg font-600 transition-all duration-300 inline-block;
+            border: 2px solid white;
+            color: white;
+            padding: 0.75rem 1.25rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-decoration: none;
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background: white;
+            color: #BF5700;
         }
 
         /* Section Spacing */
         .section-padding {
-            @apply py-20 px-4 sm:px-6 lg:px-8;
+            padding-top: 5rem;
+            padding-bottom: 5rem;
+            padding-left: 1rem;
+            padding-right: 1rem;
         }
 
         /* Case Study Card */
         .case-study-card {
-            @apply bg-gradient-to-br from-primary-dark to-primary rounded-lg p-8 text-white relative overflow-hidden;
+            background: linear-gradient(to bottom-right, #9E4A00, #BF5700);
+            border-radius: 0.5rem;
+            padding: 2rem;
+            color: white;
+            position: relative;
+            overflow: hidden;
         }
 
         .case-study-card::before {
             content: '';
-            @apply absolute top-0 right-0 w-96 h-96 bg-white opacity-5 rounded-full -mr-48 -mt-48;
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 24rem;
+            height: 24rem;
+            background: white;
+            opacity: 0.05;
+            border-radius: 50%;
+            margin-right: -12rem;
+            margin-top: -12rem;
         }
 
         .case-study-title {
-            @apply text-2xl font-display font-800 mb-4 relative z-10;
+            font-size: 1.5rem;
+            font-family: 'Bricolage Grotesque', sans-serif;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 10;
         }
 
         .case-study-content {
-            @apply relative z-10 space-y-4;
+            position: relative;
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
         }
 
         .case-study-stat {
-            @apply text-4xl font-display font-800 text-primary-light;
+            font-size: 2.25rem;
+            font-family: 'Bricolage Grotesque', sans-serif;
+            font-weight: 800;
+            color: #E87511;
         }
 
         .case-study-description {
-            @apply text-white text-opacity-90;
+            color: rgba(255, 255, 255, 0.9);
         }
 
         /* Responsive */
         @media (max-width: 768px) {
             .section-padding {
-                @apply py-12 px-4;
+                padding-top: 3rem;
+                padding-bottom: 3rem;
             }
 
             .stat-number {
-                @apply text-3xl;
+                font-size: 1.875rem;
             }
 
             .solution-block {
-                @apply p-6;
+                padding: 1.5rem;
             }
+        }
+
+        .revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
         }
     </style>
 </head>
 <body class="bg-cream">
     <!-- Navigation -->
-    <nav class="bg-white shadow-md sticky top-0 z-40">
+    <nav style="position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(255,255,255,0.9);backdrop-filter:blur(16px);box-shadow:0 1px 3px rgba(0,0,0,0.1);">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <!-- Logo -->
-                <a href="index.html" class="font-display font-800 text-2xl text-primary">
-                    PROXIANT
-                </a>
-
-                <!-- Desktop Menu -->
-                <div class="hidden md:flex items-center space-x-1">
-                    <!-- Services Dropdown -->
-                    <div class="group relative">
-                        <button class="px-4 py-2 text-charcoal font-500 hover:text-primary transition-colors flex items-center">
+            <div class="flex items-center justify-between h-20">
+                <a href="index.html" class="font-display font-bold text-2xl" style="color:#1C1C1E;">Proxiant</a>
+                <div class="hidden md:flex items-center gap-8">
+                    <div class="dropdown-item relative">
+                        <button style="color:#1C1C1E;background:transparent;border:none;cursor:pointer;font-weight:500;display:flex;align-items:center;gap:0.5rem;">
                             Services
-                            <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
                             </svg>
                         </button>
                         <div class="dropdown-menu">
-                            <div class="dropdown-content">
-                                <a href="solutions.html#sections" class="dropdown-item">All Services</a>
-                            </div>
+                            <a href="solutions.html#ai-consulting">AI Consulting & Strategy</a>
+                            <a href="solutions.html#product-engineering">Product Engineering</a>
+                            <a href="solutions.html#cloud-infrastructure">Cloud & Infrastructure</a>
+                            <a href="solutions.html#data-analytics">Data & Analytics</a>
+                            <a href="solutions.html#managed-ops">Managed Operations</a>
                         </div>
                     </div>
-
-                    <!-- Industries Dropdown -->
-                    <div class="group relative">
-                        <button class="px-4 py-2 text-charcoal font-500 hover:text-primary transition-colors flex items-center">
+                    <div class="dropdown-item relative">
+                        <button style="color:#1C1C1E;background:transparent;border:none;cursor:pointer;font-weight:500;display:flex;align-items:center;gap:0.5rem;">
                             Industries
-                            <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
                             </svg>
                         </button>
                         <div class="dropdown-menu">
-                            <div class="dropdown-content">
-                                <a href="industry-financial-services.html" class="dropdown-item">Financial Services</a>
-                                <a href="industry-healthcare.html" class="dropdown-item">Healthcare</a>
-                                <a href="industry-manufacturing.html" class="dropdown-item">Manufacturing</a>
-                                <a href="industry-retail.html" class="dropdown-item">Retail</a>
-                                <a href="industry-energy.html" class="dropdown-item text-primary font-600">Energy & Utilities</a>
-                                <a href="industry-telecom.html" class="dropdown-item">Telecom</a>
-                                <a href="industry-insurance.html" class="dropdown-item">Insurance</a>
-                                <a href="industry-transportation.html" class="dropdown-item">Transportation</a>
-                            </div>
+                            <a href="industry-financial-services.html">Financial Services</a>
+                            <a href="industry-healthcare.html">Healthcare</a>
+                            <a href="industry-manufacturing.html">Manufacturing</a>
+                            <a href="industry-retail.html">Retail & E-Commerce</a>
+                            <a href="industry-energy.html">Energy & Utilities</a>
+                            <a href="industry-telecom.html">Telecommunications</a>
+                            <a href="industry-insurance.html">Insurance</a>
+                            <a href="industry-transportation.html">Transportation & Logistics</a>
                         </div>
                     </div>
-
-                    <a href="labs.html" class="px-4 py-2 text-charcoal font-500 hover:text-primary transition-colors">Labs</a>
-                    <a href="insights.html" class="px-4 py-2 text-charcoal font-500 hover:text-primary transition-colors">Insights</a>
-                    <a href="about.html" class="px-4 py-2 text-charcoal font-500 hover:text-primary transition-colors">About</a>
-                </div>
-
-                <!-- Desktop CTA -->
-                <div class="hidden md:block">
-                    <a href="contact.html" class="btn-primary text-sm">Get Started</a>
+                    <a href="labs.html" style="color:#48484A;font-weight:500;">Labs</a>
+                    <a href="insights.html" style="color:#48484A;font-weight:500;">Insights</a>
+                    <a href="about.html" style="color:#48484A;font-weight:500;">About</a>
+                    <a href="contact.html" style="background:#BF5700;color:white;padding:0.5rem 1.25rem;border-radius:0.5rem;font-weight:500;">Get in Touch</a>
                 </div>
 
                 <!-- Mobile Menu Button -->
@@ -368,20 +549,28 @@
                 <div class="pt-20 pb-10">
                     <a href="solutions.html#sections" class="mobile-menu-item block">Services</a>
                     <div class="mobile-submenu">
+                        <a href="solutions.html#ai-consulting" class="mobile-menu-item mobile-submenu-item block">AI Consulting & Strategy</a>
+                        <a href="solutions.html#product-engineering" class="mobile-menu-item mobile-submenu-item block">Product Engineering</a>
+                        <a href="solutions.html#cloud-infrastructure" class="mobile-menu-item mobile-submenu-item block">Cloud & Infrastructure</a>
+                        <a href="solutions.html#data-analytics" class="mobile-menu-item mobile-submenu-item block">Data & Analytics</a>
+                        <a href="solutions.html#managed-ops" class="mobile-menu-item mobile-submenu-item block">Managed Operations</a>
+                    </div>
+                    <a href="industries.html" class="mobile-menu-item block">Industries</a>
+                    <div class="mobile-submenu">
                         <a href="industry-financial-services.html" class="mobile-menu-item mobile-submenu-item block">Financial Services</a>
                         <a href="industry-healthcare.html" class="mobile-menu-item mobile-submenu-item block">Healthcare</a>
                         <a href="industry-manufacturing.html" class="mobile-menu-item mobile-submenu-item block">Manufacturing</a>
-                        <a href="industry-retail.html" class="mobile-menu-item mobile-submenu-item block">Retail</a>
+                        <a href="industry-retail.html" class="mobile-menu-item mobile-submenu-item block">Retail & E-Commerce</a>
                         <a href="industry-energy.html" class="mobile-menu-item mobile-submenu-item block font-600 text-primary-light">Energy & Utilities</a>
-                        <a href="industry-telecom.html" class="mobile-menu-item mobile-submenu-item block">Telecom</a>
+                        <a href="industry-telecom.html" class="mobile-menu-item mobile-submenu-item block">Telecommunications</a>
                         <a href="industry-insurance.html" class="mobile-menu-item mobile-submenu-item block">Insurance</a>
-                        <a href="industry-transportation.html" class="mobile-menu-item mobile-submenu-item block">Transportation</a>
+                        <a href="industry-transportation.html" class="mobile-menu-item mobile-submenu-item block">Transportation & Logistics</a>
                     </div>
                     <a href="labs.html" class="mobile-menu-item block">Labs</a>
                     <a href="insights.html" class="mobile-menu-item block">Insights</a>
                     <a href="about.html" class="mobile-menu-item block">About</a>
                     <div class="px-6 py-4">
-                        <a href="contact.html" class="btn-primary block text-center w-full">Get Started</a>
+                        <a href="contact.html" class="btn-primary block text-center w-full">Get in Touch</a>
                     </div>
                 </div>
             </div>
@@ -403,7 +592,7 @@
         <!-- Content -->
         <div class="relative h-full flex items-center justify-center">
             <div class="max-w-4xl mx-auto px-4 text-center space-y-8">
-                <h1 class="text-5xl sm:text-6xl lg:text-7xl font-display font-800 animate-fade-in-up leading-tight">
+                <h1 class="text-5xl sm:text-6xl lg:text-7xl font-display font-bold animate-fade-in-up leading-tight">
                     Intelligent Energy & Utilities
                 </h1>
 
@@ -431,27 +620,27 @@
     <!-- Stats Section -->
     <section class="section-padding bg-white">
         <div class="max-w-6xl mx-auto">
-            <h2 class="text-4xl font-display font-800 text-center mb-16 text-charcoal">
+            <h2 class="text-4xl font-display font-bold text-center mb-16 text-charcoal">
                 The Energy Industry Challenge
             </h2>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="stat-card animate-fade-in-up">
+                <div class="stat-card animate-fade-in-up reveal">
                     <div class="stat-number">$1.8T</div>
                     <div class="stat-label">Global Energy Market Value</div>
                 </div>
 
-                <div class="stat-card animate-fade-in-up delay-100">
+                <div class="stat-card animate-fade-in-up delay-100 reveal">
                     <div class="stat-number">65%</div>
                     <div class="stat-label">Utilities Deploying AI by 2026</div>
                 </div>
 
-                <div class="stat-card animate-fade-in-up delay-200">
+                <div class="stat-card animate-fade-in-up delay-200 reveal">
                     <div class="stat-number">30%</div>
                     <div class="stat-label">Average Grid Outage Reduction</div>
                 </div>
 
-                <div class="stat-card animate-fade-in-up delay-300">
+                <div class="stat-card animate-fade-in-up delay-300 reveal">
                     <div class="stat-number">18%</div>
                     <div class="stat-label">Energy Efficiency Gains with AI</div>
                 </div>
@@ -462,7 +651,7 @@
     <!-- Challenges Section -->
     <section class="section-padding bg-cream">
         <div class="max-w-6xl mx-auto">
-            <h2 class="text-4xl font-display font-800 text-center mb-4 text-charcoal">
+            <h2 class="text-4xl font-display font-bold text-center mb-4 text-charcoal">
                 Industry Challenges
             </h2>
             <p class="text-center text-charcoal text-lg mb-16 max-w-3xl mx-auto">
@@ -471,48 +660,48 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Challenge 1 -->
-                <div class="bg-white rounded-lg p-8 border-l-4 border-primary card-hover animate-fade-in-up">
-                    <h3 class="text-xl font-display font-600 text-primary mb-3">Grid Reliability & Aging Infrastructure</h3>
+                <div class="bg-white rounded-lg p-8 border-l-4 border-primary card-hover animate-fade-in-up reveal">
+                    <h3 class="text-xl font-display font-semibold text-primary mb-3">Grid Reliability & Aging Infrastructure</h3>
                     <p class="text-charcoal text-sm leading-relaxed">
                         Aging power plants and transmission lines require continuous monitoring and predictive maintenance to prevent cascading failures and ensure service continuity.
                     </p>
                 </div>
 
                 <!-- Challenge 2 -->
-                <div class="bg-white rounded-lg p-8 border-l-4 border-primary card-hover animate-fade-in-up delay-100">
-                    <h3 class="text-xl font-display font-600 text-primary mb-3">Renewable Integration Complexity</h3>
+                <div class="bg-white rounded-lg p-8 border-l-4 border-primary card-hover animate-fade-in-up delay-100 reveal">
+                    <h3 class="text-xl font-display font-semibold text-primary mb-3">Renewable Integration Complexity</h3>
                     <p class="text-charcoal text-sm leading-relaxed">
                         Variability in solar and wind generation creates unpredictable supply patterns that challenge real-time grid balancing and demand forecasting.
                     </p>
                 </div>
 
                 <!-- Challenge 3 -->
-                <div class="bg-white rounded-lg p-8 border-l-4 border-primary card-hover animate-fade-in-up delay-200">
-                    <h3 class="text-xl font-display font-600 text-primary mb-3">Demand Forecasting Accuracy</h3>
+                <div class="bg-white rounded-lg p-8 border-l-4 border-primary card-hover animate-fade-in-up delay-200 reveal">
+                    <h3 class="text-xl font-display font-semibold text-primary mb-3">Demand Forecasting Accuracy</h3>
                     <p class="text-charcoal text-sm leading-relaxed">
                         Weather variations, consumer behavior changes, and EV adoption create demand volatility that traditional forecasting models struggle to predict accurately.
                     </p>
                 </div>
 
                 <!-- Challenge 4 -->
-                <div class="bg-white rounded-lg p-8 border-l-4 border-primary card-hover animate-fade-in-up delay-300">
-                    <h3 class="text-xl font-display font-600 text-primary mb-3">Regulatory Compliance (NERC/FERC)</h3>
+                <div class="bg-white rounded-lg p-8 border-l-4 border-primary card-hover animate-fade-in-up delay-300 reveal">
+                    <h3 class="text-xl font-display font-semibold text-primary mb-3">Regulatory Compliance (NERC/FERC)</h3>
                     <p class="text-charcoal text-sm leading-relaxed">
                         Stringent North American Electric Reliability Corporation and Federal Energy Regulatory Commission standards require rigorous data documentation and operational oversight.
                     </p>
                 </div>
 
                 <!-- Challenge 5 -->
-                <div class="bg-white rounded-lg p-8 border-l-4 border-primary card-hover animate-fade-in-up delay-400">
-                    <h3 class="text-xl font-display font-600 text-primary mb-3">Cybersecurity Threats to SCADA/OT</h3>
+                <div class="bg-white rounded-lg p-8 border-l-4 border-primary card-hover animate-fade-in-up delay-400 reveal">
+                    <h3 class="text-xl font-display font-semibold text-primary mb-3">Cybersecurity Threats to SCADA/OT</h3>
                     <p class="text-charcoal text-sm leading-relaxed">
                         Critical infrastructure vulnerabilities in SCADA systems and operational technology require advanced threat detection and anomaly prevention mechanisms.
                     </p>
                 </div>
 
                 <!-- Challenge 6 -->
-                <div class="bg-white rounded-lg p-8 border-l-4 border-primary card-hover animate-fade-in-up delay-500">
-                    <h3 class="text-xl font-display font-600 text-primary mb-3">Carbon Reduction Mandates</h3>
+                <div class="bg-white rounded-lg p-8 border-l-4 border-primary card-hover animate-fade-in-up delay-500 reveal">
+                    <h3 class="text-xl font-display font-semibold text-primary mb-3">Carbon Reduction Mandates</h3>
                     <p class="text-charcoal text-sm leading-relaxed">
                         Government and corporate sustainability targets require accelerated renewable adoption while maintaining grid stability and minimizing stranded assets.
                     </p>
@@ -524,7 +713,7 @@
     <!-- Solutions Section -->
     <section id="solutions" class="section-padding bg-white">
         <div class="max-w-6xl mx-auto">
-            <h2 class="text-4xl font-display font-800 text-center mb-4 text-charcoal">
+            <h2 class="text-4xl font-display font-bold text-center mb-4 text-charcoal">
                 Intelligent Solutions
             </h2>
             <p class="text-center text-charcoal text-lg mb-16 max-w-3xl mx-auto">
@@ -533,7 +722,7 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <!-- Solution 1 -->
-                <div class="solution-block animate-fade-in-up">
+                <div class="solution-block animate-fade-in-up reveal">
                     <div class="solution-title">Grid Intelligence & Optimization</div>
                     <div class="solution-description">
                         Real-time monitoring and ML-powered optimization across transmission and distribution networks.
@@ -547,7 +736,7 @@
                 </div>
 
                 <!-- Solution 2 -->
-                <div class="solution-block animate-fade-in-up delay-100">
+                <div class="solution-block animate-fade-in-up delay-100 reveal">
                     <div class="solution-title">Renewable Energy Forecasting</div>
                     <div class="solution-description">
                         Advanced time-series models for solar and wind generation prediction and storage optimization.
@@ -561,7 +750,7 @@
                 </div>
 
                 <!-- Solution 3 -->
-                <div class="solution-block animate-fade-in-up delay-200">
+                <div class="solution-block animate-fade-in-up delay-200 reveal">
                     <div class="solution-title">Predictive Asset Management</div>
                     <div class="solution-description">
                         Monitor and predict equipment health to maximize asset life and reduce unplanned outages.
@@ -575,7 +764,7 @@
                 </div>
 
                 <!-- Solution 4 -->
-                <div class="solution-block animate-fade-in-up delay-300">
+                <div class="solution-block animate-fade-in-up delay-300 reveal">
                     <div class="solution-title">Smart Meter Analytics</div>
                     <div class="solution-description">
                         Extract actionable insights from millions of metering data points across customer portfolios.
@@ -589,7 +778,7 @@
                 </div>
 
                 <!-- Solution 5 -->
-                <div class="solution-block animate-fade-in-up delay-400">
+                <div class="solution-block animate-fade-in-up delay-400 reveal">
                     <div class="solution-title">Carbon & Sustainability Platform</div>
                     <div class="solution-description">
                         Track, report, and optimize emissions while managing ESG compliance and carbon credits.
@@ -603,7 +792,7 @@
                 </div>
 
                 <!-- Solution 6 -->
-                <div class="solution-block animate-fade-in-up delay-500">
+                <div class="solution-block animate-fade-in-up delay-500 reveal">
                     <div class="solution-title">Workforce & Safety AI</div>
                     <div class="solution-description">
                         Enable smarter field operations and safety management with computer vision and route optimization.
@@ -622,7 +811,7 @@
     <!-- Case Study Section -->
     <section class="section-padding bg-cream">
         <div class="max-w-4xl mx-auto">
-            <div class="case-study-card animate-fade-in-up">
+            <div class="case-study-card animate-fade-in-up reveal">
                 <div class="case-study-title">
                     How a Regional Utility Reduced Grid Outages by 34% with Predictive AI
                 </div>
@@ -630,21 +819,21 @@
                 <div class="case-study-content">
                     <div class="space-y-6">
                         <div>
-                            <p class="text-white text-opacity-75 mb-3 font-600">THE CHALLENGE</p>
+                            <p class="text-white text-opacity-75 mb-3 font-semibold">THE CHALLENGE</p>
                             <p class="case-study-description">
                                 A 12-state regional utility with 4.2M customers faced escalating grid reliability issues, averaging 127 outages annually and spending $180M annually on reactive maintenance.
                             </p>
                         </div>
 
                         <div>
-                            <p class="text-white text-opacity-75 mb-3 font-600">THE SOLUTION</p>
+                            <p class="text-white text-opacity-75 mb-3 font-semibold">THE SOLUTION</p>
                             <p class="case-study-description">
                                 Deployed Proxiant's Grid Intelligence & Optimization and Predictive Asset Management solutions across 850 substations and 45,000 miles of transmission/distribution lines.
                             </p>
                         </div>
 
                         <div>
-                            <p class="text-white text-opacity-75 mb-3 font-600">RESULTS IN FIRST 12 MONTHS</p>
+                            <p class="text-white text-opacity-75 mb-3 font-semibold">RESULTS IN FIRST 12 MONTHS</p>
                             <div class="grid grid-cols-2 gap-6 mt-4">
                                 <div>
                                     <div class="case-study-stat">34%</div>
@@ -678,7 +867,7 @@
     <!-- Compliance & Standards Section -->
     <section class="section-padding bg-white">
         <div class="max-w-6xl mx-auto">
-            <h2 class="text-4xl font-display font-800 text-center mb-4 text-charcoal">
+            <h2 class="text-4xl font-display font-bold text-center mb-4 text-charcoal">
                 Compliance & Standards
             </h2>
             <p class="text-center text-charcoal text-lg mb-16 max-w-3xl mx-auto">
@@ -686,27 +875,27 @@
             </p>
 
             <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
-                <div class="flex flex-col items-center animate-fade-in-up">
+                <div class="flex flex-col items-center animate-fade-in-up reveal">
                     <div class="badge mb-4">NERC CIP</div>
                     <p class="text-charcoal text-xs text-center">Critical Infrastructure Protection</p>
                 </div>
 
-                <div class="flex flex-col items-center animate-fade-in-up delay-100">
+                <div class="flex flex-col items-center animate-fade-in-up delay-100 reveal">
                     <div class="badge mb-4">FERC</div>
                     <p class="text-charcoal text-xs text-center">Regulatory Compliance</p>
                 </div>
 
-                <div class="flex flex-col items-center animate-fade-in-up delay-200">
+                <div class="flex flex-col items-center animate-fade-in-up delay-200 reveal">
                     <div class="badge mb-4">EPA</div>
                     <p class="text-charcoal text-xs text-center">Environmental Protection</p>
                 </div>
 
-                <div class="flex flex-col items-center animate-fade-in-up delay-300">
+                <div class="flex flex-col items-center animate-fade-in-up delay-300 reveal">
                     <div class="badge mb-4">ISO 50001</div>
                     <p class="text-charcoal text-xs text-center">Energy Management</p>
                 </div>
 
-                <div class="flex flex-col items-center animate-fade-in-up delay-400">
+                <div class="flex flex-col items-center animate-fade-in-up delay-400 reveal">
                     <div class="badge mb-4">NIST</div>
                     <p class="text-charcoal text-xs text-center">Cybersecurity Framework</p>
                 </div>
@@ -721,15 +910,15 @@
         <div class="absolute bottom-0 left-0 w-96 h-96 bg-primary-dark opacity-10 rounded-full -ml-48 -mb-48"></div>
 
         <div class="max-w-4xl mx-auto text-center relative z-10">
-            <h2 class="text-5xl font-display font-800 mb-6 leading-tight animate-fade-in-up">
+            <h2 class="text-5xl font-display font-bold mb-6 leading-tight animate-fade-in-up reveal">
                 Power the Future with AI
             </h2>
-            <p class="text-xl text-white text-opacity-90 mb-10 animate-fade-in-up delay-100 max-w-2xl mx-auto">
+            <p class="text-xl text-white text-opacity-90 mb-10 animate-fade-in-up delay-100 max-w-2xl mx-auto reveal">
                 Join leading utilities transforming their operations with intelligent AI solutions. Start your energy transformation today.
             </p>
 
-            <div class="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up delay-200">
-                <a href="contact.html" class="bg-white text-primary hover:bg-pearl px-8 py-4 rounded-lg font-600 transition-all duration-300 inline-block text-lg">
+            <div class="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up delay-200 reveal">
+                <a href="contact.html" style="background:white;color:#BF5700;padding:1rem 2rem;border-radius:0.5rem;font-weight:600;transition:all 0.3s ease;display:inline-block;text-decoration:none;font-size:1.125rem;">
                     Schedule Demo
                 </a>
                 <a href="about.html" class="btn-outline text-lg">
@@ -740,59 +929,40 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-charcoal text-white py-12 px-4">
-        <div class="max-w-6xl mx-auto">
+    <footer style="background:#1C1C1E;color:white;padding:4rem 0 2rem;">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-                <!-- Brand -->
                 <div>
-                    <h3 class="font-display font-800 text-2xl text-primary mb-4">PROXIANT</h3>
-                    <p class="text-white text-opacity-75 text-sm leading-relaxed">
-                        Enterprise AI solutions for energy, finance, healthcare, and beyond.
-                    </p>
+                    <h4 class="font-display font-bold text-lg mb-4">Proxiant</h4>
+                    <p style="color:#8E8E93;font-size:0.875rem;">Enterprise AI consulting, engineering, and products. Built for teams that ship.</p>
                 </div>
-
-                <!-- Solutions -->
                 <div>
-                    <h4 class="font-display font-600 text-primary mb-4">Solutions</h4>
-                    <ul class="space-y-2 text-sm text-white text-opacity-75">
-                        <li><a href="solutions.html#sections" class="hover:text-primary transition-colors">All Services</a></li>
-                        <li><a href="industry-energy.html" class="hover:text-primary transition-colors">Energy & Utilities</a></li>
+                    <h4 class="font-bold mb-4" style="color:#BF5700;">Company</h4>
+                    <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:0.5rem;">
+                        <li><a href="index.html" style="color:#8E8E93;text-decoration:none;">Home</a></li>
+                        <li><a href="about.html" style="color:#8E8E93;text-decoration:none;">About</a></li>
+                        <li><a href="contact.html" style="color:#8E8E93;text-decoration:none;">Contact</a></li>
                     </ul>
                 </div>
-
-                <!-- Company -->
                 <div>
-                    <h4 class="font-display font-600 text-primary mb-4">Company</h4>
-                    <ul class="space-y-2 text-sm text-white text-opacity-75">
-                        <li><a href="about.html" class="hover:text-primary transition-colors">About</a></li>
-                        <li><a href="insights.html" class="hover:text-primary transition-colors">Insights</a></li>
-                        <li><a href="labs.html" class="hover:text-primary transition-colors">Labs</a></li>
+                    <h4 class="font-bold mb-4" style="color:#BF5700;">Solutions</h4>
+                    <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:0.5rem;">
+                        <li><a href="solutions.html" style="color:#8E8E93;text-decoration:none;">Services</a></li>
+                        <li><a href="industries.html" style="color:#8E8E93;text-decoration:none;">Industries</a></li>
+                        <li><a href="insights.html" style="color:#8E8E93;text-decoration:none;">Insights</a></li>
                     </ul>
                 </div>
-
-                <!-- Legal -->
                 <div>
-                    <h4 class="font-display font-600 text-primary mb-4">Legal</h4>
-                    <ul class="space-y-2 text-sm text-white text-opacity-75">
-                        <li><a href="#" class="hover:text-primary transition-colors">Privacy</a></li>
-                        <li><a href="#" class="hover:text-primary transition-colors">Terms</a></li>
+                    <h4 class="font-bold mb-4" style="color:#BF5700;">Labs</h4>
+                    <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:0.5rem;">
+                        <li><a href="labs.html" style="color:#8E8E93;text-decoration:none;">Products</a></li>
+                        <li><a href="proxialpha.html" style="color:#8E8E93;text-decoration:none;">ProxiAlpha</a></li>
                     </ul>
                 </div>
             </div>
-
-            <!-- Divider -->
-            <div class="border-t border-white border-opacity-10 pt-8"></div>
-
-            <!-- Copyright -->
-            <div class="flex flex-col sm:flex-row justify-between items-center">
-                <p class="text-white text-opacity-60 text-sm">
-                    &copy; 2026 Proxiant. All rights reserved.
-                </p>
-                <div class="flex space-x-6 mt-4 sm:mt-0">
-                    <a href="contact.html" class="text-white text-opacity-75 hover:text-primary text-sm transition-colors">
-                        Contact
-                    </a>
-                </div>
+            <div style="border-top:1px solid #2C2C2E;padding-top:1.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;">
+                <span style="color:#8E8E93;font-size:0.875rem;">&copy; 2026 Proxiant AI. All rights reserved.</span>
+                <span style="color:#8E8E93;font-size:0.875rem;">sendpavan@gmail.com</span>
             </div>
         </div>
     </footer>
@@ -802,7 +972,6 @@
             const menu = document.getElementById('mobile-menu');
             menu.classList.toggle('active');
 
-            // Prevent body scroll when menu is open
             if (menu.classList.contains('active')) {
                 document.body.style.overflow = 'hidden';
             } else {
@@ -810,14 +979,12 @@
             }
         }
 
-        // Close mobile menu when clicking on a link
         document.querySelectorAll('#mobile-menu a').forEach(link => {
             link.addEventListener('click', () => {
                 toggleMobileMenu();
             });
         });
 
-        // Smooth scroll behavior
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 const href = this.getAttribute('href');
@@ -831,6 +998,16 @@
                 }
             });
         });
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.classList.add('revealed');
+                    observer.unobserve(e.target);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
     </script>
 </body>
 </html>
