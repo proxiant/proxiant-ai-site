@@ -205,10 +205,31 @@
 
     nav:not(.scrolled) {
       background: transparent;
+      color: white;
     }
 
-    .nav-links a {
-      color: inherit;
+    nav:not(.scrolled) .nav-links a,
+    nav:not(.scrolled) .nav-links button,
+    nav:not(.scrolled) .nav-logo {
+      color: white;
+    }
+
+    nav:not(.scrolled) .nav-links a:hover,
+    nav:not(.scrolled) .nav-links button:hover {
+      color: var(--primary-light);
+    }
+
+    nav:not(.scrolled) .hamburger span {
+      background: white;
+    }
+
+    .nav-logo {
+      color: var(--charcoal);
+    }
+
+    .nav-links a,
+    .nav-links button {
+      color: var(--charcoal);
       text-decoration: none;
       font-weight: 500;
       transition: color 0.3s ease;
@@ -705,14 +726,14 @@
       <div class="flex items-center justify-between h-20">
         <!-- Logo -->
         <div class="flex items-center">
-          <a href="#" class="font-display font-bold text-2xl text-charcoal">Proxiant</a>
+          <a href="index.html" class="nav-logo font-display font-bold text-2xl" style="transition:color 0.3s ease;">Proxiant</a>
         </div>
 
         <!-- Desktop Navigation -->
         <div class="nav-links hidden md:flex items-center gap-8">
-          <a href="solutions.html" class="text-charcoal hover:text-primary transition-colors">Solutions</a>
+          <a href="solutions.html" class="transition-colors">Solutions</a>
           <div class="dropdown-item relative">
-            <button class="text-charcoal hover:text-primary transition-colors cursor-pointer bg-transparent border-none">Industries</button>
+            <button class="transition-colors cursor-pointer bg-transparent border-none" style="font-size:inherit;font-weight:inherit;">Industries</button>
             <div class="dropdown-menu">
               <a href="industry-financial-services.html">Financial Services</a>
               <a href="industry-healthcare.html">Healthcare</a>
@@ -724,9 +745,9 @@
               <a href="industry-transportation.html">Transportation & Logistics</a>
             </div>
           </div>
-          <a href="labs.html" class="text-charcoal hover:text-primary transition-colors">Labs</a>
-          <a href="insights.html" class="text-charcoal hover:text-primary transition-colors">Insights</a>
-          <a href="about.html" class="text-charcoal hover:text-primary transition-colors">About</a>
+          <a href="labs.html" class="transition-colors">Labs</a>
+          <a href="insights.html" class="transition-colors">Insights</a>
+          <a href="about.html" class="transition-colors">About</a>
         </div>
 
         <!-- CTA Button & Hamburger -->
@@ -1337,7 +1358,7 @@
       </p>
 
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="#" class="btn btn-white">Schedule a Consultation →</a>
+        <a href="contact.html" class="btn btn-white">Schedule a Consultation →</a>
         <a href="tel:+12144022256" class="btn btn-outline-white">Call Us →</a>
       </div>
     </div>
