@@ -3,25 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ProxiAlpha — AI-Powered Multi-Strategy Trading Platform | Proxiant Labs</title>
-  <meta name="description" content="ProxiAlpha combines 15 quantitative trading strategies with LLM-powered analysis (Claude, GPT-4, Gemini) for real-time signals, backtesting, and automated execution. Self-hosted free or managed from $499/mo.">
-  <meta name="keywords" content="AI trading platform, algorithmic trading, LLM trading, multi-strategy trading, quantitative trading, trading signals, Claude AI trading, backtesting, ProxiAlpha, Proxiant Labs, automated trading">
+  <title>ProxiAlpha — AI-Powered Trading Platform with Enterprise Control Plane | Proxiant Labs</title>
+  <meta name="description" content="ProxiAlpha is an enterprise-ready trading platform: 15 quantitative strategies, multi-LLM analysis (Claude, GPT-4, Gemini), multi-tenant control plane with Clerk SSO, Stripe-metered billing, Postgres RLS, observability, and a customer agent for self-hosted fleets. Four tiers from free to team.">
+  <meta name="keywords" content="AI trading platform, enterprise trading, multi-tenant trading, algorithmic trading, LLM trading, multi-strategy trading, quantitative trading, trading signals, Claude AI trading, backtesting, ProxiAlpha, Proxiant Labs, Stripe metered billing, Postgres RLS, SOC 2 observability, Clerk SSO, customer agent, self-hosted trading">
   <meta name="author" content="Proxiant Labs">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://proxiant.ai/proxialpha.html">
 
   <!-- Open Graph -->
   <meta property="og:type" content="product">
-  <meta property="og:title" content="ProxiAlpha — AI-Powered Multi-Strategy Trading Platform">
-  <meta property="og:description" content="15 LLM-integrated trading strategies with real-time signals, backtesting, and portfolio management. Self-hosted free.">
+  <meta property="og:title" content="ProxiAlpha — AI-Powered Trading Platform with Enterprise Control Plane">
+  <meta property="og:description" content="15 LLM-integrated trading strategies, multi-tenant control plane, Stripe metered billing, and a customer agent for self-hosted fleets. Four tiers from free to team.">
   <meta property="og:url" content="https://proxiant.ai/proxialpha.html">
   <meta property="og:site_name" content="Proxiant">
   <meta property="og:image" content="https://proxiant.ai/assets/og-image.png">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="ProxiAlpha — AI-Powered Multi-Strategy Trading">
-  <meta name="twitter:description" content="15 LLM-integrated trading strategies. Real-time signals. Backtesting. Self-hosted free or managed from $499/mo.">
+  <meta name="twitter:title" content="ProxiAlpha — Enterprise AI Trading Platform">
+  <meta name="twitter:description" content="15 LLM-integrated strategies + multi-tenant control plane + customer agent fleet. Free to team tiers.">
   <meta name="twitter:image" content="https://proxiant.ai/assets/og-image.png">
 
   <!-- Structured Data -->
@@ -31,22 +31,32 @@
     "@type": "SoftwareApplication",
     "name": "ProxiAlpha",
     "applicationCategory": "FinanceApplication",
-    "operatingSystem": "Web, iOS, Android",
+    "operatingSystem": "Web, Linux, Docker",
     "url": "https://proxiant.ai/proxialpha.html",
-    "description": "AI-powered multi-strategy trading platform combining 15 quantitative strategies with LLM analysis from Claude, GPT-4, Gemini, and Ollama.",
+    "description": "Enterprise AI-powered trading platform combining 15 quantitative strategies with multi-LLM analysis, a multi-tenant control plane (Clerk SSO, Postgres RLS, Stripe metered billing), and a customer agent for self-hosted fleet deployments.",
     "publisher": { "@type": "Organization", "name": "Proxiant Labs", "url": "https://proxiant.ai" },
     "offers": [
-      { "@type": "Offer", "name": "Self-Hosted", "price": "0", "priceCurrency": "USD", "description": "Free forever — run on your own infrastructure with full source access." },
-      { "@type": "Offer", "name": "Managed", "price": "499", "priceCurrency": "USD", "billingIncrement": "P1M", "description": "Cloud hosted with priority support and custom strategies." }
+      { "@type": "Offer", "name": "Free", "price": "0", "priceCurrency": "USD", "description": "500 signals + 5 backtests / month. Paper trading. Community support." },
+      { "@type": "Offer", "name": "Trader", "price": "49", "priceCurrency": "USD", "billingIncrement": "P1M", "description": "5,000 signals + 50 backtests / month. Live trading via Alpaca. 25 tickers." },
+      { "@type": "Offer", "name": "Pro", "price": "199", "priceCurrency": "USD", "billingIncrement": "P1M", "description": "25,000 signals + 250 backtests / month. Live perps, custom strategies, 100 tickers." },
+      { "@type": "Offer", "name": "Team", "price": "499", "priceCurrency": "USD", "billingIncrement": "P1M", "description": "Multi-seat SSO, dedicated support, unlimited tickers and strategy slots, priority on-call." }
     ],
     "featureList": [
       "15 concurrent trading strategies",
       "Multi-LLM integration (Claude, OpenAI, Gemini, Ollama)",
       "Real-time signal generation via WebSocket",
-      "Full backtesting engine",
-      "Paper trading simulator",
-      "Live trading via Alpaca",
+      "Full backtesting engine with historical replay",
+      "Paper trading simulator with state persistence",
+      "Live trading via Alpaca and Hyperliquid",
       "Risk management and position sizing",
+      "Multi-tenant control plane with Postgres RLS",
+      "Clerk SSO with JIT user provisioning",
+      "Stripe metered billing with idempotent usage reporting",
+      "Customer agent with one-shot install tokens and heartbeat",
+      "Doctor bundle ingest for support escalation",
+      "Structured JSON logs, /metrics endpoint, OpenTelemetry hooks",
+      "JWKS key rotation and JTI replay protection",
+      "Rate-limited enrollment, heartbeat, and bundle upload",
       "REST API and WebSocket API"
     ]
   }
@@ -54,7 +64,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg: #06080c;
@@ -72,9 +82,9 @@
       --text: #e6edf3;
       --text-secondary: #8b949e;
       --text-muted: #484f58;
-      --font-display: 'Bricolage Grotesque', sans-serif;
-      --font-body: 'Outfit', sans-serif;
-      --font-mono: 'Space Mono', monospace;
+      --font-display: 'Plus Jakarta Sans', sans-serif;
+      --font-body: 'Plus Jakarta Sans', sans-serif;
+      --font-mono: 'IBM Plex Mono', monospace;
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
@@ -108,30 +118,35 @@
     .reveal-delay-3 { transition-delay: 0.3s; }
     .reveal-delay-4 { transition-delay: 0.4s; }
 
-    /* NAV */
-    header {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
-      background: rgba(6,8,12,0.8); backdrop-filter: blur(20px) saturate(180%);
-      border-bottom: 1px solid var(--border); transition: all 0.3s;
-    }
-    header.scrolled { background: rgba(6,8,12,0.95); border-bottom-color: var(--border-glow); }
-    .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 68px; }
-    .nav-brand { font-family: var(--font-display); font-weight: 800; font-size: 1.3rem; color: var(--text); text-decoration: none; letter-spacing: -0.03em; display: inline-flex; align-items: center; gap: 10px; }
-    .nav-brand span { color: var(--cyan); }
-    .nav-logo { width: 32px; height: 32px; flex-shrink: 0; }
-    .nav-links { display: flex; align-items: center; gap: clamp(1.5rem,3vw,2.5rem); list-style: none; }
-    .nav-links a { color: var(--text-secondary); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.2s; }
-    .nav-links a:hover { color: var(--text); }
-    .nav-links a.active { color: var(--cyan); }
-    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 24px; border-radius: 6px; font-size: 0.875rem; font-weight: 600; font-family: var(--font-body); text-decoration: none; transition: all 0.25s cubic-bezier(0.16,1,0.3,1); cursor: pointer; border: none; }
-    .btn-cyan { background: var(--cyan); color: var(--bg); }
-    .btn-cyan:hover { background: #33ebff; box-shadow: 0 0 30px rgba(0,229,255,0.3); transform: translateY(-1px); }
-    .btn-ghost { background: transparent; color: var(--text); border: 1px solid var(--border); }
-    .btn-ghost:hover { border-color: var(--cyan-dim); background: rgba(0,229,255,0.04); }
-    .mobile-toggle { display: none; background: none; border: none; color: var(--text); font-size: 1.5rem; cursor: pointer; }
+    /* ─── PILL NAV ─── */
+    .nav-wrap{position:fixed;top:14px;left:50%;transform:translateX(-50%);width:calc(100% - 28px);max-width:1200px;z-index:1000;padding:0 14px}
+    .nav-pill{display:flex;align-items:center;justify-content:space-between;height:56px;padding:0 6px 0 20px;border-radius:9999px;background:rgba(6,8,12,.78);backdrop-filter:blur(20px) saturate(180%);-webkit-backdrop-filter:blur(20px) saturate(180%);border:1px solid rgba(0,229,255,.15);box-shadow:0 2px 16px rgba(0,0,0,.4);transition:all .3s}
+    .nav-brand{font-family:var(--font-display);font-weight:800;font-size:1.2rem;color:var(--text);text-decoration:none;letter-spacing:-.025em;display:inline-flex;align-items:center;gap:9px;flex-shrink:0}
+    .nav-brand span{color:var(--cyan)}
+    .nav-logo{width:32px;height:32px;flex-shrink:0}
+    .nav-links{display:flex;align-items:center;gap:clamp(1.25rem,2.5vw,2rem);list-style:none}
+    .nav-link{display:inline-flex;flex-direction:column;height:1.3em;overflow:hidden;cursor:pointer;position:relative}
+    .nav-link a{font-size:.875rem;font-weight:500;color:var(--text-secondary);display:flex;flex-direction:column;transition:transform .28s cubic-bezier(.25,.46,.45,.94);text-decoration:none}
+    .nav-link a span{display:block}
+    .nav-link a .top{position:relative}
+    .nav-link a .btm{position:absolute;top:100%;color:var(--text)}
+    .nav-link a:hover .top,.nav-link a:hover .btm{transform:translateY(-100%)}
+    .nav-link.active a .top{color:var(--cyan)}
+    .nav-end{display:flex;align-items:center;gap:8px}
+    .btn{display:inline-flex;align-items:center;gap:6px;padding:10px 22px;border-radius:9999px;font-size:.875rem;font-weight:700;font-family:var(--font-body);text-decoration:none;transition:all .25s cubic-bezier(.16,1,.3,1);cursor:pointer;border:none;white-space:nowrap}
+    .btn-cyan{background:var(--cyan);color:var(--bg)}
+    .btn-cyan:hover{background:#33ebff;box-shadow:0 0 30px rgba(0,229,255,.3);transform:scale(1.03)}
+    .btn-ghost{background:transparent;color:var(--text);border:1.5px solid var(--border)}
+    .btn-ghost:hover{border-color:var(--cyan-dim);background:rgba(0,229,255,.04)}
+    .mobile-toggle{display:none;background:none;border:none;color:var(--text);cursor:pointer;padding:4px}
+    .mob-menu{display:none;position:fixed;top:80px;left:14px;right:14px;background:var(--surface);border:1px solid rgba(0,229,255,.12);border-radius:16px;padding:1.25rem;z-index:999;flex-direction:column;gap:.875rem;box-shadow:0 16px 48px rgba(0,0,0,.5)}
+    .mob-menu.open{display:flex}
+    .mob-menu a{font-size:.95rem;font-weight:500;color:var(--text-secondary);padding:.5rem 0;border-bottom:1px solid var(--border)}
+    .mob-menu a:last-child{border:none}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
 
     /* HERO */
-    .hero { padding: 160px 0 100px; }
+    .hero { padding: 148px 0 100px; }
     .hero-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 60px; align-items: center; }
     .hero-badge {
       display: inline-flex; align-items: center; gap: 8px;
@@ -292,27 +307,74 @@
     .metric-lbl { color: var(--text-secondary); font-size: 0.9rem; margin-top: 6px; }
 
     /* PRICING */
-    .pricing-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 720px; }
+    .pricing-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
     .pricing-card {
       background: var(--surface); border: 1px solid var(--border); border-radius: 16px;
-      padding: 40px; transition: all 0.4s;
+      padding: 28px 24px; transition: all 0.4s;
     }
-    .pricing-card.featured { border-color: var(--cyan-dim); }
+    .pricing-card.featured { border-color: var(--cyan-dim); box-shadow: 0 0 40px rgba(0,229,255,0.05); }
     .pricing-card.featured::before {
-      content: 'Popular'; position: absolute; top: -1px; right: 24px;
-      background: var(--cyan); color: var(--bg); font-size: 0.65rem; font-weight: 700;
-      padding: 4px 12px; border-radius: 0 0 6px 6px; text-transform: uppercase; letter-spacing: 0.06em;
+      content: 'Popular'; position: absolute; top: -1px; right: 20px;
+      background: var(--cyan); color: var(--bg); font-size: 0.6rem; font-weight: 700;
+      padding: 4px 10px; border-radius: 0 0 6px 6px; text-transform: uppercase; letter-spacing: 0.06em;
     }
     .pricing-card { position: relative; overflow: hidden; }
-    .pricing-tier { font-family: var(--font-display); font-size: 1.3rem; font-weight: 700; margin-bottom: 6px; }
-    .pricing-price { font-family: var(--font-display); font-size: 2.25rem; font-weight: 800; color: var(--cyan); margin-bottom: 4px; }
-    .pricing-period { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 24px; }
-    .pricing-features { list-style: none; margin-bottom: 28px; }
+    .pricing-tier { font-family: var(--font-display); font-size: 1.15rem; font-weight: 700; margin-bottom: 4px; }
+    .pricing-tagline { color: var(--text-muted); font-size: 0.72rem; font-family: var(--font-mono); letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 18px; }
+    .pricing-price { font-family: var(--font-display); font-size: 1.9rem; font-weight: 800; color: var(--cyan); margin-bottom: 2px; letter-spacing: -0.02em; }
+    .pricing-price .currency { font-size: 1rem; color: var(--text-muted); font-weight: 500; }
+    .pricing-period { color: var(--text-muted); font-size: 0.78rem; margin-bottom: 22px; }
+    .pricing-features { list-style: none; margin-bottom: 24px; }
     .pricing-features li {
-      padding: 8px 0; border-bottom: 1px solid var(--border);
-      color: var(--text-secondary); font-size: 0.9rem;
+      padding: 7px 0; border-bottom: 1px solid var(--border);
+      color: var(--text-secondary); font-size: 0.82rem; line-height: 1.45;
     }
     .pricing-features li:last-child { border-bottom: none; }
+    .pricing-features li b { color: var(--text); font-weight: 600; }
+
+    /* CONTROL PLANE / FLEET (stacked feature blocks) */
+    .plane-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .plane-card {
+      background: var(--surface); border: 1px solid var(--border); border-radius: 14px;
+      padding: 30px 26px; transition: all 0.4s; position: relative; overflow: hidden;
+    }
+    .plane-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, var(--cyan), var(--purple)); opacity: 0; transition: opacity 0.4s;
+    }
+    .plane-card:hover::before { opacity: 1; }
+    .plane-card:hover { border-color: var(--border-glow); transform: translateY(-3px); box-shadow: 0 16px 48px rgba(0,0,0,0.3); }
+    .plane-card .tag {
+      display: inline-block; font-family: var(--font-mono); font-size: 0.62rem;
+      letter-spacing: 0.1em; text-transform: uppercase; color: var(--cyan);
+      padding: 3px 10px; border: 1px solid var(--cyan-dim); border-radius: 100px;
+      background: rgba(0,229,255,0.04); margin-bottom: 16px;
+    }
+    .plane-card h3 { font-family: var(--font-display); font-size: 1.2rem; font-weight: 700; margin-bottom: 10px; letter-spacing: -0.01em; }
+    .plane-card p { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 16px; }
+    .plane-card ul { list-style: none; padding: 0; margin: 0; }
+    .plane-card li {
+      font-size: 0.82rem; color: var(--text-secondary); padding: 6px 0;
+      border-bottom: 1px solid var(--border); display: flex; gap: 10px; align-items: flex-start;
+    }
+    .plane-card li:last-child { border-bottom: none; }
+    .plane-card li::before {
+      content: '—'; color: var(--cyan); font-family: var(--font-mono); flex-shrink: 0;
+    }
+
+    /* TIER TABLE */
+    .tier-table-wrap { overflow-x: auto; margin-top: 48px; border: 1px solid var(--border); border-radius: 14px; background: var(--surface); }
+    .tier-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; min-width: 640px; }
+    .tier-table th, .tier-table td { padding: 14px 18px; text-align: left; border-bottom: 1px solid var(--border); }
+    .tier-table th { font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); font-weight: 500; }
+    .tier-table tr:last-child td { border-bottom: none; }
+    .tier-table td:first-child { color: var(--text); font-weight: 500; }
+    .tier-table td { color: var(--text-secondary); }
+    .tier-table td.ok { color: var(--green); font-family: var(--font-mono); }
+    .tier-table td.no { color: var(--text-muted); font-family: var(--font-mono); }
+    .tier-table th:not(:first-child) { text-align: center; }
+    .tier-table td:not(:first-child) { text-align: center; font-family: var(--font-mono); font-size: 0.8rem; }
+    .tier-table thead tr { background: rgba(255,255,255,0.015); }
 
     /* CTA */
     .cta-section { text-align: center; }
@@ -360,6 +422,7 @@
       .metrics-grid { grid-template-columns: 1fr; }
       .footer-grid { grid-template-columns: 1fr; }
       .footer-bottom { flex-direction: column; gap: 8px; }
+      .plane-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -367,41 +430,51 @@
   <div class="mesh-bg"><div class="mesh-orb"></div><div class="mesh-orb"></div></div>
   <div class="grid-pattern"></div>
 
-  <header id="header">
-    <div class="wrap nav-inner">
-      <a href="index.html" class="nav-brand">
-        <svg class="nav-logo" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect width="40" height="40" rx="10" fill="rgba(255,255,255,0.06)"/>
-          <line x1="10" y1="10" x2="30" y2="30" stroke="#d4622b" stroke-width="1.2" stroke-linecap="round" opacity="0.3"/>
-          <line x1="30" y1="10" x2="10" y2="30" stroke="#d4622b" stroke-width="1.2" stroke-linecap="round" opacity="0.3"/>
-          <path d="M14 9L14 32" stroke="white" stroke-width="3.5" stroke-linecap="round"/>
-          <path d="M14 9L22 9C28 9 32 12.5 32 16.5C32 20.5 28 23.5 22 23.5L14 23.5" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-          <circle cx="30" cy="16.5" r="2.5" fill="#d4622b"/>
-          <circle cx="14" cy="32" r="2.5" fill="#00e5ff"/>
+  <div class="nav-wrap">
+    <nav class="nav-pill" role="navigation">
+      <a href="index.html" class="nav-brand" aria-label="Proxiant home">
+        <svg class="nav-logo" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs><linearGradient id="nlg-pa" x1="9" y1="7" x2="32" y2="33" gradientUnits="userSpaceOnUse"><stop stop-color="#00e5ff"/><stop offset="1" stop-color="#A78BFA"/></linearGradient></defs>
+          <rect width="40" height="40" rx="10" fill="rgba(0,229,255,0.06)"/>
+          <ellipse cx="21" cy="17" rx="13" ry="11" stroke="rgba(0,229,255,0.2)" stroke-width="0.75" stroke-dasharray="3 2" fill="none"><animateTransform attributeName="transform" type="rotate" from="0 21 17" to="360 21 17" dur="14s" repeatCount="indefinite"/></ellipse>
+          <path d="M10 8v24" stroke="white" stroke-width="3.5" stroke-linecap="round"/>
+          <path d="M10 8h10c7 0 12 4 12 9s-5 9-12 9H10" stroke="url(#nlg-pa)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle r="2.5" fill="#00e5ff"><animateMotion dur="3s" repeatCount="indefinite" path="M10,17 Q10,7 20,7 Q31,7 31,17 Q31,26 20,26 Q10,26 10,17"/><animate attributeName="fill" values="#00e5ff;#A78BFA;#00e5ff" dur="6s" repeatCount="indefinite"/><animate attributeName="r" values="2.5;1.8;2.5" dur="3s" repeatCount="indefinite"/></circle>
         </svg>
         Proxiant<span>.</span>
       </a>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="solutions.html">Solutions</a></li>
-        <li><a href="labs.html">Labs</a></li>
-        <li><a href="proxialpha.html" class="active">ProxiAlpha</a></li>
-        <li><a href="mailto:sendpavan@gmail.com" class="btn btn-cyan">Get in touch</a></li>
+      <ul class="nav-links" role="list">
+        <li class="nav-link"><a href="index.html"><span class="top">Home</span><span class="btm">Home</span></a></li>
+        <li class="nav-link"><a href="solutions.html"><span class="top">Solutions</span><span class="btm">Solutions</span></a></li>
+        <li class="nav-link active"><a href="labs.html"><span class="top">Labs</span><span class="btm">Labs</span></a></li>
+        <li class="nav-link"><a href="#pricing"><span class="top">Pricing</span><span class="btm">Pricing</span></a></li>
       </ul>
-      <button class="mobile-toggle" aria-label="Menu">&#9776;</button>
-    </div>
-  </header>
+      <div class="nav-end">
+        <a href="#contact" class="btn btn-cyan">Get in touch</a>
+        <button class="mobile-toggle" id="mobToggle" aria-label="Open menu" aria-expanded="false">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><path d="M3 6h16M3 11h16M3 16h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+    </nav>
+  </div>
+  <div class="mob-menu" id="mobMenu" role="dialog" aria-label="Navigation">
+    <a href="index.html">Home</a>
+    <a href="solutions.html">Solutions</a>
+    <a href="labs.html">Labs</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#contact" class="btn btn-cyan" style="border-radius:9px;justify-content:center;">Get in touch</a>
+  </div>
 
   <!-- HERO -->
-  <section class="hero">
+  <section class="hero" id="platform">
     <div class="wrap hero-grid">
       <div class="reveal">
-        <div class="hero-badge"><span class="dot"></span> Proxiant Labs Product</div>
-        <h1>AI-Powered Trading. <em>15 Strategies.</em> One Platform.</h1>
-        <p>ProxiAlpha combines quantitative analysis with large language models to generate real-time trading signals across multiple strategies.</p>
+        <div class="hero-badge"><span class="dot"></span> Phase 2 · Enterprise Control Plane Live</div>
+        <h1>Enterprise <em>AI Trading</em>. Multi-tenant. Metered. Observed.</h1>
+        <p>ProxiAlpha pairs 15 quantitative strategies and multi-LLM consensus with a production control plane: Clerk SSO, Postgres RLS, Stripe metered billing, and a customer agent fleet you run on your own hardware.</p>
         <div class="hero-actions">
-          <a href="terminal.html" class="btn btn-cyan">Launch Terminal &rarr;</a>
-          <a href="#docs" class="btn btn-ghost">View Documentation</a>
+          <a href="#contact" class="btn btn-cyan">Request Access &rarr;</a>
+          <a href="#control-plane" class="btn btn-ghost">See the Control Plane</a>
         </div>
       </div>
 
@@ -409,15 +482,16 @@
       <div class="dashboard reveal reveal-delay-2">
         <div class="dash-header">
           <div style="display:flex;align-items:center;gap:8px;">
-            <span class="dash-title">ProxiAlpha Terminal</span>
+            <span class="dash-title">org_acme · ProxiAlpha Terminal</span>
+            <span style="font-family:var(--font-mono);font-size:0.6rem;padding:2px 8px;border-radius:3px;background:rgba(124,58,237,0.14);color:#a78bfa;border:1px solid rgba(124,58,237,0.25);letter-spacing:0.08em;">PRO</span>
             <span style="font-family:var(--font-mono);font-size:0.6rem;padding:2px 8px;border-radius:3px;background:rgba(38,166,154,0.12);color:#26a69a;border:1px solid rgba(38,166,154,0.2);letter-spacing:0.08em;">PAPER</span>
           </div>
           <span class="dash-status"><span class="dot"></span> Live</span>
         </div>
         <div class="dash-metrics">
           <div class="dash-metric"><div class="val green" id="winRate">0%</div><div class="lbl">Win Rate</div></div>
-          <div class="dash-metric"><div class="val cyan">15</div><div class="lbl">Strategies</div></div>
-          <div class="dash-metric"><div class="val" id="signalCount">0</div><div class="lbl">Signals</div></div>
+          <div class="dash-metric"><div class="val cyan" id="signalCount">0</div><div class="lbl">Signals used</div></div>
+          <div class="dash-metric"><div class="val">3 / 15</div><div class="lbl">Agents online</div></div>
           <div class="dash-metric"><div class="val green">1.92</div><div class="lbl">Sharpe</div></div>
         </div>
         <div class="dash-chart" style="position:relative;">
@@ -472,12 +546,12 @@
   <section>
     <div class="wrap">
       <div class="section-label reveal">How it works</div>
-      <h2 class="section-heading reveal">Three steps to smarter trading.</h2>
-      <p class="section-sub reveal">Real-time scanning, LLM-powered analysis, and automated execution.</p>
+      <h2 class="section-heading reveal">Sign in. Enroll an agent. Trade.</h2>
+      <p class="section-sub reveal">Clerk SSO into the control plane, mint a one-shot install token, drop the agent on your box — signals and fills flow back through a metered, tenant-isolated pipeline.</p>
       <div class="how-steps">
-        <div class="how-step reveal reveal-delay-1"><div class="num">01</div><h3>Scan</h3><p>Real-time market scanning across multiple timeframes and 15 strategies simultaneously.</p></div>
-        <div class="how-step reveal reveal-delay-2"><div class="num">02</div><h3>Analyze</h3><p>LLM-powered analysis combining technical signals with market context from Claude, GPT-4, and Gemini.</p></div>
-        <div class="how-step reveal reveal-delay-3"><div class="num">03</div><h3>Execute</h3><p>Automated or manual trade execution with risk management, position sizing, and safety rails.</p></div>
+        <div class="how-step reveal reveal-delay-1"><div class="num">01</div><h3>Sign in via SSO</h3><p>Clerk-backed auth with JIT user provisioning. Each sign-in resolves your org, tier, and entitlements from Postgres with row-level security enforced end-to-end.</p></div>
+        <div class="how-step reveal reveal-delay-2"><div class="num">02</div><h3>Enroll an agent</h3><p>Mint a single-use install token from the dashboard. The ProxiAlpha agent exchanges it for a short-lived JWT, phones home on a heartbeat, and can be revoked or rotated per host.</p></div>
+        <div class="how-step reveal reveal-delay-3"><div class="num">03</div><h3>Trade &amp; meter</h3><p>Signals, backtests, and fills stream through the control plane. Consumables decrement atomically, caps gate before execution, and Stripe is metered idempotently on an hourly cron.</p></div>
       </div>
     </div>
   </section>
@@ -523,36 +597,134 @@
     </div>
   </section>
 
+  <!-- ENTERPRISE CONTROL PLANE -->
+  <section id="control-plane">
+    <div class="wrap">
+      <div class="section-label reveal">Control plane</div>
+      <h2 class="section-heading reveal">A real multi-tenant backend. Not a hobby project.</h2>
+      <p class="section-sub reveal">ProxiAlpha ships with a FastAPI control plane backed by Postgres 16 with pgcrypto and row-level security. Every route is org-scoped, every write is audited, every usage event is metered.</p>
+      <div class="plane-grid">
+        <div class="plane-card reveal reveal-delay-1">
+          <span class="tag">Identity</span>
+          <h3>Clerk SSO with JIT</h3>
+          <p>Clerk-backed authentication with just-in-time user and org provisioning. JWKS keys rotate without downtime; a JTI replay cache blocks token reuse.</p>
+          <ul>
+            <li>JWKS fetch + cache with graceful rotation</li>
+            <li>JTI replay protection on every request</li>
+            <li>Org resolution from Clerk claims, cached per-request</li>
+            <li>JIT user &amp; org creation on first sign-in</li>
+          </ul>
+        </div>
+        <div class="plane-card reveal reveal-delay-2">
+          <span class="tag">Isolation</span>
+          <h3>Postgres RLS &amp; Alembic</h3>
+          <p>Tenant isolation enforced at the database layer, not just the app. Every query runs under a session-level <code>org_id</code> GUC with row-level security policies on every tenant table.</p>
+          <ul>
+            <li>RLS policies on users, agents, events, bundles, invoices</li>
+            <li>pgcrypto for at-rest secrets</li>
+            <li>Alembic migrations with up → down → up CI gate</li>
+            <li>Module-scoped async fixtures for fast schema tests</li>
+          </ul>
+        </div>
+        <div class="plane-card reveal reveal-delay-3">
+          <span class="tag">Billing</span>
+          <h3>Stripe metered billing</h3>
+          <p>Three entitlement types — consumables, caps, and feature flags — power a real metered billing pipeline. A Postgres advisory-locked cron reports usage to Stripe hourly, idempotently.</p>
+          <ul>
+            <li>Atomic <code>UPDATE … RETURNING</code> consumable gates</li>
+            <li>Inline cap checks before expensive operations</li>
+            <li>Boolean feature flags for live trading and perps</li>
+            <li>Idempotent usage reporting keyed on <code>(org, period, meter)</code></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AGENT FLEET -->
+  <section id="fleet">
+    <div class="wrap">
+      <div class="section-label reveal">Agent fleet</div>
+      <h2 class="section-heading reveal">Run the agent on your hardware. Keep the control plane in ours.</h2>
+      <p class="section-sub reveal">The ProxiAlpha agent is a small Python runtime you install on any Linux box. It phones home with JWT-authenticated heartbeats and can be revoked, rotated, or asked for a doctor bundle from the dashboard.</p>
+      <div class="plane-grid">
+        <div class="plane-card reveal reveal-delay-1">
+          <span class="tag">Enrollment</span>
+          <h3>One-shot install tokens</h3>
+          <p>Mint a single-use token from the dashboard, run the installer, and the agent exchanges it for a short-lived JWT signed by the control plane. Tokens are hashed at rest and consumed atomically.</p>
+          <ul>
+            <li>Single-consume with 30-minute doctor grace window</li>
+            <li>Per-IP rate limiting on enrollment &amp; heartbeat</li>
+            <li>Revocation flips a row — next heartbeat fails closed</li>
+            <li>Rotation without re-enrollment via refresh endpoint</li>
+          </ul>
+        </div>
+        <div class="plane-card reveal reveal-delay-2">
+          <span class="tag">Runtime</span>
+          <h3>Heartbeat &amp; health</h3>
+          <p>Agents emit heartbeats on a fixed interval with version, host, and strategy status. The control plane tracks liveness per-host and surfaces stale agents in the dashboard and Prometheus metrics.</p>
+          <ul>
+            <li>Structured <code>last_seen_at</code> per agent row</li>
+            <li>Version + strategy manifest reported each heartbeat</li>
+            <li>Automatic offline marking after miss threshold</li>
+            <li>Rate-limited; buckets per-IP and per-agent</li>
+          </ul>
+        </div>
+        <div class="plane-card reveal reveal-delay-3">
+          <span class="tag">Support</span>
+          <h3>Doctor bundle ingest</h3>
+          <p>When something goes wrong, the agent can package a diagnostic bundle (logs, config snapshot, last signals, system stats) and upload it to the control plane through a rate-limited, token-authenticated endpoint.</p>
+          <ul>
+            <li>5 per minute / 20 per hour per-IP bundle limits</li>
+            <li>Install-token auth with post-consume grace window</li>
+            <li>Stored under <code>org_id</code> with RLS-enforced access</li>
+            <li>Retention policy configurable per tier</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- FEATURES -->
   <section id="docs">
     <div class="wrap">
       <div class="section-label reveal">Features</div>
-      <h2 class="section-heading reveal">Powerful Features Built for Traders</h2>
+      <h2 class="section-heading reveal">Every layer, production-grade.</h2>
       <div class="features-grid reveal" style="margin-top:48px;">
         <ul class="feature-list">
-          <li class="feature-item"><span class="feature-icon">+</span><span class="feature-text">Real-time signal generation with WebSocket streaming</span></li>
-          <li class="feature-item"><span class="feature-icon">+</span><span class="feature-text">Multi-LLM integration (Claude, OpenAI, Gemini, Ollama)</span></li>
-          <li class="feature-item"><span class="feature-icon">+</span><span class="feature-text">Professional candlestick charts with technical indicators</span></li>
-          <li class="feature-item"><span class="feature-icon">+</span><span class="feature-text">Risk management with position sizing and safety rails</span></li>
-          <li class="feature-item"><span class="feature-icon">+</span><span class="feature-text">Full backtesting engine with historical analysis</span></li>
-          <li class="feature-item"><span class="feature-icon">+</span><span class="feature-text">REST API + WebSocket for custom integrations</span></li>
-          <li class="feature-item"><span class="feature-icon">+</span><span class="feature-text">Paper trading simulator with state persistence</span></li>
-          <li class="feature-item"><span class="feature-icon">+</span><span class="feature-text">Live trading via Alpaca integration</span></li>
+          <li class="feature-item"><span class="feature-icon">+</span><span class="feature-text">Multi-LLM consensus across Claude, OpenAI, Gemini, and Ollama</span></li>
+          <li class="feature-item"><span class="feature-icon">+</span><span class="feature-text">Real-time signal streaming over authenticated WebSocket</span></li>
+          <li class="feature-item"><span class="feature-icon">+</span><span class="feature-text">Full backtesting engine with historical replay &amp; paper state</span></li>
+          <li class="feature-item"><span class="feature-icon">+</span><span class="feature-text">Live trading via Alpaca and Hyperliquid perps</span></li>
+          <li class="feature-item"><span class="feature-icon">+</span><span class="feature-text">Multi-tenant control plane with Postgres RLS and pgcrypto</span></li>
+          <li class="feature-item"><span class="feature-icon">+</span><span class="feature-text">Clerk SSO with JIT provisioning and JWKS rotation</span></li>
+          <li class="feature-item"><span class="feature-icon">+</span><span class="feature-text">Stripe metered billing reported idempotently on an hourly cron</span></li>
+          <li class="feature-item"><span class="feature-icon">+</span><span class="feature-text">Three entitlement types: consumables, caps, and feature flags</span></li>
+          <li class="feature-item"><span class="feature-icon">+</span><span class="feature-text">Customer agent fleet with one-shot install tokens &amp; heartbeats</span></li>
+          <li class="feature-item"><span class="feature-icon">+</span><span class="feature-text">Doctor bundle ingest with rate-limited, token-authenticated upload</span></li>
+          <li class="feature-item"><span class="feature-icon">+</span><span class="feature-text">Structured JSON logs, <code>/metrics</code> endpoint, OpenTelemetry hooks</span></li>
+          <li class="feature-item"><span class="feature-icon">+</span><span class="feature-text">JTI replay protection and per-IP rate limiting on every public route</span></li>
         </ul>
         <div class="feature-visual">
-          <span class="comment">// POST /api/trade</span><br>
+          <span class="comment">// POST /api/agent/enroll</span><br>
           {<br>
-          &nbsp;&nbsp;<span class="kw">"strategy"</span>: <span class="str">"DipBuyer"</span>,<br>
-          &nbsp;&nbsp;<span class="kw">"symbol"</span>: <span class="str">"COIN"</span>,<br>
-          &nbsp;&nbsp;<span class="kw">"action"</span>: <span class="str">"BUY"</span>,<br>
-          &nbsp;&nbsp;<span class="kw">"confidence"</span>: <span class="num">0.92</span>,<br>
-          &nbsp;&nbsp;<span class="kw">"models"</span>: [<span class="str">"claude"</span>, <span class="str">"openai"</span>]<br>
+          &nbsp;&nbsp;<span class="kw">"install_token"</span>: <span class="str">"ins_7a3b…"</span>,<br>
+          &nbsp;&nbsp;<span class="kw">"host"</span>: <span class="str">"trader-01"</span>,<br>
+          &nbsp;&nbsp;<span class="kw">"version"</span>: <span class="str">"0.1.0"</span><br>
           }<br><br>
-          <span class="comment">// 200 OK</span><br>
+          <span class="comment">// 200 OK — short-lived agent JWT</span><br>
           {<br>
-          &nbsp;&nbsp;<span class="kw">"signal"</span>: <span class="str">"STRONG_BUY"</span>,<br>
-          &nbsp;&nbsp;<span class="kw">"consensus"</span>: <span class="num">0.87</span>,<br>
-          &nbsp;&nbsp;<span class="kw">"timestamp"</span>: <span class="str">"2026-04-06T14:32Z"</span><br>
+          &nbsp;&nbsp;<span class="kw">"agent_id"</span>: <span class="str">"agt_01J…"</span>,<br>
+          &nbsp;&nbsp;<span class="kw">"org_id"</span>: <span class="str">"org_acme"</span>,<br>
+          &nbsp;&nbsp;<span class="kw">"jwt"</span>: <span class="str">"eyJhbGciOi…"</span>,<br>
+          &nbsp;&nbsp;<span class="kw">"expires_in"</span>: <span class="num">900</span>,<br>
+          &nbsp;&nbsp;<span class="kw">"tier"</span>: <span class="str">"pro"</span>,<br>
+          &nbsp;&nbsp;<span class="kw">"entitlements"</span>: {<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">"signals_remaining"</span>: <span class="num">24815</span>,<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">"backtests_remaining"</span>: <span class="num">247</span>,<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">"live_trading"</span>: <span class="num">true</span>,<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">"live_perps"</span>: <span class="num">true</span><br>
+          &nbsp;&nbsp;}<br>
           }
         </div>
       </div>
@@ -563,17 +735,69 @@
   <section>
     <div class="wrap" style="text-align:center;">
       <div class="section-label reveal">Architecture</div>
-      <h2 class="section-heading reveal">Simple, Scalable Architecture</h2>
-      <div class="arch-flow reveal" style="margin-top:48px;">
-        <div class="arch-box">Market Data</div>
+      <h2 class="section-heading reveal">Control plane in the cloud. Agent on your box.</h2>
+      <p class="section-sub reveal" style="margin-left:auto;margin-right:auto;">Clerk SSO gates the FastAPI control plane. Postgres enforces tenancy with RLS. The customer agent phones home over JWT-authenticated HTTPS. Stripe is metered idempotently on an hourly cron.</p>
+      <div class="arch-flow reveal" style="margin-top:32px;">
+        <div class="arch-box">Clerk SSO</div>
         <div class="arch-arrow">&rarr;</div>
-        <div class="arch-box">Signal Engine</div>
+        <div class="arch-box">Control Plane<br><span style="font-family:var(--font-mono);font-size:0.65rem;color:var(--text-muted);font-weight:400;">FastAPI · RLS</span></div>
         <div class="arch-arrow">&rarr;</div>
-        <div class="arch-box">LLM Analysis</div>
+        <div class="arch-box">Postgres 16<br><span style="font-family:var(--font-mono);font-size:0.65rem;color:var(--text-muted);font-weight:400;">pgcrypto · RLS</span></div>
         <div class="arch-arrow">&rarr;</div>
-        <div class="arch-box">Trade Execution</div>
+        <div class="arch-box">Stripe<br><span style="font-family:var(--font-mono);font-size:0.65rem;color:var(--text-muted);font-weight:400;">metered hourly</span></div>
+      </div>
+      <div class="arch-flow reveal" style="margin-top:24px;">
+        <div class="arch-box">Customer Agent<br><span style="font-family:var(--font-mono);font-size:0.65rem;color:var(--text-muted);font-weight:400;">JWT heartbeat</span></div>
         <div class="arch-arrow">&rarr;</div>
-        <div class="arch-box">Dashboard</div>
+        <div class="arch-box">Signal Engine<br><span style="font-family:var(--font-mono);font-size:0.65rem;color:var(--text-muted);font-weight:400;">15 strategies</span></div>
+        <div class="arch-arrow">&rarr;</div>
+        <div class="arch-box">LLM Consensus<br><span style="font-family:var(--font-mono);font-size:0.65rem;color:var(--text-muted);font-weight:400;">Claude · GPT · Gemini</span></div>
+        <div class="arch-arrow">&rarr;</div>
+        <div class="arch-box">Broker<br><span style="font-family:var(--font-mono);font-size:0.65rem;color:var(--text-muted);font-weight:400;">Alpaca · Hyperliquid</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OBSERVABILITY -->
+  <section>
+    <div class="wrap">
+      <div class="section-label reveal">Observability</div>
+      <h2 class="section-heading reveal">Logs, metrics, traces. No vendor lock-in.</h2>
+      <p class="section-sub reveal">A single <code>install_observability()</code> call wires JSON logs, Prometheus-compatible counters and histograms, and an optional OpenTelemetry tracer into the FastAPI app. Works out of the box with any log aggregator and any OTel collector.</p>
+      <div class="plane-grid">
+        <div class="plane-card reveal reveal-delay-1">
+          <span class="tag">Logs</span>
+          <h3>Structured JSON</h3>
+          <p>Stdlib logging with a JSON formatter. Every line carries <code>request_id</code>, <code>org_id</code>, route template, method, status, and duration_ms — enriched via ContextVars so they propagate through async call stacks.</p>
+          <ul>
+            <li>ISO-8601 UTC timestamps with microsecond precision</li>
+            <li>Request ID generated or honored per-request</li>
+            <li><code>LOG_FORMAT=plain</code> escape hatch for local dev</li>
+            <li>Zero extra dependencies — pure stdlib</li>
+          </ul>
+        </div>
+        <div class="plane-card reveal reveal-delay-2">
+          <span class="tag">Metrics</span>
+          <h3>/metrics endpoint</h3>
+          <p>Prometheus exposition format served by FastAPI on <code>GET /metrics</code>. In-process counters and cumulative histograms, route-labelled at low cardinality via <code>request.scope["route"].path</code>.</p>
+          <ul>
+            <li><code>http_requests_total</code> by route, method, status</li>
+            <li><code>http_request_duration_seconds</code> histogram (10 buckets)</li>
+            <li><code>cron_job_runs_total</code> by job and outcome</li>
+            <li>Advisory-locked cron records ok / error / skipped_locked</li>
+          </ul>
+        </div>
+        <div class="plane-card reveal reveal-delay-3">
+          <span class="tag">Traces</span>
+          <h3>OpenTelemetry hook</h3>
+          <p>If <code>opentelemetry</code> is importable, the middleware opens a span per request and stamps route, method, and status as span attributes. If not, it no-ops — the dependency is strictly optional.</p>
+          <ul>
+            <li>Lazy import, cached tracer handle</li>
+            <li>Span attributes match log enrichment</li>
+            <li>Works with any OTel-compatible backend</li>
+            <li>SOC 2 observability controls ready on day one</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
@@ -581,48 +805,118 @@
   <!-- METRICS -->
   <section>
     <div class="wrap">
-      <div class="section-label reveal">Performance</div>
-      <h2 class="section-heading reveal">Built for Performance</h2>
+      <div class="section-label reveal">At a glance</div>
+      <h2 class="section-heading reveal">The numbers that matter.</h2>
       <div class="metrics-grid reveal" style="margin-top:48px;">
         <div class="metric-card"><div class="metric-val">15</div><div class="metric-lbl">Concurrent strategies</div></div>
-        <div class="metric-card"><div class="metric-val">&lt;100ms</div><div class="metric-lbl">Signal generation</div></div>
         <div class="metric-card"><div class="metric-val">4</div><div class="metric-lbl">LLM providers</div></div>
-        <div class="metric-card"><div class="metric-val">99.5%</div><div class="metric-lbl">Uptime</div></div>
+        <div class="metric-card"><div class="metric-val">RLS</div><div class="metric-lbl">Tenant isolation</div></div>
+        <div class="metric-card"><div class="metric-val">/metrics</div><div class="metric-lbl">Prometheus native</div></div>
       </div>
     </div>
   </section>
 
   <!-- PRICING -->
-  <section>
+  <section id="pricing">
     <div class="wrap">
       <div class="section-label reveal">Pricing</div>
-      <h2 class="section-heading reveal">Simple Pricing</h2>
+      <h2 class="section-heading reveal">Four tiers. Metered fairly.</h2>
+      <p class="section-sub reveal">Start free on paper trading. Upgrade when you need live execution, perps, custom strategies, or a seat for your team. Usage is metered hourly through Stripe — no surprise overages, no finance tickets.</p>
       <div class="pricing-grid reveal" style="margin-top:48px;">
+
         <div class="pricing-card">
-          <div class="pricing-tier">Self-Hosted</div>
-          <div class="pricing-price">Free</div>
-          <div class="pricing-period">Forever</div>
+          <div class="pricing-tier">Free</div>
+          <div class="pricing-tagline">Paper trading</div>
+          <div class="pricing-price"><span class="currency">$</span>0</div>
+          <div class="pricing-period">forever</div>
           <ul class="pricing-features">
-            <li>Run on your own infrastructure</li>
-            <li>Full source access</li>
+            <li><b>500</b> signals / month</li>
+            <li><b>5</b> backtests / month</li>
+            <li>Paper trading only</li>
+            <li><b>5</b> tickers · <b>1</b> strategy slot</li>
             <li>Community support</li>
-            <li>15 built-in strategies</li>
           </ul>
-          <a href="mailto:sendpavan@gmail.com" class="btn btn-cyan" style="width:100%;justify-content:center;">Get Started</a>
+          <a href="#contact" class="btn btn-ghost" style="width:100%;justify-content:center;">Get Started</a>
         </div>
-        <div class="pricing-card featured">
-          <div class="pricing-tier">Managed</div>
-          <div class="pricing-price">$499</div>
+
+        <div class="pricing-card">
+          <div class="pricing-tier">Trader</div>
+          <div class="pricing-tagline">For individuals</div>
+          <div class="pricing-price"><span class="currency">$</span>49</div>
           <div class="pricing-period">per month</div>
           <ul class="pricing-features">
-            <li>Cloud hosted</li>
-            <li>Priority support</li>
-            <li>Custom strategies</li>
-            <li>Dedicated instance</li>
+            <li><b>5,000</b> signals / month</li>
+            <li><b>50</b> backtests / month</li>
+            <li>Live trading via Alpaca</li>
+            <li><b>25</b> tickers · <b>5</b> strategy slots</li>
+            <li>Email support</li>
           </ul>
-          <a href="mailto:sendpavan@gmail.com" class="btn btn-cyan" style="width:100%;justify-content:center;">Request Access</a>
+          <a href="#contact" class="btn btn-ghost" style="width:100%;justify-content:center;">Start trading</a>
         </div>
+
+        <div class="pricing-card featured">
+          <div class="pricing-tier">Pro</div>
+          <div class="pricing-tagline">For power users</div>
+          <div class="pricing-price"><span class="currency">$</span>199</div>
+          <div class="pricing-period">per month</div>
+          <ul class="pricing-features">
+            <li><b>25,000</b> signals / month</li>
+            <li><b>250</b> backtests / month</li>
+            <li>Live perps via Hyperliquid</li>
+            <li>Custom strategy uploads</li>
+            <li><b>100</b> tickers · <b>15</b> slots</li>
+          </ul>
+          <a href="#contact" class="btn btn-cyan" style="width:100%;justify-content:center;">Go Pro</a>
+        </div>
+
+        <div class="pricing-card">
+          <div class="pricing-tier">Team</div>
+          <div class="pricing-tagline">For desks &amp; funds</div>
+          <div class="pricing-price"><span class="currency">$</span>499</div>
+          <div class="pricing-period">per month</div>
+          <ul class="pricing-features">
+            <li><b>Unlimited</b> tickers &amp; slots</li>
+            <li>Multi-seat Clerk SSO</li>
+            <li>Priority on-call support</li>
+            <li>Doctor-bundle escalation SLA</li>
+            <li>Custom billing terms</li>
+          </ul>
+          <a href="#contact" class="btn btn-ghost" style="width:100%;justify-content:center;">Contact sales</a>
+        </div>
+
       </div>
+
+      <!-- TIER COMPARISON TABLE -->
+      <div class="tier-table-wrap reveal">
+        <table class="tier-table">
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th>Free</th>
+              <th>Trader</th>
+              <th>Pro</th>
+              <th>Team</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Signals / month</td><td>500</td><td>5,000</td><td>25,000</td><td>Custom</td></tr>
+            <tr><td>Backtests / month</td><td>5</td><td>50</td><td>250</td><td>Custom</td></tr>
+            <tr><td>Tickers</td><td>5</td><td>25</td><td>100</td><td>Unlimited</td></tr>
+            <tr><td>Strategy slots</td><td>1</td><td>5</td><td>15</td><td>Unlimited</td></tr>
+            <tr><td>Paper trading</td><td class="ok">✓</td><td class="ok">✓</td><td class="ok">✓</td><td class="ok">✓</td></tr>
+            <tr><td>Live trading (Alpaca)</td><td class="no">—</td><td class="ok">✓</td><td class="ok">✓</td><td class="ok">✓</td></tr>
+            <tr><td>Live perps (Hyperliquid)</td><td class="no">—</td><td class="no">—</td><td class="ok">✓</td><td class="ok">✓</td></tr>
+            <tr><td>Custom strategy uploads</td><td class="no">—</td><td class="no">—</td><td class="ok">✓</td><td class="ok">✓</td></tr>
+            <tr><td>REST + WebSocket API</td><td class="ok">✓</td><td class="ok">✓</td><td class="ok">✓</td><td class="ok">✓</td></tr>
+            <tr><td>Customer agent fleet</td><td class="ok">1 host</td><td class="ok">3 hosts</td><td class="ok">10 hosts</td><td class="ok">Unlimited</td></tr>
+            <tr><td>Doctor bundle upload</td><td class="ok">✓</td><td class="ok">✓</td><td class="ok">✓</td><td class="ok">✓</td></tr>
+            <tr><td>Clerk SSO (multi-seat)</td><td class="no">—</td><td class="no">—</td><td class="no">—</td><td class="ok">✓</td></tr>
+            <tr><td>Priority / on-call support</td><td class="no">—</td><td>Email</td><td>Chat</td><td class="ok">On-call</td></tr>
+            <tr><td>Stripe metered billing</td><td class="no">—</td><td class="ok">✓</td><td class="ok">✓</td><td class="ok">✓</td></tr>
+          </tbody>
+        </table>
+      </div>
+
     </div>
   </section>
 
@@ -630,11 +924,11 @@
   <section class="cta-section">
     <div class="wrap">
       <div class="cta-box reveal">
-        <h2>Ready to trade smarter?</h2>
-        <p>Get access to ProxiAlpha and start leveraging AI-powered trading signals.</p>
-        <div style="display:flex;gap:12px;justify-content:center;">
-          <a href="mailto:sendpavan@gmail.com" class="btn btn-cyan">Request Access &rarr;</a>
-          <a href="labs.html" class="btn btn-ghost">Back to Labs</a>
+        <h2>Ready to run ProxiAlpha in production?</h2>
+        <p>Sign up for the control plane, enroll your first agent, and start metering usage in minutes. No credit card required to start on the free tier.</p>
+        <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+          <a href="#contact" class="btn btn-cyan">Request Access &rarr;</a>
+          <a href="#pricing" class="btn btn-ghost">Compare tiers</a>
         </div>
       </div>
     </div>
@@ -644,14 +938,14 @@
   <footer>
     <div class="wrap">
       <div class="footer-grid">
-        <div><h4>Product</h4><ul><li><a href="proxialpha.html">ProxiAlpha</a></li><li><a href="labs.html">Labs</a></li></ul></div>
-        <div><h4>Company</h4><ul><li><a href="index.html">Home</a></li><li><a href="solutions.html">Solutions</a></li></ul></div>
-        <div><h4>Legal</h4><ul><li><a href="#">Privacy Policy</a></li><li><a href="#">Terms of Service</a></li></ul></div>
-        <div><h4>Contact</h4><ul><li><a href="mailto:sendpavan@gmail.com">sendpavan@gmail.com</a></li></ul></div>
+        <div><h4>Platform</h4><ul><li><a href="#platform">Overview</a></li><li><a href="#control-plane">Control Plane</a></li><li><a href="#fleet">Agent Fleet</a></li><li><a href="#pricing">Pricing</a></li></ul></div>
+        <div><h4>Company</h4><ul><li><a href="index.html">Home</a></li><li><a href="solutions.html">Solutions</a></li><li><a href="labs.html">Labs</a></li></ul></div>
+        <div><h4>Legal</h4><ul><li><a href="#">Privacy Policy</a></li><li><a href="#">Terms of Service</a></li><li><a href="#">DPA</a></li></ul></div>
+        <div><h4>Contact</h4><ul><li><a href="#contact">Get in touch</a></li></ul></div>
       </div>
       <div class="footer-bottom">
         <span>&copy; 2026 Proxiant Labs. All rights reserved.</span>
-        <span>ProxiAlpha is an AI-powered trading platform.</span>
+        <span>ProxiAlpha — Enterprise AI trading platform with a multi-tenant control plane.</span>
       </div>
     </div>
   </footer>
@@ -663,9 +957,15 @@
     }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-    window.addEventListener('scroll', () => {
-      document.getElementById('header').classList.toggle('scrolled', window.scrollY > 20);
-    });
+    // Mobile menu
+    const mobBtn = document.getElementById('mobToggle');
+    const mobMenu = document.getElementById('mobMenu');
+    if (mobBtn && mobMenu) {
+      mobBtn.addEventListener('click', () => {
+        const open = mobMenu.classList.toggle('open');
+        mobBtn.setAttribute('aria-expanded', open);
+      });
+    }
 
     // Animate counters
     function animateVal(el, target, suffix) {
