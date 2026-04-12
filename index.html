@@ -1148,57 +1148,185 @@
         <a href="insights.html" class="arrow-link hidden md:inline-flex">View All →</a>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- Article 1 -->
-        <a href="insight-generative-ai-enterprise.html" class="reveal reveal-delay-1 block" style="text-decoration:none;color:inherit;">
+      <div id="insights-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Dynamic content loads here; static fallback below -->
+        <a href="insight-generative-ai-enterprise.html" class="insight-card reveal reveal-delay-1 block" style="text-decoration:none;color:inherit;">
           <div class="image-zoom h-48 mb-6">
-            <img
-              src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&q=80"
-              alt="AI Trends"
-              loading="lazy"
-            >
+            <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&q=80" alt="AI Trends" loading="lazy">
           </div>
           <div class="badge badge-dark mb-4">AI & ML</div>
-          <h3 class="font-display font-semibold text-lg text-charcoal mb-3">
-            The Future of Generative AI in Enterprise
-          </h3>
+          <h3 class="font-display font-semibold text-lg text-charcoal mb-3">The Future of Generative AI in Enterprise</h3>
           <p class="text-sm text-ash">Apr 2026 · 6 min read</p>
         </a>
-
-        <!-- Article 2 -->
-        <a href="insight-trustworthy-ai.html" class="reveal reveal-delay-2 block" style="text-decoration:none;color:inherit;">
+        <a href="insight-trustworthy-ai.html" class="insight-card reveal reveal-delay-2 block" style="text-decoration:none;color:inherit;">
           <div class="image-zoom h-48 mb-6">
-            <img
-              src="https://images.unsplash.com/photo-1639322537228-f710d846310a?w=600&q=80"
-              alt="Blockchain"
-              loading="lazy"
-            >
+            <img src="https://images.unsplash.com/photo-1639322537228-f710d846310a?w=600&q=80" alt="AI Systems" loading="lazy">
           </div>
           <div class="badge badge-dark mb-4">Technology</div>
-          <h3 class="font-display font-semibold text-lg text-charcoal mb-3">
-            Building Trustworthy AI Systems
-          </h3>
+          <h3 class="font-display font-semibold text-lg text-charcoal mb-3">Building Trustworthy AI Systems</h3>
           <p class="text-sm text-ash">Apr 2026 · 5 min read</p>
         </a>
-
-        <!-- Article 3 -->
-        <a href="insight-scaling-ai-teams.html" class="reveal reveal-delay-3 block" style="text-decoration:none;color:inherit;">
+        <a href="insight-scaling-ai-teams.html" class="insight-card reveal reveal-delay-3 block" style="text-decoration:none;color:inherit;">
           <div class="image-zoom h-48 mb-6">
-            <img
-              src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=600&q=80"
-              alt="Team"
-              loading="lazy"
-            >
+            <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=600&q=80" alt="Team" loading="lazy">
           </div>
           <div class="badge badge-dark mb-4">Culture</div>
-          <h3 class="font-display font-semibold text-lg text-charcoal mb-3">
-            Scaling AI Teams: Lessons from Our Growth
-          </h3>
+          <h3 class="font-display font-semibold text-lg text-charcoal mb-3">Scaling AI Teams: Lessons from Our Growth</h3>
           <p class="text-sm text-ash">Mar 2026 · 7 min read</p>
         </a>
       </div>
 
       <a href="insights.html" class="arrow-link md:hidden mt-12 block text-center">View All Articles →</a>
+
+      <script>
+      (function(){
+        const CACHE_KEY = 'proxiant_insights_cache';
+        const CACHE_TTL = 7 * 24 * 60 * 60 * 1000; // 7 days
+
+        const categoryMap = [
+          { keywords: ['ai','artificial intelligence','machine learning','llm','gpt','generative','model'], label: 'AI & ML' },
+          { keywords: ['governance','regulation','compliance','ethics','trust','safety','policy'], label: 'Governance' },
+          { keywords: ['cloud','infrastructure','data','platform','api','software'], label: 'Technology' },
+          { keywords: ['team','hire','culture','workforce','talent','leadership'], label: 'Culture' },
+          { keywords: ['business','enterprise','strategy','market','industry','revenue'], label: 'Strategy' }
+        ];
+
+        const fallbackImages = [
+          'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&q=80',
+          'https://images.unsplash.com/photo-1639322537228-f710d846310a?w=600&q=80',
+          'https://images.unsplash.com/photo-1551434678-e076c223a692?w=600&q=80',
+          'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=600&q=80',
+          'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&q=80',
+          'https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&q=80'
+        ];
+
+        function categorize(title) {
+          const lower = title.toLowerCase();
+          for (const cat of categoryMap) {
+            if (cat.keywords.some(k => lower.includes(k))) return cat.label;
+          }
+          return 'Industry';
+        }
+
+        function formatDate(dateStr) {
+          const d = new Date(dateStr);
+          return d.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+        }
+
+        function estimateReadTime(title) {
+          return Math.floor(Math.random() * 4) + 4 + ' min read';
+        }
+
+        function renderCards(articles) {
+          const grid = document.getElementById('insights-grid');
+          if (!grid || articles.length === 0) return;
+
+          grid.innerHTML = articles.slice(0, 3).map((a, i) => {
+            const cat = categorize(a.title);
+            const img = a.image || fallbackImages[i % fallbackImages.length];
+            const date = a.publishedAt ? formatDate(a.publishedAt) : formatDate(new Date().toISOString());
+            const readTime = estimateReadTime(a.title);
+            const delay = ['reveal-delay-1','reveal-delay-2','reveal-delay-3'][i];
+
+            return '<a href="' + a.url + '" target="_blank" rel="noopener noreferrer" class="insight-card reveal ' + delay + ' block" style="text-decoration:none;color:inherit;">' +
+              '<div class="image-zoom h-48 mb-6">' +
+                '<img src="' + img + '" alt="' + a.title.replace(/"/g,'&quot;') + '" loading="lazy" onerror="this.src=\'' + fallbackImages[i % fallbackImages.length] + '\'">' +
+              '</div>' +
+              '<div class="badge badge-dark mb-4">' + cat + '</div>' +
+              '<h3 class="font-display font-semibold text-lg text-charcoal mb-3">' + a.title + '</h3>' +
+              '<p class="text-sm text-ash">' + date + ' · ' + readTime + '</p>' +
+            '</a>';
+          }).join('');
+
+          // Re-trigger reveal animations
+          document.querySelectorAll('#insights-grid .reveal').forEach(el => {
+            const obs = new IntersectionObserver((entries) => {
+              entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                  entry.target.classList.add('revealed');
+                  entry.target.style.opacity = '1';
+                  entry.target.style.transform = 'translateY(0)';
+                  obs.unobserve(entry.target);
+                }
+              });
+            }, { threshold: 0.15 });
+            obs.observe(el);
+          });
+        }
+
+        function tryCache() {
+          try {
+            const raw = sessionStorage.getItem(CACHE_KEY);
+            if (!raw) return null;
+            const cached = JSON.parse(raw);
+            if (Date.now() - cached.timestamp < CACHE_TTL && cached.articles.length > 0) {
+              return cached.articles;
+            }
+          } catch(e) {}
+          return null;
+        }
+
+        function saveCache(articles) {
+          try {
+            sessionStorage.setItem(CACHE_KEY, JSON.stringify({ timestamp: Date.now(), articles: articles }));
+          } catch(e) {}
+        }
+
+        async function fetchNews() {
+          // Try cached first
+          const cached = tryCache();
+          if (cached) { renderCards(cached); return; }
+
+          // GNews API (free tier: 100 req/day, no key needed for limited use)
+          const sources = [
+            'https://gnews.io/api/v4/search?q=artificial+intelligence+enterprise&lang=en&max=6&sortby=publishedAt&apikey=demo',
+            'https://newsdata.io/api/1/latest?q=artificial%20intelligence%20enterprise&language=en&size=6&apikey=pub_demo'
+          ];
+
+          for (const url of sources) {
+            try {
+              const resp = await fetch(url, { signal: AbortSignal.timeout(5000) });
+              if (!resp.ok) continue;
+              const data = await resp.json();
+
+              let articles = [];
+              if (data.articles) {
+                // GNews format
+                articles = data.articles.map(a => ({
+                  title: a.title,
+                  url: a.url,
+                  image: a.image,
+                  publishedAt: a.publishedAt
+                }));
+              } else if (data.results) {
+                // Newsdata format
+                articles = data.results.map(a => ({
+                  title: a.title,
+                  url: a.link,
+                  image: a.image_url,
+                  publishedAt: a.pubDate
+                }));
+              }
+
+              if (articles.length >= 3) {
+                saveCache(articles);
+                renderCards(articles);
+                return;
+              }
+            } catch(e) { /* try next source */ }
+          }
+
+          // If all APIs fail, keep static fallback (already in DOM)
+        }
+
+        // Only fetch if page is visible
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', fetchNews);
+        } else {
+          fetchNews();
+        }
+      })();
+      </script>
     </div>
   </section>
 
