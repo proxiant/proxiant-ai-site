@@ -279,7 +279,15 @@
 
     .dropdown-item {
       position: relative;
-      padding-bottom: 0.75rem;
+    }
+
+    .dropdown-item::after {
+      content: '';
+      position: absolute;
+      bottom: -1rem;
+      left: 0;
+      right: 0;
+      height: 1rem;
     }
 
     .dropdown-item:hover .dropdown-menu,
