@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ProxiTrades — Adaptive Multi-Strategy Trading System | Proxiant Labs</title>
+  <meta name="description" content="ProxiTrades is an adaptive multi-strategy trading system. TradingView-triggered, Alpaca/IBKR-routed, with a five-loop strategy generator, regime-aware momentum, daily learning reports, and a Matrix-themed cockpit. Open-source. Built on real walk-forward evidence — V7 OOS Sharpe 2.06.">
+  <meta name="keywords" content="adaptive trading, momentum strategy, TradingView webhook, Alpaca paper trading, multi-strategy, walk-forward, OOS Sharpe, daily learning report">
+  <link rel="canonical" href="https://proxiant.ai/proxitrades.html">
+
+  <meta property="og:type" content="product">
+  <meta property="og:title" content="ProxiTrades — Adaptive Multi-Strategy Trading System">
+  <meta property="og:description" content="V7 OOS Sharpe 2.06, max DD 6.0% on 30 high-beta US stocks. TradingView-triggered, broker-routed, with adaptive strategy generation, daily learning reports, and a live operator cockpit.">
+  <meta property="og:url" content="https://proxiant.ai/proxitrades.html">
+  <meta property="og:image" content="https://proxiant.ai/assets/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ProxiTrades — Adaptive Multi-Strategy Trading System">
+  <meta name="twitter:description" content="V7 OOS Sharpe 2.06, walk-forward validated. Live cockpit + daily learning reports + LLM-suggested config diffs.">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "ProxiTrades",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Linux, Docker",
+    "url": "https://proxiant.ai/proxitrades.html",
+    "description": "Adaptive multi-strategy trading system with TradingView webhook ingestion, Alpaca/IBKR execution, regime-aware momentum, daily learning reports, and adversarial-debate hypothesis validation.",
+    "publisher": { "@type": "Organization", "name": "Proxiant Labs", "url": "https://proxiant.ai" }
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['DM Sans', 'system-ui', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            brand: { DEFAULT: '#BF5700', light: '#E8723A', dark: '#9E4700' },
+            navy:  { DEFAULT: '#333F48', light: '#44515C', dark: '#1C252B' },
+            surface: { DEFAULT: '#F5F3F0', warm: '#FAF8F5' },
+            matrix: { DEFAULT: '#00ff41', dim: '#008f11', bright: '#b9ffc6' },
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s cubic-bezier(0.16,1,0.3,1), transform .7s cubic-bezier(0.16,1,0.3,1); }
+    .reveal.visible { opacity: 1; transform: none; }
+    .reveal-d1 { transition-delay: .08s; }
+    .reveal-d2 { transition-delay: .16s; }
+    .reveal-d3 { transition-delay: .24s; }
+    .reveal-d4 { transition-delay: .32s; }
+    .matrix-card {
+      background: #000; color: #00ff41;
+      font-family: 'JetBrains Mono', monospace;
+      border: 1px solid rgba(0,255,65,.25);
+      box-shadow: inset 0 0 60px rgba(0,255,65,.06);
+      position: relative; overflow: hidden;
+    }
+    .matrix-card::before {
+      content: ""; position: absolute; inset: 0;
+      background: repeating-linear-gradient(to bottom, rgba(0,255,65,.05) 0 1px, transparent 1px 3px);
+      pointer-events: none;
+    }
+    .strat-row { border-top: 1px solid rgba(0,0,0,.06); }
+    .pill { display: inline-flex; align-items: center; padding: 2px 10px; border-radius: 999px; font-size: 11px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; }
+    .pill-ok { background: rgba(34,197,94,.12); color: #15803d; }
+    .pill-bad { background: rgba(239,68,68,.12); color: #b91c1c; }
+    .pill-warn { background: rgba(234,179,8,.14); color: #a16207; }
+    .pill-neutral { background: rgba(100,116,139,.12); color: #475569; }
+    .num-mono { font-family: 'JetBrains Mono', monospace; }
+    .gridline { background-image: linear-gradient(rgba(191,87,0,.08) 1px, transparent 1px), linear-gradient(90deg, rgba(191,87,0,.08) 1px, transparent 1px); background-size: 32px 32px; }
+    .feat-bullet { display: flex; gap: 10px; align-items: flex-start; }
+    .feat-bullet::before { content: ""; flex-shrink: 0; margin-top: 7px; width: 6px; height: 6px; border-radius: 999px; background: #BF5700; }
+  </style>
+</head>
+<body class="font-sans bg-surface text-navy">
+
+<header class="sticky top-0 z-50 backdrop-blur bg-surface-warm/85 border-b border-navy/10">
+  <nav class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <a href="index.html" class="flex items-center gap-2 font-bold text-lg">
+      <span class="w-8 h-8 rounded bg-brand text-white flex items-center justify-center">P</span>
+      <span>Proxiant</span>
+    </a>
+    <ul class="hidden md:flex gap-8 text-sm font-medium">
+      <li><a href="index.html" class="hover:text-brand transition">Home</a></li>
+      <li><a href="solutions.html" class="hover:text-brand transition">Solutions</a></li>
+      <li><a href="labs.html" class="hover:text-brand transition">Labs</a></li>
+      <li><a href="proxialpha.html" class="hover:text-brand transition">Proxi-Alpha</a></li>
+      <li><a href="proxitrades.html" class="text-brand font-semibold">ProxiTrades</a></li>
+    </ul>
+    <a id="open-dashboard" href="#dashboard" class="hidden md:inline-flex items-center gap-2 bg-brand text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-brand-dark transition">
+      Open Live Cockpit
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    </a>
+  </nav>
+</header>
+
+<section class="relative overflow-hidden border-b border-navy/10">
+  <div class="absolute inset-0 gridline opacity-30"></div>
+  <div class="relative max-w-7xl mx-auto px-6 pt-20 pb-24 grid md:grid-cols-2 gap-12 items-center">
+    <div>
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand/10 text-brand text-xs font-semibold mb-6 reveal">
+        <span class="w-2 h-2 bg-brand rounded-full animate-pulse"></span>
+        Open source · Paper-trading live · Walk-forward validated
+      </div>
+      <h1 class="text-5xl md:text-6xl font-bold leading-tight mb-6 reveal reveal-d1">
+        Adaptive multi-strategy trading,<br/>
+        <span class="text-brand">honest about its edge.</span>
+      </h1>
+      <p class="text-lg text-navy-light mb-8 reveal reveal-d2 max-w-xl">
+        TradingView-triggered. Broker-routed (Alpaca, IBKR). Six trading
+        strategies competing for capital, each gated by a regime classifier and
+        a live drift monitor that auto-disables anything that decays. Daily
+        learning reports tell you what worked, what didn't, and why — with
+        machine-applicable suggestions a human can review and execute in one click.
+      </p>
+      <div class="flex flex-wrap gap-3 reveal reveal-d3">
+        <a href="#dashboard" class="inline-flex items-center gap-2 bg-brand text-white px-6 py-3 rounded-lg font-semibold hover:bg-brand-dark transition">
+          Open Live Cockpit →
+        </a>
+        <a href="#strategies" class="inline-flex items-center gap-2 bg-surface-warm border border-navy/15 text-navy px-6 py-3 rounded-lg font-semibold hover:bg-navy/5 transition">
+          See the strategies
+        </a>
+        <a href="https://github.com/pkr465/ProxiTrades" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-navy hover:text-brand transition px-2 py-3 font-semibold">
+          GitHub →
+        </a>
+      </div>
+    </div>
+    <div class="reveal reveal-d2">
+      <div class="matrix-card rounded-xl p-6">
+        <div class="text-xs opacity-70 mb-3 tracking-widest">CURRENT BASELINE — STRATEGY_V7</div>
+        <div class="grid grid-cols-3 gap-4 mb-4">
+          <div><div class="text-xs opacity-50">OOS Sharpe</div><div class="text-2xl font-bold">2.06</div></div>
+          <div><div class="text-xs opacity-50">Annualized</div><div class="text-2xl font-bold">30.2%</div></div>
+          <div><div class="text-xs opacity-50">Max DD</div><div class="text-2xl font-bold">6.0%</div></div>
+        </div>
+        <div class="text-xs opacity-70 mb-2">4-fold walk-forward, real Alpaca data 2022–2025, 30 high-beta US single stocks. V7 wins on Sharpe in 3/4 OOS folds.</div>
+        <div class="border-t border-matrix/20 pt-3 mt-3 text-xs">
+          <div class="flex justify-between"><span class="opacity-70">→ regime classifier</span><span>SPY trend + vol</span></div>
+          <div class="flex justify-between"><span class="opacity-70">→ cash park</span><span>GLD (beat TLT in 2022)</span></div>
+          <div class="flex justify-between"><span class="opacity-70">→ position discipline</span><span>LONG xor CASH</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-navy text-white py-12">
+  <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+    <div class="reveal"><div class="text-3xl md:text-4xl font-bold text-brand-light num-mono">7</div><div class="text-xs uppercase tracking-widest opacity-70 mt-2">Strategies tested</div></div>
+    <div class="reveal reveal-d1"><div class="text-3xl md:text-4xl font-bold text-brand-light num-mono">8</div><div class="text-xs uppercase tracking-widest opacity-70 mt-2">Daily report tabs</div></div>
+    <div class="reveal reveal-d2"><div class="text-3xl md:text-4xl font-bold text-brand-light num-mono">3</div><div class="text-xs uppercase tracking-widest opacity-70 mt-2">LLM-cascade providers</div></div>
+    <div class="reveal reveal-d3"><div class="text-3xl md:text-4xl font-bold text-brand-light num-mono">813</div><div class="text-xs uppercase tracking-widest opacity-70 mt-2">Real bars walk-forwarded</div></div>
+  </div>
+</section>
+
+<section id="strategies" class="py-20 bg-surface-warm">
+  <div class="max-w-7xl mx-auto px-6">
+    <h2 class="text-4xl font-bold mb-3 reveal">Honest leaderboard.</h2>
+    <p class="text-navy-light mb-12 reveal reveal-d1 max-w-2xl">Every strategy ever tested in this repo, with OOS results from real Alpaca data. We mark failures the same way we mark wins.</p>
+
+    <div class="bg-white rounded-xl border border-navy/10 overflow-hidden reveal reveal-d2">
+      <div class="overflow-x-auto">
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="bg-navy/5 text-xs uppercase tracking-wider text-navy-light">
+            <th class="text-left p-4">Strategy</th>
+            <th class="text-right p-4">OOS Annualized</th>
+            <th class="text-right p-4">OOS Sharpe</th>
+            <th class="text-right p-4">Max DD</th>
+            <th class="p-4">Status</th>
+            <th class="p-4">Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="strat-row"><td class="p-4 font-semibold">strategy_v7</td><td class="p-4 text-right num-mono">30.2%</td><td class="p-4 text-right num-mono font-bold text-brand">2.06</td><td class="p-4 text-right num-mono">6.0%</td><td class="p-4"><span class="pill pill-ok">★ Baseline</span></td><td class="p-4 text-xs text-navy-light">LONG/CASH directional, GLD park, 30 high-beta stocks</td></tr>
+          <tr class="strat-row"><td class="p-4 font-semibold">strategy_v4_stocks</td><td class="p-4 text-right num-mono">24.0%</td><td class="p-4 text-right num-mono">1.81</td><td class="p-4 text-right num-mono">5.97%</td><td class="p-4"><span class="pill pill-ok">Paper-ready</span></td><td class="p-4 text-xs text-navy-light">V4 chassis on the same 30-stock universe</td></tr>
+          <tr class="strat-row"><td class="p-4 font-semibold">strategy_v4 (ETFs)</td><td class="p-4 text-right num-mono">14.7%</td><td class="p-4 text-right num-mono">1.13</td><td class="p-4 text-right num-mono">7.5%</td><td class="p-4"><span class="pill pill-ok">Paper-ready</span></td><td class="p-4 text-xs text-navy-light">Regime-aware momentum, 22-ETF universe, 200d SMA filter</td></tr>
+          <tr class="strat-row"><td class="p-4 font-semibold">strategy_v8 (ladder)</td><td class="p-4 text-right num-mono">6.5%</td><td class="p-4 text-right num-mono">0.80</td><td class="p-4 text-right num-mono font-bold text-brand">3.96%</td><td class="p-4"><span class="pill pill-warn">Research</span></td><td class="p-4 text-xs text-navy-light">Asymmetric mean-reversion ladder — lowest DD ever tested</td></tr>
+          <tr class="strat-row"><td class="p-4 font-semibold">strategy_v6 (long-short)</td><td class="p-4 text-right num-mono">4.2%</td><td class="p-4 text-right num-mono">0.48</td><td class="p-4 text-right num-mono">6.3%</td><td class="p-4"><span class="pill pill-bad">Rejected</span></td><td class="p-4 text-xs text-navy-light">Shorts on ETFs structurally bet against positive long-term drift</td></tr>
+          <tr class="strat-row"><td class="p-4 font-semibold">strategy_v5 (dynamic tuner)</td><td class="p-4 text-right num-mono">5.1%</td><td class="p-4 text-right num-mono">0.57</td><td class="p-4 text-right num-mono">12.4%</td><td class="p-4"><span class="pill pill-bad">Rejected</span></td><td class="p-4 text-xs text-navy-light">Synthetic VIX whipsaw during 2022 bear; needs real VIX feed</td></tr>
+          <tr class="strat-row"><td class="p-4 font-semibold">strategy_v2 / v3</td><td class="p-4 text-right num-mono">~11%</td><td class="p-4 text-right num-mono">~0.9</td><td class="p-4 text-right num-mono">~11%</td><td class="p-4"><span class="pill pill-neutral">Lineage</span></td><td class="p-4 text-xs text-navy-light">Earlier iterations kept for ablation studies</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </div>
+    <p class="text-xs text-navy-light mt-4 reveal reveal-d3">Full results, walk-forward folds, and methodology in <a href="https://github.com/pkr465/ProxiTrades/blob/main/docs/strategies.md" target="_blank" rel="noopener" class="text-brand hover:underline">docs/strategies.md</a>.</p>
+  </div>
+</section>
+
+<section class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-6">
+    <h2 class="text-4xl font-bold mb-3 reveal">How it's wired.</h2>
+    <p class="text-navy-light mb-12 reveal reveal-d1 max-w-2xl">Five layers, each replaceable. The kill switch always works even when the rest is broken.</p>
+
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="bg-surface-warm rounded-xl p-6 border border-navy/10 reveal reveal-d1">
+        <div class="text-xs font-semibold tracking-widest text-brand mb-2">SIGNAL SOURCES</div>
+        <h3 class="text-xl font-bold mb-3">Three signal modes per strategy</h3>
+        <p class="text-sm text-navy-light mb-4">A TOML field decides where the signal comes from — without touching strategy code.</p>
+        <ul class="space-y-2 text-sm">
+          <li class="feat-bullet"><div><b>tv</b> — TradingView Pine alert hits the webhook</div></li>
+          <li class="feat-bullet"><div><b>native</b> — In-process Python on the websocket bar feed</div></li>
+          <li class="feat-bullet"><div><b>either</b> — Both; idempotent client_order_id collapses duplicates</div></li>
+        </ul>
+      </div>
+
+      <div class="bg-surface-warm rounded-xl p-6 border border-navy/10 reveal reveal-d2">
+        <div class="text-xs font-semibold tracking-widest text-brand mb-2">RISK STACK</div>
+        <h3 class="text-xl font-bold mb-3">Three-layer kill</h3>
+        <p class="text-sm text-navy-light mb-4">Defense in depth. Operator action, automated dead-man, broker-side bracket.</p>
+        <ul class="space-y-2 text-sm">
+          <li class="feat-bullet"><div><b>proxi kill</b> — Operator CLI, imports zero strategy code</div></li>
+          <li class="feat-bullet"><div><b>Dead-man</b> — Flatten everything if no heartbeat in N seconds</div></li>
+          <li class="feat-bullet"><div><b>Protective bracket</b> — Stop+TP posted alongside every entry</div></li>
+        </ul>
+      </div>
+
+      <div class="bg-surface-warm rounded-xl p-6 border border-navy/10 reveal reveal-d1">
+        <div class="text-xs font-semibold tracking-widest text-brand mb-2">ADAPTIVE LOOP</div>
+        <h3 class="text-xl font-bold mb-3">Hypothesis → Panel → Factory → Decay</h3>
+        <p class="text-sm text-navy-light mb-4">The system mints, validates, and retires strategies faster than the market arbitrages them away.</p>
+        <ul class="space-y-2 text-sm">
+          <li class="feat-bullet"><div>Claude proposes setups; deterministic factory walks the param grid</div></li>
+          <li class="feat-bullet"><div>3-persona panel + adversarial Bull/Bear/Referee debate gates each card</div></li>
+          <li class="feat-bullet"><div>Live monitor auto-disables on Sharpe drift &gt; threshold</div></li>
+        </ul>
+      </div>
+
+      <div class="bg-surface-warm rounded-xl p-6 border border-navy/10 reveal reveal-d2">
+        <div class="text-xs font-semibold tracking-widest text-brand mb-2">DAILY LEARNING</div>
+        <h3 class="text-xl font-bold mb-3">Reports that catalogue what works</h3>
+        <p class="text-sm text-navy-light mb-4">Every day at 20:00 UTC, the system writes a structured report and emails it.</p>
+        <ul class="space-y-2 text-sm">
+          <li class="feat-bullet"><div>Per-strategy verdict: WORKING / NOT_WORKING / MIXED, with WHY</div></li>
+          <li class="feat-bullet"><div>LLM-suggested config diffs as machine-applicable change bundles</div></li>
+          <li class="feat-bullet"><div>Reflection memory store retrieves prior lessons by regime similarity</div></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="dashboard" class="py-20 bg-navy text-white">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <div class="text-xs font-semibold tracking-widest text-brand-light mb-3 reveal">LIVE OPERATOR COCKPIT</div>
+        <h2 class="text-4xl font-bold mb-6 reveal reveal-d1">Eight tabs. One screen.</h2>
+        <p class="text-white/70 mb-6 reveal reveal-d2">The dashboard is what the agent sees and what you debug from. Matrix-themed, polled every 5s, six API endpoints feeding eight tabs.</p>
+        <ul class="space-y-3 text-sm reveal reveal-d3">
+          <li class="flex gap-3"><span class="text-brand-light font-mono">01</span><span><b>Overview</b> — Strategies, monitor, plans, decisions, briefs</span></li>
+          <li class="flex gap-3"><span class="text-brand-light font-mono">02</span><span><b>Charts &amp; Analysis</b> — TradingView embed for any symbol</span></li>
+          <li class="flex gap-3"><span class="text-brand-light font-mono">03</span><span><b>Earnings Calendar</b> — Finnhub-backed, ascending sort, paginated</span></li>
+          <li class="flex gap-3"><span class="text-brand-light font-mono">04</span><span><b>Strategy Lab</b> — Decision-ledger view of every keep/reject call</span></li>
+          <li class="flex gap-3"><span class="text-brand-light font-mono">05</span><span><b>Ticker Analysis</b> — Verdict + TA + fundamentals + analyst recs + news</span></li>
+          <li class="flex gap-3"><span class="text-brand-light font-mono">06</span><span><b>Adaptive Loop</b> — Hypothesis funnel, panel verdicts, archetype half-lives</span></li>
+          <li class="flex gap-3"><span class="text-brand-light font-mono">07</span><span><b>Daily Reports</b> — Date picker + history, KPIs, NOT-WORKING root causes, suggestions</span></li>
+          <li class="flex gap-3"><span class="text-brand-light font-mono">08</span><span><b>Reflections</b> — Top lessons by predictive hit-rate</span></li>
+        </ul>
+        <div class="mt-8 reveal reveal-d4">
+          <a id="open-dashboard-2" href="#" class="inline-flex items-center gap-2 bg-brand text-white px-6 py-3 rounded-lg font-semibold hover:bg-brand-dark transition">
+            Open Live Cockpit →
+          </a>
+          <p class="text-xs text-white/50 mt-3">Loads the dashboard from the production trading host via the named tunnel at <span class="num-mono">dashboard.proxiant.ai</span> (configured separately; see <a href="ARCHITECTURE_TUNNEL.md" class="text-brand-light hover:underline">ARCHITECTURE_TUNNEL.md</a>). For local dev, override with <span class="num-mono">?dashboard=&lt;url&gt;</span>.</p>
+        </div>
+      </div>
+      <div class="reveal reveal-d3">
+        <div class="matrix-card rounded-xl p-5 text-xs">
+          <div class="opacity-70 tracking-widest mb-3">// LIVE COCKPIT PREVIEW</div>
+          <div class="grid grid-cols-2 gap-3 mb-4">
+            <div class="border border-matrix/30 rounded p-3"><div class="opacity-50 text-[10px]">STRATEGIES</div><div class="text-2xl font-bold">7</div><div class="text-[10px] opacity-50">5 enabled / 2 paper-pending</div></div>
+            <div class="border border-matrix/30 rounded p-3"><div class="opacity-50 text-[10px]">P/L TODAY</div><div class="text-2xl font-bold">$0</div><div class="text-[10px] opacity-50">awaiting first TV signal</div></div>
+            <div class="border border-matrix/30 rounded p-3"><div class="opacity-50 text-[10px]">DEADMAN</div><div class="text-2xl font-bold">OK</div><div class="text-[10px] opacity-50">heartbeat + reconcile loop</div></div>
+            <div class="border border-matrix/30 rounded p-3"><div class="opacity-50 text-[10px]">REGIME</div><div class="text-2xl font-bold">trending</div><div class="text-[10px] opacity-50">SPY > 200d, vol &lt; 25%</div></div>
+          </div>
+          <div class="border-t border-matrix/20 pt-3 space-y-1">
+            <div class="flex justify-between"><span class="opacity-70">strategy_v7</span><span class="text-bright">enabled · paper</span></div>
+            <div class="flex justify-between"><span class="opacity-70">intraday_momentum_v1</span><span>enabled · paper</span></div>
+            <div class="flex justify-between"><span class="opacity-70">strategy_v4</span><span class="opacity-50">paper-pending</span></div>
+            <div class="flex justify-between"><span class="opacity-70">strategy_v4_stocks</span><span class="opacity-50">paper-pending</span></div>
+            <div class="flex justify-between"><span class="opacity-70">sma_xover_v1</span><span>enabled · paper</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-20 bg-surface-warm">
+  <div class="max-w-5xl mx-auto px-6">
+    <h2 class="text-4xl font-bold mb-3 reveal">Three paths to try it.</h2>
+    <p class="text-navy-light mb-12 reveal reveal-d1">Self-host in 10 minutes, watch the live cockpit, or read the design doc first.</p>
+
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="bg-white rounded-xl p-6 border border-navy/10 reveal reveal-d1">
+        <div class="text-3xl mb-3 font-mono text-brand">01</div>
+        <h3 class="font-bold text-lg mb-2">Self-host</h3>
+        <p class="text-sm text-navy-light mb-4">Clone, fill .env with Alpaca paper keys, docker compose up. The cockpit comes online at port 8787 with seven strategies pre-loaded.</p>
+        <pre class="bg-navy text-matrix-bright text-xs p-3 rounded font-mono overflow-x-auto">git clone --recurse-submodules \
+  https://github.com/pkr465/proxiant-suite
+cd proxiant-suite
+./scripts/up.sh trading</pre>
+      </div>
+      <div class="bg-white rounded-xl p-6 border border-navy/10 reveal reveal-d2">
+        <div class="text-3xl mb-3 font-mono text-brand">02</div>
+        <h3 class="font-bold text-lg mb-2">Watch the public cockpit</h3>
+        <p class="text-sm text-navy-light mb-4">A live instance with V7 enabled in paper mode is fronted by the proxiant.ai tunnel. Read-only. Auto-disables on drift.</p>
+        <a href="#dashboard" class="inline-flex items-center gap-2 bg-brand/10 text-brand px-4 py-2 rounded font-semibold text-sm hover:bg-brand/15 transition">Open Cockpit →</a>
+      </div>
+      <div class="bg-white rounded-xl p-6 border border-navy/10 reveal reveal-d3">
+        <div class="text-3xl mb-3 font-mono text-brand">03</div>
+        <h3 class="font-bold text-lg mb-2">Read first, deploy later</h3>
+        <p class="text-sm text-navy-light mb-4">The full design document and every iteration's honest result.</p>
+        <ul class="text-sm space-y-1">
+          <li><a href="https://github.com/pkr465/ProxiTrades/blob/main/docs/strategies.md" target="_blank" rel="noopener" class="text-brand hover:underline">→ Strategies registry</a></li>
+          <li><a href="https://github.com/pkr465/ProxiTrades/blob/main/docs/design/adaptive_strategy_loop.md" target="_blank" rel="noopener" class="text-brand hover:underline">→ Adaptive loop design</a></li>
+          <li><a href="https://github.com/pkr465/ProxiTrades/blob/main/docs/v4_audit_and_v5_findings.md" target="_blank" rel="noopener" class="text-brand hover:underline">→ V4 audit + V5 findings</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-20 bg-white">
+  <div class="max-w-4xl mx-auto px-6 reveal">
+    <div class="border-l-4 border-brand pl-6 py-2">
+      <h2 class="text-3xl font-bold mb-4">What this is not.</h2>
+      <p class="text-navy-light mb-3">ProxiTrades is not a get-rich-quick system. The math reality:</p>
+      <ul class="space-y-2 text-navy-light text-sm">
+        <li class="feat-bullet"><div>"1% per day on capital" implies ~1,170% annualized — about 18× the best documented hedge fund track record. <b>It is not a viable target.</b></div></li>
+        <li class="feat-bullet"><div>Plausible defensible targets are Sharpe 1.0–2.0 with controlled drawdown. V7 lands at OOS Sharpe 2.06 with 6% DD on a specific universe over a specific window. Out-of-sample variance is real and the live monitor is the safety net.</div></li>
+        <li class="feat-bullet"><div>Live trading requires two operator switches: <span class="num-mono bg-navy/5 px-2 py-1 rounded">env = "live"</span> in the strategy TOML AND <span class="num-mono bg-navy/5 px-2 py-1 rounded">LIVE_TRADING=true</span> in the environment. The apply engine refuses any change that would set both at once.</div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer class="bg-navy-dark text-white/60 py-12">
+  <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-8 text-sm">
+    <div>
+      <div class="text-white font-bold text-lg mb-3">Proxiant Labs</div>
+      <p class="text-xs">Open-source AI infrastructure. Honest about edges.</p>
+    </div>
+    <div>
+      <div class="text-white font-semibold mb-3">Products</div>
+      <ul class="space-y-1.5">
+        <li><a href="proxialpha.html" class="hover:text-brand-light transition">Proxi-Alpha</a></li>
+        <li><a href="proxitrades.html" class="hover:text-brand-light transition">ProxiTrades</a></li>
+        <li><a href="labs.html" class="hover:text-brand-light transition">All Labs</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="text-white font-semibold mb-3">ProxiTrades</div>
+      <ul class="space-y-1.5">
+        <li><a href="https://github.com/pkr465/ProxiTrades" target="_blank" rel="noopener" class="hover:text-brand-light transition">GitHub</a></li>
+        <li><a href="https://github.com/pkr465/proxiant-suite" target="_blank" rel="noopener" class="hover:text-brand-light transition">Suite repo</a></li>
+        <li><a href="https://github.com/pkr465/ProxiTrades/blob/main/docs/strategies.md" target="_blank" rel="noopener" class="hover:text-brand-light transition">Strategies registry</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="text-white font-semibold mb-3">Legal</div>
+      <ul class="space-y-1.5">
+        <li><a href="index.html" class="hover:text-brand-light transition">Home</a></li>
+        <li><a href="solutions.html" class="hover:text-brand-light transition">Solutions</a></li>
+        <li class="text-xs opacity-60 pt-2">© Proxiant Labs. Code: open-source per repo licenses.</li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // Default points at the named tunnel hostname `dashboard.proxiant.ai`.
+  // Override locally with ?dashboard=<url> for testing.
+  const params = new URLSearchParams(location.search);
+  const override = params.get('dashboard');
+  const dashUrl = override || 'https://dashboard.proxiant.ai/dashboard';
+  for (const id of ['open-dashboard', 'open-dashboard-2']) {
+    const el = document.getElementById(id);
+    if (el) el.setAttribute('href', dashUrl);
+  }
+</script>
+</body>
+</html>
