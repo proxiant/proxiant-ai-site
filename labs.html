@@ -822,7 +822,114 @@
         </div>
       </div>
 
-      <!-- Product 2: ProxiFlow -->
+      <!-- Product 2: ProxiTrades -->
+      <div class="reveal product-card flagship dark">
+        <div class="product-image">
+          <div class="terminal-mockup" style="background:#000;color:#00ff41;font-family:'JetBrains Mono',monospace;border:1px solid rgba(0,255,65,.25);box-shadow:inset 0 0 60px rgba(0,255,65,.06)">
+            <div class="terminal-header">
+              <span class="terminal-dot red"></span>
+              <span class="terminal-dot yellow"></span>
+              <span class="terminal-dot green"></span>
+              <span style="margin-left: auto; font-size: 0.75rem;">proxitrades :: cockpit</span>
+            </div>
+            <div class="terminal-content">
+              <div class="terminal-row">
+                <div class="terminal-cell header">Strategy</div>
+                <div class="terminal-cell header">OOS Sharpe</div>
+                <div class="terminal-cell header">Annual</div>
+                <div class="terminal-cell header">Max DD</div>
+              </div>
+              <div class="terminal-row">
+                <div class="terminal-cell">strategy_v7</div>
+                <div class="terminal-cell" style="color:#b9ffc6">2.06</div>
+                <div class="terminal-cell">30.2%</div>
+                <div class="terminal-cell">6.0%</div>
+              </div>
+              <div class="terminal-row">
+                <div class="terminal-cell">v4_stocks</div>
+                <div class="terminal-cell">1.81</div>
+                <div class="terminal-cell">24.0%</div>
+                <div class="terminal-cell">5.97%</div>
+              </div>
+              <div class="terminal-row">
+                <div class="terminal-cell">v4 (ETFs)</div>
+                <div class="terminal-cell">1.13</div>
+                <div class="terminal-cell">14.7%</div>
+                <div class="terminal-cell">7.5%</div>
+              </div>
+              <div class="terminal-row">
+                <div class="terminal-cell">v8 ladder</div>
+                <div class="terminal-cell">0.80</div>
+                <div class="terminal-cell">6.5%</div>
+                <div class="terminal-cell" style="color:#b9ffc6">3.96%</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="badge badge-cyan mb-4">
+            <span style="width: 8px; height: 8px; background: #00ff41; border-radius: 2px;"></span>
+            ADAPTIVE TRADING
+          </div>
+
+          <h2 class="font-display font-bold text-4xl mb-3 text-white">ProxiTrades</h2>
+          <p class="text-lg text-gray-300 mb-2">Adaptive Multi-Strategy Trading System</p>
+
+          <p class="text-white/80 mb-6 leading-relaxed">
+            TradingView-triggered, broker-routed (Alpaca, IBKR), with a five-loop
+            strategy generator that mints, validates, and retires strategies faster
+            than the market arbitrages them away. Every day at 20:00 UTC the
+            system writes a structured report — what worked, what didn't, why —
+            with LLM-suggested config diffs you can review and execute.
+          </p>
+
+          <ul class="feature-list mb-8 text-white/80">
+            <li>
+              <svg class="check-icon" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              <span>V7 baseline: OOS Sharpe 2.06, 30.2% annualized, 6% max DD</span>
+            </li>
+            <li>
+              <svg class="check-icon" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              <span>Walk-forward validated on real Alpaca data, 4-fold OOS</span>
+            </li>
+            <li>
+              <svg class="check-icon" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              <span>Adversarial Bull/Bear/Referee debate on every hypothesis</span>
+            </li>
+            <li>
+              <svg class="check-icon" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              <span>Daily learning report — emailed, persisted, with applied-diff trail</span>
+            </li>
+            <li>
+              <svg class="check-icon" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              <span>Three-layer kill switch (operator CLI, dead-man, broker bracket)</span>
+            </li>
+          </ul>
+
+          <div class="flex flex-wrap gap-3 mb-8">
+            <span class="badge badge-white">Open source</span>
+            <span class="badge badge-white">Paper-trading live</span>
+          </div>
+
+          <div class="flex flex-wrap gap-4">
+            <a href="proxitrades.html" class="btn btn-primary">Explore ProxiTrades →</a>
+            <a href="https://github.com/pkr465/ProxiTrades" target="_blank" rel="noopener" class="btn btn-outline-white">GitHub →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 3: ProxiFlow -->
       <div class="reveal product-card">
         <div class="product-image">
           <svg width="280" height="240" viewBox="0 0 280 240" fill="none">
