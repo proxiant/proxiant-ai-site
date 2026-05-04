@@ -206,6 +206,30 @@
     $$("[data-scramble]").forEach((el) => scrambleObserver.observe(el));
   }
 
+  // ──────── Pin scroll — translate .pin-track horizontally as user scrolls past .pin-section
+  $$(".pin-section").forEach((sec) => {
+    const stage = sec.querySelector(".pin-stage");
+    const track = sec.querySelector(".pin-track");
+    const fill = sec.querySelector(".pin-progress-fill");
+    if (!stage || !track) return;
+    let raf = 0;
+    const compute = () => {
+      raf = 0;
+      const r = sec.getBoundingClientRect();
+      const vh = window.innerHeight;
+      const total = sec.offsetHeight - vh;
+      const passed = Math.min(Math.max(-r.top, 0), total);
+      const t = total > 0 ? passed / total : 0;
+      const overflow = Math.max(0, track.scrollWidth - window.innerWidth);
+      track.style.transform = `translate3d(${-overflow * t}px, 0, 0)`;
+      if (fill) fill.style.width = `${(t * 100).toFixed(2)}%`;
+    };
+    compute();
+    const onScroll = () => { if (!raf) raf = requestAnimationFrame(compute); };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", compute);
+  });
+
   // ──────── Inject star-field twinkles into elements that have .starfield class
   if (!reduced) {
     $$(".starfield").forEach((host) => {
