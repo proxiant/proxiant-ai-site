@@ -34,15 +34,20 @@
 </nav>
 
 <header data-theme="light" class="relative pt-40 pb-20 lg:pt-56 lg:pb-32">
-  <div class="container-x">
+  <div class="page-stars"></div>
+  <div class="hero-orbit" aria-hidden="true">
+    <div class="hero-orbit-glow"></div>
+    <span class="hero-orbit-dot"></span>
+  </div>
+  <div class="container-x relative"">
     <a href="labs.html" class="muted text-[13px] mb-7 inline-flex items-center gap-2" data-reveal>
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
       Back to labs
     </a>
     <div class="grid lg:grid-cols-12 gap-10 items-end">
       <div class="lg:col-span-7">
-        <div class="font-mono text-[12px] tracking-[0.16em] text-zinc-500 mb-9" data-reveal>LAB · PRODUCT · EXECUTION</div>
-        <h1 class="display-xl" data-reveal-up-words>ProxiTrades.</h1>
+        <div class="font-mono text-[12px] tracking-[0.16em] text-zinc-500 mb-9" data-reveal data-scramble>LAB · PRODUCT · EXECUTION</div>
+        <h1 class="display-xl glow-accent" data-reveal-up-words>ProxiTrades.</h1>
         <p class="lead mt-9 max-w-2xl" data-reveal data-delay="2">
           The execution and routing layer that ProxiAlpha sits on top of. TradingView webhook
           receiver, strategy registry, paper and live brokers, full audit log. Built so the same
@@ -57,7 +62,10 @@
         </div>
       </div>
       <div class="lg:col-span-4 lg:col-start-9" data-reveal-scale>
-        <div class="mesh aspect-[4/5]">
+        <div class="mesh aspect-[4/5] scanline relative">
+          <div class="starfield" data-twinkles="20"></div>
+          <div class="orbit-ring"></div>
+          <div class="orbit-ring r2"></div>
           <div class="absolute inset-0 grid place-items-center">
             <div class="text-center">
               <div class="font-mono text-[11px] tracking-[0.2em] text-white/70 mb-3">PROXITRADES</div>
@@ -72,7 +80,7 @@
 </header>
 
 <section data-theme="paper" class="section-tight">
-  <div class="container-x">
+  <div class="container-x relative">
     <div class="grid grid-cols-2 lg:grid-cols-4">
       <div class="line-top py-10 pr-6" data-reveal>
         <div class="counter text-[clamp(48px,6vw,88px)]" data-count="3">0</div>
@@ -204,7 +212,7 @@
       <div class="lg:col-span-2"><div class="font-mono text-[11px] tracking-[0.16em] text-zinc-500 mb-5">EXPLORE</div><ul class="space-y-3"><li><a href="industries.html">Industries</a></li><li><a href="insights.html">Insights</a></li><li><a href="proxialpha.html">ProxiAlpha</a></li><li><a href="terminal.html">Terminal</a></li></ul></div>
       <div class="lg:col-span-3"><div class="font-mono text-[11px] tracking-[0.16em] text-zinc-500 mb-5">COMPANY</div><ul class="space-y-3"><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li><li><a href="https://github.com/proxiant" target="_blank" rel="noopener">GitHub</a></li></ul></div>
     </div>
-    <div class="pt-8 border-t border-white/10 flex flex-wrap items-center justify-between gap-4 text-zinc-500 text-[13px]"><div>© 2026 Proxiant. All rights reserved.</div><div class="flex items-center gap-6"><span>Built in Texas</span><span>·</span><span class="font-mono tracking-[0.16em]">PROXIANT.AI</span></div></div>
+    <div class="pt-8 border-t border-white/10 flex flex-wrap items-center justify-between gap-4 text-zinc-500 text-[13px]"><div>© 2026 Proxiant. All rights reserved.</div><div class="flex items-center gap-6"><span class="font-mono tracking-[0.16em]">PROXIANT.AI</span></div></div>
   </div>
 </footer>
 
