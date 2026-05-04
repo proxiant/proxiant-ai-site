@@ -1,1581 +1,297 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Proxiant Labs — Production-grade AI tools built by practitioners, for practitioners. ProxiAlpha, ProxiFlow, ProxiAgent, and more.">
-  <meta name="theme-color" content="#BF5700">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Proxiant Labs — AI Products">
-  <meta property="og:description" content="Production-grade AI tools built by practitioners, for practitioners.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://proxiant.ai/labs.html">
-  <meta property="og:image" content="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&q=80">
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Proxiant Labs — AI Products">
-  <meta name="twitter:description" content="Production-grade AI tools built by practitioners, for practitioners.">
-  <meta name="twitter:image" content="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&q=80">
-
-  <!-- Canonical -->
-  <link rel="canonical" href="https://proxiant.ai/labs.html">
-
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@300;600;800&family=Outfit:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <title>Proxiant Labs — AI Products</title>
-
-  <style>
-    /* ─── THEME ─── */
-    :root {
-      --primary: #BF5700;
-      --primary-light: #E87511;
-      --primary-dark: #9E4A00;
-      --primary-subtle: rgba(191, 87, 0, 0.08);
-      --primary-glow: rgba(191, 87, 0, 0.25);
-      --charcoal: #1C1C1E;
-      --graphite: #2C2C2E;
-      --slate: #48484A;
-      --ash: #8E8E93;
-      --pearl: #F5F3F0;
-      --cream: #FAF8F5;
-      --navy: #1B3A4B;
-      --teal: #2A9D8F;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: 'Outfit', sans-serif;
-      color: var(--charcoal);
-      background: #fff;
-      line-height: 1.6;
-    }
-
-    h1, h2, h3 {
-      font-family: 'Bricolage Grotesque', sans-serif;
-    }
-
-    .font-display {
-      font-family: 'Bricolage Grotesque', sans-serif;
-    }
-
-    .font-mono {
-      font-family: 'JetBrains Mono', monospace;
-    }
-
-    /* Tailwind Color Overrides */
-    .text-primary { color: var(--primary); }
-    .bg-primary { background-color: var(--primary); }
-    .border-primary { border-color: var(--primary); }
-    .bg-charcoal { background-color: var(--charcoal); }
-    .bg-pearl { background-color: var(--pearl); }
-    .bg-cream { background-color: var(--cream); }
-    .text-charcoal { color: var(--charcoal); }
-
-    /* Hero Pattern */
-    .hero-pattern {
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero-pattern::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(circle at 20% 50%, rgba(191, 87, 0, 0.08) 0%, transparent 50%),
-        radial-gradient(circle at 80% 80%, rgba(42, 157, 143, 0.06) 0%, transparent 50%);
-      pointer-events: none;
-    }
-
-    .hero-dots {
-      position: absolute;
-      inset: 0;
-      background-image:
-        radial-gradient(circle, rgba(191, 87, 0, 0.04) 1px, transparent 1px);
-      background-size: 40px 40px;
-      pointer-events: none;
-    }
-
-    /* Reveal Animation */
-    .reveal {
-      opacity: 0;
-      transform: translateY(40px);
-      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
-                  transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    .reveal.revealed {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .reveal-delay-1 { transition-delay: 0.1s; }
-    .reveal-delay-2 { transition-delay: 0.2s; }
-    .reveal-delay-3 { transition-delay: 0.3s; }
-    .reveal-delay-4 { transition-delay: 0.4s; }
-
-    /* Fade In Animation */
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(40px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .animate-fade-in {
-      animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    .animate-fade-in-delay-1 { animation-delay: 0s; }
-    .animate-fade-in-delay-2 { animation-delay: 0.2s; }
-    .animate-fade-in-delay-3 { animation-delay: 0.4s; }
-    .animate-fade-in-delay-4 { animation-delay: 0.6s; }
-
-    /* Navigation Styles */
-    nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 50;
-      transition: all 0.3s ease;
-    }
-
-    nav.scrolled {
-      background: rgba(255, 255, 255, 0.8);
-      backdrop-filter: blur(16px);
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-    }
-
-    nav:not(.scrolled) {
-      background: transparent;
-    }
-
-    .nav-links a {
-      color: inherit;
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.3s ease;
-    }
-
-    .nav-links a:hover {
-      color: var(--primary);
-    }
-
-    .nav-cta {
-      background: var(--primary);
-      color: white;
-      padding: 0.5rem 1.25rem;
-      border-radius: 0.5rem;
-      text-decoration: none;
-      font-weight: 500;
-      transition: all 0.3s ease;
-      display: inline-block;
-    }
-
-    .nav-cta:hover {
-      background: var(--primary-dark);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 16px rgba(191, 87, 0, 0.25);
-    }
-
-    /* Dropdown Menu */
-    .dropdown-menu {
-      position: absolute;
-      top: 100%;
-      left: 0;
-      background: white;
-      border-radius: 0.75rem;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-      min-width: 250px;
-      padding: 0.5rem;
-      padding-top: 1rem;
-      margin-top: 0;
-      opacity: 0;
-      visibility: hidden;
-      transform: translateY(-10px);
-      transition: all 0.3s ease;
-      pointer-events: none;
-      border: 1px solid rgba(191, 87, 0, 0.1);
-      z-index: 100;
-    }
-
-    .dropdown-item {
-      position: relative;
-      padding-bottom: 0.75rem;
-    }
-
-    .dropdown-item:hover .dropdown-menu,
-    .dropdown-item:focus-within .dropdown-menu {
-      opacity: 1;
-      visibility: visible;
-      transform: translateY(0);
-      pointer-events: auto;
-    }
-
-    .dropdown-menu a {
-      display: block;
-      padding: 0.625rem 1rem;
-      color: #1C1C1E;
-      text-decoration: none;
-      border-radius: 0.375rem;
-      transition: all 0.2s ease;
-      font-size: 0.9375rem;
-    }
-
-    .dropdown-menu a:hover {
-      background: rgba(191, 87, 0, 0.08);
-      color: #BF5700;
-    }
-
-    /* Mobile Menu */
-    .mobile-menu {
-      position: fixed;
-      inset: 0;
-      background: white;
-      z-index: 40;
-      display: none;
-      flex-direction: column;
-      padding: 6rem 2rem 2rem;
-      overflow-y: auto;
-    }
-
-    .mobile-menu.active {
-      display: flex;
-    }
-
-    .mobile-menu a {
-      padding: 1rem 0;
-      color: var(--charcoal);
-      text-decoration: none;
-      font-weight: 500;
-      border-bottom: 1px solid rgba(191, 87, 0, 0.1);
-    }
-
-    .mobile-menu a:hover {
-      color: var(--primary);
-    }
-
-    /* Hamburger Menu */
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      gap: 6px;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 0;
-    }
-
-    @media (max-width: 768px) {
-      .hamburger {
-        display: flex;
-      }
-    }
-
-    .hamburger span {
-      width: 24px;
-      height: 2px;
-      background: var(--charcoal);
-      border-radius: 2px;
-      transition: all 0.3s ease;
-    }
-
-    .hamburger.active span:nth-child(1) {
-      transform: rotate(45deg) translateY(10px);
-    }
-
-    .hamburger.active span:nth-child(2) {
-      opacity: 0;
-    }
-
-    .hamburger.active span:nth-child(3) {
-      transform: rotate(-45deg) translateY(-10px);
-    }
-
-    /* Button Styles */
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-      padding: 0.875rem 2rem;
-      border-radius: 0.5rem;
-      font-weight: 600;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      border: 2px solid transparent;
-      cursor: pointer;
-      font-size: 1rem;
-    }
-
-    .btn-primary {
-      background: var(--primary);
-      color: white;
-      border-color: var(--primary);
-    }
-
-    .btn-primary:hover {
-      background: var(--primary-dark);
-      border-color: var(--primary-dark);
-      transform: translateY(-3px);
-      box-shadow: 0 12px 24px var(--primary-glow);
-    }
-
-    .btn-outline {
-      background: transparent;
-      color: var(--charcoal);
-      border-color: var(--charcoal);
-    }
-
-    .btn-outline:hover {
-      background: var(--charcoal);
-      color: white;
-      transform: translateY(-3px);
-    }
-
-    .btn-white {
-      background: white;
-      color: var(--primary);
-      border-color: white;
-    }
-
-    .btn-white:hover {
-      background: var(--cream);
-      border-color: var(--cream);
-    }
-
-    .btn-outline-white {
-      background: transparent;
-      color: white;
-      border-color: white;
-    }
-
-    .btn-outline-white:hover {
-      background: white;
-      color: var(--primary);
-    }
-
-    /* Badge Styles */
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.5rem 1rem;
-      border-radius: 0.375rem;
-      font-size: 0.875rem;
-      font-weight: 600;
-    }
-
-    .badge-primary {
-      background: var(--primary-subtle);
-      color: var(--primary);
-    }
-
-    .badge-cyan {
-      background: rgba(42, 157, 143, 0.1);
-      color: var(--teal);
-    }
-
-    .badge-white {
-      background: white;
-      color: var(--charcoal);
-    }
-
-    /* Product Card Styles */
-    .product-card {
-      background: white;
-      border: 1px solid rgba(0, 0, 0, 0.08);
-      border-radius: 1rem;
-      padding: 2rem;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-      align-items: center;
-      transition: all 0.3s ease;
-    }
-
-    .product-card:hover {
-      border-color: rgba(191, 87, 0, 0.2);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
-    }
-
-    .product-card.dark {
-      background: var(--charcoal);
-      color: white;
-      border-color: rgba(255, 255, 255, 0.1);
-    }
-
-    .product-card.dark:hover {
-      border-color: rgba(191, 87, 0, 0.4);
-      box-shadow: 0 20px 40px rgba(191, 87, 0, 0.15);
-    }
-
-    .product-card.flagship {
-      grid-template-columns: 1.2fr 1fr;
-    }
-
-    @media (max-width: 1024px) {
-      .product-card {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-      }
-
-      .product-card.flagship {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .product-card.reverse {
-      direction: rtl;
-    }
-
-    .product-card.reverse > * {
-      direction: ltr;
-    }
-
-    .product-image {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: #f0f0f0;
-      border-radius: 0.75rem;
-      min-height: 300px;
-      position: relative;
-    }
-
-    .product-card.dark .product-image {
-      background: var(--graphite);
-    }
-
-    .terminal-mockup {
-      width: 100%;
-      background: #0f1419;
-      border-radius: 0.5rem;
-      overflow: hidden;
-      font-family: 'JetBrains Mono', monospace;
-      color: #00d9ff;
-      border: 1px solid #1a1f2e;
-    }
-
-    .terminal-header {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.75rem 1rem;
-      background: #1a1f2e;
-      border-bottom: 1px solid #1a1f2e;
-      font-size: 0.75rem;
-      color: #6b7280;
-    }
-
-    .terminal-dot {
-      width: 0.5rem;
-      height: 0.5rem;
-      border-radius: 50%;
-      background: currentColor;
-    }
-
-    .terminal-dot.red {
-      color: #ef4444;
-    }
-
-    .terminal-dot.yellow {
-      color: #fbbf24;
-    }
-
-    .terminal-dot.green {
-      color: #10b981;
-    }
-
-    .terminal-content {
-      padding: 1rem;
-      font-size: 0.75rem;
-      line-height: 1.5;
-    }
-
-    .terminal-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr 1fr;
-      gap: 1rem;
-      padding: 0.5rem 0;
-      border-bottom: 1px solid rgba(0, 217, 255, 0.1);
-    }
-
-    .terminal-cell {
-      text-align: left;
-      padding: 0.25rem;
-    }
-
-    .terminal-cell.header {
-      color: #6b7280;
-      font-weight: 600;
-    }
-
-    /* Check Icon */
-    .check-icon {
-      display: inline-block;
-      width: 1rem;
-      height: 1rem;
-      color: var(--primary);
-    }
-
-    /* Feature List */
-    .feature-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-    }
-
-    .feature-list li {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      font-size: 0.95rem;
-    }
-
-    /* Newsletter Input */
-    .newsletter-input {
-      display: flex;
-      background: white;
-      border-radius: 0.5rem;
-      overflow: hidden;
-      border: 1px solid rgba(0, 0, 0, 0.1);
-    }
-
-    .newsletter-input input {
-      flex: 1;
-      padding: 0.75rem 1rem;
-      border: none;
-      outline: none;
-      font-size: 0.95rem;
-    }
-
-    .newsletter-input button {
-      padding: 0.75rem 1.5rem;
-      background: var(--primary);
-      color: white;
-      border: none;
-      cursor: pointer;
-      font-weight: 600;
-      transition: background 0.3s ease;
-    }
-
-    .newsletter-input button:hover {
-      background: var(--primary-dark);
-    }
-
-    /* Scroll to Top */
-    #scrollToTop {
-      display: none;
-      align-items: center;
-      justify-content: center;
-      width: 3rem;
-      height: 3rem;
-      border-radius: 50%;
-      background: var(--primary);
-      color: white;
-      text-decoration: none;
-      transition: all 0.3s ease;
-    }
-
-    #scrollToTop:hover {
-      background: var(--primary-dark);
-      transform: translateY(-4px);
-    }
-
-    /* Roadmap Card */
-    .roadmap-card {
-      background: white;
-      border: 1px solid rgba(0, 0, 0, 0.08);
-      border-radius: 0.75rem;
-      padding: 1.5rem;
-      text-align: center;
-      transition: all 0.3s ease;
-    }
-
-    .roadmap-card:hover {
-      border-color: rgba(191, 87, 0, 0.2);
-      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
-      transform: translateY(-4px);
-    }
-
-    .roadmap-quarter {
-      font-weight: 600;
-      font-size: 0.875rem;
-      color: white;
-      background: var(--primary);
-      padding: 0.5rem 1rem;
-      border-radius: 0.375rem;
-      display: inline-block;
-      margin-bottom: 1rem;
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AI Labs — Proxiant</title>
+<meta name="description" content="Proxiant Labs is our internal R&D arm. Where research turns into product. Home of ProxiAlpha and ProxiTrades." />
+<link rel="icon" type="image/png" href="assets/favicon.png" />
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="assets/site.css" />
 </head>
 <body>
-  <!-- Navigation -->
-  <nav class="nav-bar">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-20">
-        <!-- Logo -->
-        <div class="flex items-center">
-          <a href="index.html" class="font-display font-bold text-2xl text-charcoal">Proxiant</a>
-        </div>
 
-        <!-- Desktop Navigation -->
-        <div class="nav-links hidden md:flex items-center gap-8">
-          <div class="dropdown-item relative">
-            <button class="text-charcoal hover:text-primary transition-colors cursor-pointer bg-transparent border-none">Services</button>
-            <div class="dropdown-menu">
-              <a href="index.html#services">AI Consulting & Strategy</a>
-              <a href="index.html#services">Product Engineering</a>
-              <a href="index.html#services">Cloud & Infrastructure</a>
-              <a href="index.html#services">Data & Analytics</a>
-              <a href="index.html#services">Managed Operations</a>
-            </div>
-          </div>
-          <div class="dropdown-item relative">
-            <button class="text-charcoal hover:text-primary transition-colors cursor-pointer bg-transparent border-none">Industries</button>
-            <div class="dropdown-menu">
-              <a href="industry-financial-services.html">Financial Services</a>
-              <a href="industry-healthcare.html">Healthcare</a>
-              <a href="industry-manufacturing.html">Manufacturing</a>
-              <a href="industry-retail.html">Retail & E-Commerce</a>
-              <a href="industry-energy.html">Energy & Utilities</a>
-              <a href="industry-telecom.html">Telecommunications</a>
-              <a href="industry-insurance.html">Insurance</a>
-              <a href="industry-transportation.html">Transportation & Logistics</a>
-            </div>
-          </div>
-          <a href="labs.html" class="text-charcoal hover:text-primary transition-colors font-semibold">Labs</a>
-          <a href="index.html#insights" class="text-charcoal hover:text-primary transition-colors">Insights</a>
-          <a href="index.html#about" class="text-charcoal hover:text-primary transition-colors">About</a>
-        </div>
-
-        <!-- CTA Button & Hamburger -->
-        <div class="flex items-center gap-4">
-          <a href="index.html#cta" class="nav-cta hidden md:inline-block">Contact Us</a>
-          <button class="hamburger" id="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
-        </div>
-      </div>
+<nav class="nav">
+  <div class="container-x nav-inner">
+    <a href="index.html" class="brand">
+      <span class="brand-mark">P</span>
+      <span class="brand-name">Proxiant</span>
+    </a>
+    <div class="nav-links">
+      <a href="solutions.html" class="nav-link">Consulting</a>
+      <a href="labs.html" class="nav-link">Labs</a>
+      <a href="training.html" class="nav-link">Training</a>
+      <a href="industries.html" class="nav-link">Industries</a>
+      <a href="insights.html" class="nav-link">Insights</a>
+      <a href="about.html" class="nav-link">About</a>
     </div>
-  </nav>
-
-  <!-- Mobile Menu -->
-  <div class="mobile-menu" id="mobileMenu">
-    <a href="index.html#services">Services</a>
-    <a href="index.html#industries">Industries</a>
-    <a href="labs.html">Labs</a>
-    <a href="index.html#insights">Insights</a>
-    <a href="index.html#about">About</a>
-    <a href="index.html#cta" class="mt-8 text-primary font-bold">Contact Us</a>
+    <div class="flex items-center gap-2">
+      <a href="contact.html" class="btn btn-dark">Talk to us
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+      <button class="nav-mobile-toggle btn btn-outline h-11 w-11 p-0" aria-label="Menu">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
   </div>
+</nav>
 
-  <!-- Hero Section -->
-  <section class="hero-pattern bg-pearl pt-32 pb-20 lg:pt-40 lg:pb-28">
-    <div class="hero-dots"></div>
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      <div class="text-center max-w-4xl mx-auto">
-        <div class="reveal reveal-delay-1">
-          <span class="font-mono text-sm font-bold text-primary uppercase tracking-wider">OUR PRODUCTS</span>
+<header data-theme="light" class="relative pt-40 pb-20 lg:pt-56 lg:pb-32">
+  <div class="container-x">
+    <div class="grid lg:grid-cols-12 gap-10 items-end">
+      <div class="lg:col-span-7">
+        <div class="font-mono text-[12px] tracking-[0.16em] text-zinc-500 mb-9" data-reveal>PRACTICE / 02 — AI LABS</div>
+        <h1 class="display-xl" data-reveal-up-words>Research that turns into product.</h1>
+        <p class="lead mt-9 max-w-2xl" data-reveal data-delay="2">
+          Labs is our internal R&amp;D arm. We use it to keep practical knowledge ahead of client work,
+          and the work occasionally ships as standalone systems we run ourselves.
+        </p>
+        <div class="mt-10 flex flex-wrap gap-3" data-reveal data-delay="3">
+          <a href="#products" class="btn btn-dark">See the products
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#research" class="btn btn-outline">Research areas</a>
         </div>
-
-        <div class="reveal reveal-delay-2">
-          <h1 class="font-display font-bold text-5xl lg:text-6xl text-charcoal mt-6 mb-6 leading-tight">
-            Proxiant Labs
-          </h1>
-        </div>
-
-        <div class="reveal reveal-delay-3">
-          <p class="text-xl text-charcoal/70 max-w-2xl mx-auto">
-            Production-grade AI tools — built by practitioners, for practitioners.
-          </p>
+      </div>
+      <div class="lg:col-span-4 lg:col-start-9" data-reveal-scale>
+        <div class="mesh aspect-[4/5]">
+          <div class="absolute inset-0 grid place-items-center">
+            <div class="text-center">
+              <div class="font-mono text-[11px] tracking-[0.2em] text-white/70 mb-3">LABS</div>
+              <div class="font-serif italic text-[clamp(48px,6vw,96px)] text-white leading-none">02</div>
+              <div class="font-mono text-[11px] tracking-[0.2em] text-white/70 mt-3">PRACTICE</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</header>
 
-  <!-- Product Showcase -->
-  <section class="py-20 lg:py-28">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
-
-      <!-- Product 1: ProxiAlpha (Flagship) -->
-      <div class="reveal product-card flagship dark">
-        <div class="product-image">
-          <div class="terminal-mockup">
-            <div class="terminal-header">
-              <span class="terminal-dot red"></span>
-              <span class="terminal-dot yellow"></span>
-              <span class="terminal-dot green"></span>
-              <span style="margin-left: auto; font-size: 0.75rem;">proxialpha terminal</span>
-            </div>
-            <div class="terminal-content">
-              <div class="terminal-row">
-                <div class="terminal-cell header">Symbol</div>
-                <div class="terminal-cell header">Signal</div>
-                <div class="terminal-cell header">Confidence</div>
-                <div class="terminal-cell header">Price</div>
-              </div>
-              <div class="terminal-row">
-                <div class="terminal-cell">AAPL</div>
-                <div class="terminal-cell">BUY</div>
-                <div class="terminal-cell">94.2%</div>
-                <div class="terminal-cell">$182.50</div>
-              </div>
-              <div class="terminal-row">
-                <div class="terminal-cell">GOOGL</div>
-                <div class="terminal-cell">HOLD</div>
-                <div class="terminal-cell">78.5%</div>
-                <div class="terminal-cell">$139.20</div>
-              </div>
-              <div class="terminal-row">
-                <div class="terminal-cell">MSFT</div>
-                <div class="terminal-cell">BUY</div>
-                <div class="terminal-cell">89.1%</div>
-                <div class="terminal-cell">$428.65</div>
-              </div>
-              <div class="terminal-row">
-                <div class="terminal-cell">TSLA</div>
-                <div class="terminal-cell">SELL</div>
-                <div class="terminal-cell">91.7%</div>
-                <div class="terminal-cell">$241.80</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div>
-          <div class="badge badge-cyan mb-4">
-            <span style="width: 8px; height: 8px; background: var(--teal); border-radius: 2px;"></span>
-            FLAGSHIP
-          </div>
-
-          <h2 class="font-display font-bold text-4xl mb-3 text-white">ProxiAlpha</h2>
-          <p class="text-lg text-gray-300 mb-2">AI-Powered Trading Engine</p>
-
-          <p class="text-white/80 mb-6 leading-relaxed">
-            15 concurrent strategies powered by multi-LLM analysis. Real-time signals, backtesting, and automated execution.
-          </p>
-
-          <ul class="feature-list mb-8 text-white/80">
-            <li>
-              <svg class="check-icon" viewBox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-              </svg>
-              <span>Multi-LLM Integration</span>
-            </li>
-            <li>
-              <svg class="check-icon" viewBox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-              </svg>
-              <span>15 Trading Strategies</span>
-            </li>
-            <li>
-              <svg class="check-icon" viewBox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-              </svg>
-              <span>Real-time WebSocket Signals</span>
-            </li>
-            <li>
-              <svg class="check-icon" viewBox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-              </svg>
-              <span>Paper Trading Simulator</span>
-            </li>
-          </ul>
-
-          <div class="flex flex-wrap gap-3 mb-8">
-            <span class="badge badge-white">Free (self-hosted)</span>
-            <span class="badge badge-white">$499/mo (managed)</span>
-          </div>
-
-          <div class="flex flex-wrap gap-4">
-            <a href="terminal.html" class="btn btn-primary">Launch Terminal →</a>
-            <a href="proxialpha.html" class="btn btn-outline-white">Learn More →</a>
-          </div>
-        </div>
+<!-- Products — paper -->
+<section id="products" data-theme="paper" class="section">
+  <div class="container-x">
+    <div class="grid lg:grid-cols-12 gap-10 mb-16">
+      <div class="lg:col-span-7">
+        <div class="eyebrow mb-6" data-reveal>Lab products</div>
+        <h2 class="display-lg" data-reveal data-delay="1">
+          Things we built <span class="italic-accent font-serif">that we still run.</span>
+        </h2>
       </div>
-
-      <!-- Product 2: ProxiTrades -->
-      <div class="reveal product-card flagship dark">
-        <div class="product-image">
-          <div class="terminal-mockup" style="background:#000;color:#00ff41;font-family:'JetBrains Mono',monospace;border:1px solid rgba(0,255,65,.25);box-shadow:inset 0 0 60px rgba(0,255,65,.06)">
-            <div class="terminal-header">
-              <span class="terminal-dot red"></span>
-              <span class="terminal-dot yellow"></span>
-              <span class="terminal-dot green"></span>
-              <span style="margin-left: auto; font-size: 0.75rem;">proxitrades :: cockpit</span>
-            </div>
-            <div class="terminal-content">
-              <div class="terminal-row">
-                <div class="terminal-cell header">Strategy</div>
-                <div class="terminal-cell header">OOS Sharpe</div>
-                <div class="terminal-cell header">Annual</div>
-                <div class="terminal-cell header">Max DD</div>
-              </div>
-              <div class="terminal-row">
-                <div class="terminal-cell">strategy_v7</div>
-                <div class="terminal-cell" style="color:#b9ffc6">2.06</div>
-                <div class="terminal-cell">30.2%</div>
-                <div class="terminal-cell">6.0%</div>
-              </div>
-              <div class="terminal-row">
-                <div class="terminal-cell">v4_stocks</div>
-                <div class="terminal-cell">1.81</div>
-                <div class="terminal-cell">24.0%</div>
-                <div class="terminal-cell">5.97%</div>
-              </div>
-              <div class="terminal-row">
-                <div class="terminal-cell">v4 (ETFs)</div>
-                <div class="terminal-cell">1.13</div>
-                <div class="terminal-cell">14.7%</div>
-                <div class="terminal-cell">7.5%</div>
-              </div>
-              <div class="terminal-row">
-                <div class="terminal-cell">v8 ladder</div>
-                <div class="terminal-cell">0.80</div>
-                <div class="terminal-cell">6.5%</div>
-                <div class="terminal-cell" style="color:#b9ffc6">3.96%</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div>
-          <div class="badge badge-cyan mb-4">
-            <span style="width: 8px; height: 8px; background: #00ff41; border-radius: 2px;"></span>
-            ADAPTIVE TRADING
-          </div>
-
-          <h2 class="font-display font-bold text-4xl mb-3 text-white">ProxiTrades</h2>
-          <p class="text-lg text-gray-300 mb-2">Adaptive Multi-Strategy Trading System</p>
-
-          <p class="text-white/80 mb-6 leading-relaxed">
-            TradingView-triggered, broker-routed (Alpaca, IBKR), with a five-loop
-            strategy generator that mints, validates, and retires strategies faster
-            than the market arbitrages them away. Every day at 20:00 UTC the
-            system writes a structured report — what worked, what didn't, why —
-            with LLM-suggested config diffs you can review and execute.
-          </p>
-
-          <ul class="feature-list mb-8 text-white/80">
-            <li>
-              <svg class="check-icon" viewBox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-              </svg>
-              <span>V7 baseline: OOS Sharpe 2.06, 30.2% annualized, 6% max DD</span>
-            </li>
-            <li>
-              <svg class="check-icon" viewBox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-              </svg>
-              <span>Walk-forward validated on real Alpaca data, 4-fold OOS</span>
-            </li>
-            <li>
-              <svg class="check-icon" viewBox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-              </svg>
-              <span>Adversarial Bull/Bear/Referee debate on every hypothesis</span>
-            </li>
-            <li>
-              <svg class="check-icon" viewBox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-              </svg>
-              <span>Daily learning report — emailed, persisted, with applied-diff trail</span>
-            </li>
-            <li>
-              <svg class="check-icon" viewBox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-              </svg>
-              <span>Three-layer kill switch (operator CLI, dead-man, broker bracket)</span>
-            </li>
-          </ul>
-
-          <div class="flex flex-wrap gap-3 mb-8">
-            <span class="badge badge-white">Open source</span>
-            <span class="badge badge-white">Paper-trading live</span>
-          </div>
-
-          <div class="flex flex-wrap gap-4">
-            <a href="proxitrades.html" class="btn btn-primary">Explore ProxiTrades →</a>
-            <a href="https://github.com/proxiant/ProxiTrades" target="_blank" rel="noopener" class="btn btn-outline-white">GitHub →</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Product 3: ProxiFlow -->
-      <div class="reveal product-card">
-        <div class="product-image">
-          <svg width="280" height="240" viewBox="0 0 280 240" fill="none">
-            <circle cx="60" cy="60" r="20" fill="#F5F3F0" stroke="#BF5700" stroke-width="2"/>
-            <circle cx="220" cy="60" r="20" fill="#F5F3F0" stroke="#BF5700" stroke-width="2"/>
-            <circle cx="140" cy="140" r="20" fill="#F5F3F0" stroke="#BF5700" stroke-width="2"/>
-            <circle cx="60" cy="220" r="20" fill="#F5F3F0" stroke="#BF5700" stroke-width="2"/>
-            <circle cx="220" cy="220" r="20" fill="#F5F3F0" stroke="#BF5700" stroke-width="2"/>
-            <line x1="80" y1="60" x2="200" y2="60" stroke="#BF5700" stroke-width="2" stroke-dasharray="5,5"/>
-            <line x1="220" y1="80" x2="140" y2="120" stroke="#BF5700" stroke-width="2" stroke-dasharray="5,5"/>
-            <line x1="60" y1="80" x2="140" y2="120" stroke="#BF5700" stroke-width="2" stroke-dasharray="5,5"/>
-            <line x1="60" y1="140" x2="60" y2="200" stroke="#BF5700" stroke-width="2" stroke-dasharray="5,5"/>
-            <line x1="220" y1="140" x2="220" y2="200" stroke="#BF5700" stroke-width="2" stroke-dasharray="5,5"/>
-            <line x1="140" y1="160" x2="80" y2="200" stroke="#BF5700" stroke-width="2" stroke-dasharray="5,5"/>
-            <line x1="140" y1="160" x2="200" y2="200" stroke="#BF5700" stroke-width="2" stroke-dasharray="5,5"/>
-            <text x="60" y="67" text-anchor="middle" font-size="24">⚙️</text>
-            <text x="220" y="67" text-anchor="middle" font-size="24">📊</text>
-            <text x="140" y="147" text-anchor="middle" font-size="24">🔄</text>
-            <text x="60" y="227" text-anchor="middle" font-size="24">📤</text>
-            <text x="220" y="227" text-anchor="middle" font-size="24">✅</text>
-          </svg>
-        </div>
-
-        <div>
-          <div class="badge badge-primary mb-4">
-            <span style="width: 8px; height: 8px; background: var(--primary); border-radius: 2px;"></span>
-            WORKFLOW AUTOMATION
-          </div>
-
-          <h2 class="font-display font-bold text-3xl mb-3 text-charcoal">ProxiFlow</h2>
-          <p class="text-lg text-charcoal/70 mb-2">Visual AI Workflow Builder</p>
-
-          <p class="text-charcoal/70 mb-6 leading-relaxed">
-            Visual AI workflow builder. Connect data sources, models, and actions into automated pipelines.
-          </p>
-
-          <ul class="feature-list mb-8 text-charcoal/70">
-            <li>
-              <svg class="check-icon" viewBox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-              </svg>
-              <span>Drag-and-drop Builder</span>
-            </li>
-            <li>
-              <svg class="check-icon" viewBox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-              </svg>
-              <span>50+ Integrations</span>
-            </li>
-            <li>
-              <svg class="check-icon" viewBox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-              </svg>
-              <span>Auto-scaling</span>
-            </li>
-            <li>
-              <svg class="check-icon" viewBox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-              </svg>
-              <span>Version Control</span>
-            </li>
-          </ul>
-
-          <div class="flex flex-wrap gap-3 mb-8">
-            <span class="badge badge-primary">Free</span>
-          </div>
-
-          <div class="flex flex-wrap gap-4">
-            <a href="#proxiflow" class="btn btn-primary">Try ProxiFlow →</a>
-            <a href="#docs" class="btn btn-outline">View Docs →</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Product 3: ProxiAgent -->
-      <div class="reveal product-card reverse">
-        <div class="product-image">
-          <svg width="280" height="240" viewBox="0 0 280 240" fill="none">
-            <rect x="100" y="20" width="80" height="80" rx="4" fill="#F5F3F0" stroke="#BF5700" stroke-width="2"/>
-            <circle cx="120" cy="50" r="8" fill="#BF5700"/>
-            <circle cx="160" cy="50" r="8" fill="#BF5700"/>
-            <rect x="135" y="65" width="10" height="15" fill="#BF5700"/>
-            <circle cx="50" cy="80" r="18" fill="none" stroke="#BF5700" stroke-width="2" stroke-dasharray="2,2"/>
-            <circle cx="230" cy="80" r="18" fill="none" stroke="#BF5700" stroke-width="2" stroke-dasharray="2,2"/>
-            <circle cx="140" cy="160" r="22" fill="none" stroke="#BF5700" stroke-width="2" stroke-dasharray="2,2"/>
-            <line x1="100" y1="100" x2="70" y2="90" stroke="#BF5700" stroke-width="2"/>
-            <line x1="180" y1="100" x2="210" y2="90" stroke="#BF5700" stroke-width="2"/>
-            <line x1="140" y1="100" x2="140" y2="138" stroke="#BF5700" stroke-width="2"/>
-            <text x="50" y="85" text-anchor="middle" font-size="20">🧠</text>
-            <text x="230" y="85" text-anchor="middle" font-size="20">⚡</text>
-            <text x="140" y="168" text-anchor="middle" font-size="24">🔧</text>
-          </svg>
-        </div>
-
-        <div>
-          <div class="badge badge-primary mb-4">
-            <span style="width: 8px; height: 8px; background: var(--primary); border-radius: 2px;"></span>
-            AGENTIC AI
-          </div>
-
-          <h2 class="font-display font-bold text-3xl mb-3 text-charcoal">ProxiAgent</h2>
-          <p class="text-lg text-charcoal/70 mb-2">Agentic AI Framework</p>
-
-          <p class="text-charcoal/70 mb-6 leading-relaxed">
-            Build autonomous AI agents that reason, plan, and execute. Production-ready framework with guardrails.
-          </p>
-
-          <ul class="feature-list mb-8 text-charcoal/70">
-            <li>
-              <svg class="check-icon" viewBox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-              </svg>
-              <span>Multi-step Reasoning</span>
-            </li>
-            <li>
-              <svg class="check-icon" viewBox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-              </svg>
-              <span>Tool Use & Function Calling</span>
-            </li>
-            <li>
-              <svg class="check-icon" viewBox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-              </svg>
-              <span>Memory & Context</span>
-            </li>
-            <li>
-              <svg class="check-icon" viewBox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-              </svg>
-              <span>Safety Guardrails</span>
-            </li>
-          </ul>
-
-          <div class="flex flex-wrap gap-3 mb-8">
-            <span class="badge badge-primary">$99/mo</span>
-          </div>
-
-          <div class="flex flex-wrap gap-4">
-            <a href="#proxiagent" class="btn btn-primary">Get Started →</a>
-            <a href="#github" class="btn btn-outline">GitHub →</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Product 4: ProxiGuard -->
-      <div class="reveal product-card">
-        <div class="product-image">
-          <svg width="280" height="240" viewBox="0 0 280 240" fill="none">
-            <path d="M140 20L60 50V130C60 180 140 220 140 220C140 220 220 180 220 130V50L140 20Z" fill="none" stroke="#BF5700" stroke-width="2"/>
-            <path d="M110 130L130 150L170 110" stroke="#BF5700" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-            <circle cx="60" cy="80" r="12" fill="#BF5700"/>
-            <text x="60" y="85" text-anchor="middle" font-size="16" fill="white">✓</text>
-            <circle cx="220" cy="80" r="12" fill="#BF5700"/>
-            <text x="220" y="85" text-anchor="middle" font-size="16" fill="white">✓</text>
-            <circle cx="140" cy="200" r="12" fill="#BF5700"/>
-            <text x="140" y="205" text-anchor="middle" font-size="16" fill="white">✓</text>
-          </svg>
-        </div>
-
-        <div>
-          <div class="badge badge-primary mb-4">
-            <span style="width: 8px; height: 8px; background: var(--primary); border-radius: 2px;"></span>
-            GOVERNANCE & COMPLIANCE
-          </div>
-
-          <h2 class="font-display font-bold text-3xl mb-3 text-charcoal">ProxiGuard</h2>
-          <p class="text-lg text-charcoal/70 mb-2">AI Governance & Compliance</p>
-
-          <p class="text-charcoal/70 mb-6 leading-relaxed">
-            Monitor, audit, and govern AI systems. Ensure compliance with EU AI Act, SOC 2, and industry regulations.
-          </p>
-
-          <ul class="feature-list mb-8 text-charcoal/70">
-            <li>
-              <svg class="check-icon" viewBox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-              </svg>
-              <span>Model Audit Trails</span>
-            </li>
-            <li>
-              <svg class="check-icon" viewBox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-              </svg>
-              <span>Bias Detection</span>
-            </li>
-            <li>
-              <svg class="check-icon" viewBox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-              </svg>
-              <span>Compliance Reports</span>
-            </li>
-            <li>
-              <svg class="check-icon" viewBox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-              </svg>
-              <span>Risk Scoring</span>
-            </li>
-          </ul>
-
-          <div class="flex flex-wrap gap-3 mb-8">
-            <span class="badge badge-primary">$149/mo</span>
-          </div>
-
-          <div class="flex flex-wrap gap-4">
-            <a href="#proxiguard" class="btn btn-primary">Start Free Trial →</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Product 5: ProxiInsight -->
-      <div class="reveal product-card reverse">
-        <div class="product-image">
-          <svg width="280" height="240" viewBox="0 0 280 240" fill="none">
-            <rect x="50" y="140" width="30" height="60" fill="none" stroke="#BF5700" stroke-width="2" rx="2"/>
-            <rect x="95" y="100" width="30" height="100" fill="none" stroke="#BF5700" stroke-width="2" rx="2"/>
-            <rect x="140" y="80" width="30" height="120" fill="none" stroke="#BF5700" stroke-width="2" rx="2"/>
-            <rect x="185" y="110" width="30" height="90" fill="none" stroke="#BF5700" stroke-width="2" rx="2"/>
-            <line x1="40" y1="200" x2="230" y2="200" stroke="#BF5700" stroke-width="2"/>
-            <text x="140" y="40" text-anchor="middle" font-size="18" font-weight="bold" fill="#BF5700">📊 Analytics</text>
-          </svg>
-        </div>
-
-        <div>
-          <div class="badge badge-primary mb-4">
-            <span style="width: 8px; height: 8px; background: var(--primary); border-radius: 2px;"></span>
-            ANALYTICS DASHBOARD
-          </div>
-
-          <h2 class="font-display font-bold text-3xl mb-3 text-charcoal">ProxiInsight</h2>
-          <p class="text-lg text-charcoal/70 mb-2">Analytics Dashboard</p>
-
-          <p class="text-charcoal/70 mb-6 leading-relaxed">
-            Real-time AI performance analytics. Track model accuracy, latency, cost, and business impact in one dashboard.
-          </p>
-
-          <ul class="feature-list mb-8 text-charcoal/70">
-            <li>
-              <svg class="check-icon" viewBox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-              </svg>
-              <span>Real-time Metrics</span>
-            </li>
-            <li>
-              <svg class="check-icon" viewBox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-              </svg>
-              <span>Custom Dashboards</span>
-            </li>
-            <li>
-              <svg class="check-icon" viewBox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-              </svg>
-              <span>Alert System</span>
-            </li>
-            <li>
-              <svg class="check-icon" viewBox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-              </svg>
-              <span>Cost Tracking</span>
-            </li>
-          </ul>
-
-          <div class="flex flex-wrap gap-3 mb-8">
-            <span class="badge badge-primary">Free</span>
-          </div>
-
-          <div class="flex flex-wrap gap-4">
-            <a href="#proxiinsight" class="btn btn-primary">Launch Dashboard →</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Product 6: ProxiConnect -->
-      <div class="reveal product-card">
-        <div class="product-image">
-          <svg width="280" height="240" viewBox="0 0 280 240" fill="none">
-            <circle cx="140" cy="120" r="25" fill="none" stroke="#BF5700" stroke-width="2"/>
-            <circle cx="50" cy="60" r="15" fill="none" stroke="#BF5700" stroke-width="2"/>
-            <circle cx="230" cy="60" r="15" fill="none" stroke="#BF5700" stroke-width="2"/>
-            <circle cx="50" cy="180" r="15" fill="none" stroke="#BF5700" stroke-width="2"/>
-            <circle cx="230" cy="180" r="15" fill="none" stroke="#BF5700" stroke-width="2"/>
-            <line x1="65" y1="75" x2="115" y2="105" stroke="#BF5700" stroke-width="2" stroke-dasharray="5,5"/>
-            <line x1="215" y1="75" x2="165" y2="105" stroke="#BF5700" stroke-width="2" stroke-dasharray="5,5"/>
-            <line x1="65" y1="165" x2="115" y2="135" stroke="#BF5700" stroke-width="2" stroke-dasharray="5,5"/>
-            <line x1="215" y1="165" x2="165" y2="135" stroke="#BF5700" stroke-width="2" stroke-dasharray="5,5"/>
-            <text x="50" y="65" text-anchor="middle" font-size="16">🔌</text>
-            <text x="230" y="65" text-anchor="middle" font-size="16">⚙️</text>
-            <text x="50" y="185" text-anchor="middle" font-size="16">📡</text>
-            <text x="230" y="185" text-anchor="middle" font-size="16">🌐</text>
-            <text x="140" y="125" text-anchor="middle" font-size="20">🔗</text>
-          </svg>
-        </div>
-
-        <div>
-          <div class="badge badge-primary mb-4">
-            <span style="width: 8px; height: 8px; background: var(--primary); border-radius: 2px;"></span>
-            API INTEGRATION
-          </div>
-
-          <h2 class="font-display font-bold text-3xl mb-3 text-charcoal">ProxiConnect</h2>
-          <p class="text-lg text-charcoal/70 mb-2">API Integration Hub</p>
-
-          <p class="text-charcoal/70 mb-6 leading-relaxed">
-            Universal API gateway for AI services. Connect any model, any provider, one unified interface.
-          </p>
-
-          <ul class="feature-list mb-8 text-charcoal/70">
-            <li>
-              <svg class="check-icon" viewBox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-              </svg>
-              <span>50+ Provider Integrations</span>
-            </li>
-            <li>
-              <svg class="check-icon" viewBox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-              </svg>
-              <span>Load Balancing</span>
-            </li>
-            <li>
-              <svg class="check-icon" viewBox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-              </svg>
-              <span>Rate Limiting</span>
-            </li>
-            <li>
-              <svg class="check-icon" viewBox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-              </svg>
-              <span>Usage Analytics</span>
-            </li>
-          </ul>
-
-          <div class="flex flex-wrap gap-3 mb-8">
-            <span class="badge badge-primary">Free (up to 10K calls)</span>
-          </div>
-
-          <div class="flex flex-wrap gap-4">
-            <a href="#proxiconnect" class="btn btn-primary">View API Docs →</a>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Developer Section -->
-  <section class="bg-charcoal text-white py-20 lg:py-28">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="max-w-3xl mx-auto text-center mb-12">
-        <div class="reveal reveal-delay-1">
-          <h2 class="font-display font-bold text-4xl lg:text-5xl mb-6">Built for Developers</h2>
-        </div>
-        <div class="reveal reveal-delay-2">
-          <p class="text-xl text-gray-300">
-            Proxiant Labs APIs are production-ready and built for enterprise-scale deployments.
-          </p>
-        </div>
-      </div>
-
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
-        <div class="reveal reveal-delay-3">
-          <div style="background: #0f1419; border: 1px solid #1a1f2e; border-radius: 0.75rem; padding: 1.5rem; font-family: 'JetBrains Mono', monospace; font-size: 0.875rem; color: #00d9ff; line-height: 1.6; overflow-x: auto;">
-            <div style="color: #6b7280; margin-bottom: 0.5rem;">from proxiant import ProxiAlpha</div>
-            <div style="margin-bottom: 0.5rem;"></div>
-            <div style="color: #6b7280;">client = ProxiAlpha(</div>
-            <div style="margin-left: 1rem;">api_key=<span style="color: #a3e635;">"your-key"</span></div>
-            <div style="color: #6b7280;">)</div>
-            <div style="margin-bottom: 0.5rem;"></div>
-            <div style="color: #6b7280;">signals = client.get_signals(</div>
-            <div style="margin-left: 1rem;">strategies=[<span style="color: #a3e635;">"momentum"</span>, <span style="color: #a3e635;">"mean_reversion"</span>],</div>
-            <div style="margin-left: 1rem;">symbols=[<span style="color: #a3e635;">"AAPL"</span>, <span style="color: #a3e635;">"GOOGL"</span>, <span style="color: #a3e635;">"MSFT"</span>]</div>
-            <div style="color: #6b7280;">)</div>
-          </div>
-        </div>
-
-        <div class="reveal reveal-delay-4">
-          <div class="grid grid-cols-1 gap-4">
-            <div style="background: rgba(191, 87, 0, 0.1); border: 1px solid rgba(191, 87, 0, 0.2); border-radius: 0.75rem; padding: 1.5rem; text-center">
-              <div style="font-size: 2rem; font-weight: bold; color: #BF5700; margin-bottom: 0.5rem;">10K+</div>
-              <div style="text-gray-400;">API calls/day</div>
-            </div>
-            <div style="background: rgba(191, 87, 0, 0.1); border: 1px solid rgba(191, 87, 0, 0.2); border-radius: 0.75rem; padding: 1.5rem; text-center">
-              <div style="font-size: 2rem; font-weight: bold; color: #BF5700; margin-bottom: 0.5rem;">99.9%</div>
-              <div style="text-gray-400;">uptime SLA</div>
-            </div>
-            <div style="background: rgba(191, 87, 0, 0.1); border: 1px solid rgba(191, 87, 0, 0.2); border-radius: 0.75rem; padding: 1.5rem; text-center">
-              <div style="font-size: 2rem; font-weight: bold; color: #BF5700; margin-bottom: 0.5rem;">50ms</div>
-              <div style="text-gray-400;">avg latency</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="reveal reveal-delay-4 flex flex-wrap justify-center gap-6 pt-8">
-        <a href="#api-docs" class="btn btn-outline-white">API Documentation →</a>
-        <a href="#github" class="btn btn-outline-white">GitHub →</a>
-        <a href="#discord" class="btn btn-outline-white">Discord Community →</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Roadmap Section -->
-  <section class="bg-pearl py-20 lg:py-28">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16">
-        <div class="reveal reveal-delay-1">
-          <h2 class="font-display font-bold text-4xl lg:text-5xl text-charcoal mb-6">What's Coming</h2>
-        </div>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div class="reveal reveal-delay-1 roadmap-card">
-          <div class="roadmap-quarter">Q2 2026</div>
-          <h3 class="font-display font-bold text-xl mb-2 text-charcoal">ProxiAlpha v2</h3>
-          <p class="text-charcoal/70">Multi-asset support with crypto and commodities</p>
-        </div>
-
-        <div class="reveal reveal-delay-2 roadmap-card">
-          <div class="roadmap-quarter">Q3 2026</div>
-          <h3 class="font-display font-bold text-xl mb-2 text-charcoal">ProxiFlow Studio</h3>
-          <p class="text-charcoal/70">Visual workflow designer with real-time collaboration</p>
-        </div>
-
-        <div class="reveal reveal-delay-3 roadmap-card">
-          <div class="roadmap-quarter">Q4 2026</div>
-          <h3 class="font-display font-bold text-xl mb-2 text-charcoal">ProxiGuard Enterprise</h3>
-          <p class="text-charcoal/70">On-premises deployment and self-managed governance</p>
-        </div>
-
-        <div class="reveal reveal-delay-4 roadmap-card">
-          <div class="roadmap-quarter">Q1 2027</div>
-          <h3 class="font-display font-bold text-xl mb-2 text-charcoal">ProxiAgent Cloud</h3>
-          <p class="text-charcoal/70">Fully managed agent hosting and scaling</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Bottom CTA -->
-  <section class="bg-primary py-16 lg:py-24">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <div class="reveal reveal-delay-1">
-        <h2 class="font-display font-bold text-4xl lg:text-5xl text-white mb-6">Start Building with Proxiant Labs</h2>
-      </div>
-
-      <div class="reveal reveal-delay-2">
-        <p class="text-xl text-white/90 mb-8">
-          All products include free tier. No credit card required.
+      <div class="lg:col-span-4 lg:col-start-9 self-end">
+        <p class="lead" data-reveal data-delay="2">
+          Not demos. Running systems on our own infrastructure, under the same standard we sell to
+          clients.
         </p>
       </div>
-
-      <div class="reveal reveal-delay-3">
-        <a href="#products" class="btn btn-white">Explore Products →</a>
-      </div>
     </div>
-  </section>
 
-  <!-- Footer -->
-  <footer class="bg-charcoal text-white py-16">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <!-- Top Section: Logo & Newsletter -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16 pb-16 border-b border-white/10">
-        <div>
-          <h3 class="font-display font-bold text-2xl mb-2">Proxiant</h3>
-          <p class="text-gray-400">Enterprise AI Consulting & Engineering</p>
-        </div>
-        <div>
-          <p class="text-sm text-gray-400 mb-4">Subscribe to our newsletter</p>
-          <div class="newsletter-input">
-            <input type="email" placeholder="Enter your email" required>
-            <button>Subscribe</button>
+    <div class="bento">
+      <a href="proxialpha.html" class="b-6 hover-line group" data-reveal>
+        <div class="card overflow-hidden h-full flex flex-col">
+          <div class="mesh aspect-[16/10]">
+            <div class="absolute inset-0 grid place-items-center">
+              <div class="text-white text-center">
+                <div class="font-mono text-[11px] tracking-[0.2em] text-white/70 mb-3">QUANT TRADING</div>
+                <div class="font-serif italic text-[clamp(40px,5vw,72px)] leading-none">α</div>
+              </div>
+            </div>
+          </div>
+          <div class="p-10 flex-1 flex flex-col">
+            <div class="font-mono text-[12px] tracking-[0.14em] text-zinc-500 mb-5">LAB · PRODUCT</div>
+            <h3 class="display-sm mb-4">ProxiAlpha</h3>
+            <p class="muted text-[15.5px] leading-relaxed mb-8 flex-1">
+              Agent-driven trading research platform. Walk-forward strategy research, paper-trading,
+              and a live cockpit. End-to-end instrumented and continuously evaluated.
+            </p>
+            <div class="grid grid-cols-3 gap-3 mb-7">
+              <div class="text-left"><div class="font-mono text-[11px] text-zinc-500 mb-1">STRATEGIES</div><div class="font-serif text-[28px]">12+</div></div>
+              <div class="text-left"><div class="font-mono text-[11px] text-zinc-500 mb-1">UPTIME</div><div class="font-serif text-[28px]">99.9%</div></div>
+              <div class="text-left"><div class="font-mono text-[11px] text-zinc-500 mb-1">EVALS</div><div class="font-serif text-[28px]">Daily</div></div>
+            </div>
+            <div class="flex items-center gap-3 text-[15px] font-medium group-hover:translate-x-1 transition-transform">
+              See the product
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </div>
           </div>
         </div>
+      </a>
+
+      <a href="proxitrades.html" class="b-6 hover-line group" data-reveal data-delay="1">
+        <div class="card overflow-hidden h-full flex flex-col">
+          <div class="mesh aspect-[16/10]">
+            <div class="absolute inset-0 grid place-items-center">
+              <div class="text-white text-center">
+                <div class="font-mono text-[11px] tracking-[0.2em] text-white/70 mb-3">EXECUTION</div>
+                <div class="font-serif italic text-[clamp(40px,5vw,72px)] leading-none">τ</div>
+              </div>
+            </div>
+          </div>
+          <div class="p-10 flex-1 flex flex-col">
+            <div class="font-mono text-[12px] tracking-[0.14em] text-zinc-500 mb-5">LAB · PRODUCT</div>
+            <h3 class="display-sm mb-4">ProxiTrades</h3>
+            <p class="muted text-[15.5px] leading-relaxed mb-8 flex-1">
+              The execution and routing layer ProxiAlpha sits on top of. TradingView webhook
+              receiver, strategy registry, paper and live brokers, full audit log.
+            </p>
+            <div class="grid grid-cols-3 gap-3 mb-7">
+              <div class="text-left"><div class="font-mono text-[11px] text-zinc-500 mb-1">BROKERS</div><div class="font-serif text-[28px]">3</div></div>
+              <div class="text-left"><div class="font-mono text-[11px] text-zinc-500 mb-1">LATENCY</div><div class="font-serif text-[28px]">~80ms</div></div>
+              <div class="text-left"><div class="font-mono text-[11px] text-zinc-500 mb-1">AUDIT</div><div class="font-serif text-[28px]">Full</div></div>
+            </div>
+            <div class="flex items-center gap-3 text-[15px] font-medium group-hover:translate-x-1 transition-transform">
+              See the product
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <a href="terminal.html" class="b-12 hover-line group" data-reveal>
+        <div class="card overflow-hidden grid lg:grid-cols-12 gap-0">
+          <div class="lg:col-span-7 p-10 lg:p-14 order-2 lg:order-1">
+            <div class="font-mono text-[12px] tracking-[0.14em] text-zinc-500 mb-5">LAB · LIVE DASHBOARD</div>
+            <h3 class="display-md mb-4">ProxiAlpha Terminal</h3>
+            <p class="muted text-[16px] leading-relaxed mb-8">
+              Public-readable view of the trading research platform. Live signals, walk-forward
+              folds, portfolio metrics, and a candlestick view of every active strategy. Useful
+              both as a working dashboard and as a reference for how we build operator-grade UI.
+            </p>
+            <div class="flex items-center gap-3 text-[15px] font-medium group-hover:translate-x-1 transition-transform">
+              Open the terminal
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </div>
+          </div>
+          <div class="lg:col-span-5 order-1 lg:order-2 bg-dark p-8 font-mono text-[12.5px] leading-relaxed">
+            <div class="flex items-center gap-2 mb-4 text-zinc-500"><span class="w-2.5 h-2.5 rounded-full bg-rose-500/70"></span><span class="w-2.5 h-2.5 rounded-full bg-amber-500/70"></span><span class="w-2.5 h-2.5 rounded-full bg-emerald-500/70"></span><span class="ml-3 text-zinc-600">terminal · live</span></div>
+            <div class="text-zinc-400"><span class="text-zinc-600">$</span> <span style="color:#c084fc">proxi</span> status</div>
+            <div style="color:#86efac">  ● strategy_v7      live   sharpe 1.42</div>
+            <div style="color:#86efac">  ● mean_reversion   paper  sharpe 0.91</div>
+            <div style="color:#fbbf24">  ◐ momentum_x       eval   pending</div>
+            <div class="text-zinc-500">  · last update 23s ago</div>
+            <div class="mt-3 text-zinc-400"><span class="text-zinc-600">$</span> <span style="color:#c084fc">proxi</span> tail signals --strategy strategy_v7</div>
+            <div class="text-zinc-300">  10:42:18  BUY  AAPL   conf=0.83  size=0.7%</div>
+            <div class="text-zinc-300">  10:43:51  HOLD MSFT   conf=0.61</div>
+            <div class="text-zinc-300">  10:45:09  SELL NVDA   conf=0.79  size=1.2%</div>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Research areas — dark -->
+<section id="research" data-theme="dark" class="section">
+  <div class="container-x">
+    <div class="grid lg:grid-cols-12 gap-10 mb-16">
+      <div class="lg:col-span-7">
+        <div class="eyebrow mb-6" data-reveal>Research areas</div>
+        <h2 class="display-lg" data-reveal data-delay="1">
+          Where we <span class="italic-accent font-serif">spend our time.</span>
+        </h2>
       </div>
+    </div>
 
-      <!-- Links Section -->
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
-        <!-- Services -->
+    <ul class="editorial-list">
+      <li data-reveal>
+        <div class="num">AREA / 01</div>
         <div>
-          <h4 class="font-semibold mb-6">Services</h4>
-          <ul class="space-y-3">
-            <li><a href="index.html#services" class="text-sm text-gray-400 hover:text-white transition-colors">AI Consulting</a></li>
-            <li><a href="index.html#services" class="text-sm text-gray-400 hover:text-white transition-colors">Product Engineering</a></li>
-            <li><a href="index.html#services" class="text-sm text-gray-400 hover:text-white transition-colors">Cloud & Infra</a></li>
-            <li><a href="index.html#services" class="text-sm text-gray-400 hover:text-white transition-colors">Data & Analytics</a></li>
-            <li><a href="index.html#services" class="text-sm text-gray-400 hover:text-white transition-colors">Managed Operations</a></li>
-          </ul>
+          <h3 class="display-xs mb-2">Agent systems</h3>
+          <p class="muted text-[15.5px] leading-relaxed max-w-2xl">Tool design, planning, multi-step reasoning, long-horizon tasks. The hard parts of agent reliability.</p>
         </div>
+      </li>
+      <li data-reveal data-delay="1">
+        <div class="num">AREA / 02</div>
+        <div>
+          <h3 class="display-xs mb-2">Evaluation tooling</h3>
+          <p class="muted text-[15.5px] leading-relaxed max-w-2xl">Eval harnesses, regression tests, drift detection. The instrumentation that keeps systems honest in production.</p>
+        </div>
+      </li>
+      <li data-reveal data-delay="2">
+        <div class="num">AREA / 03</div>
+        <div>
+          <h3 class="display-xs mb-2">Quantitative trading</h3>
+          <p class="muted text-[15.5px] leading-relaxed max-w-2xl">Walk-forward research, regime detection, ensemble strategies. ProxiAlpha is our test bed.</p>
+        </div>
+      </li>
+      <li data-reveal>
+        <div class="num">AREA / 04</div>
+        <div>
+          <h3 class="display-xs mb-2">Retrieval &amp; RAG</h3>
+          <p class="muted text-[15.5px] leading-relaxed max-w-2xl">Chunking, embeddings, hybrid search, and the failure modes that show up at scale.</p>
+        </div>
+      </li>
+      <li data-reveal data-delay="1">
+        <div class="num">AREA / 05</div>
+        <div>
+          <h3 class="display-xs mb-2">Red-teaming</h3>
+          <p class="muted text-[15.5px] leading-relaxed max-w-2xl">Adversarial probes, prompt injection, jailbreak defenses, and a working protocol that ops teams can run.</p>
+        </div>
+      </li>
+      <li data-reveal data-delay="2">
+        <div class="num">AREA / 06</div>
+        <div>
+          <h3 class="display-xs mb-2">Operator-grade UI</h3>
+          <p class="muted text-[15.5px] leading-relaxed max-w-2xl">UIs for the people running AI in production. Dense, fast, opinionated. The terminal is the running example.</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
 
-        <!-- Products -->
-        <div>
-          <h4 class="font-semibold mb-6">Products</h4>
-          <ul class="space-y-3">
-            <li><a href="#proxialpha" class="text-sm text-gray-400 hover:text-white transition-colors">ProxiAlpha</a></li>
-            <li><a href="#proxiflow" class="text-sm text-gray-400 hover:text-white transition-colors">ProxiFlow</a></li>
-            <li><a href="#proxiagent" class="text-sm text-gray-400 hover:text-white transition-colors">ProxiAgent</a></li>
-            <li><a href="#proxiguard" class="text-sm text-gray-400 hover:text-white transition-colors">ProxiGuard</a></li>
-            <li><a href="#proxiinsight" class="text-sm text-gray-400 hover:text-white transition-colors">ProxiInsight</a></li>
-          </ul>
-        </div>
-
-        <!-- Company -->
-        <div>
-          <h4 class="font-semibold mb-6">Company</h4>
-          <ul class="space-y-3">
-            <li><a href="index.html#about" class="text-sm text-gray-400 hover:text-white transition-colors">About Us</a></li>
-            <li><a href="#" class="text-sm text-gray-400 hover:text-white transition-colors">Careers</a></li>
-            <li><a href="#" class="text-sm text-gray-400 hover:text-white transition-colors">Partners</a></li>
-            <li><a href="index.html#cta" class="text-sm text-gray-400 hover:text-white transition-colors">Contact</a></li>
-            <li><a href="#" class="text-sm text-gray-400 hover:text-white transition-colors">Locations</a></li>
-          </ul>
-        </div>
-
-        <!-- Resources -->
-        <div>
-          <h4 class="font-semibold mb-6">Resources</h4>
-          <ul class="space-y-3">
-            <li><a href="#" class="text-sm text-gray-400 hover:text-white transition-colors">Blog</a></li>
-            <li><a href="#" class="text-sm text-gray-400 hover:text-white transition-colors">Case Studies</a></li>
-            <li><a href="#" class="text-sm text-gray-400 hover:text-white transition-colors">Whitepapers</a></li>
-            <li><a href="#" class="text-sm text-gray-400 hover:text-white transition-colors">API Docs</a></li>
-            <li><a href="#" class="text-sm text-gray-400 hover:text-white transition-colors">Changelog</a></li>
-          </ul>
-        </div>
+<!-- Why we run a lab -->
+<section data-theme="light" class="section">
+  <div class="container-x">
+    <div class="grid lg:grid-cols-12 gap-10 lg:gap-16">
+      <div class="lg:col-span-5">
+        <div class="eyebrow mb-6" data-reveal>Why we run a lab</div>
+        <h2 class="display-md" data-reveal data-delay="1">
+          Practitioners <span class="italic-accent font-serif">teach better.</span>
+        </h2>
       </div>
+      <div class="lg:col-span-6 lg:col-start-7 space-y-6 muted text-[16px] leading-relaxed">
+        <p data-reveal>A consulting team that doesn't build will eventually start advising from secondhand knowledge. Once that happens, you start hearing things that sound right and don't survive contact with production.</p>
+        <p data-reveal data-delay="1">Labs is how we keep that from happening. We run our own systems, on our own infrastructure, under the same operating standard we sell to clients. The lessons from those systems show up in client engagements directly.</p>
+        <p data-reveal data-delay="2">The training practice draws from the same well — the curriculum is built on what we've actually shipped, not on what's currently trending.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-      <!-- Bottom Section -->
-      <div class="flex flex-col md:flex-row items-center justify-between gap-8 border-t border-white/10 pt-8">
-        <p class="text-sm text-gray-400">© 2026 Proxiant AI. All rights reserved.</p>
-
-        <div class="flex gap-6">
-          <a href="#" class="text-sm text-gray-400 hover:text-white transition-colors">Privacy Policy</a>
-          <a href="#" class="text-sm text-gray-400 hover:text-white transition-colors">Terms</a>
-          <a href="#" class="text-sm text-gray-400 hover:text-white transition-colors">Cookie Settings</a>
-        </div>
-
-        <div class="flex gap-6">
-          <a href="#" class="text-gray-400 hover:text-white transition-colors" aria-label="LinkedIn">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.39v-1.2h-2.84v8.37h2.84v-4.13c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.13h2.84M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
-            </svg>
+<!-- CTA -->
+<section data-theme="dark" class="section">
+  <div class="container-x">
+    <div class="grid lg:grid-cols-12 gap-10 items-end">
+      <div class="lg:col-span-8">
+        <h2 class="display-xl" data-reveal-up-words>Want to collaborate?</h2>
+        <p class="lead mt-9 max-w-2xl" data-reveal data-delay="2">
+          Labs occasionally takes on research collaborations and partnerships when the work is a fit.
+          Tell us what you have in mind.
+        </p>
+        <div class="mt-10 flex flex-wrap gap-3" data-reveal data-delay="3">
+          <a href="contact.html" class="btn btn-light">
+            Get in touch
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
           </a>
-          <a href="#" class="text-gray-400 hover:text-white transition-colors" aria-label="Twitter">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2s9 5 20 5a9.5 9.5 0 00-9-5.5c4.75 2.25 7-7 7-7"/>
-            </svg>
-          </a>
-          <a href="#" class="text-gray-400 hover:text-white transition-colors" aria-label="GitHub">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.868-.013-1.703-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.544 2.914 1.19.092-.926.35-1.546.636-1.903-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
-            </svg>
-          </a>
+          <a href="solutions.html" class="btn btn-outline">See consulting</a>
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container-x">
+    <div class="grid lg:grid-cols-12 gap-12 mb-16">
+      <div class="lg:col-span-5"><a href="index.html" class="brand"><span class="brand-mark" style="background:#fff;color:#000">P</span><span class="brand-name text-white">Proxiant</span></a><p class="text-[14.5px] leading-relaxed text-zinc-400 max-w-sm mt-6">An AI-exclusive consultancy. We design, ship, and operate the AI systems you're accountable for in production.</p></div>
+      <div class="lg:col-span-2"><div class="font-mono text-[11px] tracking-[0.16em] text-zinc-500 mb-5">PRACTICES</div><ul class="space-y-3"><li><a href="solutions.html">Consulting</a></li><li><a href="labs.html">Labs</a></li><li><a href="training.html">Training</a></li></ul></div>
+      <div class="lg:col-span-2"><div class="font-mono text-[11px] tracking-[0.16em] text-zinc-500 mb-5">EXPLORE</div><ul class="space-y-3"><li><a href="industries.html">Industries</a></li><li><a href="insights.html">Insights</a></li><li><a href="proxialpha.html">ProxiAlpha</a></li><li><a href="terminal.html">Terminal</a></li></ul></div>
+      <div class="lg:col-span-3"><div class="font-mono text-[11px] tracking-[0.16em] text-zinc-500 mb-5">COMPANY</div><ul class="space-y-3"><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li><li><a href="https://github.com/proxiant" target="_blank" rel="noopener">GitHub</a></li></ul></div>
+    </div>
+    <div class="pt-8 border-t border-white/10 flex flex-wrap items-center justify-between gap-4 text-zinc-500 text-[13px]"><div>© 2026 Proxiant. All rights reserved.</div><div class="flex items-center gap-6"><span>Built in Texas</span><span>·</span><span class="font-mono tracking-[0.16em]">PROXIANT.AI</span></div></div>
   </div>
 </footer>
 
-  <!-- Scroll to Top Button -->
-  <a href="#hero" id="scrollToTop" style="display: none;">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-      <path d="M12 19V5M5 12l7-7 7 7"/>
-    </svg>
-  </a>
-
-  <script>
-    // Tailwind Config
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            primary: { DEFAULT: '#BF5700', light: '#E87511', dark: '#9E4A00' },
-            charcoal: '#1C1C1E',
-            graphite: '#2C2C2E',
-            slate: '#48484A',
-            ash: '#8E8E93',
-            pearl: '#F5F3F0',
-            cream: '#FAF8F5',
-            navy: '#1B3A4B',
-            teal: '#2A9D8F',
-          },
-          fontFamily: {
-            display: ['Bricolage Grotesque', 'sans-serif'],
-            body: ['Outfit', 'sans-serif'],
-            mono: ['JetBrains Mono', 'monospace'],
-          },
-        },
-      },
-    };
-
-    // Mobile Menu Toggle
-    const hamburger = document.getElementById('hamburger');
-    const mobileMenu = document.getElementById('mobileMenu');
-
-    hamburger.addEventListener('click', () => {
-      hamburger.classList.toggle('active');
-      mobileMenu.classList.toggle('active');
-    });
-
-    // Close mobile menu when link is clicked
-    mobileMenu.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        hamburger.classList.remove('active');
-        mobileMenu.classList.remove('active');
-      });
-    });
-
-    // Navigation scroll effect
-    const nav = document.querySelector('nav');
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 50) {
-        nav.classList.add('scrolled');
-      } else {
-        nav.classList.remove('scrolled');
-      }
-    });
-
-    // Scroll to top button
-    const scrollToTopBtn = document.getElementById('scrollToTop');
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 300) {
-        scrollToTopBtn.style.display = 'flex';
-      } else {
-        scrollToTopBtn.style.display = 'none';
-      }
-    });
-
-    scrollToTopBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-
-    // Intersection Observer for scroll reveals
-    const reveals = document.querySelectorAll('.reveal');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('revealed');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.15 });
-
-    reveals.forEach(el => observer.observe(el));
-  </script>
+<script src="assets/site.js"></script>
 </body>
 </html>
