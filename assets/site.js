@@ -120,4 +120,106 @@
       if (!raf) raf = requestAnimationFrame(update);
     }, { passive: true });
   }
+
+  // ──────── Cursor aurora — soft burnt-orange / violet halo following the cursor.
+  // Auto-injected on every page; disabled by prefers-reduced-motion.
+  const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (!reduced && !document.querySelector(".cursor-aurora")) {
+    const aurora = document.createElement("div");
+    aurora.className = "cursor-aurora";
+    aurora.style.setProperty("--cx", "50%");
+    aurora.style.setProperty("--cy", "50%");
+    document.body.appendChild(aurora);
+    let raf = 0, cx = window.innerWidth / 2, cy = window.innerHeight / 2;
+    let tx = cx, ty = cy;
+    window.addEventListener(
+      "mousemove",
+      (ev) => { tx = ev.clientX; ty = ev.clientY; },
+      { passive: true }
+    );
+    const tick = () => {
+      cx += (tx - cx) * 0.12;
+      cy += (ty - cy) * 0.12;
+      aurora.style.setProperty("--cx", `${cx}px`);
+      aurora.style.setProperty("--cy", `${cy}px`);
+      raf = requestAnimationFrame(tick);
+    };
+    raf = requestAnimationFrame(tick);
+  }
+
+  // ──────── Magnetic hover for .magnetic — cursor-aware translate
+  if (!reduced) {
+    $$(".magnetic").forEach((el) => {
+      let frame = 0;
+      const max = 8; // pixels of pull
+      el.addEventListener("mousemove", (ev) => {
+        const r = el.getBoundingClientRect();
+        const dx = (ev.clientX - r.left - r.width / 2) / r.width;
+        const dy = (ev.clientY - r.top - r.height / 2) / r.height;
+        cancelAnimationFrame(frame);
+        frame = requestAnimationFrame(() => {
+          el.style.transform = `translate3d(${dx * max}px, ${dy * max}px, 0)`;
+        });
+      }, { passive: true });
+      el.addEventListener("mouseleave", () => {
+        cancelAnimationFrame(frame);
+        el.style.transform = "translate3d(0, 0, 0)";
+      });
+    });
+  }
+
+  // ──────── Text scramble on .scramble[data-scramble] — runs on reveal
+  if (!reduced) {
+    const chars = "█▓▒░⏣⌬◇◆◢◣◤◥01XΣΔΞΛ#$%&";
+    const scrambleObserver = new IntersectionObserver(
+      (entries) => {
+        for (const e of entries) {
+          if (!e.isIntersecting) continue;
+          const el = e.target;
+          const target = el.dataset.scrambleText || el.textContent.trim();
+          el.dataset.scrambleText = target;
+          const duration = parseInt(el.dataset.scrambleDuration || "900", 10);
+          const start = performance.now();
+          const tick = (now) => {
+            const t = Math.min(1, (now - start) / duration);
+            const reveal = Math.floor(t * target.length);
+            let out = "";
+            for (let i = 0; i < target.length; i++) {
+              if (i < reveal) {
+                out += target[i];
+              } else if (target[i] === " ") {
+                out += " ";
+              } else {
+                out += chars[Math.floor(Math.random() * chars.length)];
+              }
+            }
+            el.textContent = out;
+            if (t < 1) requestAnimationFrame(tick);
+            else el.textContent = target;
+          };
+          requestAnimationFrame(tick);
+          scrambleObserver.unobserve(el);
+        }
+      },
+      { threshold: 0.4 }
+    );
+    $$("[data-scramble]").forEach((el) => scrambleObserver.observe(el));
+  }
+
+  // ──────── Inject star-field twinkles into elements that have .starfield class
+  if (!reduced) {
+    $$(".starfield").forEach((host) => {
+      // Add 18 random twinkles
+      const n = parseInt(host.dataset.twinkles || "18", 10);
+      for (let i = 0; i < n; i++) {
+        const t = document.createElement("span");
+        t.className = "twinkle";
+        t.style.left = Math.random() * 100 + "%";
+        t.style.top = Math.random() * 100 + "%";
+        t.style.animationDelay = (Math.random() * 4).toFixed(2) + "s";
+        t.style.animationDuration = (2.5 + Math.random() * 3).toFixed(2) + "s";
+        host.appendChild(t);
+      }
+    });
+  }
 })();
