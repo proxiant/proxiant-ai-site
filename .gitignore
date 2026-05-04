@@ -8,5 +8,16 @@
 *.swp
 *~
 
-# Node (if any local dev tools)
+# Node
 node_modules/
+
+# Next.js
+.next/
+out/
+*.tsbuildinfo
+.next-env.d.ts
+
+# Env
+.env
+.env.local
+.env.*.local
