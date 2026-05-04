@@ -64,13 +64,32 @@ restarted, the host can reboot, and the public URLs never change.
 
 ### 3. Wire the four subdomains as DNS records
 
+`cloudflared tunnel route dns ...` only works when DNS for `proxiant.ai` is
+hosted at Cloudflare. The domain currently uses Porkbun DNS, so add the records
+manually at Porkbun instead. Get the tunnel UUID:
+
+```bash
+cloudflared tunnel list   # copy the UUID for "proxitrades"
+```
+
+Then at [porkbun.com/account/domainsSpeedy](https://porkbun.com/account/domainsSpeedy),
+open the DNS panel for `proxiant.ai` and add three CNAME records, each pointing
+at `<UUID>.cfargotunnel.com.`:
+
+| Type | Host | Answer |
+|---|---|---|
+| CNAME | dashboard | `<UUID>.cfargotunnel.com.` |
+| CNAME | webhook | `<UUID>.cfargotunnel.com.` |
+| CNAME | api | `<UUID>.cfargotunnel.com.` |
+
+If DNS for `proxiant.ai` ever moves to Cloudflare, the equivalent automated
+command is:
+
 ```bash
 cloudflared tunnel route dns proxitrades dashboard.proxiant.ai
 cloudflared tunnel route dns proxitrades webhook.proxiant.ai
 cloudflared tunnel route dns proxitrades api.proxiant.ai
 ```
-
-Cloudflare creates CNAME records pointing each hostname at the tunnel.
 
 ### 4. Write the tunnel config
 
