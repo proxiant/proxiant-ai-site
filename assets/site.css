@@ -16,7 +16,7 @@
   --muted-2: #a3a3a8;
   --line: #e7e5dd;
   --line-strong: #cfccc1;
-  --accent: #bf5700;        /* UT Austin Burnt Orange — the hint */
+  --accent: #bf5700;        /* burnt orange accent */
   --accent-deep: #8e3f00;
   --accent-soft: #ffe9d6;
   --accent-glow: rgba(191, 87, 0, 0.45);
@@ -1129,6 +1129,80 @@ a.link-accent:hover::after { transform: scaleX(1); opacity: 1; }
 /* Eyebrow accent variant */
 .eyebrow-accent { color: var(--accent); }
 .eyebrow-accent::before { background: var(--accent); }
+
+/* Hero orbit — small decorative element for hero pages that lack a mesh canvas */
+.hero-orbit {
+  position: absolute;
+  top: 32%;
+  right: -120px;
+  width: 360px;
+  height: 360px;
+  pointer-events: none;
+  z-index: 0;
+}
+.hero-orbit::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1px dashed rgba(191, 87, 0, 0.3);
+  animation: spin-slow 32s linear infinite;
+}
+.hero-orbit::after {
+  content: "";
+  position: absolute;
+  inset: 22%;
+  border-radius: 50%;
+  border: 1px solid rgba(168, 85, 247, 0.25);
+  animation: spin-slow 22s linear infinite reverse;
+}
+.hero-orbit-dot {
+  position: absolute;
+  top: -3px; left: 50%;
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 16px var(--accent-glow), 0 0 32px var(--accent-glow);
+  transform: translateX(-50%);
+  animation: spin-slow 32s linear infinite;
+  transform-origin: 4px 183px;
+}
+.hero-orbit-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(closest-side, rgba(191, 87, 0, 0.18), transparent 70%);
+  filter: blur(20px);
+}
+@media (max-width: 880px) {
+  .hero-orbit { display: none; }
+}
+
+/* Page-level starfield — sparse, atmospheric, low contrast on light pages */
+.page-stars {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+  mask-image: linear-gradient(180deg, black 0%, black 70%, transparent 100%);
+  -webkit-mask-image: linear-gradient(180deg, black 0%, black 70%, transparent 100%);
+}
+.page-stars::before {
+  content: "";
+  position: absolute;
+  inset: -25%;
+  background-image:
+    radial-gradient(1px 1px at 12% 22%, rgba(191, 87, 0, 0.55), transparent 60%),
+    radial-gradient(1px 1px at 78% 14%, rgba(168, 85, 247, 0.55), transparent 60%),
+    radial-gradient(1px 1px at 35% 60%, rgba(15, 45, 204, 0.45), transparent 60%),
+    radial-gradient(1.2px 1.2px at 92% 48%, rgba(191, 87, 0, 0.6), transparent 60%),
+    radial-gradient(1px 1px at 55% 80%, rgba(168, 85, 247, 0.45), transparent 60%),
+    radial-gradient(1px 1px at 22% 88%, rgba(0, 0, 0, 0.4), transparent 60%);
+  background-size: 540px 540px;
+  background-repeat: repeat;
+  animation: drift-1 90s linear infinite;
+  opacity: 0.7;
+}
 
 /* Gradient overlay for dark sections — subtle space gradient on dark theme */
 [data-theme="dark"].section-cosmic {
