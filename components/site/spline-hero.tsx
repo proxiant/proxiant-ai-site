@@ -5,20 +5,20 @@ import { Spotlight } from "@/components/ui/spotlight";
 import { SplineScene } from "@/components/ui/splite";
 
 /**
- * Hero canvas — 3D Spline scene tuned toward an Optimus-style humanoid aesthetic
- * (Tesla white + chrome + dark visor) via overlays and tinting. To swap to a
- * different 3D model entirely, change SCENE_URL below to any
- * https://prod.spline.design/<id>/scene.splinecode published from Spline.
+ * Hero canvas — 3D Spline scene tuned toward a chrome / white humanoid aesthetic
+ * via overlays and tinting. To swap to a different 3D model entirely, change
+ * SCENE_URL below to any https://prod.spline.design/<id>/scene.splinecode
+ * published from Spline.
  */
 const SCENE_URL = "https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode";
 
 export function SplineHero() {
   return (
     <Card className="w-full h-full bg-[#0c0c0e] relative overflow-hidden border-0 rounded-[28px]">
-      {/* Cold-white spotlight to push the metal toward Optimus chrome */}
+      {/* Cold-white spotlight to push the metal toward chrome */}
       <Spotlight className="-top-40 left-0 md:left-40 md:-top-20" fill="#ffffff" />
 
-      {/* Subtle radial tint — Optimus white-on-dark gradient */}
+      {/* Subtle radial tint — white-on-dark gradient */}
       <div
         className="absolute inset-0 pointer-events-none z-[1]"
         style={{
@@ -37,7 +37,7 @@ export function SplineHero() {
 
       {/* HUD-style overlay top */}
       <div className="absolute top-6 left-6 right-6 flex items-center justify-between text-white/80 text-[10.5px] font-mono tracking-[0.22em] z-[2]">
-        <span data-scramble>OPTIMUS · UNIT 03</span>
+        <span data-scramble>PROXIANT · UNIT 03</span>
         <span className="flex items-center gap-2">
           <span
             className="inline-block w-1.5 h-1.5 rounded-full"
