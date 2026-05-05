@@ -3,6 +3,7 @@ import { SiteHeader } from "@/components/site/site-header";
 import { SiteFooter } from "@/components/site/site-footer";
 import { PageStars } from "@/components/site/page-stars";
 import { SparkleField } from "@/components/site/sparkle-field";
+import { TrainingViz } from "@/components/site/hero-viz";
 import { PageMarquee } from "@/components/site/page-marquee";
 import { PinScroll } from "@/components/site/pin-scroll";
 
@@ -33,19 +34,8 @@ export default function Page() {
           <a href="#programs" className="btn btn-outline">See the programs</a>
         </div>
       </div>
-      <div className="lg:col-span-4 lg:col-start-9" data-reveal-scale>
-        <div className="mesh aspect-[4/5] scanline relative">
-          <div className="starfield" data-twinkles="20"></div>
-          <div className="orbit-ring"></div>
-          <div className="orbit-ring r2"></div>
-          <div className="absolute inset-0 grid place-items-center">
-            <div className="text-center">
-              <div className="font-mono text-[11px] tracking-[0.2em] text-white/70 mb-3">TRAINING</div>
-              <div className="font-serif italic text-[clamp(48px,6vw,96px)] text-white leading-none">03</div>
-              <div className="font-mono text-[11px] tracking-[0.2em] text-white/70 mt-3">PRACTICE</div>
-            </div>
-          </div>
-        </div>
+      <div className="lg:col-span-4 lg:col-start-9 aspect-[4/5]" data-reveal-scale>
+        <TrainingViz />
       </div>
     </div>
   </div>
