@@ -2,6 +2,7 @@ import Link from "next/link";
 import { SiteHeader } from "@/components/site/site-header";
 import { SiteFooter } from "@/components/site/site-footer";
 import { PageStars } from "@/components/site/page-stars";
+import { PageMarquee } from "@/components/site/page-marquee";
 import { PinScroll } from "@/components/site/pin-scroll";
 
 export default function Page() {
@@ -55,12 +56,10 @@ export default function Page() {
 
 
 
-      <PinScroll
-        eyebrow="Capabilities"
-        meta="STRATEGY · TO · OPS"
-        intro="↳ What we ship"
-        outro="⏵ Same partners on every layer"
-        words={[ { text: "Strategy" }, { text: "Architecture", em: true }, { text: "Build" }, { text: "Evaluate", em: true }, { text: "Operate" }, { text: "Repeat" } ]}
+
+      <PageMarquee
+        items={["Strategy", "Architecture", "Build", "Evaluate", "Operate", "Risk", "Governance", "Hand-off"]}
+        eyebrow="What we ship into"
       />
 {/* Capabilities — split content layout */}
 <section data-theme="paper" className="section">
@@ -309,6 +308,14 @@ export default function Page() {
 </section>
 
 {/* CTA */}
+
+      <PinScroll
+        eyebrow="How we work"
+        title="Same partners on every layer."
+        theme="light"
+        words={[{ text: "Strategy" }, { text: "Architecture", em: true }, { text: "Build" }, { text: "Evaluate", em: true }, { text: "Operate" }, { text: "Repeat", em: true }]}
+      />
+
 <section data-theme="dark" className="section">
   <div className="container-x">
     <div className="grid lg:grid-cols-12 gap-10 items-end">

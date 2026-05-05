@@ -2,6 +2,7 @@ import Link from "next/link";
 import { SiteHeader } from "@/components/site/site-header";
 import { SiteFooter } from "@/components/site/site-footer";
 import { PageStars } from "@/components/site/page-stars";
+import { PageMarquee } from "@/components/site/page-marquee";
 import { PinScroll } from "@/components/site/pin-scroll";
 
 export default function Page() {
@@ -32,12 +33,10 @@ export default function Page() {
 
 
 
-      <PinScroll
-        eyebrow="Field view"
-        meta="WHAT · MOVES"
-        intro="↳ The arc"
-        outro="⏵ Written from real engagements"
-        words={[ { text: "Documents" }, { text: "Workflows", em: true }, { text: "Eval" }, { text: "Ship", em: true } ]}
+
+      <PageMarquee
+        items={["Documents", "Workflows", "Eval", "Ship"]}
+        eyebrow="What we ship into"
       />
 <section data-theme="light" className="section">
   <div className="container-x relative">
@@ -99,6 +98,14 @@ export default function Page() {
     </div>
   </div>
 </section>
+
+      <PinScroll
+        eyebrow="Field view"
+        title="What actually moves."
+        theme="light"
+        words={[{ text: "Documents" }, { text: "Workflows", em: true }, { text: "Eval" }, { text: "Ship", em: true }]}
+      />
+
 
 
 <section data-theme="dark" className="section">

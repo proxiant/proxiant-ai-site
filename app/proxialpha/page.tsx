@@ -2,6 +2,7 @@ import Link from "next/link";
 import { SiteHeader } from "@/components/site/site-header";
 import { SiteFooter } from "@/components/site/site-footer";
 import { PageStars } from "@/components/site/page-stars";
+import { PageMarquee } from "@/components/site/page-marquee";
 import { PinScroll } from "@/components/site/pin-scroll";
 
 export default function Page() {
@@ -55,12 +56,10 @@ export default function Page() {
 
 
 
-      <PinScroll
-        eyebrow="Loop"
-        meta="CONTINUOUS · EVAL"
-        intro="↳ Adaptive cycle"
-        outro="⏵ Daily walk-forward"
-        words={[ { text: "Signal" }, { text: "Trade", em: true }, { text: "Measure" }, { text: "Adapt", em: true }, { text: "Audit" } ]}
+
+      <PageMarquee
+        items={["Signal", "Trade", "Measure", "Adapt", "Audit"]}
+        eyebrow="What we ship into"
       />
 <section data-theme="paper" className="section-tight">
   <div className="container-x relative">
@@ -161,6 +160,14 @@ export default function Page() {
     </div>
   </div>
 </section>
+
+      <PinScroll
+        eyebrow="Continuous loop"
+        title="Daily walk-forward."
+        theme="light"
+        words={[{ text: "Signal" }, { text: "Trade", em: true }, { text: "Measure" }, { text: "Adapt", em: true }, { text: "Audit" }]}
+      />
+
 
 <section data-theme="dark" className="section">
   <div className="container-x">

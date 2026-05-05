@@ -2,6 +2,7 @@ import Link from "next/link";
 import { SiteHeader } from "@/components/site/site-header";
 import { SiteFooter } from "@/components/site/site-footer";
 import { PageStars } from "@/components/site/page-stars";
+import { PageMarquee } from "@/components/site/page-marquee";
 import { PinScroll } from "@/components/site/pin-scroll";
 
 export default function Page() {
@@ -50,12 +51,10 @@ export default function Page() {
 
 
 
-      <PinScroll
-        eyebrow="Cohort flow"
-        meta="WEEK · BY · WEEK"
-        intro="↳ Bootcamp arc"
-        outro="⏵ Capstone is a real production deploy"
-        words={[ { text: "Foundations" }, { text: "Retrieval", em: true }, { text: "Agents" }, { text: "Evaluate", em: true }, { text: "Govern" }, { text: "Ship" } ]}
+
+      <PageMarquee
+        items={["Foundations", "Retrieval", "Agents", "Evaluate", "Govern", "Ship"]}
+        eyebrow="What we ship into"
       />
 {/* Why training */}
 <section data-theme="paper" className="section">
@@ -300,6 +299,14 @@ export default function Page() {
 </section>
 
 {/* CTA */}
+
+      <PinScroll
+        eyebrow="Cohort arc"
+        title="Capstone is a real production deploy."
+        theme="light"
+        words={[{ text: "Foundations" }, { text: "Retrieval", em: true }, { text: "Agents" }, { text: "Evaluate", em: true }, { text: "Govern" }, { text: "Ship", em: true }]}
+      />
+
 <section data-theme="dark" className="section">
   <div className="container-x">
     <div className="grid lg:grid-cols-12 gap-10 items-end">
