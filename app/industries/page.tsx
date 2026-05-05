@@ -2,6 +2,7 @@ import Link from "next/link";
 import { SiteHeader } from "@/components/site/site-header";
 import { SiteFooter } from "@/components/site/site-footer";
 import { PageStars } from "@/components/site/page-stars";
+import { PinScroll } from "@/components/site/pin-scroll";
 
 export default function Page() {
   return (
@@ -28,6 +29,15 @@ export default function Page() {
   </div>
 </header>
 
+
+
+      <PinScroll
+        eyebrow="Domains shipped"
+        meta="REGULATED · WORK"
+        intro="↳ Eight industries"
+        outro="⏵ Audit-ready by default"
+        words={[ { text: "Banking" }, { text: "Health", em: true }, { text: "Insurance" }, { text: "Energy", em: true }, { text: "Manufacturing" }, { text: "Retail" }, { text: "Telecom" }, { text: "Logistics", em: true } ]}
+      />
 <section data-theme="paper" className="pb-32">
   <div className="container-x relative">
     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3">

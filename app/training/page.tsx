@@ -2,6 +2,7 @@ import Link from "next/link";
 import { SiteHeader } from "@/components/site/site-header";
 import { SiteFooter } from "@/components/site/site-footer";
 import { PageStars } from "@/components/site/page-stars";
+import { PinScroll } from "@/components/site/pin-scroll";
 
 export default function Page() {
   return (
@@ -47,6 +48,15 @@ export default function Page() {
   </div>
 </header>
 
+
+
+      <PinScroll
+        eyebrow="Cohort flow"
+        meta="WEEK · BY · WEEK"
+        intro="↳ Bootcamp arc"
+        outro="⏵ Capstone is a real production deploy"
+        words={[ { text: "Foundations" }, { text: "Retrieval", em: true }, { text: "Agents" }, { text: "Evaluate", em: true }, { text: "Govern" }, { text: "Ship" } ]}
+      />
 {/* Why training */}
 <section data-theme="paper" className="section">
   <div className="container-x relative">

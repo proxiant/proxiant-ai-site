@@ -2,6 +2,7 @@ import Link from "next/link";
 import { SiteHeader } from "@/components/site/site-header";
 import { SiteFooter } from "@/components/site/site-footer";
 import { PageStars } from "@/components/site/page-stars";
+import { PinScroll } from "@/components/site/pin-scroll";
 
 export default function Page() {
   return (
@@ -47,6 +48,15 @@ export default function Page() {
   </div>
 </header>
 
+
+
+      <PinScroll
+        eyebrow="Lab signals"
+        meta="RESEARCH · TO · PRODUCT"
+        intro="↳ Where ideas land"
+        outro="⏵ Run on our own infrastructure"
+        words={[ { text: "Research" }, { text: "Spike", em: true }, { text: "Eval" }, { text: "Ship", em: true }, { text: "Operate" }, { text: "Open" } ]}
+      />
 {/* Products — paper */}
 <section id="products" data-theme="paper" className="section">
   <div className="container-x relative">

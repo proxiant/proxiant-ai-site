@@ -2,6 +2,7 @@ import Link from "next/link";
 import { SiteHeader } from "@/components/site/site-header";
 import { SiteFooter } from "@/components/site/site-footer";
 import { PageStars } from "@/components/site/page-stars";
+import { PinScroll } from "@/components/site/pin-scroll";
 
 export default function Page() {
   return (
@@ -27,6 +28,15 @@ export default function Page() {
   </div>
 </header>
 
+
+
+      <PinScroll
+        eyebrow="Field notes"
+        meta="FROM · THE · WORK"
+        intro="↳ What we have learned"
+        outro="⏵ Not vendor opinion pieces"
+        words={[ { text: "Strategy" }, { text: "Org", em: true }, { text: "Risk" }, { text: "Eval", em: true }, { text: "Ship" } ]}
+      />
 <section data-theme="paper" className="pb-32">
   <div className="container-x relative">
     <a href="/case-studies/fortune500-bank/" className="card block p-10 lg:p-14 hover-line mb-16" data-reveal>
