@@ -133,17 +133,19 @@ a { color: inherit; text-decoration: none; }
   font-family: "Instrument Serif", Georgia, serif;
   font-weight: 400;
   font-size: clamp(38px, 5.6vw, 84px);
-  line-height: 1.02;
+  line-height: 1.18;
   letter-spacing: -0.018em;
   text-wrap: balance;
+  padding-bottom: 0.08em;
 }
 .display-lg {
   font-family: "Instrument Serif", Georgia, serif;
   font-weight: 400;
   font-size: clamp(34px, 4.6vw, 68px);
-  line-height: 1.04;
+  line-height: 1.16;
   letter-spacing: -0.015em;
   text-wrap: balance;
+  padding-bottom: 0.06em;
 }
 .display-md {
   font-family: "Instrument Serif", Georgia, serif;
@@ -551,7 +553,10 @@ a { color: inherit; text-decoration: none; }
 
 [data-reveal-up-words] > span {
   display: inline-block;
-  overflow: hidden;
+  /* Use clip-path with vertical breathing room so descenders (g, p, y, j, q)
+     are never clipped — only the horizontal mask matters during the slide-in. */
+  clip-path: inset(-0.4em 0 -0.4em 0);
+  -webkit-clip-path: inset(-0.4em 0 -0.4em 0);
   vertical-align: bottom;
 }
 [data-reveal-up-words] > span > span {
@@ -561,6 +566,11 @@ a { color: inherit; text-decoration: none; }
 }
 [data-reveal-up-words].in > span > span {
   transform: none;
+}
+/* Once the reveal completes, drop the mask entirely so nothing clips. */
+[data-reveal-up-words].in > span {
+  clip-path: none;
+  -webkit-clip-path: none;
 }
 
 @media (prefers-reduced-motion: reduce) {
