@@ -2,6 +2,7 @@ import Link from "next/link";
 import { SiteHeader } from "@/components/site/site-header";
 import { SiteFooter } from "@/components/site/site-footer";
 import { PageStars } from "@/components/site/page-stars";
+import { PinScroll } from "@/components/site/pin-scroll";
 
 export default function Page() {
   return (
@@ -52,6 +53,15 @@ export default function Page() {
   </div>
 </header>
 
+
+
+      <PinScroll
+        eyebrow="Capabilities"
+        meta="STRATEGY · TO · OPS"
+        intro="↳ What we ship"
+        outro="⏵ Same partners on every layer"
+        words={[ { text: "Strategy" }, { text: "Architecture", em: true }, { text: "Build" }, { text: "Evaluate", em: true }, { text: "Operate" }, { text: "Repeat" } ]}
+      />
 {/* Capabilities — split content layout */}
 <section data-theme="paper" className="section">
   <div className="container-x relative">

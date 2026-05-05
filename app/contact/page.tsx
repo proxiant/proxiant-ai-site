@@ -1,6 +1,7 @@
 import { SiteHeader } from "@/components/site/site-header";
 import { SiteFooter } from "@/components/site/site-footer";
 import { PageStars } from "@/components/site/page-stars";
+import { PinScroll } from "@/components/site/pin-scroll";
 import { ContactForm } from "@/components/site/contact-form";
 
 export default function Page() {
@@ -24,6 +25,15 @@ export default function Page() {
         </div>
       </header>
 
+
+
+      <PinScroll
+        eyebrow="Response"
+        meta="FIT · CALL · IN · 24H"
+        intro="↳ What you can expect"
+        outro="⏵ One business day"
+        words={[ { text: "Reply" }, { text: "Fit call", em: true }, { text: "Written shape" }, { text: "Sized plan", em: true } ]}
+      />
       <section data-theme="paper" className="pb-32 pt-16 lg:pt-24">
         <div className="container-x">
           <div className="grid lg:grid-cols-12 gap-10 lg:gap-16">

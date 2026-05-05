@@ -1332,7 +1332,7 @@ a.link-accent:hover::after { transform: scaleX(1); opacity: 1; }
 
 .pin-section {
   position: relative;
-  height: 320vh;
+  height: 220vh;
   background: var(--bg);
 }
 .pin-stage {
@@ -1342,33 +1342,72 @@ a.link-accent:hover::after { transform: scaleX(1); opacity: 1; }
   overflow: hidden;
   display: flex;
   align-items: center;
+  justify-content: flex-start;
+}
+/* Edge vignettes so words fade in/out instead of slapping onto screen */
+.pin-stage::before,
+.pin-stage::after {
+  content: "";
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 18%;
+  z-index: 4;
+  pointer-events: none;
+}
+.pin-stage::before {
+  left: 0;
+  background: linear-gradient(90deg, var(--bg) 10%, rgba(250, 250, 247, 0.7) 60%, transparent 100%);
+}
+.pin-stage::after {
+  right: 0;
+  background: linear-gradient(270deg, var(--bg) 10%, rgba(250, 250, 247, 0.7) 60%, transparent 100%);
 }
 .pin-track {
   display: flex;
   align-items: center;
   gap: clamp(40px, 6vw, 96px);
-  padding: 0 clamp(20px, 4vw, 56px);
+  padding: 0 clamp(60px, 14vw, 220px);
   will-change: transform;
+  transition: transform 0.18s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 .pin-word {
   font-family: "Instrument Serif", serif;
-  font-size: clamp(56px, 10vw, 144px);
+  font-size: clamp(48px, 8.5vw, 124px);
   line-height: 0.95;
-  letter-spacing: -0.024em;
+  letter-spacing: -0.022em;
   white-space: nowrap;
   display: inline-flex;
   align-items: center;
-  gap: clamp(20px, 3vw, 56px);
+  gap: clamp(20px, 3vw, 48px);
+  opacity: 0.42;
+  filter: blur(0.5px);
+  transition: opacity 0.45s ease, filter 0.45s ease, transform 0.45s ease, color 0.3s;
+  will-change: opacity, transform;
 }
-.pin-word .pin-em { font-style: italic; color: var(--muted); }
+.pin-word.pin-active {
+  opacity: 1;
+  filter: none;
+  transform: scale(1.04);
+  color: var(--ink);
+}
+.pin-word .pin-em {
+  font-style: italic;
+  color: inherit;
+  opacity: 0.85;
+}
 .pin-dot {
-  width: clamp(16px, 1.6vw, 24px);
-  height: clamp(16px, 1.6vw, 24px);
+  width: clamp(14px, 1.4vw, 22px);
+  height: clamp(14px, 1.4vw, 22px);
   border-radius: 50%;
   background: var(--accent);
-  box-shadow: 0 0 24px var(--accent-glow);
+  box-shadow: 0 0 0 0 rgba(191, 87, 0, 0.4);
   display: inline-block;
   flex-shrink: 0;
+  animation: pin-dot-pulse 2.6s ease-in-out infinite;
+}
+@keyframes pin-dot-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(191, 87, 0, 0.45); transform: scale(1); }
+  50% { box-shadow: 0 0 0 10px rgba(191, 87, 0, 0); transform: scale(1.18); }
 }
 .pin-mini {
   display: inline-flex;

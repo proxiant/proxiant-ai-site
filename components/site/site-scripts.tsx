@@ -206,30 +206,61 @@ export function SiteScripts() {
       $$("[data-scramble]").forEach((el) => scrambleObserver.observe(el));
     }
 
-    // Pin scroll
+    // Pin scroll — eased horizontal translation with center-spotlight word emphasis
     const pinSections = $$(".pin-section");
     pinSections.forEach((sec) => {
       const track = sec.querySelector(".pin-track") as HTMLElement | null;
       const fill = sec.querySelector(".pin-progress-fill") as HTMLElement | null;
       if (!track) return;
+      const words = Array.from(track.querySelectorAll(".pin-word")) as HTMLElement[];
       let raf = 0;
+      let target = 0;
+      let current = 0;
+      let activeWord: HTMLElement | null = null;
+      const easeInOut = (t: number) => (t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2);
       const compute = () => {
-        raf = 0;
         const r = sec.getBoundingClientRect();
         const vh = window.innerHeight;
         const total = sec.offsetHeight - vh;
         const passed = Math.min(Math.max(-r.top, 0), total);
-        const t = total > 0 ? passed / total : 0;
+        target = total > 0 ? easeInOut(passed / total) : 0;
+        if (fill) fill.style.width = `${(target * 100).toFixed(2)}%`;
+      };
+      const tick = () => {
+        raf = 0;
+        compute();
+        // Smooth lerp toward target — eliminates the jerky drag
+        current += (target - current) * 0.12;
         const overflow = Math.max(0, track.scrollWidth - window.innerWidth);
-        track.style.transform = `translate3d(${-overflow * t}px, 0, 0)`;
-        if (fill) fill.style.width = `${(t * 100).toFixed(2)}%`;
+        track.style.transform = `translate3d(${-overflow * current}px, 0, 0)`;
+        // Spotlight the word closest to the viewport center
+        const cx = window.innerWidth / 2;
+        let nearest: HTMLElement | null = null;
+        let nearestDist = Infinity;
+        for (const w of words) {
+          const wr = w.getBoundingClientRect();
+          const wcx = wr.left + wr.width / 2;
+          const d = Math.abs(wcx - cx);
+          if (d < nearestDist) { nearestDist = d; nearest = w; }
+        }
+        if (nearest && nearest !== activeWord) {
+          activeWord?.classList.remove("pin-active");
+          nearest.classList.add("pin-active");
+          activeWord = nearest;
+        }
+        if (Math.abs(target - current) > 0.0005) {
+          raf = requestAnimationFrame(tick);
+        }
       };
+      const kick = () => { if (!raf) raf = requestAnimationFrame(tick); };
       compute();
-      const onScroll = () => {
-        if (!raf) raf = requestAnimationFrame(compute);
-      };
-      window.addEventListener("scroll", onScroll, { passive: true });
-      window.addEventListener("resize", compute);
+      // Set initial active word so first paint isn't all-grey
+      if (words.length) {
+        words[0].classList.add("pin-active");
+        activeWord = words[0];
+      }
+      window.addEventListener("scroll", kick, { passive: true });
+      window.addEventListener("resize", () => { compute(); kick(); });
     });
 
     // Starfield twinkles

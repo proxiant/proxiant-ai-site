@@ -2,6 +2,7 @@ import Link from "next/link";
 import { SiteHeader } from "@/components/site/site-header";
 import { SiteFooter } from "@/components/site/site-footer";
 import { PageStars } from "@/components/site/page-stars";
+import { PinScroll } from "@/components/site/pin-scroll";
 
 export default function Page() {
   return (
@@ -37,6 +38,15 @@ export default function Page() {
   </div>
 </header>
 
+
+
+      <PinScroll
+        eyebrow="What we ship"
+        meta="DOMAIN · LOOP"
+        intro="↳ Operating arc"
+        outro="⏵ Auditable end-to-end"
+        words={[ { text: "Charts" }, { text: "Claims", em: true }, { text: "Triage" }, { text: "Hand-off", em: true } ]}
+      />
 <section data-theme="paper" className="section">
   <div className="container-x relative">
     <div className="grid lg:grid-cols-12 gap-10 lg:gap-16">

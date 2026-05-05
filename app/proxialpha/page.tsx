@@ -2,6 +2,7 @@ import Link from "next/link";
 import { SiteHeader } from "@/components/site/site-header";
 import { SiteFooter } from "@/components/site/site-footer";
 import { PageStars } from "@/components/site/page-stars";
+import { PinScroll } from "@/components/site/pin-scroll";
 
 export default function Page() {
   return (
@@ -52,6 +53,15 @@ export default function Page() {
   </div>
 </header>
 
+
+
+      <PinScroll
+        eyebrow="Loop"
+        meta="CONTINUOUS · EVAL"
+        intro="↳ Adaptive cycle"
+        outro="⏵ Daily walk-forward"
+        words={[ { text: "Signal" }, { text: "Trade", em: true }, { text: "Measure" }, { text: "Adapt", em: true }, { text: "Audit" } ]}
+      />
 <section data-theme="paper" className="section-tight">
   <div className="container-x relative">
     <div className="grid grid-cols-2 lg:grid-cols-4">
