@@ -2,6 +2,7 @@ import Link from "next/link";
 import { SiteHeader } from "@/components/site/site-header";
 import { SiteFooter } from "@/components/site/site-footer";
 import { PageStars } from "@/components/site/page-stars";
+import { SparkleField } from "@/components/site/sparkle-field";
 import { PageMarquee } from "@/components/site/page-marquee";
 import { PinScroll } from "@/components/site/pin-scroll";
 
@@ -10,6 +11,7 @@ export default function Page() {
     <div>
       <SiteHeader />
 <header data-theme="light" className="relative pt-40 pb-20 lg:pt-56 lg:pb-32">
+        <SparkleField id="sparkles-labs-page" />
   <div className="page-stars"></div>
   <div className="hero-orbit" aria-hidden="true">
     <div className="hero-orbit-glow"></div>
