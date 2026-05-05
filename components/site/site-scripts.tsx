@@ -1,14 +1,31 @@
 "use client";
 
 import { useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 /**
  * Mounts the same DOM-driven interactions the static site used:
  * scroll reveals, scramble decode, magnetic hover, cursor aurora,
  * starfield twinkles, pin-scroll, counters, mobile menu, nav scroll state,
  * word-by-word reveal split.
+ *
+ * Re-runs on every route change so client-side navigation reveals work.
  */
 export function SiteScripts() {
+  const pathname = usePathname();
+
+  // Safety fallback: if for any reason the IntersectionObserver doesn't fire,
+  // force-reveal all data-reveal elements after a short delay so the page is
+  // never visually empty.
+  useEffect(() => {
+    const id = window.setTimeout(() => {
+      document
+        .querySelectorAll("[data-reveal], [data-reveal-up-words], [data-reveal-scale]")
+        .forEach((el) => el.classList.add("in"));
+    }, 1500);
+    return () => window.clearTimeout(id);
+  }, [pathname]);
+
   useEffect(() => {
     const $$ = (sel: string, root: ParentNode = document) =>
       Array.from(root.querySelectorAll(sel)) as HTMLElement[];
@@ -238,7 +255,7 @@ export function SiteScripts() {
       menuToggle?.removeEventListener("click", onToggle);
       cancelAnimationFrame(auroraTick);
     };
-  }, []);
+  }, [pathname]);
 
   return null;
 }
