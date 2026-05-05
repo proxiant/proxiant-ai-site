@@ -2,6 +2,7 @@ import Link from "next/link";
 import { SiteHeader } from "@/components/site/site-header";
 import { SiteFooter } from "@/components/site/site-footer";
 import { PageStars } from "@/components/site/page-stars";
+import { PageMarquee } from "@/components/site/page-marquee";
 import { PinScroll } from "@/components/site/pin-scroll";
 
 export default function Page() {
@@ -32,12 +33,10 @@ export default function Page() {
 
 
 
-      <PinScroll
-        eyebrow="Team patterns"
-        meta="ORG · OS"
-        intro="↳ The arc"
-        outro="⏵ Written from real engagements"
-        words={[ { text: "Senior" }, { text: "Document", em: true }, { text: "Pair" }, { text: "Rotate", em: true } ]}
+
+      <PageMarquee
+        items={["Senior", "Document", "Pair", "Rotate"]}
+        eyebrow="What we ship into"
       />
 <section data-theme="light" className="section">
   <div className="container-x relative">
@@ -98,6 +97,14 @@ export default function Page() {
     </div>
   </div>
 </section>
+
+      <PinScroll
+        eyebrow="Team patterns"
+        title="Org as the system."
+        theme="light"
+        words={[{ text: "Senior" }, { text: "Document", em: true }, { text: "Pair" }, { text: "Rotate", em: true }]}
+      />
+
 
 
 <section data-theme="dark" className="section">

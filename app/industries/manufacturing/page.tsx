@@ -2,6 +2,7 @@ import Link from "next/link";
 import { SiteHeader } from "@/components/site/site-header";
 import { SiteFooter } from "@/components/site/site-footer";
 import { PageStars } from "@/components/site/page-stars";
+import { PageMarquee } from "@/components/site/page-marquee";
 import { PinScroll } from "@/components/site/pin-scroll";
 
 export default function Page() {
@@ -40,12 +41,10 @@ export default function Page() {
 
 
 
-      <PinScroll
-        eyebrow="What we ship"
-        meta="DOMAIN · LOOP"
-        intro="↳ Operating arc"
-        outro="⏵ Auditable end-to-end"
-        words={[ { text: "Sense" }, { text: "Predict", em: true }, { text: "Inspect" }, { text: "Document", em: true } ]}
+
+      <PageMarquee
+        items={["Sense", "Predict", "Inspect", "Document", "Improve"]}
+        eyebrow="What we ship into"
       />
 <section data-theme="paper" className="section">
   <div className="container-x relative">
@@ -83,6 +82,14 @@ export default function Page() {
     </div>
   </div>
 </section>
+
+      <PinScroll
+        eyebrow="Operating arc"
+        title="Floor-friendly architecture."
+        theme="light"
+        words={[{ text: "Sense" }, { text: "Predict", em: true }, { text: "Inspect" }, { text: "Document", em: true }]}
+      />
+
 
 <section data-theme="dark" className="section">
   <div className="container-x">

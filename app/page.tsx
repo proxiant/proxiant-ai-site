@@ -3,6 +3,7 @@ import { SiteHeader } from "@/components/site/site-header";
 import { SiteFooter } from "@/components/site/site-footer";
 import { PageStars } from "@/components/site/page-stars";
 import { SplineHero } from "@/components/site/spline-hero";
+import { PinScroll } from "@/components/site/pin-scroll";
 
 export default function HomePage() {
   return (
@@ -51,29 +52,6 @@ export default function HomePage() {
           </div>
         </div>
       </header>
-
-      {/* Rolling-pin */}
-      <section className="pin-section" data-theme="paper">
-        <div className="pin-stage">
-          <div className="pin-eyebrow-row">
-            <span className="eyebrow">The work</span>
-            <span className="font-mono text-[11px] tracking-[0.22em] text-zinc-500" data-scramble>
-              HORIZONTAL · MOTION
-            </span>
-          </div>
-          <div className="pin-track">
-            <span className="pin-mini">↳ How we work</span>
-            <span className="pin-word">Strategy<span className="pin-dot" /></span>
-            <span className="pin-word">Architecture<span className="pin-dot" /></span>
-            <span className="pin-word">Build<span className="pin-dot" /></span>
-            <span className="pin-word"><em className="pin-em">Evaluate</em><span className="pin-dot" /></span>
-            <span className="pin-word">Operate<span className="pin-dot" /></span>
-            <span className="pin-word"><em className="pin-em">Repeat</em><span className="pin-dot" /></span>
-            <span className="pin-mini">⏵ Same operating bar across consulting, labs, training</span>
-          </div>
-          <div className="pin-progress"><div className="pin-progress-fill" /></div>
-        </div>
-      </section>
 
       {/* Marquee */}
       <section data-theme="paper" className="section-tight border-y" style={{ borderColor: "var(--line)" }}>
@@ -182,6 +160,21 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* How we work — seamless rolling-pin between practices and stats */}
+      <PinScroll
+        eyebrow="How we work"
+        title="One operating bar."
+        theme="light"
+        words={[
+          { text: "Strategy" },
+          { text: "Architecture", em: true },
+          { text: "Build" },
+          { text: "Evaluate", em: true },
+          { text: "Operate" },
+          { text: "Repeat", em: true },
+        ]}
+      />
 
       {/* Stats */}
       <section data-theme="paper" className="section-tight">

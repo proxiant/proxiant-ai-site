@@ -2,39 +2,41 @@ type Word = { text: string; em?: boolean };
 
 interface PinScrollProps {
   eyebrow?: string;
-  meta?: string;
-  intro?: string;
-  outro?: string;
+  title?: string;
   words: Word[];
   theme?: "light" | "paper" | "dark";
 }
 
+/**
+ * Seamless rolling-pin section.
+ * - inherits the surrounding section bg (no abrupt theme break)
+ * - soft fade-in/out at top + bottom of the sticky stage
+ * - words spotlight as they pass viewport center, eased lerp on the track
+ * - title sits inside the stage rather than as a separate header row
+ */
 export function PinScroll({
-  eyebrow = "The work",
-  meta = "HORIZONTAL · MOTION",
-  intro = "↳ How we work",
-  outro = "⏵ Same operating bar across consulting, labs, training",
+  eyebrow = "How we work",
+  title = "One operating bar.",
   words,
-  theme = "paper",
+  theme = "light",
 }: PinScrollProps) {
   return (
-    <section className="pin-section" data-theme={theme}>
+    <section className="pin-section pin-seamless" data-theme={theme}>
       <div className="pin-stage">
-        <div className="pin-eyebrow-row">
+        {/* In-stage editorial label, top-left */}
+        <div className="pin-meta">
           <span className="eyebrow">{eyebrow}</span>
-          <span className="font-mono text-[11px] tracking-[0.22em] text-zinc-500" data-scramble>
-            {meta}
+          <span className="font-serif italic text-[clamp(20px,2vw,30px)] text-zinc-500 ml-3">
+            {title}
           </span>
         </div>
         <div className="pin-track">
-          <span className="pin-mini">{intro}</span>
           {words.map((w, i) => (
             <span key={i} className="pin-word">
               {w.em ? <em className="pin-em">{w.text}</em> : w.text}
-              <span className="pin-dot" />
+              {i < words.length - 1 && <span className="pin-dot" />}
             </span>
           ))}
-          <span className="pin-mini">{outro}</span>
         </div>
         <div className="pin-progress">
           <div className="pin-progress-fill" />
