@@ -4,6 +4,7 @@ import { SiteFooter } from "@/components/site/site-footer";
 import { PageStars } from "@/components/site/page-stars";
 import { SparkleField } from "@/components/site/sparkle-field";
 import { LabsViz } from "@/components/site/hero-viz";
+import { AlphaViz, TauViz } from "@/components/site/lab-product-viz";
 import { PageMarquee } from "@/components/site/page-marquee";
 import { PinScroll } from "@/components/site/pin-scroll";
 
@@ -69,13 +70,8 @@ export default function Page() {
     <div className="bento">
       <a href="/proxialpha/" className="b-6 hover-line group" data-reveal>
         <div className="card overflow-hidden h-full flex flex-col">
-          <div className="mesh aspect-[16/10]">
-            <div className="absolute inset-0 grid place-items-center">
-              <div className="text-white text-center">
-                <div className="font-mono text-[11px] tracking-[0.2em] text-white/70 mb-3">QUANT TRADING</div>
-                <div className="font-serif italic text-[clamp(40px,5vw,72px)] leading-none">α</div>
-              </div>
-            </div>
+          <div className="aspect-[16/10] relative">
+            <AlphaViz />
           </div>
           <div className="p-10 flex-1 flex flex-col">
             <div className="font-mono text-[12px] tracking-[0.14em] text-zinc-500 mb-5">LAB · PRODUCT</div>
@@ -99,13 +95,8 @@ export default function Page() {
 
       <a href="/proxitrades/" className="b-6 hover-line group" data-reveal data-delay="1">
         <div className="card overflow-hidden h-full flex flex-col">
-          <div className="mesh aspect-[16/10]">
-            <div className="absolute inset-0 grid place-items-center">
-              <div className="text-white text-center">
-                <div className="font-mono text-[11px] tracking-[0.2em] text-white/70 mb-3">EXECUTION</div>
-                <div className="font-serif italic text-[clamp(40px,5vw,72px)] leading-none">τ</div>
-              </div>
-            </div>
+          <div className="aspect-[16/10] relative">
+            <TauViz />
           </div>
           <div className="p-10 flex-1 flex flex-col">
             <div className="font-mono text-[12px] tracking-[0.14em] text-zinc-500 mb-5">LAB · PRODUCT</div>
