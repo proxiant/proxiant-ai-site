@@ -31,11 +31,10 @@ export default function Page() {
           code runs in paper and live with one configuration change.
         </p>
         <div className="mt-10 flex flex-wrap gap-3" data-reveal data-delay="3">
-          <a href="https://github.com/proxiant/ProxiTrades" target="_blank" rel="noopener" className="btn btn-dark magnetic">
-            View on GitHub
+          <a href="/contact/" className="btn btn-dark magnetic">
+            Talk to us
             <svg className="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
           </a>
-          <a href="/proxialpha/" className="btn btn-outline">See ProxiAlpha</a>
         </div>
       </div>
       <div className="lg:col-span-4 lg:col-start-9 aspect-[4/5]" data-reveal-scale>
