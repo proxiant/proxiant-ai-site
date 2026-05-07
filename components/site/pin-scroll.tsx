@@ -26,9 +26,6 @@ export function PinScroll({
         {/* In-stage editorial label, top-left */}
         <div className="pin-meta">
           <span className="eyebrow">{eyebrow}</span>
-          <span className="font-serif italic text-[clamp(20px,2vw,30px)] text-zinc-500 ml-3">
-            {title}
-          </span>
         </div>
         <div className="pin-track">
           {words.map((w, i) => (
