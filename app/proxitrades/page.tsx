@@ -4,6 +4,7 @@ import { SiteFooter } from "@/components/site/site-footer";
 import { PageStars } from "@/components/site/page-stars";
 import { PageMarquee } from "@/components/site/page-marquee";
 import { PinScroll } from "@/components/site/pin-scroll";
+import { TauViz } from "@/components/site/lab-product-viz";
 
 export default function Page() {
   return (
@@ -37,19 +38,8 @@ export default function Page() {
           <a href="/proxialpha/" className="btn btn-outline">See ProxiAlpha</a>
         </div>
       </div>
-      <div className="lg:col-span-4 lg:col-start-9" data-reveal-scale>
-        <div className="mesh aspect-[4/5] scanline relative">
-          <div className="starfield" data-twinkles="20"></div>
-          <div className="orbit-ring"></div>
-          <div className="orbit-ring r2"></div>
-          <div className="absolute inset-0 grid place-items-center">
-            <div className="text-center">
-              <div className="font-mono text-[11px] tracking-[0.2em] text-white/70 mb-3">PROXITRADES</div>
-              <div className="font-serif italic text-[clamp(120px,14vw,200px)] text-white leading-none">τ</div>
-              <div className="font-mono text-[11px] tracking-[0.2em] text-white/70 mt-3">EXECUTION</div>
-            </div>
-          </div>
-        </div>
+      <div className="lg:col-span-4 lg:col-start-9 aspect-[4/5]" data-reveal-scale>
+        <TauViz />
       </div>
     </div>
   </div>
