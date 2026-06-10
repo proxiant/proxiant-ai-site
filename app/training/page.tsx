@@ -11,7 +11,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "AI Training — Proxiant",
-  description: "Hands-on AI training for engineering teams and senior leadership. Cohort-based, project-based, ending in a real production deploy.",
+  description: "Open-enrollment AI courses, 12-week expert bootcamps, and corporate cohort programs. PCAP certification, GPU-backed labs, and capstones that ship to production.",
 };
 
 export default function Page() {
@@ -31,8 +31,9 @@ export default function Page() {
         <div className="font-mono text-[12px] tracking-[0.16em] text-zinc-500 mb-9" data-reveal data-scramble>PRACTICE / 03 — AI TRAINING</div>
         <h1 className="display-xl glow-accent" data-reveal-up-words>Programs that turn into practice.</h1>
         <p className="lead mt-9 max-w-2xl" data-reveal data-delay="2">
-          Hands-on AI training for engineering teams and senior leadership. Cohort-based,
-          project-based, built around the systems your people are actually trying to ship.
+          Hands-on AI training for engineering teams, senior leadership, and individual
+          practitioners. Cohort-based, project-based, built around the systems your people are
+          actually trying to ship.
         </p>
         <div className="mt-10 flex flex-wrap gap-3" data-reveal data-delay="3">
           <a href="/contact/" className="btn btn-dark magnetic">Plan a program
@@ -82,12 +83,12 @@ export default function Page() {
   </div>
 </section>
 
-{/* Programs */}
+{/* Corporate programs */}
 <section id="programs" data-theme="light" className="section">
   <div className="container-x">
     <div className="grid lg:grid-cols-12 gap-10 mb-16">
       <div className="lg:col-span-7">
-        <div className="eyebrow mb-6" data-reveal>The programs</div>
+        <div className="eyebrow mb-6" data-reveal>Corporate programs</div>
         <h2 className="display-lg" data-reveal data-delay="1">
           Four formats. <span className="italic-accent font-serif">Same standard.</span>
         </h2>
@@ -170,12 +171,12 @@ export default function Page() {
   </div>
 </section>
 
-{/* Bootcamp curriculum — dark editorial list */}
+{/* Corporate bootcamp curriculum — dark editorial list */}
 <section data-theme="dark" className="section">
   <div className="container-x">
     <div className="grid lg:grid-cols-12 gap-10 mb-16">
       <div className="lg:col-span-7">
-        <div className="eyebrow mb-6" data-reveal>Inside the bootcamp</div>
+        <div className="eyebrow mb-6" data-reveal>Inside the corporate bootcamp</div>
         <h2 className="display-lg" data-reveal data-delay="1">
           What an engineer <span className="italic-accent font-serif">walks out with.</span>
         </h2>
@@ -242,8 +243,235 @@ export default function Page() {
   </div>
 </section>
 
+{/* Open enrollment — Proxiant Academy */}
+<section data-theme="paper" className="section">
+  <div className="container-x">
+    <div className="grid lg:grid-cols-12 gap-10 mb-16">
+      <div className="lg:col-span-7">
+        <div className="eyebrow mb-6" data-reveal>Open enrollment · Proxiant Academy</div>
+        <h2 className="display-lg" data-reveal data-delay="1">
+          Four courses. <span className="italic-accent font-serif">One credential.</span>
+        </h2>
+      </div>
+      <div className="lg:col-span-4 lg:col-start-9 self-end">
+        <p className="lead" data-reveal data-delay="2">
+          Individual seats, full materials: weekly lectures, graded exercises, projects, and a
+          certification exam. Every course qualifies you for the PCAP credential.
+        </p>
+      </div>
+    </div>
+
+    <div className="bento">
+      <article className="b-6 card p-10" data-reveal>
+        <div className="flex items-baseline justify-between mb-6">
+          <span className="font-mono text-[12px] tracking-[0.14em] text-zinc-500">COURSE / 01 · BEGINNER</span>
+          <span className="font-mono text-[12px] text-zinc-500">4 WEEKS · ONLINE</span>
+        </div>
+        <h3 className="display-sm mb-4">AI Fundamentals</h3>
+        <p className="muted text-[15.5px] leading-relaxed mb-7">
+          The on-ramp. From the history of AI through working ML models to generative AI and
+          organizational strategy. No prior AI or programming experience required; benchmarked
+          against MIT and Stanford intro curricula.
+        </p>
+        <ul className="space-y-2 text-[14.5px]">
+          <li className="line-top pt-3"><span className="font-mono text-[11px] text-zinc-500 mr-3">W1</span>Foundations: search, agents, knowledge</li>
+          <li className="line-top pt-3"><span className="font-mono text-[11px] text-zinc-500 mr-3">W2</span>Machine learning and model evaluation</li>
+          <li className="line-top pt-3"><span className="font-mono text-[11px] text-zinc-500 mr-3">W3</span>Deep learning, CNNs to transformers</li>
+          <li className="line-top pt-3"><span className="font-mono text-[11px] text-zinc-500 mr-3">W4</span>GenAI, ethics, and AI strategy</li>
+        </ul>
+        <div className="line-top mt-7 pt-4 flex items-baseline justify-between">
+          <span className="font-mono text-[11px] tracking-[0.14em] text-zinc-500">TUITION</span>
+          <span className="font-mono text-[14px]">$1,499</span>
+        </div>
+      </article>
+      <article className="b-6 card p-10" data-reveal data-delay="1">
+        <div className="flex items-baseline justify-between mb-6">
+          <span className="font-mono text-[12px] tracking-[0.14em] text-zinc-500">COURSE / 02 · INTERMEDIATE</span>
+          <span className="font-mono text-[12px] text-zinc-500">8 WEEKS · LIVE COHORT</span>
+        </div>
+        <h3 className="display-sm mb-4">AI for Engineers</h3>
+        <p className="muted text-[15.5px] leading-relaxed mb-7">
+          For software engineers integrating AI into production systems. 24 live sessions, 85+
+          coding exercises, 8 graded projects ending in a deployed capstone. Python fluency
+          assumed.
+        </p>
+        <ul className="space-y-2 text-[14.5px]">
+          <li className="line-top pt-3"><span className="font-mono text-[11px] text-zinc-500 mr-3">01</span>AI APIs, SDKs, and data engineering</li>
+          <li className="line-top pt-3"><span className="font-mono text-[11px] text-zinc-500 mr-3">02</span>Building with LLMs: prompting to LoRA</li>
+          <li className="line-top pt-3"><span className="font-mono text-[11px] text-zinc-500 mr-3">03</span>Agents, tool use, and RAG systems</li>
+          <li className="line-top pt-3"><span className="font-mono text-[11px] text-zinc-500 mr-3">04</span>Deployment, MLOps, security, cost</li>
+        </ul>
+        <div className="line-top mt-7 pt-4 flex items-baseline justify-between">
+          <span className="font-mono text-[11px] tracking-[0.14em] text-zinc-500">TUITION</span>
+          <span className="font-mono text-[14px]">$2,499</span>
+        </div>
+      </article>
+      <article className="b-6 card p-10" data-reveal data-delay="2">
+        <div className="flex items-baseline justify-between mb-6">
+          <span className="font-mono text-[12px] tracking-[0.14em] text-zinc-500">COURSE / 03 · ADVANCED</span>
+          <span className="font-mono text-[12px] text-zinc-500">6 WEEKS · HYBRID</span>
+        </div>
+        <h3 className="display-sm mb-4">AI for Finance</h3>
+        <p className="muted text-[15.5px] leading-relaxed mb-7">
+          AI for risk, trading, and compliance teams. Credit and market risk models with
+          explainability, fraud detection, deep-learning forecasting, and the RegTech stack, built
+          to regulatory standards like SR 11-7 and CCAR.
+        </p>
+        <ul className="space-y-2 text-[14.5px]">
+          <li className="line-top pt-3"><span className="font-mono text-[11px] text-zinc-500 mr-3">01</span>Credit risk, market risk, portfolios</li>
+          <li className="line-top pt-3"><span className="font-mono text-[11px] text-zinc-500 mr-3">02</span>Fraud detection and stress testing</li>
+          <li className="line-top pt-3"><span className="font-mono text-[11px] text-zinc-500 mr-3">03</span>Forecasting: LSTM, transformers, ensembles</li>
+          <li className="line-top pt-3"><span className="font-mono text-[11px] text-zinc-500 mr-3">04</span>KYC/AML, compliance NLP, MLOps</li>
+        </ul>
+        <div className="line-top mt-7 pt-4 flex items-baseline justify-between">
+          <span className="font-mono text-[11px] tracking-[0.14em] text-zinc-500">TUITION</span>
+          <span className="font-mono text-[14px]">$2,499</span>
+        </div>
+      </article>
+      <article className="b-6 card p-10" data-reveal data-delay="3">
+        <div className="flex items-baseline justify-between mb-6">
+          <span className="font-mono text-[12px] tracking-[0.14em] text-zinc-500">COURSE / 04 · INTERMEDIATE</span>
+          <span className="font-mono text-[12px] text-zinc-500">6 WEEKS · ONLINE</span>
+        </div>
+        <h3 className="display-sm mb-4">AI for Operations</h3>
+        <p className="muted text-[15.5px] leading-relaxed mb-7">
+          AI for supply chain, logistics, and plant teams. Demand forecasting, network and
+          inventory optimization, routing, predictive maintenance, and edge deployment, with
+          industry-standard tooling like OR-Tools and SimPy.
+        </p>
+        <ul className="space-y-2 text-[14.5px]">
+          <li className="line-top pt-3"><span className="font-mono text-[11px] text-zinc-500 mr-3">01</span>Demand forecasting and supply chain</li>
+          <li className="line-top pt-3"><span className="font-mono text-[11px] text-zinc-500 mr-3">02</span>Routing, fleets, warehouse automation</li>
+          <li className="line-top pt-3"><span className="font-mono text-[11px] text-zinc-500 mr-3">03</span>Predictive maintenance and quality</li>
+          <li className="line-top pt-3"><span className="font-mono text-[11px] text-zinc-500 mr-3">04</span>Process optimization and edge MLOps</li>
+        </ul>
+        <div className="line-top mt-7 pt-4 flex items-baseline justify-between">
+          <span className="font-mono text-[11px] tracking-[0.14em] text-zinc-500">TUITION</span>
+          <span className="font-mono text-[14px]">$2,499</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+{/* Flagship bootcamps */}
+<section data-theme="dark" className="section">
+  <div className="container-x">
+    <div className="grid lg:grid-cols-12 gap-10 mb-16">
+      <div className="lg:col-span-7">
+        <div className="eyebrow mb-6" data-reveal>Flagship bootcamps · Fall 2026 cohorts</div>
+        <h2 className="display-lg" data-reveal data-delay="1">
+          Twelve weeks. <span className="italic-accent font-serif">Expert depth.</span>
+        </h2>
+      </div>
+      <div className="lg:col-span-4 lg:col-start-9 self-end">
+        <p className="lead" data-reveal data-delay="2">
+          Hybrid cohorts: in person in Fremont, live on Zoom, recordings kept. Both run on the
+          Proxiant Datacenter: 20+ GPU servers, 40+ NVIDIA GPUs. Day 1 is a free open day.
+        </p>
+      </div>
+    </div>
+
+    <div className="bento">
+      <article className="b-6 card p-10" data-reveal>
+        <div className="flex items-baseline justify-between mb-6">
+          <span className="font-mono text-[12px] tracking-[0.14em] text-zinc-500">BOOTCAMP / α · EXPERT</span>
+          <span className="font-mono text-[12px] text-zinc-500">STARTS OCT 4, 2026</span>
+        </div>
+        <h3 className="display-sm mb-4">AI Agents & Advanced Fine-Tuning</h3>
+        <p className="muted text-[15.5px] leading-relaxed mb-7">
+          For engineers already working with LLMs. Reads the research, writes the training loops,
+          ships a real capstone: an agentic application with an MCP server, a fine-tuned model,
+          and a 50-example eval suite. Sundays plus two evening lab sessions a week.
+        </p>
+        <ul className="space-y-2 text-[13.5px]">
+          <li className="line-top pt-3"><span className="font-mono text-[11px] text-zinc-500 mr-3">W1–3</span>The agentic loop, enterprise AI, Model Context Protocol</li>
+          <li className="line-top pt-3"><span className="font-mono text-[11px] text-zinc-500 mr-3">W4–6</span>Prompt optimization (DSPy, GEPA), LoRA/qLoRA, PPO/DPO/GRPO</li>
+          <li className="line-top pt-3"><span className="font-mono text-[11px] text-zinc-500 mr-3">W7–9</span>Multi-agent systems, deep RL, Ray, vLLM, A2A communications</li>
+          <li className="line-top pt-3"><span className="font-mono text-[11px] text-zinc-500 mr-3">W10–12</span>Production agent patterns, agentic RAG and training, capstone</li>
+        </ul>
+        <div className="line-top mt-7 pt-4 flex items-baseline justify-between">
+          <span className="font-mono text-[11px] tracking-[0.14em] text-zinc-500">PCAP-AGENTS CERT</span>
+          <span className="font-mono text-[14px]">$3,700</span>
+        </div>
+      </article>
+      <article className="b-6 card p-10" data-reveal data-delay="1">
+        <div className="flex items-baseline justify-between mb-6">
+          <span className="font-mono text-[12px] tracking-[0.14em] text-zinc-500">BOOTCAMP / τ · EXPERT</span>
+          <span className="font-mono text-[12px] text-zinc-500">STARTS OCT 3, 2026</span>
+        </div>
+        <h3 className="display-sm mb-4">LLM & Enterprise RAG</h3>
+        <p className="muted text-[15.5px] leading-relaxed mb-7">
+          Hackathon-style and coding-centered: teams of 4 to 6 build production retrieval systems
+          in dedicated rooms, Saturdays on campus plus two evening lab sessions a week. From
+          embedding geometry to a fully evaluated enterprise RAG stack.
+        </p>
+        <ul className="space-y-2 text-[13.5px]">
+          <li className="line-top pt-3"><span className="font-mono text-[11px] text-zinc-500 mr-3">W1–3</span>Language models, embedding geometry, chunking and retrieval</li>
+          <li className="line-top pt-3"><span className="font-mono text-[11px] text-zinc-500 mr-3">W4–6</span>Retrieval funnel (ColBERT, rerankers), vision models, prompts</li>
+          <li className="line-top pt-3"><span className="font-mono text-[11px] text-zinc-500 mr-3">W7–9</span>GraphRAG, guardrails and grounding, enterprise RAG at P95</li>
+          <li className="line-top pt-3"><span className="font-mono text-[11px] text-zinc-500 mr-3">W10–12</span>Agentic RAG, Text2SQL, fine-tuning, evals and the capstone</li>
+        </ul>
+        <div className="line-top mt-7 pt-4 flex items-baseline justify-between">
+          <span className="font-mono text-[11px] tracking-[0.14em] text-zinc-500">PCAP-RAG CERT</span>
+          <span className="font-mono text-[14px]">$3,700</span>
+        </div>
+      </article>
+    </div>
+
+    <p className="muted text-[14px] mt-8" data-reveal>
+      Weekly cadence for both: one full theory-and-lab day, two guided evening lab sessions, a
+      weekly quiz, paper readings, and team project presentations. Grading runs across quizzes,
+      projects, labs, paper presentations, a capstone, and a final certification exam.
+    </p>
+  </div>
+</section>
+
+{/* Certification */}
+<section data-theme="paper" className="section">
+  <div className="container-x">
+    <div className="grid lg:grid-cols-12 gap-10 lg:gap-16">
+      <div className="lg:col-span-5">
+        <div className="eyebrow mb-6" data-reveal>Certification</div>
+        <h2 className="display-md" data-reveal data-delay="1">
+          PCAP: a credential <span className="italic-accent font-serif">you can verify.</span>
+        </h2>
+        <p className="muted text-[15.5px] leading-relaxed mt-6 max-w-md" data-reveal data-delay="2">
+          The Proxiant Certified AI Professional exam validates applied AI skill. Passing any
+          Academy course with 70 percent or better qualifies you to sit it. Bootcamp graduates
+          earn the specialized PCAP-Agents and PCAP-RAG credentials.
+        </p>
+      </div>
+      <div className="lg:col-span-6 lg:col-start-7">
+        <div className="grid grid-cols-2 gap-x-6">
+          <div className="line-top py-6" data-reveal>
+            <div className="font-mono text-[11px] tracking-[0.14em] text-zinc-500 mb-2">FORMAT</div>
+            <div className="text-[15px]">100 multiple-choice questions, 3 hours</div>
+          </div>
+          <div className="line-top py-6" data-reveal data-delay="1">
+            <div className="font-mono text-[11px] tracking-[0.14em] text-zinc-500 mb-2">PASS SCORE</div>
+            <div className="text-[15px]">70 percent, valid for 3 years</div>
+          </div>
+          <div className="line-top py-6" data-reveal data-delay="2">
+            <div className="font-mono text-[11px] tracking-[0.14em] text-zinc-500 mb-2">EXAM FEE</div>
+            <div className="text-[15px]">$199, digital badge included</div>
+          </div>
+          <div className="line-top py-6" data-reveal data-delay="3">
+            <div className="font-mono text-[11px] tracking-[0.14em] text-zinc-500 mb-2">BOOTCAMP EXAMS</div>
+            <div className="text-[15px]">60 MCQs + 4 scenario questions, 240 points</div>
+          </div>
+          <div className="line-top py-6 col-span-2" data-reveal data-delay="4">
+            <div className="font-mono text-[11px] tracking-[0.14em] text-zinc-500 mb-2">STUDY MATERIALS INCLUDED</div>
+            <div className="text-[15px]">A 16-chapter AI/ML/GenAI textbook and a 232-question interview prep book, both written in-house and kept current.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 {/* Outcomes */}
-<section data-theme="paper" className="section-tight">
+<section data-theme="light" className="section-tight">
   <div className="container-x">
     <div className="grid grid-cols-2 lg:grid-cols-4">
       <div className="line-top py-10 pr-6" data-reveal>
@@ -255,12 +483,12 @@ export default function Page() {
         <div className="muted text-[14px] mt-2 max-w-[20ch]">Cohort completion rate across programs</div>
       </div>
       <div className="line-top py-10 pr-6" data-reveal data-delay="2">
-        <div className="counter text-[clamp(56px,7vw,108px)]" data-count="3" data-suffix="x">0</div>
-        <div className="muted text-[14px] mt-2 max-w-[24ch]">Engineer-to-shipped-system ratio post-program</div>
+        <div className="counter text-[clamp(56px,7vw,108px)]" data-count="51">0</div>
+        <div className="muted text-[14px] mt-2 max-w-[24ch]">Guided labs across the two flagship bootcamps</div>
       </div>
       <div className="line-top py-10" data-reveal data-delay="3">
-        <div className="counter text-[clamp(56px,7vw,108px)]" data-count="12">0</div>
-        <div className="muted text-[14px] mt-2 max-w-[20ch]">Months of post-program coaching</div>
+        <div className="counter text-[clamp(56px,7vw,108px)]" data-count="40" data-suffix="+">0</div>
+        <div className="muted text-[14px] mt-2 max-w-[20ch]">NVIDIA GPUs in the training datacenter</div>
       </div>
     </div>
   </div>
@@ -277,7 +505,7 @@ export default function Page() {
         </h2>
       </div>
     </div>
-    <div className="grid md:grid-cols-3 gap-3">
+    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-3">
       <div className="card p-8" data-reveal>
         <div className="font-mono text-[11px] text-zinc-500 mb-4">01</div>
         <div className="display-xs mb-3">Enterprise engineering teams</div>
@@ -292,6 +520,11 @@ export default function Page() {
         <div className="font-mono text-[11px] text-zinc-500 mb-4">03</div>
         <div className="display-xs mb-3">Specialized functions</div>
         <p className="muted text-[14.5px] leading-relaxed">Risk, compliance, security, product. Teams that need to engage with AI work without becoming engineers.</p>
+      </div>
+      <div className="card p-8" data-reveal data-delay="3">
+        <div className="font-mono text-[11px] text-zinc-500 mb-4">04</div>
+        <div className="display-xs mb-3">Individual practitioners</div>
+        <p className="muted text-[14.5px] leading-relaxed">Engineers and analysts taking an open-enrollment seat: full course materials, graded projects, and a path to PCAP.</p>
       </div>
     </div>
   </div>
@@ -313,7 +546,8 @@ export default function Page() {
         <h2 className="display-xl" data-reveal-up-words>Plan a program.</h2>
         <p className="lead mt-9 max-w-2xl" data-reveal data-delay="2">
           Tell us about your team, your stack, and what you want them to be able to do at the end.
-          We'll come back with a curriculum and a timeline.
+          We'll come back with a curriculum and a timeline. Or take a seat in the fall cohorts:
+          the RAG bootcamp starts October 3, 2026, and the agents bootcamp starts October 4.
         </p>
         <div className="mt-10 flex flex-wrap gap-3" data-reveal data-delay="3">
           <a href="/contact/" className="btn btn-light magnetic">
