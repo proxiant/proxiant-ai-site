@@ -5,6 +5,13 @@ import { PageStars } from "@/components/site/page-stars";
 import { PageMarquee } from "@/components/site/page-marquee";
 import { PinScroll } from "@/components/site/pin-scroll";
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Case study: Fortune 500 bank — Proxiant",
+  description: "How a global bank's risk-modeling group cut its model evaluation cycle from two weeks to a day, inside the audit channel it already ran.",
+};
+
 export default function Page() {
   return (
     <div>
@@ -39,7 +46,7 @@ export default function Page() {
 
       <PageMarquee
         items={["Discover", "Design", "Wire", "Evaluate", "Ship", "Hand back"]}
-        eyebrow="What we ship into"
+        eyebrow="The engagement arc"
       />
 <section data-theme="paper" className="section-tight">
   <div className="container-x relative">

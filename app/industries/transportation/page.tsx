@@ -5,6 +5,13 @@ import { PageStars } from "@/components/site/page-stars";
 import { PageMarquee } from "@/components/site/page-marquee";
 import { PinScroll } from "@/components/site/pin-scroll";
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Transportation — Proxiant",
+  description: "Routing, fleet operations, dispatch, and logistics decision support, auditable end to end.",
+};
+
 export default function Page() {
   return (
     <div>
@@ -44,7 +51,7 @@ export default function Page() {
 
       <PageMarquee
         items={["Plan", "Dispatch", "Track", "Deliver", "Audit"]}
-        eyebrow="What we ship into"
+        eyebrow="Where we ship"
       />
 <section data-theme="paper" className="section">
   <div className="container-x relative">

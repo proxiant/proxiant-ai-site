@@ -6,6 +6,13 @@ import { SparkleField } from "@/components/site/sparkle-field";
 import { PageMarquee } from "@/components/site/page-marquee";
 import { PinScroll } from "@/components/site/pin-scroll";
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Industries — Proxiant",
+  description: "Eight regulated industries with shipped AI systems: banking, healthcare, insurance, manufacturing, energy, retail, telecom, transportation.",
+};
+
 export default function Page() {
   return (
     <div>
@@ -37,7 +44,7 @@ export default function Page() {
 
       <PageMarquee
         items={["Banking", "Health", "Insurance", "Energy", "Manufacturing", "Retail", "Telecom", "Logistics"]}
-        eyebrow="What we ship into"
+        eyebrow="Industries we ship into"
       />
 <section data-theme="paper" className="pb-32">
   <div className="container-x relative">

@@ -7,6 +7,13 @@ import { TrainingViz } from "@/components/site/hero-viz";
 import { PageMarquee } from "@/components/site/page-marquee";
 import { PinScroll } from "@/components/site/pin-scroll";
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "AI Training — Proxiant",
+  description: "Hands-on AI training for engineering teams and senior leadership. Cohort-based, project-based, ending in a real production deploy.",
+};
+
 export default function Page() {
   return (
     <div>
@@ -46,7 +53,7 @@ export default function Page() {
 
       <PageMarquee
         items={["Foundations", "Retrieval", "Agents", "Evaluate", "Govern", "Ship"]}
-        eyebrow="What we ship into"
+        eyebrow="The program arc"
       />
 {/* Why training */}
 <section data-theme="paper" className="section">

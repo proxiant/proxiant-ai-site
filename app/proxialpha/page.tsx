@@ -6,6 +6,13 @@ import { PageMarquee } from "@/components/site/page-marquee";
 import { PinScroll } from "@/components/site/pin-scroll";
 import { AlphaViz } from "@/components/site/lab-product-viz";
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "ProxiAlpha — Proxiant Labs",
+  description: "Agent-driven trading research platform. Walk-forward strategy research, paper-trading, and a live cockpit, continuously evaluated.",
+};
+
 export default function Page() {
   return (
     <div>
@@ -49,7 +56,7 @@ export default function Page() {
 
       <PageMarquee
         items={["Signal", "Trade", "Measure", "Adapt", "Audit"]}
-        eyebrow="What we ship into"
+        eyebrow="The research loop"
       />
 <section data-theme="paper" className="section-tight">
   <div className="container-x relative">

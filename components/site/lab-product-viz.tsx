@@ -1,23 +1,27 @@
 "use client";
 
 /**
- * Themed visuals for the two ProxiantLabs product cards on /labs.
+ * Themed visuals for the two ProxiantLabs product cards on /labs and on the
+ * standalone product pages. Both render in the brand palette: warm cream over
+ * deep ink, accented with the burnt-orange brand color. No retro Matrix tropes.
  *
- * - AlphaViz   → ProxiAlpha. Orange / stocks aesthetic: candlestick chart,
- *   moving price line, scrolling ticker tape across the top, big serif α
- *   floating at center, telemetry strip at bottom (Sharpe / PnL / Eval).
- * - TauViz     → ProxiTrades. Green Matrix-style aesthetic: vertical rain
- *   of katakana glyphs in green, automated-bot status list, big serif τ
- *   floating at center with phosphor glow, telemetry strip at bottom
- *   (Bots / Latency / Audit).
+ * - AlphaViz   → ProxiAlpha. A quantitative research surface: scrolling ticker
+ *   tape, candlestick chart with brand-aligned up/down colors, animated alpha
+ *   trace over a gradient fill, latest-price marker, big serif α floating at
+ *   center, telemetry strip at bottom (Sharpe / PnL / Eval).
+ * - TauViz     → ProxiTrades. An execution-engine surface: dense
+ *   monospace event log streaming on the right (signal → validate → route →
+ *   fill), routing graph rendered in burnt orange / cream on the left, big
+ *   serif τ at center, telemetry strip at bottom (Bots / Latency / Audit).
  */
 
-import React, { useMemo } from "react";
+import React from "react";
 
 /* ─────────── Shared HUD chrome ─────────── */
 
-function HudCorners({ tone = "orange" }: { tone?: "orange" | "green" }) {
-  const c = tone === "green" ? "rgba(74,222,128,0.55)" : "rgba(255,180,128,0.55)";
+function HudCorners({ tone = "orange" }: { tone?: "orange" }) {
+  const c = "rgba(255,180,128,0.55)";
+  void tone;
   return (
     <>
       <span className="absolute top-3 left-3 w-3 h-3" aria-hidden>
@@ -87,7 +91,7 @@ export function AlphaViz() {
           {[...TICKER, ...TICKER].map((t, i) => {
             const up = t.includes("+");
             return (
-              <span key={i} style={{ color: up ? "#ffb380" : "#fb7185" }}>
+              <span key={i} style={{ color: up ? "#ffb380" : "#8b93a7" }}>
                 {t}
               </span>
             );
@@ -122,7 +126,9 @@ export function AlphaViz() {
           const map = (p: number) => 240 - (p - 25) * 2.5;
           const top = Math.min(map(c.o), map(c.c));
           const bot = Math.max(map(c.o), map(c.c));
-          const fill = c.up ? "#10b981" : "#ef4444";
+          // Brand-aligned candle colors — warm cream for up, muted slate for down,
+          // not the cheap pure-green / pure-red of a consumer trading app.
+          const fill = c.up ? "#e8d5a8" : "#5b6478";
           const stroke = fill;
           return (
             <g key={i}>
@@ -169,7 +175,7 @@ export function AlphaViz() {
       </div>
 
       {/* Bottom telemetry */}
-      <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-[10px] font-mono tracking-[0.2em]" style={{ color: "rgba(255, 200, 160, 0.85)" }}>
+      <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-[10px] font-mono tracking-[0.2em]" style={{ color: "rgba(232, 213, 168, 0.85)" }}>
         <span>SHARPE · 1.42</span>
         <span style={{ color: "#ffb380" }}>PnL · +0.08</span>
         <span>EVAL · OK</span>
@@ -185,113 +191,89 @@ export function AlphaViz() {
   );
 }
 
-/* ─────────── ProxiTrades — green Matrix bots theme ─────────── */
+/* ─────────── ProxiTrades — execution engine, brand palette ─────────── */
 
-const MATRIX_CHARS = "ｱｲｳｴｵｶｷｸｹｺｻｼｽｾｿﾀﾁﾂﾃﾄ01XΣΔΞ#@&";
-
-function MatrixColumn({ x, delay, duration, density }: { x: number; delay: number; duration: number; density: number }) {
-  // Build a deterministic char stream per column (no Math.random for SSR stability)
-  const chars = useMemo(() => {
-    const out: string[] = [];
-    for (let i = 0; i < density; i++) {
-      out.push(MATRIX_CHARS[(i * 7 + Math.floor(x)) % MATRIX_CHARS.length]);
-    }
-    return out;
-  }, [x, density]);
-
-  return (
-    <div
-      className="absolute top-0 bottom-0 font-mono whitespace-pre leading-[1.2]"
-      style={{
-        left: `${x}%`,
-        fontSize: "11px",
-        animation: `matrix-fall ${duration}s linear ${delay}s infinite`,
-      }}
-    >
-      {chars.map((ch, i) => {
-        const alpha = i === density - 1 ? 1 : Math.max(0.18, 0.9 - i * (0.9 / density));
-        const head = i === density - 1;
-        return (
-          <span
-            key={i}
-            style={{
-              display: "block",
-              color: head ? "#d6ffe6" : `rgba(74, 222, 128, ${alpha})`,
-              textShadow: head ? "0 0 8px rgba(74, 222, 128, 0.95)" : "0 0 4px rgba(74, 222, 128, 0.45)",
-            }}
-          >
-            {ch}
-          </span>
-        );
-      })}
-    </div>
-  );
-}
+// Deterministic event log entries — signal → validate → route → fill.
+const TAU_EVENTS = [
+  { t: "10:42:18.221", k: "SIG",   d: "strategy_v7 · AAPL · long",  hot: false },
+  { t: "10:42:18.230", k: "VAL",   d: "risk gates · pass",          hot: false },
+  { t: "10:42:18.236", k: "ROUTE", d: "alpaca · paper",             hot: false },
+  { t: "10:42:18.301", k: "FILL",  d: "AAPL · 0.7% · 80ms",         hot: true },
+  { t: "10:43:51.110", k: "SIG",   d: "mean_rev · MSFT · hold",     hot: false },
+  { t: "10:43:51.114", k: "VAL",   d: "exposure check · pass",      hot: false },
+  { t: "10:45:09.882", k: "SIG",   d: "strategy_v7 · NVDA · exit",  hot: false },
+  { t: "10:45:09.890", k: "VAL",   d: "stop-loss honored",          hot: false },
+  { t: "10:45:09.897", k: "ROUTE", d: "tradier · live",             hot: false },
+  { t: "10:45:09.961", k: "FILL",  d: "NVDA · 1.2% · 79ms",         hot: true },
+  { t: "10:47:02.404", k: "AUDIT", d: "ledger write · sealed",      hot: false },
+  { t: "10:48:30.012", k: "SIG",   d: "momentum_x · SPY · long",    hot: false },
+];
 
 export function TauViz() {
-  // Deterministic column positions (no Math.random — SSR-stable)
-  const cols = useMemo(
-    () =>
-      Array.from({ length: 18 }).map((_, i) => ({
-        x: i * 5.6 + 1,
-        delay: (i * 0.41) % 3,
-        duration: 5 + ((i * 13) % 7),
-        density: 14 + (i % 5),
-      })),
-    []
-  );
-
   return (
     <div
       className="relative w-full h-full overflow-hidden rounded-[28px]"
       aria-hidden="true"
-      style={{ background: "#020a04" }}
+      style={{
+        background:
+          "radial-gradient(60% 80% at 50% 0%, rgba(191, 87, 0, 0.14), transparent 60%), linear-gradient(180deg, #120b04 0%, #0a0706 100%)",
+      }}
     >
-      <HudCorners tone="green" />
+      <HudCorners tone="orange" />
 
-      {/* Matrix rain */}
-      <div className="absolute inset-0 overflow-hidden">
-        {cols.map((c, i) => (
-          <MatrixColumn key={i} x={c.x} delay={c.delay} duration={c.duration} density={c.density} />
+      {/* Routing graph — left side */}
+      <svg viewBox="0 0 220 420" className="absolute left-0 top-0 h-full w-1/2 opacity-90">
+        <defs>
+          <linearGradient id="tau-path" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stopColor="rgba(191,87,0,0)" />
+            <stop offset="50%" stopColor="rgba(255,153,51,0.9)" />
+            <stop offset="100%" stopColor="rgba(232,213,168,0)" />
+          </linearGradient>
+        </defs>
+        {/* Pipeline stages, top to bottom */}
+        {[
+          { y: 90,  label: "SIGNAL" },
+          { y: 170, label: "VALIDATE" },
+          { y: 250, label: "ROUTE" },
+          { y: 330, label: "FILL" },
+        ].map((s, i) => (
+          <g key={i}>
+            <circle cx="60" cy={s.y} r="11" fill="rgba(255,255,255,0.05)" stroke="rgba(232,213,168,0.45)" strokeWidth="1" />
+            <circle cx="60" cy={s.y} r="3.5" fill="#e8d5a8">
+              <animate attributeName="opacity" values="0.35;1;0.35" dur="2.6s" begin={`${i * 0.55}s`} repeatCount="indefinite" />
+            </circle>
+            <text x="82" y={s.y + 3} fill="rgba(232,213,168,0.6)" fontSize="9" fontFamily="JetBrains Mono, monospace" letterSpacing="2">
+              {s.label}
+            </text>
+          </g>
         ))}
-      </div>
+        {/* Connecting spine */}
+        <line x1="60" y1="101" x2="60" y2="319" stroke="rgba(232,213,168,0.18)" strokeWidth="1" strokeDasharray="2,5" />
+        {/* Packet pulse traveling the spine */}
+        {[0, 1].map((i) => (
+          <circle key={i} cx="60" cy="100" r="2.5" fill="#bf5700" opacity="0.9">
+            <animate attributeName="cy" from="100" to="320" dur="2.8s" begin={`${i * 1.4}s`} repeatCount="indefinite" />
+            <animate attributeName="opacity" values="0;1;1;0" dur="2.8s" begin={`${i * 1.4}s`} repeatCount="indefinite" />
+          </circle>
+        ))}
+        {/* Branch from ROUTE to two brokers */}
+        <path d="M 71 250 Q 110 250, 130 230" fill="none" stroke="url(#tau-path)" strokeWidth="1.2" />
+        <path d="M 71 250 Q 110 250, 130 274" fill="none" stroke="url(#tau-path)" strokeWidth="1.2" />
+        <text x="138" y="228" fill="rgba(232,213,168,0.5)" fontSize="8" fontFamily="JetBrains Mono, monospace" letterSpacing="1.5">PAPER</text>
+        <text x="138" y="282" fill="rgba(232,213,168,0.5)" fontSize="8" fontFamily="JetBrains Mono, monospace" letterSpacing="1.5">LIVE</text>
+      </svg>
 
-      {/* Vignette so the center reads */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background:
-            "radial-gradient(50% 60% at 50% 50%, rgba(2,10,4,0.55) 0%, rgba(2,10,4,0.0) 70%), linear-gradient(180deg, rgba(2,10,4,0.5) 0%, transparent 25%, transparent 75%, rgba(2,10,4,0.65) 100%)",
-        }}
-      />
-
-      {/* Bot status panel — top-left */}
-      <div
-        className="absolute top-7 left-5 font-mono text-[10px] leading-[1.65] tracking-[0.14em]"
-        style={{ color: "rgba(74, 222, 128, 0.92)" }}
-      >
-        <div className="flex items-center gap-2">
-          <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400" style={{ boxShadow: "0 0 6px #4ade80" }} />
-          BOT_01 ONLINE
+      {/* Scrolling event log — right side */}
+      <div className="absolute right-4 top-10 bottom-12 w-[52%] overflow-hidden" style={{ maskImage: "linear-gradient(180deg, transparent 0%, black 12%, black 84%, transparent 100%)", WebkitMaskImage: "linear-gradient(180deg, transparent 0%, black 12%, black 84%, transparent 100%)" }}>
+        <div className="font-mono text-[9.5px] leading-[1.9] tracking-[0.06em]" style={{ animation: "tau-log 16s linear infinite" }}>
+          {[...TAU_EVENTS, ...TAU_EVENTS].map((e, i) => (
+            <div key={i} className="flex gap-2 whitespace-nowrap">
+              <span style={{ color: "rgba(232,213,168,0.4)" }}>{e.t}</span>
+              <span style={{ color: e.hot ? "#ff9933" : "rgba(232,213,168,0.65)", minWidth: 38 }}>{e.k}</span>
+              <span style={{ color: e.hot ? "#e8d5a8" : "rgba(232,213,168,0.55)" }}>{e.d}</span>
+            </div>
+          ))}
         </div>
-        <div className="flex items-center gap-2">
-          <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400" style={{ boxShadow: "0 0 6px #4ade80" }} />
-          BOT_02 ONLINE
-        </div>
-        <div className="flex items-center gap-2">
-          <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400" style={{ boxShadow: "0 0 6px #4ade80" }} />
-          BOT_03 ONLINE
-        </div>
-      </div>
-
-      {/* Live order panel — top-right */}
-      <div
-        className="absolute top-7 right-5 font-mono text-[10px] leading-[1.65] tracking-[0.14em] text-right"
-        style={{ color: "rgba(74, 222, 128, 0.78)" }}
-      >
-        <div>FILL · AAPL · 0.7%</div>
-        <div>FILL · MSFT · 0.4%</div>
-        <div style={{ color: "#d6ffe6" }}>FILL · NVDA · 1.2%</div>
       </div>
 
       {/* Big tau centered */}
@@ -300,39 +282,25 @@ export function TauViz() {
           className="font-serif italic leading-none"
           style={{
             fontSize: "clamp(80px, 14vw, 180px)",
-            color: "#d6ffe6",
-            textShadow:
-              "0 0 30px rgba(74, 222, 128, 0.85), 0 0 80px rgba(74, 222, 128, 0.45), 0 0 140px rgba(74, 222, 128, 0.25)",
+            color: "rgba(255, 240, 220, 0.94)",
+            textShadow: "0 0 40px rgba(191, 87, 0, 0.55), 0 0 90px rgba(191, 87, 0, 0.28)",
           }}
         >
           τ
         </span>
       </div>
 
-      {/* Terminal cursor — bottom-left */}
-      <div
-        className="absolute bottom-9 left-5 font-mono text-[11px] tracking-[0.12em]"
-        style={{ color: "rgba(74, 222, 128, 0.95)" }}
-      >
-        <span>{"$ proxi tail signals"}</span>
-        <span style={{ animation: "tau-blink 1.1s steps(1) infinite" }}> ▍</span>
-      </div>
-
       {/* Bottom telemetry */}
-      <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-[10px] font-mono tracking-[0.2em]" style={{ color: "rgba(74, 222, 128, 0.85)" }}>
-        <span>BOTS · 03</span>
-        <span style={{ color: "#d6ffe6" }}>LATENCY · 80ms</span>
-        <span>AUDIT · OK</span>
+      <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-[10px] font-mono tracking-[0.2em]" style={{ color: "rgba(232, 213, 168, 0.85)" }}>
+        <span>BROKERS · 03</span>
+        <span style={{ color: "#ffb380" }}>LATENCY · 80ms</span>
+        <span>AUDIT · SEALED</span>
       </div>
 
-      <style jsx global>{`
-        @keyframes matrix-fall {
-          from { transform: translateY(-110%); }
-          to { transform: translateY(110%); }
-        }
-        @keyframes tau-blink {
-          0%, 49% { opacity: 1; }
-          50%, 100% { opacity: 0; }
+      <style jsx>{`
+        @keyframes tau-log {
+          from { transform: translateY(0); }
+          to { transform: translateY(-50%); }
         }
       `}</style>
     </div>

@@ -8,6 +8,13 @@ import { AlphaViz, TauViz } from "@/components/site/lab-product-viz";
 import { PageMarquee } from "@/components/site/page-marquee";
 import { PinScroll } from "@/components/site/pin-scroll";
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "AI Labs — Proxiant",
+  description: "Proxiant Labs is our internal R&D arm. Research that turns into product, run on our own infrastructure under the same standard we sell to clients.",
+};
+
 export default function Page() {
   return (
     <div>
@@ -47,7 +54,7 @@ export default function Page() {
 
       <PageMarquee
         items={["Research", "Spike", "Eval", "Ship", "Operate", "Open-source"]}
-        eyebrow="What we ship into"
+        eyebrow="The lab loop"
       />
 {/* Products — paper */}
 <section id="products" data-theme="paper" className="section">

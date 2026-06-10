@@ -5,6 +5,13 @@ import { PageMarquee } from "@/components/site/page-marquee";
 import { PinScroll } from "@/components/site/pin-scroll";
 import { ContactForm } from "@/components/site/contact-form";
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Contact — Proxiant",
+  description: "Tell us about the problem. We respond within one business day with a fit call, then a written, sized engagement plan.",
+};
+
 export default function Page() {
   return (
     <div>
@@ -31,7 +38,7 @@ export default function Page() {
 
       <PageMarquee
         items={["Reply", "Fit call", "Written shape", "Sized plan"]}
-        eyebrow="What we ship into"
+        eyebrow="What happens next"
       />
       <section data-theme="paper" className="pb-32 pt-16 lg:pt-24">
         <div className="container-x">

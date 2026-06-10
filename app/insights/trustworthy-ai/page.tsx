@@ -5,6 +5,13 @@ import { PageStars } from "@/components/site/page-stars";
 import { PageMarquee } from "@/components/site/page-marquee";
 import { PinScroll } from "@/components/site/pin-scroll";
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Trustworthy AI — Proxiant Insights",
+  description: "A working playbook for evaluation, red-teaming, and governance that survives a real auditor walking the floor.",
+};
+
 export default function Page() {
   return (
     <div>
@@ -36,7 +43,7 @@ export default function Page() {
 
       <PageMarquee
         items={["Reproduce", "Lineage", "Change record", "Drill"]}
-        eyebrow="What we ship into"
+        eyebrow="The arc"
       />
 <section data-theme="light" className="section">
   <div className="container-x relative">

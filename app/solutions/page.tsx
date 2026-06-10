@@ -7,6 +7,13 @@ import { ConsultingViz } from "@/components/site/hero-viz";
 import { PageMarquee } from "@/components/site/page-marquee";
 import { PinScroll } from "@/components/site/pin-scroll";
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "AI Consulting — Proxiant",
+  description: "Strategy through delivery, in production. Proxiant designs, builds, and operates enterprise AI systems under one team and one operating bar.",
+};
+
 export default function Page() {
   return (
     <div>
@@ -51,7 +58,7 @@ export default function Page() {
 
       <PageMarquee
         items={["Strategy", "Architecture", "Build", "Evaluate", "Operate", "Risk", "Governance", "Hand-off"]}
-        eyebrow="What we ship into"
+        eyebrow="What we deliver"
       />
 {/* Capabilities — split content layout */}
 <section data-theme="paper" className="section">
