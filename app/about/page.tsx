@@ -6,6 +6,13 @@ import { SparkleField } from "@/components/site/sparkle-field";
 import { PageMarquee } from "@/components/site/page-marquee";
 import { PinScroll } from "@/components/site/pin-scroll";
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About — Proxiant",
+  description: "A senior team that does the work. The partners who pitch the engagement are the partners on the engagement.",
+};
+
 export default function Page() {
   return (
     <div>
@@ -50,7 +57,7 @@ export default function Page() {
 
       <PageMarquee
         items={["Senior", "Direct", "Honest", "Hand it back"]}
-        eyebrow="What we ship into"
+        eyebrow="How we operate"
       />
 {/* Principles */}
 <section data-theme="paper" className="section">

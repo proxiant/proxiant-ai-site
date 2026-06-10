@@ -5,6 +5,13 @@ import { PageStars } from "@/components/site/page-stars";
 import { PageMarquee } from "@/components/site/page-marquee";
 import { PinScroll } from "@/components/site/pin-scroll";
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Financial Services — Proxiant",
+  description: "AI for banks, asset managers, and broker-dealers. Model risk evaluation, fraud triage, regulatory drafting — auditable end to end.",
+};
+
 export default function Page() {
   return (
     <div>
@@ -48,7 +55,7 @@ export default function Page() {
 
       <PageMarquee
         items={["Risk model", "Audit", "Drift", "Sign-off", "Eval", "Document"]}
-        eyebrow="What we ship into"
+        eyebrow="Where we ship"
       />
 <section data-theme="paper" className="section">
   <div className="container-x relative">

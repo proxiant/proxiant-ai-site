@@ -6,6 +6,13 @@ import { PageMarquee } from "@/components/site/page-marquee";
 import { PinScroll } from "@/components/site/pin-scroll";
 import { TauViz } from "@/components/site/lab-product-viz";
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "ProxiTrades — Proxiant Labs",
+  description: "The execution and routing layer behind ProxiAlpha. Webhook intake, strategy registry, broker abstraction, full audit log.",
+};
+
 export default function Page() {
   return (
     <div>
@@ -49,7 +56,7 @@ export default function Page() {
 
       <PageMarquee
         items={["Webhook", "Validate", "Route", "Fill", "Audit"]}
-        eyebrow="What we ship into"
+        eyebrow="Signal to fill"
       />
 <section data-theme="paper" className="section-tight">
   <div className="container-x relative">
