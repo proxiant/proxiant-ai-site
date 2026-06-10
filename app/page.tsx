@@ -146,8 +146,9 @@ export default function HomePage() {
                 <div className="font-mono text-[12px] tracking-[0.16em] text-zinc-500 mb-7">PRACTICE / 03</div>
                 <h3 className="display-md mb-5">AI Training</h3>
                 <p className="muted text-[16px] leading-relaxed mb-8 flex-1">
-                  Hands-on programs for engineering teams and senior leadership. Cohort-based, project-based,
-                  built around the systems your people are actually trying to ship.
+                  Corporate cohorts, open-enrollment courses, and 12-week expert bootcamps with PCAP
+                  certification. Project-based, GPU-backed, built around the systems your people are
+                  actually trying to ship.
                 </p>
                 <div className="flex items-center gap-3 text-[15px] font-medium group-hover:translate-x-1 transition-transform">
                   Explore training
