@@ -11,7 +11,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "AI Training — Proxiant",
-  description: "Open-enrollment AI courses, 12-week expert bootcamps, and corporate cohort programs. PCAP certification, GPU-backed labs, and capstones that ship to production.",
+  description: "Open-enrollment AI courses, 12-week expert bootcamps, and corporate cohort programs. PCAIP certification, GPU-backed labs, and capstones that ship to production.",
 };
 
 export default function Page() {
@@ -256,7 +256,7 @@ export default function Page() {
       <div className="lg:col-span-4 lg:col-start-9 self-end">
         <p className="lead" data-reveal data-delay="2">
           Individual seats, full materials: weekly lectures, graded exercises, projects, and a
-          certification exam. Every course qualifies you for the PCAP credential.
+          certification exam. Every course qualifies you for the PCAIP credential.
         </p>
       </div>
     </div>
@@ -391,7 +391,7 @@ export default function Page() {
           <li className="line-top pt-3"><span className="font-mono text-[11px] text-zinc-500 mr-3">W10–12</span>Production agent patterns, agentic RAG and training, capstone</li>
         </ul>
         <div className="line-top mt-7 pt-4 flex items-baseline justify-between">
-          <span className="font-mono text-[11px] tracking-[0.14em] text-zinc-500">PCAP-AGENTS CERT</span>
+          <span className="font-mono text-[11px] tracking-[0.14em] text-zinc-500">PCAIP-AGENTS CERT</span>
           <span className="font-mono text-[14px]">$3,700</span>
         </div>
       </article>
@@ -413,7 +413,7 @@ export default function Page() {
           <li className="line-top pt-3"><span className="font-mono text-[11px] text-zinc-500 mr-3">W10–12</span>Agentic RAG, Text2SQL, fine-tuning, evals and the capstone</li>
         </ul>
         <div className="line-top mt-7 pt-4 flex items-baseline justify-between">
-          <span className="font-mono text-[11px] tracking-[0.14em] text-zinc-500">PCAP-RAG CERT</span>
+          <span className="font-mono text-[11px] tracking-[0.14em] text-zinc-500">PCAIP-RAG CERT</span>
           <span className="font-mono text-[14px]">$3,700</span>
         </div>
       </article>
@@ -434,12 +434,12 @@ export default function Page() {
       <div className="lg:col-span-5">
         <div className="eyebrow mb-6" data-reveal>Certification</div>
         <h2 className="display-md" data-reveal data-delay="1">
-          PCAP: a credential <span className="italic-accent font-serif">you can verify.</span>
+          PCAIP: a credential <span className="italic-accent font-serif">you can verify.</span>
         </h2>
         <p className="muted text-[15.5px] leading-relaxed mt-6 max-w-md" data-reveal data-delay="2">
           The Proxiant Certified AI Professional exam validates applied AI skill. Passing any
           Academy course with 70 percent or better qualifies you to sit it. Bootcamp graduates
-          earn the specialized PCAP-Agents and PCAP-RAG credentials.
+          earn the specialized PCAIP-Agents and PCAIP-RAG credentials.
         </p>
       </div>
       <div className="lg:col-span-6 lg:col-start-7">
@@ -524,7 +524,7 @@ export default function Page() {
       <div className="card p-8" data-reveal data-delay="3">
         <div className="font-mono text-[11px] text-zinc-500 mb-4">04</div>
         <div className="display-xs mb-3">Individual practitioners</div>
-        <p className="muted text-[14.5px] leading-relaxed">Engineers and analysts taking an open-enrollment seat: full course materials, graded projects, and a path to PCAP.</p>
+        <p className="muted text-[14.5px] leading-relaxed">Engineers and analysts taking an open-enrollment seat: full course materials, graded projects, and a path to PCAIP.</p>
       </div>
     </div>
   </div>
