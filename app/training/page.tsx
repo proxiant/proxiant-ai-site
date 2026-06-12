@@ -366,8 +366,8 @@ export default function Page() {
       </div>
       <div className="lg:col-span-4 lg:col-start-9 self-end">
         <p className="lead" data-reveal data-delay="2">
-          Hybrid cohorts: in person in Fremont, live on Zoom, recordings kept. Both run on the
-          Proxiant Datacenter: 20+ GPU servers, 40+ NVIDIA GPUs. Day 1 is a free open day.
+          Hybrid cohorts: in person in Frisco, live on Zoom, recordings kept. Both run on the
+          Proxiant Datacenter. Day 1 is a free open day.
         </p>
       </div>
     </div>
