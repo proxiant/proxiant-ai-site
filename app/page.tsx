@@ -146,7 +146,7 @@ export default function HomePage() {
                 <div className="font-mono text-[12px] tracking-[0.16em] text-zinc-500 mb-7">PRACTICE / 03</div>
                 <h3 className="display-md mb-5">AI Training</h3>
                 <p className="muted text-[16px] leading-relaxed mb-8 flex-1">
-                  Corporate cohorts, open-enrollment courses, and 12-week expert bootcamps with PCAP
+                  Corporate cohorts, open-enrollment courses, and 12-week expert bootcamps with PCAIP
                   certification. Project-based, GPU-backed, built around the systems your people are
                   actually trying to ship.
                 </p>
