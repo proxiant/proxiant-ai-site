@@ -154,7 +154,7 @@
       MeanReversion: C.cyan, Breakout: C.orange, TrendFollowing: C.yellow,
       DCA: "#84CC16", PairsTrading: C.pink, EarningsPlay: "#F43F5E",
       SectorRotation: "#14B8A6", Scalping: "#A855F7", SwingTrading: "#6366F1",
-      OptionsFlow: "#E11D48", CustomRules: C.textMuted, AI_Claude: "#FF6B35",
+      OptionsFlow: "#E11D48", CustomRules: C.textMuted, AI_LLM: "#FF6B35",
     };
 
     // ---- SVG ICONS (Lucide-style) ----
@@ -215,7 +215,7 @@
       { name: "Scalping", active: false, weight: 0.6, category: "Short-Term", description: "Micro reversals" },
       { name: "SwingTrading", active: false, weight: 1.0, category: "Short-Term", description: "S/R + Fibonacci" },
       { name: "OptionsFlow", active: false, weight: 0.8, category: "Flow", description: "Unusual volume" },
-      { name: "AI_Claude", active: false, weight: 1.5, category: "AI", description: "LLM signal gen" },
+      { name: "AI_LLM", active: false, weight: 1.5, category: "AI", description: "LLM signal gen" },
     ];
 
     const SIGNALS_DATA = [
@@ -724,14 +724,13 @@
 
     // ---- LLM PANEL ----
     const LLMPanel = () => {
-      const [provider, setProvider] = useState("claude");
-      const [model, setModel] = useState("claude-sonnet-4-6");
+      const [provider, setProvider] = useState("openai");
+      const [model, setModel] = useState("gpt-4o");
       const [prompt, setPrompt] = useState("");
       const [response, setResponse] = useState("");
       const [loading, setLoading] = useState(false);
 
       const providers = {
-        claude: { models: ["claude-opus-4-6", "claude-sonnet-4-6", "claude-haiku-4-5"], label: "Anthropic" },
         openai: { models: ["gpt-4o", "gpt-4-turbo", "gpt-3.5-turbo"], label: "OpenAI" },
         ollama: { models: ["llama3", "llama3.1", "mistral", "mixtral", "phi", "deepseek-coder"], label: "Ollama" },
         gemini: { models: ["gemini-1.5-pro", "gemini-pro"], label: "Gemini" },
@@ -1275,7 +1274,7 @@
                       </div>
                       <p style={{ color: C.textSoft, margin: 0, fontSize: 13, lineHeight: 1.7, maxWidth: 700 }}>
                         Connect any LLM provider for signal generation, parameter optimization, and market analysis.
-                        Supports Claude, OpenAI, local models via Ollama, Gemini, and custom endpoints.
+                        Supports OpenAI, local models via Ollama, Gemini, and custom endpoints.
                       </p>
                     </div>
 
@@ -1316,7 +1315,6 @@
                       <div style={{ background: C.card, borderRadius: 8, padding: 18, border: `1px solid ${C.border}` }}>
                         <SectionHeader title="Supported Providers" icon={Icons.brain(14)} />
                         {[
-                          { name: "Anthropic Claude", models: "Opus, Sonnet, Haiku", color: C.orange },
                           { name: "OpenAI", models: "GPT-4o, GPT-4-Turbo", color: C.bullish },
                           { name: "Ollama (Local)", models: "Llama 3, Mistral, Phi", color: C.purple },
                           { name: "Google Gemini", models: "Gemini 1.5 Pro", color: C.accent },
