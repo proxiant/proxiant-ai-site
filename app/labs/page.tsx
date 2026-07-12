@@ -100,30 +100,22 @@ export default function Page() {
         </div>
       </a>
 
-      <a href="/proxitrades/" className="b-6 hover-line group" data-reveal data-delay="1">
+      <div className="b-6" data-reveal data-delay="1">
         <div className="card overflow-hidden h-full flex flex-col">
-          <div className="aspect-[16/10] relative">
+          <div className="aspect-[16/10] relative opacity-60">
             <TauViz />
           </div>
           <div className="p-10 flex-1 flex flex-col">
-            <div className="font-mono text-[12px] tracking-[0.14em] text-zinc-500 mb-5">LAB · PRODUCT</div>
-            <h3 className="display-sm mb-4">ProxiTrades</h3>
+            <div className="font-mono text-[12px] tracking-[0.14em] text-zinc-500 mb-5">LAB · IN PROGRESS</div>
+            <h3 className="display-sm mb-4">More to come</h3>
             <p className="muted text-[15.5px] leading-relaxed mb-8 flex-1">
-              The execution and routing layer under the research stack. TradingView webhook
-              receiver, strategy registry, paper and live brokers, full audit log.
+              The next lab product is already on the bench. Watch this space, or follow the
+              daily ProxiTrades page to see the research engine at work in the meantime.
             </p>
-            <div className="grid grid-cols-3 gap-3 mb-7">
-              <div className="text-left"><div className="font-mono text-[11px] text-zinc-500 mb-1">BROKERS</div><div className="font-serif text-[28px]">3</div></div>
-              <div className="text-left"><div className="font-mono text-[11px] text-zinc-500 mb-1">LATENCY</div><div className="font-serif text-[28px]">~80ms</div></div>
-              <div className="text-left"><div className="font-mono text-[11px] text-zinc-500 mb-1">AUDIT</div><div className="font-serif text-[28px]">Full</div></div>
-            </div>
-            <div className="flex items-center gap-3 text-[15px] font-medium group-hover:translate-x-1 transition-transform">
-              See the product
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
-            </div>
+            <div className="font-mono text-[12px] tracking-[0.14em] text-zinc-500">SHIPPING WHEN IT EARNS ITS CARD</div>
           </div>
         </div>
-      </a>
+      </div>
 
       <a href="/terminal/" className="b-12 hover-line group" data-reveal>
         <div className="card overflow-hidden grid lg:grid-cols-12 gap-0">
