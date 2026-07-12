@@ -1,5 +1,5 @@
 {
- "stamp": "Saturday, July 11, 2026 23:30 ET",
+ "stamp": "Sunday, July 12, 2026 18:12 ET",
  "leads": [
   {
    "rank": 1,
@@ -80,7 +80,38 @@
    "pnl_usd": "-68"
   }
  ],
- "swing": [],
+ "swing": [
+  {
+   "symbol": "MU",
+   "entry": 979.36,
+   "stop": 784.48,
+   "target": 1271.67
+  },
+  {
+   "symbol": "AMD",
+   "entry": 557.85,
+   "stop": 482.78,
+   "target": 670.45
+  },
+  {
+   "symbol": "MRNA",
+   "entry": 68.26,
+   "stop": 56.51,
+   "target": 85.89
+  },
+  {
+   "symbol": "TXN",
+   "entry": 311.49,
+   "stop": 280.0,
+   "target": 358.71
+  },
+  {
+   "symbol": "ROKU",
+   "entry": 140.7,
+   "stop": 136.55,
+   "target": 146.92
+  }
+ ],
  "posture": "LONG",
  "donate_url": "https://buymeacoffee.com/proxiant",
  "research": [],
