@@ -82,5 +82,7 @@
  ],
  "swing": [],
  "posture": "LONG",
- "donate_url": "https://buymeacoffee.com/proxiant"
+ "donate_url": "https://buymeacoffee.com/proxiant",
+ "research": [],
+ "request_repo": "proxiant/proxiant-ai-site"
 }

@@ -20,6 +20,7 @@ type Lead = { rank?: number; symbol: string; side: string; entry?: number; stop?
 type Trade = { symbol: string; side: string; entry?: number; exit?: number; pnl_pct: number; reason?: string };
 type Board = { label: string; n: number; win_rate: string; pnl_usd: string };
 type Swing = { symbol: string; entry?: number; stop?: number; target?: number };
+type Research = { symbol: string; date: string; requested_by: string; headline: string; href: string };
 
 const f = (v?: number) => (v == null ? "—" : v.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 }));
 
@@ -35,6 +36,8 @@ export default function Page() {
   const trades = (data.trades ?? []) as Trade[];
   const board = (data.board ?? []) as Board[];
   const swing = (data.swing ?? []) as Swing[];
+  const research = ((data as Record<string, unknown>).research ?? []) as Research[];
+  const requestRepo = ((data as Record<string, unknown>).request_repo as string) ?? "proxiant/proxiant-ai-site";
   return (
     <div>
       <SiteHeader />
@@ -150,6 +153,46 @@ export default function Page() {
                 Long-horizon posture: <span className="text-zinc-200 font-medium">{data.posture}</span> (regime-switched model, updated daily).
               </p>
             ) : null}
+          </div>
+        </section>
+
+        <section data-reveal>
+          <div className="font-mono text-[12px] tracking-[0.14em] text-zinc-500 mb-4">COMMUNITY RESEARCH · REQUEST ANY STOCK</div>
+          <div className="card p-8">
+            <p className="muted text-[15px] leading-relaxed max-w-3xl mb-6">
+              Want the research desk on a specific name? Ask, and the MIDAS engine runs the full
+              workup — valuation scenarios, Monte Carlo risk, peer comps, and an audited narrative —
+              and publishes it here, usually within one trading day. Requests go through GitHub, so
+              they are public and spam-free.
+            </p>
+            <form action={`https://github.com/${requestRepo}/issues/new`} method="get"
+                  className="flex flex-wrap items-center gap-3 mb-8">
+              <input type="text" name="title" required maxLength={24} placeholder="Ticker, e.g. NVDA"
+                     className="rounded-lg bg-zinc-900/70 border border-zinc-700 px-4 py-3 text-[15px] w-44 outline-none focus:border-zinc-500" />
+              <input type="hidden" name="body"
+                     value="Research request from proxiant.ai/proxitrades. One ticker per request; the report is published on the page when ready." />
+              <button type="submit"
+                      className="rounded-lg border border-zinc-600 hover:border-zinc-400 transition-colors px-6 py-3 text-[15px] font-medium">
+                Request research →
+              </button>
+              <span className="text-[12.5px] text-zinc-500">Opens a prefilled GitHub issue (free account needed).</span>
+            </form>
+            {research.length ? (
+              <div className="grid sm:grid-cols-2 gap-4">
+                {research.map((r) => (
+                  <a key={r.href} href={r.href} className="block rounded-xl border border-zinc-800 hover:border-zinc-600 transition-colors p-6">
+                    <div className="flex items-baseline justify-between mb-2">
+                      <span className="font-serif text-[22px]">{r.symbol}</span>
+                      <span className="font-mono text-[11px] text-zinc-500">{r.date}</span>
+                    </div>
+                    <p className="text-[13.5px] text-zinc-400 leading-relaxed">{r.headline}</p>
+                    <div className="text-[13px] mt-3 text-zinc-300">Read the report → <span className="text-zinc-500">requested by {r.requested_by}</span></div>
+                  </a>
+                ))}
+              </div>
+            ) : (
+              <p className="text-[13.5px] text-zinc-500">No community reports yet — yours could be the first.</p>
+            )}
           </div>
         </section>
 
