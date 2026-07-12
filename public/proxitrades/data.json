@@ -1,0 +1,86 @@
+{
+ "stamp": "Saturday, July 11, 2026 23:30 ET",
+ "leads": [
+  {
+   "rank": 1,
+   "symbol": "GMM",
+   "side": "buy",
+   "entry": 5.67,
+   "stop": 5.0188,
+   "target": 6.3212,
+   "why": "gap +206.5%, pre-market vol 68,517,632, rvol 123.4x"
+  },
+  {
+   "rank": 2,
+   "symbol": "VRAX",
+   "side": "sell",
+   "entry": 4.93,
+   "stop": 5.8856,
+   "target": 3.9744,
+   "why": "gap -22.5%, pre-market vol 294,017, rvol 0.1x"
+  },
+  {
+   "rank": 3,
+   "symbol": "FRMI",
+   "side": "sell",
+   "entry": 6.14,
+   "stop": 6.8894,
+   "target": 5.3906,
+   "why": "gap -16.1%, pre-market vol 3,812,308, rvol 0.7x"
+  },
+  {
+   "rank": 4,
+   "symbol": "EQPT",
+   "side": "buy",
+   "entry": 18.0,
+   "stop": 15.498,
+   "target": 20.502,
+   "why": "gap +12.5%, pre-market vol 236,100, rvol 0.1x"
+  },
+  {
+   "rank": 5,
+   "symbol": "CRCL",
+   "side": "buy",
+   "entry": 70.66,
+   "stop": 62.7157,
+   "target": 78.6043,
+   "why": "gap +12.1%, pre-market vol 4,637,399, rvol 0.5x"
+  }
+ ],
+ "trades": [
+  {
+   "symbol": "FBRX",
+   "side": "buy",
+   "entry": 44.97,
+   "exit": 43.45,
+   "pnl_pct": -3.38,
+   "pnl_usd": -68.4,
+   "reason": "time"
+  }
+ ],
+ "trades_day_label": "Friday Jul 10",
+ "eod_text": "1 trade, 0 winners, a net loss of $68 on the paper book. Every fill above is real output from the live pipeline: the same leads published here in the morning, executed with bracket exits and risk-normalized sizing, reported win or lose.",
+ "board": [
+  {
+   "label": "This week",
+   "n": 1,
+   "win_rate": "0%",
+   "pnl_usd": "-68"
+  },
+  {
+   "label": "This month",
+   "n": 1,
+   "win_rate": "0%",
+   "pnl_usd": "-68"
+  },
+  {
+   "label": "This year",
+   "n": 1,
+   "win_rate": "0%",
+   "pnl_usd": "-68"
+  }
+ ],
+ "swing": [],
+ "posture": "LONG",
+ "donate_url": "https://buymeacoffee.com/proxiant"
+}
