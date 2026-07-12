@@ -75,17 +75,17 @@ export default function Page() {
     </div>
 
     <div className="bento">
-      <a href="/proxialpha/" className="b-6 hover-line group" data-reveal>
+      <a href="/proxitrades/" className="b-6 hover-line group" data-reveal>
         <div className="card overflow-hidden h-full flex flex-col">
           <div className="aspect-[16/10] relative">
             <AlphaViz />
           </div>
           <div className="p-10 flex-1 flex flex-col">
             <div className="font-mono text-[12px] tracking-[0.14em] text-zinc-500 mb-5">LAB · PRODUCT</div>
-            <h3 className="display-sm mb-4">ProxiAlpha</h3>
+            <h3 className="display-sm mb-4">ProxiTrades</h3>
             <p className="muted text-[15.5px] leading-relaxed mb-8 flex-1">
-              Agent-driven trading research platform. Walk-forward strategy research, paper-trading,
-              and a live cockpit. End-to-end instrumented and continuously evaluated.
+              Agent-driven trading platform. Walk-forward strategy research, paper trading,
+              a live cockpit, and daily published leads with results. ProxiAlpha folded in.
             </p>
             <div className="grid grid-cols-3 gap-3 mb-7">
               <div className="text-left"><div className="font-mono text-[11px] text-zinc-500 mb-1">STRATEGIES</div><div className="font-serif text-[28px]">12+</div></div>
@@ -109,7 +109,7 @@ export default function Page() {
             <div className="font-mono text-[12px] tracking-[0.14em] text-zinc-500 mb-5">LAB · PRODUCT</div>
             <h3 className="display-sm mb-4">ProxiTrades</h3>
             <p className="muted text-[15.5px] leading-relaxed mb-8 flex-1">
-              The execution and routing layer ProxiAlpha sits on top of. TradingView webhook
+              The execution and routing layer under the research stack. TradingView webhook
               receiver, strategy registry, paper and live brokers, full audit log.
             </p>
             <div className="grid grid-cols-3 gap-3 mb-7">
@@ -129,7 +129,7 @@ export default function Page() {
         <div className="card overflow-hidden grid lg:grid-cols-12 gap-0">
           <div className="lg:col-span-7 p-10 lg:p-14 order-2 lg:order-1">
             <div className="font-mono text-[12px] tracking-[0.14em] text-zinc-500 mb-5">LAB · LIVE DASHBOARD</div>
-            <h3 className="display-md mb-4">ProxiAlpha Terminal</h3>
+            <h3 className="display-md mb-4">ProxiTrades Terminal</h3>
             <p className="muted text-[16px] leading-relaxed mb-8">
               Public-readable view of the trading research platform. Live signals, walk-forward
               folds, portfolio metrics, and a candlestick view of every active strategy. Useful
@@ -189,7 +189,7 @@ export default function Page() {
         <div className="num">AREA / 03</div>
         <div>
           <h3 className="display-xs mb-2">Quantitative trading</h3>
-          <p className="muted text-[15.5px] leading-relaxed max-w-2xl">Walk-forward research, regime detection, ensemble strategies. ProxiAlpha is our test bed.</p>
+          <p className="muted text-[15.5px] leading-relaxed max-w-2xl">Walk-forward research, regime detection, ensemble strategies. ProxiTrades is our test bed.</p>
         </div>
       </li>
       <li data-reveal>

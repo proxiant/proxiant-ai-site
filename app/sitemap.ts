@@ -23,7 +23,6 @@ const ROUTES = [
   "/insights/scaling-ai-teams",
   "/insights/trustworthy-ai",
   "/case-studies/fortune500-bank",
-  "/proxialpha",
   "/proxitrades",
 ];
 

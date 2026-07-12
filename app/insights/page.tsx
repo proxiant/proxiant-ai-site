@@ -97,11 +97,11 @@ export default function Page() {
         </div>
         <div className="flex items-center gap-3 lg:justify-end text-[15px] font-medium">Read →</div>
       </a>
-      <a href="/proxialpha/" className="feature-link" data-reveal data-delay="1">
+      <a href="/proxitrades/" className="feature-link" data-reveal data-delay="1">
         <div className="font-mono text-[12px] tracking-[0.16em] text-zinc-500"><div>LAB / PRODUCT</div><div className="mt-1">QUANT TRADING</div></div>
         <div>
-          <h3 className="display-sm mb-3">ProxiAlpha — agent-driven trading research platform</h3>
-          <p className="muted text-[15.5px] leading-relaxed max-w-xl">Walk-forward strategy research, paper-trading, and a live cockpit. Internal product spun out of Labs.</p>
+          <h3 className="display-sm mb-3">ProxiTrades — agent-driven trading, live leads and results</h3>
+          <p className="muted text-[15.5px] leading-relaxed max-w-xl">Walk-forward strategy research, paper trading, and daily published leads with honest results. ProxiAlpha is now part of ProxiTrades.</p>
         </div>
         <div className="flex items-center gap-3 lg:justify-end text-[15px] font-medium">Read →</div>
       </a>

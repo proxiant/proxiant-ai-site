@@ -130,7 +130,7 @@ export default function HomePage() {
                 <h3 className="display-md mb-5">AI Labs</h3>
                 <p className="muted text-[16px] leading-relaxed mb-8 flex-1">
                   Internal R&amp;D and product home. Where we keep practical knowledge ahead of client work,
-                  and where things like ProxiAlpha get built and run.
+                  and where things like ProxiTrades get built and run.
                 </p>
                 <div className="flex items-center gap-3 text-[15px] font-medium group-hover:translate-x-1 transition-transform">
                   Explore labs

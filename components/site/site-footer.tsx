@@ -28,7 +28,6 @@ export function SiteFooter() {
             <ul className="space-y-3">
               <li><Link href="/industries/">Industries</Link></li>
               <li><Link href="/insights/">Insights</Link></li>
-              <li><Link href="/proxialpha/">ProxiAlpha</Link></li>
               <li><Link href="/proxitrades/">ProxiTrades</Link></li>
             </ul>
           </div>
