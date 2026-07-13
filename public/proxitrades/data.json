@@ -1,5 +1,5 @@
 {
- "stamp": "Monday, July 13, 2026 13:19 ET",
+ "stamp": "Monday, July 13, 2026 17:05 ET",
  "leads": [
   {
    "rank": 1,
@@ -68,7 +68,7 @@
   }
  ],
  "trades_day_label": "today",
- "eod_text": "",
+ "eod_text": "2 trades, 2 winners, a net gain of $446 on the paper book. Every fill above is real output from the live pipeline: the same leads published here in the morning, executed with bracket exits and risk-normalized sizing, reported win or lose.",
  "board": [
   {
    "label": "This week",
