@@ -4,6 +4,7 @@ import { SparkleField } from "@/components/site/sparkle-field";
 import data from "../../public/proxitrades/data.json";
 
 import type { Metadata } from "next";
+import RequestForm from "./request-form";
 
 export const metadata: Metadata = {
   title: "ProxiTrades — daily leads and honest results | Proxiant",
@@ -165,18 +166,7 @@ export default function Page() {
               and publishes it here, usually within one trading day. Requests go through GitHub, so
               they are public and spam-free.
             </p>
-            <form action={`https://github.com/${requestRepo}/issues/new`} method="get"
-                  className="flex flex-wrap items-center gap-3 mb-8">
-              <input type="text" name="title" required maxLength={24} placeholder="Ticker, e.g. NVDA"
-                     className="rounded-lg bg-zinc-900/70 border border-zinc-700 px-4 py-3 text-[15px] w-44 outline-none focus:border-zinc-500" />
-              <input type="hidden" name="body"
-                     value="Research request from proxiant.ai/proxitrades. One ticker per request; the report is published on the page when ready." />
-              <button type="submit"
-                      className="rounded-lg border border-zinc-600 hover:border-zinc-400 transition-colors px-6 py-3 text-[15px] font-medium">
-                Request research →
-              </button>
-              <span className="text-[12.5px] text-zinc-500">Opens a prefilled GitHub issue (free account needed).</span>
-            </form>
+            <RequestForm repo={requestRepo} />
             {research.length ? (
               <div className="grid sm:grid-cols-2 gap-4">
                 {research.map((r) => (
