@@ -39,6 +39,7 @@ export default function Page() {
   const swing = (data.swing ?? []) as Swing[];
   const research = ((data as Record<string, unknown>).research ?? []) as Research[];
   const requestRepo = ((data as Record<string, unknown>).request_repo as string) ?? "proxiant/proxiant-ai-site";
+  const requestApi = ((data as Record<string, unknown>).request_api as string) ?? "";
   return (
     <div>
       <SiteHeader />
@@ -166,7 +167,7 @@ export default function Page() {
               and publishes it here, usually within one trading day. Requests go through GitHub, so
               they are public and spam-free.
             </p>
-            <RequestForm repo={requestRepo} />
+            <RequestForm repo={requestRepo} api={requestApi} />
             {research.length ? (
               <div className="grid sm:grid-cols-2 gap-4">
                 {research.map((r) => (
