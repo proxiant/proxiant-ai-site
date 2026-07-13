@@ -1,83 +1,92 @@
 {
- "stamp": "Monday, July 13, 2026 09:27 ET",
+ "stamp": "Monday, July 13, 2026 13:19 ET",
  "leads": [
   {
    "rank": 1,
-   "symbol": "SNDK",
+   "symbol": "JLHL",
    "side": "sell",
-   "entry": 1797.37,
-   "stop": 2021.4914,
-   "target": 1573.2486,
-   "why": "gap -6.2%, pre-market vol 440,984, rvol 0.8x"
+   "entry": 9.4,
+   "stop": 15.0451,
+   "target": 3.7549,
+   "why": "gap -19.9%, pre-market vol 320,012, rvol 0.1x"
   },
   {
    "rank": 2,
    "symbol": "SKYQ",
    "side": "buy",
-   "entry": 3.75,
-   "stop": 2.4667,
-   "target": 5.0333,
-   "why": "gap +17.9%, pre-market vol 2,612,384, rvol 0.2x"
+   "entry": 3.71,
+   "stop": 2.4404,
+   "target": 4.9796,
+   "why": "gap +16.7%, pre-market vol 2,687,573, rvol 0.2x"
   },
   {
    "rank": 3,
    "symbol": "SUNE",
    "side": "sell",
-   "entry": 3.33,
-   "stop": 3.68,
-   "target": 2.98,
-   "why": "gap -13.1%, pre-market vol 300,381, rvol 22.2x"
+   "entry": 3.37,
+   "stop": 3.7242,
+   "target": 3.0158,
+   "why": "gap -12.0%, pre-market vol 348,885, rvol 0.0x"
   },
   {
    "rank": 4,
-   "symbol": "JLHL",
+   "symbol": "FHB",
    "side": "sell",
-   "entry": 8.66,
-   "stop": 13.8607,
-   "target": 3.4593,
-   "why": "gap -26.2%, pre-market vol 308,977, rvol 1.9x"
+   "entry": 27.8,
+   "stop": 28.6013,
+   "target": 26.9987,
+   "why": "gap -7.7%, pre-market vol 117,844, rvol 0.1x"
   },
   {
    "rank": 5,
-   "symbol": "GMM",
+   "symbol": "SNDK",
    "side": "sell",
-   "entry": 2.97,
-   "stop": 3.2823,
-   "target": 2.6577,
-   "why": "gap -35.0%, pre-market vol 807,643, rvol 197.1x"
+   "entry": 1793.52,
+   "stop": 2017.1614,
+   "target": 1569.8786,
+   "why": "gap -6.4%, pre-market vol 456,358, rvol 0.1x"
   }
  ],
  "trades": [
   {
-   "symbol": "FBRX",
+   "symbol": "AGEN",
    "side": "buy",
-   "entry": 44.97,
-   "exit": 43.45,
-   "pnl_pct": -3.38,
-   "pnl_usd": -68.4,
+   "entry": 6.6,
+   "exit": 7.1867,
+   "pnl_pct": 8.8897,
+   "pnl_usd": 399.56,
+   "reason": "target"
+  },
+  {
+   "symbol": "SKYQ",
+   "side": "buy",
+   "entry": 3.9,
+   "exit": 4.02,
+   "pnl_pct": 3.0769,
+   "pnl_usd": 46.56,
    "reason": "time"
   }
  ],
- "trades_day_label": "Friday Jul 10",
- "eod_text": "1 trade, 0 winners, a net loss of $68 on the paper book. Every fill above is real output from the live pipeline: the same leads published here in the morning, executed with bracket exits and risk-normalized sizing, reported win or lose.",
+ "trades_day_label": "today",
+ "eod_text": "",
  "board": [
   {
    "label": "This week",
-   "n": 0,
-   "win_rate": "-",
-   "pnl_usd": "-"
+   "n": 2,
+   "win_rate": "100%",
+   "pnl_usd": "+446"
   },
   {
    "label": "This month",
-   "n": 1,
-   "win_rate": "0%",
-   "pnl_usd": "-68"
+   "n": 3,
+   "win_rate": "67%",
+   "pnl_usd": "+378"
   },
   {
    "label": "This year",
-   "n": 1,
-   "win_rate": "0%",
-   "pnl_usd": "-68"
+   "n": 3,
+   "win_rate": "67%",
+   "pnl_usd": "+378"
   }
  ],
  "swing": [
@@ -114,7 +123,22 @@
  ],
  "posture": "LONG",
  "donate_url": "https://buymeacoffee.com/proxiant",
- "research": [],
+ "research": [
+  {
+   "symbol": "QCOM",
+   "date": "2026-07-13",
+   "requested_by": "proxiant",
+   "headline": "AI infrastructure demand and margin recovery set QCOM for 15% upside; oversold technicals and analyst target justify outperformance as handset cycle normalizes.",
+   "href": "/proxitrades/research/QCOM.html"
+  },
+  {
+   "symbol": "COST",
+   "date": "2026-07-13",
+   "requested_by": "site visitor",
+   "headline": "Costco's membership model resilience and 13% DCF upside create outperformance as Q3 earnings and rate clarity become catalysts.",
+   "href": "/proxitrades/research/COST.html"
+  }
+ ],
  "request_repo": "proxiant/proxiant-ai-site",
  "request_api": ""
 }
