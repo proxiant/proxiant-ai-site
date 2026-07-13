@@ -95,7 +95,7 @@ export default function RequestForm({ repo, api }: { repo: string; api?: string 
         <button
           type="submit"
           disabled={state === "sending"}
-          className="rounded-lg border border-zinc-600 hover:border-zinc-400 transition-colors px-6 py-3 text-[15px] font-medium text-zinc-100 disabled:opacity-60"
+          className="rounded-lg bg-zinc-100 text-zinc-900 hover:bg-white transition-colors px-6 py-3 text-[15px] font-semibold disabled:opacity-60"
         >
           {state === "sending" ? "Sending…" : "Request research →"}
         </button>
