@@ -1,50 +1,50 @@
 {
- "stamp": "Sunday, July 12, 2026 18:12 ET",
+ "stamp": "Monday, July 13, 2026 09:27 ET",
  "leads": [
   {
    "rank": 1,
-   "symbol": "GMM",
-   "side": "buy",
-   "entry": 5.67,
-   "stop": 5.0188,
-   "target": 6.3212,
-   "why": "gap +206.5%, pre-market vol 68,517,632, rvol 123.4x"
+   "symbol": "SNDK",
+   "side": "sell",
+   "entry": 1797.37,
+   "stop": 2021.4914,
+   "target": 1573.2486,
+   "why": "gap -6.2%, pre-market vol 440,984, rvol 0.8x"
   },
   {
    "rank": 2,
-   "symbol": "VRAX",
-   "side": "sell",
-   "entry": 4.93,
-   "stop": 5.8856,
-   "target": 3.9744,
-   "why": "gap -22.5%, pre-market vol 294,017, rvol 0.1x"
+   "symbol": "SKYQ",
+   "side": "buy",
+   "entry": 3.75,
+   "stop": 2.4667,
+   "target": 5.0333,
+   "why": "gap +17.9%, pre-market vol 2,612,384, rvol 0.2x"
   },
   {
    "rank": 3,
-   "symbol": "FRMI",
+   "symbol": "SUNE",
    "side": "sell",
-   "entry": 6.14,
-   "stop": 6.8894,
-   "target": 5.3906,
-   "why": "gap -16.1%, pre-market vol 3,812,308, rvol 0.7x"
+   "entry": 3.33,
+   "stop": 3.68,
+   "target": 2.98,
+   "why": "gap -13.1%, pre-market vol 300,381, rvol 22.2x"
   },
   {
    "rank": 4,
-   "symbol": "EQPT",
-   "side": "buy",
-   "entry": 18.0,
-   "stop": 15.498,
-   "target": 20.502,
-   "why": "gap +12.5%, pre-market vol 236,100, rvol 0.1x"
+   "symbol": "JLHL",
+   "side": "sell",
+   "entry": 8.66,
+   "stop": 13.8607,
+   "target": 3.4593,
+   "why": "gap -26.2%, pre-market vol 308,977, rvol 1.9x"
   },
   {
    "rank": 5,
-   "symbol": "CRCL",
-   "side": "buy",
-   "entry": 70.66,
-   "stop": 62.7157,
-   "target": 78.6043,
-   "why": "gap +12.1%, pre-market vol 4,637,399, rvol 0.5x"
+   "symbol": "GMM",
+   "side": "sell",
+   "entry": 2.97,
+   "stop": 3.2823,
+   "target": 2.6577,
+   "why": "gap -35.0%, pre-market vol 807,643, rvol 197.1x"
   }
  ],
  "trades": [
@@ -63,9 +63,9 @@
  "board": [
   {
    "label": "This week",
-   "n": 1,
-   "win_rate": "0%",
-   "pnl_usd": "-68"
+   "n": 0,
+   "win_rate": "-",
+   "pnl_usd": "-"
   },
   {
    "label": "This month",
@@ -115,5 +115,6 @@
  "posture": "LONG",
  "donate_url": "https://buymeacoffee.com/proxiant",
  "research": [],
- "request_repo": "proxiant/proxiant-ai-site"
+ "request_repo": "proxiant/proxiant-ai-site",
+ "request_api": ""
 }
