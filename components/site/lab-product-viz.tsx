@@ -306,3 +306,138 @@ export function TauViz() {
     </div>
   );
 }
+
+/* ─────────── AIDE — multi-LLM orchestration engine ─────────── */
+
+// Deterministic orchestration log — phases routed to tiers, throttle
+// cascades, the budget gate, local GPU work, cost audit.
+const AIDE_EVENTS = [
+  { t: "14:02:11.008", k: "PLAN",   d: "opus \u00b7 frontier \u00b7 12k tok",        hot: false },
+  { t: "14:02:14.310", k: "BUDGET", d: "est $3.90 vs $11.20 \u00b7 approved",   hot: true },
+  { t: "14:02:15.021", k: "GRAPH",  d: "blast radius \u00b7 14 callers \u00b7 0 tok", hot: false },
+  { t: "14:02:18.114", k: "IMPL",   d: "sonnet \u00b7 balanced \u00b7 3 files",      hot: false },
+  { t: "14:03:02.551", k: "THROT",  d: "anthropic 429 \u00b7 cascading",        hot: false },
+  { t: "14:03:02.560", k: "ROUTE",  d: "azure \u00b7 fallback \u00b7 resumed",       hot: true },
+  { t: "14:03:40.006", k: "TEST",   d: "haiku \u00b7 efficient \u00b7 41 pass",      hot: false },
+  { t: "14:04:02.118", k: "IMPL",   d: "qwen-32b \u00b7 local gpu",             hot: false },
+  { t: "14:04:31.902", k: "REVIEW", d: "opus \u00b7 frontier \u00b7 2 findings",     hot: false },
+  { t: "14:04:59.377", k: "FIX",    d: "sonnet \u00b7 balanced \u00b7 patched",      hot: false },
+  { t: "14:05:20.041", k: "AUDIT",  d: "cost ledger \u00b7 $2.84 \u00b7 sealed",     hot: true },
+  { t: "14:05:44.913", k: "DOC",    d: "haiku \u00b7 efficient \u00b7 readme",       hot: false },
+];
+
+export function AideViz() {
+  return (
+    <div
+      className="relative w-full h-full overflow-hidden rounded-[28px]"
+      aria-hidden="true"
+      style={{
+        background:
+          "radial-gradient(60% 80% at 50% 0%, rgba(191, 87, 0, 0.14), transparent 60%), linear-gradient(180deg, #0f0b06 0%, #0a0706 100%)",
+      }}
+    >
+      <HudCorners tone="orange" />
+
+      {/* Phase-to-tier routing graph — left side */}
+      <svg viewBox="0 0 220 420" className="absolute left-0 top-0 h-full w-1/2 opacity-90">
+        <defs>
+          <linearGradient id="aide-path" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stopColor="rgba(191,87,0,0)" />
+            <stop offset="50%" stopColor="rgba(255,153,51,0.9)" />
+            <stop offset="100%" stopColor="rgba(232,213,168,0)" />
+          </linearGradient>
+        </defs>
+        {/* Phases, top to bottom */}
+        {[
+          { y: 80,  label: "PLAN" },
+          { y: 160, label: "ANALYZE" },
+          { y: 240, label: "IMPLEMENT" },
+          { y: 320, label: "TEST" },
+        ].map((s, i) => (
+          <g key={i}>
+            <circle cx="44" cy={s.y} r="11" fill="rgba(255,255,255,0.05)" stroke="rgba(232,213,168,0.45)" strokeWidth="1" />
+            <circle cx="44" cy={s.y} r="3.5" fill="#e8d5a8">
+              <animate attributeName="opacity" values="0.35;1;0.35" dur="2.6s" begin={`${i * 0.55}s`} repeatCount="indefinite" />
+            </circle>
+            <text x="12" y={s.y + 22} fill="rgba(232,213,168,0.6)" fontSize="8" fontFamily="JetBrains Mono, monospace" letterSpacing="1.5">
+              {s.label}
+            </text>
+          </g>
+        ))}
+        {/* Spine */}
+        <line x1="44" y1="91" x2="44" y2="309" stroke="rgba(232,213,168,0.18)" strokeWidth="1" strokeDasharray="2,5" />
+        {/* Tier rail on the right of the graph */}
+        {[
+          { y: 100, label: "FRONTIER" },
+          { y: 210, label: "BALANCED" },
+          { y: 320, label: "EFFICIENT" },
+        ].map((t, i) => (
+          <g key={t.label}>
+            <circle cx="170" cy={t.y} r="7" fill="rgba(191,87,0,0.15)" stroke="rgba(255,153,51,0.55)" strokeWidth="1" />
+            <circle cx="170" cy={t.y} r="2.5" fill="#ff9933">
+              <animate attributeName="opacity" values="0.3;1;0.3" dur="3.1s" begin={`${i * 0.8}s`} repeatCount="indefinite" />
+            </circle>
+            <text x="150" y={t.y + 20} fill="rgba(232,213,168,0.5)" fontSize="8" fontFamily="JetBrains Mono, monospace" letterSpacing="1.5">
+              {t.label}
+            </text>
+          </g>
+        ))}
+        {/* Phase-to-tier routes: plan+review up to frontier, work to balanced, test down to efficient */}
+        <path d="M 55 80 Q 115 80, 163 96" fill="none" stroke="url(#aide-path)" strokeWidth="1.2" />
+        <path d="M 55 160 Q 115 175, 163 205" fill="none" stroke="url(#aide-path)" strokeWidth="1.2" />
+        <path d="M 55 240 Q 115 230, 163 213" fill="none" stroke="url(#aide-path)" strokeWidth="1.2" />
+        <path d="M 55 320 Q 115 320, 163 320" fill="none" stroke="url(#aide-path)" strokeWidth="1.2" />
+        {/* Packets traveling two of the routes */}
+        <circle r="2.5" fill="#bf5700" opacity="0.9">
+          <animateMotion dur="3s" repeatCount="indefinite" path="M 55 80 Q 115 80, 163 96" />
+          <animate attributeName="opacity" values="0;1;1;0" dur="3s" repeatCount="indefinite" />
+        </circle>
+        <circle r="2.5" fill="#bf5700" opacity="0.9">
+          <animateMotion dur="3s" begin="1.5s" repeatCount="indefinite" path="M 55 240 Q 115 230, 163 213" />
+          <animate attributeName="opacity" values="0;1;1;0" dur="3s" begin="1.5s" repeatCount="indefinite" />
+        </circle>
+      </svg>
+
+      {/* Scrolling orchestration log — right side */}
+      <div className="absolute right-4 top-10 bottom-12 w-[52%] overflow-hidden" style={{ maskImage: "linear-gradient(180deg, transparent 0%, black 12%, black 84%, transparent 100%)", WebkitMaskImage: "linear-gradient(180deg, transparent 0%, black 12%, black 84%, transparent 100%)" }}>
+        <div className="font-mono text-[9.5px] leading-[1.9] tracking-[0.06em]" style={{ animation: "aide-log 16s linear infinite" }}>
+          {[...AIDE_EVENTS, ...AIDE_EVENTS].map((e, i) => (
+            <div key={i} className="flex gap-2 whitespace-nowrap">
+              <span style={{ color: "rgba(232,213,168,0.4)" }}>{e.t}</span>
+              <span style={{ color: e.hot ? "#ff9933" : "rgba(232,213,168,0.65)", minWidth: 44 }}>{e.k}</span>
+              <span style={{ color: e.hot ? "#e8d5a8" : "rgba(232,213,168,0.55)" }}>{e.d}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Big lambda centered */}
+      <div className="absolute inset-0 grid place-items-center pointer-events-none">
+        <span
+          className="font-serif italic leading-none"
+          style={{
+            fontSize: "clamp(80px, 14vw, 180px)",
+            color: "rgba(255, 240, 220, 0.94)",
+            textShadow: "0 0 40px rgba(191, 87, 0, 0.55), 0 0 90px rgba(191, 87, 0, 0.28)",
+          }}
+        >
+          {"\u03bb"}
+        </span>
+      </div>
+
+      {/* Bottom telemetry */}
+      <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-[10px] font-mono tracking-[0.2em]" style={{ color: "rgba(232, 213, 168, 0.85)" }}>
+        <span>PROVIDERS {"\u00b7"} 06</span>
+        <span style={{ color: "#ffb380" }}>SAVED {"\u00b7"} 64%</span>
+        <span>BUDGET {"\u00b7"} GATED</span>
+      </div>
+
+      <style jsx>{`
+        @keyframes aide-log {
+          from { transform: translateY(0); }
+          to { transform: translateY(-50%); }
+        }
+      `}</style>
+    </div>
+  );
+}

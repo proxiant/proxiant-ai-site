@@ -4,7 +4,7 @@ import { SiteFooter } from "@/components/site/site-footer";
 import { PageStars } from "@/components/site/page-stars";
 import { SparkleField } from "@/components/site/sparkle-field";
 import { LabsViz } from "@/components/site/hero-viz";
-import { AlphaViz, TauViz } from "@/components/site/lab-product-viz";
+import { AideViz, TauViz } from "@/components/site/lab-product-viz";
 import { PageMarquee } from "@/components/site/page-marquee";
 import { PinScroll } from "@/components/site/pin-scroll";
 
@@ -78,7 +78,7 @@ export default function Page() {
       <a href="/proxitrades/" className="b-6 hover-line group" data-reveal>
         <div className="card overflow-hidden h-full flex flex-col">
           <div className="aspect-[16/10] relative">
-            <AlphaViz />
+            <TauViz />
           </div>
           <div className="p-10 flex-1 flex flex-col">
             <div className="font-mono text-[12px] tracking-[0.14em] text-zinc-500 mb-5">LAB · PRODUCT</div>
@@ -103,7 +103,7 @@ export default function Page() {
       <a href="/aide/" className="b-6 hover-line group" data-reveal data-delay="1">
         <div className="card overflow-hidden h-full flex flex-col">
           <div className="aspect-[16/10] relative">
-            <TauViz />
+            <AideViz />
           </div>
           <div className="p-10 flex-1 flex flex-col">
             <div className="font-mono text-[12px] tracking-[0.14em] text-zinc-500 mb-5">LAB · PRODUCT</div>

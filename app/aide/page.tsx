@@ -1,6 +1,7 @@
 import { SiteHeader } from "@/components/site/site-header";
 import { SiteFooter } from "@/components/site/site-footer";
 import { SparkleField } from "@/components/site/sparkle-field";
+import { AideViz } from "@/components/site/lab-product-viz";
 
 import type { Metadata } from "next";
 
@@ -75,6 +76,12 @@ export default function AidePage() {
               economical one, falls back automatically when providers throttle, and runs
               just as well against your own GPUs as against any cloud.
             </p>
+          </div>
+        </section>
+
+        <section className="container-site pb-14">
+          <div className="aspect-[21/9] relative" data-reveal>
+            <AideViz />
           </div>
         </section>
 
