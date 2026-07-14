@@ -102,17 +102,24 @@ export default function Page() {
 
       <div className="b-6" data-reveal data-delay="1">
         <div className="card overflow-hidden h-full flex flex-col">
-          <div className="aspect-[16/10] relative opacity-60">
+          <div className="aspect-[16/10] relative">
             <TauViz />
           </div>
           <div className="p-10 flex-1 flex flex-col">
-            <div className="font-mono text-[12px] tracking-[0.14em] text-zinc-500 mb-5">LAB · IN PROGRESS</div>
-            <h3 className="display-sm mb-4">More to come</h3>
+            <div className="font-mono text-[12px] tracking-[0.14em] text-zinc-500 mb-5">LAB · PRODUCT</div>
+            <h3 className="display-sm mb-4">AIDE</h3>
             <p className="muted text-[15.5px] leading-relaxed mb-8 flex-1">
-              The next lab product is already on the bench. Watch this space, or follow the
-              daily ProxiTrades page to see the research engine at work in the meantime.
+              AI Development Engine: a terminal coding agent on a provider-agnostic LLM
+              gateway that routes work across Anthropic, OpenAI, Azure, Google, DeepSeek,
+              and self-hosted GPU models, with automatic fallback when a provider throttles.
+              Runs as a CLI, or as a server with a cross-platform desktop client.
             </p>
-            <div className="font-mono text-[12px] tracking-[0.14em] text-zinc-500">SHIPPING WHEN IT EARNS ITS CARD</div>
+            <div className="grid grid-cols-3 gap-3 mb-7">
+              <div className="text-left"><div className="font-mono text-[11px] text-zinc-500 mb-1">PROVIDERS</div><div className="font-serif text-[28px]">6</div></div>
+              <div className="text-left"><div className="font-mono text-[11px] text-zinc-500 mb-1">SURFACES</div><div className="font-serif text-[28px]">3</div></div>
+              <div className="text-left"><div className="font-mono text-[11px] text-zinc-500 mb-1">MODELS</div><div className="font-serif text-[28px]">Any</div></div>
+            </div>
+            <div className="font-mono text-[12px] tracking-[0.14em] text-zinc-500">PRIVATE PREVIEW</div>
           </div>
         </div>
       </div>
