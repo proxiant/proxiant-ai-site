@@ -51,7 +51,6 @@ export default function Page() {
 
 
 
-
       <PageMarquee
         items={["Research", "Spike", "Eval", "Ship", "Operate", "Open-source"]}
         eyebrow="The lab loop"
@@ -127,35 +126,6 @@ export default function Page() {
         </div>
       </a>
 
-      <a href="/terminal/" className="b-12 hover-line group" data-reveal>
-        <div className="card overflow-hidden grid lg:grid-cols-12 gap-0">
-          <div className="lg:col-span-7 p-10 lg:p-14 order-2 lg:order-1">
-            <div className="font-mono text-[12px] tracking-[0.14em] text-zinc-500 mb-5">LAB · LIVE DASHBOARD</div>
-            <h3 className="display-md mb-4">ProxiTrades Terminal</h3>
-            <p className="muted text-[16px] leading-relaxed mb-8">
-              Public-readable view of the trading research platform. Live signals, walk-forward
-              folds, portfolio metrics, and a candlestick view of every active strategy. Useful
-              both as a working dashboard and as a reference for how we build operator-grade UI.
-            </p>
-            <div className="flex items-center gap-3 text-[15px] font-medium group-hover:translate-x-1 transition-transform">
-              Open the terminal
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
-            </div>
-          </div>
-          <div className="lg:col-span-5 order-1 lg:order-2 bg-dark p-8 font-mono text-[12.5px] leading-relaxed">
-            <div className="flex items-center gap-2 mb-4 text-zinc-500"><span className="w-2.5 h-2.5 rounded-full bg-rose-500/70"></span><span className="w-2.5 h-2.5 rounded-full bg-amber-500/70"></span><span className="w-2.5 h-2.5 rounded-full bg-emerald-500/70"></span><span className="ml-3 text-zinc-600">terminal · live</span></div>
-            <div className="text-zinc-400"><span className="text-zinc-600">$</span> <span style={{ 'color': '#c084fc' }}>proxi</span> status</div>
-            <div style={{ 'color': '#86efac' }}>  ● strategy_v7      live   sharpe 1.42</div>
-            <div style={{ 'color': '#86efac' }}>  ● mean_reversion   paper  sharpe 0.91</div>
-            <div style={{ 'color': '#fbbf24' }}>  ◐ momentum_x       eval   pending</div>
-            <div className="text-zinc-500">  · last update 23s ago</div>
-            <div className="mt-3 text-zinc-400"><span className="text-zinc-600">$</span> <span style={{ 'color': '#c084fc' }}>proxi</span> tail signals --strategy strategy_v7</div>
-            <div className="text-zinc-300">  10:42:18  BUY  AAPL   conf=0.83  size=0.7%</div>
-            <div className="text-zinc-300">  10:43:51  HOLD MSFT   conf=0.61</div>
-            <div className="text-zinc-300">  10:45:09  SELL NVDA   conf=0.79  size=1.2%</div>
-          </div>
-        </div>
-      </a>
     </div>
   </div>
 </section>
@@ -212,7 +182,7 @@ export default function Page() {
         <div className="num">AREA / 06</div>
         <div>
           <h3 className="display-xs mb-2">Operator-grade UI</h3>
-          <p className="muted text-[15.5px] leading-relaxed max-w-2xl">UIs for the people running AI in production. Dense, fast, opinionated. The terminal is the running example.</p>
+          <p className="muted text-[15.5px] leading-relaxed max-w-2xl">UIs for the people running AI in production. Dense, fast, opinionated, built for operators.</p>
         </div>
       </li>
     </ul>
