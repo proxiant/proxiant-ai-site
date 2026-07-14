@@ -24,6 +24,7 @@ const ROUTES = [
   "/insights/trustworthy-ai",
   "/case-studies/fortune500-bank",
   "/proxitrades",
+  "/aide",
 ];
 
 export const dynamic = "force-static";

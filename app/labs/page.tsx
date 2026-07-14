@@ -100,7 +100,7 @@ export default function Page() {
         </div>
       </a>
 
-      <div className="b-6" data-reveal data-delay="1">
+      <a href="/aide/" className="b-6 hover-line group" data-reveal data-delay="1">
         <div className="card overflow-hidden h-full flex flex-col">
           <div className="aspect-[16/10] relative">
             <TauViz />
@@ -119,10 +119,13 @@ export default function Page() {
               <div className="text-left"><div className="font-mono text-[11px] text-zinc-500 mb-1">SURFACES</div><div className="font-serif text-[28px]">3</div></div>
               <div className="text-left"><div className="font-mono text-[11px] text-zinc-500 mb-1">MODELS</div><div className="font-serif text-[28px]">Any</div></div>
             </div>
-            <div className="font-mono text-[12px] tracking-[0.14em] text-zinc-500">PRIVATE PREVIEW</div>
+            <div className="flex items-center gap-3 text-[15px] font-medium group-hover:translate-x-1 transition-transform">
+              See the product
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </div>
           </div>
         </div>
-      </div>
+      </a>
 
       <a href="/terminal/" className="b-12 hover-line group" data-reveal>
         <div className="card overflow-hidden grid lg:grid-cols-12 gap-0">
