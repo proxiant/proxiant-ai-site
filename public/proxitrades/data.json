@@ -1,50 +1,50 @@
 {
- "stamp": "Tuesday, July 14, 2026 09:27 ET",
+ "stamp": "Tuesday, July 14, 2026 13:14 ET",
  "leads": [
   {
    "rank": 1,
-   "symbol": "TSEM",
+   "symbol": "NXTC",
    "side": "buy",
-   "entry": 274.0,
-   "stop": 241.7425,
-   "target": 306.2575,
-   "why": "gap +19.3%, pre-market vol 108,547, rvol 1.5x"
+   "entry": 9.24,
+   "stop": 8.1619,
+   "target": 10.3181,
+   "why": "gap +323.9%, pre-market vol 41,673,757, rvol 546.5x"
   },
   {
    "rank": 2,
-   "symbol": "CLSK",
-   "side": "buy",
-   "entry": 14.77,
-   "stop": 12.7031,
-   "target": 16.8369,
-   "why": "gap +19.5%, pre-market vol 5,346,822, rvol 0.7x"
+   "symbol": "VEEE",
+   "side": "sell",
+   "entry": 18.8,
+   "stop": 20.9881,
+   "target": 16.6119,
+   "why": "gap -24.4%, pre-market vol 346,361, rvol 0.1x"
   },
   {
    "rank": 3,
-   "symbol": "SUNE",
-   "side": "buy",
-   "entry": 3.8,
-   "stop": 3.1967,
-   "target": 4.4033,
-   "why": "gap +11.8%, pre-market vol 3,707,230, rvol 0.3x"
+   "symbol": "IBM",
+   "side": "sell",
+   "entry": 225.9409,
+   "stop": 235.469,
+   "target": 216.4128,
+   "why": "gap -22.2%, pre-market vol 4,368,633, rvol 1.1x"
   },
   {
    "rank": 4,
-   "symbol": "IBM",
-   "side": "sell",
-   "entry": 227.6,
-   "stop": 237.198,
-   "target": 218.002,
-   "why": "gap -21.6%, pre-market vol 4,057,181, rvol 0.7x"
+   "symbol": "TSEM",
+   "side": "buy",
+   "entry": 273.25,
+   "stop": 241.0808,
+   "target": 305.4192,
+   "why": "gap +19.0%, pre-market vol 118,075, rvol 0.2x"
   },
   {
    "rank": 5,
-   "symbol": "VEEE",
-   "side": "sell",
-   "entry": 19.802,
-   "stop": 22.1067,
-   "target": 17.4973,
-   "why": "gap -20.3%, pre-market vol 340,578, rvol 195.7x"
+   "symbol": "CLSK",
+   "side": "buy",
+   "entry": 14.63,
+   "stop": 12.5826,
+   "target": 16.6774,
+   "why": "gap +18.4%, pre-market vol 6,493,744, rvol 0.6x"
   }
  ],
  "trades": [
@@ -137,6 +137,13 @@
    "requested_by": "site visitor",
    "headline": "Costco's membership model resilience and 13% DCF upside create outperformance as Q3 earnings and rate clarity become catalysts.",
    "href": "/proxitrades/research/COST.html"
+  },
+  {
+   "symbol": "NVDA",
+   "date": "2026-07-14",
+   "requested_by": "proxiant",
+   "headline": "NVIDIA's AI Infrastructure Dominance and Accelerating Revenue Trajectory Support 21\u201348% Upside Target.",
+   "href": "/proxitrades/research/NVDA.html"
   }
  ],
  "request_repo": "proxiant/proxiant-ai-site",
