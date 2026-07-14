@@ -1,50 +1,50 @@
 {
- "stamp": "Monday, July 13, 2026 17:05 ET",
+ "stamp": "Tuesday, July 14, 2026 09:27 ET",
  "leads": [
   {
    "rank": 1,
-   "symbol": "JLHL",
-   "side": "sell",
-   "entry": 9.4,
-   "stop": 15.0451,
-   "target": 3.7549,
-   "why": "gap -19.9%, pre-market vol 320,012, rvol 0.1x"
+   "symbol": "TSEM",
+   "side": "buy",
+   "entry": 274.0,
+   "stop": 241.7425,
+   "target": 306.2575,
+   "why": "gap +19.3%, pre-market vol 108,547, rvol 1.5x"
   },
   {
    "rank": 2,
-   "symbol": "SKYQ",
+   "symbol": "CLSK",
    "side": "buy",
-   "entry": 3.71,
-   "stop": 2.4404,
-   "target": 4.9796,
-   "why": "gap +16.7%, pre-market vol 2,687,573, rvol 0.2x"
+   "entry": 14.77,
+   "stop": 12.7031,
+   "target": 16.8369,
+   "why": "gap +19.5%, pre-market vol 5,346,822, rvol 0.7x"
   },
   {
    "rank": 3,
    "symbol": "SUNE",
-   "side": "sell",
-   "entry": 3.37,
-   "stop": 3.7242,
-   "target": 3.0158,
-   "why": "gap -12.0%, pre-market vol 348,885, rvol 0.0x"
+   "side": "buy",
+   "entry": 3.8,
+   "stop": 3.1967,
+   "target": 4.4033,
+   "why": "gap +11.8%, pre-market vol 3,707,230, rvol 0.3x"
   },
   {
    "rank": 4,
-   "symbol": "FHB",
+   "symbol": "IBM",
    "side": "sell",
-   "entry": 27.8,
-   "stop": 28.6013,
-   "target": 26.9987,
-   "why": "gap -7.7%, pre-market vol 117,844, rvol 0.1x"
+   "entry": 227.6,
+   "stop": 237.198,
+   "target": 218.002,
+   "why": "gap -21.6%, pre-market vol 4,057,181, rvol 0.7x"
   },
   {
    "rank": 5,
-   "symbol": "SNDK",
+   "symbol": "VEEE",
    "side": "sell",
-   "entry": 1793.52,
-   "stop": 2017.1614,
-   "target": 1569.8786,
-   "why": "gap -6.4%, pre-market vol 456,358, rvol 0.1x"
+   "entry": 19.802,
+   "stop": 22.1067,
+   "target": 17.4973,
+   "why": "gap -20.3%, pre-market vol 340,578, rvol 195.7x"
   }
  ],
  "trades": [
@@ -67,7 +67,7 @@
    "reason": "time"
   }
  ],
- "trades_day_label": "today",
+ "trades_day_label": "Monday Jul 13",
  "eod_text": "2 trades, 2 winners, a net gain of $446 on the paper book. Every fill above is real output from the live pipeline: the same leads published here in the morning, executed with bracket exits and risk-normalized sizing, reported win or lose.",
  "board": [
   {
