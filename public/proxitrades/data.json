@@ -1,92 +1,92 @@
 {
- "stamp": "Wednesday, July 15, 2026 09:27 ET",
+ "stamp": "Wednesday, July 15, 2026 17:05 ET",
  "leads": [
   {
    "rank": 1,
-   "symbol": "VEEE",
+   "symbol": "AEHR",
    "side": "buy",
-   "entry": 44.3419,
-   "stop": 37.0665,
-   "target": 51.6173,
-   "why": "gap +15.1%, pre-market vol 1,069,036, rvol 3.2x"
+   "entry": 98.5,
+   "stop": 82.3784,
+   "target": 114.6216,
+   "why": "gap +36.8%, pre-market vol 532,733, rvol 0.5x"
   },
   {
    "rank": 2,
-   "symbol": "AEHR",
-   "side": "buy",
-   "entry": 95.6605,
-   "stop": 80.0036,
-   "target": 111.3174,
-   "why": "gap +32.8%, pre-market vol 421,230, rvol 2.7x"
+   "symbol": "PNR",
+   "side": "sell",
+   "entry": 58.03,
+   "stop": 59.7058,
+   "target": 56.3542,
+   "why": "gap -23.3%, pre-market vol 275,894, rvol 0.2x"
   },
   {
    "rank": 3,
    "symbol": "NXTC",
    "side": "sell",
-   "entry": 5.05,
-   "stop": 5.7201,
-   "target": 4.3799,
-   "why": "gap -23.3%, pre-market vol 640,113, rvol 1102.8x"
+   "entry": 5.5,
+   "stop": 6.2298,
+   "target": 4.7702,
+   "why": "gap -16.4%, pre-market vol 702,236, rvol 0.1x"
   },
   {
    "rank": 4,
    "symbol": "PYPL",
    "side": "buy",
-   "entry": 56.08,
-   "stop": 53.8301,
-   "target": 58.3299,
-   "why": "gap +18.4%, pre-market vol 12,744,656, rvol 0.7x"
+   "entry": 54.81,
+   "stop": 52.6111,
+   "target": 57.0089,
+   "why": "gap +15.7%, pre-market vol 13,746,241, rvol 1.4x"
   },
   {
    "rank": 5,
-   "symbol": "PNR",
-   "side": "sell",
-   "entry": 57.65,
-   "stop": 59.3148,
-   "target": 55.9852,
-   "why": "gap -23.8%, pre-market vol 174,881, rvol 1.6x"
+   "symbol": "VEEE",
+   "side": "buy",
+   "entry": 43.92,
+   "stop": 36.7139,
+   "target": 51.1261,
+   "why": "gap +14.0%, pre-market vol 1,112,916, rvol 0.3x"
   }
  ],
  "trades": [
   {
-   "symbol": "AGEN",
-   "side": "buy",
-   "entry": 6.6,
-   "exit": 7.1867,
-   "pnl_pct": 8.8897,
-   "pnl_usd": 399.56,
-   "reason": "target"
+   "symbol": "PNR",
+   "side": "sell",
+   "entry": 64.865,
+   "exit": 66.4434,
+   "pnl_pct": -2.4334,
+   "pnl_usd": -399.33,
+   "reason": "stop"
   },
   {
-   "symbol": "SKYQ",
+   "symbol": "AEHR",
    "side": "buy",
-   "entry": 3.9,
-   "exit": 4.02,
-   "pnl_pct": 3.0769,
-   "pnl_usd": 46.56,
-   "reason": "time"
+   "entry": 107.43,
+   "exit": 99.3702,
+   "pnl_pct": -7.5024,
+   "pnl_usd": -394.93,
+   "reason": "stop"
   }
  ],
- "trades_day_label": "Monday Jul 13",
- "eod_text": "2 trades, 2 winners, a net gain of $446 on the paper book. Every fill above is real output from the live pipeline: the same leads published here in the morning, executed with bracket exits and risk-normalized sizing, reported win or lose.",
+ "trades_day_label": "today",
+ "eod_text": "2 trades, 0 winners, a net loss of $794 on the paper book. Every fill above is real output from the live pipeline: the same leads published here in the morning, executed with bracket exits and risk-normalized sizing, reported win or lose.",
  "board": [
   {
    "label": "This week",
-   "n": 2,
-   "win_rate": "100%",
-   "pnl_usd": "+446"
+   "n": 4,
+   "win_rate": "50%",
+   "pnl_usd": "-348"
   },
   {
    "label": "This month",
-   "n": 3,
-   "win_rate": "67%",
-   "pnl_usd": "+378"
+   "n": 5,
+   "win_rate": "40%",
+   "pnl_usd": "-417"
   },
   {
    "label": "This year",
-   "n": 3,
-   "win_rate": "67%",
-   "pnl_usd": "+378"
+   "n": 5,
+   "win_rate": "40%",
+   "pnl_usd": "-417"
   }
  ],
  "swing": [
