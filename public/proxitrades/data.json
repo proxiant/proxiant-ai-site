@@ -1,50 +1,50 @@
 {
- "stamp": "Tuesday, July 14, 2026 17:05 ET",
+ "stamp": "Wednesday, July 15, 2026 09:27 ET",
  "leads": [
   {
    "rank": 1,
-   "symbol": "NXTC",
+   "symbol": "VEEE",
    "side": "buy",
-   "entry": 9.24,
-   "stop": 8.1619,
-   "target": 10.3181,
-   "why": "gap +323.9%, pre-market vol 41,673,757, rvol 546.5x"
+   "entry": 44.3419,
+   "stop": 37.0665,
+   "target": 51.6173,
+   "why": "gap +15.1%, pre-market vol 1,069,036, rvol 3.2x"
   },
   {
    "rank": 2,
-   "symbol": "VEEE",
-   "side": "sell",
-   "entry": 18.8,
-   "stop": 20.9881,
-   "target": 16.6119,
-   "why": "gap -24.4%, pre-market vol 346,361, rvol 0.1x"
+   "symbol": "AEHR",
+   "side": "buy",
+   "entry": 95.6605,
+   "stop": 80.0036,
+   "target": 111.3174,
+   "why": "gap +32.8%, pre-market vol 421,230, rvol 2.7x"
   },
   {
    "rank": 3,
-   "symbol": "IBM",
+   "symbol": "NXTC",
    "side": "sell",
-   "entry": 225.9409,
-   "stop": 235.469,
-   "target": 216.4128,
-   "why": "gap -22.2%, pre-market vol 4,368,633, rvol 1.1x"
+   "entry": 5.05,
+   "stop": 5.7201,
+   "target": 4.3799,
+   "why": "gap -23.3%, pre-market vol 640,113, rvol 1102.8x"
   },
   {
    "rank": 4,
-   "symbol": "TSEM",
+   "symbol": "PYPL",
    "side": "buy",
-   "entry": 273.25,
-   "stop": 241.0808,
-   "target": 305.4192,
-   "why": "gap +19.0%, pre-market vol 118,075, rvol 0.2x"
+   "entry": 56.08,
+   "stop": 53.8301,
+   "target": 58.3299,
+   "why": "gap +18.4%, pre-market vol 12,744,656, rvol 0.7x"
   },
   {
    "rank": 5,
-   "symbol": "CLSK",
-   "side": "buy",
-   "entry": 14.63,
-   "stop": 12.5826,
-   "target": 16.6774,
-   "why": "gap +18.4%, pre-market vol 6,493,744, rvol 0.6x"
+   "symbol": "PNR",
+   "side": "sell",
+   "entry": 57.65,
+   "stop": 59.3148,
+   "target": 55.9852,
+   "why": "gap -23.8%, pre-market vol 174,881, rvol 1.6x"
   }
  ],
  "trades": [
