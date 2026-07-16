@@ -1,50 +1,50 @@
 {
- "stamp": "Thursday, July 16, 2026 09:27 ET",
+ "stamp": "Thursday, July 16, 2026 17:05 ET",
  "leads": [
   {
    "rank": 1,
-   "symbol": "VEEE",
-   "side": "buy",
-   "entry": 34.19,
-   "stop": 23.603,
-   "target": 44.777,
-   "why": "gap +28.6%, pre-market vol 971,737, rvol 0.7x"
+   "symbol": "NVVE",
+   "side": "sell",
+   "entry": 12.22,
+   "stop": 14.8074,
+   "target": 9.6326,
+   "why": "gap -43.3%, pre-market vol 126,268, rvol 0.0x"
   },
   {
    "rank": 2,
-   "symbol": "ASTS",
-   "side": "sell",
-   "entry": 57.88,
-   "stop": 63.9498,
-   "target": 51.8102,
-   "why": "gap -12.7%, pre-market vol 2,245,841, rvol 1.2x"
+   "symbol": "VEEE",
+   "side": "buy",
+   "entry": 35.2,
+   "stop": 24.3002,
+   "target": 46.0998,
+   "why": "gap +32.4%, pre-market vol 1,002,163, rvol 0.2x"
   },
   {
    "rank": 3,
-   "symbol": "NVVE",
-   "side": "sell",
-   "entry": 12.1,
-   "stop": 14.662,
-   "target": 9.538,
-   "why": "gap -43.9%, pre-market vol 115,374, rvol 1.0x"
+   "symbol": "ATAI",
+   "side": "buy",
+   "entry": 7.08,
+   "stop": 6.2684,
+   "target": 7.8916,
+   "why": "gap +32.1%, pre-market vol 28,942,853, rvol 4.1x"
   },
   {
    "rank": 4,
-   "symbol": "SDOT",
+   "symbol": "ASTS",
    "side": "sell",
-   "entry": 14.0,
-   "stop": 32.9227,
-   "target": -4.9227,
-   "why": "gap -8.2%, pre-market vol 114,964, rvol 0.1x"
+   "entry": 59.0,
+   "stop": 65.1872,
+   "target": 52.8128,
+   "why": "gap -11.0%, pre-market vol 2,710,915, rvol 0.5x"
   },
   {
    "rank": 5,
-   "symbol": "ATAI",
+   "symbol": "UNH",
    "side": "buy",
-   "entry": 7.1491,
-   "stop": 6.3296,
-   "target": 7.9686,
-   "why": "gap +33.4%, pre-market vol 21,212,586, rvol 1.2x"
+   "entry": 452.01,
+   "stop": 436.8892,
+   "target": 467.1308,
+   "why": "gap +8.0%, pre-market vol 616,875, rvol 0.2x"
   }
  ],
  "trades": [
