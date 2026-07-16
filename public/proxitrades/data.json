@@ -1,50 +1,50 @@
 {
- "stamp": "Wednesday, July 15, 2026 17:05 ET",
+ "stamp": "Thursday, July 16, 2026 09:27 ET",
  "leads": [
   {
    "rank": 1,
-   "symbol": "AEHR",
+   "symbol": "VEEE",
    "side": "buy",
-   "entry": 98.5,
-   "stop": 82.3784,
-   "target": 114.6216,
-   "why": "gap +36.8%, pre-market vol 532,733, rvol 0.5x"
+   "entry": 34.19,
+   "stop": 23.603,
+   "target": 44.777,
+   "why": "gap +28.6%, pre-market vol 971,737, rvol 0.7x"
   },
   {
    "rank": 2,
-   "symbol": "PNR",
+   "symbol": "ASTS",
    "side": "sell",
-   "entry": 58.03,
-   "stop": 59.7058,
-   "target": 56.3542,
-   "why": "gap -23.3%, pre-market vol 275,894, rvol 0.2x"
+   "entry": 57.88,
+   "stop": 63.9498,
+   "target": 51.8102,
+   "why": "gap -12.7%, pre-market vol 2,245,841, rvol 1.2x"
   },
   {
    "rank": 3,
-   "symbol": "NXTC",
+   "symbol": "NVVE",
    "side": "sell",
-   "entry": 5.5,
-   "stop": 6.2298,
-   "target": 4.7702,
-   "why": "gap -16.4%, pre-market vol 702,236, rvol 0.1x"
+   "entry": 12.1,
+   "stop": 14.662,
+   "target": 9.538,
+   "why": "gap -43.9%, pre-market vol 115,374, rvol 1.0x"
   },
   {
    "rank": 4,
-   "symbol": "PYPL",
-   "side": "buy",
-   "entry": 54.81,
-   "stop": 52.6111,
-   "target": 57.0089,
-   "why": "gap +15.7%, pre-market vol 13,746,241, rvol 1.4x"
+   "symbol": "SDOT",
+   "side": "sell",
+   "entry": 14.0,
+   "stop": 32.9227,
+   "target": -4.9227,
+   "why": "gap -8.2%, pre-market vol 114,964, rvol 0.1x"
   },
   {
    "rank": 5,
-   "symbol": "VEEE",
+   "symbol": "ATAI",
    "side": "buy",
-   "entry": 43.92,
-   "stop": 36.7139,
-   "target": 51.1261,
-   "why": "gap +14.0%, pre-market vol 1,112,916, rvol 0.3x"
+   "entry": 7.1491,
+   "stop": 6.3296,
+   "target": 7.9686,
+   "why": "gap +33.4%, pre-market vol 21,212,586, rvol 1.2x"
   }
  ],
  "trades": [
@@ -67,7 +67,7 @@
    "reason": "stop"
   }
  ],
- "trades_day_label": "today",
+ "trades_day_label": "Wednesday Jul 15",
  "eod_text": "2 trades, 0 winners, a net loss of $794 on the paper book. Every fill above is real output from the live pipeline: the same leads published here in the morning, executed with bracket exits and risk-normalized sizing, reported win or lose.",
  "board": [
   {
