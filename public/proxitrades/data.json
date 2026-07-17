@@ -1,92 +1,83 @@
 {
- "stamp": "Friday, July 17, 2026 09:27 ET",
+ "stamp": "Friday, July 17, 2026 17:05 ET",
  "leads": [
   {
    "rank": 1,
-   "symbol": "NFLX",
-   "side": "sell",
-   "entry": 65.85,
-   "stop": 68.0585,
-   "target": 63.6415,
-   "why": "gap -11.4%, pre-market vol 5,135,984, rvol 2.0x"
+   "symbol": "SDOT",
+   "side": "buy",
+   "entry": 21.91,
+   "stop": -4.0624,
+   "target": 47.8824,
+   "why": "gap +53.8%, pre-market vol 3,386,921, rvol 3.5x"
   },
   {
    "rank": 2,
-   "symbol": "AXTI",
-   "side": "sell",
-   "entry": 42.8,
-   "stop": 50.6159,
-   "target": 34.9841,
-   "why": "gap -6.1%, pre-market vol 235,545, rvol 1.0x"
+   "symbol": "JLHL",
+   "side": "buy",
+   "entry": 9.66,
+   "stop": 3.0426,
+   "target": 16.2774,
+   "why": "gap +14.5%, pre-market vol 959,847, rvol 0.1x"
   },
   {
    "rank": 3,
-   "symbol": "VEEE",
-   "side": "buy",
-   "entry": 39.95,
-   "stop": 29.3342,
-   "target": 50.5658,
-   "why": "gap +10.4%, pre-market vol 446,657, rvol 0.9x"
+   "symbol": "NFLX",
+   "side": "sell",
+   "entry": 65.55,
+   "stop": 67.7484,
+   "target": 63.3516,
+   "why": "gap -11.8%, pre-market vol 6,026,748, rvol 0.3x"
   },
   {
    "rank": 4,
-   "symbol": "JLHL",
+   "symbol": "VEEE",
    "side": "buy",
-   "entry": 9.88,
-   "stop": 3.1119,
-   "target": 16.6481,
-   "why": "gap +17.1%, pre-market vol 947,798, rvol 0.1x"
+   "entry": 40.0,
+   "stop": 29.3709,
+   "target": 50.6291,
+   "why": "gap +10.6%, pre-market vol 459,105, rvol 0.1x"
   },
   {
    "rank": 5,
    "symbol": "ISRG",
    "side": "sell",
-   "entry": 365.0,
-   "stop": 378.3646,
-   "target": 351.6354,
-   "why": "gap -9.3%, pre-market vol 220,014, rvol 2.0x"
+   "entry": 365.91,
+   "stop": 379.3079,
+   "target": 352.5121,
+   "why": "gap -9.1%, pre-market vol 258,739, rvol 0.2x"
   }
  ],
  "trades": [
   {
-   "symbol": "PNR",
+   "symbol": "NFLX",
    "side": "sell",
-   "entry": 64.865,
-   "exit": 66.4434,
-   "pnl_pct": -2.4334,
-   "pnl_usd": -399.33,
-   "reason": "stop"
-  },
-  {
-   "symbol": "AEHR",
-   "side": "buy",
-   "entry": 107.43,
-   "exit": 99.3702,
-   "pnl_pct": -7.5024,
-   "pnl_usd": -394.93,
-   "reason": "stop"
+   "entry": 66.34,
+   "exit": 67.61,
+   "pnl_pct": -1.9144,
+   "pnl_usd": -281.94,
+   "reason": "time"
   }
  ],
- "trades_day_label": "Wednesday Jul 15",
- "eod_text": "2 trades, 0 winners, a net loss of $794 on the paper book. Every fill above is real output from the live pipeline: the same leads published here in the morning, executed with bracket exits and risk-normalized sizing, reported win or lose.",
+ "trades_day_label": "today",
+ "eod_text": "1 trade, 0 winners, a net loss of $282 on the paper book. Every fill above is real output from the live pipeline: the same leads published here in the morning, executed with bracket exits and risk-normalized sizing, reported win or lose.",
  "board": [
   {
    "label": "This week",
-   "n": 4,
-   "win_rate": "50%",
-   "pnl_usd": "-348"
+   "n": 5,
+   "win_rate": "40%",
+   "pnl_usd": "-630"
   },
   {
    "label": "This month",
-   "n": 5,
-   "win_rate": "40%",
-   "pnl_usd": "-417"
+   "n": 6,
+   "win_rate": "33%",
+   "pnl_usd": "-698"
   },
   {
    "label": "This year",
-   "n": 5,
-   "win_rate": "40%",
-   "pnl_usd": "-417"
+   "n": 6,
+   "win_rate": "33%",
+   "pnl_usd": "-698"
   }
  ],
  "swing": [
