@@ -1,50 +1,50 @@
 {
- "stamp": "Thursday, July 16, 2026 17:05 ET",
+ "stamp": "Friday, July 17, 2026 09:27 ET",
  "leads": [
   {
    "rank": 1,
-   "symbol": "NVVE",
+   "symbol": "NFLX",
    "side": "sell",
-   "entry": 12.22,
-   "stop": 14.8074,
-   "target": 9.6326,
-   "why": "gap -43.3%, pre-market vol 126,268, rvol 0.0x"
+   "entry": 65.85,
+   "stop": 68.0585,
+   "target": 63.6415,
+   "why": "gap -11.4%, pre-market vol 5,135,984, rvol 2.0x"
   },
   {
    "rank": 2,
-   "symbol": "VEEE",
-   "side": "buy",
-   "entry": 35.2,
-   "stop": 24.3002,
-   "target": 46.0998,
-   "why": "gap +32.4%, pre-market vol 1,002,163, rvol 0.2x"
+   "symbol": "AXTI",
+   "side": "sell",
+   "entry": 42.8,
+   "stop": 50.6159,
+   "target": 34.9841,
+   "why": "gap -6.1%, pre-market vol 235,545, rvol 1.0x"
   },
   {
    "rank": 3,
-   "symbol": "ATAI",
+   "symbol": "VEEE",
    "side": "buy",
-   "entry": 7.08,
-   "stop": 6.2684,
-   "target": 7.8916,
-   "why": "gap +32.1%, pre-market vol 28,942,853, rvol 4.1x"
+   "entry": 39.95,
+   "stop": 29.3342,
+   "target": 50.5658,
+   "why": "gap +10.4%, pre-market vol 446,657, rvol 0.9x"
   },
   {
    "rank": 4,
-   "symbol": "ASTS",
-   "side": "sell",
-   "entry": 59.0,
-   "stop": 65.1872,
-   "target": 52.8128,
-   "why": "gap -11.0%, pre-market vol 2,710,915, rvol 0.5x"
+   "symbol": "JLHL",
+   "side": "buy",
+   "entry": 9.88,
+   "stop": 3.1119,
+   "target": 16.6481,
+   "why": "gap +17.1%, pre-market vol 947,798, rvol 0.1x"
   },
   {
    "rank": 5,
-   "symbol": "UNH",
-   "side": "buy",
-   "entry": 452.01,
-   "stop": 436.8892,
-   "target": 467.1308,
-   "why": "gap +8.0%, pre-market vol 616,875, rvol 0.2x"
+   "symbol": "ISRG",
+   "side": "sell",
+   "entry": 365.0,
+   "stop": 378.3646,
+   "target": 351.6354,
+   "why": "gap -9.3%, pre-market vol 220,014, rvol 2.0x"
   }
  ],
  "trades": [
