@@ -1,50 +1,50 @@
 {
- "stamp": "Friday, July 17, 2026 17:05 ET",
+ "stamp": "Monday, July 20, 2026 09:27 ET",
  "leads": [
   {
    "rank": 1,
-   "symbol": "SDOT",
+   "symbol": "HUT",
    "side": "buy",
-   "entry": 21.91,
-   "stop": -4.0624,
-   "target": 47.8824,
-   "why": "gap +53.8%, pre-market vol 3,386,921, rvol 3.5x"
+   "entry": 103.57,
+   "stop": 88.1832,
+   "target": 118.9568,
+   "why": "gap +13.3%, pre-market vol 437,138, rvol 1.2x"
   },
   {
    "rank": 2,
-   "symbol": "JLHL",
+   "symbol": "SDOT",
    "side": "buy",
-   "entry": 9.66,
-   "stop": 3.0426,
-   "target": 16.2774,
-   "why": "gap +14.5%, pre-market vol 959,847, rvol 0.1x"
+   "entry": 32.787,
+   "stop": -1.0774,
+   "target": 66.6514,
+   "why": "gap +29.6%, pre-market vol 1,015,914, rvol 13.4x"
   },
   {
    "rank": 3,
-   "symbol": "NFLX",
-   "side": "sell",
-   "entry": 65.55,
-   "stop": 67.7484,
-   "target": 63.3516,
-   "why": "gap -11.8%, pre-market vol 6,026,748, rvol 0.3x"
+   "symbol": "IREN",
+   "side": "buy",
+   "entry": 36.42,
+   "stop": 31.1491,
+   "target": 41.6909,
+   "why": "gap +8.3%, pre-market vol 3,479,876, rvol 1.1x"
   },
   {
    "rank": 4,
-   "symbol": "VEEE",
+   "symbol": "CIFR",
    "side": "buy",
-   "entry": 40.0,
-   "stop": 29.3709,
-   "target": 50.6291,
-   "why": "gap +10.6%, pre-market vol 459,105, rvol 0.1x"
+   "entry": 18.82,
+   "stop": 15.7043,
+   "target": 21.9357,
+   "why": "gap +7.2%, pre-market vol 404,201, rvol 1.0x"
   },
   {
    "rank": 5,
-   "symbol": "ISRG",
-   "side": "sell",
-   "entry": 365.91,
-   "stop": 379.3079,
-   "target": 352.5121,
-   "why": "gap -9.1%, pre-market vol 258,739, rvol 0.2x"
+   "symbol": "SKYQ",
+   "side": "buy",
+   "entry": 4.09,
+   "stop": 2.9853,
+   "target": 5.1947,
+   "why": "gap +7.6%, pre-market vol 513,704, rvol 0.3x"
   }
  ],
  "trades": [
@@ -58,14 +58,14 @@
    "reason": "time"
   }
  ],
- "trades_day_label": "today",
+ "trades_day_label": "Friday Jul 17",
  "eod_text": "1 trade, 0 winners, a net loss of $282 on the paper book. Every fill above is real output from the live pipeline: the same leads published here in the morning, executed with bracket exits and risk-normalized sizing, reported win or lose.",
  "board": [
   {
    "label": "This week",
-   "n": 5,
-   "win_rate": "40%",
-   "pnl_usd": "-630"
+   "n": 0,
+   "win_rate": "-",
+   "pnl_usd": "-"
   },
   {
    "label": "This month",
@@ -82,34 +82,10 @@
  ],
  "swing": [
   {
-   "symbol": "MU",
-   "entry": 979.36,
-   "stop": 784.48,
-   "target": 1271.67
-  },
-  {
-   "symbol": "AMD",
-   "entry": 557.85,
-   "stop": 482.78,
-   "target": 670.45
-  },
-  {
-   "symbol": "MRNA",
-   "entry": 68.26,
-   "stop": 56.51,
-   "target": 85.89
-  },
-  {
-   "symbol": "TXN",
-   "entry": 311.49,
-   "stop": 280.0,
-   "target": 358.71
-  },
-  {
-   "symbol": "ROKU",
-   "entry": 140.7,
-   "stop": 136.55,
-   "target": 146.92
+   "symbol": "GLD",
+   "entry": null,
+   "stop": null,
+   "target": null
   }
  ],
  "posture": "LONG",
