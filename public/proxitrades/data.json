@@ -1,83 +1,92 @@
 {
- "stamp": "Monday, July 20, 2026 09:27 ET",
+ "stamp": "Monday, July 20, 2026 17:05 ET",
  "leads": [
   {
    "rank": 1,
-   "symbol": "HUT",
+   "symbol": "BIYA",
    "side": "buy",
-   "entry": 103.57,
-   "stop": 88.1832,
-   "target": 118.9568,
-   "why": "gap +13.3%, pre-market vol 437,138, rvol 1.2x"
+   "entry": 7.76,
+   "stop": 5.5794,
+   "target": 9.9406,
+   "why": "gap +87.4%, pre-market vol 25,022,341, rvol 7.9x"
   },
   {
    "rank": 2,
    "symbol": "SDOT",
    "side": "buy",
-   "entry": 32.787,
-   "stop": -1.0774,
-   "target": 66.6514,
-   "why": "gap +29.6%, pre-market vol 1,015,914, rvol 13.4x"
+   "entry": 32.3,
+   "stop": -1.0614,
+   "target": 65.6614,
+   "why": "gap +27.7%, pre-market vol 1,028,499, rvol 0.5x"
   },
   {
    "rank": 3,
-   "symbol": "IREN",
+   "symbol": "HUT",
    "side": "buy",
-   "entry": 36.42,
-   "stop": 31.1491,
-   "target": 41.6909,
-   "why": "gap +8.3%, pre-market vol 3,479,876, rvol 1.1x"
+   "entry": 103.03,
+   "stop": 87.7234,
+   "target": 118.3366,
+   "why": "gap +12.7%, pre-market vol 503,575, rvol 0.2x"
   },
   {
    "rank": 4,
-   "symbol": "CIFR",
+   "symbol": "SKYQ",
    "side": "buy",
-   "entry": 18.82,
-   "stop": 15.7043,
-   "target": 21.9357,
-   "why": "gap +7.2%, pre-market vol 404,201, rvol 1.0x"
+   "entry": 4.22,
+   "stop": 3.0802,
+   "target": 5.3598,
+   "why": "gap +11.1%, pre-market vol 611,046, rvol 0.1x"
   },
   {
    "rank": 5,
-   "symbol": "SKYQ",
+   "symbol": "IREN",
    "side": "buy",
-   "entry": 4.09,
-   "stop": 2.9853,
-   "target": 5.1947,
-   "why": "gap +7.6%, pre-market vol 513,704, rvol 0.3x"
+   "entry": 36.37,
+   "stop": 31.1064,
+   "target": 41.6336,
+   "why": "gap +8.2%, pre-market vol 3,730,912, rvol 0.1x"
   }
  ],
  "trades": [
   {
-   "symbol": "NFLX",
-   "side": "sell",
-   "entry": 66.34,
-   "exit": 67.61,
-   "pnl_pct": -1.9144,
-   "pnl_usd": -281.94,
+   "symbol": "IREN",
+   "side": "buy",
+   "entry": 39.455,
+   "exit": 38.36,
+   "pnl_pct": -2.7753,
+   "pnl_usd": -104.02,
+   "reason": "time"
+  },
+  {
+   "symbol": "ACHR",
+   "side": "buy",
+   "entry": 5.29,
+   "exit": 5.27,
+   "pnl_pct": -0.3781,
+   "pnl_usd": -19.72,
    "reason": "time"
   }
  ],
- "trades_day_label": "Friday Jul 17",
- "eod_text": "1 trade, 0 winners, a net loss of $282 on the paper book. Every fill above is real output from the live pipeline: the same leads published here in the morning, executed with bracket exits and risk-normalized sizing, reported win or lose.",
+ "trades_day_label": "today",
+ "eod_text": "2 trades, 0 winners, a net loss of $124 on the paper book. Every fill above is real output from the live pipeline: the same leads published here in the morning, executed with bracket exits and risk-normalized sizing, reported win or lose.",
  "board": [
   {
    "label": "This week",
-   "n": 0,
-   "win_rate": "-",
-   "pnl_usd": "-"
+   "n": 2,
+   "win_rate": "0%",
+   "pnl_usd": "-124"
   },
   {
    "label": "This month",
-   "n": 6,
-   "win_rate": "33%",
-   "pnl_usd": "-698"
+   "n": 8,
+   "win_rate": "25%",
+   "pnl_usd": "-822"
   },
   {
    "label": "This year",
-   "n": 6,
-   "win_rate": "33%",
-   "pnl_usd": "-698"
+   "n": 8,
+   "win_rate": "25%",
+   "pnl_usd": "-822"
   }
  ],
  "swing": [
