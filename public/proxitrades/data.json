@@ -1,50 +1,50 @@
 {
- "stamp": "Monday, July 20, 2026 17:05 ET",
+ "stamp": "Tuesday, July 21, 2026 09:27 ET",
  "leads": [
   {
    "rank": 1,
-   "symbol": "BIYA",
-   "side": "buy",
-   "entry": 7.76,
-   "stop": 5.5794,
-   "target": 9.9406,
-   "why": "gap +87.4%, pre-market vol 25,022,341, rvol 7.9x"
+   "symbol": "CALX",
+   "side": "sell",
+   "entry": 34.27,
+   "stop": 35.7405,
+   "target": 32.7995,
+   "why": "gap -10.6%, pre-market vol 103,215, rvol 1.7x"
   },
   {
    "rank": 2,
-   "symbol": "SDOT",
-   "side": "buy",
-   "entry": 32.3,
-   "stop": -1.0614,
-   "target": 65.6614,
-   "why": "gap +27.7%, pre-market vol 1,028,499, rvol 0.5x"
+   "symbol": "ADVB",
+   "side": "sell",
+   "entry": 7.82,
+   "stop": 8.5025,
+   "target": 7.1375,
+   "why": "gap -12.1%, pre-market vol 498,332, rvol 182.7x"
   },
   {
    "rank": 3,
-   "symbol": "HUT",
-   "side": "buy",
-   "entry": 103.03,
-   "stop": 87.7234,
-   "target": 118.3366,
-   "why": "gap +12.7%, pre-market vol 503,575, rvol 0.2x"
+   "symbol": "ZYBT",
+   "side": "sell",
+   "entry": 4.171,
+   "stop": 4.4755,
+   "target": 3.8665,
+   "why": "gap -47.9%, pre-market vol 17,168,943, rvol 1685.0x"
   },
   {
    "rank": 4,
-   "symbol": "SKYQ",
-   "side": "buy",
-   "entry": 4.22,
-   "stop": 3.0802,
-   "target": 5.3598,
-   "why": "gap +11.1%, pre-market vol 611,046, rvol 0.1x"
+   "symbol": "DHR",
+   "side": "sell",
+   "entry": 170.9,
+   "stop": 175.0656,
+   "target": 166.7344,
+   "why": "gap -15.0%, pre-market vol 410,576, rvol 1.6x"
   },
   {
    "rank": 5,
-   "symbol": "IREN",
-   "side": "buy",
-   "entry": 36.37,
-   "stop": 31.1064,
-   "target": 41.6336,
-   "why": "gap +8.2%, pre-market vol 3,730,912, rvol 0.1x"
+   "symbol": "CLBK",
+   "side": "sell",
+   "entry": 10.7923,
+   "stop": 12.4451,
+   "target": 9.1395,
+   "why": "gap -56.0%, pre-market vol 188,479, rvol 0.1x"
   }
  ],
  "trades": [
@@ -67,7 +67,7 @@
    "reason": "time"
   }
  ],
- "trades_day_label": "today",
+ "trades_day_label": "Monday Jul 20",
  "eod_text": "2 trades, 0 winners, a net loss of $124 on the paper book. Every fill above is real output from the live pipeline: the same leads published here in the morning, executed with bracket exits and risk-normalized sizing, reported win or lose.",
  "board": [
   {
