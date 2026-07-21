@@ -1,92 +1,83 @@
 {
- "stamp": "Tuesday, July 21, 2026 09:27 ET",
+ "stamp": "Tuesday, July 21, 2026 17:05 ET",
  "leads": [
   {
    "rank": 1,
-   "symbol": "CALX",
-   "side": "sell",
-   "entry": 34.27,
-   "stop": 35.7405,
-   "target": 32.7995,
-   "why": "gap -10.6%, pre-market vol 103,215, rvol 1.7x"
+   "symbol": "UTZ",
+   "side": "buy",
+   "entry": 14.0705,
+   "stop": 13.0784,
+   "target": 15.0626,
+   "why": "gap +88.9%, pre-market vol 20,962,952, rvol 12.9x"
   },
   {
    "rank": 2,
-   "symbol": "ADVB",
+   "symbol": "ZYBT",
    "side": "sell",
-   "entry": 7.82,
-   "stop": 8.5025,
-   "target": 7.1375,
-   "why": "gap -12.1%, pre-market vol 498,332, rvol 182.7x"
+   "entry": 4.28,
+   "stop": 4.5924,
+   "target": 3.9676,
+   "why": "gap -46.6%, pre-market vol 17,814,241, rvol 1.5x"
   },
   {
    "rank": 3,
-   "symbol": "ZYBT",
+   "symbol": "DHR",
    "side": "sell",
-   "entry": 4.171,
-   "stop": 4.4755,
-   "target": 3.8665,
-   "why": "gap -47.9%, pre-market vol 17,168,943, rvol 1685.0x"
+   "entry": 169.49,
+   "stop": 173.6212,
+   "target": 165.3588,
+   "why": "gap -15.7%, pre-market vol 590,969, rvol 0.2x"
   },
   {
    "rank": 4,
-   "symbol": "DHR",
-   "side": "sell",
-   "entry": 170.9,
-   "stop": 175.0656,
-   "target": 166.7344,
-   "why": "gap -15.0%, pre-market vol 410,576, rvol 1.6x"
+   "symbol": "SNDK",
+   "side": "buy",
+   "entry": 1511.13,
+   "stop": 1255.1612,
+   "target": 1767.0988,
+   "why": "gap +8.6%, pre-market vol 464,274, rvol 0.1x"
   },
   {
    "rank": 5,
-   "symbol": "CLBK",
-   "side": "sell",
-   "entry": 10.7923,
-   "stop": 12.4451,
-   "target": 9.1395,
-   "why": "gap -56.0%, pre-market vol 188,479, rvol 0.1x"
+   "symbol": "WDC",
+   "side": "buy",
+   "entry": 529.0,
+   "stop": 464.2052,
+   "target": 593.7948,
+   "why": "gap +8.5%, pre-market vol 189,523, rvol 0.1x"
   }
  ],
  "trades": [
   {
-   "symbol": "IREN",
+   "symbol": "WDC",
    "side": "buy",
-   "entry": 39.455,
-   "exit": 38.36,
-   "pnl_pct": -2.7753,
-   "pnl_usd": -104.02,
-   "reason": "time"
-  },
-  {
-   "symbol": "ACHR",
-   "side": "buy",
-   "entry": 5.29,
-   "exit": 5.27,
-   "pnl_pct": -0.3781,
-   "pnl_usd": -19.72,
+   "entry": 549.67,
+   "exit": 546.325,
+   "pnl_pct": -0.6085,
+   "pnl_usd": -20.07,
    "reason": "time"
   }
  ],
- "trades_day_label": "Monday Jul 20",
- "eod_text": "2 trades, 0 winners, a net loss of $124 on the paper book. Every fill above is real output from the live pipeline: the same leads published here in the morning, executed with bracket exits and risk-normalized sizing, reported win or lose.",
+ "trades_day_label": "today",
+ "eod_text": "1 trade, 0 winners, a net loss of $20 on the paper book. Every fill above is real output from the live pipeline: the same leads published here in the morning, executed with bracket exits and risk-normalized sizing, reported win or lose.",
  "board": [
   {
    "label": "This week",
-   "n": 2,
+   "n": 3,
    "win_rate": "0%",
-   "pnl_usd": "-124"
+   "pnl_usd": "-144"
   },
   {
    "label": "This month",
-   "n": 8,
-   "win_rate": "25%",
-   "pnl_usd": "-822"
+   "n": 9,
+   "win_rate": "22%",
+   "pnl_usd": "-842"
   },
   {
    "label": "This year",
-   "n": 8,
-   "win_rate": "25%",
-   "pnl_usd": "-822"
+   "n": 9,
+   "win_rate": "22%",
+   "pnl_usd": "-842"
   }
  ],
  "swing": [
