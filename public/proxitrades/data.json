@@ -1,50 +1,50 @@
 {
- "stamp": "Tuesday, July 21, 2026 17:05 ET",
+ "stamp": "Wednesday, July 22, 2026 09:27 ET",
  "leads": [
   {
    "rank": 1,
-   "symbol": "UTZ",
+   "symbol": "ARWR",
    "side": "buy",
-   "entry": 14.0705,
-   "stop": 13.0784,
-   "target": 15.0626,
-   "why": "gap +88.9%, pre-market vol 20,962,952, rvol 12.9x"
+   "entry": 87.21,
+   "stop": 81.2924,
+   "target": 93.1276,
+   "why": "gap +17.0%, pre-market vol 360,919, rvol 0.7x"
   },
   {
    "rank": 2,
-   "symbol": "ZYBT",
-   "side": "sell",
-   "entry": 4.28,
-   "stop": 4.5924,
-   "target": 3.9676,
-   "why": "gap -46.6%, pre-market vol 17,814,241, rvol 1.5x"
+   "symbol": "SMCI",
+   "side": "buy",
+   "entry": 28.85,
+   "stop": 26.6301,
+   "target": 31.0699,
+   "why": "gap +13.1%, pre-market vol 7,559,748, rvol 1.7x"
   },
   {
    "rank": 3,
-   "symbol": "DHR",
+   "symbol": "CPHI",
    "side": "sell",
-   "entry": 169.49,
-   "stop": 173.6212,
-   "target": 165.3588,
-   "why": "gap -15.7%, pre-market vol 590,969, rvol 0.2x"
+   "entry": 7.06,
+   "stop": 8.4217,
+   "target": 5.6983,
+   "why": "gap -12.8%, pre-market vol 3,053,619, rvol 7.2x"
   },
   {
    "rank": 4,
-   "symbol": "SNDK",
+   "symbol": "ADVB",
    "side": "buy",
-   "entry": 1511.13,
-   "stop": 1255.1612,
-   "target": 1767.0988,
-   "why": "gap +8.6%, pre-market vol 464,274, rvol 0.1x"
+   "entry": 8.52,
+   "stop": 7.1168,
+   "target": 9.9232,
+   "why": "gap +20.3%, pre-market vol 2,823,246, rvol 0.3x"
   },
   {
    "rank": 5,
-   "symbol": "WDC",
-   "side": "buy",
-   "entry": 529.0,
-   "stop": 464.2052,
-   "target": 593.7948,
-   "why": "gap +8.5%, pre-market vol 189,523, rvol 0.1x"
+   "symbol": "PEGA",
+   "side": "sell",
+   "entry": 24.71,
+   "stop": 25.9331,
+   "target": 23.4869,
+   "why": "gap -20.1%, pre-market vol 492,882, rvol 3.1x"
   }
  ],
  "trades": [
@@ -58,7 +58,7 @@
    "reason": "time"
   }
  ],
- "trades_day_label": "today",
+ "trades_day_label": "Tuesday Jul 21",
  "eod_text": "1 trade, 0 winners, a net loss of $20 on the paper book. Every fill above is real output from the live pipeline: the same leads published here in the morning, executed with bracket exits and risk-normalized sizing, reported win or lose.",
  "board": [
   {
