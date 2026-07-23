@@ -1,50 +1,50 @@
 {
- "stamp": "Wednesday, July 22, 2026 17:05 ET",
+ "stamp": "Thursday, July 23, 2026 09:27 ET",
  "leads": [
   {
    "rank": 1,
-   "symbol": "PEGA",
+   "symbol": "ROL",
    "side": "sell",
-   "entry": 25.4,
-   "stop": 26.6572,
-   "target": 24.1428,
-   "why": "gap -17.9%, pre-market vol 558,521, rvol 0.3x"
+   "entry": 35.6174,
+   "stop": 36.6249,
+   "target": 34.6099,
+   "why": "gap -18.1%, pre-market vol 252,195, rvol 1.4x"
   },
   {
    "rank": 2,
-   "symbol": "ADVB",
-   "side": "buy",
-   "entry": 8.31,
-   "stop": 6.9414,
-   "target": 9.6786,
-   "why": "gap +17.4%, pre-market vol 2,846,803, rvol 0.7x"
+   "symbol": "ACI",
+   "side": "sell",
+   "entry": 12.47,
+   "stop": 12.84,
+   "target": 12.1,
+   "why": "gap -14.6%, pre-market vol 631,360, rvol 1.3x"
   },
   {
    "rank": 3,
-   "symbol": "ARWR",
+   "symbol": "ZCMD",
    "side": "buy",
-   "entry": 85.79,
-   "stop": 79.9687,
-   "target": 91.6113,
-   "why": "gap +15.1%, pre-market vol 433,039, rvol 0.3x"
+   "entry": 4.9,
+   "stop": 3.1432,
+   "target": 6.6568,
+   "why": "gap +14.2%, pre-market vol 11,602,532, rvol 137.6x"
   },
   {
    "rank": 4,
-   "symbol": "SMCI",
+   "symbol": "CLF",
    "side": "buy",
-   "entry": 28.99,
-   "stop": 26.7593,
-   "target": 31.2207,
-   "why": "gap +13.7%, pre-market vol 8,384,766, rvol 0.5x"
+   "entry": 10.68,
+   "stop": 10.0506,
+   "target": 11.3094,
+   "why": "gap +13.0%, pre-market vol 1,804,761, rvol 1.1x"
   },
   {
    "rank": 5,
-   "symbol": "DYN",
-   "side": "sell",
-   "entry": 21.9,
-   "stop": 23.3271,
-   "target": 20.4729,
-   "why": "gap -8.1%, pre-market vol 540,306, rvol 0.5x"
+   "symbol": "ADVB",
+   "side": "buy",
+   "entry": 15.2528,
+   "stop": 12.5614,
+   "target": 17.9442,
+   "why": "gap +24.5%, pre-market vol 1,419,927, rvol 5.1x"
   }
  ],
  "trades": [
@@ -67,7 +67,7 @@
    "reason": "time"
   }
  ],
- "trades_day_label": "today",
+ "trades_day_label": "Wednesday Jul 22",
  "eod_text": "2 trades, 2 winners, a net gain of $172 on the paper book. Every fill above is real output from the live pipeline: the same leads published here in the morning, executed with bracket exits and risk-normalized sizing, reported win or lose.",
  "board": [
   {
@@ -91,10 +91,34 @@
  ],
  "swing": [
   {
-   "symbol": "GLD",
-   "entry": null,
-   "stop": null,
-   "target": null
+   "symbol": "MU",
+   "entry": 969.94,
+   "stop": 808.89,
+   "target": 1211.52
+  },
+  {
+   "symbol": "AMD",
+   "entry": 544.37,
+   "stop": 466.67,
+   "target": 660.91
+  },
+  {
+   "symbol": "TXN",
+   "entry": 291.27,
+   "stop": 265.26,
+   "target": 330.3
+  },
+  {
+   "symbol": "ROKU",
+   "entry": 144.23,
+   "stop": 140.79,
+   "target": 149.38
+  },
+  {
+   "symbol": "MRNA",
+   "entry": 59.69,
+   "stop": 50.22,
+   "target": 73.9
   }
  ],
  "posture": "LONG",
