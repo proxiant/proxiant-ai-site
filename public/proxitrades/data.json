@@ -1,50 +1,50 @@
 {
- "stamp": "Thursday, July 23, 2026 09:27 ET",
+ "stamp": "Thursday, July 23, 2026 17:05 ET",
  "leads": [
   {
    "rank": 1,
-   "symbol": "ROL",
-   "side": "sell",
-   "entry": 35.6174,
-   "stop": 36.6249,
-   "target": 34.6099,
-   "why": "gap -18.1%, pre-market vol 252,195, rvol 1.4x"
+   "symbol": "ADVB",
+   "side": "buy",
+   "entry": 15.11,
+   "stop": 12.4438,
+   "target": 17.7762,
+   "why": "gap +23.3%, pre-market vol 1,460,383, rvol 0.3x"
   },
   {
    "rank": 2,
-   "symbol": "ACI",
+   "symbol": "ROL",
    "side": "sell",
-   "entry": 12.47,
-   "stop": 12.84,
-   "target": 12.1,
-   "why": "gap -14.6%, pre-market vol 631,360, rvol 1.3x"
+   "entry": 37.3,
+   "stop": 38.3551,
+   "target": 36.2449,
+   "why": "gap -14.2%, pre-market vol 360,772, rvol 0.1x"
   },
   {
    "rank": 3,
-   "symbol": "ZCMD",
-   "side": "buy",
-   "entry": 4.9,
-   "stop": 3.1432,
-   "target": 6.6568,
-   "why": "gap +14.2%, pre-market vol 11,602,532, rvol 137.6x"
+   "symbol": "ACI",
+   "side": "sell",
+   "entry": 12.55,
+   "stop": 12.9224,
+   "target": 12.1776,
+   "why": "gap -14.0%, pre-market vol 729,072, rvol 0.1x"
   },
   {
    "rank": 4,
-   "symbol": "CLF",
-   "side": "buy",
-   "entry": 10.68,
-   "stop": 10.0506,
-   "target": 11.3094,
-   "why": "gap +13.0%, pre-market vol 1,804,761, rvol 1.1x"
+   "symbol": "ZCMD",
+   "side": "sell",
+   "entry": 3.72,
+   "stop": 4.787,
+   "target": 2.653,
+   "why": "gap -13.3%, pre-market vol 14,584,916, rvol 1.3x"
   },
   {
    "rank": 5,
-   "symbol": "ADVB",
+   "symbol": "CLF",
    "side": "buy",
-   "entry": 15.2528,
-   "stop": 12.5614,
-   "target": 17.9442,
-   "why": "gap +24.5%, pre-market vol 1,419,927, rvol 5.1x"
+   "entry": 10.65,
+   "stop": 10.0224,
+   "target": 11.2776,
+   "why": "gap +12.7%, pre-market vol 1,922,043, rvol 0.1x"
   }
  ],
  "trades": [
@@ -65,28 +65,37 @@
    "pnl_pct": 1.5444,
    "pnl_usd": 78.24,
    "reason": "time"
+  },
+  {
+   "symbol": "AAVE",
+   "side": "buy",
+   "entry": 92.78,
+   "exit": 98.0821,
+   "pnl_pct": 5.71,
+   "pnl_usd": 285.02,
+   "reason": "deadman_flatten"
   }
  ],
  "trades_day_label": "Wednesday Jul 22",
- "eod_text": "2 trades, 2 winners, a net gain of $172 on the paper book. Every fill above is real output from the live pipeline: the same leads published here in the morning, executed with bracket exits and risk-normalized sizing, reported win or lose.",
+ "eod_text": "3 trades, 3 winners, a net gain of $457 on the paper book. Every fill above is real output from the live pipeline: the same leads published here in the morning, executed with bracket exits and risk-normalized sizing, reported win or lose.",
  "board": [
   {
    "label": "This week",
-   "n": 5,
-   "win_rate": "40%",
-   "pnl_usd": "+28"
+   "n": 6,
+   "win_rate": "50%",
+   "pnl_usd": "+313"
   },
   {
    "label": "This month",
-   "n": 11,
-   "win_rate": "36%",
-   "pnl_usd": "-671"
+   "n": 12,
+   "win_rate": "42%",
+   "pnl_usd": "-386"
   },
   {
    "label": "This year",
-   "n": 11,
-   "win_rate": "36%",
-   "pnl_usd": "-671"
+   "n": 12,
+   "win_rate": "42%",
+   "pnl_usd": "-386"
   }
  ],
  "swing": [
