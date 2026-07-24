@@ -1,50 +1,50 @@
 {
- "stamp": "Thursday, July 23, 2026 17:05 ET",
+ "stamp": "Friday, July 24, 2026 09:27 ET",
  "leads": [
   {
    "rank": 1,
-   "symbol": "ADVB",
-   "side": "buy",
-   "entry": 15.11,
-   "stop": 12.4438,
-   "target": 17.7762,
-   "why": "gap +23.3%, pre-market vol 1,460,383, rvol 0.3x"
+   "symbol": "SMMT",
+   "side": "sell",
+   "entry": 13.8886,
+   "stop": 14.5946,
+   "target": 13.1826,
+   "why": "gap -7.3%, pre-market vol 111,083, rvol 1.1x"
   },
   {
    "rank": 2,
-   "symbol": "ROL",
-   "side": "sell",
-   "entry": 37.3,
-   "stop": 38.3551,
-   "target": 36.2449,
-   "why": "gap -14.2%, pre-market vol 360,772, rvol 0.1x"
+   "symbol": "SKYQ",
+   "side": "buy",
+   "entry": 6.625,
+   "stop": 5.2829,
+   "target": 7.9671,
+   "why": "gap +17.5%, pre-market vol 6,125,110, rvol 4.4x"
   },
   {
    "rank": 3,
-   "symbol": "ACI",
-   "side": "sell",
-   "entry": 12.55,
-   "stop": 12.9224,
-   "target": 12.1776,
-   "why": "gap -14.0%, pre-market vol 729,072, rvol 0.1x"
+   "symbol": "AMKR",
+   "side": "buy",
+   "entry": 72.9652,
+   "stop": 65.9878,
+   "target": 79.9426,
+   "why": "gap +11.7%, pre-market vol 243,956, rvol 0.8x"
   },
   {
    "rank": 4,
-   "symbol": "ZCMD",
-   "side": "sell",
-   "entry": 3.72,
-   "stop": 4.787,
-   "target": 2.653,
-   "why": "gap -13.3%, pre-market vol 14,584,916, rvol 1.3x"
+   "symbol": "ADVB",
+   "side": "buy",
+   "entry": 23.4,
+   "stop": 19.3709,
+   "target": 27.4291,
+   "why": "gap +39.5%, pre-market vol 709,929, rvol 1.4x"
   },
   {
    "rank": 5,
-   "symbol": "CLF",
-   "side": "buy",
-   "entry": 10.65,
-   "stop": 10.0224,
-   "target": 11.2776,
-   "why": "gap +12.7%, pre-market vol 1,922,043, rvol 0.1x"
+   "symbol": "CHTR",
+   "side": "sell",
+   "entry": 110.81,
+   "stop": 115.7433,
+   "target": 105.8767,
+   "why": "gap -12.4%, pre-market vol 515,860, rvol 3.3x"
   }
  ],
  "trades": [
