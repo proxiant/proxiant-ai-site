@@ -1,101 +1,110 @@
 {
- "stamp": "Friday, July 24, 2026 09:27 ET",
+ "stamp": "Friday, July 24, 2026 17:05 ET",
  "leads": [
   {
    "rank": 1,
-   "symbol": "SMMT",
-   "side": "sell",
-   "entry": 13.8886,
-   "stop": 14.5946,
-   "target": 13.1826,
-   "why": "gap -7.3%, pre-market vol 111,083, rvol 1.1x"
+   "symbol": "VIVK",
+   "side": "buy",
+   "entry": 3.6099,
+   "stop": 1.2699,
+   "target": 5.9499,
+   "why": "gap +70.3%, pre-market vol 41,352,876, rvol 2.8x"
   },
   {
    "rank": 2,
-   "symbol": "SKYQ",
+   "symbol": "ADVB",
    "side": "buy",
-   "entry": 6.625,
-   "stop": 5.2829,
-   "target": 7.9671,
-   "why": "gap +17.5%, pre-market vol 6,125,110, rvol 4.4x"
+   "entry": 23.14,
+   "stop": 19.1557,
+   "target": 27.1243,
+   "why": "gap +37.9%, pre-market vol 736,375, rvol 0.2x"
   },
   {
    "rank": 3,
-   "symbol": "AMKR",
+   "symbol": "SKYQ",
    "side": "buy",
-   "entry": 72.9652,
-   "stop": 65.9878,
-   "target": 79.9426,
-   "why": "gap +11.7%, pre-market vol 243,956, rvol 0.8x"
+   "entry": 6.55,
+   "stop": 5.2231,
+   "target": 7.8769,
+   "why": "gap +16.1%, pre-market vol 6,258,446, rvol 0.7x"
   },
   {
    "rank": 4,
-   "symbol": "ADVB",
-   "side": "buy",
-   "entry": 23.4,
-   "stop": 19.3709,
-   "target": 27.4291,
-   "why": "gap +39.5%, pre-market vol 709,929, rvol 1.4x"
+   "symbol": "CHTR",
+   "side": "sell",
+   "entry": 111.0,
+   "stop": 115.9417,
+   "target": 106.0583,
+   "why": "gap -12.3%, pre-market vol 588,850, rvol 0.4x"
   },
   {
    "rank": 5,
-   "symbol": "CHTR",
+   "symbol": "MXL",
    "side": "sell",
-   "entry": 110.81,
-   "stop": 115.7433,
-   "target": 105.8767,
-   "why": "gap -12.4%, pre-market vol 515,860, rvol 3.3x"
+   "entry": 83.0,
+   "stop": 93.4241,
+   "target": 72.5759,
+   "why": "gap -9.0%, pre-market vol 310,884, rvol 0.2x"
   }
  ],
  "trades": [
   {
-   "symbol": "PEGA",
+   "symbol": "CHTR",
    "side": "sell",
-   "entry": 27.02,
-   "exit": 26.735,
-   "pnl_pct": 1.0548,
-   "pnl_usd": 93.48,
+   "entry": 123.865,
+   "exit": 121.95,
+   "pnl_pct": 1.546,
+   "pnl_usd": 168.52,
    "reason": "time"
   },
   {
-   "symbol": "SMCI",
+   "symbol": "RNG",
    "side": "buy",
-   "entry": 31.08,
-   "exit": 31.56,
-   "pnl_pct": 1.5444,
-   "pnl_usd": 78.24,
+   "entry": 47.35,
+   "exit": 48.61,
+   "pnl_pct": 2.661,
+   "pnl_usd": 177.66,
    "reason": "time"
   },
   {
    "symbol": "AAVE",
    "side": "buy",
-   "entry": 92.78,
-   "exit": 98.0821,
-   "pnl_pct": 5.71,
-   "pnl_usd": 285.02,
-   "reason": "deadman_flatten"
+   "entry": 94.9,
+   "exit": 93.57,
+   "pnl_pct": -1.4,
+   "pnl_usd": -70.07,
+   "reason": "momentum_flip"
+  },
+  {
+   "symbol": "DLR",
+   "side": "buy",
+   "entry": 206.965,
+   "exit": 203.4,
+   "pnl_pct": -1.7225,
+   "pnl_usd": -263.81,
+   "reason": "time"
   }
  ],
- "trades_day_label": "Wednesday Jul 22",
- "eod_text": "3 trades, 3 winners, a net gain of $457 on the paper book. Every fill above is real output from the live pipeline: the same leads published here in the morning, executed with bracket exits and risk-normalized sizing, reported win or lose.",
+ "trades_day_label": "today",
+ "eod_text": "4 trades, 2 winners, a net gain of $12 on the paper book. Every fill above is real output from the live pipeline: the same leads published here in the morning, executed with bracket exits and risk-normalized sizing, reported win or lose.",
  "board": [
   {
    "label": "This week",
-   "n": 6,
+   "n": 10,
    "win_rate": "50%",
-   "pnl_usd": "+313"
+   "pnl_usd": "+325"
   },
   {
    "label": "This month",
-   "n": 12,
-   "win_rate": "42%",
-   "pnl_usd": "-386"
+   "n": 16,
+   "win_rate": "44%",
+   "pnl_usd": "-373"
   },
   {
    "label": "This year",
-   "n": 12,
-   "win_rate": "42%",
-   "pnl_usd": "-386"
+   "n": 16,
+   "win_rate": "44%",
+   "pnl_usd": "-373"
   }
  ],
  "swing": [
