@@ -1,92 +1,92 @@
 {
- "stamp": "Tuesday, July 28, 2026 09:27 ET",
+ "stamp": "Tuesday, July 28, 2026 17:05 ET",
  "leads": [
   {
    "rank": 1,
    "symbol": "DFNS",
    "side": "buy",
-   "entry": 19.84,
-   "stop": 12.9324,
-   "target": 26.7476,
-   "why": "gap +51.5%, pre-market vol 6,112,687, rvol 27.0x"
+   "entry": 20.48,
+   "stop": 13.3496,
+   "target": 27.6104,
+   "why": "gap +56.3%, pre-market vol 6,317,238, rvol 0.9x"
   },
   {
    "rank": 2,
    "symbol": "BIYA",
    "side": "buy",
-   "entry": 5.24,
-   "stop": 2.675,
-   "target": 7.805,
-   "why": "gap +25.7%, pre-market vol 4,109,861, rvol 7.6x"
+   "entry": 5.5,
+   "stop": 2.8078,
+   "target": 8.1922,
+   "why": "gap +31.9%, pre-market vol 4,653,358, rvol 0.3x"
   },
   {
    "rank": 3,
-   "symbol": "GLW",
-   "side": "sell",
-   "entry": 120.15,
-   "stop": 130.3525,
-   "target": 109.9475,
-   "why": "gap -16.2%, pre-market vol 2,287,091, rvol 1.3x"
+   "symbol": "LVWR",
+   "side": "buy",
+   "entry": 2.985,
+   "stop": 2.481,
+   "target": 3.489,
+   "why": "gap +22.8%, pre-market vol 5,270,469, rvol 0.3x"
   },
   {
    "rank": 4,
-   "symbol": "REPL",
+   "symbol": "GLW",
    "side": "sell",
-   "entry": 6.71,
-   "stop": 7.3807,
-   "target": 6.0393,
-   "why": "gap -22.2%, pre-market vol 3,392,504, rvol 2.6x"
+   "entry": 121.75,
+   "stop": 132.0884,
+   "target": 111.4116,
+   "why": "gap -15.1%, pre-market vol 2,601,271, rvol 0.3x"
   },
   {
    "rank": 5,
    "symbol": "AMKR",
    "side": "sell",
-   "entry": 53.38,
-   "stop": 57.9825,
-   "target": 48.7775,
-   "why": "gap -12.1%, pre-market vol 218,010, rvol 2.7x"
+   "entry": 51.8,
+   "stop": 56.2662,
+   "target": 47.3338,
+   "why": "gap -14.7%, pre-market vol 256,352, rvol 0.2x"
   }
  ],
  "trades": [
   {
-   "symbol": "JBS",
-   "side": "buy",
-   "entry": 13.47,
-   "exit": 13.495,
-   "pnl_pct": 0.1856,
-   "pnl_usd": 26.82,
+   "symbol": "GLW",
+   "side": "sell",
+   "entry": 120.02,
+   "exit": 115.54,
+   "pnl_pct": 3.7327,
+   "pnl_usd": 237.44,
    "reason": "time"
   },
   {
-   "symbol": "LINK",
+   "symbol": "KNSA",
    "side": "buy",
-   "entry": 8.799,
-   "exit": 8.361,
-   "pnl_pct": -4.98,
-   "pnl_usd": -248.89,
-   "reason": "momentum_flip"
+   "entry": 78.58,
+   "exit": 78.72,
+   "pnl_pct": 0.1782,
+   "pnl_usd": 25.76,
+   "reason": "time"
   }
  ],
- "trades_day_label": "Monday Jul 27",
- "eod_text": "2 trades, 1 winner, a net loss of $222 on the paper book. Every fill above is real output from the live pipeline: the same leads published here in the morning, executed with bracket exits and risk-normalized sizing, reported win or lose.",
+ "trades_day_label": "today",
+ "eod_text": "2 trades, 2 winners, a net gain of $263 on the paper book. Every fill above is real output from the live pipeline: the same leads published here in the morning, executed with bracket exits and risk-normalized sizing, reported win or lose.",
  "board": [
   {
    "label": "This week",
-   "n": 2,
-   "win_rate": "50%",
-   "pnl_usd": "-222"
+   "n": 4,
+   "win_rate": "75%",
+   "pnl_usd": "+41"
   },
   {
    "label": "This month",
-   "n": 18,
-   "win_rate": "44%",
-   "pnl_usd": "-595"
+   "n": 20,
+   "win_rate": "50%",
+   "pnl_usd": "-332"
   },
   {
    "label": "This year",
-   "n": 18,
-   "win_rate": "44%",
-   "pnl_usd": "-595"
+   "n": 20,
+   "win_rate": "50%",
+   "pnl_usd": "-332"
   }
  ],
  "swing": [
