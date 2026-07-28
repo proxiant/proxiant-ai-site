@@ -20,10 +20,10 @@ const DISCLAIMER =
 type Lead = { rank?: number; symbol: string; side: string; entry?: number; stop?: number; target?: number; why?: string };
 type Trade = { symbol: string; side: string; entry?: number; exit?: number; pnl_pct: number; reason?: string };
 type Board = { label: string; n: number; win_rate: string; pnl_usd: string };
-type Swing = { symbol: string; entry?: number; stop?: number; target?: number };
+type Swing = { symbol: string; entry?: number | null; stop?: number | null; target?: number | null };
 type Research = { symbol: string; date: string; requested_by: string; headline: string; href: string };
 
-const f = (v?: number) => (v == null ? "—" : v.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 }));
+const f = (v?: number | null) => (v == null ? "—" : v.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 }));
 
 function Th({ children }: { children: React.ReactNode }) {
   return <th className="text-left font-mono text-[11px] tracking-[0.14em] text-zinc-500 pb-3 pr-4 font-normal">{children}</th>;
