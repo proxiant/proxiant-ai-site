@@ -1,50 +1,50 @@
 {
- "stamp": "Monday, July 27, 2026 17:05 ET",
+ "stamp": "Tuesday, July 28, 2026 09:27 ET",
  "leads": [
   {
    "rank": 1,
-   "symbol": "STAK",
-   "side": "sell",
-   "entry": 3.35,
-   "stop": 3.8938,
-   "target": 2.8062,
-   "why": "gap -63.9%, pre-market vol 2,109,615, rvol 0.2x"
+   "symbol": "DFNS",
+   "side": "buy",
+   "entry": 19.84,
+   "stop": 12.9324,
+   "target": 26.7476,
+   "why": "gap +51.5%, pre-market vol 6,112,687, rvol 27.0x"
   },
   {
    "rank": 2,
-   "symbol": "DFNS",
+   "symbol": "BIYA",
    "side": "buy",
-   "entry": 6.96,
-   "stop": 2.9758,
-   "target": 10.9442,
-   "why": "gap +60.0%, pre-market vol 13,522,975, rvol 6.3x"
+   "entry": 5.24,
+   "stop": 2.675,
+   "target": 7.805,
+   "why": "gap +25.7%, pre-market vol 4,109,861, rvol 7.6x"
   },
   {
    "rank": 3,
-   "symbol": "FBRX",
-   "side": "buy",
-   "entry": 76.41,
-   "stop": 65.3351,
-   "target": 87.4849,
-   "why": "gap +39.5%, pre-market vol 5,420,919, rvol 9.0x"
+   "symbol": "GLW",
+   "side": "sell",
+   "entry": 120.15,
+   "stop": 130.3525,
+   "target": 109.9475,
+   "why": "gap -16.2%, pre-market vol 2,287,091, rvol 1.3x"
   },
   {
    "rank": 4,
-   "symbol": "VEEE",
-   "side": "buy",
-   "entry": 15.49,
-   "stop": -1.2167,
-   "target": 32.1967,
-   "why": "gap +19.4%, pre-market vol 315,268, rvol 0.0x"
+   "symbol": "REPL",
+   "side": "sell",
+   "entry": 6.71,
+   "stop": 7.3807,
+   "target": 6.0393,
+   "why": "gap -22.2%, pre-market vol 3,392,504, rvol 2.6x"
   },
   {
    "rank": 5,
-   "symbol": "SKYQ",
+   "symbol": "AMKR",
    "side": "sell",
-   "entry": 4.18,
-   "stop": 5.1187,
-   "target": 3.2413,
-   "why": "gap -11.1%, pre-market vol 413,680, rvol 0.1x"
+   "entry": 53.38,
+   "stop": 57.9825,
+   "target": 48.7775,
+   "why": "gap -12.1%, pre-market vol 218,010, rvol 2.7x"
   }
  ],
  "trades": [
@@ -56,28 +56,37 @@
    "pnl_pct": 0.1856,
    "pnl_usd": 26.82,
    "reason": "time"
+  },
+  {
+   "symbol": "LINK",
+   "side": "buy",
+   "entry": 8.799,
+   "exit": 8.361,
+   "pnl_pct": -4.98,
+   "pnl_usd": -248.89,
+   "reason": "momentum_flip"
   }
  ],
- "trades_day_label": "today",
- "eod_text": "1 trade, 1 winner, a net gain of $27 on the paper book. Every fill above is real output from the live pipeline: the same leads published here in the morning, executed with bracket exits and risk-normalized sizing, reported win or lose.",
+ "trades_day_label": "Monday Jul 27",
+ "eod_text": "2 trades, 1 winner, a net loss of $222 on the paper book. Every fill above is real output from the live pipeline: the same leads published here in the morning, executed with bracket exits and risk-normalized sizing, reported win or lose.",
  "board": [
   {
    "label": "This week",
-   "n": 1,
-   "win_rate": "100%",
-   "pnl_usd": "+27"
+   "n": 2,
+   "win_rate": "50%",
+   "pnl_usd": "-222"
   },
   {
    "label": "This month",
-   "n": 17,
-   "win_rate": "47%",
-   "pnl_usd": "-346"
+   "n": 18,
+   "win_rate": "44%",
+   "pnl_usd": "-595"
   },
   {
    "label": "This year",
-   "n": 17,
-   "win_rate": "47%",
-   "pnl_usd": "-346"
+   "n": 18,
+   "win_rate": "44%",
+   "pnl_usd": "-595"
   }
  ],
  "swing": [
