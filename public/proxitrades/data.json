@@ -1,50 +1,50 @@
 {
- "stamp": "Wednesday, July 29, 2026 09:27 ET",
+ "stamp": "Wednesday, July 29, 2026 17:05 ET",
  "leads": [
   {
    "rank": 1,
-   "symbol": "SKYQ",
+   "symbol": "DFNS",
    "side": "buy",
-   "entry": 4.54,
-   "stop": 2.9996,
-   "target": 6.0804,
-   "why": "gap +23.7%, pre-market vol 2,743,762, rvol 0.2x"
+   "entry": 39.0,
+   "stop": 28.3055,
+   "target": 49.6945,
+   "why": "gap +62.5%, pre-market vol 2,231,965, rvol 0.3x"
   },
   {
    "rank": 2,
-   "symbol": "DFNS",
-   "side": "buy",
-   "entry": 38.1573,
-   "stop": 27.6939,
-   "target": 48.6207,
-   "why": "gap +59.0%, pre-market vol 2,113,934, rvol 2.6x"
+   "symbol": "BAND",
+   "side": "sell",
+   "entry": 37.82,
+   "stop": 42.1072,
+   "target": 33.5328,
+   "why": "gap -27.6%, pre-market vol 154,631, rvol 0.3x"
   },
   {
    "rank": 3,
-   "symbol": "BAND",
+   "symbol": "PSN",
    "side": "sell",
-   "entry": 37.98,
-   "stop": 42.2854,
-   "target": 33.6746,
-   "why": "gap -27.3%, pre-market vol 102,918, rvol 1.6x"
+   "entry": 45.7,
+   "stop": 47.3753,
+   "target": 44.0247,
+   "why": "gap -26.3%, pre-market vol 164,497, rvol 0.2x"
   },
   {
    "rank": 4,
-   "symbol": "BIYA",
-   "side": "sell",
-   "entry": 5.3,
-   "stop": 6.61,
-   "target": 3.99,
-   "why": "gap -17.7%, pre-market vol 292,528, rvol 1.6x"
+   "symbol": "SKYQ",
+   "side": "buy",
+   "entry": 4.53,
+   "stop": 2.993,
+   "target": 6.067,
+   "why": "gap +23.4%, pre-market vol 2,820,288, rvol 0.3x"
   },
   {
    "rank": 5,
-   "symbol": "PSN",
+   "symbol": "LMND",
    "side": "sell",
-   "entry": 48.48,
-   "stop": 50.2573,
-   "target": 46.7027,
-   "why": "gap -21.8%, pre-market vol 106,240, rvol 1.4x"
+   "entry": 49.26,
+   "stop": 53.8572,
+   "target": 44.6628,
+   "why": "gap -20.7%, pre-market vol 216,235, rvol 0.3x"
   }
  ],
  "trades": [
@@ -56,28 +56,55 @@
    "pnl_pct": -3.26,
    "pnl_usd": -163.08,
    "reason": "momentum_flip"
+  },
+  {
+   "symbol": "BAND",
+   "side": "sell",
+   "entry": 36.415,
+   "exit": 36.93,
+   "pnl_pct": -1.4143,
+   "pnl_usd": -58.2,
+   "reason": "time"
+  },
+  {
+   "symbol": "SKYQ",
+   "side": "buy",
+   "entry": 4.24,
+   "exit": 4.2,
+   "pnl_pct": -0.9434,
+   "pnl_usd": -11.24,
+   "reason": "time"
+  },
+  {
+   "symbol": "AAVE",
+   "side": "buy",
+   "entry": 98.28,
+   "exit": 96.58,
+   "pnl_pct": -1.73,
+   "pnl_usd": -86.49,
+   "reason": "momentum_flip"
   }
  ],
  "trades_day_label": "today",
- "eod_text": "",
+ "eod_text": "4 trades, 0 winners, a net loss of $319 on the paper book. Every fill above is real output from the live pipeline: the same leads published here in the morning, executed with bracket exits and risk-normalized sizing, reported win or lose.",
  "board": [
   {
    "label": "This week",
-   "n": 5,
-   "win_rate": "60%",
-   "pnl_usd": "-122"
+   "n": 8,
+   "win_rate": "38%",
+   "pnl_usd": "-278"
   },
   {
    "label": "This month",
-   "n": 21,
-   "win_rate": "48%",
-   "pnl_usd": "-495"
+   "n": 24,
+   "win_rate": "42%",
+   "pnl_usd": "-651"
   },
   {
    "label": "This year",
-   "n": 21,
-   "win_rate": "48%",
-   "pnl_usd": "-495"
+   "n": 24,
+   "win_rate": "42%",
+   "pnl_usd": "-651"
   }
  ],
  "swing": [
