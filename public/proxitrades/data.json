@@ -1,110 +1,92 @@
 {
- "stamp": "Thursday, July 30, 2026 09:27 ET",
+ "stamp": "Thursday, July 30, 2026 17:05 ET",
  "leads": [
   {
    "rank": 1,
-   "symbol": "CAPR",
-   "side": "sell",
-   "entry": 3.28,
-   "stop": 4.3896,
-   "target": 2.1704,
-   "why": "gap -50.1%, pre-market vol 4,962,193, rvol 3.6x"
+   "symbol": "NUWE",
+   "side": "buy",
+   "entry": 5.1209,
+   "stop": 4.4642,
+   "target": 5.7776,
+   "why": "gap +170.9%, pre-market vol 39,669,392, rvol 39.6x"
   },
   {
    "rank": 2,
-   "symbol": "ALNY",
-   "side": "sell",
-   "entry": 229.52,
-   "stop": 239.3324,
-   "target": 219.7076,
-   "why": "gap -19.9%, pre-market vol 185,292, rvol 1.0x"
+   "symbol": "PN",
+   "side": "buy",
+   "entry": 20.32,
+   "stop": 17.2345,
+   "target": 23.4055,
+   "why": "gap +89.6%, pre-market vol 1,450,843, rvol 1.9x"
   },
   {
    "rank": 3,
    "symbol": "DFNS",
    "side": "buy",
-   "entry": 88.01,
-   "stop": 70.8309,
-   "target": 105.1891,
-   "why": "gap +75.2%, pre-market vol 753,206, rvol 1.6x"
+   "entry": 84.0,
+   "stop": 67.6036,
+   "target": 100.3964,
+   "why": "gap +67.3%, pre-market vol 772,333, rvol 0.1x"
   },
   {
    "rank": 4,
-   "symbol": "NCRA",
-   "side": "sell",
-   "entry": 2.24,
-   "stop": 2.4625,
-   "target": 2.0175,
-   "why": "gap -28.2%, pre-market vol 991,585, rvol 1310.7x"
+   "symbol": "LRCX",
+   "side": "buy",
+   "entry": 318.71,
+   "stop": 284.5545,
+   "target": 352.8655,
+   "why": "gap +26.3%, pre-market vol 362,496, rvol 0.2x"
   },
   {
    "rank": 5,
-   "symbol": "TDOC",
+   "symbol": "ALNY",
    "side": "sell",
-   "entry": 7.4,
-   "stop": 7.7656,
-   "target": 7.0344,
-   "why": "gap -19.4%, pre-market vol 265,025, rvol 2.0x"
+   "entry": 225.09,
+   "stop": 234.713,
+   "target": 215.467,
+   "why": "gap -21.5%, pre-market vol 226,621, rvol 0.3x"
   }
  ],
  "trades": [
   {
-   "symbol": "AAVE",
-   "side": "buy",
-   "entry": 101.18,
-   "exit": 97.88,
-   "pnl_pct": -3.26,
-   "pnl_usd": -163.08,
-   "reason": "momentum_flip"
-  },
-  {
-   "symbol": "BAND",
+   "symbol": "ALNY",
    "side": "sell",
-   "entry": 36.415,
-   "exit": 36.93,
-   "pnl_pct": -1.4143,
-   "pnl_usd": -58.2,
-   "reason": "time"
+   "entry": 218.64,
+   "exit": 212.3339,
+   "pnl_pct": 2.8843,
+   "pnl_usd": 397.29,
+   "reason": "target"
   },
   {
-   "symbol": "SKYQ",
+   "symbol": "LRCX",
    "side": "buy",
-   "entry": 4.24,
-   "exit": 4.2,
-   "pnl_pct": -0.9434,
-   "pnl_usd": -11.24,
+   "entry": 310.95,
+   "exit": 300.3,
+   "pnl_pct": -3.425,
+   "pnl_usd": -149.1,
    "reason": "time"
-  },
-  {
-   "symbol": "AAVE",
-   "side": "buy",
-   "entry": 98.28,
-   "exit": 96.58,
-   "pnl_pct": -1.73,
-   "pnl_usd": -86.49,
-   "reason": "momentum_flip"
   }
  ],
- "trades_day_label": "Wednesday Jul 29",
- "eod_text": "4 trades, 0 winners, a net loss of $319 on the paper book. Every fill above is real output from the live pipeline: the same leads published here in the morning, executed with bracket exits and risk-normalized sizing, reported win or lose.",
+ "trades_day_label": "today",
+ "eod_text": "2 trades, 1 winner, a net gain of $248 on the paper book. Every fill above is real output from the live pipeline: the same leads published here in the morning, executed with bracket exits and risk-normalized sizing, reported win or lose.",
  "board": [
   {
    "label": "This week",
-   "n": 8,
-   "win_rate": "38%",
-   "pnl_usd": "-278"
+   "n": 10,
+   "win_rate": "40%",
+   "pnl_usd": "-30"
   },
   {
    "label": "This month",
-   "n": 24,
+   "n": 26,
    "win_rate": "42%",
-   "pnl_usd": "-651"
+   "pnl_usd": "-403"
   },
   {
    "label": "This year",
-   "n": 24,
+   "n": 26,
    "win_rate": "42%",
-   "pnl_usd": "-651"
+   "pnl_usd": "-403"
   }
  ],
  "swing": [
