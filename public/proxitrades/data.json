@@ -1,50 +1,50 @@
 {
- "stamp": "Wednesday, July 29, 2026 17:05 ET",
+ "stamp": "Thursday, July 30, 2026 09:27 ET",
  "leads": [
   {
    "rank": 1,
-   "symbol": "DFNS",
-   "side": "buy",
-   "entry": 39.0,
-   "stop": 28.3055,
-   "target": 49.6945,
-   "why": "gap +62.5%, pre-market vol 2,231,965, rvol 0.3x"
+   "symbol": "CAPR",
+   "side": "sell",
+   "entry": 3.28,
+   "stop": 4.3896,
+   "target": 2.1704,
+   "why": "gap -50.1%, pre-market vol 4,962,193, rvol 3.6x"
   },
   {
    "rank": 2,
-   "symbol": "BAND",
+   "symbol": "ALNY",
    "side": "sell",
-   "entry": 37.82,
-   "stop": 42.1072,
-   "target": 33.5328,
-   "why": "gap -27.6%, pre-market vol 154,631, rvol 0.3x"
+   "entry": 229.52,
+   "stop": 239.3324,
+   "target": 219.7076,
+   "why": "gap -19.9%, pre-market vol 185,292, rvol 1.0x"
   },
   {
    "rank": 3,
-   "symbol": "PSN",
-   "side": "sell",
-   "entry": 45.7,
-   "stop": 47.3753,
-   "target": 44.0247,
-   "why": "gap -26.3%, pre-market vol 164,497, rvol 0.2x"
+   "symbol": "DFNS",
+   "side": "buy",
+   "entry": 88.01,
+   "stop": 70.8309,
+   "target": 105.1891,
+   "why": "gap +75.2%, pre-market vol 753,206, rvol 1.6x"
   },
   {
    "rank": 4,
-   "symbol": "SKYQ",
-   "side": "buy",
-   "entry": 4.53,
-   "stop": 2.993,
-   "target": 6.067,
-   "why": "gap +23.4%, pre-market vol 2,820,288, rvol 0.3x"
+   "symbol": "NCRA",
+   "side": "sell",
+   "entry": 2.24,
+   "stop": 2.4625,
+   "target": 2.0175,
+   "why": "gap -28.2%, pre-market vol 991,585, rvol 1310.7x"
   },
   {
    "rank": 5,
-   "symbol": "LMND",
+   "symbol": "TDOC",
    "side": "sell",
-   "entry": 49.26,
-   "stop": 53.8572,
-   "target": 44.6628,
-   "why": "gap -20.7%, pre-market vol 216,235, rvol 0.3x"
+   "entry": 7.4,
+   "stop": 7.7656,
+   "target": 7.0344,
+   "why": "gap -19.4%, pre-market vol 265,025, rvol 2.0x"
   }
  ],
  "trades": [
@@ -85,7 +85,7 @@
    "reason": "momentum_flip"
   }
  ],
- "trades_day_label": "today",
+ "trades_day_label": "Wednesday Jul 29",
  "eod_text": "4 trades, 0 winners, a net loss of $319 on the paper book. Every fill above is real output from the live pipeline: the same leads published here in the morning, executed with bracket exits and risk-normalized sizing, reported win or lose.",
  "board": [
   {
