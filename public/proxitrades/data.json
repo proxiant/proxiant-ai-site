@@ -1,50 +1,50 @@
 {
- "stamp": "Thursday, July 30, 2026 17:05 ET",
+ "stamp": "Friday, July 31, 2026 09:27 ET",
  "leads": [
   {
    "rank": 1,
-   "symbol": "NUWE",
+   "symbol": "AXTI",
    "side": "buy",
-   "entry": 5.1209,
-   "stop": 4.4642,
-   "target": 5.7776,
-   "why": "gap +170.9%, pre-market vol 39,669,392, rvol 39.6x"
+   "entry": 67.4568,
+   "stop": 54.1587,
+   "target": 80.7549,
+   "why": "gap +43.7%, pre-market vol 1,758,783, rvol 2.6x"
   },
   {
    "rank": 2,
-   "symbol": "PN",
+   "symbol": "REPL",
    "side": "buy",
-   "entry": 20.32,
-   "stop": 17.2345,
-   "target": 23.4055,
-   "why": "gap +89.6%, pre-market vol 1,450,843, rvol 1.9x"
+   "entry": 12.3585,
+   "stop": 9.2761,
+   "target": 15.4409,
+   "why": "gap +128.4%, pre-market vol 4,307,160, rvol 2.5x"
   },
   {
    "rank": 3,
-   "symbol": "DFNS",
-   "side": "buy",
-   "entry": 84.0,
-   "stop": 67.6036,
-   "target": 100.3964,
-   "why": "gap +67.3%, pre-market vol 772,333, rvol 0.1x"
+   "symbol": "RBLX",
+   "side": "sell",
+   "entry": 38.25,
+   "stop": 40.4093,
+   "target": 36.0907,
+   "why": "gap -21.4%, pre-market vol 2,089,972, rvol 3.8x"
   },
   {
    "rank": 4,
-   "symbol": "LRCX",
-   "side": "buy",
-   "entry": 318.71,
-   "stop": 284.5545,
-   "target": 352.8655,
-   "why": "gap +26.3%, pre-market vol 362,496, rvol 0.2x"
+   "symbol": "NUWE",
+   "side": "sell",
+   "entry": 1.6999,
+   "stop": 1.9378,
+   "target": 1.462,
+   "why": "gap -61.8%, pre-market vol 2,208,872, rvol 93.1x"
   },
   {
    "rank": 5,
-   "symbol": "ALNY",
+   "symbol": "DFNS",
    "side": "sell",
-   "entry": 225.09,
-   "stop": 234.713,
-   "target": 215.467,
-   "why": "gap -21.5%, pre-market vol 226,621, rvol 0.3x"
+   "entry": 40.97,
+   "stop": 45.7053,
+   "target": 36.2347,
+   "why": "gap -51.8%, pre-market vol 337,327, rvol 0.6x"
   }
  ],
  "trades": [
@@ -67,7 +67,7 @@
    "reason": "time"
   }
  ],
- "trades_day_label": "today",
+ "trades_day_label": "Thursday Jul 30",
  "eod_text": "2 trades, 1 winner, a net gain of $248 on the paper book. Every fill above is real output from the live pipeline: the same leads published here in the morning, executed with bracket exits and risk-normalized sizing, reported win or lose.",
  "board": [
   {
