@@ -1,92 +1,92 @@
 {
- "stamp": "Friday, July 31, 2026 09:27 ET",
+ "stamp": "Friday, July 31, 2026 17:05 ET",
  "leads": [
   {
    "rank": 1,
-   "symbol": "AXTI",
+   "symbol": "REPL",
    "side": "buy",
-   "entry": 67.4568,
-   "stop": 54.1587,
-   "target": 80.7549,
-   "why": "gap +43.7%, pre-market vol 1,758,783, rvol 2.6x"
+   "entry": 11.32,
+   "stop": 8.4966,
+   "target": 14.1434,
+   "why": "gap +109.2%, pre-market vol 4,643,851, rvol 1.0x"
   },
   {
    "rank": 2,
-   "symbol": "REPL",
-   "side": "buy",
-   "entry": 12.3585,
-   "stop": 9.2761,
-   "target": 15.4409,
-   "why": "gap +128.4%, pre-market vol 4,307,160, rvol 2.5x"
+   "symbol": "DFNS",
+   "side": "sell",
+   "entry": 37.8,
+   "stop": 42.1689,
+   "target": 33.4311,
+   "why": "gap -55.5%, pre-market vol 353,233, rvol 0.1x"
   },
   {
    "rank": 3,
-   "symbol": "RBLX",
-   "side": "sell",
-   "entry": 38.25,
-   "stop": 40.4093,
-   "target": 36.0907,
-   "why": "gap -21.4%, pre-market vol 2,089,972, rvol 3.8x"
+   "symbol": "AXTI",
+   "side": "buy",
+   "entry": 66.7,
+   "stop": 53.5511,
+   "target": 79.8489,
+   "why": "gap +42.1%, pre-market vol 1,940,020, rvol 0.5x"
   },
   {
    "rank": 4,
-   "symbol": "NUWE",
-   "side": "sell",
-   "entry": 1.6999,
-   "stop": 1.9378,
-   "target": 1.462,
-   "why": "gap -61.8%, pre-market vol 2,208,872, rvol 93.1x"
+   "symbol": "NWL",
+   "side": "buy",
+   "entry": 6.57,
+   "stop": 6.0859,
+   "target": 7.0541,
+   "why": "gap +27.8%, pre-market vol 450,014, rvol 0.2x"
   },
   {
    "rank": 5,
-   "symbol": "DFNS",
+   "symbol": "GDDY",
    "side": "sell",
-   "entry": 40.97,
-   "stop": 45.7053,
-   "target": 36.2347,
-   "why": "gap -51.8%, pre-market vol 337,327, rvol 0.6x"
+   "entry": 77.1,
+   "stop": 83.2492,
+   "target": 70.9508,
+   "why": "gap -22.4%, pre-market vol 105,745, rvol 0.1x"
   }
  ],
  "trades": [
   {
-   "symbol": "ALNY",
-   "side": "sell",
-   "entry": 218.64,
-   "exit": 212.3339,
-   "pnl_pct": 2.8843,
-   "pnl_usd": 397.29,
-   "reason": "target"
+   "symbol": "REPL",
+   "side": "buy",
+   "entry": 12.145,
+   "exit": 9.8888,
+   "pnl_pct": -18.5773,
+   "pnl_usd": -399.35,
+   "reason": "stop"
   },
   {
-   "symbol": "LRCX",
+   "symbol": "ALHC",
    "side": "buy",
-   "entry": 310.95,
-   "exit": 300.3,
-   "pnl_pct": -3.425,
-   "pnl_usd": -149.1,
+   "entry": 16.14,
+   "exit": 16.355,
+   "pnl_pct": 1.3321,
+   "pnl_usd": 94.38,
    "reason": "time"
   }
  ],
- "trades_day_label": "Thursday Jul 30",
- "eod_text": "2 trades, 1 winner, a net gain of $248 on the paper book. Every fill above is real output from the live pipeline: the same leads published here in the morning, executed with bracket exits and risk-normalized sizing, reported win or lose.",
+ "trades_day_label": "today",
+ "eod_text": "2 trades, 1 winner, a net loss of $305 on the paper book. Every fill above is real output from the live pipeline: the same leads published here in the morning, executed with bracket exits and risk-normalized sizing, reported win or lose.",
  "board": [
   {
    "label": "This week",
-   "n": 10,
-   "win_rate": "40%",
-   "pnl_usd": "-30"
+   "n": 12,
+   "win_rate": "42%",
+   "pnl_usd": "-335"
   },
   {
    "label": "This month",
-   "n": 26,
-   "win_rate": "42%",
-   "pnl_usd": "-403"
+   "n": 28,
+   "win_rate": "43%",
+   "pnl_usd": "-708"
   },
   {
    "label": "This year",
-   "n": 26,
-   "win_rate": "42%",
-   "pnl_usd": "-403"
+   "n": 28,
+   "win_rate": "43%",
+   "pnl_usd": "-708"
   }
  ],
  "swing": [
