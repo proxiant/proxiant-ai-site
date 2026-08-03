@@ -1,101 +1,92 @@
 {
- "stamp": "Monday, August 03, 2026 09:27 ET",
+ "stamp": "Monday, August 03, 2026 17:05 ET",
  "leads": [
   {
    "rank": 1,
-   "symbol": "CNH",
+   "symbol": "DFNS",
    "side": "buy",
-   "entry": 11.115,
-   "stop": 10.5711,
-   "target": 11.6589,
-   "why": "gap +8.4%, pre-market vol 381,749, rvol 1.1x"
+   "entry": 42.06,
+   "stop": 15.4306,
+   "target": 68.6894,
+   "why": "gap +52.0%, pre-market vol 719,956, rvol 0.1x"
   },
   {
    "rank": 2,
-   "symbol": "DFNS",
+   "symbol": "FCUV",
    "side": "buy",
-   "entry": 47.0003,
-   "stop": 17.2431,
-   "target": 76.7575,
-   "why": "gap +69.8%, pre-market vol 640,440, rvol 0.3x"
+   "entry": 15.5,
+   "stop": 13.2285,
+   "target": 17.7715,
+   "why": "gap +33.6%, pre-market vol 2,670,563, rvol 0.5x"
   },
   {
    "rank": 3,
-   "symbol": "FCUV",
+   "symbol": "ATKR",
    "side": "buy",
-   "entry": 14.9,
-   "stop": 12.7164,
-   "target": 17.0836,
-   "why": "gap +28.4%, pre-market vol 2,640,042, rvol 5686.9x"
+   "entry": 93.45,
+   "stop": 87.8287,
+   "target": 99.0713,
+   "why": "gap +28.1%, pre-market vol 1,343,790, rvol 3.7x"
   },
   {
    "rank": 4,
-   "symbol": "SKYQ",
+   "symbol": "INHD",
    "side": "sell",
-   "entry": 4.23,
-   "stop": 5.1485,
-   "target": 3.3115,
-   "why": "gap -9.0%, pre-market vol 290,475, rvol 0.6x"
+   "entry": 13.52,
+   "stop": 17.1404,
+   "target": 9.8996,
+   "why": "gap -24.9%, pre-market vol 163,973, rvol 0.0x"
   },
   {
    "rank": 5,
-   "symbol": "INHD",
-   "side": "sell",
-   "entry": 12.47,
-   "stop": 15.8092,
-   "target": 9.1308,
-   "why": "gap -30.7%, pre-market vol 155,103, rvol 0.1x"
+   "symbol": "CNH",
+   "side": "buy",
+   "entry": 11.3972,
+   "stop": 10.8395,
+   "target": 11.9549,
+   "why": "gap +11.2%, pre-market vol 524,968, rvol 0.0x"
   }
  ],
  "trades": [
   {
-   "symbol": "REPL",
+   "symbol": "CNH",
    "side": "buy",
-   "entry": 12.145,
-   "exit": 9.8888,
-   "pnl_pct": -18.5773,
-   "pnl_usd": -399.35,
-   "reason": "stop"
-  },
-  {
-   "symbol": "ALHC",
-   "side": "buy",
-   "entry": 16.14,
-   "exit": 16.355,
-   "pnl_pct": 1.3321,
-   "pnl_usd": 94.38,
+   "entry": 11.79,
+   "exit": 11.585,
+   "pnl_pct": -1.7388,
+   "pnl_usd": -159.9,
    "reason": "time"
   },
   {
-   "symbol": "AAVE",
+   "symbol": "DFNS",
    "side": "buy",
-   "entry": 98.66,
-   "exit": 93.52,
-   "pnl_pct": -5.21,
-   "pnl_usd": -260.49,
-   "reason": "momentum_flip"
+   "entry": 51.09,
+   "exit": 64.5,
+   "pnl_pct": 26.2478,
+   "pnl_usd": 147.51,
+   "reason": "time"
   }
  ],
- "trades_day_label": "Friday Jul 31",
- "eod_text": "3 trades, 1 winner, a net loss of $565 on the paper book. Every fill above is real output from the live pipeline: the same leads published here in the morning, executed with bracket exits and risk-normalized sizing, reported win or lose.",
+ "trades_day_label": "today",
+ "eod_text": "2 trades, 1 winner, a net loss of $12 on the paper book. Every fill above is real output from the live pipeline: the same leads published here in the morning, executed with bracket exits and risk-normalized sizing, reported win or lose.",
  "board": [
   {
    "label": "This week",
-   "n": 0,
-   "win_rate": "-",
-   "pnl_usd": "-"
+   "n": 2,
+   "win_rate": "50%",
+   "pnl_usd": "-12"
   },
   {
    "label": "This month",
-   "n": 0,
-   "win_rate": "-",
-   "pnl_usd": "-"
+   "n": 2,
+   "win_rate": "50%",
+   "pnl_usd": "-12"
   },
   {
    "label": "This year",
-   "n": 29,
-   "win_rate": "41%",
-   "pnl_usd": "-968"
+   "n": 31,
+   "win_rate": "42%",
+   "pnl_usd": "-981"
   }
  ],
  "swing": [
