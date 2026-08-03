@@ -1,50 +1,50 @@
 {
- "stamp": "Friday, July 31, 2026 17:05 ET",
+ "stamp": "Monday, August 03, 2026 09:27 ET",
  "leads": [
   {
    "rank": 1,
-   "symbol": "REPL",
+   "symbol": "CNH",
    "side": "buy",
-   "entry": 11.32,
-   "stop": 8.4966,
-   "target": 14.1434,
-   "why": "gap +109.2%, pre-market vol 4,643,851, rvol 1.0x"
+   "entry": 11.115,
+   "stop": 10.5711,
+   "target": 11.6589,
+   "why": "gap +8.4%, pre-market vol 381,749, rvol 1.1x"
   },
   {
    "rank": 2,
    "symbol": "DFNS",
-   "side": "sell",
-   "entry": 37.8,
-   "stop": 42.1689,
-   "target": 33.4311,
-   "why": "gap -55.5%, pre-market vol 353,233, rvol 0.1x"
+   "side": "buy",
+   "entry": 47.0003,
+   "stop": 17.2431,
+   "target": 76.7575,
+   "why": "gap +69.8%, pre-market vol 640,440, rvol 0.3x"
   },
   {
    "rank": 3,
-   "symbol": "AXTI",
+   "symbol": "FCUV",
    "side": "buy",
-   "entry": 66.7,
-   "stop": 53.5511,
-   "target": 79.8489,
-   "why": "gap +42.1%, pre-market vol 1,940,020, rvol 0.5x"
+   "entry": 14.9,
+   "stop": 12.7164,
+   "target": 17.0836,
+   "why": "gap +28.4%, pre-market vol 2,640,042, rvol 5686.9x"
   },
   {
    "rank": 4,
-   "symbol": "NWL",
-   "side": "buy",
-   "entry": 6.57,
-   "stop": 6.0859,
-   "target": 7.0541,
-   "why": "gap +27.8%, pre-market vol 450,014, rvol 0.2x"
+   "symbol": "SKYQ",
+   "side": "sell",
+   "entry": 4.23,
+   "stop": 5.1485,
+   "target": 3.3115,
+   "why": "gap -9.0%, pre-market vol 290,475, rvol 0.6x"
   },
   {
    "rank": 5,
-   "symbol": "GDDY",
+   "symbol": "INHD",
    "side": "sell",
-   "entry": 77.1,
-   "stop": 83.2492,
-   "target": 70.9508,
-   "why": "gap -22.4%, pre-market vol 105,745, rvol 0.1x"
+   "entry": 12.47,
+   "stop": 15.8092,
+   "target": 9.1308,
+   "why": "gap -30.7%, pre-market vol 155,103, rvol 0.1x"
   }
  ],
  "trades": [
@@ -65,36 +65,69 @@
    "pnl_pct": 1.3321,
    "pnl_usd": 94.38,
    "reason": "time"
+  },
+  {
+   "symbol": "AAVE",
+   "side": "buy",
+   "entry": 98.66,
+   "exit": 93.52,
+   "pnl_pct": -5.21,
+   "pnl_usd": -260.49,
+   "reason": "momentum_flip"
   }
  ],
- "trades_day_label": "today",
- "eod_text": "2 trades, 1 winner, a net loss of $305 on the paper book. Every fill above is real output from the live pipeline: the same leads published here in the morning, executed with bracket exits and risk-normalized sizing, reported win or lose.",
+ "trades_day_label": "Friday Jul 31",
+ "eod_text": "3 trades, 1 winner, a net loss of $565 on the paper book. Every fill above is real output from the live pipeline: the same leads published here in the morning, executed with bracket exits and risk-normalized sizing, reported win or lose.",
  "board": [
   {
    "label": "This week",
-   "n": 12,
-   "win_rate": "42%",
-   "pnl_usd": "-335"
+   "n": 0,
+   "win_rate": "-",
+   "pnl_usd": "-"
   },
   {
    "label": "This month",
-   "n": 28,
-   "win_rate": "43%",
-   "pnl_usd": "-708"
+   "n": 0,
+   "win_rate": "-",
+   "pnl_usd": "-"
   },
   {
    "label": "This year",
-   "n": 28,
-   "win_rate": "43%",
-   "pnl_usd": "-708"
+   "n": 29,
+   "win_rate": "41%",
+   "pnl_usd": "-968"
   }
  ],
  "swing": [
   {
-   "symbol": "GLD",
-   "entry": null,
-   "stop": null,
-   "target": null
+   "symbol": "AMD",
+   "entry": 476.03,
+   "stop": 392.92,
+   "target": 600.7
+  },
+  {
+   "symbol": "MU",
+   "entry": 823.21,
+   "stop": 647.82,
+   "target": 1086.3
+  },
+  {
+   "symbol": "ROKU",
+   "entry": 144.98,
+   "stop": 142.25,
+   "target": 149.07
+  },
+  {
+   "symbol": "SNOW",
+   "entry": 293.06,
+   "stop": 265.78,
+   "target": 333.97
+  },
+  {
+   "symbol": "TXN",
+   "entry": 275.81,
+   "stop": 252.2,
+   "target": 311.23
   }
  ],
  "posture": "LONG",
