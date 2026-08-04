@@ -1,92 +1,101 @@
 {
- "stamp": "Tuesday, August 04, 2026 09:27 ET",
+ "stamp": "Tuesday, August 04, 2026 17:05 ET",
  "leads": [
   {
    "rank": 1,
-   "symbol": "W",
+   "symbol": "AMIX",
    "side": "buy",
-   "entry": 106.21,
-   "stop": 98.7583,
-   "target": 113.6617,
-   "why": "gap +19.0%, pre-market vol 936,647, rvol 2.0x"
+   "entry": 5.4,
+   "stop": 3.7832,
+   "target": 7.0168,
+   "why": "gap +47.9%, pre-market vol 11,512,030, rvol 1.7x"
   },
   {
    "rank": 2,
-   "symbol": "AMIX",
+   "symbol": "BLZE",
    "side": "buy",
-   "entry": 4.9251,
-   "stop": 3.4505,
-   "target": 6.3997,
-   "why": "gap +34.9%, pre-market vol 10,314,843, rvol 0.0x"
+   "entry": 20.19,
+   "stop": 18.0151,
+   "target": 22.3649,
+   "why": "gap +29.5%, pre-market vol 217,600, rvol 0.3x"
   },
   {
    "rank": 3,
-   "symbol": "BLZE",
+   "symbol": "W",
    "side": "buy",
-   "entry": 19.64,
-   "stop": 17.5243,
-   "target": 21.7557,
-   "why": "gap +26.0%, pre-market vol 150,015, rvol 2.5x"
+   "entry": 110.82,
+   "stop": 103.0448,
+   "target": 118.5952,
+   "why": "gap +24.2%, pre-market vol 1,113,856, rvol 0.3x"
   },
   {
    "rank": 4,
    "symbol": "BRBR",
    "side": "sell",
-   "entry": 10.5,
-   "stop": 11.0944,
-   "target": 9.9056,
-   "why": "gap -18.9%, pre-market vol 228,128, rvol 1.8x"
+   "entry": 10.25,
+   "stop": 10.8303,
+   "target": 9.6697,
+   "why": "gap -20.8%, pre-market vol 247,555, rvol 0.1x"
   },
   {
    "rank": 5,
-   "symbol": "CERT",
-   "side": "sell",
-   "entry": 6.21,
-   "stop": 6.492,
-   "target": 5.928,
-   "why": "gap -24.1%, pre-market vol 361,458, rvol 0.9x"
+   "symbol": "AAOI",
+   "side": "buy",
+   "entry": 128.4,
+   "stop": 111.4697,
+   "target": 145.3303,
+   "why": "gap +16.5%, pre-market vol 2,376,275, rvol 0.4x"
   }
  ],
  "trades": [
   {
-   "symbol": "CNH",
+   "symbol": "BRBR",
+   "side": "sell",
+   "entry": 11.06,
+   "exit": 11.6723,
+   "pnl_pct": -5.536,
+   "pnl_usd": -399.82,
+   "reason": "stop"
+  },
+  {
+   "symbol": "PLTR",
    "side": "buy",
-   "entry": 11.79,
-   "exit": 11.585,
-   "pnl_pct": -1.7388,
-   "pnl_usd": -159.9,
+   "entry": 158.1,
+   "exit": 158.515,
+   "pnl_pct": 0.2625,
+   "pnl_usd": 21.16,
    "reason": "time"
   },
   {
-   "symbol": "DFNS",
+   "symbol": "W",
    "side": "buy",
-   "entry": 51.09,
-   "exit": 64.5,
-   "pnl_pct": 26.2478,
-   "pnl_usd": 147.51,
+   "entry": 116.02,
+   "exit": 116.88,
+   "pnl_pct": 0.7413,
+   "pnl_usd": 47.3,
    "reason": "time"
   }
  ],
- "trades_day_label": "Monday Aug 03",
- "eod_text": "2 trades, 1 winner, a net loss of $12 on the paper book. Every fill above is real output from the live pipeline: the same leads published here in the morning, executed with bracket exits and risk-normalized sizing, reported win or lose.",
+ "trades_day_label": "today",
+ "eod_text": "3 trades, 2 winners, a net loss of $331 on the paper book. Every fill above is real output from the live pipeline: the same leads published here in the morning, executed with bracket exits and risk-normalized sizing, reported win or lose.",
  "board": [
   {
    "label": "This week",
-   "n": 2,
-   "win_rate": "50%",
-   "pnl_usd": "-12"
+   "n": 5,
+   "win_rate": "60%",
+   "pnl_usd": "-344"
   },
   {
    "label": "This month",
-   "n": 2,
-   "win_rate": "50%",
-   "pnl_usd": "-12"
+   "n": 5,
+   "win_rate": "60%",
+   "pnl_usd": "-344"
   },
   {
    "label": "This year",
-   "n": 31,
-   "win_rate": "42%",
-   "pnl_usd": "-981"
+   "n": 34,
+   "win_rate": "44%",
+   "pnl_usd": "-1,312"
   }
  ],
  "swing": [
