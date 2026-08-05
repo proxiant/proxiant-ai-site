@@ -1,50 +1,50 @@
 {
- "stamp": "Tuesday, August 04, 2026 17:05 ET",
+ "stamp": "Wednesday, August 05, 2026 09:27 ET",
  "leads": [
   {
    "rank": 1,
-   "symbol": "AMIX",
+   "symbol": "SHOP",
    "side": "buy",
-   "entry": 5.4,
-   "stop": 3.7832,
-   "target": 7.0168,
-   "why": "gap +47.9%, pre-market vol 11,512,030, rvol 1.7x"
+   "entry": 149.22,
+   "stop": 139.5821,
+   "target": 158.8579,
+   "why": "gap +21.0%, pre-market vol 3,045,436, rvol 2.3x"
   },
   {
    "rank": 2,
-   "symbol": "BLZE",
+   "symbol": "INLF",
    "side": "buy",
-   "entry": 20.19,
-   "stop": 18.0151,
-   "target": 22.3649,
-   "why": "gap +29.5%, pre-market vol 217,600, rvol 0.3x"
+   "entry": 6.79,
+   "stop": 3.6182,
+   "target": 9.9618,
+   "why": "gap +113.5%, pre-market vol 9,684,564, rvol 0.4x"
   },
   {
    "rank": 3,
-   "symbol": "W",
-   "side": "buy",
-   "entry": 110.82,
-   "stop": 103.0448,
-   "target": 118.5952,
-   "why": "gap +24.2%, pre-market vol 1,113,856, rvol 0.3x"
+   "symbol": "AMIX",
+   "side": "sell",
+   "entry": 12.9,
+   "stop": 14.4537,
+   "target": 11.3463,
+   "why": "gap -33.8%, pre-market vol 1,995,039, rvol 13.0x"
   },
   {
    "rank": 4,
-   "symbol": "BRBR",
+   "symbol": "PODD",
    "side": "sell",
-   "entry": 10.25,
-   "stop": 10.8303,
-   "target": 9.6697,
-   "why": "gap -20.8%, pre-market vol 247,555, rvol 0.1x"
+   "entry": 131.0,
+   "stop": 136.2468,
+   "target": 125.7532,
+   "why": "gap -21.5%, pre-market vol 175,871, rvol 1.4x"
   },
   {
    "rank": 5,
-   "symbol": "AAOI",
-   "side": "buy",
-   "entry": 128.4,
-   "stop": 111.4697,
-   "target": 145.3303,
-   "why": "gap +16.5%, pre-market vol 2,376,275, rvol 0.4x"
+   "symbol": "VPG",
+   "side": "sell",
+   "entry": 72.3404,
+   "stop": 78.8812,
+   "target": 65.7996,
+   "why": "gap -28.4%, pre-market vol 116,809, rvol 1.2x"
   }
  ],
  "trades": [
@@ -76,7 +76,7 @@
    "reason": "time"
   }
  ],
- "trades_day_label": "today",
+ "trades_day_label": "Tuesday Aug 04",
  "eod_text": "3 trades, 2 winners, a net loss of $331 on the paper book. Every fill above is real output from the live pipeline: the same leads published here in the morning, executed with bracket exits and risk-normalized sizing, reported win or lose.",
  "board": [
   {
