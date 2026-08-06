@@ -1,83 +1,101 @@
 {
- "stamp": "Thursday, August 06, 2026 09:27 ET",
+ "stamp": "Thursday, August 06, 2026 17:05 ET",
  "leads": [
   {
    "rank": 1,
-   "symbol": "INSM",
+   "symbol": "CLRO",
    "side": "buy",
-   "entry": 127.9485,
-   "stop": 122.6328,
-   "target": 133.2642,
-   "why": "gap +29.2%, pre-market vol 407,157, rvol 1.9x"
+   "entry": 11.71,
+   "stop": 10.0836,
+   "target": 13.3364,
+   "why": "gap +218.2%, pre-market vol 23,250,369, rvol 38.4x"
   },
   {
    "rank": 2,
    "symbol": "IOVA",
    "side": "buy",
-   "entry": 5.68,
-   "stop": 5.0654,
-   "target": 6.2946,
-   "why": "gap +30.9%, pre-market vol 3,267,285, rvol 1.2x"
+   "entry": 5.95,
+   "stop": 5.3061,
+   "target": 6.5939,
+   "why": "gap +37.1%, pre-market vol 3,706,386, rvol 0.5x"
   },
   {
    "rank": 3,
-   "symbol": "HUBS",
-   "side": "sell",
-   "entry": 190.7486,
-   "stop": 204.4258,
-   "target": 177.0714,
-   "why": "gap -23.8%, pre-market vol 257,803, rvol 2.5x"
+   "symbol": "AEVA",
+   "side": "buy",
+   "entry": 25.63,
+   "stop": 23.0025,
+   "target": 28.2575,
+   "why": "gap +30.7%, pre-market vol 380,617, rvol 0.5x"
   },
   {
    "rank": 4,
-   "symbol": "SOUN",
+   "symbol": "INSM",
    "side": "buy",
-   "entry": 8.14,
-   "stop": 7.5448,
-   "target": 8.7352,
-   "why": "gap +26.6%, pre-market vol 6,096,800, rvol 1.0x"
+   "entry": 129.2,
+   "stop": 123.8323,
+   "target": 134.5677,
+   "why": "gap +30.5%, pre-market vol 539,973, rvol 0.4x"
   },
   {
    "rank": 5,
-   "symbol": "EPAM",
-   "side": "sell",
-   "entry": 86.0,
-   "stop": 90.3835,
-   "target": 81.6165,
-   "why": "gap -21.7%, pre-market vol 159,412, rvol 1.0x"
+   "symbol": "SOUN",
+   "side": "buy",
+   "entry": 8.0499,
+   "stop": 7.4613,
+   "target": 8.6385,
+   "why": "gap +25.2%, pre-market vol 6,831,950, rvol 0.3x"
   }
  ],
  "trades": [
   {
-   "symbol": "VPG",
-   "side": "sell",
-   "entry": 70.55,
-   "exit": 75.1356,
-   "pnl_pct": -6.4998,
-   "pnl_usd": -398.95,
-   "reason": "stop"
+   "symbol": "INSM",
+   "side": "buy",
+   "entry": 133.805,
+   "exit": 130.79,
+   "pnl_pct": -2.2533,
+   "pnl_usd": -256.28,
+   "reason": "time"
+  },
+  {
+   "symbol": "U",
+   "side": "buy",
+   "entry": 40.66,
+   "exit": 40.54,
+   "pnl_pct": -0.2951,
+   "pnl_usd": -17.04,
+   "reason": "time"
+  },
+  {
+   "symbol": "CHYM",
+   "side": "buy",
+   "entry": 32.605,
+   "exit": 32.97,
+   "pnl_pct": 1.1195,
+   "pnl_usd": 80.3,
+   "reason": "time"
   }
  ],
- "trades_day_label": "Wednesday Aug 05",
- "eod_text": "1 trade, 0 winners, a net loss of $399 on the paper book. Every fill above is real output from the live pipeline: the same leads published here in the morning, executed with bracket exits and risk-normalized sizing, reported win or lose.",
+ "trades_day_label": "today",
+ "eod_text": "3 trades, 1 winner, a net loss of $193 on the paper book. Every fill above is real output from the live pipeline: the same leads published here in the morning, executed with bracket exits and risk-normalized sizing, reported win or lose.",
  "board": [
   {
    "label": "This week",
-   "n": 6,
-   "win_rate": "50%",
-   "pnl_usd": "-743"
+   "n": 9,
+   "win_rate": "44%",
+   "pnl_usd": "-936"
   },
   {
    "label": "This month",
-   "n": 6,
-   "win_rate": "50%",
-   "pnl_usd": "-743"
+   "n": 9,
+   "win_rate": "44%",
+   "pnl_usd": "-936"
   },
   {
    "label": "This year",
-   "n": 35,
-   "win_rate": "43%",
-   "pnl_usd": "-1,711"
+   "n": 38,
+   "win_rate": "42%",
+   "pnl_usd": "-1,904"
   }
  ],
  "swing": [
