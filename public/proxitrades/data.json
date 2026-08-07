@@ -1,50 +1,50 @@
 {
- "stamp": "Thursday, August 06, 2026 17:05 ET",
+ "stamp": "Friday, August 07, 2026 09:27 ET",
  "leads": [
   {
    "rank": 1,
-   "symbol": "CLRO",
+   "symbol": "AAOI",
    "side": "buy",
-   "entry": 11.71,
-   "stop": 10.0836,
-   "target": 13.3364,
-   "why": "gap +218.2%, pre-market vol 23,250,369, rvol 38.4x"
+   "entry": 140.4,
+   "stop": 120.3238,
+   "target": 160.4762,
+   "why": "gap +13.0%, pre-market vol 1,250,653, rvol 1.4x"
   },
   {
    "rank": 2,
-   "symbol": "IOVA",
+   "symbol": "FIGS",
    "side": "buy",
-   "entry": 5.95,
-   "stop": 5.3061,
-   "target": 6.5939,
-   "why": "gap +37.1%, pre-market vol 3,706,386, rvol 0.5x"
+   "entry": 14.81,
+   "stop": 13.9413,
+   "target": 15.6787,
+   "why": "gap +31.8%, pre-market vol 199,119, rvol 1.4x"
   },
   {
    "rank": 3,
-   "symbol": "AEVA",
+   "symbol": "DOCS",
    "side": "buy",
-   "entry": 25.63,
-   "stop": 23.0025,
-   "target": 28.2575,
-   "why": "gap +30.7%, pre-market vol 380,617, rvol 0.5x"
+   "entry": 36.09,
+   "stop": 33.9817,
+   "target": 38.1983,
+   "why": "gap +74.7%, pre-market vol 13,423,572, rvol 7.7x"
   },
   {
    "rank": 4,
-   "symbol": "INSM",
+   "symbol": "TEAM",
    "side": "buy",
-   "entry": 129.2,
-   "stop": 123.8323,
-   "target": 134.5677,
-   "why": "gap +30.5%, pre-market vol 539,973, rvol 0.4x"
+   "entry": 149.0,
+   "stop": 136.7506,
+   "target": 161.2494,
+   "why": "gap +35.2%, pre-market vol 564,253, rvol 1.8x"
   },
   {
    "rank": 5,
-   "symbol": "SOUN",
-   "side": "buy",
-   "entry": 8.0499,
-   "stop": 7.4613,
-   "target": 8.6385,
-   "why": "gap +25.2%, pre-market vol 6,831,950, rvol 0.3x"
+   "symbol": "TTD",
+   "side": "sell",
+   "entry": 12.63,
+   "stop": 13.3512,
+   "target": 11.9088,
+   "why": "gap -28.5%, pre-market vol 13,815,301, rvol 5.2x"
   }
  ],
  "trades": [
@@ -76,7 +76,7 @@
    "reason": "time"
   }
  ],
- "trades_day_label": "today",
+ "trades_day_label": "Thursday Aug 06",
  "eod_text": "3 trades, 1 winner, a net loss of $193 on the paper book. Every fill above is real output from the live pipeline: the same leads published here in the morning, executed with bracket exits and risk-normalized sizing, reported win or lose.",
  "board": [
   {
