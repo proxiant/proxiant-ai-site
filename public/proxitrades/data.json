@@ -1,50 +1,50 @@
 {
- "stamp": "Friday, August 07, 2026 17:05 ET",
+ "stamp": "Monday, August 10, 2026 09:27 ET",
  "leads": [
   {
    "rank": 1,
-   "symbol": "DOCS",
-   "side": "buy",
-   "entry": 39.19,
-   "stop": 36.9006,
-   "target": 41.4794,
-   "why": "gap +89.7%, pre-market vol 14,326,950, rvol 3.3x"
+   "symbol": "MNDY",
+   "side": "sell",
+   "entry": 82.25,
+   "stop": 87.562,
+   "target": 76.938,
+   "why": "gap -11.7%, pre-market vol 457,955, rvol 1.5x"
   },
   {
    "rank": 2,
-   "symbol": "FIGS",
+   "symbol": "ACHR",
    "side": "buy",
-   "entry": 15.21,
-   "stop": 14.3178,
-   "target": 16.1022,
-   "why": "gap +35.3%, pre-market vol 250,246, rvol 0.1x"
+   "entry": 6.4393,
+   "stop": 5.9681,
+   "target": 6.9105,
+   "why": "gap +15.2%, pre-market vol 12,234,886, rvol 1.2x"
   },
   {
    "rank": 3,
-   "symbol": "TEAM",
+   "symbol": "INHD",
    "side": "buy",
-   "entry": 145.55,
-   "stop": 133.5843,
-   "target": 157.5157,
-   "why": "gap +32.1%, pre-market vol 692,185, rvol 0.3x"
+   "entry": 6.0,
+   "stop": -3.1617,
+   "target": 15.1617,
+   "why": "gap +16.6%, pre-market vol 694,089, rvol 0.1x"
   },
   {
    "rank": 4,
-   "symbol": "TTD",
-   "side": "sell",
-   "entry": 12.8702,
-   "stop": 13.6051,
-   "target": 12.1353,
-   "why": "gap -27.2%, pre-market vol 15,465,898, rvol 0.9x"
+   "symbol": "ABCL",
+   "side": "buy",
+   "entry": 9.13,
+   "stop": 8.4154,
+   "target": 9.8446,
+   "why": "gap +31.7%, pre-market vol 7,106,670, rvol 1.3x"
   },
   {
    "rank": 5,
-   "symbol": "AAOI",
+   "symbol": "INLF",
    "side": "buy",
-   "entry": 142.58,
-   "stop": 122.1921,
-   "target": 162.9679,
-   "why": "gap +14.8%, pre-market vol 1,324,449, rvol 0.2x"
+   "entry": 5.4,
+   "stop": 2.7941,
+   "target": 8.0059,
+   "why": "gap +19.7%, pre-market vol 262,375, rvol 0.0x"
   }
  ],
  "trades": [
@@ -76,14 +76,14 @@
    "reason": "time"
   }
  ],
- "trades_day_label": "today",
+ "trades_day_label": "Friday Aug 07",
  "eod_text": "3 trades, 0 winners, a net loss of $437 on the paper book. Every fill above is real output from the live pipeline: the same leads published here in the morning, executed with bracket exits and risk-normalized sizing, reported win or lose.",
  "board": [
   {
    "label": "This week",
-   "n": 12,
-   "win_rate": "33%",
-   "pnl_usd": "-1,372"
+   "n": 0,
+   "win_rate": "-",
+   "pnl_usd": "-"
   },
   {
    "label": "This month",
@@ -101,33 +101,33 @@
  "swing": [
   {
    "symbol": "AMD",
-   "entry": 476.03,
-   "stop": 392.92,
-   "target": 600.7
+   "entry": 483.27,
+   "stop": 403.34,
+   "target": 603.16
   },
   {
    "symbol": "MU",
-   "entry": 823.21,
-   "stop": 647.82,
-   "target": 1086.3
-  },
-  {
-   "symbol": "ROKU",
-   "entry": 144.98,
-   "stop": 142.25,
-   "target": 149.07
+   "entry": 878.41,
+   "stop": 710.8,
+   "target": 1129.82
   },
   {
    "symbol": "SNOW",
-   "entry": 293.06,
-   "stop": 265.78,
-   "target": 333.97
+   "entry": 330.4,
+   "stop": 301.64,
+   "target": 373.55
   },
   {
-   "symbol": "TXN",
-   "entry": 275.81,
-   "stop": 252.2,
-   "target": 311.23
+   "symbol": "ROKU",
+   "entry": 153.12,
+   "stop": 149.63,
+   "target": 158.36
+  },
+  {
+   "symbol": "PYPL",
+   "entry": 59.05,
+   "stop": 56.25,
+   "target": 63.25
   }
  ],
  "posture": "LONG",
