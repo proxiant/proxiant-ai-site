@@ -1,50 +1,50 @@
 {
- "stamp": "Monday, August 10, 2026 17:05 ET",
+ "stamp": "Tuesday, August 11, 2026 09:27 ET",
  "leads": [
   {
    "rank": 1,
-   "symbol": "ABCL",
+   "symbol": "RIOT",
    "side": "buy",
-   "entry": 8.76,
-   "stop": 8.0744,
-   "target": 9.4456,
-   "why": "gap +26.4%, pre-market vol 7,543,781, rvol 1.9x"
+   "entry": 22.9459,
+   "stop": 19.5611,
+   "target": 26.3307,
+   "why": "gap +18.3%, pre-market vol 2,606,858, rvol 1.1x"
   },
   {
    "rank": 2,
-   "symbol": "INLF",
+   "symbol": "FRMI",
    "side": "buy",
-   "entry": 5.48,
-   "stop": 2.8355,
-   "target": 8.1245,
-   "why": "gap +21.5%, pre-market vol 271,205, rvol 0.1x"
+   "entry": 7.27,
+   "stop": 6.3076,
+   "target": 8.2324,
+   "why": "gap +23.6%, pre-market vol 3,149,492, rvol 1.1x"
   },
   {
    "rank": 3,
-   "symbol": "INHD",
+   "symbol": "BW",
    "side": "buy",
-   "entry": 6.12,
-   "stop": -3.2249,
-   "target": 15.4649,
-   "why": "gap +18.9%, pre-market vol 730,566, rvol 0.1x"
+   "entry": 12.09,
+   "stop": 10.5384,
+   "target": 13.6416,
+   "why": "gap +36.1%, pre-market vol 720,645, rvol 2.3x"
   },
   {
    "rank": 4,
-   "symbol": "ACHR",
-   "side": "buy",
-   "entry": 6.42,
-   "stop": 5.9502,
-   "target": 6.8898,
-   "why": "gap +14.8%, pre-market vol 13,215,159, rvol 0.5x"
+   "symbol": "UPWK",
+   "side": "sell",
+   "entry": 8.2,
+   "stop": 8.5545,
+   "target": 7.8455,
+   "why": "gap -16.6%, pre-market vol 396,664, rvol 2.1x"
   },
   {
    "rank": 5,
-   "symbol": "MNDY",
+   "symbol": "ONON",
    "side": "sell",
-   "entry": 81.58,
-   "stop": 86.8487,
-   "target": 76.3113,
-   "why": "gap -12.4%, pre-market vol 487,142, rvol 0.5x"
+   "entry": 31.7628,
+   "stop": 32.915,
+   "target": 30.6106,
+   "why": "gap -18.1%, pre-market vol 2,242,741, rvol 2.3x"
   }
  ],
  "trades": [
@@ -76,7 +76,7 @@
    "reason": "momentum_flip"
   }
  ],
- "trades_day_label": "today",
+ "trades_day_label": "Monday Aug 10",
  "eod_text": "3 trades, 1 winner, a net loss of $219 on the paper book. Every fill above is real output from the live pipeline: the same leads published here in the morning, executed with bracket exits and risk-normalized sizing, reported win or lose.",
  "board": [
   {
