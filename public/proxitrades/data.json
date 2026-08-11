@@ -1,50 +1,50 @@
 {
- "stamp": "Tuesday, August 11, 2026 09:27 ET",
+ "stamp": "Tuesday, August 11, 2026 17:05 ET",
  "leads": [
   {
    "rank": 1,
-   "symbol": "RIOT",
+   "symbol": "BW",
    "side": "buy",
-   "entry": 22.9459,
-   "stop": 19.5611,
-   "target": 26.3307,
-   "why": "gap +18.3%, pre-market vol 2,606,858, rvol 1.1x"
+   "entry": 11.89,
+   "stop": 10.3641,
+   "target": 13.4159,
+   "why": "gap +33.9%, pre-market vol 758,753, rvol 0.3x"
   },
   {
    "rank": 2,
-   "symbol": "FRMI",
+   "symbol": "RIOT",
    "side": "buy",
-   "entry": 7.27,
-   "stop": 6.3076,
-   "target": 8.2324,
-   "why": "gap +23.6%, pre-market vol 3,149,492, rvol 1.1x"
+   "entry": 23.62,
+   "stop": 20.1358,
+   "target": 27.1042,
+   "why": "gap +21.8%, pre-market vol 3,062,929, rvol 0.3x"
   },
   {
    "rank": 3,
-   "symbol": "BW",
+   "symbol": "FRMI",
    "side": "buy",
-   "entry": 12.09,
-   "stop": 10.5384,
-   "target": 13.6416,
-   "why": "gap +36.1%, pre-market vol 720,645, rvol 2.3x"
+   "entry": 7.1,
+   "stop": 6.1601,
+   "target": 8.0399,
+   "why": "gap +20.7%, pre-market vol 3,729,090, rvol 0.3x"
   },
   {
    "rank": 4,
-   "symbol": "UPWK",
+   "symbol": "ONON",
    "side": "sell",
-   "entry": 8.2,
-   "stop": 8.5545,
-   "target": 7.8455,
-   "why": "gap -16.6%, pre-market vol 396,664, rvol 2.1x"
+   "entry": 31.44,
+   "stop": 32.5805,
+   "target": 30.2995,
+   "why": "gap -18.9%, pre-market vol 2,575,769, rvol 0.7x"
   },
   {
    "rank": 5,
-   "symbol": "ONON",
+   "symbol": "FA",
    "side": "sell",
-   "entry": 31.7628,
-   "stop": 32.915,
-   "target": 30.6106,
-   "why": "gap -18.1%, pre-market vol 2,242,741, rvol 2.3x"
+   "entry": 21.05,
+   "stop": 22.4737,
+   "target": 19.6263,
+   "why": "gap -10.8%, pre-market vol 676,785, rvol 0.5x"
   }
  ],
  "trades": [
