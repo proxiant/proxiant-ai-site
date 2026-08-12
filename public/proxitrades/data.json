@@ -1,101 +1,92 @@
 {
- "stamp": "Wednesday, August 12, 2026 09:27 ET",
+ "stamp": "Wednesday, August 12, 2026 17:05 ET",
  "leads": [
   {
    "rank": 1,
-   "symbol": "NBIS",
+   "symbol": "VELO",
    "side": "buy",
-   "entry": 226.51,
-   "stop": 191.0518,
-   "target": 261.9682,
-   "why": "gap +17.2%, pre-market vol 4,599,159, rvol 0.8x"
+   "entry": 16.92,
+   "stop": 14.9823,
+   "target": 18.8577,
+   "why": "gap +23.6%, pre-market vol 232,844, rvol 0.3x"
   },
   {
    "rank": 2,
    "symbol": "CRWV",
    "side": "buy",
-   "entry": 108.11,
-   "stop": 96.6167,
-   "target": 119.6033,
-   "why": "gap +19.7%, pre-market vol 5,227,754, rvol 1.6x"
+   "entry": 108.59,
+   "stop": 97.0457,
+   "target": 120.1343,
+   "why": "gap +20.2%, pre-market vol 5,944,750, rvol 0.3x"
   },
   {
    "rank": 3,
-   "symbol": "CAVA",
+   "symbol": "NBIS",
    "side": "buy",
-   "entry": 71.34,
-   "stop": 66.9432,
-   "target": 75.7368,
-   "why": "gap +17.3%, pre-market vol 272,674, rvol 2.1x"
+   "entry": 226.37,
+   "stop": 190.9337,
+   "target": 261.8063,
+   "why": "gap +17.2%, pre-market vol 4,888,710, rvol 0.3x"
   },
   {
    "rank": 4,
-   "symbol": "UAMY",
-   "side": "sell",
-   "entry": 5.26,
-   "stop": 5.6382,
-   "target": 4.8818,
-   "why": "gap -20.1%, pre-market vol 1,184,249, rvol 1.1x"
+   "symbol": "DFTX",
+   "side": "buy",
+   "entry": 47.69,
+   "stop": 43.8878,
+   "target": 51.4922,
+   "why": "gap +16.6%, pre-market vol 794,951, rvol 0.5x"
   },
   {
    "rank": 5,
-   "symbol": "PLAG",
-   "side": "sell",
-   "entry": 1.36,
-   "stop": 1.4908,
-   "target": 1.2292,
-   "why": "gap -76.6%, pre-market vol 10,008,495, rvol 1199.7x"
+   "symbol": "CAVA",
+   "side": "buy",
+   "entry": 69.5,
+   "stop": 65.2166,
+   "target": 73.7834,
+   "why": "gap +14.3%, pre-market vol 320,431, rvol 0.1x"
   }
  ],
  "trades": [
   {
-   "symbol": "ACHR",
+   "symbol": "NBIS",
    "side": "buy",
-   "entry": 6.715,
-   "exit": 6.485,
-   "pnl_pct": -3.4252,
-   "pnl_usd": -193.66,
+   "entry": 232.11,
+   "exit": 238.505,
+   "pnl_pct": 2.7552,
+   "pnl_usd": 108.71,
    "reason": "time"
   },
   {
-   "symbol": "ABCL",
+   "symbol": "QNT",
    "side": "buy",
-   "entry": 9.215,
-   "exit": 9.45,
-   "pnl_pct": 2.5502,
-   "pnl_usd": 102.22,
+   "entry": 70.15,
+   "exit": 68.85,
+   "pnl_pct": -1.8532,
+   "pnl_usd": -96.2,
    "reason": "time"
-  },
-  {
-   "symbol": "AAVE",
-   "side": "buy",
-   "entry": 92.11,
-   "exit": 89.76,
-   "pnl_pct": -2.55,
-   "pnl_usd": -127.56,
-   "reason": "momentum_flip"
   }
  ],
- "trades_day_label": "Monday Aug 10",
- "eod_text": "3 trades, 1 winner, a net loss of $219 on the paper book. Every fill above is real output from the live pipeline: the same leads published here in the morning, executed with bracket exits and risk-normalized sizing, reported win or lose.",
+ "trades_day_label": "today",
+ "eod_text": "2 trades, 1 winner, a net gain of $13 on the paper book. Every fill above is real output from the live pipeline: the same leads published here in the morning, executed with bracket exits and risk-normalized sizing, reported win or lose.",
  "board": [
   {
    "label": "This week",
-   "n": 3,
-   "win_rate": "33%",
-   "pnl_usd": "-219"
+   "n": 5,
+   "win_rate": "40%",
+   "pnl_usd": "-206"
   },
   {
    "label": "This month",
-   "n": 15,
-   "win_rate": "33%",
-   "pnl_usd": "-1,591"
+   "n": 17,
+   "win_rate": "35%",
+   "pnl_usd": "-1,579"
   },
   {
    "label": "This year",
-   "n": 44,
+   "n": 46,
    "win_rate": "39%",
-   "pnl_usd": "-2,560"
+   "pnl_usd": "-2,547"
   }
  ],
  "swing": [
