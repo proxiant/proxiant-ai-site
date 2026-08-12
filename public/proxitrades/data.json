@@ -1,50 +1,50 @@
 {
- "stamp": "Tuesday, August 11, 2026 17:05 ET",
+ "stamp": "Wednesday, August 12, 2026 09:27 ET",
  "leads": [
   {
    "rank": 1,
-   "symbol": "BW",
+   "symbol": "NBIS",
    "side": "buy",
-   "entry": 11.89,
-   "stop": 10.3641,
-   "target": 13.4159,
-   "why": "gap +33.9%, pre-market vol 758,753, rvol 0.3x"
+   "entry": 226.51,
+   "stop": 191.0518,
+   "target": 261.9682,
+   "why": "gap +17.2%, pre-market vol 4,599,159, rvol 0.8x"
   },
   {
    "rank": 2,
-   "symbol": "RIOT",
+   "symbol": "CRWV",
    "side": "buy",
-   "entry": 23.62,
-   "stop": 20.1358,
-   "target": 27.1042,
-   "why": "gap +21.8%, pre-market vol 3,062,929, rvol 0.3x"
+   "entry": 108.11,
+   "stop": 96.6167,
+   "target": 119.6033,
+   "why": "gap +19.7%, pre-market vol 5,227,754, rvol 1.6x"
   },
   {
    "rank": 3,
-   "symbol": "FRMI",
+   "symbol": "CAVA",
    "side": "buy",
-   "entry": 7.1,
-   "stop": 6.1601,
-   "target": 8.0399,
-   "why": "gap +20.7%, pre-market vol 3,729,090, rvol 0.3x"
+   "entry": 71.34,
+   "stop": 66.9432,
+   "target": 75.7368,
+   "why": "gap +17.3%, pre-market vol 272,674, rvol 2.1x"
   },
   {
    "rank": 4,
-   "symbol": "ONON",
+   "symbol": "UAMY",
    "side": "sell",
-   "entry": 31.44,
-   "stop": 32.5805,
-   "target": 30.2995,
-   "why": "gap -18.9%, pre-market vol 2,575,769, rvol 0.7x"
+   "entry": 5.26,
+   "stop": 5.6382,
+   "target": 4.8818,
+   "why": "gap -20.1%, pre-market vol 1,184,249, rvol 1.1x"
   },
   {
    "rank": 5,
-   "symbol": "FA",
+   "symbol": "PLAG",
    "side": "sell",
-   "entry": 21.05,
-   "stop": 22.4737,
-   "target": 19.6263,
-   "why": "gap -10.8%, pre-market vol 676,785, rvol 0.5x"
+   "entry": 1.36,
+   "stop": 1.4908,
+   "target": 1.2292,
+   "why": "gap -76.6%, pre-market vol 10,008,495, rvol 1199.7x"
   }
  ],
  "trades": [
