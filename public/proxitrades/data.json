@@ -1,92 +1,101 @@
 {
- "stamp": "Thursday, August 13, 2026 09:27 ET",
+ "stamp": "Thursday, August 13, 2026 17:05 ET",
  "leads": [
   {
    "rank": 1,
    "symbol": "ARX",
    "side": "buy",
-   "entry": 19.63,
-   "stop": 18.0553,
-   "target": 21.2047,
-   "why": "gap +44.2%, pre-market vol 14,374,106, rvol 0.9x"
+   "entry": 19.6,
+   "stop": 18.0278,
+   "target": 21.1722,
+   "why": "gap +44.0%, pre-market vol 16,730,053, rvol 9.4x"
   },
   {
    "rank": 2,
-   "symbol": "CBRS",
+   "symbol": "STUB",
    "side": "sell",
-   "entry": 218.95,
-   "stop": 237.5622,
-   "target": 200.3378,
-   "why": "gap -16.4%, pre-market vol 657,927, rvol 2.5x"
+   "entry": 6.95,
+   "stop": 7.3175,
+   "target": 6.5825,
+   "why": "gap -18.6%, pre-market vol 1,048,465, rvol 0.3x"
   },
   {
    "rank": 3,
    "symbol": "BIRK",
    "side": "buy",
-   "entry": 42.02,
-   "stop": 39.5426,
-   "target": 44.4974,
-   "why": "gap +14.4%, pre-market vol 132,085, rvol 2.1x"
+   "entry": 43.11,
+   "stop": 40.5684,
+   "target": 45.6516,
+   "why": "gap +17.3%, pre-market vol 206,546, rvol 0.1x"
   },
   {
    "rank": 4,
-   "symbol": "TPR",
+   "symbol": "CBRS",
    "side": "sell",
-   "entry": 130.0,
-   "stop": 134.131,
-   "target": 125.869,
-   "why": "gap -15.4%, pre-market vol 527,627, rvol 1.8x"
+   "entry": 219.34,
+   "stop": 237.9853,
+   "target": 200.6947,
+   "why": "gap -16.3%, pre-market vol 745,575, rvol 0.4x"
   },
   {
    "rank": 5,
-   "symbol": "STUB",
+   "symbol": "LUNR",
    "side": "sell",
-   "entry": 6.9362,
-   "stop": 7.303,
-   "target": 6.5694,
-   "why": "gap -18.8%, pre-market vol 731,933, rvol 2.7x"
+   "entry": 14.29,
+   "stop": 15.5672,
+   "target": 13.0128,
+   "why": "gap -15.7%, pre-market vol 3,393,061, rvol 0.5x"
   }
  ],
  "trades": [
   {
-   "symbol": "NBIS",
-   "side": "buy",
-   "entry": 232.11,
-   "exit": 238.505,
-   "pnl_pct": 2.7552,
-   "pnl_usd": 108.71,
+   "symbol": "STUB",
+   "side": "sell",
+   "entry": 7.41,
+   "exit": 7.505,
+   "pnl_pct": -1.2821,
+   "pnl_usd": -91.77,
    "reason": "time"
   },
   {
-   "symbol": "QNT",
+   "symbol": "OPEN",
    "side": "buy",
-   "entry": 70.15,
-   "exit": 68.85,
-   "pnl_pct": -1.8532,
-   "pnl_usd": -96.2,
+   "entry": 3.465,
+   "exit": 3.56,
+   "pnl_pct": 2.7417,
+   "pnl_usd": 158.84,
+   "reason": "time"
+  },
+  {
+   "symbol": "TBBB",
+   "side": "buy",
+   "entry": 49.125,
+   "exit": 48.55,
+   "pnl_pct": -1.1705,
+   "pnl_usd": -144.33,
    "reason": "time"
   }
  ],
- "trades_day_label": "Wednesday Aug 12",
- "eod_text": "2 trades, 1 winner, a net gain of $13 on the paper book. Every fill above is real output from the live pipeline: the same leads published here in the morning, executed with bracket exits and risk-normalized sizing, reported win or lose.",
+ "trades_day_label": "today",
+ "eod_text": "3 trades, 1 winner, a net loss of $77 on the paper book. Every fill above is real output from the live pipeline: the same leads published here in the morning, executed with bracket exits and risk-normalized sizing, reported win or lose.",
  "board": [
   {
    "label": "This week",
-   "n": 5,
-   "win_rate": "40%",
-   "pnl_usd": "-206"
+   "n": 8,
+   "win_rate": "38%",
+   "pnl_usd": "-284"
   },
   {
    "label": "This month",
-   "n": 17,
+   "n": 20,
    "win_rate": "35%",
-   "pnl_usd": "-1,579"
+   "pnl_usd": "-1,656"
   },
   {
    "label": "This year",
-   "n": 46,
+   "n": 49,
    "win_rate": "39%",
-   "pnl_usd": "-2,547"
+   "pnl_usd": "-2,624"
   }
  ],
  "swing": [
