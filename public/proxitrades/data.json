@@ -1,50 +1,50 @@
 {
- "stamp": "Thursday, August 13, 2026 17:05 ET",
+ "stamp": "Friday, August 14, 2026 09:27 ET",
  "leads": [
   {
    "rank": 1,
-   "symbol": "ARX",
-   "side": "buy",
-   "entry": 19.6,
-   "stop": 18.0278,
-   "target": 21.1722,
-   "why": "gap +44.0%, pre-market vol 16,730,053, rvol 9.4x"
+   "symbol": "YSS",
+   "side": "sell",
+   "entry": 10.0,
+   "stop": 11.4094,
+   "target": 8.5906,
+   "why": "gap -13.1%, pre-market vol 397,162, rvol 1.5x"
   },
   {
    "rank": 2,
-   "symbol": "STUB",
-   "side": "sell",
-   "entry": 6.95,
-   "stop": 7.3175,
-   "target": 6.5825,
-   "why": "gap -18.6%, pre-market vol 1,048,465, rvol 0.3x"
+   "symbol": "UMAC",
+   "side": "buy",
+   "entry": 31.8503,
+   "stop": 28.1343,
+   "target": 35.5663,
+   "why": "gap +16.9%, pre-market vol 799,569, rvol 0.9x"
   },
   {
    "rank": 3,
-   "symbol": "BIRK",
+   "symbol": "BOXL",
    "side": "buy",
-   "entry": 43.11,
-   "stop": 40.5684,
-   "target": 45.6516,
-   "why": "gap +17.3%, pre-market vol 206,546, rvol 0.1x"
+   "entry": 8.7423,
+   "stop": 7.2765,
+   "target": 10.2081,
+   "why": "gap +28.6%, pre-market vol 1,456,377, rvol 0.3x"
   },
   {
    "rank": 4,
-   "symbol": "CBRS",
-   "side": "sell",
-   "entry": 219.34,
-   "stop": 237.9853,
-   "target": 200.6947,
-   "why": "gap -16.3%, pre-market vol 745,575, rvol 0.4x"
+   "symbol": "BRUN",
+   "side": "buy",
+   "entry": 26.362,
+   "stop": 22.6983,
+   "target": 30.0257,
+   "why": "gap +16.9%, pre-market vol 304,720, rvol 2.0x"
   },
   {
    "rank": 5,
-   "symbol": "LUNR",
-   "side": "sell",
-   "entry": 14.29,
-   "stop": 15.5672,
-   "target": 13.0128,
-   "why": "gap -15.7%, pre-market vol 3,393,061, rvol 0.5x"
+   "symbol": "VERA",
+   "side": "buy",
+   "entry": 33.2,
+   "stop": 30.784,
+   "target": 35.616,
+   "why": "gap +14.9%, pre-market vol 695,212, rvol 0.5x"
   }
  ],
  "trades": [
@@ -76,7 +76,7 @@
    "reason": "time"
   }
  ],
- "trades_day_label": "today",
+ "trades_day_label": "Thursday Aug 13",
  "eod_text": "3 trades, 1 winner, a net loss of $77 on the paper book. Every fill above is real output from the live pipeline: the same leads published here in the morning, executed with bracket exits and risk-normalized sizing, reported win or lose.",
  "board": [
   {
