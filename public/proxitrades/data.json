@@ -1,50 +1,50 @@
 {
- "stamp": "Tuesday, August 18, 2026 09:27 ET",
+ "stamp": "Tuesday, August 18, 2026 17:05 ET",
  "leads": [
   {
    "rank": 1,
-   "symbol": "AXTI",
-   "side": "sell",
-   "entry": 88.19,
-   "stop": 99.2923,
-   "target": 77.0877,
-   "why": "gap -8.1%, pre-market vol 499,081, rvol 1.1x"
+   "symbol": "XOS",
+   "side": "buy",
+   "entry": 4.54,
+   "stop": 4.0063,
+   "target": 5.0737,
+   "why": "gap +117.2%, pre-market vol 46,492,355, rvol 17.4x"
   },
   {
    "rank": 2,
-   "symbol": "AUR",
-   "side": "sell",
-   "entry": 6.458,
-   "stop": 6.8213,
-   "target": 6.0947,
-   "why": "gap -7.3%, pre-market vol 848,609, rvol 1.2x"
+   "symbol": "WETO",
+   "side": "buy",
+   "entry": 43.22,
+   "stop": 34.4931,
+   "target": 51.9469,
+   "why": "gap +75.8%, pre-market vol 1,331,084, rvol 0.3x"
   },
   {
    "rank": 3,
    "symbol": "AMLX",
    "side": "buy",
-   "entry": 29.27,
-   "stop": 26.7685,
-   "target": 31.7715,
-   "why": "gap +36.6%, pre-market vol 3,062,071, rvol 0.7x"
+   "entry": 30.0,
+   "stop": 27.4362,
+   "target": 32.5638,
+   "why": "gap +40.0%, pre-market vol 3,369,470, rvol 2.5x"
   },
   {
    "rank": 4,
-   "symbol": "WETO",
-   "side": "buy",
-   "entry": 42.2,
-   "stop": 33.6791,
-   "target": 50.7209,
-   "why": "gap +71.6%, pre-market vol 1,302,577, rvol 5.3x"
+   "symbol": "KLAR",
+   "side": "sell",
+   "entry": 15.7069,
+   "stop": 16.4021,
+   "target": 15.0117,
+   "why": "gap -19.5%, pre-market vol 3,597,839, rvol 1.3x"
   },
   {
    "rank": 5,
-   "symbol": "KLAR",
+   "symbol": "WOLF",
    "side": "sell",
-   "entry": 15.773,
-   "stop": 16.4711,
-   "target": 15.0749,
-   "why": "gap -19.2%, pre-market vol 3,238,840, rvol 3.1x"
+   "entry": 32.1,
+   "stop": 35.1408,
+   "target": 29.0592,
+   "why": "gap -8.2%, pre-market vol 246,076, rvol 0.1x"
   }
  ],
  "trades": [
@@ -56,28 +56,55 @@
    "pnl_pct": -0.79,
    "pnl_usd": -39.42,
    "reason": "momentum_flip"
+  },
+  {
+   "symbol": "XOS",
+   "side": "buy",
+   "entry": 4.37,
+   "exit": 4.097,
+   "pnl_pct": -6.2478,
+   "pnl_usd": -399.99,
+   "reason": "stop"
+  },
+  {
+   "symbol": "AMLX",
+   "side": "buy",
+   "entry": 31.47,
+   "exit": 32.35,
+   "pnl_pct": 2.7963,
+   "pnl_usd": 190.08,
+   "reason": "time"
+  },
+  {
+   "symbol": "DT",
+   "side": "buy",
+   "entry": 49.65,
+   "exit": 49.625,
+   "pnl_pct": -0.0504,
+   "pnl_usd": -4.1,
+   "reason": "time"
   }
  ],
  "trades_day_label": "today",
- "eod_text": "",
+ "eod_text": "4 trades, 1 winner, a net loss of $253 on the paper book. Every fill above is real output from the live pipeline: the same leads published here in the morning, executed with bracket exits and risk-normalized sizing, reported win or lose.",
  "board": [
   {
    "label": "This week",
-   "n": 4,
-   "win_rate": "50%",
-   "pnl_usd": "+444"
+   "n": 7,
+   "win_rate": "43%",
+   "pnl_usd": "+230"
   },
   {
    "label": "This month",
-   "n": 26,
+   "n": 29,
    "win_rate": "38%",
-   "pnl_usd": "-1,127"
+   "pnl_usd": "-1,341"
   },
   {
    "label": "This year",
-   "n": 55,
+   "n": 58,
    "win_rate": "40%",
-   "pnl_usd": "-2,095"
+   "pnl_usd": "-2,309"
   }
  ],
  "swing": [
