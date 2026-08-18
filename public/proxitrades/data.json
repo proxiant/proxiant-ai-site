@@ -1,101 +1,83 @@
 {
- "stamp": "Monday, August 17, 2026 17:05 ET",
+ "stamp": "Tuesday, August 18, 2026 09:27 ET",
  "leads": [
   {
    "rank": 1,
-   "symbol": "IPST",
-   "side": "buy",
-   "entry": 7.95,
-   "stop": 7.1423,
-   "target": 8.7577,
-   "why": "gap +261.3%, pre-market vol 35,040,733, rvol 383.2x"
+   "symbol": "AXTI",
+   "side": "sell",
+   "entry": 88.19,
+   "stop": 99.2923,
+   "target": 77.0877,
+   "why": "gap -8.1%, pre-market vol 499,081, rvol 1.1x"
   },
   {
    "rank": 2,
-   "symbol": "JLHL",
-   "side": "buy",
-   "entry": 8.88,
-   "stop": 6.6428,
-   "target": 11.1172,
-   "why": "gap +23.5%, pre-market vol 216,331, rvol 0.1x"
+   "symbol": "AUR",
+   "side": "sell",
+   "entry": 6.458,
+   "stop": 6.8213,
+   "target": 6.0947,
+   "why": "gap -7.3%, pre-market vol 848,609, rvol 1.2x"
   },
   {
    "rank": 3,
-   "symbol": "WETO",
+   "symbol": "AMLX",
    "side": "buy",
-   "entry": 10.14,
-   "stop": 6.1715,
-   "target": 14.1085,
-   "why": "gap +23.4%, pre-market vol 1,285,537, rvol 0.4x"
+   "entry": 29.27,
+   "stop": 26.7685,
+   "target": 31.7715,
+   "why": "gap +36.6%, pre-market vol 3,062,071, rvol 0.7x"
   },
   {
    "rank": 4,
-   "symbol": "PURR",
+   "symbol": "WETO",
    "side": "buy",
-   "entry": 7.26,
-   "stop": 6.789,
-   "target": 7.731,
-   "why": "gap +8.7%, pre-market vol 547,562, rvol 0.2x"
+   "entry": 42.2,
+   "stop": 33.6791,
+   "target": 50.7209,
+   "why": "gap +71.6%, pre-market vol 1,302,577, rvol 5.3x"
   },
   {
    "rank": 5,
-   "symbol": "ALM",
-   "side": "buy",
-   "entry": 16.26,
-   "stop": 14.7773,
-   "target": 17.7427,
-   "why": "gap +7.8%, pre-market vol 284,187, rvol 0.4x"
+   "symbol": "KLAR",
+   "side": "sell",
+   "entry": 15.773,
+   "stop": 16.4711,
+   "target": 15.0749,
+   "why": "gap -19.2%, pre-market vol 3,238,840, rvol 3.1x"
   }
  ],
  "trades": [
   {
-   "symbol": "WETO",
+   "symbol": "LINK",
    "side": "buy",
-   "entry": 16.03,
-   "exit": 18.8212,
-   "pnl_pct": 17.4126,
-   "pnl_usd": 399.15,
-   "reason": "target"
-  },
-  {
-   "symbol": "IPST",
-   "side": "buy",
-   "entry": 8.29,
-   "exit": 8.7305,
-   "pnl_pct": 5.3132,
-   "pnl_usd": 399.94,
-   "reason": "target"
-  },
-  {
-   "symbol": "NXE",
-   "side": "buy",
-   "entry": 11.175,
-   "exit": 10.87,
-   "pnl_pct": -2.7293,
-   "pnl_usd": -315.37,
-   "reason": "time"
+   "entry": 9.512,
+   "exit": 9.437,
+   "pnl_pct": -0.79,
+   "pnl_usd": -39.42,
+   "reason": "momentum_flip"
   }
  ],
  "trades_day_label": "today",
- "eod_text": "3 trades, 2 winners, a net gain of $484 on the paper book. Every fill above is real output from the live pipeline: the same leads published here in the morning, executed with bracket exits and risk-normalized sizing, reported win or lose.",
+ "eod_text": "",
  "board": [
   {
    "label": "This week",
-   "n": 3,
-   "win_rate": "67%",
-   "pnl_usd": "+484"
+   "n": 4,
+   "win_rate": "50%",
+   "pnl_usd": "+444"
   },
   {
    "label": "This month",
-   "n": 25,
-   "win_rate": "40%",
-   "pnl_usd": "-1,087"
+   "n": 26,
+   "win_rate": "38%",
+   "pnl_usd": "-1,127"
   },
   {
    "label": "This year",
-   "n": 54,
-   "win_rate": "41%",
-   "pnl_usd": "-2,056"
+   "n": 55,
+   "win_rate": "40%",
+   "pnl_usd": "-2,095"
   }
  ],
  "swing": [
