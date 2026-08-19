@@ -1,50 +1,50 @@
 {
- "stamp": "Tuesday, August 18, 2026 17:05 ET",
+ "stamp": "Wednesday, August 19, 2026 09:27 ET",
  "leads": [
   {
    "rank": 1,
-   "symbol": "XOS",
+   "symbol": "MRNA",
    "side": "buy",
-   "entry": 4.54,
-   "stop": 4.0063,
-   "target": 5.0737,
-   "why": "gap +117.2%, pre-market vol 46,492,355, rvol 17.4x"
+   "entry": 121.12,
+   "stop": 112.0745,
+   "target": 130.1655,
+   "why": "gap +92.4%, pre-market vol 14,595,510, rvol 0.7x"
   },
   {
    "rank": 2,
-   "symbol": "WETO",
+   "symbol": "TEM",
    "side": "buy",
-   "entry": 43.22,
-   "stop": 34.4931,
-   "target": 51.9469,
-   "why": "gap +75.8%, pre-market vol 1,331,084, rvol 0.3x"
+   "entry": 56.5,
+   "stop": 51.8835,
+   "target": 61.1165,
+   "why": "gap +14.5%, pre-market vol 932,950, rvol 0.9x"
   },
   {
    "rank": 3,
-   "symbol": "AMLX",
-   "side": "buy",
-   "entry": 30.0,
-   "stop": 27.4362,
-   "target": 32.5638,
-   "why": "gap +40.0%, pre-market vol 3,369,470, rvol 2.5x"
+   "symbol": "WYFI",
+   "side": "sell",
+   "entry": 21.32,
+   "stop": 23.8149,
+   "target": 18.8251,
+   "why": "gap -21.2%, pre-market vol 849,253, rvol 3.0x"
   },
   {
    "rank": 4,
-   "symbol": "KLAR",
+   "symbol": "PFSA",
    "side": "sell",
-   "entry": 15.7069,
-   "stop": 16.4021,
-   "target": 15.0117,
-   "why": "gap -19.5%, pre-market vol 3,597,839, rvol 1.3x"
+   "entry": 17.26,
+   "stop": 18.6947,
+   "target": 15.8253,
+   "why": "gap -37.2%, pre-market vol 205,809, rvol 145.4x"
   },
   {
    "rank": 5,
-   "symbol": "WOLF",
+   "symbol": "WETO",
    "side": "sell",
-   "entry": 32.1,
-   "stop": 35.1408,
-   "target": 29.0592,
-   "why": "gap -8.2%, pre-market vol 246,076, rvol 0.1x"
+   "entry": 21.88,
+   "stop": 25.8544,
+   "target": 17.9056,
+   "why": "gap -33.7%, pre-market vol 129,567, rvol 0.9x"
   }
  ],
  "trades": [
@@ -83,28 +83,37 @@
    "pnl_pct": -0.0504,
    "pnl_usd": -4.1,
    "reason": "time"
+  },
+  {
+   "symbol": "AAVE",
+   "side": "buy",
+   "entry": 88.41,
+   "exit": 87.23,
+   "pnl_pct": -1.33,
+   "pnl_usd": -66.73,
+   "reason": "momentum_flip"
   }
  ],
- "trades_day_label": "today",
- "eod_text": "4 trades, 1 winner, a net loss of $253 on the paper book. Every fill above is real output from the live pipeline: the same leads published here in the morning, executed with bracket exits and risk-normalized sizing, reported win or lose.",
+ "trades_day_label": "Tuesday Aug 18",
+ "eod_text": "5 trades, 1 winner, a net loss of $320 on the paper book. Every fill above is real output from the live pipeline: the same leads published here in the morning, executed with bracket exits and risk-normalized sizing, reported win or lose.",
  "board": [
   {
    "label": "This week",
-   "n": 7,
-   "win_rate": "43%",
-   "pnl_usd": "+230"
+   "n": 8,
+   "win_rate": "38%",
+   "pnl_usd": "+164"
   },
   {
    "label": "This month",
-   "n": 29,
-   "win_rate": "38%",
-   "pnl_usd": "-1,341"
+   "n": 30,
+   "win_rate": "37%",
+   "pnl_usd": "-1,407"
   },
   {
    "label": "This year",
-   "n": 58,
-   "win_rate": "40%",
-   "pnl_usd": "-2,309"
+   "n": 59,
+   "win_rate": "39%",
+   "pnl_usd": "-2,376"
   }
  ],
  "swing": [
