@@ -123,6 +123,11 @@ export default function Page() {
 
         <section data-reveal>
           <div className="font-mono text-[12px] tracking-[0.14em] text-zinc-500 mb-4">SCOREBOARD</div>
+          {(data as Record<string, unknown>).epoch_note ? (
+            <p className="muted text-[13px] leading-relaxed max-w-3xl mb-4">
+              {String((data as Record<string, unknown>).epoch_note)}
+            </p>
+          ) : null}
           <div className="grid sm:grid-cols-3 gap-4">
             {board.map((b) => (
               <div key={b.label} className="card p-7">
