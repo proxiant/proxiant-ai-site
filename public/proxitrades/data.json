@@ -1,50 +1,50 @@
 {
- "stamp": "Wednesday, August 19, 2026 17:05 ET",
+ "stamp": "Thursday, August 20, 2026 09:27 ET",
  "leads": [
   {
    "rank": 1,
-   "symbol": "TNON",
-   "side": "buy",
-   "entry": 11.65,
-   "stop": 9.8371,
-   "target": 13.4629,
-   "why": "gap +113.8%, pre-market vol 9,847,597, rvol 12.7x"
+   "symbol": "WOLF",
+   "side": "sell",
+   "entry": 25.79,
+   "stop": 28.5834,
+   "target": 22.9966,
+   "why": "gap -11.3%, pre-market vol 297,157, rvol 2.1x"
   },
   {
    "rank": 2,
-   "symbol": "MRNA",
-   "side": "buy",
-   "entry": 116.08,
-   "stop": 107.4109,
-   "target": 124.7491,
-   "why": "gap +84.4%, pre-market vol 15,455,402, rvol 4.1x"
+   "symbol": "AAP",
+   "side": "sell",
+   "entry": 45.25,
+   "stop": 47.2754,
+   "target": 43.2246,
+   "why": "gap -19.5%, pre-market vol 525,238, rvol 1.6x"
   },
   {
    "rank": 3,
-   "symbol": "PFSA",
+   "symbol": "TNON",
    "side": "sell",
-   "entry": 16.0,
-   "stop": 17.33,
-   "target": 14.67,
-   "why": "gap -41.8%, pre-market vol 219,201, rvol 0.1x"
+   "entry": 7.5,
+   "stop": 8.7007,
+   "target": 6.2993,
+   "why": "gap -34.3%, pre-market vol 321,132, rvol 40.2x"
   },
   {
    "rank": 4,
    "symbol": "WETO",
-   "side": "sell",
-   "entry": 21.2,
-   "stop": 25.0509,
-   "target": 17.3491,
-   "why": "gap -35.8%, pre-market vol 133,459, rvol 0.0x"
+   "side": "buy",
+   "entry": 31.15,
+   "stop": 17.9458,
+   "target": 44.3542,
+   "why": "gap +50.0%, pre-market vol 707,910, rvol 0.1x"
   },
   {
    "rank": 5,
-   "symbol": "WYFI",
-   "side": "sell",
-   "entry": 22.04,
-   "stop": 24.6191,
-   "target": 19.4609,
-   "why": "gap -18.6%, pre-market vol 956,495, rvol 0.7x"
+   "symbol": "BULL",
+   "side": "buy",
+   "entry": 9.84,
+   "stop": 9.3509,
+   "target": 10.3291,
+   "why": "gap +13.9%, pre-market vol 3,445,850, rvol 4.3x"
   }
  ],
  "trades": [
@@ -85,7 +85,7 @@
    "reason": "time"
   }
  ],
- "trades_day_label": "today",
+ "trades_day_label": "Wednesday Aug 19",
  "eod_text": "4 trades, 4 winners, a net gain of $969 on the paper book. Every fill above is real output from the live pipeline: the same leads published here in the morning, executed with bracket exits and risk-normalized sizing, reported win or lose.",
  "board": [
   {
