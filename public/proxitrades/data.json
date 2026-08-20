@@ -1,110 +1,83 @@
 {
- "stamp": "Thursday, August 20, 2026 09:27 ET",
+ "stamp": "Thursday, August 20, 2026 17:05 ET",
  "leads": [
   {
    "rank": 1,
-   "symbol": "WOLF",
-   "side": "sell",
-   "entry": 25.79,
-   "stop": 28.5834,
-   "target": 22.9966,
-   "why": "gap -11.3%, pre-market vol 297,157, rvol 2.1x"
+   "symbol": "WETO",
+   "side": "buy",
+   "entry": 30.21,
+   "stop": 17.4042,
+   "target": 43.0158,
+   "why": "gap +45.5%, pre-market vol 719,930, rvol 0.2x"
   },
   {
    "rank": 2,
-   "symbol": "AAP",
-   "side": "sell",
-   "entry": 45.25,
-   "stop": 47.2754,
-   "target": 43.2246,
-   "why": "gap -19.5%, pre-market vol 525,238, rvol 1.6x"
-  },
-  {
-   "rank": 3,
    "symbol": "TNON",
    "side": "sell",
    "entry": 7.5,
    "stop": 8.7007,
    "target": 6.2993,
-   "why": "gap -34.3%, pre-market vol 321,132, rvol 40.2x"
+   "why": "gap -34.3%, pre-market vol 359,250, rvol 0.1x"
+  },
+  {
+   "rank": 3,
+   "symbol": "AAP",
+   "side": "sell",
+   "entry": 46.4,
+   "stop": 48.4769,
+   "target": 44.3231,
+   "why": "gap -17.4%, pre-market vol 585,175, rvol 0.5x"
   },
   {
    "rank": 4,
-   "symbol": "WETO",
+   "symbol": "BULL",
    "side": "buy",
-   "entry": 31.15,
-   "stop": 17.9458,
-   "target": 44.3542,
-   "why": "gap +50.0%, pre-market vol 707,910, rvol 0.1x"
+   "entry": 9.93,
+   "stop": 9.4364,
+   "target": 10.4236,
+   "why": "gap +14.9%, pre-market vol 4,269,310, rvol 0.5x"
   },
   {
    "rank": 5,
-   "symbol": "BULL",
-   "side": "buy",
-   "entry": 9.84,
-   "stop": 9.3509,
-   "target": 10.3291,
-   "why": "gap +13.9%, pre-market vol 3,445,850, rvol 4.3x"
+   "symbol": "MRNA",
+   "side": "sell",
+   "entry": 150.1,
+   "stop": 163.0171,
+   "target": 137.1829,
+   "why": "gap -13.9%, pre-market vol 5,887,602, rvol 0.5x"
   }
  ],
  "trades": [
   {
-   "symbol": "MRNA",
+   "symbol": "WETO",
    "side": "buy",
-   "entry": 132.7,
-   "exit": 140.3359,
-   "pnl_pct": 5.7542,
-   "pnl_usd": 397.06,
-   "reason": "target"
-  },
-  {
-   "symbol": "TNON",
-   "side": "buy",
-   "entry": 15.56,
-   "exit": 16.8598,
-   "pnl_pct": 8.3533,
-   "pnl_usd": 399.03,
-   "reason": "target"
-  },
-  {
-   "symbol": "PURR",
-   "side": "buy",
-   "entry": 7.88,
-   "exit": 8.04,
-   "pnl_pct": 2.0305,
-   "pnl_usd": 152.64,
-   "reason": "time"
-  },
-  {
-   "symbol": "ASST",
-   "side": "buy",
-   "entry": 14.57,
-   "exit": 14.62,
-   "pnl_pct": 0.3432,
-   "pnl_usd": 20.15,
+   "entry": 32.56,
+   "exit": 29.22,
+   "pnl_pct": -10.258,
+   "pnl_usd": -63.46,
    "reason": "time"
   }
  ],
- "trades_day_label": "Wednesday Aug 19",
- "eod_text": "4 trades, 4 winners, a net gain of $969 on the paper book. Every fill above is real output from the live pipeline: the same leads published here in the morning, executed with bracket exits and risk-normalized sizing, reported win or lose.",
+ "trades_day_label": "today",
+ "eod_text": "1 trade, 0 winners, a net loss of $63 on the paper book. Every fill above is real output from the live pipeline: the same leads published here in the morning, executed with bracket exits and risk-normalized sizing, reported win or lose.",
  "board": [
   {
    "label": "This week",
-   "n": 12,
-   "win_rate": "58%",
-   "pnl_usd": "+1,132"
+   "n": 13,
+   "win_rate": "54%",
+   "pnl_usd": "+1,069"
   },
   {
    "label": "This month",
-   "n": 12,
-   "win_rate": "58%",
-   "pnl_usd": "+1,132"
+   "n": 13,
+   "win_rate": "54%",
+   "pnl_usd": "+1,069"
   },
   {
    "label": "Since 2026-08-17",
-   "n": 12,
-   "win_rate": "58%",
-   "pnl_usd": "+1,132"
+   "n": 13,
+   "win_rate": "54%",
+   "pnl_usd": "+1,069"
   }
  ],
  "public_epoch": "2026-08-17",
