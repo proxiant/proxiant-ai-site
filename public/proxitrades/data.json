@@ -1,83 +1,101 @@
 {
- "stamp": "Friday, August 21, 2026 09:27 ET",
+ "stamp": "Friday, August 21, 2026 17:05 ET",
  "leads": [
   {
    "rank": 1,
-   "symbol": "MSTR",
+   "symbol": "IPST",
    "side": "buy",
-   "entry": 120.1299,
-   "stop": 112.3912,
-   "target": 127.8686,
-   "why": "gap +6.9%, pre-market vol 3,503,501, rvol 2.3x"
+   "entry": 11.6,
+   "stop": 7.1327,
+   "target": 16.0673,
+   "why": "gap +12.5%, pre-market vol 136,516, rvol 0.0x"
   },
   {
    "rank": 2,
-   "symbol": "FLO",
-   "side": "sell",
-   "entry": 6.6564,
-   "stop": 6.9156,
-   "target": 6.3972,
-   "why": "gap -6.2%, pre-market vol 337,810, rvol 2.1x"
+   "symbol": "ASST",
+   "side": "buy",
+   "entry": 17.69,
+   "stop": 16.517,
+   "target": 18.863,
+   "why": "gap +9.7%, pre-market vol 624,723, rvol 0.2x"
   },
   {
    "rank": 3,
    "symbol": "BTDR",
    "side": "buy",
-   "entry": 11.22,
-   "stop": 9.673,
-   "target": 12.767,
-   "why": "gap +7.6%, pre-market vol 566,558, rvol 1.3x"
+   "entry": 11.13,
+   "stop": 9.5954,
+   "target": 12.6646,
+   "why": "gap +6.7%, pre-market vol 659,915, rvol 0.1x"
   },
   {
    "rank": 4,
-   "symbol": "ASST",
+   "symbol": "MSTR",
    "side": "buy",
-   "entry": 17.6,
-   "stop": 16.4329,
-   "target": 18.7671,
-   "why": "gap +9.1%, pre-market vol 589,993, rvol 3.1x"
+   "entry": 119.58,
+   "stop": 111.8767,
+   "target": 127.2833,
+   "why": "gap +6.4%, pre-market vol 3,638,760, rvol 0.3x"
   },
   {
    "rank": 5,
-   "symbol": "IPST",
+   "symbol": "HOOD",
    "side": "buy",
-   "entry": 11.4,
-   "stop": 7.0097,
-   "target": 15.7903,
-   "why": "gap +10.6%, pre-market vol 130,186, rvol 0.5x"
+   "entry": 101.15,
+   "stop": 95.2302,
+   "target": 107.0698,
+   "why": "gap +6.4%, pre-market vol 1,328,037, rvol 0.2x"
   }
  ],
  "trades": [
   {
-   "symbol": "WETO",
+   "symbol": "BTDR",
    "side": "buy",
-   "entry": 32.56,
-   "exit": 29.22,
-   "pnl_pct": -10.258,
-   "pnl_usd": -63.46,
+   "entry": 11.575,
+   "exit": 10.855,
+   "pnl_pct": -6.2203,
+   "pnl_usd": -223.2,
+   "reason": "time"
+  },
+  {
+   "symbol": "HOOD",
+   "side": "buy",
+   "entry": 107.72,
+   "exit": 107.4,
+   "pnl_pct": -0.2971,
+   "pnl_usd": -18.56,
+   "reason": "time"
+  },
+  {
+   "symbol": "ASST",
+   "side": "buy",
+   "entry": 18.56,
+   "exit": 18.65,
+   "pnl_pct": 0.4849,
+   "pnl_usd": 20.52,
    "reason": "time"
   }
  ],
- "trades_day_label": "Thursday Aug 20",
- "eod_text": "1 trade, 0 winners, a net loss of $63 on the paper book. Every fill above is real output from the live pipeline: the same leads published here in the morning, executed with bracket exits and risk-normalized sizing, reported win or lose.",
+ "trades_day_label": "today",
+ "eod_text": "3 trades, 1 winner, a net loss of $221 on the paper book. Every fill above is real output from the live pipeline: the same leads published here in the morning, executed with bracket exits and risk-normalized sizing, reported win or lose.",
  "board": [
   {
    "label": "This week",
-   "n": 13,
-   "win_rate": "54%",
-   "pnl_usd": "+1,069"
+   "n": 16,
+   "win_rate": "50%",
+   "pnl_usd": "+848"
   },
   {
    "label": "This month",
-   "n": 13,
-   "win_rate": "54%",
-   "pnl_usd": "+1,069"
+   "n": 16,
+   "win_rate": "50%",
+   "pnl_usd": "+848"
   },
   {
    "label": "Since 2026-08-17",
-   "n": 13,
-   "win_rate": "54%",
-   "pnl_usd": "+1,069"
+   "n": 16,
+   "win_rate": "50%",
+   "pnl_usd": "+848"
   }
  ],
  "public_epoch": "2026-08-17",
