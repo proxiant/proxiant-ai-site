@@ -1,92 +1,110 @@
 {
- "stamp": "Monday, August 24, 2026 09:27 ET",
+ "stamp": "Monday, August 24, 2026 17:05 ET",
  "leads": [
   {
    "rank": 1,
-   "symbol": "AAOI",
-   "side": "sell",
-   "entry": 109.12,
-   "stop": 124.0274,
-   "target": 94.2126,
-   "why": "gap -12.6%, pre-market vol 471,048, rvol 0.7x"
+   "symbol": "XPON",
+   "side": "buy",
+   "entry": 7.78,
+   "stop": 6.9609,
+   "target": 8.5991,
+   "why": "gap +126.5%, pre-market vol 20,189,774, rvol 19.6x"
   },
   {
    "rank": 2,
-   "symbol": "AXTI",
-   "side": "sell",
-   "entry": 66.62,
-   "stop": 76.7832,
-   "target": 56.4568,
-   "why": "gap -5.8%, pre-market vol 253,789, rvol 0.7x"
+   "symbol": "SDOT",
+   "side": "buy",
+   "entry": 21.4,
+   "stop": 18.1786,
+   "target": 24.6214,
+   "why": "gap +62.4%, pre-market vol 4,206,567, rvol 4.2x"
   },
   {
    "rank": 3,
    "symbol": "CAPR",
    "side": "buy",
-   "entry": 6.65,
-   "stop": 5.4577,
-   "target": 7.8423,
-   "why": "gap +5.7%, pre-market vol 426,405, rvol 0.6x"
+   "entry": 8.01,
+   "stop": 6.5739,
+   "target": 9.4461,
+   "why": "gap +27.3%, pre-market vol 1,713,624, rvol 0.2x"
   },
   {
    "rank": 4,
-   "symbol": "SNDK",
+   "symbol": "AAOI",
    "side": "sell",
-   "entry": 1505.23,
-   "stop": 1630.5501,
-   "target": 1379.9099,
-   "why": "gap -5.7%, pre-market vol 304,732, rvol 0.5x"
+   "entry": 109.37,
+   "stop": 124.3115,
+   "target": 94.4285,
+   "why": "gap -12.4%, pre-market vol 546,371, rvol 0.1x"
   },
   {
    "rank": 5,
-   "symbol": "COHR",
+   "symbol": "SNDK",
    "side": "sell",
-   "entry": 273.5,
-   "stop": 307.2317,
-   "target": 239.7683,
-   "why": "gap -5.5%, pre-market vol 169,658, rvol 0.7x"
+   "entry": 1493.5,
+   "stop": 1617.8435,
+   "target": 1369.1565,
+   "why": "gap -6.4%, pre-market vol 347,679, rvol 0.1x"
   }
  ],
  "trades": [
   {
-   "symbol": "BTC",
-   "side": "buy",
-   "entry": 76868.3594,
-   "exit": 76898.5078,
-   "pnl_pct": 0.04,
-   "pnl_usd": 1.96,
-   "reason": "momentum_flip"
+   "symbol": "AAOI",
+   "side": "sell",
+   "entry": 103.01,
+   "exit": 105.42,
+   "pnl_pct": -2.3396,
+   "pnl_usd": -40.97,
+   "reason": "time"
   },
   {
-   "symbol": "LTC",
+   "symbol": "SDOT",
    "side": "buy",
-   "entry": 54.156,
-   "exit": 51.3,
-   "pnl_pct": -5.27,
-   "pnl_usd": -263.68,
-   "reason": "momentum_flip"
+   "entry": 28.9,
+   "exit": 26.17,
+   "pnl_pct": -9.4464,
+   "pnl_usd": -171.99,
+   "reason": "time"
+  },
+  {
+   "symbol": "XPON",
+   "side": "buy",
+   "entry": 8.315,
+   "exit": 7.9704,
+   "pnl_pct": -4.1444,
+   "pnl_usd": -399.74,
+   "reason": "stop"
+  },
+  {
+   "symbol": "CAPR",
+   "side": "buy",
+   "entry": 7.38,
+   "exit": 7.16,
+   "pnl_pct": -2.981,
+   "pnl_usd": -63.8,
+   "reason": "time"
   }
  ],
- "trades_day_label": "Saturday Aug 22",
- "eod_text": "2 trades, 1 winner, a net loss of $262 on the paper book. Every fill above is real output from the live pipeline: the same leads published here in the morning, executed with bracket exits and risk-normalized sizing, reported win or lose.",
+ "trades_day_label": "today",
+ "eod_text": "4 trades, 0 winners, a net loss of $676 on the paper book. Every fill above is real output from the live pipeline: the same leads published here in the morning, executed with bracket exits and risk-normalized sizing, reported win or lose.",
  "board": [
   {
    "label": "This week",
-   "n": 0,
-   "win_rate": "-",
-   "pnl_usd": "-"
+   "n": 4,
+   "win_rate": "0%",
+   "pnl_usd": "-676"
   },
   {
    "label": "This month",
-   "n": 18,
-   "win_rate": "50%",
-   "pnl_usd": "+586"
+   "n": 22,
+   "win_rate": "41%",
+   "pnl_usd": "-90"
   },
   {
    "label": "Since 2026-08-17",
-   "n": 18,
-   "win_rate": "50%",
-   "pnl_usd": "+586"
+   "n": 22,
+   "win_rate": "41%",
+   "pnl_usd": "-90"
   }
  ],
  "public_epoch": "2026-08-17",
