@@ -1,135 +1,126 @@
 {
- "stamp": "Friday, August 21, 2026 17:05 ET",
+ "stamp": "Monday, August 24, 2026 09:27 ET",
  "leads": [
   {
    "rank": 1,
-   "symbol": "IPST",
-   "side": "buy",
-   "entry": 11.6,
-   "stop": 7.1327,
-   "target": 16.0673,
-   "why": "gap +12.5%, pre-market vol 136,516, rvol 0.0x"
+   "symbol": "AAOI",
+   "side": "sell",
+   "entry": 109.12,
+   "stop": 124.0274,
+   "target": 94.2126,
+   "why": "gap -12.6%, pre-market vol 471,048, rvol 0.7x"
   },
   {
    "rank": 2,
-   "symbol": "ASST",
-   "side": "buy",
-   "entry": 17.69,
-   "stop": 16.517,
-   "target": 18.863,
-   "why": "gap +9.7%, pre-market vol 624,723, rvol 0.2x"
+   "symbol": "AXTI",
+   "side": "sell",
+   "entry": 66.62,
+   "stop": 76.7832,
+   "target": 56.4568,
+   "why": "gap -5.8%, pre-market vol 253,789, rvol 0.7x"
   },
   {
    "rank": 3,
-   "symbol": "BTDR",
+   "symbol": "CAPR",
    "side": "buy",
-   "entry": 11.13,
-   "stop": 9.5954,
-   "target": 12.6646,
-   "why": "gap +6.7%, pre-market vol 659,915, rvol 0.1x"
+   "entry": 6.65,
+   "stop": 5.4577,
+   "target": 7.8423,
+   "why": "gap +5.7%, pre-market vol 426,405, rvol 0.6x"
   },
   {
    "rank": 4,
-   "symbol": "MSTR",
-   "side": "buy",
-   "entry": 119.58,
-   "stop": 111.8767,
-   "target": 127.2833,
-   "why": "gap +6.4%, pre-market vol 3,638,760, rvol 0.3x"
+   "symbol": "SNDK",
+   "side": "sell",
+   "entry": 1505.23,
+   "stop": 1630.5501,
+   "target": 1379.9099,
+   "why": "gap -5.7%, pre-market vol 304,732, rvol 0.5x"
   },
   {
    "rank": 5,
-   "symbol": "HOOD",
-   "side": "buy",
-   "entry": 101.15,
-   "stop": 95.2302,
-   "target": 107.0698,
-   "why": "gap +6.4%, pre-market vol 1,328,037, rvol 0.2x"
+   "symbol": "COHR",
+   "side": "sell",
+   "entry": 273.5,
+   "stop": 307.2317,
+   "target": 239.7683,
+   "why": "gap -5.5%, pre-market vol 169,658, rvol 0.7x"
   }
  ],
  "trades": [
   {
-   "symbol": "BTDR",
+   "symbol": "BTC",
    "side": "buy",
-   "entry": 11.575,
-   "exit": 10.855,
-   "pnl_pct": -6.2203,
-   "pnl_usd": -223.2,
-   "reason": "time"
+   "entry": 76868.3594,
+   "exit": 76898.5078,
+   "pnl_pct": 0.04,
+   "pnl_usd": 1.96,
+   "reason": "momentum_flip"
   },
   {
-   "symbol": "HOOD",
+   "symbol": "LTC",
    "side": "buy",
-   "entry": 107.72,
-   "exit": 107.4,
-   "pnl_pct": -0.2971,
-   "pnl_usd": -18.56,
-   "reason": "time"
-  },
-  {
-   "symbol": "ASST",
-   "side": "buy",
-   "entry": 18.56,
-   "exit": 18.65,
-   "pnl_pct": 0.4849,
-   "pnl_usd": 20.52,
-   "reason": "time"
+   "entry": 54.156,
+   "exit": 51.3,
+   "pnl_pct": -5.27,
+   "pnl_usd": -263.68,
+   "reason": "momentum_flip"
   }
  ],
- "trades_day_label": "today",
- "eod_text": "3 trades, 1 winner, a net loss of $221 on the paper book. Every fill above is real output from the live pipeline: the same leads published here in the morning, executed with bracket exits and risk-normalized sizing, reported win or lose.",
+ "trades_day_label": "Saturday Aug 22",
+ "eod_text": "2 trades, 1 winner, a net loss of $262 on the paper book. Every fill above is real output from the live pipeline: the same leads published here in the morning, executed with bracket exits and risk-normalized sizing, reported win or lose.",
  "board": [
   {
    "label": "This week",
-   "n": 16,
-   "win_rate": "50%",
-   "pnl_usd": "+848"
+   "n": 0,
+   "win_rate": "-",
+   "pnl_usd": "-"
   },
   {
    "label": "This month",
-   "n": 16,
+   "n": 18,
    "win_rate": "50%",
-   "pnl_usd": "+848"
+   "pnl_usd": "+586"
   },
   {
    "label": "Since 2026-08-17",
-   "n": 16,
+   "n": 18,
    "win_rate": "50%",
-   "pnl_usd": "+848"
+   "pnl_usd": "+586"
   }
  ],
  "public_epoch": "2026-08-17",
  "epoch_note": "Track record restarted August 17, 2026 after a round of execution fixes (entry timing, closed-bar confirmation, regime parity, bracket geometry). Earlier results are archived and excluded here.",
  "swing": [
   {
+   "symbol": "MRNA",
+   "entry": 145.1,
+   "stop": 113.24,
+   "target": 192.89
+  },
+  {
    "symbol": "AMD",
-   "entry": 514.39,
-   "stop": 448.4,
-   "target": 613.39
+   "entry": 473.2,
+   "stop": 425.92,
+   "target": 544.11
   },
   {
    "symbol": "MU",
-   "entry": 971.98,
-   "stop": 823.41,
-   "target": 1194.84
+   "entry": 966.54,
+   "stop": 855.51,
+   "target": 1133.09
   },
   {
    "symbol": "SNOW",
-   "entry": 328.92,
-   "stop": 300.88,
-   "target": 370.96
+   "entry": 332.85,
+   "stop": 310.18,
+   "target": 366.85
   },
   {
    "symbol": "ROKU",
-   "entry": 157.71,
-   "stop": 153.77,
-   "target": 163.63
-  },
-  {
-   "symbol": "PYPL",
-   "entry": 61.64,
-   "stop": 58.65,
-   "target": 66.12
+   "entry": 157.46,
+   "stop": 153.48,
+   "target": 163.42
   }
  ],
  "posture": "LONG",
