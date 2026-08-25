@@ -1,110 +1,101 @@
 {
- "stamp": "Tuesday, August 25, 2026 09:27 ET",
+ "stamp": "Tuesday, August 25, 2026 17:05 ET",
  "leads": [
   {
    "rank": 1,
-   "symbol": "FLNC",
+   "symbol": "DAIC",
    "side": "buy",
-   "entry": 11.8,
-   "stop": 10.5705,
-   "target": 13.0295,
-   "why": "gap +8.7%, pre-market vol 619,771, rvol 1.2x"
+   "entry": 3.62,
+   "stop": 3.0803,
+   "target": 4.1597,
+   "why": "gap +109.2%, pre-market vol 34,374,282, rvol 3.8x"
   },
   {
    "rank": 2,
-   "symbol": "KURA",
-   "side": "buy",
-   "entry": 13.598,
-   "stop": 12.5882,
-   "target": 14.6078,
-   "why": "gap +9.7%, pre-market vol 143,076, rvol 1.1x"
+   "symbol": "DKS",
+   "side": "sell",
+   "entry": 142.25,
+   "stop": 147.9896,
+   "target": 136.5104,
+   "why": "gap -20.7%, pre-market vol 1,337,056, rvol 1.1x"
   },
   {
    "rank": 3,
-   "symbol": "DKS",
+   "symbol": "SDOT",
    "side": "sell",
-   "entry": 141.9548,
-   "stop": 147.6825,
-   "target": 136.2271,
-   "why": "gap -20.8%, pre-market vol 1,214,753, rvol 2.2x"
+   "entry": 19.45,
+   "stop": 22.1968,
+   "target": 16.7032,
+   "why": "gap -16.0%, pre-market vol 220,831, rvol 0.1x"
   },
   {
    "rank": 4,
-   "symbol": "SDOT",
+   "symbol": "USDE",
    "side": "sell",
-   "entry": 20.0,
-   "stop": 22.8244,
-   "target": 17.1756,
-   "why": "gap -13.6%, pre-market vol 212,101, rvol 14.6x"
+   "entry": 5.47,
+   "stop": 6.248,
+   "target": 4.692,
+   "why": "gap -12.8%, pre-market vol 793,680, rvol 0.1x"
   },
   {
    "rank": 5,
-   "symbol": "USDE",
-   "side": "sell",
-   "entry": 5.3997,
-   "stop": 6.1677,
-   "target": 4.6317,
-   "why": "gap -13.9%, pre-market vol 769,407, rvol 1.3x"
+   "symbol": "KURA",
+   "side": "buy",
+   "entry": 13.75,
+   "stop": 12.7289,
+   "target": 14.7711,
+   "why": "gap +10.9%, pre-market vol 154,913, rvol 0.1x"
   }
  ],
  "trades": [
   {
-   "symbol": "AAOI",
+   "symbol": "DKS",
    "side": "sell",
-   "entry": 103.01,
-   "exit": 105.42,
-   "pnl_pct": -2.3396,
-   "pnl_usd": -40.97,
+   "entry": 138.94,
+   "exit": 133.3284,
+   "pnl_pct": 4.0389,
+   "pnl_usd": 196.41,
+   "reason": "target"
+  },
+  {
+   "symbol": "DAIC",
+   "side": "buy",
+   "entry": 4.64,
+   "exit": 3.62,
+   "pnl_pct": -21.9828,
+   "pnl_usd": -104.04,
    "reason": "time"
   },
   {
-   "symbol": "SDOT",
+   "symbol": "RZLV",
    "side": "buy",
-   "entry": 28.9,
-   "exit": 26.17,
-   "pnl_pct": -9.4464,
-   "pnl_usd": -171.99,
-   "reason": "time"
-  },
-  {
-   "symbol": "XPON",
-   "side": "buy",
-   "entry": 8.315,
-   "exit": 7.9704,
-   "pnl_pct": -4.1444,
-   "pnl_usd": -399.74,
-   "reason": "stop"
-  },
-  {
-   "symbol": "CAPR",
-   "side": "buy",
-   "entry": 7.38,
-   "exit": 7.16,
-   "pnl_pct": -2.981,
-   "pnl_usd": -63.8,
+   "entry": 3.03,
+   "exit": 2.96,
+   "pnl_pct": -2.3102,
+   "pnl_usd": -204.75,
    "reason": "time"
   }
  ],
- "trades_day_label": "Monday Aug 24",
- "eod_text": "4 trades, 0 winners, a net loss of $676 on the paper book. Every fill above is real output from the live pipeline: the same leads published here in the morning, executed with bracket exits and risk-normalized sizing, reported win or lose.",
+ "trades_day_label": "today",
+ "eod_text": "3 trades, 1 winner, a net loss of $112 on the paper book. Every fill above is real output from the live pipeline: the same leads published here in the morning, executed with bracket exits and risk-normalized sizing, reported win or lose.",
  "board": [
   {
    "label": "This week",
-   "n": 4,
-   "win_rate": "0%",
-   "pnl_usd": "-676"
+   "n": 7,
+   "win_rate": "14%",
+   "pnl_usd": "-789"
   },
   {
    "label": "This month",
-   "n": 22,
-   "win_rate": "41%",
-   "pnl_usd": "-90"
+   "n": 25,
+   "win_rate": "40%",
+   "pnl_usd": "-203"
   },
   {
    "label": "Since 2026-08-17",
-   "n": 22,
-   "win_rate": "41%",
-   "pnl_usd": "-90"
+   "n": 25,
+   "win_rate": "40%",
+   "pnl_usd": "-203"
   }
  ],
  "public_epoch": "2026-08-17",
