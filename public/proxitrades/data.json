@@ -1,50 +1,50 @@
 {
- "stamp": "Tuesday, August 25, 2026 17:05 ET",
+ "stamp": "Wednesday, August 26, 2026 09:27 ET",
  "leads": [
   {
    "rank": 1,
-   "symbol": "DAIC",
+   "symbol": "XPON",
    "side": "buy",
-   "entry": 3.62,
-   "stop": 3.0803,
-   "target": 4.1597,
-   "why": "gap +109.2%, pre-market vol 34,374,282, rvol 3.8x"
+   "entry": 6.35,
+   "stop": 5.1035,
+   "target": 7.5965,
+   "why": "gap +20.5%, pre-market vol 1,290,810, rvol 0.9x"
   },
   {
    "rank": 2,
-   "symbol": "DKS",
+   "symbol": "INTU",
    "side": "sell",
-   "entry": 142.25,
-   "stop": 147.9896,
-   "target": 136.5104,
-   "why": "gap -20.7%, pre-market vol 1,337,056, rvol 1.1x"
+   "entry": 313.6856,
+   "stop": 325.6248,
+   "target": 301.7464,
+   "why": "gap -12.2%, pre-market vol 659,233, rvol 2.1x"
   },
   {
    "rank": 3,
    "symbol": "SDOT",
-   "side": "sell",
-   "entry": 19.45,
-   "stop": 22.1968,
-   "target": 16.7032,
-   "why": "gap -16.0%, pre-market vol 220,831, rvol 0.1x"
+   "side": "buy",
+   "entry": 19.9,
+   "stop": 14.0252,
+   "target": 25.7748,
+   "why": "gap +21.7%, pre-market vol 330,660, rvol 0.4x"
   },
   {
    "rank": 4,
-   "symbol": "USDE",
-   "side": "sell",
-   "entry": 5.47,
-   "stop": 6.248,
-   "target": 4.692,
-   "why": "gap -12.8%, pre-market vol 793,680, rvol 0.1x"
+   "symbol": "ANF",
+   "side": "buy",
+   "entry": 126.0497,
+   "stop": 118.9967,
+   "target": 133.1027,
+   "why": "gap +15.7%, pre-market vol 397,811, rvol 2.1x"
   },
   {
    "rank": 5,
-   "symbol": "KURA",
+   "symbol": "DAIC",
    "side": "buy",
-   "entry": 13.75,
-   "stop": 12.7289,
-   "target": 14.7711,
-   "why": "gap +10.9%, pre-market vol 154,913, rvol 0.1x"
+   "entry": 6.13,
+   "stop": 5.0382,
+   "target": 7.2218,
+   "why": "gap +58.0%, pre-market vol 13,461,064, rvol 13.0x"
   }
  ],
  "trades": [
@@ -76,7 +76,7 @@
    "reason": "time"
   }
  ],
- "trades_day_label": "today",
+ "trades_day_label": "Tuesday Aug 25",
  "eod_text": "3 trades, 1 winner, a net loss of $112 on the paper book. Every fill above is real output from the live pipeline: the same leads published here in the morning, executed with bracket exits and risk-normalized sizing, reported win or lose.",
  "board": [
   {
