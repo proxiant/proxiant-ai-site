@@ -1,110 +1,83 @@
 {
- "stamp": "Thursday, August 27, 2026 09:27 ET",
+ "stamp": "Thursday, August 27, 2026 17:05 ET",
  "leads": [
   {
    "rank": 1,
    "symbol": "OKTA",
    "side": "buy",
-   "entry": 163.3366,
-   "stop": 152.9365,
-   "target": 173.7367,
-   "why": "gap +21.5%, pre-market vol 354,871, rvol 2.6x"
+   "entry": 166.22,
+   "stop": 155.6363,
+   "target": 176.8037,
+   "why": "gap +23.7%, pre-market vol 460,943, rvol 0.4x"
   },
   {
    "rank": 2,
-   "symbol": "DAIC",
-   "side": "buy",
-   "entry": 5.79,
-   "stop": 4.7376,
-   "target": 6.8424,
-   "why": "gap +12.4%, pre-market vol 3,210,410, rvol 2.0x"
+   "symbol": "CRE",
+   "side": "sell",
+   "entry": 5.5,
+   "stop": 6.0207,
+   "target": 4.9793,
+   "why": "gap -19.2%, pre-market vol 268,222, rvol 0.1x"
   },
   {
    "rank": 3,
-   "symbol": "HPQ",
-   "side": "sell",
-   "entry": 27.24,
-   "stop": 28.3868,
-   "target": 26.0932,
-   "why": "gap -10.7%, pre-market vol 1,171,589, rvol 2.0x"
+   "symbol": "DAIC",
+   "side": "buy",
+   "entry": 5.85,
+   "stop": 4.7867,
+   "target": 6.9133,
+   "why": "gap +13.6%, pre-market vol 3,290,575, rvol 0.1x"
   },
   {
    "rank": 4,
    "symbol": "WEN",
    "side": "sell",
-   "entry": 7.846,
-   "stop": 8.2072,
-   "target": 7.4848,
-   "why": "gap -13.2%, pre-market vol 644,706, rvol 0.7x"
+   "entry": 7.88,
+   "stop": 8.2427,
+   "target": 7.5173,
+   "why": "gap -12.8%, pre-market vol 850,757, rvol 0.2x"
   },
   {
    "rank": 5,
-   "symbol": "CRE",
-   "side": "sell",
-   "entry": 5.16,
-   "stop": 5.6485,
-   "target": 4.6715,
-   "why": "gap -24.2%, pre-market vol 235,272, rvol 1680.5x"
+   "symbol": "CRM",
+   "side": "buy",
+   "entry": 230.7,
+   "stop": 219.6119,
+   "target": 241.7881,
+   "why": "gap +12.2%, pre-market vol 860,287, rvol 0.1x"
   }
  ],
  "trades": [
   {
-   "symbol": "INTU",
-   "side": "sell",
-   "entry": 343.98,
-   "exit": 349.12,
-   "pnl_pct": -1.4943,
-   "pnl_usd": -97.66,
-   "reason": "time"
-  },
-  {
-   "symbol": "XPON",
+   "symbol": "CRM",
    "side": "buy",
-   "entry": 9.345,
-   "exit": 10.7986,
-   "pnl_pct": 15.5548,
-   "pnl_usd": 399.74,
-   "reason": "target"
-  },
-  {
-   "symbol": "ANF",
-   "side": "buy",
-   "entry": 146.565,
-   "exit": 152.506,
-   "pnl_pct": 4.0535,
-   "pnl_usd": 398.05,
-   "reason": "target"
-  },
-  {
-   "symbol": "BHVN",
-   "side": "buy",
-   "entry": 16.07,
-   "exit": 16.67,
-   "pnl_pct": 3.7337,
-   "pnl_usd": 213.0,
+   "entry": 248.05,
+   "exit": 250.21,
+   "pnl_pct": 0.8708,
+   "pnl_usd": 101.52,
    "reason": "time"
   }
  ],
- "trades_day_label": "Wednesday Aug 26",
- "eod_text": "4 trades, 3 winners, a net gain of $913 on the paper book. Every fill above is real output from the live pipeline: the same leads published here in the morning, executed with bracket exits and risk-normalized sizing, reported win or lose.",
+ "trades_day_label": "today",
+ "eod_text": "1 trade, 1 winner, a net gain of $102 on the paper book. Every fill above is real output from the live pipeline: the same leads published here in the morning, executed with bracket exits and risk-normalized sizing, reported win or lose.",
  "board": [
   {
    "label": "This week",
-   "n": 11,
-   "win_rate": "36%",
-   "pnl_usd": "+124"
+   "n": 12,
+   "win_rate": "42%",
+   "pnl_usd": "+226"
   },
   {
    "label": "This month",
-   "n": 29,
-   "win_rate": "45%",
-   "pnl_usd": "+710"
+   "n": 30,
+   "win_rate": "47%",
+   "pnl_usd": "+812"
   },
   {
    "label": "Since 2026-08-17",
-   "n": 29,
-   "win_rate": "45%",
-   "pnl_usd": "+710"
+   "n": 30,
+   "win_rate": "47%",
+   "pnl_usd": "+812"
   }
  ],
  "public_epoch": "2026-08-17",
