@@ -1,50 +1,50 @@
 {
- "stamp": "Thursday, August 27, 2026 17:05 ET",
+ "stamp": "Friday, August 28, 2026 09:27 ET",
  "leads": [
   {
    "rank": 1,
-   "symbol": "OKTA",
+   "symbol": "GAP",
    "side": "buy",
-   "entry": 166.22,
-   "stop": 155.6363,
-   "target": 176.8037,
-   "why": "gap +23.7%, pre-market vol 460,943, rvol 0.4x"
+   "entry": 24.345,
+   "stop": 23.3376,
+   "target": 25.3524,
+   "why": "gap +17.1%, pre-market vol 1,021,655, rvol 3.8x"
   },
   {
    "rank": 2,
-   "symbol": "CRE",
-   "side": "sell",
-   "entry": 5.5,
-   "stop": 6.0207,
-   "target": 4.9793,
-   "why": "gap -19.2%, pre-market vol 268,222, rvol 0.1x"
+   "symbol": "SOLS",
+   "side": "buy",
+   "entry": 65.101,
+   "stop": 62.4347,
+   "target": 67.7673,
+   "why": "gap +15.6%, pre-market vol 465,434, rvol 1.4x"
   },
   {
    "rank": 3,
-   "symbol": "DAIC",
+   "symbol": "AFRM",
    "side": "buy",
-   "entry": 5.85,
-   "stop": 4.7867,
-   "target": 6.9133,
-   "why": "gap +13.6%, pre-market vol 3,290,575, rvol 0.1x"
+   "entry": 86.41,
+   "stop": 81.9436,
+   "target": 90.8764,
+   "why": "gap +11.5%, pre-market vol 450,727, rvol 3.5x"
   },
   {
    "rank": 4,
-   "symbol": "WEN",
+   "symbol": "PYPL",
    "side": "sell",
-   "entry": 7.88,
-   "stop": 8.2427,
-   "target": 7.5173,
-   "why": "gap -12.8%, pre-market vol 850,757, rvol 0.2x"
+   "entry": 52.76,
+   "stop": 53.9434,
+   "target": 51.5766,
+   "why": "gap -14.2%, pre-market vol 3,726,359, rvol 0.8x"
   },
   {
    "rank": 5,
-   "symbol": "CRM",
+   "symbol": "ESTC",
    "side": "buy",
-   "entry": 230.7,
-   "stop": 219.6119,
-   "target": 241.7881,
-   "why": "gap +12.2%, pre-market vol 860,287, rvol 0.1x"
+   "entry": 104.51,
+   "stop": 98.5041,
+   "target": 110.5159,
+   "why": "gap +24.8%, pre-market vol 263,667, rvol 1.9x"
   }
  ],
  "trades": [
@@ -58,7 +58,7 @@
    "reason": "time"
   }
  ],
- "trades_day_label": "today",
+ "trades_day_label": "Thursday Aug 27",
  "eod_text": "1 trade, 1 winner, a net gain of $102 on the paper book. Every fill above is real output from the live pipeline: the same leads published here in the morning, executed with bracket exits and risk-normalized sizing, reported win or lose.",
  "board": [
   {
