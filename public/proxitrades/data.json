@@ -1,50 +1,50 @@
 {
- "stamp": "Friday, August 28, 2026 17:05 ET",
+ "stamp": "Monday, August 31, 2026 09:27 ET",
  "leads": [
   {
    "rank": 1,
    "symbol": "WETO",
-   "side": "sell",
-   "entry": 9.67,
-   "stop": 18.9971,
-   "target": 0.3429,
-   "why": "gap -15.9%, pre-market vol 158,638, rvol 0.0x"
+   "side": "buy",
+   "entry": 7.1,
+   "stop": -7.7474,
+   "target": 21.9474,
+   "why": "gap +24.1%, pre-market vol 1,464,019, rvol 0.2x"
   },
   {
    "rank": 2,
-   "symbol": "ESTC",
+   "symbol": "BW",
    "side": "buy",
-   "entry": 103.9,
-   "stop": 97.9292,
-   "target": 109.8708,
-   "why": "gap +24.1%, pre-market vol 289,033, rvol 0.2x"
+   "entry": 7.62,
+   "stop": 6.4412,
+   "target": 8.7988,
+   "why": "gap +6.4%, pre-market vol 168,179, rvol 0.9x"
   },
   {
    "rank": 3,
-   "symbol": "GAP",
+   "symbol": "PURR",
    "side": "buy",
-   "entry": 24.73,
-   "stop": 23.7067,
-   "target": 25.7533,
-   "why": "gap +19.0%, pre-market vol 1,236,849, rvol 0.2x"
+   "entry": 12.0401,
+   "stop": 10.5976,
+   "target": 13.4826,
+   "why": "gap +3.7%, pre-market vol 2,236,548, rvol 1.3x"
   },
   {
    "rank": 4,
-   "symbol": "SOLS",
-   "side": "buy",
-   "entry": 64.95,
-   "stop": 62.2899,
-   "target": 67.6101,
-   "why": "gap +15.3%, pre-market vol 512,600, rvol 0.4x"
+   "symbol": "EIX",
+   "side": "sell",
+   "entry": 56.41,
+   "stop": 58.5077,
+   "target": 54.3123,
+   "why": "gap -19.6%, pre-market vol 357,391, rvol 2.3x"
   },
   {
    "rank": 5,
-   "symbol": "PYPL",
+   "symbol": "PCG",
    "side": "sell",
-   "entry": 53.75,
-   "stop": 54.9556,
-   "target": 52.5444,
-   "why": "gap -12.6%, pre-market vol 4,068,063, rvol 0.7x"
+   "entry": 13.42,
+   "stop": 13.9626,
+   "target": 12.8774,
+   "why": "gap -19.2%, pre-market vol 8,665,876, rvol 4.9x"
   }
  ],
  "trades": [
@@ -58,14 +58,14 @@
    "reason": "time"
   }
  ],
- "trades_day_label": "today",
+ "trades_day_label": "Friday Aug 28",
  "eod_text": "1 trade, 1 winner, a net gain of $331 on the paper book. Every fill above is real output from the live pipeline: the same leads published here in the morning, executed with bracket exits and risk-normalized sizing, reported win or lose.",
  "board": [
   {
    "label": "This week",
-   "n": 13,
-   "win_rate": "46%",
-   "pnl_usd": "+557"
+   "n": 0,
+   "win_rate": "-",
+   "pnl_usd": "-"
   },
   {
    "label": "This month",
@@ -85,33 +85,33 @@
  "swing": [
   {
    "symbol": "MRNA",
-   "entry": 145.1,
-   "stop": 113.24,
-   "target": 192.89
+   "entry": 137.93,
+   "stop": 98.63,
+   "target": 196.88
   },
   {
    "symbol": "AMD",
-   "entry": 473.2,
-   "stop": 425.92,
-   "target": 544.11
+   "entry": 465.61,
+   "stop": 427.99,
+   "target": 522.04
   },
   {
    "symbol": "MU",
-   "entry": 966.54,
-   "stop": 855.51,
-   "target": 1133.09
+   "entry": 932.58,
+   "stop": 831.19,
+   "target": 1084.67
   },
   {
    "symbol": "SNOW",
-   "entry": 332.85,
-   "stop": 310.18,
-   "target": 366.85
+   "entry": 327.77,
+   "stop": 305.1,
+   "target": 361.77
   },
   {
    "symbol": "ROKU",
-   "entry": 157.46,
-   "stop": 153.48,
-   "target": 163.42
+   "entry": 157.65,
+   "stop": 154.07,
+   "target": 163.02
   }
  ],
  "posture": "LONG",
