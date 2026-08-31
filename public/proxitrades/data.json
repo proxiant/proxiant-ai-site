@@ -1,83 +1,92 @@
 {
- "stamp": "Monday, August 31, 2026 09:27 ET",
+ "stamp": "Monday, August 31, 2026 17:05 ET",
  "leads": [
   {
    "rank": 1,
-   "symbol": "WETO",
-   "side": "buy",
-   "entry": 7.1,
-   "stop": -7.7474,
-   "target": 21.9474,
-   "why": "gap +24.1%, pre-market vol 1,464,019, rvol 0.2x"
-  },
-  {
-   "rank": 2,
    "symbol": "BW",
    "side": "buy",
    "entry": 7.62,
    "stop": 6.4412,
    "target": 8.7988,
-   "why": "gap +6.4%, pre-market vol 168,179, rvol 0.9x"
+   "why": "gap +6.4%, pre-market vol 198,294, rvol 0.1x"
+  },
+  {
+   "rank": 2,
+   "symbol": "PURR",
+   "side": "buy",
+   "entry": 12.24,
+   "stop": 10.7736,
+   "target": 13.7064,
+   "why": "gap +5.4%, pre-market vol 2,282,814, rvol 0.1x"
   },
   {
    "rank": 3,
-   "symbol": "PURR",
-   "side": "buy",
-   "entry": 12.0401,
-   "stop": 10.5976,
-   "target": 13.4826,
-   "why": "gap +3.7%, pre-market vol 2,236,548, rvol 1.3x"
+   "symbol": "EIX",
+   "side": "sell",
+   "entry": 55.73,
+   "stop": 57.8024,
+   "target": 53.6576,
+   "why": "gap -20.6%, pre-market vol 525,872, rvol 0.2x"
   },
   {
    "rank": 4,
-   "symbol": "EIX",
+   "symbol": "PCG",
    "side": "sell",
-   "entry": 56.41,
-   "stop": 58.5077,
-   "target": 54.3123,
-   "why": "gap -19.6%, pre-market vol 357,391, rvol 2.3x"
+   "entry": 13.26,
+   "stop": 13.7961,
+   "target": 12.7239,
+   "why": "gap -20.1%, pre-market vol 9,562,735, rvol 0.3x"
   },
   {
    "rank": 5,
-   "symbol": "PCG",
-   "side": "sell",
-   "entry": 13.42,
-   "stop": 13.9626,
-   "target": 12.8774,
-   "why": "gap -19.2%, pre-market vol 8,665,876, rvol 4.9x"
+   "symbol": "GME",
+   "side": "buy",
+   "entry": 18.7,
+   "stop": 18.1897,
+   "target": 19.2103,
+   "why": "gap +4.6%, pre-market vol 1,398,952, rvol 0.3x"
   }
  ],
  "trades": [
   {
-   "symbol": "PYPL",
+   "symbol": "EIX",
+   "side": "sell",
+   "entry": 56.84,
+   "exit": 55.79,
+   "pnl_pct": 1.8473,
+   "pnl_usd": 202.65,
+   "reason": "time"
+  },
+  {
+   "symbol": "PURR",
    "side": "buy",
-   "entry": 60.27,
-   "exit": 61.445,
-   "pnl_pct": 1.95,
-   "pnl_usd": 331.35,
+   "entry": 11.59,
+   "exit": 11.7,
+   "pnl_pct": 0.9491,
+   "pnl_usd": 28.82,
    "reason": "time"
   }
  ],
- "trades_day_label": "Friday Aug 28",
- "eod_text": "1 trade, 1 winner, a net gain of $331 on the paper book. Every fill above is real output from the live pipeline: the same leads published here in the morning, executed with bracket exits and risk-normalized sizing, reported win or lose.",
+ "trades_day_label": "today",
+ "eod_text": "2 trades, 2 winners, a net gain of $231 on the paper book. Every fill above is real output from the live pipeline: the same leads published here in the morning, executed with bracket exits and risk-normalized sizing, reported win or lose.",
  "board": [
   {
    "label": "This week",
-   "n": 0,
-   "win_rate": "-",
-   "pnl_usd": "-"
+   "n": 2,
+   "win_rate": "100%",
+   "pnl_usd": "+231"
   },
   {
    "label": "This month",
-   "n": 31,
-   "win_rate": "48%",
-   "pnl_usd": "+1,143"
+   "n": 33,
+   "win_rate": "52%",
+   "pnl_usd": "+1,375"
   },
   {
    "label": "Since 2026-08-17",
-   "n": 31,
-   "win_rate": "48%",
-   "pnl_usd": "+1,143"
+   "n": 33,
+   "win_rate": "52%",
+   "pnl_usd": "+1,375"
   }
  ],
  "public_epoch": "2026-08-17",
