@@ -1,50 +1,50 @@
 {
- "stamp": "Monday, August 31, 2026 17:05 ET",
+ "stamp": "Tuesday, September 01, 2026 09:27 ET",
  "leads": [
   {
    "rank": 1,
-   "symbol": "BW",
+   "symbol": "WETO",
    "side": "buy",
-   "entry": 7.62,
-   "stop": 6.4412,
-   "target": 8.7988,
-   "why": "gap +6.4%, pre-market vol 198,294, rvol 0.1x"
+   "entry": 7.52,
+   "stop": -9.8688,
+   "target": 24.9088,
+   "why": "gap +37.2%, pre-market vol 2,551,600, rvol 7.9x"
   },
   {
    "rank": 2,
-   "symbol": "PURR",
-   "side": "buy",
-   "entry": 12.24,
-   "stop": 10.7736,
-   "target": 13.7064,
-   "why": "gap +5.4%, pre-market vol 2,282,814, rvol 0.1x"
+   "symbol": "USDE",
+   "side": "sell",
+   "entry": 8.12,
+   "stop": 9.3804,
+   "target": 6.8596,
+   "why": "gap -8.5%, pre-market vol 687,591, rvol 0.7x"
   },
   {
    "rank": 3,
-   "symbol": "EIX",
-   "side": "sell",
-   "entry": 55.73,
-   "stop": 57.8024,
-   "target": 53.6576,
-   "why": "gap -20.6%, pre-market vol 525,872, rvol 0.2x"
+   "symbol": "FRVO",
+   "side": "buy",
+   "entry": 16.87,
+   "stop": 14.3536,
+   "target": 19.3864,
+   "why": "gap +9.7%, pre-market vol 2,188,902, rvol 1.1x"
   },
   {
    "rank": 4,
-   "symbol": "PCG",
+   "symbol": "PURR",
    "side": "sell",
-   "entry": 13.26,
-   "stop": 13.7961,
-   "target": 12.7239,
-   "why": "gap -20.1%, pre-market vol 9,562,735, rvol 0.3x"
+   "entry": 11.6,
+   "stop": 12.7393,
+   "target": 10.4607,
+   "why": "gap -5.3%, pre-market vol 1,492,119, rvol 1.3x"
   },
   {
    "rank": 5,
-   "symbol": "GME",
-   "side": "buy",
-   "entry": 18.7,
-   "stop": 18.1897,
-   "target": 19.2103,
-   "why": "gap +4.6%, pre-market vol 1,398,952, rvol 0.3x"
+   "symbol": "EXK",
+   "side": "sell",
+   "entry": 10.1537,
+   "stop": 10.7949,
+   "target": 9.5125,
+   "why": "gap -5.2%, pre-market vol 102,138, rvol 0.8x"
   }
  ],
  "trades": [
@@ -67,7 +67,7 @@
    "reason": "time"
   }
  ],
- "trades_day_label": "today",
+ "trades_day_label": "Monday Aug 31",
  "eod_text": "2 trades, 2 winners, a net gain of $231 on the paper book. Every fill above is real output from the live pipeline: the same leads published here in the morning, executed with bracket exits and risk-normalized sizing, reported win or lose.",
  "board": [
   {
@@ -78,9 +78,9 @@
   },
   {
    "label": "This month",
-   "n": 33,
-   "win_rate": "52%",
-   "pnl_usd": "+1,375"
+   "n": 0,
+   "win_rate": "-",
+   "pnl_usd": "-"
   },
   {
    "label": "Since 2026-08-17",
@@ -123,7 +123,7 @@
    "target": 163.02
   }
  ],
- "posture": "LONG",
+ "posture": "DEFENSIVE",
  "donate_url": "https://buymeacoffee.com/proxiant",
  "research": [
   {
