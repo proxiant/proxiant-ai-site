@@ -1,92 +1,92 @@
 {
- "stamp": "Wednesday, September 02, 2026 09:27 ET",
+ "stamp": "Wednesday, September 02, 2026 17:05 ET",
  "leads": [
   {
    "rank": 1,
-   "symbol": "WETO",
-   "side": "sell",
-   "entry": 5.269,
-   "stop": 14.406,
-   "target": -3.868,
-   "why": "gap -11.3%, pre-market vol 537,177, rvol 2.4x"
+   "symbol": "BIAF",
+   "side": "buy",
+   "entry": 7.66,
+   "stop": 6.3257,
+   "target": 8.9943,
+   "why": "gap +16.2%, pre-market vol 538,721, rvol 0.2x"
   },
   {
    "rank": 2,
    "symbol": "FCEL",
    "side": "sell",
-   "entry": 14.7819,
-   "stop": 16.4501,
-   "target": 13.1137,
-   "why": "gap -13.5%, pre-market vol 1,277,694, rvol 0.8x"
+   "entry": 15.25,
+   "stop": 16.971,
+   "target": 13.529,
+   "why": "gap -10.7%, pre-market vol 1,393,108, rvol 0.3x"
   },
   {
    "rank": 3,
    "symbol": "EOSE",
    "side": "buy",
-   "entry": 3.5009,
-   "stop": 3.1215,
-   "target": 3.8803,
-   "why": "gap +15.2%, pre-market vol 9,143,721, rvol 0.6x"
+   "entry": 3.41,
+   "stop": 3.0405,
+   "target": 3.7795,
+   "why": "gap +12.2%, pre-market vol 10,032,323, rvol 0.5x"
   },
   {
    "rank": 4,
-   "symbol": "MDB",
-   "side": "sell",
-   "entry": 382.9992,
-   "stop": 402.835,
-   "target": 363.1634,
-   "why": "gap -11.8%, pre-market vol 211,941, rvol 2.8x"
+   "symbol": "GTLB",
+   "side": "buy",
+   "entry": 55.3,
+   "stop": 52.27,
+   "target": 58.33,
+   "why": "gap +22.6%, pre-market vol 1,214,697, rvol 0.6x"
   },
   {
    "rank": 5,
-   "symbol": "GTLB",
-   "side": "buy",
-   "entry": 56.09,
-   "stop": 53.0167,
-   "target": 59.1633,
-   "why": "gap +24.4%, pre-market vol 923,909, rvol 2.9x"
+   "symbol": "MDB",
+   "side": "sell",
+   "entry": 378.38,
+   "stop": 397.9766,
+   "target": 358.7834,
+   "why": "gap -12.9%, pre-market vol 268,677, rvol 0.4x"
   }
  ],
  "trades": [
   {
-   "symbol": "WETO",
-   "side": "buy",
-   "entry": 7.45,
-   "exit": 6.335,
-   "pnl_pct": -14.9664,
-   "pnl_usd": -74.71,
+   "symbol": "FCEL",
+   "side": "sell",
+   "entry": 15.28,
+   "exit": 14.885,
+   "pnl_pct": 2.5851,
+   "pnl_usd": 168.66,
    "reason": "time"
   },
   {
-   "symbol": "FRVO",
+   "symbol": "GTLB",
    "side": "buy",
-   "entry": 18.72,
-   "exit": 18.995,
-   "pnl_pct": 1.469,
-   "pnl_usd": 93.78,
+   "entry": 52.75,
+   "exit": 50.95,
+   "pnl_pct": -3.4123,
+   "pnl_usd": -343.8,
    "reason": "time"
   }
  ],
- "trades_day_label": "Tuesday Sep 01",
- "eod_text": "2 trades, 1 winner, a net gain of $19 on the paper book. Every fill above is real output from the live pipeline: the same leads published here in the morning, executed with bracket exits and risk-normalized sizing, reported win or lose.",
+ "trades_day_label": "today",
+ "eod_text": "2 trades, 1 winner, a net loss of $175 on the paper book. Every fill above is real output from the live pipeline: the same leads published here in the morning, executed with bracket exits and risk-normalized sizing, reported win or lose.",
  "board": [
   {
    "label": "This week",
-   "n": 4,
-   "win_rate": "75%",
-   "pnl_usd": "+251"
+   "n": 6,
+   "win_rate": "67%",
+   "pnl_usd": "+75"
   },
   {
    "label": "This month",
-   "n": 2,
+   "n": 4,
    "win_rate": "50%",
-   "pnl_usd": "+19"
+   "pnl_usd": "-156"
   },
   {
    "label": "Since 2026-08-17",
-   "n": 35,
+   "n": 37,
    "win_rate": "51%",
-   "pnl_usd": "+1,394"
+   "pnl_usd": "+1,219"
   }
  ],
  "public_epoch": "2026-08-17",
