@@ -1,50 +1,50 @@
 {
- "stamp": "Tuesday, September 01, 2026 17:05 ET",
+ "stamp": "Wednesday, September 02, 2026 09:27 ET",
  "leads": [
   {
    "rank": 1,
    "symbol": "WETO",
-   "side": "buy",
-   "entry": 7.68,
-   "stop": -10.0787,
-   "target": 25.4387,
-   "why": "gap +40.1%, pre-market vol 2,660,400, rvol 0.7x"
+   "side": "sell",
+   "entry": 5.269,
+   "stop": 14.406,
+   "target": -3.868,
+   "why": "gap -11.3%, pre-market vol 537,177, rvol 2.4x"
   },
   {
    "rank": 2,
-   "symbol": "USDE",
+   "symbol": "FCEL",
    "side": "sell",
-   "entry": 8.15,
-   "stop": 9.415,
-   "target": 6.885,
-   "why": "gap -8.1%, pre-market vol 722,655, rvol 0.1x"
+   "entry": 14.7819,
+   "stop": 16.4501,
+   "target": 13.1137,
+   "why": "gap -13.5%, pre-market vol 1,277,694, rvol 0.8x"
   },
   {
    "rank": 3,
-   "symbol": "CAPR",
+   "symbol": "EOSE",
    "side": "buy",
-   "entry": 10.78,
-   "stop": 8.921,
-   "target": 12.639,
-   "why": "gap +8.8%, pre-market vol 236,160, rvol 0.1x"
+   "entry": 3.5009,
+   "stop": 3.1215,
+   "target": 3.8803,
+   "why": "gap +15.2%, pre-market vol 9,143,721, rvol 0.6x"
   },
   {
    "rank": 4,
-   "symbol": "FRVO",
-   "side": "buy",
-   "entry": 16.53,
-   "stop": 14.0643,
-   "target": 18.9957,
-   "why": "gap +7.5%, pre-market vol 2,623,542, rvol 0.9x"
+   "symbol": "MDB",
+   "side": "sell",
+   "entry": 382.9992,
+   "stop": 402.835,
+   "target": 363.1634,
+   "why": "gap -11.8%, pre-market vol 211,941, rvol 2.8x"
   },
   {
    "rank": 5,
-   "symbol": "CRK",
+   "symbol": "GTLB",
    "side": "buy",
-   "entry": 15.59,
-   "stop": 14.7854,
-   "target": 16.3946,
-   "why": "gap +8.0%, pre-market vol 611,209, rvol 0.5x"
+   "entry": 56.09,
+   "stop": 53.0167,
+   "target": 59.1633,
+   "why": "gap +24.4%, pre-market vol 923,909, rvol 2.9x"
   }
  ],
  "trades": [
@@ -67,7 +67,7 @@
    "reason": "time"
   }
  ],
- "trades_day_label": "today",
+ "trades_day_label": "Tuesday Sep 01",
  "eod_text": "2 trades, 1 winner, a net gain of $19 on the paper book. Every fill above is real output from the live pipeline: the same leads published here in the morning, executed with bracket exits and risk-normalized sizing, reported win or lose.",
  "board": [
   {
