@@ -1,92 +1,83 @@
 {
- "stamp": "Thursday, September 03, 2026 09:27 ET",
+ "stamp": "Thursday, September 03, 2026 17:05 ET",
  "leads": [
   {
    "rank": 1,
    "symbol": "DAIC",
    "side": "buy",
-   "entry": 3.449,
-   "stop": 1.7633,
-   "target": 5.1347,
-   "why": "gap +13.3%, pre-market vol 1,653,201, rvol 0.1x"
+   "entry": 3.45,
+   "stop": 1.7638,
+   "target": 5.1362,
+   "why": "gap +13.3%, pre-market vol 1,684,028, rvol 0.1x"
   },
   {
    "rank": 2,
-   "symbol": "NTSK",
+   "symbol": "AEHL",
    "side": "buy",
-   "entry": 15.57,
-   "stop": 14.3199,
-   "target": 16.8201,
-   "why": "gap +13.2%, pre-market vol 213,561, rvol 2.1x"
+   "entry": 8.01,
+   "stop": 6.0004,
+   "target": 10.0196,
+   "why": "gap +47.5%, pre-market vol 6,807,119, rvol 1.8x"
   },
   {
    "rank": 3,
-   "symbol": "SNOW",
-   "side": "buy",
-   "entry": 378.1825,
-   "stop": 358.5758,
-   "target": 397.7892,
-   "why": "gap +23.7%, pre-market vol 455,288, rvol 3.1x"
+   "symbol": "RARE",
+   "side": "sell",
+   "entry": 14.0,
+   "stop": 14.6421,
+   "target": 13.3579,
+   "why": "gap -47.2%, pre-market vol 2,198,464, rvol 1.2x"
   },
   {
    "rank": 4,
    "symbol": "BIAF",
    "side": "buy",
-   "entry": 13.15,
-   "stop": 10.8863,
-   "target": 15.4137,
-   "why": "gap +34.9%, pre-market vol 3,677,404, rvol 9.7x"
+   "entry": 13.21,
+   "stop": 10.936,
+   "target": 15.484,
+   "why": "gap +35.5%, pre-market vol 3,843,468, rvol 0.7x"
   },
   {
    "rank": 5,
-   "symbol": "RARE",
-   "side": "sell",
-   "entry": 14.1,
-   "stop": 14.7467,
-   "target": 13.4533,
-   "why": "gap -46.9%, pre-market vol 1,852,131, rvol 3.2x"
+   "symbol": "SNOW",
+   "side": "buy",
+   "entry": 378.99,
+   "stop": 359.3414,
+   "target": 398.6386,
+   "why": "gap +23.9%, pre-market vol 547,958, rvol 0.3x"
   }
  ],
  "trades": [
   {
-   "symbol": "FCEL",
-   "side": "sell",
-   "entry": 15.28,
-   "exit": 14.885,
-   "pnl_pct": 2.5851,
-   "pnl_usd": 168.66,
-   "reason": "time"
-  },
-  {
-   "symbol": "GTLB",
+   "symbol": "BIAF",
    "side": "buy",
-   "entry": 52.75,
-   "exit": 50.95,
-   "pnl_pct": -3.4123,
-   "pnl_usd": -343.8,
+   "entry": 12.25,
+   "exit": 11.97,
+   "pnl_pct": -2.2857,
+   "pnl_usd": -51.8,
    "reason": "time"
   }
  ],
- "trades_day_label": "Wednesday Sep 02",
- "eod_text": "2 trades, 1 winner, a net loss of $175 on the paper book. Every fill above is real output from the live pipeline: the same leads published here in the morning, executed with bracket exits and risk-normalized sizing, reported win or lose.",
+ "trades_day_label": "today",
+ "eod_text": "1 trade, 0 winners, a net loss of $52 on the paper book. Every fill above is real output from the live pipeline: the same leads published here in the morning, executed with bracket exits and risk-normalized sizing, reported win or lose.",
  "board": [
   {
    "label": "This week",
-   "n": 6,
-   "win_rate": "67%",
-   "pnl_usd": "+75"
+   "n": 7,
+   "win_rate": "57%",
+   "pnl_usd": "+24"
   },
   {
    "label": "This month",
-   "n": 4,
-   "win_rate": "50%",
-   "pnl_usd": "-156"
+   "n": 5,
+   "win_rate": "40%",
+   "pnl_usd": "-208"
   },
   {
    "label": "Since 2026-08-17",
-   "n": 37,
-   "win_rate": "51%",
-   "pnl_usd": "+1,219"
+   "n": 38,
+   "win_rate": "50%",
+   "pnl_usd": "+1,167"
   }
  ],
  "public_epoch": "2026-08-17",
