@@ -1,50 +1,50 @@
 {
- "stamp": "Wednesday, September 02, 2026 17:05 ET",
+ "stamp": "Thursday, September 03, 2026 09:27 ET",
  "leads": [
   {
    "rank": 1,
-   "symbol": "BIAF",
+   "symbol": "DAIC",
    "side": "buy",
-   "entry": 7.66,
-   "stop": 6.3257,
-   "target": 8.9943,
-   "why": "gap +16.2%, pre-market vol 538,721, rvol 0.2x"
+   "entry": 3.449,
+   "stop": 1.7633,
+   "target": 5.1347,
+   "why": "gap +13.3%, pre-market vol 1,653,201, rvol 0.1x"
   },
   {
    "rank": 2,
-   "symbol": "FCEL",
-   "side": "sell",
-   "entry": 15.25,
-   "stop": 16.971,
-   "target": 13.529,
-   "why": "gap -10.7%, pre-market vol 1,393,108, rvol 0.3x"
+   "symbol": "NTSK",
+   "side": "buy",
+   "entry": 15.57,
+   "stop": 14.3199,
+   "target": 16.8201,
+   "why": "gap +13.2%, pre-market vol 213,561, rvol 2.1x"
   },
   {
    "rank": 3,
-   "symbol": "EOSE",
+   "symbol": "SNOW",
    "side": "buy",
-   "entry": 3.41,
-   "stop": 3.0405,
-   "target": 3.7795,
-   "why": "gap +12.2%, pre-market vol 10,032,323, rvol 0.5x"
+   "entry": 378.1825,
+   "stop": 358.5758,
+   "target": 397.7892,
+   "why": "gap +23.7%, pre-market vol 455,288, rvol 3.1x"
   },
   {
    "rank": 4,
-   "symbol": "GTLB",
+   "symbol": "BIAF",
    "side": "buy",
-   "entry": 55.3,
-   "stop": 52.27,
-   "target": 58.33,
-   "why": "gap +22.6%, pre-market vol 1,214,697, rvol 0.6x"
+   "entry": 13.15,
+   "stop": 10.8863,
+   "target": 15.4137,
+   "why": "gap +34.9%, pre-market vol 3,677,404, rvol 9.7x"
   },
   {
    "rank": 5,
-   "symbol": "MDB",
+   "symbol": "RARE",
    "side": "sell",
-   "entry": 378.38,
-   "stop": 397.9766,
-   "target": 358.7834,
-   "why": "gap -12.9%, pre-market vol 268,677, rvol 0.4x"
+   "entry": 14.1,
+   "stop": 14.7467,
+   "target": 13.4533,
+   "why": "gap -46.9%, pre-market vol 1,852,131, rvol 3.2x"
   }
  ],
  "trades": [
@@ -67,7 +67,7 @@
    "reason": "time"
   }
  ],
- "trades_day_label": "today",
+ "trades_day_label": "Wednesday Sep 02",
  "eod_text": "2 trades, 1 winner, a net loss of $175 on the paper book. Every fill above is real output from the live pipeline: the same leads published here in the morning, executed with bracket exits and risk-normalized sizing, reported win or lose.",
  "board": [
   {
