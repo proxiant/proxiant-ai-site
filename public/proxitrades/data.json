@@ -1,101 +1,101 @@
 {
- "stamp": "Friday, September 04, 2026 09:27 ET",
+ "stamp": "Friday, September 04, 2026 17:05 ET",
  "leads": [
   {
    "rank": 1,
-   "symbol": "IOT",
+   "symbol": "WETO",
    "side": "buy",
-   "entry": 44.43,
-   "stop": 41.6119,
-   "target": 47.2481,
-   "why": "gap +14.7%, pre-market vol 377,003, rvol 3.2x"
+   "entry": 4.13,
+   "stop": -7.6539,
+   "target": 15.9139,
+   "why": "gap +28.3%, pre-market vol 6,182,958, rvol 1.1x"
   },
   {
    "rank": 2,
-   "symbol": "TRU",
+   "symbol": "BIAF",
    "side": "sell",
-   "entry": 75.98,
-   "stop": 78.1057,
-   "target": 73.8543,
-   "why": "gap -10.5%, pre-market vol 106,720, rvol 0.8x"
+   "entry": 11.24,
+   "stop": 12.9341,
+   "target": 9.5459,
+   "why": "gap -12.1%, pre-market vol 131,706, rvol 0.0x"
   },
   {
    "rank": 3,
    "symbol": "LULU",
    "side": "sell",
-   "entry": 97.0965,
-   "stop": 100.8673,
-   "target": 93.3257,
-   "why": "gap -20.3%, pre-market vol 2,638,594, rvol 3.8x"
+   "entry": 97.98,
+   "stop": 101.7851,
+   "target": 94.1749,
+   "why": "gap -19.5%, pre-market vol 2,947,629, rvol 0.8x"
   },
   {
    "rank": 4,
-   "symbol": "ASAN",
-   "side": "sell",
-   "entry": 8.8,
-   "stop": 9.2224,
-   "target": 8.3776,
-   "why": "gap -12.8%, pre-market vol 328,840, rvol 2.5x"
+   "symbol": "IOT",
+   "side": "buy",
+   "entry": 44.86,
+   "stop": 42.0146,
+   "target": 47.7054,
+   "why": "gap +15.8%, pre-market vol 466,478, rvol 0.1x"
   },
   {
    "rank": 5,
-   "symbol": "PATH",
+   "symbol": "ASAN",
    "side": "sell",
-   "entry": 15.98,
-   "stop": 16.6449,
-   "target": 15.3151,
-   "why": "gap -12.3%, pre-market vol 1,430,918, rvol 1.0x"
+   "entry": 8.76,
+   "stop": 9.1804,
+   "target": 8.3396,
+   "why": "gap -13.2%, pre-market vol 383,510, rvol 0.1x"
   }
  ],
  "trades": [
   {
-   "symbol": "BIAF",
+   "symbol": "SUNB",
    "side": "buy",
-   "entry": 12.25,
-   "exit": 11.97,
-   "pnl_pct": -2.2857,
-   "pnl_usd": -51.8,
+   "entry": 67.395,
+   "exit": 67.46,
+   "pnl_pct": 0.0964,
+   "pnl_usd": 9.49,
    "reason": "time"
   },
   {
-   "symbol": "BTC",
+   "symbol": "DOGE",
    "side": "buy",
-   "entry": 77519.2734,
-   "exit": 81157.7031,
-   "pnl_pct": 4.69,
-   "pnl_usd": 234.68,
+   "entry": 0.0892,
+   "exit": 0.0847,
+   "pnl_pct": -5.01,
+   "pnl_usd": -250.62,
    "reason": "momentum_flip"
   },
   {
-   "symbol": "LTC",
+   "symbol": "AVAX",
    "side": "buy",
-   "entry": 48.938,
-   "exit": 51.455,
-   "pnl_pct": 5.14,
-   "pnl_usd": 257.16,
+   "entry": 7.533,
+   "exit": 7.392,
+   "pnl_pct": -1.87,
+   "pnl_usd": -93.59,
    "reason": "momentum_flip"
   }
  ],
- "trades_day_label": "Thursday Sep 03",
- "eod_text": "3 trades, 2 winners, a net gain of $440 on the paper book. Every fill above is real output from the live pipeline: the same leads published here in the morning, executed with bracket exits and risk-normalized sizing, reported win or lose.",
+ "trades_day_label": "today",
+ "eod_text": "3 trades, 1 winner, a net loss of $335 on the paper book. Every fill above is real output from the live pipeline: the same leads published here in the morning, executed with bracket exits and risk-normalized sizing, reported win or lose.",
  "board": [
   {
    "label": "This week",
-   "n": 9,
-   "win_rate": "67%",
-   "pnl_usd": "+515"
+   "n": 12,
+   "win_rate": "58%",
+   "pnl_usd": "+181"
   },
   {
    "label": "This month",
-   "n": 7,
-   "win_rate": "57%",
-   "pnl_usd": "+284"
+   "n": 10,
+   "win_rate": "50%",
+   "pnl_usd": "-51"
   },
   {
    "label": "Since 2026-08-17",
-   "n": 40,
-   "win_rate": "52%",
-   "pnl_usd": "+1,659"
+   "n": 43,
+   "win_rate": "51%",
+   "pnl_usd": "+1,324"
   }
  ],
  "public_epoch": "2026-08-17",
