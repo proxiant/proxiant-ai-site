@@ -1,50 +1,50 @@
 {
- "stamp": "Friday, September 04, 2026 17:05 ET",
+ "stamp": "Tuesday, September 08, 2026 09:27 ET",
  "leads": [
   {
    "rank": 1,
-   "symbol": "WETO",
-   "side": "buy",
-   "entry": 4.13,
-   "stop": -7.6539,
-   "target": 15.9139,
-   "why": "gap +28.3%, pre-market vol 6,182,958, rvol 1.1x"
+   "symbol": "BIAF",
+   "side": "sell",
+   "entry": 10.812,
+   "stop": 14.0983,
+   "target": 7.5257,
+   "why": "gap -29.2%, pre-market vol 142,272, rvol 1.8x"
   },
   {
    "rank": 2,
-   "symbol": "BIAF",
+   "symbol": "SRPT",
    "side": "sell",
-   "entry": 11.24,
-   "stop": 12.9341,
-   "target": 9.5459,
-   "why": "gap -12.1%, pre-market vol 131,706, rvol 0.0x"
+   "entry": 19.58,
+   "stop": 20.9832,
+   "target": 18.1768,
+   "why": "gap -13.0%, pre-market vol 198,521, rvol 0.9x"
   },
   {
    "rank": 3,
-   "symbol": "LULU",
-   "side": "sell",
-   "entry": 97.98,
-   "stop": 101.7851,
-   "target": 94.1749,
-   "why": "gap -19.5%, pre-market vol 2,947,629, rvol 0.8x"
+   "symbol": "ROIV",
+   "side": "buy",
+   "entry": 41.0,
+   "stop": 39.2803,
+   "target": 42.7197,
+   "why": "gap +17.4%, pre-market vol 622,987, rvol 0.6x"
   },
   {
    "rank": 4,
-   "symbol": "IOT",
-   "side": "buy",
-   "entry": 44.86,
-   "stop": 42.0146,
-   "target": 47.7054,
-   "why": "gap +15.8%, pre-market vol 466,478, rvol 0.1x"
+   "symbol": "IONS",
+   "side": "sell",
+   "entry": 52.16,
+   "stop": 53.8047,
+   "target": 50.5153,
+   "why": "gap -10.2%, pre-market vol 360,263, rvol 1.2x"
   },
   {
    "rank": 5,
-   "symbol": "ASAN",
+   "symbol": "DYN",
    "side": "sell",
-   "entry": 8.76,
-   "stop": 9.1804,
-   "target": 8.3396,
-   "why": "gap -13.2%, pre-market vol 383,510, rvol 0.1x"
+   "entry": 17.18,
+   "stop": 17.7811,
+   "target": 16.5789,
+   "why": "gap -29.2%, pre-market vol 686,977, rvol 1.0x"
   }
  ],
  "trades": [
@@ -76,14 +76,14 @@
    "reason": "momentum_flip"
   }
  ],
- "trades_day_label": "today",
+ "trades_day_label": "Friday Sep 04",
  "eod_text": "3 trades, 1 winner, a net loss of $335 on the paper book. Every fill above is real output from the live pipeline: the same leads published here in the morning, executed with bracket exits and risk-normalized sizing, reported win or lose.",
  "board": [
   {
    "label": "This week",
-   "n": 12,
-   "win_rate": "58%",
-   "pnl_usd": "+181"
+   "n": 0,
+   "win_rate": "-",
+   "pnl_usd": "-"
   },
   {
    "label": "This month",
@@ -103,33 +103,33 @@
  "swing": [
   {
    "symbol": "MRNA",
-   "entry": 137.93,
-   "stop": 98.63,
-   "target": 196.88
-  },
-  {
-   "symbol": "AMD",
-   "entry": 465.61,
-   "stop": 427.99,
-   "target": 522.04
+   "entry": 145.51,
+   "stop": 100.32,
+   "target": 213.31
   },
   {
    "symbol": "MU",
-   "entry": 932.58,
-   "stop": 831.19,
-   "target": 1084.67
+   "entry": 1015.0,
+   "stop": 922.63,
+   "target": 1153.56
+  },
+  {
+   "symbol": "AMD",
+   "entry": 477.45,
+   "stop": 441.31,
+   "target": 531.66
   },
   {
    "symbol": "SNOW",
-   "entry": 327.77,
-   "stop": 305.1,
-   "target": 361.77
+   "entry": 337.35,
+   "stop": 302.43,
+   "target": 389.73
   },
   {
    "symbol": "ROKU",
-   "entry": 157.65,
-   "stop": 154.07,
-   "target": 163.02
+   "entry": 155.59,
+   "stop": 151.97,
+   "target": 161.01
   }
  ],
  "posture": "DEFENSIVE",
