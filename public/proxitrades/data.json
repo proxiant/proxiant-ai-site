@@ -1,155 +1,155 @@
 {
- "stamp": "Wednesday, September 09, 2026 09:27 ET",
+ "stamp": "Wednesday, September 09, 2026 17:05 ET",
  "leads": [
   {
    "rank": 1,
    "symbol": "BIAF",
    "side": "buy",
-   "entry": 10.6292,
-   "stop": 6.5917,
-   "target": 14.6667,
-   "why": "gap +19.0%, pre-market vol 2,117,344, rvol 0.2x"
+   "entry": 10.91,
+   "stop": 6.7659,
+   "target": 15.0541,
+   "why": "gap +22.2%, pre-market vol 2,190,716, rvol 0.2x"
   },
   {
    "rank": 2,
-   "symbol": "CHYM",
+   "symbol": "PURR",
    "side": "buy",
-   "entry": 35.33,
-   "stop": 33.6034,
-   "target": 37.0566,
-   "why": "gap +9.3%, pre-market vol 128,697, rvol 1.1x"
+   "entry": 12.64,
+   "stop": 10.7536,
+   "target": 14.5264,
+   "why": "gap +6.0%, pre-market vol 524,030, rvol 0.0x"
   },
   {
    "rank": 3,
-   "symbol": "SIG",
+   "symbol": "FSLY",
    "side": "buy",
-   "entry": 93.796,
-   "stop": 89.4772,
-   "target": 98.1148,
-   "why": "gap +13.5%, pre-market vol 274,646, rvol 2.4x"
+   "entry": 22.71,
+   "stop": 20.6955,
+   "target": 24.7245,
+   "why": "gap +5.7%, pre-market vol 186,034, rvol 0.1x"
   },
   {
    "rank": 4,
-   "symbol": "BRZE",
+   "symbol": "CHWY",
    "side": "sell",
-   "entry": 26.58,
-   "stop": 27.9278,
-   "target": 25.2322,
-   "why": "gap -12.3%, pre-market vol 145,053, rvol 2.6x"
+   "entry": 21.69,
+   "stop": 22.6441,
+   "target": 20.7359,
+   "why": "gap -6.8%, pre-market vol 951,849, rvol 0.2x"
   },
   {
    "rank": 5,
+   "symbol": "ASO",
+   "side": "buy",
+   "entry": 47.2123,
+   "stop": 45.0357,
+   "target": 49.3889,
+   "why": "gap +5.6%, pre-market vol 149,829, rvol 0.2x"
+  },
+  {
+   "rank": 6,
+   "symbol": "META",
+   "side": "buy",
+   "entry": 648.95,
+   "stop": 621.7191,
+   "target": 676.1809,
+   "why": "gap +5.8%, pre-market vol 1,839,837, rvol 0.2x"
+  },
+  {
+   "rank": 7,
    "symbol": "TTAN",
    "side": "sell",
-   "entry": 65.21,
-   "stop": 68.5117,
-   "target": 61.9083,
-   "why": "gap -20.1%, pre-market vol 363,657, rvol 4.8x"
+   "entry": 67.0,
+   "stop": 70.3923,
+   "target": 63.6077,
+   "why": "gap -17.9%, pre-market vol 470,538, rvol 0.8x"
+  },
+  {
+   "rank": 8,
+   "symbol": "SIG",
+   "side": "buy",
+   "entry": 94.77,
+   "stop": 90.4063,
+   "target": 99.1337,
+   "why": "gap +14.6%, pre-market vol 306,641, rvol 0.5x"
+  },
+  {
+   "rank": 9,
+   "symbol": "BRZE",
+   "side": "sell",
+   "entry": 26.0,
+   "stop": 27.3184,
+   "target": 24.6816,
+   "why": "gap -14.2%, pre-market vol 197,692, rvol 0.2x"
+  },
+  {
+   "rank": 10,
+   "symbol": "CHYM",
+   "side": "buy",
+   "entry": 35.3,
+   "stop": 33.5748,
+   "target": 37.0252,
+   "why": "gap +9.3%, pre-market vol 155,585, rvol 0.1x"
   }
  ],
  "trades": [
   {
-   "symbol": "IONS",
+   "symbol": "CHWY",
    "side": "sell",
-   "entry": 54.54,
-   "exit": 55.8886,
-   "pnl_pct": -2.4727,
-   "pnl_usd": -199.59,
-   "reason": "stop"
-  },
-  {
-   "symbol": "BE",
-   "side": "buy",
-   "entry": 268.475,
-   "exit": 272.56,
-   "pnl_pct": 1.5216,
-   "pnl_usd": 32.68,
+   "entry": 21.47,
+   "exit": 21.545,
+   "pnl_pct": -0.3493,
+   "pnl_usd": -17.7,
    "reason": "time"
   },
   {
-   "symbol": "DYN",
+   "symbol": "PURR",
    "side": "buy",
-   "entry": 19.105,
-   "exit": 20.1,
-   "pnl_pct": 5.2081,
-   "pnl_usd": 635.81,
+   "entry": 12.17,
+   "exit": 12.13,
+   "pnl_pct": -0.3287,
+   "pnl_usd": -6.16,
    "reason": "time"
   },
   {
-   "symbol": "BE",
+   "symbol": "TH",
    "side": "buy",
-   "entry": 282.545,
-   "exit": 282.05,
-   "pnl_pct": -0.1752,
-   "pnl_usd": -9.9,
+   "entry": 19.36,
+   "exit": 19.255,
+   "pnl_pct": -0.5424,
+   "pnl_usd": -53.45,
    "reason": "time"
   },
   {
-   "symbol": "AMD",
+   "symbol": "SIG",
    "side": "buy",
-   "entry": 489.48,
-   "exit": 477.45,
-   "pnl_pct": -2.46,
-   "pnl_usd": -409.02,
-   "reason": "time"
-  },
-  {
-   "symbol": "MRNA",
-   "side": "buy",
-   "entry": 134.7379,
-   "exit": 145.515,
-   "pnl_pct": 8.0,
-   "pnl_usd": 1228.59,
-   "reason": "time"
-  },
-  {
-   "symbol": "MU",
-   "side": "buy",
-   "entry": 963.9528,
-   "exit": 1015.0,
-   "pnl_pct": 5.3,
-   "pnl_usd": 918.85,
-   "reason": "time"
-  },
-  {
-   "symbol": "ROKU",
-   "side": "buy",
-   "entry": 156.93,
-   "exit": 155.585,
-   "pnl_pct": -0.86,
-   "pnl_usd": -145.26,
-   "reason": "time"
-  },
-  {
-   "symbol": "SNOW",
-   "side": "buy",
-   "entry": 334.6914,
-   "exit": 337.35,
-   "pnl_pct": 0.79,
-   "pnl_usd": 132.93,
-   "reason": "time"
+   "entry": 97.8,
+   "exit": 101.5265,
+   "pnl_pct": 3.8104,
+   "pnl_usd": 197.51,
+   "reason": "target"
   }
  ],
- "trades_day_label": "Tuesday Sep 08",
- "eod_text": "9 trades, 5 winners, a net gain of $2,185 on the paper book. Every fill above is real output from the live pipeline: the same leads published here in the morning, executed with bracket exits and risk-normalized sizing, reported win or lose.",
+ "trades_day_label": "today",
+ "eod_text": "4 trades, 1 winner, a net gain of $120 on the paper book. Every fill above is real output from the live pipeline: the same leads published here in the morning, executed with bracket exits and risk-normalized sizing, reported win or lose.",
  "board": [
   {
    "label": "This week",
-   "n": 9,
-   "win_rate": "56%",
-   "pnl_usd": "+2,185"
+   "n": 13,
+   "win_rate": "46%",
+   "pnl_usd": "+2,305"
   },
   {
    "label": "This month",
-   "n": 19,
-   "win_rate": "53%",
-   "pnl_usd": "+2,134"
+   "n": 23,
+   "win_rate": "48%",
+   "pnl_usd": "+2,255"
   },
   {
    "label": "Since 2026-08-17",
-   "n": 52,
-   "win_rate": "52%",
-   "pnl_usd": "+3,509"
+   "n": 56,
+   "win_rate": "50%",
+   "pnl_usd": "+3,629"
   }
  ],
  "public_epoch": "2026-08-17",
