@@ -1,95 +1,50 @@
 {
- "stamp": "Wednesday, September 09, 2026 17:05 ET",
+ "stamp": "Thursday, September 10, 2026 09:27 ET",
  "leads": [
   {
    "rank": 1,
-   "symbol": "BIAF",
-   "side": "buy",
-   "entry": 10.91,
-   "stop": 6.7659,
-   "target": 15.0541,
-   "why": "gap +22.2%, pre-market vol 2,190,716, rvol 0.2x"
+   "symbol": "SUNE",
+   "side": "sell",
+   "entry": 3.8495,
+   "stop": 4.3989,
+   "target": 3.3001,
+   "why": "gap -14.6%, pre-market vol 2,272,928, rvol 62.7x"
   },
   {
    "rank": 2,
-   "symbol": "PURR",
-   "side": "buy",
-   "entry": 12.64,
-   "stop": 10.7536,
-   "target": 14.5264,
-   "why": "gap +6.0%, pre-market vol 524,030, rvol 0.0x"
+   "symbol": "BHVN",
+   "side": "sell",
+   "entry": 13.0,
+   "stop": 14.2001,
+   "target": 11.7999,
+   "why": "gap -13.3%, pre-market vol 651,670, rvol 0.7x"
   },
   {
    "rank": 3,
-   "symbol": "FSLY",
-   "side": "buy",
-   "entry": 22.71,
-   "stop": 20.6955,
-   "target": 24.7245,
-   "why": "gap +5.7%, pre-market vol 186,034, rvol 0.1x"
+   "symbol": "COO",
+   "side": "sell",
+   "entry": 52.48,
+   "stop": 53.7918,
+   "target": 51.1682,
+   "why": "gap -17.3%, pre-market vol 189,077, rvol 5.4x"
   },
   {
    "rank": 4,
-   "symbol": "CHWY",
+   "symbol": "AEO",
    "side": "sell",
-   "entry": 21.69,
-   "stop": 22.6441,
-   "target": 20.7359,
-   "why": "gap -6.8%, pre-market vol 951,849, rvol 0.2x"
+   "entry": 14.29,
+   "stop": 14.8697,
+   "target": 13.7103,
+   "why": "gap -15.4%, pre-market vol 949,778, rvol 3.2x"
   },
   {
    "rank": 5,
-   "symbol": "ASO",
-   "side": "buy",
-   "entry": 47.2123,
-   "stop": 45.0357,
-   "target": 49.3889,
-   "why": "gap +5.6%, pre-market vol 149,829, rvol 0.2x"
-  },
-  {
-   "rank": 6,
-   "symbol": "META",
-   "side": "buy",
-   "entry": 648.95,
-   "stop": 621.7191,
-   "target": 676.1809,
-   "why": "gap +5.8%, pre-market vol 1,839,837, rvol 0.2x"
-  },
-  {
-   "rank": 7,
-   "symbol": "TTAN",
+   "symbol": "NAVN",
    "side": "sell",
-   "entry": 67.0,
-   "stop": 70.3923,
-   "target": 63.6077,
-   "why": "gap -17.9%, pre-market vol 470,538, rvol 0.8x"
-  },
-  {
-   "rank": 8,
-   "symbol": "SIG",
-   "side": "buy",
-   "entry": 94.77,
-   "stop": 90.4063,
-   "target": 99.1337,
-   "why": "gap +14.6%, pre-market vol 306,641, rvol 0.5x"
-  },
-  {
-   "rank": 9,
-   "symbol": "BRZE",
-   "side": "sell",
-   "entry": 26.0,
-   "stop": 27.3184,
-   "target": 24.6816,
-   "why": "gap -14.2%, pre-market vol 197,692, rvol 0.2x"
-  },
-  {
-   "rank": 10,
-   "symbol": "CHYM",
-   "side": "buy",
-   "entry": 35.3,
-   "stop": 33.5748,
-   "target": 37.0252,
-   "why": "gap +9.3%, pre-market vol 155,585, rvol 0.1x"
+   "entry": 21.4447,
+   "stop": 22.4493,
+   "target": 20.4401,
+   "why": "gap -17.2%, pre-market vol 161,649, rvol 2.1x"
   }
  ],
  "trades": [
@@ -130,7 +85,7 @@
    "reason": "target"
   }
  ],
- "trades_day_label": "today",
+ "trades_day_label": "Wednesday Sep 09",
  "eod_text": "4 trades, 1 winner, a net gain of $120 on the paper book. Every fill above is real output from the live pipeline: the same leads published here in the morning, executed with bracket exits and risk-normalized sizing, reported win or lose.",
  "board": [
   {
@@ -212,5 +167,353 @@
   }
  ],
  "request_repo": "proxiant/proxiant-ai-site",
- "request_api": ""
+ "request_api": "",
+ "returns": {
+  "as_of": "2026-09-10",
+  "epoch": "2026-08-17",
+  "windows": [
+   "This week",
+   "This month",
+   "Since Aug 17"
+  ],
+  "desks": [
+   {
+    "desk": "falcon",
+    "label": "Falcon",
+    "what": "morning gap and relay books, flat by the close",
+    "capital_usd": 100000,
+    "started": "2026-08-18",
+    "windows": [
+     {
+      "label": "This week",
+      "desk_pct": 0.01,
+      "spx_pct": -1.47,
+      "excess_pct": 1.48,
+      "beat": true,
+      "from": "2026-09-04",
+      "to": "2026-09-10",
+      "pnl_usd": 6.74
+     },
+     {
+      "label": "This month",
+      "desk_pct": 0.1,
+      "spx_pct": -1.07,
+      "excess_pct": 1.17,
+      "beat": true,
+      "from": "2026-08-31",
+      "to": "2026-09-10",
+      "pnl_usd": 100.69
+     },
+     {
+      "label": "Since Aug 17",
+      "desk_pct": -0.14,
+      "spx_pct": -1.79,
+      "excess_pct": 1.64,
+      "beat": true,
+      "from": "2026-08-17",
+      "to": "2026-09-10",
+      "pnl_usd": -142.91
+     }
+    ],
+    "since_start": {
+     "desk_pct": -0.14,
+     "spx_pct": -1.79,
+     "excess_pct": 1.64,
+     "beat": true,
+     "from": "2026-08-17",
+     "to": "2026-09-10",
+     "pnl_usd": -142.91
+    },
+    "open_pnl_usd": 0.0,
+    "trades": 13
+   },
+   {
+    "desk": "hunter",
+    "label": "Hunter",
+    "what": "all-day confirmation engine, one position at a time",
+    "capital_usd": 100000,
+    "started": "2026-08-17",
+    "windows": [
+     {
+      "label": "This week",
+      "desk_pct": 0.56,
+      "spx_pct": -1.47,
+      "excess_pct": 2.03,
+      "beat": true,
+      "from": "2026-09-04",
+      "to": "2026-09-10",
+      "pnl_usd": 572.46
+     },
+     {
+      "label": "This month",
+      "desk_pct": 0.28,
+      "spx_pct": -1.07,
+      "excess_pct": 1.34,
+      "beat": true,
+      "from": "2026-08-31",
+      "to": "2026-09-10",
+      "pnl_usd": 280.13
+     },
+     {
+      "label": "Since Aug 17",
+      "desk_pct": 1.93,
+      "spx_pct": -2.25,
+      "excess_pct": 4.19,
+      "beat": true,
+      "from": "2026-08-14",
+      "to": "2026-09-10",
+      "pnl_usd": 1934.86
+     }
+    ],
+    "since_start": {
+     "desk_pct": 1.93,
+     "spx_pct": -2.25,
+     "excess_pct": 4.19,
+     "beat": true,
+     "from": "2026-08-14",
+     "to": "2026-09-10",
+     "pnl_usd": 1934.86
+    },
+    "open_pnl_usd": 0.0,
+    "trades": 29
+   },
+   {
+    "desk": "raptor",
+    "label": "Raptor",
+    "what": "multi-day swings, up to five sessions",
+    "capital_usd": 100000,
+    "started": "2026-08-21",
+    "windows": [
+     {
+      "label": "This week",
+      "desk_pct": -0.04,
+      "spx_pct": -1.47,
+      "excess_pct": 1.43,
+      "beat": true,
+      "from": "2026-09-04",
+      "to": "2026-09-10",
+      "pnl_usd": -44.54
+     },
+     {
+      "label": "This month",
+      "desk_pct": 1.97,
+      "spx_pct": -1.07,
+      "excess_pct": 3.03,
+      "beat": true,
+      "from": "2026-08-31",
+      "to": "2026-09-10",
+      "pnl_usd": 1966.56
+     },
+     {
+      "label": "Since Aug 17",
+      "desk_pct": 2.04,
+      "spx_pct": -0.49,
+      "excess_pct": 2.53,
+      "beat": true,
+      "from": "2026-08-20",
+      "to": "2026-09-10",
+      "pnl_usd": 2041.63
+     }
+    ],
+    "since_start": {
+     "desk_pct": 2.04,
+     "spx_pct": -0.49,
+     "excess_pct": 2.53,
+     "beat": true,
+     "from": "2026-08-20",
+     "to": "2026-09-10",
+     "pnl_usd": 2041.63
+    },
+    "open_pnl_usd": -15.81,
+    "trades": 6
+   },
+   {
+    "desk": "osprey",
+    "label": "Osprey",
+    "what": "crypto momentum, daily rebalance",
+    "capital_usd": 50000,
+    "started": "2026-08-17",
+    "windows": [
+     {
+      "label": "This week",
+      "desk_pct": -2.83,
+      "spx_pct": -1.47,
+      "excess_pct": -1.36,
+      "beat": false,
+      "from": "2026-09-04",
+      "to": "2026-09-10",
+      "pnl_usd": -1569.75
+     },
+     {
+      "label": "This month",
+      "desk_pct": -0.1,
+      "spx_pct": -1.07,
+      "excess_pct": 0.96,
+      "beat": true,
+      "from": "2026-08-31",
+      "to": "2026-09-10",
+      "pnl_usd": -55.83
+     },
+     {
+      "label": "Since Aug 17",
+      "desk_pct": 7.7,
+      "spx_pct": -2.25,
+      "excess_pct": 9.95,
+      "beat": true,
+      "from": "2026-08-14",
+      "to": "2026-09-10",
+      "pnl_usd": 3850.45
+     }
+    ],
+    "since_start": {
+     "desk_pct": 7.7,
+     "spx_pct": -2.25,
+     "excess_pct": 9.95,
+     "beat": true,
+     "from": "2026-08-14",
+     "to": "2026-09-10",
+     "pnl_usd": 3850.45
+    },
+    "open_pnl_usd": 4070.69,
+    "trades": 8
+   },
+   {
+    "desk": "kestrel",
+    "label": "Kestrel",
+    "what": "index and mega-cap RSI dips, days to a week",
+    "capital_usd": 100000,
+    "started": "2026-09-09",
+    "windows": [
+     {
+      "label": "This week",
+      "desk_pct": -0.02,
+      "spx_pct": -0.93,
+      "excess_pct": 0.9,
+      "beat": true,
+      "from": "2026-09-08",
+      "to": "2026-09-10",
+      "pnl_usd": -21.94
+     },
+     {
+      "label": "This month",
+      "desk_pct": -0.02,
+      "spx_pct": -0.93,
+      "excess_pct": 0.9,
+      "beat": true,
+      "from": "2026-09-08",
+      "to": "2026-09-10",
+      "pnl_usd": -21.94
+     },
+     {
+      "label": "Since Aug 17",
+      "desk_pct": -0.02,
+      "spx_pct": -0.93,
+      "excess_pct": 0.9,
+      "beat": true,
+      "from": "2026-09-08",
+      "to": "2026-09-10",
+      "pnl_usd": -21.94
+     }
+    ],
+    "since_start": {
+     "desk_pct": -0.02,
+     "spx_pct": -0.93,
+     "excess_pct": 0.9,
+     "beat": true,
+     "from": "2026-09-08",
+     "to": "2026-09-10",
+     "pnl_usd": -21.94
+    },
+    "open_pnl_usd": -21.94,
+    "trades": 0
+   },
+   {
+    "desk": "harrier",
+    "label": "Harrier",
+    "what": "put spreads on rich implied volatility, weeks to a trade",
+    "capital_usd": 50000,
+    "started": null,
+    "windows": [
+     {
+      "label": "This week",
+      "desk_pct": null,
+      "spx_pct": null,
+      "beat": null
+     },
+     {
+      "label": "This month",
+      "desk_pct": null,
+      "spx_pct": null,
+      "beat": null
+     },
+     {
+      "label": "Since Aug 17",
+      "desk_pct": null,
+      "spx_pct": null,
+      "beat": null
+     }
+    ],
+    "since_start": null,
+    "open_pnl_usd": null,
+    "trades": 0
+   }
+  ],
+  "total": {
+   "label": "All desks",
+   "capital_usd": 400000,
+   "windows": [
+    {
+     "label": "This week",
+     "desk_pct": -0.19,
+     "spx_pct": -1.47,
+     "excess_pct": 1.28,
+     "beat": true,
+     "from": "2026-09-04",
+     "to": "2026-09-10",
+     "pnl_usd": -766.34
+    },
+    {
+     "label": "This month",
+     "desk_pct": 0.56,
+     "spx_pct": -1.07,
+     "excess_pct": 1.63,
+     "beat": true,
+     "from": "2026-08-31",
+     "to": "2026-09-10",
+     "pnl_usd": 2269.61
+    },
+    {
+     "label": "Since Aug 17",
+     "desk_pct": 1.92,
+     "spx_pct": -2.25,
+     "excess_pct": 4.17,
+     "beat": true,
+     "from": "2026-08-14",
+     "to": "2026-09-10",
+     "pnl_usd": 7662.09
+    }
+   ],
+   "since_start": {
+    "desk_pct": 1.92,
+    "spx_pct": -2.25,
+    "excess_pct": 4.17,
+    "beat": true,
+    "from": "2026-08-14",
+    "to": "2026-09-10",
+    "pnl_usd": 7662.09
+   }
+  },
+  "beats": 14,
+  "tries": 15,
+  "benchmark": "SPY price return between the same closes",
+  "note": "Return on the desk's own notional pool: realised trades plus open positions marked at the close. Falcon and Hunter share the day pool. Paper account."
+ },
+ "options": {
+  "desk": "Harrier",
+  "held": [],
+  "scan": [],
+  "last_pass": {},
+  "closed": [],
+  "rule": "Short put near 18 delta, long put about 1.5 percent below, 28 to 50 days out, only above the 200-day average and when implied volatility is at least 1.1x realized. Managed at half the credit, one credit of loss, 21 days to expiry or a breached strike."
+ }
 }
