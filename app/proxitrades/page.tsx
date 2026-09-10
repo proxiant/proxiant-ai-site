@@ -23,7 +23,28 @@ type Board = { label: string; n: number; win_rate: string; pnl_usd: string };
 type Swing = { symbol: string; entry?: number | null; stop?: number | null; target?: number | null };
 type Research = { symbol: string; date: string; requested_by: string; headline: string; href: string };
 
+type WinRet = { label: string; desk_pct?: number | null; spx_pct?: number | null; excess_pct?: number | null; beat?: boolean | null; from?: string; to?: string; pnl_usd?: number | null };
+type DeskRet = { desk: string; label: string; what?: string; capital_usd?: number; started?: string | null; windows: WinRet[]; since_start?: WinRet | null; open_pnl_usd?: number | null; trades?: number };
+type Returns = { as_of?: string; epoch?: string; windows?: string[]; desks?: DeskRet[]; total?: DeskRet; beats?: number; tries?: number; benchmark?: string; note?: string };
+type Spread = { id?: string; underlying?: string; expiry?: string; dte?: number | null; short_strike?: number | null; long_strike?: number | null; qty?: number; credit?: number | null; max_risk_usd?: number; opened?: string };
+type Scout = { underlying?: string; spot?: number | null; expiry?: string | null; dte?: number | null; short_strike?: number | null; long_strike?: number | null; credit?: number | null; delta?: number | null; iv?: number | null; rv?: number | null; vrp?: number | null; score?: number | null; yield_pct?: number | null; signal?: boolean; reason?: string };
+type ClosedSpread = { symbol?: string; entry?: number | null; exit?: number | null; pnl_pct: number; pnl_usd: number; reason?: string; day?: string };
+type OptionsDesk = { desk?: string; held?: Spread[]; scan?: Scout[]; last_pass?: { date?: string; mode?: string; entered?: number; exited?: number; candidates?: number; dry_run?: boolean }; closed?: ClosedSpread[]; rule?: string };
+
 const f = (v?: number | null) => (v == null ? "—" : v.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 }));
+const pct = (v?: number | null) => (v == null ? "—" : `${v >= 0 ? "+" : ""}${v.toFixed(2)}%`);
+const usd0 = (v?: number | null) => (v == null ? "—" : `${v < 0 ? "-" : ""}$${Math.abs(v).toLocaleString("en-US", { maximumFractionDigits: 0 })}`);
+const tone = (v?: number | null) => (v == null ? "text-zinc-500" : v >= 0 ? "text-emerald-400" : "text-red-400");
+
+function RetCell({ w }: { w?: WinRet | null }) {
+  if (!w || w.desk_pct == null) return <Td cls="text-zinc-600">—</Td>;
+  return (
+    <Td>
+      <div className={`${tone(w.desk_pct)} font-medium`}>{pct(w.desk_pct)} <span className="text-[12px]">{w.beat ? "✓" : "✗"}</span></div>
+      <div className="text-[12px] text-zinc-500">S&amp;P {pct(w.spx_pct)}</div>
+    </Td>
+  );
+}
 
 function Th({ children }: { children: React.ReactNode }) {
   return <th className="text-left font-mono text-[11px] tracking-[0.14em] text-zinc-500 pb-3 pr-4 font-normal">{children}</th>;
@@ -40,6 +61,13 @@ export default function Page() {
   const research = ((data as Record<string, unknown>).research ?? []) as Research[];
   const requestRepo = ((data as Record<string, unknown>).request_repo as string) ?? "proxiant/proxiant-ai-site";
   const requestApi = ((data as Record<string, unknown>).request_api as string) ?? "";
+  const returns = ((data as Record<string, unknown>).returns ?? {}) as Returns;
+  const retDesks = returns.desks ?? [];
+  const retWindows = returns.windows ?? [];
+  const options = ((data as Record<string, unknown>).options ?? {}) as OptionsDesk;
+  const held = options.held ?? [];
+  const scout = (options.scan ?? []).slice(0, 8);
+  const closedSpreads = options.closed ?? [];
   return (
     <div>
       <SiteHeader />
@@ -138,6 +166,138 @@ export default function Page() {
             ))}
           </div>
         </section>
+
+        {retDesks.length ? (
+          <section data-reveal>
+            <div className="font-mono text-[12px] tracking-[0.14em] text-zinc-500 mb-4">RETURN ON CAPITAL · EACH DESK VERSUS THE S&amp;P 500</div>
+            <p className="muted text-[13px] leading-relaxed max-w-3xl mb-4">
+              Every desk runs its own notional pool and its goal is to beat the S&amp;P 500 over the same dates.
+              {returns.note ? ` ${returns.note}` : ""} Benchmark: {returns.benchmark ?? "SPY price return between the same closes"}.
+            </p>
+            <div className="grid sm:grid-cols-3 gap-4 mb-4">
+              <div className="card p-7">
+                <div className="font-mono text-[11px] tracking-[0.14em] text-zinc-500 mb-3">BEATS THE S&amp;P</div>
+                <div className="font-serif text-[30px]">{returns.beats ?? 0} of {returns.tries ?? 0}</div>
+                <div className="text-[13px] text-zinc-400 mt-1">desk-windows measured</div>
+              </div>
+              {returns.total?.windows?.slice(2, 3).map((w) => (
+                <div key={w.label} className="card p-7">
+                  <div className="font-mono text-[11px] tracking-[0.14em] text-zinc-500 mb-3">ALL DESKS · {w.label.toUpperCase()}</div>
+                  <div className={`font-serif text-[30px] ${tone(w.desk_pct)}`}>{pct(w.desk_pct)}</div>
+                  <div className="text-[13px] text-zinc-400 mt-1">S&amp;P {pct(w.spx_pct)} · {w.beat ? "ahead" : "behind"} · on {usd0(returns.total?.capital_usd)}</div>
+                </div>
+              ))}
+              <div className="card p-7">
+                <div className="font-mono text-[11px] tracking-[0.14em] text-zinc-500 mb-3">AS OF</div>
+                <div className="font-serif text-[30px]">{returns.as_of ?? "—"}</div>
+                <div className="text-[13px] text-zinc-400 mt-1">track record since {returns.epoch ?? ""}</div>
+              </div>
+            </div>
+            <div className="card p-8 overflow-x-auto">
+              <table className="w-full min-w-[820px]">
+                <thead>
+                  <tr>
+                    <Th>DESK</Th><Th>CAPITAL</Th>
+                    {retWindows.map((w) => <Th key={w}>{w.toUpperCase()}</Th>)}
+                    <Th>SINCE START</Th><Th>OPEN P&amp;L</Th><Th>TRADES</Th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {retDesks.map((d) => (
+                    <tr key={d.desk}>
+                      <Td>
+                        <div className="font-medium">{d.label}</div>
+                        <div className="text-[12px] text-zinc-500">{d.what ?? ""}{d.started ? ` · since ${d.started}` : " · no trades yet"}</div>
+                      </Td>
+                      <Td cls="text-zinc-400">{usd0(d.capital_usd)}</Td>
+                      {retWindows.map((w, i) => <RetCell key={w} w={d.windows?.[i]} />)}
+                      <RetCell w={d.since_start} />
+                      <Td cls={tone(d.open_pnl_usd)}>{usd0(d.open_pnl_usd)}</Td>
+                      <Td cls="text-zinc-400">{d.trades ?? 0}</Td>
+                    </tr>
+                  ))}
+                  {returns.total ? (
+                    <tr>
+                      <Td cls="font-medium">All desks</Td>
+                      <Td cls="text-zinc-400">{usd0(returns.total.capital_usd)}</Td>
+                      {retWindows.map((w, i) => <RetCell key={w} w={returns.total?.windows?.[i]} />)}
+                      <RetCell w={returns.total.since_start} />
+                      <Td cls="text-zinc-600">—</Td><Td cls="text-zinc-600">—</Td>
+                    </tr>
+                  ) : null}
+                </tbody>
+              </table>
+            </div>
+          </section>
+        ) : null}
+
+        {options.desk ? (
+          <section data-reveal>
+            <div className="font-mono text-[12px] tracking-[0.14em] text-zinc-500 mb-4">OPTIONS DESK · HARRIER · PUT SPREADS ON RICH VOLATILITY</div>
+            <p className="muted text-[13px] leading-relaxed max-w-3xl mb-4">{options.rule ?? ""}</p>
+            <div className="card p-8 overflow-x-auto mb-4">
+              <div className="font-mono text-[11px] tracking-[0.14em] text-zinc-500 mb-3">OPEN SPREADS ({held.length})</div>
+              <table className="w-full min-w-[640px]">
+                <thead><tr><Th>NAME</Th><Th>EXPIRY</Th><Th>DTE</Th><Th>SHORT / LONG</Th><Th>QTY</Th><Th>CREDIT</Th><Th>MAX RISK</Th><Th>OPENED</Th></tr></thead>
+                <tbody>
+                  {held.length ? held.map((h) => (
+                    <tr key={h.id ?? `${h.underlying}-${h.expiry}`}>
+                      <Td cls="font-medium">{h.underlying ?? ""}</Td>
+                      <Td>{h.expiry ?? ""}</Td><Td>{h.dte ?? "—"}</Td>
+                      <Td>{h.short_strike ?? "—"} / {h.long_strike ?? "—"}</Td>
+                      <Td>{h.qty ?? ""}</Td><Td>{f(h.credit)}</Td><Td>{usd0(h.max_risk_usd)}</Td>
+                      <Td cls="text-zinc-400">{h.opened ?? ""}</Td>
+                    </tr>
+                  )) : (
+                    <tr><Td cls="text-zinc-500">No open spreads. The desk enters only when a candidate passes every gate and buying power is free.</Td></tr>
+                  )}
+                </tbody>
+              </table>
+            </div>
+            <div className="card p-8 overflow-x-auto mb-4">
+              <div className="font-mono text-[11px] tracking-[0.14em] text-zinc-500 mb-3">
+                THIS MORNING&apos;S SCOUT{options.last_pass?.date ? ` · ${options.last_pass.date}` : ""} · RANKED BY PREMIUM YIELD ON RISK
+              </div>
+              <table className="w-full min-w-[760px]">
+                <thead><tr><Th>NAME</Th><Th>SPOT</Th><Th>EXPIRY</Th><Th>SHORT / LONG</Th><Th>CREDIT</Th><Th>DELTA</Th><Th>IV / RV</Th><Th>SCORE</Th><Th>VERDICT</Th></tr></thead>
+                <tbody>
+                  {scout.length ? scout.map((s, i) => (
+                    <tr key={`${s.underlying}-${i}`}>
+                      <Td cls="font-medium">{s.underlying ?? ""}</Td>
+                      <Td>{f(s.spot)}</Td><Td>{s.expiry ?? "—"}</Td>
+                      <Td>{s.short_strike != null ? `${s.short_strike} / ${s.long_strike}` : "—"}</Td>
+                      <Td>{f(s.credit)}</Td><Td>{s.delta != null ? s.delta.toFixed(2) : "—"}</Td>
+                      <Td>{s.vrp != null ? s.vrp.toFixed(2) : "—"}</Td>
+                      <Td>{s.score != null ? s.score.toFixed(2) : "—"}</Td>
+                      <Td cls={s.signal ? "text-emerald-400" : "text-zinc-400 text-[13px]"}>{s.signal ? "PASS" : (s.reason ?? "")}</Td>
+                    </tr>
+                  )) : (
+                    <tr><Td cls="text-zinc-500">The scout runs at 10:20 ET on trading days.</Td></tr>
+                  )}
+                </tbody>
+              </table>
+            </div>
+            {closedSpreads.length ? (
+              <div className="card p-8 overflow-x-auto">
+                <div className="font-mono text-[11px] tracking-[0.14em] text-zinc-500 mb-3">CLOSED SPREADS · P&amp;L AS A SHARE OF MAX RISK</div>
+                <table className="w-full min-w-[640px]">
+                  <thead><tr><Th>DAY</Th><Th>NAME</Th><Th>CREDIT</Th><Th>EXIT</Th><Th>P&amp;L</Th><Th>WHY</Th></tr></thead>
+                  <tbody>
+                    {closedSpreads.map((c, i) => (
+                      <tr key={`${c.symbol}-${i}`}>
+                        <Td cls="text-zinc-400">{c.day ?? ""}</Td>
+                        <Td cls="font-medium">{c.symbol ?? ""}</Td>
+                        <Td>{f(c.entry)}</Td><Td>{f(c.exit)}</Td>
+                        <Td cls={tone(c.pnl_usd)}>{usd0(c.pnl_usd)} · {pct(c.pnl_pct)}</Td>
+                        <Td cls="text-zinc-400 text-[13px]">{c.reason ?? ""}</Td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            ) : null}
+          </section>
+        ) : null}
 
         <section data-reveal>
           <div className="font-mono text-[12px] tracking-[0.14em] text-zinc-500 mb-4">SWING PICKS · WEEK AHEAD</div>
