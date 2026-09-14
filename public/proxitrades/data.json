@@ -1,95 +1,50 @@
 {
- "stamp": "Friday, September 11, 2026 17:05 ET",
+ "stamp": "Monday, September 14, 2026 09:27 ET",
  "leads": [
   {
    "rank": 1,
-   "symbol": "FTFT",
-   "side": "buy",
-   "entry": 2.79,
-   "stop": 1.6789,
-   "target": 3.9011,
-   "why": "gap +36.1%, pre-market vol 9,347,320, rvol 1.1x"
+   "symbol": "AEHL",
+   "side": "sell",
+   "entry": 6.6428,
+   "stop": 8.7297,
+   "target": 4.5559,
+   "why": "gap -14.9%, pre-market vol 527,240, rvol 0.1x"
   },
   {
    "rank": 2,
-   "symbol": "USDE",
-   "side": "buy",
-   "entry": 7.101,
-   "stop": 4.5999,
-   "target": 9.6021,
-   "why": "gap +6.6%, pre-market vol 407,038, rvol 0.1x"
+   "symbol": "TNON",
+   "side": "sell",
+   "entry": 5.25,
+   "stop": 6.7828,
+   "target": 3.7172,
+   "why": "gap -11.5%, pre-market vol 544,125, rvol 7.3x"
   },
   {
    "rank": 3,
-   "symbol": "LPTH",
-   "side": "sell",
-   "entry": 9.22,
-   "stop": 10.027,
-   "target": 8.413,
-   "why": "gap -4.8%, pre-market vol 128,113, rvol 0.1x"
+   "symbol": "BNC",
+   "side": "buy",
+   "entry": 5.33,
+   "stop": 4.3866,
+   "target": 6.2734,
+   "why": "gap +11.0%, pre-market vol 1,816,424, rvol 0.3x"
   },
   {
    "rank": 4,
-   "symbol": "SMR",
-   "side": "sell",
-   "entry": 9.63,
-   "stop": 10.3204,
-   "target": 8.9396,
-   "why": "gap -5.7%, pre-market vol 2,577,886, rvol 0.1x"
+   "symbol": "DFTX",
+   "side": "buy",
+   "entry": 43.88,
+   "stop": 41.3713,
+   "target": 46.3887,
+   "why": "gap +12.8%, pre-market vol 452,753, rvol 1.1x"
   },
   {
    "rank": 5,
-   "symbol": "BW",
-   "side": "buy",
-   "entry": 7.6291,
-   "stop": 6.9747,
-   "target": 8.2835,
-   "why": "gap +6.4%, pre-market vol 178,506, rvol 0.1x"
-  },
-  {
-   "rank": 6,
-   "symbol": "ORCL",
-   "side": "buy",
-   "entry": 164.55,
-   "stop": 155.2577,
-   "target": 173.8423,
-   "why": "gap +7.6%, pre-market vol 4,548,499, rvol 0.3x"
-  },
-  {
-   "rank": 7,
-   "symbol": "UPST",
-   "side": "buy",
-   "entry": 26.18,
-   "stop": 24.7148,
-   "target": 27.6452,
-   "why": "gap +4.3%, pre-market vol 139,202, rvol 0.1x"
-  },
-  {
-   "rank": 8,
-   "symbol": "CPRT",
-   "side": "buy",
-   "entry": 31.9,
-   "stop": 30.6919,
-   "target": 33.1081,
-   "why": "gap +3.7%, pre-market vol 155,826, rvol 0.1x"
-  },
-  {
-   "rank": 9,
-   "symbol": "TNON",
-   "side": "buy",
-   "entry": 8.14,
-   "stop": 5.8204,
-   "target": 10.4596,
-   "why": "gap +53.6%, pre-market vol 23,927,822, rvol 2.1x"
-  },
-  {
-   "rank": 10,
-   "symbol": "ACVA",
-   "side": "buy",
-   "entry": 10.455,
-   "stop": 9.7612,
-   "target": 11.1488,
-   "why": "gap +44.8%, pre-market vol 34,277,318, rvol 8.3x"
+   "symbol": "GLW",
+   "side": "sell",
+   "entry": 150.7,
+   "stop": 157.2623,
+   "target": 144.1377,
+   "why": "gap -9.4%, pre-market vol 151,185, rvol 0.6x"
   }
  ],
  "trades": [
@@ -117,9 +72,9 @@
  "board": [
   {
    "label": "This week",
-   "n": 15,
-   "win_rate": "53%",
-   "pnl_usd": "+2,556"
+   "n": 0,
+   "win_rate": "-",
+   "pnl_usd": "-"
   },
   {
    "label": "This month",
@@ -139,33 +94,33 @@
  "swing": [
   {
    "symbol": "MRNA",
-   "entry": 145.51,
-   "stop": 100.32,
-   "target": 213.31
-  },
-  {
-   "symbol": "MU",
-   "entry": 1015.0,
-   "stop": 922.63,
-   "target": 1153.56
+   "entry": 143.97,
+   "stop": 120.45,
+   "target": 179.24
   },
   {
    "symbol": "AMD",
-   "entry": 477.45,
-   "stop": 441.31,
-   "target": 531.66
+   "entry": 516.12,
+   "stop": 478.72,
+   "target": 572.2
+  },
+  {
+   "symbol": "MU",
+   "entry": 975.12,
+   "stop": 887.88,
+   "target": 1105.99
   },
   {
    "symbol": "SNOW",
-   "entry": 337.35,
-   "stop": 302.43,
-   "target": 389.73
+   "entry": 328.88,
+   "stop": 294.9,
+   "target": 379.85
   },
   {
    "symbol": "ROKU",
-   "entry": 155.59,
-   "stop": 151.97,
-   "target": 161.01
+   "entry": 154.96,
+   "stop": 151.14,
+   "target": 160.69
   }
  ],
  "posture": "DEFENSIVE",
@@ -196,7 +151,7 @@
  "request_repo": "proxiant/proxiant-ai-site",
  "request_api": "",
  "returns": {
-  "as_of": "2026-09-11",
+  "as_of": "2026-09-14",
   "epoch": "2026-08-17",
   "windows": [
    "This week",
@@ -213,42 +168,42 @@
     "windows": [
      {
       "label": "This week",
-      "desk_pct": 0.26,
-      "spx_pct": -0.78,
-      "excess_pct": 1.03,
+      "desk_pct": 0.0,
+      "spx_pct": -0.79,
+      "excess_pct": 0.79,
       "beat": true,
-      "from": "2026-09-04",
-      "to": "2026-09-11",
-      "pnl_usd": 257.75
+      "from": "2026-09-11",
+      "to": "2026-09-14",
+      "pnl_usd": 0.0
      },
      {
       "label": "This month",
       "desk_pct": 0.35,
-      "spx_pct": -0.37,
-      "excess_pct": 0.72,
+      "spx_pct": -1.15,
+      "excess_pct": 1.5,
       "beat": true,
       "from": "2026-08-31",
-      "to": "2026-09-11",
+      "to": "2026-09-14",
       "pnl_usd": 351.7
      },
      {
       "label": "Since Aug 17",
       "desk_pct": 0.11,
-      "spx_pct": -1.09,
-      "excess_pct": 1.2,
+      "spx_pct": -1.86,
+      "excess_pct": 1.97,
       "beat": true,
       "from": "2026-08-17",
-      "to": "2026-09-11",
+      "to": "2026-09-14",
       "pnl_usd": 108.1
      }
     ],
     "since_start": {
      "desk_pct": 0.11,
-     "spx_pct": -1.09,
-     "excess_pct": 1.2,
+     "spx_pct": -1.86,
+     "excess_pct": 1.97,
      "beat": true,
      "from": "2026-08-17",
-     "to": "2026-09-11",
+     "to": "2026-09-14",
      "pnl_usd": 108.1
     },
     "open_pnl_usd": 0.0,
@@ -263,42 +218,42 @@
     "windows": [
      {
       "label": "This week",
-      "desk_pct": 0.56,
-      "spx_pct": -0.78,
-      "excess_pct": 1.34,
+      "desk_pct": 0.0,
+      "spx_pct": -0.79,
+      "excess_pct": 0.79,
       "beat": true,
-      "from": "2026-09-04",
-      "to": "2026-09-11",
-      "pnl_usd": 572.46
+      "from": "2026-09-11",
+      "to": "2026-09-14",
+      "pnl_usd": 0.0
      },
      {
       "label": "This month",
       "desk_pct": 0.28,
-      "spx_pct": -0.37,
-      "excess_pct": 0.64,
+      "spx_pct": -1.15,
+      "excess_pct": 1.42,
       "beat": true,
       "from": "2026-08-31",
-      "to": "2026-09-11",
+      "to": "2026-09-14",
       "pnl_usd": 280.13
      },
      {
       "label": "Since Aug 17",
       "desk_pct": 1.93,
-      "spx_pct": -1.56,
-      "excess_pct": 3.5,
+      "spx_pct": -2.33,
+      "excess_pct": 4.26,
       "beat": true,
       "from": "2026-08-14",
-      "to": "2026-09-11",
+      "to": "2026-09-14",
       "pnl_usd": 1934.86
      }
     ],
     "since_start": {
      "desk_pct": 1.93,
-     "spx_pct": -1.56,
-     "excess_pct": 3.5,
+     "spx_pct": -2.33,
+     "excess_pct": 4.26,
      "beat": true,
      "from": "2026-08-14",
-     "to": "2026-09-11",
+     "to": "2026-09-14",
      "pnl_usd": 1934.86
     },
     "open_pnl_usd": 0.0,
@@ -313,45 +268,45 @@
     "windows": [
      {
       "label": "This week",
-      "desk_pct": 0.13,
-      "spx_pct": -0.78,
-      "excess_pct": 0.9,
+      "desk_pct": 0.0,
+      "spx_pct": -0.79,
+      "excess_pct": 0.79,
       "beat": true,
-      "from": "2026-09-04",
-      "to": "2026-09-11",
-      "pnl_usd": 130.62
+      "from": "2026-09-11",
+      "to": "2026-09-14",
+      "pnl_usd": 0.0
      },
      {
       "label": "This month",
-      "desk_pct": 2.14,
-      "spx_pct": -0.37,
-      "excess_pct": 2.51,
+      "desk_pct": 2.11,
+      "spx_pct": -1.15,
+      "excess_pct": 3.26,
       "beat": true,
       "from": "2026-08-31",
-      "to": "2026-09-11",
-      "pnl_usd": 2141.72
+      "to": "2026-09-14",
+      "pnl_usd": 2116.29
      },
      {
       "label": "Since Aug 17",
-      "desk_pct": 2.22,
-      "spx_pct": 0.21,
-      "excess_pct": 2.0,
+      "desk_pct": 2.19,
+      "spx_pct": -0.57,
+      "excess_pct": 2.76,
       "beat": true,
       "from": "2026-08-20",
-      "to": "2026-09-11",
-      "pnl_usd": 2216.79
+      "to": "2026-09-14",
+      "pnl_usd": 2191.36
      }
     ],
     "since_start": {
-     "desk_pct": 2.22,
-     "spx_pct": 0.21,
-     "excess_pct": 2.0,
+     "desk_pct": 2.19,
+     "spx_pct": -0.57,
+     "excess_pct": 2.76,
      "beat": true,
      "from": "2026-08-20",
-     "to": "2026-09-11",
-     "pnl_usd": 2216.79
+     "to": "2026-09-14",
+     "pnl_usd": 2191.36
     },
-    "open_pnl_usd": 159.35,
+    "open_pnl_usd": 133.92,
     "trades": 6
    },
    {
@@ -363,45 +318,45 @@
     "windows": [
      {
       "label": "This week",
-      "desk_pct": -1.8,
-      "spx_pct": -0.78,
-      "excess_pct": -1.03,
-      "beat": false,
-      "from": "2026-09-04",
-      "to": "2026-09-11",
-      "pnl_usd": -1000.29
+      "desk_pct": 0.0,
+      "spx_pct": -0.79,
+      "excess_pct": 0.79,
+      "beat": true,
+      "from": "2026-09-11",
+      "to": "2026-09-14",
+      "pnl_usd": 0.0
      },
      {
       "label": "This month",
-      "desk_pct": 0.95,
-      "spx_pct": -0.37,
-      "excess_pct": 1.32,
+      "desk_pct": 0.47,
+      "spx_pct": -1.15,
+      "excess_pct": 1.61,
       "beat": true,
       "from": "2026-08-31",
-      "to": "2026-09-11",
-      "pnl_usd": 513.63
+      "to": "2026-09-14",
+      "pnl_usd": 252.39
      },
      {
       "label": "Since Aug 17",
-      "desk_pct": 8.84,
-      "spx_pct": -1.56,
-      "excess_pct": 10.4,
+      "desk_pct": 8.32,
+      "spx_pct": -2.33,
+      "excess_pct": 10.65,
       "beat": true,
       "from": "2026-08-14",
-      "to": "2026-09-11",
-      "pnl_usd": 4419.91
+      "to": "2026-09-14",
+      "pnl_usd": 4158.67
      }
     ],
     "since_start": {
-     "desk_pct": 8.84,
-     "spx_pct": -1.56,
-     "excess_pct": 10.4,
+     "desk_pct": 8.32,
+     "spx_pct": -2.33,
+     "excess_pct": 10.65,
      "beat": true,
      "from": "2026-08-14",
-     "to": "2026-09-11",
-     "pnl_usd": 4419.91
+     "to": "2026-09-14",
+     "pnl_usd": 4158.67
     },
-    "open_pnl_usd": 4640.15,
+    "open_pnl_usd": 4378.91,
     "trades": 8
    },
    {
@@ -413,45 +368,45 @@
     "windows": [
      {
       "label": "This week",
-      "desk_pct": -0.04,
-      "spx_pct": -0.23,
-      "excess_pct": 0.19,
+      "desk_pct": 0.0,
+      "spx_pct": -0.79,
+      "excess_pct": 0.79,
       "beat": true,
-      "from": "2026-09-08",
-      "to": "2026-09-11",
-      "pnl_usd": -36.48
+      "from": "2026-09-11",
+      "to": "2026-09-14",
+      "pnl_usd": 0.0
      },
      {
       "label": "This month",
-      "desk_pct": -0.04,
-      "spx_pct": -0.23,
-      "excess_pct": 0.19,
+      "desk_pct": -0.05,
+      "spx_pct": -1.01,
+      "excess_pct": 0.96,
       "beat": true,
       "from": "2026-09-08",
-      "to": "2026-09-11",
-      "pnl_usd": -36.48
+      "to": "2026-09-14",
+      "pnl_usd": -46.47
      },
      {
       "label": "Since Aug 17",
-      "desk_pct": -0.04,
-      "spx_pct": -0.23,
-      "excess_pct": 0.19,
+      "desk_pct": -0.05,
+      "spx_pct": -1.01,
+      "excess_pct": 0.96,
       "beat": true,
       "from": "2026-09-08",
-      "to": "2026-09-11",
-      "pnl_usd": -36.48
+      "to": "2026-09-14",
+      "pnl_usd": -46.47
      }
     ],
     "since_start": {
-     "desk_pct": -0.04,
-     "spx_pct": -0.23,
-     "excess_pct": 0.19,
+     "desk_pct": -0.05,
+     "spx_pct": -1.01,
+     "excess_pct": 0.96,
      "beat": true,
      "from": "2026-09-08",
-     "to": "2026-09-11",
-     "pnl_usd": -36.48
+     "to": "2026-09-14",
+     "pnl_usd": -46.47
     },
-    "open_pnl_usd": -36.48,
+    "open_pnl_usd": -46.47,
     "trades": 0
    },
    {
@@ -464,41 +419,41 @@
      {
       "label": "This week",
       "desk_pct": -0.05,
-      "spx_pct": 0.84,
-      "excess_pct": -0.9,
-      "beat": false,
-      "from": "2026-09-10",
-      "to": "2026-09-11",
+      "spx_pct": -0.79,
+      "excess_pct": 0.74,
+      "beat": true,
+      "from": "2026-09-11",
+      "to": "2026-09-14",
       "pnl_usd": -26.0
      },
      {
       "label": "This month",
       "desk_pct": -0.05,
-      "spx_pct": 0.84,
-      "excess_pct": -0.9,
+      "spx_pct": 0.06,
+      "excess_pct": -0.11,
       "beat": false,
       "from": "2026-09-10",
-      "to": "2026-09-11",
+      "to": "2026-09-14",
       "pnl_usd": -26.0
      },
      {
       "label": "Since Aug 17",
       "desk_pct": -0.05,
-      "spx_pct": 0.84,
-      "excess_pct": -0.9,
+      "spx_pct": 0.06,
+      "excess_pct": -0.11,
       "beat": false,
       "from": "2026-09-10",
-      "to": "2026-09-11",
+      "to": "2026-09-14",
       "pnl_usd": -26.0
      }
     ],
     "since_start": {
      "desk_pct": -0.05,
-     "spx_pct": 0.84,
-     "excess_pct": -0.9,
+     "spx_pct": 0.06,
+     "excess_pct": -0.11,
      "beat": false,
      "from": "2026-09-10",
-     "to": "2026-09-11",
+     "to": "2026-09-14",
      "pnl_usd": -26.0
     },
     "open_pnl_usd": -26.0,
@@ -511,46 +466,46 @@
    "windows": [
     {
      "label": "This week",
-     "desk_pct": -0.33,
-     "spx_pct": -0.78,
-     "excess_pct": 0.45,
+     "desk_pct": 0.0,
+     "spx_pct": -0.79,
+     "excess_pct": 0.79,
      "beat": true,
-     "from": "2026-09-04",
-     "to": "2026-09-11",
-     "pnl_usd": -1327.47
+     "from": "2026-09-11",
+     "to": "2026-09-14",
+     "pnl_usd": 0.0
     },
     {
      "label": "This month",
-     "desk_pct": 0.42,
-     "spx_pct": -0.37,
-     "excess_pct": 0.79,
+     "desk_pct": 0.78,
+     "spx_pct": -1.15,
+     "excess_pct": 1.93,
      "beat": true,
      "from": "2026-08-31",
-     "to": "2026-09-11",
-     "pnl_usd": 1708.48
+     "to": "2026-09-14",
+     "pnl_usd": 3160.86
     },
     {
      "label": "Since Aug 17",
-     "desk_pct": 1.78,
-     "spx_pct": -1.56,
-     "excess_pct": 3.34,
+     "desk_pct": 2.14,
+     "spx_pct": -2.33,
+     "excess_pct": 4.47,
      "beat": true,
      "from": "2026-08-14",
-     "to": "2026-09-11",
-     "pnl_usd": 7100.96
+     "to": "2026-09-14",
+     "pnl_usd": 8553.34
     }
    ],
    "since_start": {
-    "desk_pct": 1.78,
-    "spx_pct": -1.56,
-    "excess_pct": 3.34,
+    "desk_pct": 2.14,
+    "spx_pct": -2.33,
+    "excess_pct": 4.47,
     "beat": true,
     "from": "2026-08-14",
-    "to": "2026-09-11",
-    "pnl_usd": 7100.96
+    "to": "2026-09-14",
+    "pnl_usd": 8553.34
    }
   },
-  "beats": 14,
+  "beats": 16,
   "tries": 18,
   "benchmark": "SPY price return between the same closes",
   "note": "Return on the desk's own notional pool: realised trades plus open positions marked at the close. Falcon and Hunter share the day pool. Paper account."
@@ -562,7 +517,7 @@
     "id": "AMZN-2026-10-23-235-230",
     "underlying": "AMZN",
     "expiry": "2026-10-23",
-    "dte": 42,
+    "dte": 39,
     "short_strike": 235.0,
     "long_strike": 230.0,
     "qty": 2,
