@@ -2,7 +2,8 @@
 
 **The professionals behind your AI transition.** [proxiant.ai](https://proxiant.ai)
 
-Marketing site for Proxiant AI. Static HTML, hosted on GitHub Pages, served from
+Marketing site for Proxiant AI. A Next.js static export (`output: "export"`),
+built and published by the `Deploy site` workflow to GitHub Pages, served from
 the apex domain `proxiant.ai` registered at Porkbun.
 
 Repo: [github.com/proxiant/proxiant-ai-site](https://github.com/proxiant/proxiant-ai-site)
@@ -64,7 +65,7 @@ from `industries.html` and `insights.html`.
 
 ## Tech stack
 
-- Pure HTML/CSS/JavaScript, no build step
+- Next.js (App Router, static export to `out/`), Tailwind, TypeScript
 - Tailwind via CDN
 - React 18 + Recharts (CDN-loaded) on the terminal page
 - Lightweight Charts for candlesticks
@@ -100,8 +101,14 @@ The site auto-deploys from `main` to GitHub Pages.
 
 To enable Pages on a fresh clone of the repo:
 
-1. **Settings → Pages** → Source: **Deploy from a branch** → Branch: `main`,
-   folder: `/ (root)` → **Save**.
+1. **Settings → Pages** → Source: **GitHub Actions** → **Save**. Not "Deploy
+   from a branch": with the branch source GitHub's own Jekyll build runs on
+   every push, finds no `index.html` at the repo root (the site is built into
+   `out/` by the workflow) and publishes a rendering of this README as the
+   homepage, overwriting the workflow's deployment. That is what took the
+   site down until 2026-09-22; the setting was switched back to GitHub
+   Actions through the API (`PUT /repos/proxiant/proxiant-ai-site/pages`,
+   `build_type: workflow`).
 2. Custom domain: `proxiant.ai`. Check **Enforce HTTPS** once DNS resolves.
 
 ## Porkbun DNS configuration
@@ -200,8 +207,7 @@ check next to `proxiant.ai`. Then enable **Enforce HTTPS**.
 ## Local preview
 
 ```bash
-python3 -m http.server 8000
-open http://localhost:8000
+npm ci
+npm run dev          # http://localhost:3000
+npm run build        # static export to out/, what the workflow publishes
 ```
-
-Or any static server. There's no build step.
