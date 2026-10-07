@@ -312,7 +312,7 @@ export default function Page() {
             <div className="font-mono text-[12px] tracking-[0.14em] text-zinc-500 mb-4">OVERNIGHT DESK · OWL · MOMENTUM HELD FROM THE CLOSE TO THE OPEN</div>
             <p className="muted text-[13px] leading-relaxed max-w-3xl mb-4">{overnight.rule ?? ""}</p>
             <div className="card p-8 overflow-x-auto mb-4">
-              <div className="font-mono text-[11px] tracking-[0.14em] text-zinc-500 mb-3">HELD TONIGHT ({owlHeld.length})</div>
+              <div className="font-mono text-[11px] tracking-[0.14em] text-zinc-500 mb-3">HELD OVERNIGHT ({owlHeld.length})</div>
               <table className="w-full min-w-[480px]">
                 <thead><tr><Th>NAME</Th><Th>SHARES</Th><Th>BOUGHT AT THE CLOSE</Th><Th>SESSION</Th></tr></thead>
                 <tbody>
