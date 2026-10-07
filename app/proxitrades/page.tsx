@@ -30,6 +30,10 @@ type Spread = { id?: string; underlying?: string; expiry?: string; dte?: number 
 type Scout = { underlying?: string; spot?: number | null; expiry?: string | null; dte?: number | null; short_strike?: number | null; long_strike?: number | null; credit?: number | null; delta?: number | null; iv?: number | null; rv?: number | null; vrp?: number | null; score?: number | null; yield_pct?: number | null; signal?: boolean; reason?: string };
 type ClosedSpread = { symbol?: string; entry?: number | null; exit?: number | null; pnl_pct: number; pnl_usd: number; reason?: string; day?: string };
 type OptionsDesk = { desk?: string; held?: Spread[]; scan?: Scout[]; last_pass?: { date?: string; mode?: string; entered?: number; exited?: number; candidates?: number; dry_run?: boolean }; closed?: ClosedSpread[]; rule?: string };
+type OwlPick = { symbol?: string; mom_pct?: number | null; size_rank?: number | null };
+type OwlHeld = { symbol?: string; qty?: number | null; entry?: number | null; opened?: string | null };
+type OwlNight = { symbol?: string; entry?: number | null; exit?: number | null; pnl_pct?: number | null; pnl_usd?: number | null };
+type OvernightDesk = { desk?: string; month?: string | null; list?: OwlPick[]; held?: OwlHeld[]; last_day?: string | null; last_night?: OwlNight[]; nights?: number; name_nights?: number; pnl_usd?: number | null; rule?: string };
 
 const f = (v?: number | null) => (v == null ? "—" : v.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 }));
 const pct = (v?: number | null) => (v == null ? "—" : `${v >= 0 ? "+" : ""}${v.toFixed(2)}%`);
@@ -68,6 +72,10 @@ export default function Page() {
   const held = options.held ?? [];
   const scout = (options.scan ?? []).slice(0, 8);
   const closedSpreads = options.closed ?? [];
+  const overnight = ((data as Record<string, unknown>).overnight ?? {}) as OvernightDesk;
+  const owlHeld = overnight.held ?? [];
+  const owlList = overnight.list ?? [];
+  const owlLast = overnight.last_night ?? [];
   return (
     <div>
       <SiteHeader />
@@ -290,6 +298,68 @@ export default function Page() {
                         <Td>{f(c.entry)}</Td><Td>{f(c.exit)}</Td>
                         <Td cls={tone(c.pnl_usd)}>{usd0(c.pnl_usd)} · {pct(c.pnl_pct)}</Td>
                         <Td cls="text-zinc-400 text-[13px]">{c.reason ?? ""}</Td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            ) : null}
+          </section>
+        ) : null}
+
+        {overnight.desk ? (
+          <section data-reveal>
+            <div className="font-mono text-[12px] tracking-[0.14em] text-zinc-500 mb-4">OVERNIGHT DESK · OWL · MOMENTUM HELD FROM THE CLOSE TO THE OPEN</div>
+            <p className="muted text-[13px] leading-relaxed max-w-3xl mb-4">{overnight.rule ?? ""}</p>
+            <div className="card p-8 overflow-x-auto mb-4">
+              <div className="font-mono text-[11px] tracking-[0.14em] text-zinc-500 mb-3">HELD TONIGHT ({owlHeld.length})</div>
+              <table className="w-full min-w-[480px]">
+                <thead><tr><Th>NAME</Th><Th>SHARES</Th><Th>BOUGHT AT THE CLOSE</Th><Th>SESSION</Th></tr></thead>
+                <tbody>
+                  {owlHeld.length ? owlHeld.map((h) => (
+                    <tr key={h.symbol ?? ""}>
+                      <Td cls="font-medium">{h.symbol ?? ""}</Td>
+                      <Td>{h.qty ?? ""}</Td><Td>{f(h.entry)}</Td>
+                      <Td cls="text-zinc-400">{h.opened ?? ""}</Td>
+                    </tr>
+                  )) : (
+                    <tr><Td cls="text-zinc-500">Nothing held right now. The desk buys at the close and sells at the next open, so its names show here in the evening.</Td></tr>
+                  )}
+                </tbody>
+              </table>
+            </div>
+            <div className="card p-8 overflow-x-auto mb-4">
+              <div className="font-mono text-[11px] tracking-[0.14em] text-zinc-500 mb-3">
+                THE MONTH&apos;S TEN{overnight.month ? ` · ${overnight.month}` : ""} · 12-1 MONTH MOMENTUM AMONG THE 100 LARGEST
+              </div>
+              <table className="w-full min-w-[360px]">
+                <thead><tr><Th>NAME</Th><Th>MOMENTUM</Th><Th>SIZE RANK</Th></tr></thead>
+                <tbody>
+                  {owlList.length ? owlList.map((p) => (
+                    <tr key={p.symbol ?? ""}>
+                      <Td cls="font-medium">{p.symbol ?? ""}</Td>
+                      <Td cls={tone(p.mom_pct)}>{pct(p.mom_pct)}</Td>
+                      <Td>{p.size_rank ?? ""}</Td>
+                    </tr>
+                  )) : (
+                    <tr><Td cls="text-zinc-500">The list is chosen once a month, before the month&apos;s first buy.</Td></tr>
+                  )}
+                </tbody>
+              </table>
+            </div>
+            {owlLast.length ? (
+              <div className="card p-8 overflow-x-auto">
+                <div className="font-mono text-[11px] tracking-[0.14em] text-zinc-500 mb-3">
+                  LAST NIGHT{overnight.last_day ? ` · SOLD ${overnight.last_day}` : ""} · {overnight.name_nights ?? 0} NAME-NIGHTS SO FAR, {usd0(overnight.pnl_usd)}
+                </div>
+                <table className="w-full min-w-[480px]">
+                  <thead><tr><Th>NAME</Th><Th>BOUGHT</Th><Th>SOLD</Th><Th>P&amp;L</Th></tr></thead>
+                  <tbody>
+                    {owlLast.map((c, i) => (
+                      <tr key={`${c.symbol}-${i}`}>
+                        <Td cls="font-medium">{c.symbol ?? ""}</Td>
+                        <Td>{f(c.entry)}</Td><Td>{f(c.exit)}</Td>
+                        <Td cls={tone(c.pnl_usd)}>{usd0(c.pnl_usd)} · {pct(c.pnl_pct)}</Td>
                       </tr>
                     ))}
                   </tbody>
