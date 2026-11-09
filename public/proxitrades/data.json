@@ -1,110 +1,155 @@
 {
- "stamp": "Monday, November 09, 2026 09:27 ET",
+ "stamp": "Monday, November 09, 2026 17:05 ET",
  "leads": [
   {
    "rank": 1,
-   "symbol": "IBRX",
-   "side": "sell",
-   "entry": 7.47,
-   "stop": 8.0296,
-   "target": 6.9104,
-   "why": "gap -13.5%, pre-market vol 2,506,483, rvol 1.1x"
+   "symbol": "QXO",
+   "side": "buy",
+   "entry": 12.61,
+   "stop": 11.5906,
+   "target": 13.6294,
+   "why": "gap +9.1%, pre-market vol 363,982, rvol 0.0x"
   },
   {
    "rank": 2,
    "symbol": "MNDY",
    "side": "sell",
-   "entry": 79.5,
-   "stop": 84.374,
-   "target": 74.626,
-   "why": "gap -9.6%, pre-market vol 218,852, rvol 1.8x"
+   "entry": 82.99,
+   "stop": 88.078,
+   "target": 77.902,
+   "why": "gap -5.6%, pre-market vol 239,013, rvol 0.4x"
   },
   {
    "rank": 3,
-   "symbol": "SGRY",
+   "symbol": "NRG",
    "side": "buy",
-   "entry": 25.79,
-   "stop": 24.1982,
-   "target": 27.3818,
-   "why": "gap +11.2%, pre-market vol 497,088, rvol 0.3x"
+   "entry": 94.77,
+   "stop": 88.357,
+   "target": 101.183,
+   "why": "gap +7.3%, pre-market vol 107,108, rvol 0.1x"
   },
   {
    "rank": 4,
-   "symbol": "IONS",
-   "side": "sell",
-   "entry": 31.82,
-   "stop": 33.0927,
-   "target": 30.5473,
-   "why": "gap -19.3%, pre-market vol 360,997, rvol 1.1x"
+   "symbol": "TTD",
+   "side": "buy",
+   "entry": 13.88,
+   "stop": 13.0485,
+   "target": 14.7115,
+   "why": "gap +7.3%, pre-market vol 1,423,140, rvol 0.2x"
   },
   {
    "rank": 5,
+   "symbol": "NVDA",
+   "side": "sell",
+   "entry": 172.99,
+   "stop": 180.4757,
+   "target": 165.5043,
+   "why": "gap -7.3%, pre-market vol 25,777,640, rvol 0.4x"
+  },
+  {
+   "rank": 6,
    "symbol": "OMH",
    "side": "buy",
-   "entry": 21.8701,
-   "stop": 7.0876,
-   "target": 36.6526,
-   "why": "gap +197.1%, pre-market vol 4,645,865, rvol 1.1x"
+   "entry": 21.49,
+   "stop": 6.9644,
+   "target": 36.0156,
+   "why": "gap +192.0%, pre-market vol 4,756,868, rvol 0.8x"
+  },
+  {
+   "rank": 7,
+   "symbol": "CECO",
+   "side": "buy",
+   "entry": 59.0,
+   "stop": 48.8925,
+   "target": 69.1075,
+   "why": "gap +35.0%, pre-market vol 112,945, rvol 0.1x"
+  },
+  {
+   "rank": 8,
+   "symbol": "IONS",
+   "side": "sell",
+   "entry": 32.02,
+   "stop": 33.3007,
+   "target": 30.7393,
+   "why": "gap -18.8%, pre-market vol 438,630, rvol 0.3x"
+  },
+  {
+   "rank": 9,
+   "symbol": "IBRX",
+   "side": "sell",
+   "entry": 7.22,
+   "stop": 7.7609,
+   "target": 6.6791,
+   "why": "gap -16.4%, pre-market vol 2,657,192, rvol 0.5x"
+  },
+  {
+   "rank": 10,
+   "symbol": "SGRY",
+   "side": "buy",
+   "entry": 25.82,
+   "stop": 24.2263,
+   "target": 27.4137,
+   "why": "gap +11.3%, pre-market vol 679,022, rvol 0.1x"
   }
  ],
  "trades": [
   {
-   "symbol": "MRNA",
-   "side": "buy",
-   "entry": 242.0015,
-   "exit": 245.41,
-   "pnl_pct": 1.4085,
-   "pnl_usd": 14.07,
-   "reason": "open_market"
-  },
-  {
    "symbol": "MRK",
    "side": "buy",
-   "entry": 146.79,
-   "exit": 145.0834,
-   "pnl_pct": -1.1626,
-   "pnl_usd": -11.62,
+   "entry": 146.84,
+   "exit": 147.15,
+   "pnl_pct": 0.2111,
+   "pnl_usd": 2.11,
    "reason": "open_market"
   },
   {
-   "symbol": "IREN",
+   "symbol": "MRNA",
    "side": "buy",
-   "entry": 21.47,
-   "exit": 21.6526,
-   "pnl_pct": 0.8507,
-   "pnl_usd": 34.52,
+   "entry": 254.04,
+   "exit": 257.01,
+   "pnl_pct": 1.1691,
+   "pnl_usd": 11.68,
+   "reason": "open_market"
+  },
+  {
+   "symbol": "TTD",
+   "side": "buy",
+   "entry": 14.76,
+   "exit": 14.93,
+   "pnl_pct": 1.1518,
+   "pnl_usd": 121.38,
    "reason": "time"
   },
   {
-   "symbol": "CIFR",
+   "symbol": "META",
    "side": "buy",
-   "entry": 6.1,
-   "exit": 5.91,
-   "pnl_pct": -3.1148,
-   "pnl_usd": -40.28,
-   "reason": "time"
+   "entry": 632.51,
+   "exit": 645.74,
+   "pnl_pct": 2.09,
+   "pnl_usd": 26.46,
+   "reason": "rsi_recovered"
   }
  ],
- "trades_day_label": "Friday Nov 06",
- "eod_text": "4 trades, 2 winners, a net loss of $3 on the paper book. Every fill above is real output from the live pipeline: the same leads published here in the morning, executed with bracket exits and risk-normalized sizing, reported win or lose.",
+ "trades_day_label": "today",
+ "eod_text": "4 trades, 4 winners, a net gain of $162 on the paper book. Every fill above is real output from the live pipeline: the same leads published here in the morning, executed with bracket exits and risk-normalized sizing, reported win or lose.",
  "board": [
   {
    "label": "This week",
-   "n": 0,
-   "win_rate": "-",
-   "pnl_usd": "-"
+   "n": 4,
+   "win_rate": "100%",
+   "pnl_usd": "+162"
   },
   {
    "label": "This month",
-   "n": 37,
-   "win_rate": "49%",
-   "pnl_usd": "+1,069"
+   "n": 41,
+   "win_rate": "54%",
+   "pnl_usd": "+1,230"
   },
   {
    "label": "Since 2026-08-17",
-   "n": 291,
-   "win_rate": "44%",
-   "pnl_usd": "-615"
+   "n": 295,
+   "win_rate": "45%",
+   "pnl_usd": "-454"
   }
  ],
  "public_epoch": "2026-08-17",
@@ -163,8 +208,8 @@
      {
       "label": "This week",
       "desk_pct": 0.0,
-      "spx_pct": 0.88,
-      "excess_pct": -0.88,
+      "spx_pct": 2.37,
+      "excess_pct": -2.37,
       "beat": false,
       "from": "2026-11-06",
       "to": "2026-11-09",
@@ -173,8 +218,8 @@
      {
       "label": "This month",
       "desk_pct": -0.35,
-      "spx_pct": -1.85,
-      "excess_pct": 1.5,
+      "spx_pct": -0.4,
+      "excess_pct": 0.05,
       "beat": true,
       "from": "2026-10-30",
       "to": "2026-11-09",
@@ -183,8 +228,8 @@
      {
       "label": "Since Aug 17",
       "desk_pct": -0.82,
-      "spx_pct": -4.0,
-      "excess_pct": 3.18,
+      "spx_pct": -2.58,
+      "excess_pct": 1.76,
       "beat": true,
       "from": "2026-08-17",
       "to": "2026-11-09",
@@ -193,8 +238,8 @@
     ],
     "since_start": {
      "desk_pct": -0.82,
-     "spx_pct": -4.0,
-     "excess_pct": 3.18,
+     "spx_pct": -2.58,
+     "excess_pct": 1.76,
      "beat": true,
      "from": "2026-08-17",
      "to": "2026-11-09",
@@ -212,46 +257,46 @@
     "windows": [
      {
       "label": "This week",
-      "desk_pct": 0.0,
-      "spx_pct": 0.88,
-      "excess_pct": -0.88,
+      "desk_pct": 0.6,
+      "spx_pct": 2.37,
+      "excess_pct": -1.77,
       "beat": false,
       "from": "2026-11-06",
       "to": "2026-11-09",
-      "pnl_usd": 0.0
+      "pnl_usd": 121.38
      },
      {
       "label": "This month",
-      "desk_pct": -0.02,
-      "spx_pct": -1.85,
-      "excess_pct": 1.83,
+      "desk_pct": 0.57,
+      "spx_pct": -0.4,
+      "excess_pct": 0.97,
       "beat": true,
       "from": "2026-10-30",
       "to": "2026-11-09",
-      "pnl_usd": -4.75
+      "pnl_usd": 116.63
      },
      {
       "label": "Since Aug 17",
-      "desk_pct": 0.34,
-      "spx_pct": -4.46,
-      "excess_pct": 4.79,
+      "desk_pct": 0.94,
+      "spx_pct": -3.04,
+      "excess_pct": 3.98,
       "beat": true,
       "from": "2026-08-14",
       "to": "2026-11-09",
-      "pnl_usd": 358.0
+      "pnl_usd": 479.38
      }
     ],
     "since_start": {
-     "desk_pct": 0.34,
-     "spx_pct": -4.46,
-     "excess_pct": 4.79,
+     "desk_pct": 0.94,
+     "spx_pct": -3.04,
+     "excess_pct": 3.98,
      "beat": true,
      "from": "2026-08-14",
      "to": "2026-11-09",
-     "pnl_usd": 358.0
+     "pnl_usd": 479.38
     },
     "open_pnl_usd": 0.0,
-    "trades": 66
+    "trades": 67
    },
    {
     "desk": "raptor",
@@ -263,8 +308,8 @@
      {
       "label": "This week",
       "desk_pct": 0.0,
-      "spx_pct": 0.88,
-      "excess_pct": -0.88,
+      "spx_pct": 2.37,
+      "excess_pct": -2.37,
       "beat": false,
       "from": "2026-11-06",
       "to": "2026-11-09",
@@ -273,8 +318,8 @@
      {
       "label": "This month",
       "desk_pct": 0.0,
-      "spx_pct": -1.85,
-      "excess_pct": 1.85,
+      "spx_pct": -0.4,
+      "excess_pct": 0.4,
       "beat": true,
       "from": "2026-10-30",
       "to": "2026-11-09",
@@ -283,8 +328,8 @@
      {
       "label": "Since Aug 17",
       "desk_pct": 1.23,
-      "spx_pct": -2.73,
-      "excess_pct": 3.97,
+      "spx_pct": -1.3,
+      "excess_pct": 2.53,
       "beat": true,
       "from": "2026-08-20",
       "to": "2026-11-09",
@@ -293,8 +338,8 @@
     ],
     "since_start": {
      "desk_pct": 1.23,
-     "spx_pct": -2.73,
-     "excess_pct": 3.97,
+     "spx_pct": -1.3,
+     "excess_pct": 2.53,
      "beat": true,
      "from": "2026-08-20",
      "to": "2026-11-09",
@@ -313,8 +358,8 @@
      {
       "label": "This week",
       "desk_pct": 0.0,
-      "spx_pct": 0.88,
-      "excess_pct": -0.88,
+      "spx_pct": 2.37,
+      "excess_pct": -2.37,
       "beat": false,
       "from": "2026-11-06",
       "to": "2026-11-09",
@@ -322,35 +367,35 @@
      },
      {
       "label": "This month",
-      "desk_pct": -1.13,
-      "spx_pct": -1.85,
-      "excess_pct": 0.72,
-      "beat": true,
+      "desk_pct": -1.46,
+      "spx_pct": -0.4,
+      "excess_pct": -1.07,
+      "beat": false,
       "from": "2026-10-30",
       "to": "2026-11-09",
-      "pnl_usd": -969.55
+      "pnl_usd": -1030.82
      },
      {
       "label": "Since Aug 17",
-      "desk_pct": 6.99,
-      "spx_pct": -4.46,
-      "excess_pct": 11.45,
+      "desk_pct": 6.63,
+      "spx_pct": -3.04,
+      "excess_pct": 9.67,
       "beat": true,
       "from": "2026-08-14",
       "to": "2026-11-09",
-      "pnl_usd": 3137.87
+      "pnl_usd": 3076.61
      }
     ],
     "since_start": {
-     "desk_pct": 6.99,
-     "spx_pct": -4.46,
-     "excess_pct": 11.45,
+     "desk_pct": 6.63,
+     "spx_pct": -3.04,
+     "excess_pct": 9.67,
      "beat": true,
      "from": "2026-08-14",
      "to": "2026-11-09",
-     "pnl_usd": 3137.87
+     "pnl_usd": 3076.61
     },
-    "open_pnl_usd": 1518.15,
+    "open_pnl_usd": 1456.89,
     "trades": 13
    },
    {
@@ -362,46 +407,46 @@
     "windows": [
      {
       "label": "This week",
-      "desk_pct": 0.0,
-      "spx_pct": 0.88,
-      "excess_pct": -0.88,
+      "desk_pct": 1.15,
+      "spx_pct": 2.37,
+      "excess_pct": -1.22,
       "beat": false,
       "from": "2026-11-06",
       "to": "2026-11-09",
-      "pnl_usd": 0.0
+      "pnl_usd": 328.4
      },
      {
       "label": "This month",
-      "desk_pct": -4.23,
-      "spx_pct": -1.85,
-      "excess_pct": -2.38,
+      "desk_pct": -3.14,
+      "spx_pct": -0.4,
+      "excess_pct": -2.74,
       "beat": false,
       "from": "2026-10-30",
       "to": "2026-11-09",
-      "pnl_usd": -1267.03
+      "pnl_usd": -938.63
      },
      {
       "label": "Since Aug 17",
-      "desk_pct": -4.3,
-      "spx_pct": -3.16,
-      "excess_pct": -1.14,
+      "desk_pct": -3.2,
+      "spx_pct": -1.73,
+      "excess_pct": -1.47,
       "beat": false,
       "from": "2026-09-08",
       "to": "2026-11-09",
-      "pnl_usd": -1333.84
+      "pnl_usd": -1005.44
      }
     ],
     "since_start": {
-     "desk_pct": -4.3,
-     "spx_pct": -3.16,
-     "excess_pct": -1.14,
+     "desk_pct": -3.2,
+     "spx_pct": -1.73,
+     "excess_pct": -1.47,
      "beat": false,
      "from": "2026-09-08",
      "to": "2026-11-09",
-     "pnl_usd": -1333.84
+     "pnl_usd": -1005.44
     },
-    "open_pnl_usd": -907.85,
-    "trades": 45
+    "open_pnl_usd": -605.91,
+    "trades": 46
    },
    {
     "desk": "harrier",
@@ -412,45 +457,45 @@
     "windows": [
      {
       "label": "This week",
-      "desk_pct": -0.77,
-      "spx_pct": 0.88,
-      "excess_pct": -1.65,
+      "desk_pct": 0.49,
+      "spx_pct": 2.37,
+      "excess_pct": -1.88,
       "beat": false,
       "from": "2026-11-06",
       "to": "2026-11-09",
-      "pnl_usd": -66.0
+      "pnl_usd": 42.0
      },
      {
       "label": "This month",
-      "desk_pct": -3.72,
-      "spx_pct": -1.85,
-      "excess_pct": -1.87,
+      "desk_pct": -2.5,
+      "spx_pct": -0.4,
+      "excess_pct": -2.11,
       "beat": false,
       "from": "2026-10-30",
       "to": "2026-11-09",
-      "pnl_usd": -330.0
+      "pnl_usd": -222.0
      },
      {
       "label": "Since Aug 17",
-      "desk_pct": -5.9,
-      "spx_pct": -2.12,
-      "excess_pct": -3.78,
+      "desk_pct": -4.71,
+      "spx_pct": -0.67,
+      "excess_pct": -4.04,
       "beat": false,
       "from": "2026-09-10",
       "to": "2026-11-09",
-      "pnl_usd": -1463.0
+      "pnl_usd": -1355.0
      }
     ],
     "since_start": {
-     "desk_pct": -5.9,
-     "spx_pct": -2.12,
-     "excess_pct": -3.78,
+     "desk_pct": -4.71,
+     "spx_pct": -0.67,
+     "excess_pct": -4.04,
      "beat": false,
      "from": "2026-09-10",
      "to": "2026-11-09",
-     "pnl_usd": -1463.0
+     "pnl_usd": -1355.0
     },
-    "open_pnl_usd": -66.0,
+    "open_pnl_usd": 42.0,
     "trades": 11
    },
    {
@@ -462,46 +507,46 @@
     "windows": [
      {
       "label": "This week",
-      "desk_pct": 0.0,
-      "spx_pct": 0.88,
-      "excess_pct": -0.88,
+      "desk_pct": 0.18,
+      "spx_pct": 2.37,
+      "excess_pct": -2.19,
       "beat": false,
       "from": "2026-11-06",
       "to": "2026-11-09",
-      "pnl_usd": 0.0
+      "pnl_usd": 15.51
      },
      {
       "label": "This month",
-      "desk_pct": -1.28,
-      "spx_pct": -1.85,
-      "excess_pct": 0.57,
-      "beat": true,
+      "desk_pct": -1.1,
+      "spx_pct": -0.4,
+      "excess_pct": -0.7,
+      "beat": false,
       "from": "2026-10-30",
       "to": "2026-11-09",
-      "pnl_usd": -110.79
+      "pnl_usd": -95.28
      },
      {
       "label": "Since Aug 17",
-      "desk_pct": -14.57,
-      "spx_pct": -4.56,
-      "excess_pct": -10.0,
+      "desk_pct": -14.41,
+      "spx_pct": -3.15,
+      "excess_pct": -11.26,
       "beat": false,
       "from": "2026-10-07",
       "to": "2026-11-09",
-      "pnl_usd": -1456.75
+      "pnl_usd": -1441.24
      }
     ],
     "since_start": {
-     "desk_pct": -14.57,
-     "spx_pct": -4.56,
-     "excess_pct": -10.0,
+     "desk_pct": -14.41,
+     "spx_pct": -3.15,
+     "excess_pct": -11.26,
      "beat": false,
      "from": "2026-10-07",
      "to": "2026-11-09",
-     "pnl_usd": -1456.75
+     "pnl_usd": -1441.24
     },
-    "open_pnl_usd": -0.16,
-    "trades": 120
+    "open_pnl_usd": 1.56,
+    "trades": 122
    }
   ],
   "total": {
@@ -511,8 +556,8 @@
     {
      "label": "This week",
      "desk_pct": 0.0,
-     "spx_pct": 0.88,
-     "excess_pct": -0.88,
+     "spx_pct": 2.37,
+     "excess_pct": -2.37,
      "beat": false,
      "from": "2026-11-06",
      "to": "2026-11-09",
@@ -521,8 +566,8 @@
     {
      "label": "This month",
      "desk_pct": -2.42,
-     "spx_pct": -1.85,
-     "excess_pct": -0.57,
+     "spx_pct": -0.4,
+     "excess_pct": -2.02,
      "beat": false,
      "from": "2026-10-30",
      "to": "2026-11-09",
@@ -531,8 +576,8 @@
     {
      "label": "Since Aug 17",
      "desk_pct": -1.75,
-     "spx_pct": -4.46,
-     "excess_pct": 2.7,
+     "spx_pct": -3.04,
+     "excess_pct": 1.29,
      "beat": true,
      "from": "2026-08-14",
      "to": "2026-11-09",
@@ -541,15 +586,15 @@
    ],
    "since_start": {
     "desk_pct": -1.75,
-    "spx_pct": -4.46,
-    "excess_pct": 2.7,
+    "spx_pct": -3.04,
+    "excess_pct": 1.29,
     "beat": true,
     "from": "2026-08-14",
     "to": "2026-11-09",
     "pnl_usd": 308.89
    }
   },
-  "beats": 9,
+  "beats": 7,
   "tries": 21,
   "benchmark": "SPY price return between the same closes",
   "note": "Return on the desk's own notional pool: realised trades plus open positions marked at the close. Falcon and Hunter share the day pool. Paper account."
@@ -572,59 +617,76 @@
   ],
   "scan": [
    {
-    "underlying": "AAPL",
-    "spot": 342.395,
+    "underlying": "MSFT",
+    "spot": 541.79,
     "expiry": "2026-12-18",
-    "dte": 42,
-    "short_strike": 315.0,
-    "long_strike": 310.0,
-    "credit": 0.5,
-    "delta": 0.184,
-    "iv": 0.3057,
-    "rv": 0.2559,
-    "vrp": 1.19,
-    "score": 0.788,
-    "yield_pct": 11.1,
-    "signal": true,
-    "reason": "pass"
+    "dte": 39,
+    "short_strike": 500.0,
+    "long_strike": 490.0,
+    "credit": 1.28,
+    "delta": 0.191,
+    "iv": 0.3158,
+    "rv": 0.3561,
+    "vrp": 0.89,
+    "score": 1.111,
+    "yield_pct": 14.7,
+    "signal": false,
+    "reason": "IV/RV 0.89 under 1.10"
    },
    {
     "underlying": "AMZN",
-    "spot": 263.305,
+    "spot": 270.48,
     "expiry": "2026-12-18",
-    "dte": 42,
-    "short_strike": 235.0,
-    "long_strike": 230.0,
+    "dte": 39,
+    "short_strike": 245.0,
+    "long_strike": 240.0,
     "credit": 0.59,
-    "delta": 0.17,
-    "iv": 0.3912,
-    "rv": 0.4134,
-    "vrp": 0.95,
-    "score": 0.965,
+    "delta": 0.182,
+    "iv": 0.3721,
+    "rv": 0.436,
+    "vrp": 0.85,
+    "score": 1.024,
     "yield_pct": 13.4,
     "signal": false,
-    "reason": "IV/RV 0.95 under 1.10"
+    "reason": "IV/RV 0.85 under 1.10"
+   },
+   {
+    "underlying": "META",
+    "spot": 640.93,
+    "expiry": "2026-12-18",
+    "dte": 39,
+    "short_strike": 570.0,
+    "long_strike": 560.0,
+    "credit": 1.05,
+    "delta": 0.176,
+    "iv": 0.4337,
+    "rv": 0.4342,
+    "vrp": 1.0,
+    "score": 0.905,
+    "yield_pct": 11.7,
+    "signal": false,
+    "reason": "IV/RV 1.00 under 1.10"
    },
    {
     "underlying": "SPY",
-    "spot": 740.74,
+    "spot": 749.02,
     "expiry": "2026-12-18",
-    "dte": 42,
-    "short_strike": 690.0,
-    "long_strike": 680.0,
-    "credit": 0.95,
-    "delta": 0.183,
-    "iv": 0.2582,
-    "rv": 0.2068,
-    "vrp": null,
-    "score": null,
-    "yield_pct": null,
+    "dte": 39,
+    "short_strike": 703.0,
+    "long_strike": 690.0,
+    "credit": 1.32,
+    "delta": 0.181,
+    "iv": 0.2371,
+    "rv": 0.216,
+    "vrp": 1.1,
+    "score": 0.866,
+    "yield_pct": 11.3,
     "signal": false,
-    "reason": "credit 0.95 under the floor 1.00"
+    "reason": "IV/RV 1.10 under 1.10"
    },
    {
     "underlying": "QQQ",
-    "spot": 660.985,
+    "spot": 674.65,
     "expiry": null,
     "dte": null,
     "short_strike": null,
@@ -632,7 +694,7 @@
     "credit": null,
     "delta": null,
     "iv": null,
-    "rv": 0.3341,
+    "rv": 0.3493,
     "vrp": null,
     "score": null,
     "yield_pct": null,
@@ -641,58 +703,58 @@
    },
    {
     "underlying": "IWM",
-    "spot": 273.18,
-    "expiry": null,
-    "dte": null,
-    "short_strike": null,
-    "long_strike": null,
-    "credit": null,
-    "delta": null,
-    "iv": null,
-    "rv": 0.2361,
+    "spot": 279.35,
+    "expiry": "2026-12-18",
+    "dte": 39,
+    "short_strike": 260.0,
+    "long_strike": 256.0,
+    "credit": 0.38,
+    "delta": 0.177,
+    "iv": 0.2641,
+    "rv": 0.2487,
     "vrp": null,
     "score": null,
     "yield_pct": null,
     "signal": false,
-    "reason": "below the 200-day average"
+    "reason": "credit 0.38 under the floor 0.40"
    },
    {
     "underlying": "DIA",
-    "spot": 515.065,
+    "spot": 520.18,
     "expiry": "2026-12-18",
-    "dte": 42,
-    "short_strike": 485.0,
-    "long_strike": 477.0,
-    "credit": 0.65,
-    "delta": 0.189,
-    "iv": 0.225,
-    "rv": 0.1952,
+    "dte": 39,
+    "short_strike": 491.0,
+    "long_strike": 483.0,
+    "credit": 0.66,
+    "delta": 0.175,
+    "iv": 0.2107,
+    "rv": 0.2032,
     "vrp": null,
     "score": null,
     "yield_pct": null,
     "signal": false,
-    "reason": "credit 0.65 under the floor 0.80"
+    "reason": "credit 0.66 under the floor 0.80"
    },
    {
-    "underlying": "MSFT",
-    "spot": 532.96,
+    "underlying": "AAPL",
+    "spot": 349.82,
     "expiry": "2026-12-18",
-    "dte": 42,
-    "short_strike": 485.0,
-    "long_strike": 475.0,
-    "credit": 0.94,
-    "delta": 0.181,
-    "iv": 0.3415,
-    "rv": 0.349,
+    "dte": 39,
+    "short_strike": 325.0,
+    "long_strike": 320.0,
+    "credit": 0.45,
+    "delta": 0.187,
+    "iv": 0.283,
+    "rv": 0.2631,
     "vrp": null,
     "score": null,
     "yield_pct": null,
     "signal": false,
-    "reason": "credit 0.94 under the floor 1.00"
+    "reason": "credit 0.45 under the floor 0.50"
    },
    {
     "underlying": "NVDA",
-    "spot": 191.93,
+    "spot": 178.66,
     "expiry": null,
     "dte": null,
     "short_strike": null,
@@ -700,7 +762,7 @@
     "credit": null,
     "delta": null,
     "iv": null,
-    "rv": 0.5159,
+    "rv": 0.4924,
     "vrp": null,
     "score": null,
     "yield_pct": null,
@@ -709,7 +771,7 @@
    },
    {
     "underlying": "GOOGL",
-    "spot": 288.27,
+    "spot": 294.155,
     "expiry": null,
     "dte": null,
     "short_strike": null,
@@ -717,24 +779,7 @@
     "credit": null,
     "delta": null,
     "iv": null,
-    "rv": 0.5337,
-    "vrp": null,
-    "score": null,
-    "yield_pct": null,
-    "signal": false,
-    "reason": "below the 200-day average"
-   },
-   {
-    "underlying": "META",
-    "spot": 619.61,
-    "expiry": null,
-    "dte": null,
-    "short_strike": null,
-    "long_strike": null,
-    "credit": null,
-    "delta": null,
-    "iv": null,
-    "rv": 0.4213,
+    "rv": 0.5463,
     "vrp": null,
     "score": null,
     "yield_pct": null,
@@ -743,11 +788,11 @@
    }
   ],
   "last_pass": {
-   "date": "2026-11-06",
+   "date": "2026-11-09",
    "mode": "full",
    "entered": 0,
    "exited": 0,
-   "candidates": 1,
+   "candidates": 0,
    "dry_run": false
   },
   "closed": [
@@ -911,26 +956,26 @@
    "GEV",
    "MRK"
   ],
-  "last_day": "2026-11-06",
+  "last_day": "2026-11-09",
   "last_night": [
    {
-    "symbol": "MRNA",
-    "entry": 242.0015,
-    "exit": 245.41,
-    "pnl_pct": 1.4085,
-    "pnl_usd": 14.07
+    "symbol": "MRK",
+    "entry": 146.84,
+    "exit": 147.15,
+    "pnl_pct": 0.2111,
+    "pnl_usd": 2.11
    },
    {
-    "symbol": "MRK",
-    "entry": 146.79,
-    "exit": 145.0834,
-    "pnl_pct": -1.1626,
-    "pnl_usd": -11.62
+    "symbol": "MRNA",
+    "entry": 254.04,
+    "exit": 257.01,
+    "pnl_pct": 1.1691,
+    "pnl_usd": 11.68
    }
   ],
-  "nights": 19,
-  "name_nights": 120,
-  "pnl_usd": -1456.59,
+  "nights": 20,
+  "name_nights": 122,
+  "pnl_usd": -1442.8,
   "rule": "Each month the ten of the 100 largest US stocks with the strongest 12-1 month momentum, bought two minutes before the close and sold five minutes after the next open, every session, a tenth of a $10,000 pool a name. A pick whose sector fund closed under its 50-day average gives its tenth to the month's next momentum name in a rising sector, or to cash. Backtested 2017 to 2026 at the official closing and opening prices: 27 percent a year with a 31 percent drawdown, after 1 bp a side. A paper forward test."
  }
 }
