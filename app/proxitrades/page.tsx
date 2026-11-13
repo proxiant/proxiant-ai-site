@@ -69,6 +69,9 @@ export default function Page() {
   const returns = ((data as Record<string, unknown>).returns ?? {}) as Returns;
   const retDesks = returns.desks ?? [];
   const retWindows = returns.windows ?? [];
+  // each desk over its whole record (since it started); the table shows every window
+  const fullRuns = retDesks.filter((d) => d.since_start?.desk_pct != null);
+  const fullBeats = fullRuns.filter((d) => d.since_start?.beat).length;
   const options = ((data as Record<string, unknown>).options ?? {}) as OptionsDesk;
   const held = options.held ?? [];
   const scout = (options.scan ?? []).slice(0, 8);
@@ -186,8 +189,8 @@ export default function Page() {
             <div className="grid sm:grid-cols-3 gap-4 mb-4">
               <div className="card p-7">
                 <div className="font-mono text-[11px] tracking-[0.14em] text-zinc-500 mb-3">BEATS THE S&amp;P</div>
-                <div className="font-serif text-[30px]">{returns.beats ?? 0} of {returns.tries ?? 0}</div>
-                <div className="text-[13px] text-zinc-600 mt-1">desk-windows measured</div>
+                <div className="font-serif text-[30px]">{fullBeats} of {fullRuns.length}</div>
+                <div className="text-[13px] text-zinc-600 mt-1">desks, each over its full record</div>
               </div>
               {returns.total?.windows?.slice(2, 3).map((w) => (
                 <div key={w.label} className="card p-7">
