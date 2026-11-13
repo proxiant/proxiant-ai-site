@@ -38,13 +38,14 @@ type OvernightDesk = { desk?: string; month?: string | null; list?: OwlPick[]; h
 const f = (v?: number | null) => (v == null ? "—" : v.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 }));
 const pct = (v?: number | null) => (v == null ? "—" : `${v >= 0 ? "+" : ""}${v.toFixed(2)}%`);
 const usd0 = (v?: number | null) => (v == null ? "—" : `${v < 0 ? "-" : ""}$${Math.abs(v).toLocaleString("en-US", { maximumFractionDigits: 0 })}`);
-const tone = (v?: number | null) => (v == null ? "text-zinc-500" : v >= 0 ? "text-emerald-400" : "text-red-400");
+const usdSigned = (v?: number | null) => (v == null ? "" : `${v < 0 ? "-" : "+"}$${Math.abs(v).toLocaleString("en-US", { maximumFractionDigits: 0 })}`);
+const tone = (v?: number | null) => (v == null ? "text-zinc-500" : v >= 0 ? "text-emerald-700" : "text-red-700");
 
 function RetCell({ w }: { w?: WinRet | null }) {
   if (!w || w.desk_pct == null) return <Td cls="text-zinc-600">—</Td>;
   return (
     <Td>
-      <div className={`${tone(w.desk_pct)} font-medium`}>{pct(w.desk_pct)} <span className="text-[12px]">{w.beat ? "✓" : "✗"}</span></div>
+      <div className={`${tone(w.desk_pct)} font-medium whitespace-nowrap`}>{pct(w.desk_pct)}{w.pnl_usd != null ? <span className="text-[12.5px] font-normal"> ({usdSigned(w.pnl_usd)})</span> : null} <span className="text-[12px]">{w.beat ? "✓" : "✗"}</span></div>
       <div className="text-[12px] text-zinc-500">S&amp;P {pct(w.spx_pct)}</div>
     </Td>
   );
@@ -93,7 +94,7 @@ export default function Page() {
             The same leads our agents trade, published with exact entry, stop, and target — then
             scored against the executed ledger every day. Wins and losses alike.
           </p>
-          <p className="mt-6 max-w-2xl text-[13px] leading-relaxed text-amber-200/70 border border-amber-200/20 rounded-lg px-4 py-3" data-reveal data-delay="3">
+          <p className="mt-6 max-w-2xl text-[13px] leading-relaxed text-amber-900 bg-amber-50 border border-amber-300 rounded-lg px-4 py-3" data-reveal data-delay="3">
             {DISCLAIMER}
           </p>
         </div>
@@ -110,9 +111,9 @@ export default function Page() {
                   <tr key={l.symbol}>
                     <Td cls="text-zinc-500">{l.rank ?? ""}</Td>
                     <Td cls="font-medium">{l.symbol}</Td>
-                    <Td cls={l.side === "sell" ? "text-red-400" : "text-emerald-400"}>{l.side === "sell" ? "SHORT" : "LONG"}</Td>
+                    <Td cls={l.side === "sell" ? "text-red-700" : "text-emerald-700"}>{l.side === "sell" ? "SHORT" : "LONG"}</Td>
                     <Td>{f(l.entry)}</Td><Td>{f(l.stop)}</Td><Td>{f(l.target)}</Td>
-                    <Td cls="text-zinc-400 text-[13px]">{l.why ?? ""}</Td>
+                    <Td cls="text-zinc-600 text-[13px]">{l.why ?? ""}</Td>
                   </tr>
                 )) : (
                   <tr><Td cls="text-zinc-500">Leads publish around 9:25 ET on trading days.</Td></tr>
@@ -135,10 +136,10 @@ export default function Page() {
                     <Td cls="font-medium">{t.symbol}</Td>
                     <Td>{t.side === "sell" ? "SHORT" : "LONG"}</Td>
                     <Td>{f(t.entry)}</Td><Td>{f(t.exit)}</Td>
-                    <Td cls={t.pnl_pct >= 0 ? "text-emerald-400" : "text-red-400"}>
+                    <Td cls={t.pnl_pct >= 0 ? "text-emerald-700" : "text-red-700"}>
                       {t.pnl_pct >= 0 ? "+" : ""}{t.pnl_pct.toFixed(2)}%
                     </Td>
-                    <Td cls="text-zinc-400 text-[13px]">{t.reason ?? ""}</Td>
+                    <Td cls="text-zinc-600 text-[13px]">{t.reason ?? ""}</Td>
                   </tr>
                 )) : (
                   <tr><Td cls="text-zinc-500">No executed trades yet today.</Td></tr>
@@ -169,7 +170,7 @@ export default function Page() {
               <div key={b.label} className="card p-7">
                 <div className="font-mono text-[11px] tracking-[0.14em] text-zinc-500 mb-3">{b.label.toUpperCase()}</div>
                 <div className="font-serif text-[30px]">{b.pnl_usd}</div>
-                <div className="text-[13px] text-zinc-400 mt-1">{b.n} trades · {b.win_rate} win rate</div>
+                <div className="text-[13px] text-zinc-600 mt-1">{b.n} trades · {b.win_rate} win rate</div>
               </div>
             ))}
           </div>
@@ -186,26 +187,26 @@ export default function Page() {
               <div className="card p-7">
                 <div className="font-mono text-[11px] tracking-[0.14em] text-zinc-500 mb-3">BEATS THE S&amp;P</div>
                 <div className="font-serif text-[30px]">{returns.beats ?? 0} of {returns.tries ?? 0}</div>
-                <div className="text-[13px] text-zinc-400 mt-1">desk-windows measured</div>
+                <div className="text-[13px] text-zinc-600 mt-1">desk-windows measured</div>
               </div>
               {returns.total?.windows?.slice(2, 3).map((w) => (
                 <div key={w.label} className="card p-7">
                   <div className="font-mono text-[11px] tracking-[0.14em] text-zinc-500 mb-3">{(returns.total?.label ?? "All desks").toUpperCase()} · {w.label.toUpperCase()}</div>
-                  <div className={`font-serif text-[30px] ${tone(w.desk_pct)}`}>{pct(w.desk_pct)}</div>
-                  <div className="text-[13px] text-zinc-400 mt-1">S&amp;P {pct(w.spx_pct)} · {w.beat ? "ahead" : "behind"} · on {usd0(returns.total?.capital_usd)}</div>
+                  <div className={`font-serif text-[30px] ${tone(w.desk_pct)}`}>{pct(w.desk_pct)}{w.pnl_usd != null ? <span className="text-[20px]"> ({usdSigned(w.pnl_usd)})</span> : null}</div>
+                  <div className="text-[13px] text-zinc-600 mt-1">S&amp;P {pct(w.spx_pct)} · {w.beat ? "ahead" : "behind"} · capital now {usd0(returns.total?.capital_usd)}</div>
                 </div>
               ))}
               <div className="card p-7">
                 <div className="font-mono text-[11px] tracking-[0.14em] text-zinc-500 mb-3">AS OF</div>
                 <div className="font-serif text-[30px]">{returns.as_of ?? "—"}</div>
-                <div className="text-[13px] text-zinc-400 mt-1">track record since {returns.epoch ?? ""}</div>
+                <div className="text-[13px] text-zinc-600 mt-1">track record since {returns.epoch ?? ""}</div>
               </div>
             </div>
             <div className="card p-8 overflow-x-auto">
               <table className="w-full min-w-[820px]">
                 <thead>
                   <tr>
-                    <Th>DESK</Th><Th>CAPITAL</Th>
+                    <Th>DESK</Th><Th>CAPITAL NOW</Th>
                     {retWindows.map((w) => <Th key={w}>{w.toUpperCase()}</Th>)}
                     <Th>SINCE START</Th><Th>OPEN P&amp;L</Th><Th>TRADES</Th>
                   </tr>
@@ -217,17 +218,17 @@ export default function Page() {
                         <div className="font-medium">{d.label}</div>
                         <div className="text-[12px] text-zinc-500">{d.what ?? ""}{d.started ? ` · since ${d.started}` : " · no trades yet"}</div>
                       </Td>
-                      <Td cls="text-zinc-400">{usd0(d.capital_usd)}</Td>
+                      <Td cls="text-zinc-600">{usd0(d.capital_usd)}</Td>
                       {retWindows.map((w, i) => <RetCell key={w} w={d.windows?.[i]} />)}
                       <RetCell w={d.since_start} />
                       <Td cls={tone(d.open_pnl_usd)}>{usd0(d.open_pnl_usd)}</Td>
-                      <Td cls="text-zinc-400">{d.trades ?? 0}</Td>
+                      <Td cls="text-zinc-600">{d.trades ?? 0}</Td>
                     </tr>
                   ))}
                   {returns.total ? (
                     <tr>
                       <Td cls="font-medium">{returns.total.label ?? "All desks"}</Td>
-                      <Td cls="text-zinc-400">{usd0(returns.total.capital_usd)}</Td>
+                      <Td cls="text-zinc-600">{usd0(returns.total.capital_usd)}</Td>
                       {retWindows.map((w, i) => <RetCell key={w} w={returns.total?.windows?.[i]} />)}
                       <RetCell w={returns.total.since_start} />
                       <Td cls="text-zinc-600">—</Td><Td cls="text-zinc-600">—</Td>
@@ -254,7 +255,7 @@ export default function Page() {
                       <Td>{h.expiry ?? ""}</Td><Td>{h.dte ?? "—"}</Td>
                       <Td>{h.short_strike ?? "—"} / {h.long_strike ?? "—"}</Td>
                       <Td>{h.qty ?? ""}</Td><Td>{f(h.credit)}</Td><Td>{usd0(h.max_risk_usd)}</Td>
-                      <Td cls="text-zinc-400">{h.opened ?? ""}</Td>
+                      <Td cls="text-zinc-600">{h.opened ?? ""}</Td>
                     </tr>
                   )) : (
                     <tr><Td cls="text-zinc-500">No open spreads. The desk enters only when a candidate passes every gate and buying power is free.</Td></tr>
@@ -277,7 +278,7 @@ export default function Page() {
                       <Td>{f(s.credit)}</Td><Td>{s.delta != null ? s.delta.toFixed(2) : "—"}</Td>
                       <Td>{s.vrp != null ? s.vrp.toFixed(2) : "—"}</Td>
                       <Td>{s.score != null ? s.score.toFixed(2) : "—"}</Td>
-                      <Td cls={s.signal ? "text-emerald-400" : "text-zinc-400 text-[13px]"}>{s.signal ? "PASS" : (s.reason ?? "")}</Td>
+                      <Td cls={s.signal ? "text-emerald-700" : "text-zinc-600 text-[13px]"}>{s.signal ? "PASS" : (s.reason ?? "")}</Td>
                     </tr>
                   )) : (
                     <tr><Td cls="text-zinc-500">The scout runs at 10:20 ET on trading days.</Td></tr>
@@ -293,11 +294,11 @@ export default function Page() {
                   <tbody>
                     {closedSpreads.map((c, i) => (
                       <tr key={`${c.symbol}-${i}`}>
-                        <Td cls="text-zinc-400">{c.day ?? ""}</Td>
+                        <Td cls="text-zinc-600">{c.day ?? ""}</Td>
                         <Td cls="font-medium">{c.symbol ?? ""}</Td>
                         <Td>{f(c.entry)}</Td><Td>{f(c.exit)}</Td>
                         <Td cls={tone(c.pnl_usd)}>{usd0(c.pnl_usd)} · {pct(c.pnl_pct)}</Td>
-                        <Td cls="text-zinc-400 text-[13px]">{c.reason ?? ""}</Td>
+                        <Td cls="text-zinc-600 text-[13px]">{c.reason ?? ""}</Td>
                       </tr>
                     ))}
                   </tbody>
@@ -320,7 +321,7 @@ export default function Page() {
                     <tr key={h.symbol ?? ""}>
                       <Td cls="font-medium">{h.symbol ?? ""}</Td>
                       <Td>{h.qty ?? ""}</Td><Td>{f(h.entry)}</Td>
-                      <Td cls="text-zinc-400">{h.opened ?? ""}</Td>
+                      <Td cls="text-zinc-600">{h.opened ?? ""}</Td>
                     </tr>
                   )) : (
                     <tr><Td cls="text-zinc-500">Nothing held right now. The desk buys at the close and sells at the next open, so its names show here in the evening.</Td></tr>
@@ -386,8 +387,8 @@ export default function Page() {
               </tbody>
             </table>
             {data.posture ? (
-              <p className="text-[13.5px] text-zinc-400 mt-5">
-                Long-horizon posture: <span className="text-zinc-200 font-medium">{data.posture}</span> (regime-switched model, updated daily).
+              <p className="text-[13.5px] text-zinc-600 mt-5">
+                Long-horizon posture: <span className="text-zinc-900 font-medium">{data.posture}</span> (regime-switched model, updated daily).
               </p>
             ) : null}
           </div>
@@ -411,8 +412,8 @@ export default function Page() {
                       <span className="font-serif text-[22px]">{r.symbol}</span>
                       <span className="font-mono text-[11px] text-zinc-500">{r.date}</span>
                     </div>
-                    <p className="text-[13.5px] text-zinc-400 leading-relaxed">{r.headline}</p>
-                    <div className="text-[13px] mt-3 text-zinc-300">Read the report → <span className="text-zinc-500">requested by {r.requested_by}</span></div>
+                    <p className="text-[13.5px] text-zinc-600 leading-relaxed">{r.headline}</p>
+                    <div className="text-[13px] mt-3 text-zinc-700">Read the report → <span className="text-zinc-500">requested by {r.requested_by}</span></div>
                   </a>
                 ))}
               </div>

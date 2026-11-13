@@ -104,10 +104,10 @@ export default function RequestForm({ repo, api }: { repo: string; api?: string 
         </span>
       </form>
       {state === "queued" && (
-        <div className="mt-3 text-[13.5px] text-emerald-400">{msg}</div>
+        <div className="mt-3 text-[13.5px] text-emerald-700">{msg}</div>
       )}
       {state === "error" && (
-        <div className="mt-3 text-[13.5px] text-amber-400">{msg}</div>
+        <div className="mt-3 text-[13.5px] text-amber-700">{msg}</div>
       )}
     </div>
   );
