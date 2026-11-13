@@ -7,7 +7,7 @@ import type { Metadata } from "next";
 import RequestForm from "./request-form";
 
 export const metadata: Metadata = {
-  title: "ProxiTrades — daily leads and honest results | Proxiant",
+  title: "ProxiTrades: daily leads and honest results | Proxiant",
   description:
     "Automated trading research: leads with entry, stop, and target before the open, executed results after the close. Wins and losses alike.",
 };
@@ -91,7 +91,7 @@ export default function Page() {
             Leads before the open. Results after the close.
           </h1>
           <p className="lead mt-9 max-w-2xl" data-reveal data-delay="2">
-            The same leads our agents trade, published with exact entry, stop, and target — then
+            The same leads our agents trade, published with exact entry, stop, and target, then
             scored against the executed ledger every day. Wins and losses alike.
           </p>
           <p className="mt-6 max-w-2xl text-[13px] leading-relaxed text-amber-900 bg-amber-50 border border-amber-300 rounded-lg px-4 py-3" data-reveal data-delay="3">
@@ -399,7 +399,7 @@ export default function Page() {
           <div className="card p-8">
             <p className="muted text-[15px] leading-relaxed max-w-3xl mb-6">
               Want the research desk on a specific name? Ask, and the MIDAS engine runs the full
-              workup — valuation scenarios, Monte Carlo risk, peer comps, and an audited narrative —
+              workup (valuation scenarios, Monte Carlo risk, peer comps, and an audited narrative)
               and publishes it here, usually within one trading day. Requests go through GitHub, so
               they are public and spam-free.
             </p>
@@ -418,7 +418,7 @@ export default function Page() {
                 ))}
               </div>
             ) : (
-              <p className="text-[13.5px] text-zinc-500">No community reports yet — yours could be the first.</p>
+              <p className="text-[13.5px] text-zinc-500">No community reports yet. Yours could be the first.</p>
             )}
           </div>
         </section>
@@ -428,7 +428,7 @@ export default function Page() {
             <div className="font-mono text-[12px] tracking-[0.14em] text-zinc-500 mb-4">KEEP THE LEADS COMING</div>
             <p className="muted text-[15.5px] leading-relaxed max-w-2xl mb-7">
               The leads, the executed ledger, and the analysis on this page are free and update every
-              trading day. If they help you, buy the research a coffee — it pays for the data feeds
+              trading day. If they help you, buy the research a coffee: it pays for the data feeds
               and keeps the work public.
             </p>
             <a href={data.donate_url ?? "https://buymeacoffee.com/proxiant"}
