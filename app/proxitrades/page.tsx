@@ -190,7 +190,7 @@ export default function Page() {
               </div>
               {returns.total?.windows?.slice(2, 3).map((w) => (
                 <div key={w.label} className="card p-7">
-                  <div className="font-mono text-[11px] tracking-[0.14em] text-zinc-500 mb-3">ALL DESKS · {w.label.toUpperCase()}</div>
+                  <div className="font-mono text-[11px] tracking-[0.14em] text-zinc-500 mb-3">{(returns.total?.label ?? "All desks").toUpperCase()} · {w.label.toUpperCase()}</div>
                   <div className={`font-serif text-[30px] ${tone(w.desk_pct)}`}>{pct(w.desk_pct)}</div>
                   <div className="text-[13px] text-zinc-400 mt-1">S&amp;P {pct(w.spx_pct)} · {w.beat ? "ahead" : "behind"} · on {usd0(returns.total?.capital_usd)}</div>
                 </div>
@@ -226,7 +226,7 @@ export default function Page() {
                   ))}
                   {returns.total ? (
                     <tr>
-                      <Td cls="font-medium">All desks</Td>
+                      <Td cls="font-medium">{returns.total.label ?? "All desks"}</Td>
                       <Td cls="text-zinc-400">{usd0(returns.total.capital_usd)}</Td>
                       {retWindows.map((w, i) => <RetCell key={w} w={returns.total?.windows?.[i]} />)}
                       <RetCell w={returns.total.since_start} />
