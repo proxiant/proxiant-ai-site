@@ -1,5 +1,5 @@
 {
- "stamp": "Sunday, November 15, 2026 23:03 ET",
+ "stamp": "Monday, November 16, 2026 00:23 ET",
  "leads": [
   {
    "rank": 1,
@@ -108,9 +108,9 @@
  "board": [
   {
    "label": "This week",
-   "n": 6,
-   "win_rate": "67%",
-   "pnl_usd": "+564"
+   "n": 0,
+   "win_rate": "-",
+   "pnl_usd": "-"
   },
   {
    "label": "This month",
@@ -156,7 +156,7 @@
  "request_repo": "proxiant/proxiant-ai-site",
  "request_api": "",
  "returns": {
-  "as_of": "2026-11-15",
+  "as_of": "2026-11-16",
   "epoch": "2026-08-17",
   "windows": [
    "This week",
@@ -174,13 +174,13 @@
     "windows": [
      {
       "label": "This week",
-      "desk_pct": 1.46,
-      "spx_pct": 2.59,
-      "excess_pct": -1.14,
+      "desk_pct": 0.0,
+      "spx_pct": 0.0,
+      "excess_pct": 0.0,
       "beat": false,
-      "from": "2026-11-06",
+      "from": "2026-11-13",
       "to": "2026-11-13",
-      "pnl_usd": 563.95
+      "pnl_usd": 0.0
      },
      {
       "label": "This month",
@@ -226,10 +226,10 @@
      {
       "label": "This week",
       "desk_pct": 0.0,
-      "spx_pct": 2.59,
-      "excess_pct": -2.59,
+      "spx_pct": 0.0,
+      "excess_pct": 0.0,
       "beat": false,
-      "from": "2026-11-06",
+      "from": "2026-11-13",
       "to": "2026-11-13",
       "pnl_usd": 0.0
      },
@@ -270,8 +270,8 @@
     "desk": "kestrel",
     "label": "Kestrel",
     "what": "index and mega-cap RSI dips, days to a week",
-    "capital_usd": 30000,
-    "starts": "2026-11-16",
+    "capital_usd": 100000,
+    "starts": null,
     "started": null,
     "windows": [
      {
@@ -302,7 +302,7 @@
     "label": "Swift",
     "what": "QQQ intraday momentum, flat by the close, and the pre-FOMC drift",
     "capital_usd": 100000,
-    "starts": "2026-11-16",
+    "starts": null,
     "started": null,
     "windows": [
      {
@@ -332,8 +332,8 @@
     "desk": "eagle",
     "label": "Eagle",
     "what": "V7: the strongest high-beta stocks while SPY trends up, gold otherwise",
-    "capital_usd": 100000,
-    "starts": "2026-11-16",
+    "capital_usd": 400000,
+    "starts": null,
     "started": null,
     "windows": [
      {
@@ -362,17 +362,17 @@
   ],
   "total": {
    "label": "Hunter, Raptor, Kestrel, Swift and Eagle",
-   "capital_usd": 200000,
+   "capital_usd": 800000,
    "windows": [
     {
      "label": "This week",
-     "desk_pct": 0.79,
-     "spx_pct": 2.59,
-     "excess_pct": -1.8,
+     "desk_pct": 0.0,
+     "spx_pct": 0.0,
+     "excess_pct": 0.0,
      "beat": false,
-     "from": "2026-11-06",
+     "from": "2026-11-13",
      "to": "2026-11-13",
-     "pnl_usd": 563.95
+     "pnl_usd": 0.0
     },
     {
      "label": "This month",
