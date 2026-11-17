@@ -1,5 +1,5 @@
 {
- "stamp": "Monday, November 16, 2026 17:05 ET",
+ "stamp": "Monday, November 16, 2026 23:10 ET",
  "leads": [
   {
    "rank": 1,
@@ -312,24 +312,44 @@
     "windows": [
      {
       "label": "This week",
-      "desk_pct": null,
-      "spx_pct": null,
-      "beat": null
+      "desk_pct": 0.12,
+      "spx_pct": -1.9,
+      "excess_pct": 2.02,
+      "beat": true,
+      "from": "2026-11-13",
+      "to": "2026-11-16",
+      "pnl_usd": 117.5
      },
      {
       "label": "This month",
-      "desk_pct": null,
-      "spx_pct": null,
-      "beat": null
+      "desk_pct": 0.12,
+      "spx_pct": -1.9,
+      "excess_pct": 2.02,
+      "beat": true,
+      "from": "2026-11-13",
+      "to": "2026-11-16",
+      "pnl_usd": 117.5
      },
      {
       "label": "Since Aug 17",
-      "desk_pct": null,
-      "spx_pct": null,
-      "beat": null
+      "desk_pct": 0.12,
+      "spx_pct": -1.9,
+      "excess_pct": 2.02,
+      "beat": true,
+      "from": "2026-11-13",
+      "to": "2026-11-16",
+      "pnl_usd": 117.5
      }
     ],
-    "since_start": null,
+    "since_start": {
+     "desk_pct": 0.12,
+     "spx_pct": -1.9,
+     "excess_pct": 2.02,
+     "beat": true,
+     "from": "2026-11-13",
+     "to": "2026-11-16",
+     "pnl_usd": 117.5
+    },
     "open_pnl_usd": 117.5,
     "trades": 0
    },
@@ -343,24 +363,44 @@
     "windows": [
      {
       "label": "This week",
-      "desk_pct": null,
-      "spx_pct": null,
-      "beat": null
+      "desk_pct": -0.4,
+      "spx_pct": -1.9,
+      "excess_pct": 1.5,
+      "beat": true,
+      "from": "2026-11-13",
+      "to": "2026-11-16",
+      "pnl_usd": -402.13
      },
      {
       "label": "This month",
-      "desk_pct": null,
-      "spx_pct": null,
-      "beat": null
+      "desk_pct": -0.4,
+      "spx_pct": -1.9,
+      "excess_pct": 1.5,
+      "beat": true,
+      "from": "2026-11-13",
+      "to": "2026-11-16",
+      "pnl_usd": -402.13
      },
      {
       "label": "Since Aug 17",
-      "desk_pct": null,
-      "spx_pct": null,
-      "beat": null
+      "desk_pct": -0.4,
+      "spx_pct": -1.9,
+      "excess_pct": 1.5,
+      "beat": true,
+      "from": "2026-11-13",
+      "to": "2026-11-16",
+      "pnl_usd": -402.13
      }
     ],
-    "since_start": null,
+    "since_start": {
+     "desk_pct": -0.4,
+     "spx_pct": -1.9,
+     "excess_pct": 1.5,
+     "beat": true,
+     "from": "2026-11-13",
+     "to": "2026-11-16",
+     "pnl_usd": -402.13
+    },
     "open_pnl_usd": 0.0,
     "trades": 4
    },
@@ -374,24 +414,44 @@
     "windows": [
      {
       "label": "This week",
-      "desk_pct": null,
-      "spx_pct": null,
-      "beat": null
+      "desk_pct": -0.03,
+      "spx_pct": -1.9,
+      "excess_pct": 1.87,
+      "beat": true,
+      "from": "2026-11-13",
+      "to": "2026-11-16",
+      "pnl_usd": -129.42
      },
      {
       "label": "This month",
-      "desk_pct": null,
-      "spx_pct": null,
-      "beat": null
+      "desk_pct": -0.03,
+      "spx_pct": -1.9,
+      "excess_pct": 1.87,
+      "beat": true,
+      "from": "2026-11-13",
+      "to": "2026-11-16",
+      "pnl_usd": -129.42
      },
      {
       "label": "Since Aug 17",
-      "desk_pct": null,
-      "spx_pct": null,
-      "beat": null
+      "desk_pct": -0.03,
+      "spx_pct": -1.9,
+      "excess_pct": 1.87,
+      "beat": true,
+      "from": "2026-11-13",
+      "to": "2026-11-16",
+      "pnl_usd": -129.42
      }
     ],
-    "since_start": null,
+    "since_start": {
+     "desk_pct": -0.03,
+     "spx_pct": -1.9,
+     "excess_pct": 1.87,
+     "beat": true,
+     "from": "2026-11-13",
+     "to": "2026-11-16",
+     "pnl_usd": -129.42
+    },
     "open_pnl_usd": -129.42,
     "trades": 0
    }
@@ -441,8 +501,8 @@
     "pnl_usd": 1982.24
    }
   },
-  "beats": 6,
-  "tries": 6,
+  "beats": 15,
+  "tries": 15,
   "benchmark": "SPY price return between the same closes",
   "note": "Return on the desk's own notional pool: realised trades plus open positions marked at the close. Paper account."
  }
