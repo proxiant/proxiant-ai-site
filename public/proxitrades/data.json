@@ -1,5 +1,5 @@
 {
- "stamp": "Monday, November 16, 2026 23:10 ET",
+ "stamp": "Monday, November 16, 2026 23:21 ET",
  "leads": [
   {
    "rank": 1,
@@ -140,7 +140,7 @@
   }
  ],
  "trades_day_label": "today",
- "eod_text": "5 trades, 2 winners, a net loss of $160 on the paper book. Every fill above is real output from the live pipeline, the Hunter and Raptor desks trading the paper account, reported win or lose.",
+ "eod_text": "5 trades, 2 winners, a net loss of $160 on the paper book. Every fill above is real output from the live pipeline, the Hunter, Raptor, Kestrel, Swift and Eagle desks trading paper accounts, reported win or lose.",
  "board": [
   {
    "label": "This week",
@@ -195,6 +195,7 @@
   "as_of": "2026-11-16",
   "epoch": "2026-08-17",
   "windows": [
+   "Today",
    "This week",
    "This month",
    "Since Aug 17"
@@ -208,6 +209,16 @@
     "starts": null,
     "started": "2026-08-17",
     "windows": [
+     {
+      "label": "Today",
+      "desk_pct": 0.24,
+      "spx_pct": -1.9,
+      "excess_pct": 2.14,
+      "beat": true,
+      "from": "2026-11-13",
+      "to": "2026-11-16",
+      "pnl_usd": 242.2
+     },
      {
       "label": "This week",
       "desk_pct": 0.24,
@@ -260,6 +271,16 @@
     "started": "2026-08-21",
     "windows": [
      {
+      "label": "Today",
+      "desk_pct": 0.0,
+      "spx_pct": -1.9,
+      "excess_pct": 1.9,
+      "beat": true,
+      "from": "2026-11-13",
+      "to": "2026-11-16",
+      "pnl_usd": 0.0
+     },
+     {
       "label": "This week",
       "desk_pct": 0.0,
       "spx_pct": -1.9,
@@ -310,6 +331,16 @@
     "starts": null,
     "started": "2026-11-16",
     "windows": [
+     {
+      "label": "Today",
+      "desk_pct": 0.12,
+      "spx_pct": -1.9,
+      "excess_pct": 2.02,
+      "beat": true,
+      "from": "2026-11-13",
+      "to": "2026-11-16",
+      "pnl_usd": 117.5
+     },
      {
       "label": "This week",
       "desk_pct": 0.12,
@@ -362,6 +393,16 @@
     "started": "2026-11-16",
     "windows": [
      {
+      "label": "Today",
+      "desk_pct": -0.4,
+      "spx_pct": -1.9,
+      "excess_pct": 1.5,
+      "beat": true,
+      "from": "2026-11-13",
+      "to": "2026-11-16",
+      "pnl_usd": -402.13
+     },
+     {
       "label": "This week",
       "desk_pct": -0.4,
       "spx_pct": -1.9,
@@ -413,6 +454,16 @@
     "started": "2026-11-16",
     "windows": [
      {
+      "label": "Today",
+      "desk_pct": -0.03,
+      "spx_pct": -1.9,
+      "excess_pct": 1.87,
+      "beat": true,
+      "from": "2026-11-13",
+      "to": "2026-11-16",
+      "pnl_usd": -129.42
+     },
+     {
       "label": "This week",
       "desk_pct": -0.03,
       "spx_pct": -1.9,
@@ -460,6 +511,16 @@
    "label": "Hunter, Raptor, Kestrel, Swift and Eagle",
    "capital_usd": 800000,
    "windows": [
+    {
+     "label": "Today",
+     "desk_pct": -0.02,
+     "spx_pct": -1.9,
+     "excess_pct": 1.88,
+     "beat": true,
+     "from": "2026-11-13",
+     "to": "2026-11-16",
+     "pnl_usd": -171.85
+    },
     {
      "label": "This week",
      "desk_pct": -0.02,
