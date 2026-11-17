@@ -192,7 +192,7 @@ export default function Page() {
                 <div className="font-serif text-[30px]">{fullBeats} of {fullRuns.length}</div>
                 <div className="text-[13px] text-zinc-600 mt-1">desks, each over its full record</div>
               </div>
-              {returns.total?.windows?.slice(2, 3).map((w) => (
+              {returns.total?.windows?.slice(-1).map((w) => (
                 <div key={w.label} className="card p-7">
                   <div className="font-mono text-[11px] tracking-[0.14em] text-zinc-500 mb-3">{(returns.total?.label ?? "All desks").toUpperCase()} · {w.label.toUpperCase()}</div>
                   <div className={`font-serif text-[30px] ${tone(w.desk_pct)}`}>{pct(w.desk_pct)}{w.pnl_usd != null ? <span className="text-[20px]"> ({usdSigned(w.pnl_usd)})</span> : null}</div>
@@ -206,7 +206,7 @@ export default function Page() {
               </div>
             </div>
             <div className="card p-8 overflow-x-auto">
-              <table className="w-full min-w-[820px]">
+              <table className="w-full min-w-[940px]">
                 <thead>
                   <tr>
                     <Th>DESK</Th><Th>CAPITAL NOW</Th>
