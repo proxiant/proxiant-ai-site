@@ -1,95 +1,41 @@
 {
- "stamp": "Monday, November 16, 2026 23:21 ET",
+ "stamp": "Tuesday, November 17, 2026 09:27 ET",
  "leads": [
   {
    "rank": 1,
-   "symbol": "OMH",
-   "side": "sell",
-   "entry": 4.31,
-   "stop": 11.3804,
-   "target": -2.7604,
-   "why": "gap -13.8%, pre-market vol 799,584, rvol 0.1x"
+   "symbol": "CAPR",
+   "side": "buy",
+   "entry": 8.87,
+   "stop": 7.6591,
+   "target": 10.0809,
+   "why": "gap +6.9%, pre-market vol 214,173, rvol 0.7x"
   },
   {
    "rank": 2,
-   "symbol": "FCUV",
-   "side": "sell",
-   "entry": 5.17,
-   "stop": 6.1869,
-   "target": 4.1531,
-   "why": "gap -27.0%, pre-market vol 450,653, rvol 0.1x"
+   "symbol": "AAOI",
+   "side": "buy",
+   "entry": 49.1,
+   "stop": 42.9244,
+   "target": 55.2756,
+   "why": "gap +8.7%, pre-market vol 1,159,676, rvol 0.6x"
   },
   {
    "rank": 3,
-   "symbol": "NBIS",
-   "side": "sell",
-   "entry": 106.84,
-   "stop": 120.4253,
-   "target": 93.2547,
-   "why": "gap -7.8%, pre-market vol 2,037,966, rvol 0.1x"
+   "symbol": "COHR",
+   "side": "buy",
+   "entry": 218.44,
+   "stop": 194.3444,
+   "target": 242.5356,
+   "why": "gap +7.4%, pre-market vol 609,554, rvol 0.6x"
   },
   {
    "rank": 4,
-   "symbol": "COHR",
-   "side": "sell",
-   "entry": 201.3,
-   "stop": 224.64,
-   "target": 177.96,
-   "why": "gap -7.7%, pre-market vol 369,154, rvol 0.1x"
-  },
-  {
-   "rank": 5,
-   "symbol": "BE",
-   "side": "sell",
-   "entry": 176.46,
-   "stop": 195.9179,
-   "target": 157.0021,
-   "why": "gap -8.1%, pre-market vol 564,714, rvol 0.1x"
-  },
-  {
-   "rank": 6,
-   "symbol": "POET",
-   "side": "sell",
-   "entry": 4.635,
-   "stop": 5.1025,
-   "target": 4.1675,
-   "why": "gap -9.6%, pre-market vol 1,290,570, rvol 0.2x"
-  },
-  {
-   "rank": 7,
-   "symbol": "ASST",
-   "side": "sell",
-   "entry": 19.64,
-   "stop": 21.564,
-   "target": 17.716,
-   "why": "gap -8.1%, pre-market vol 372,480, rvol 0.1x"
-  },
-  {
-   "rank": 8,
-   "symbol": "SMMT",
-   "side": "sell",
-   "entry": 12.74,
-   "stop": 13.8201,
-   "target": 11.6599,
-   "why": "gap -10.0%, pre-market vol 1,791,458, rvol 0.5x"
-  },
-  {
-   "rank": 9,
-   "symbol": "CGON",
+   "symbol": "SLS",
    "side": "buy",
-   "entry": 92.0,
-   "stop": 83.4104,
-   "target": 100.5896,
-   "why": "gap +23.7%, pre-market vol 405,505, rvol 0.5x"
-  },
-  {
-   "rank": 10,
-   "symbol": "TU",
-   "side": "buy",
-   "entry": 9.66,
-   "stop": 9.3453,
-   "target": 9.9747,
-   "why": "gap +13.2%, pre-market vol 3,365,974, rvol 0.6x"
+   "entry": 26.0738,
+   "stop": 22.6154,
+   "target": 29.5322,
+   "why": "gap +249.0%, pre-market vol 19,726,741, rvol 1.1x"
   }
  ],
  "trades": [
@@ -139,7 +85,7 @@
    "reason": "close"
   }
  ],
- "trades_day_label": "today",
+ "trades_day_label": "Monday Nov 16",
  "eod_text": "5 trades, 2 winners, a net loss of $160 on the paper book. Every fill above is real output from the live pipeline, the Hunter, Raptor, Kestrel, Swift and Eagle desks trading paper accounts, reported win or lose.",
  "board": [
   {
@@ -192,10 +138,10 @@
  "request_repo": "proxiant/proxiant-ai-site",
  "request_api": "",
  "returns": {
-  "as_of": "2026-11-16",
+  "as_of": "2026-11-17",
   "epoch": "2026-08-17",
   "windows": [
-   "Today",
+   "Nov 16",
    "This week",
    "This month",
    "Since Aug 17"
@@ -210,10 +156,10 @@
     "started": "2026-08-17",
     "windows": [
      {
-      "label": "Today",
+      "label": "Nov 16",
       "desk_pct": 0.24,
-      "spx_pct": -1.9,
-      "excess_pct": 2.14,
+      "spx_pct": -1.91,
+      "excess_pct": 2.15,
       "beat": true,
       "from": "2026-11-13",
       "to": "2026-11-16",
@@ -222,41 +168,41 @@
      {
       "label": "This week",
       "desk_pct": 0.24,
-      "spx_pct": -1.9,
-      "excess_pct": 2.14,
+      "spx_pct": -2.06,
+      "excess_pct": 2.3,
       "beat": true,
       "from": "2026-11-13",
-      "to": "2026-11-16",
+      "to": "2026-11-17",
       "pnl_usd": 242.2
      },
      {
       "label": "This month",
       "desk_pct": 1.68,
-      "spx_pct": -2.07,
-      "excess_pct": 3.75,
+      "spx_pct": -2.24,
+      "excess_pct": 3.92,
       "beat": true,
       "from": "2026-10-30",
-      "to": "2026-11-16",
+      "to": "2026-11-17",
       "pnl_usd": 801.4
      },
      {
       "label": "Since Aug 17",
       "desk_pct": 2.05,
-      "spx_pct": -4.68,
-      "excess_pct": 6.72,
+      "spx_pct": -4.84,
+      "excess_pct": 6.88,
       "beat": true,
       "from": "2026-08-14",
-      "to": "2026-11-16",
+      "to": "2026-11-17",
       "pnl_usd": 1164.15
      }
     ],
     "since_start": {
      "desk_pct": 2.05,
-     "spx_pct": -4.68,
-     "excess_pct": 6.72,
+     "spx_pct": -4.84,
+     "excess_pct": 6.88,
      "beat": true,
      "from": "2026-08-14",
-     "to": "2026-11-16",
+     "to": "2026-11-17",
      "pnl_usd": 1164.15
     },
     "open_pnl_usd": 0.0,
@@ -271,10 +217,10 @@
     "started": "2026-08-21",
     "windows": [
      {
-      "label": "Today",
+      "label": "Nov 16",
       "desk_pct": 0.0,
-      "spx_pct": -1.9,
-      "excess_pct": 1.9,
+      "spx_pct": -1.91,
+      "excess_pct": 1.91,
       "beat": true,
       "from": "2026-11-13",
       "to": "2026-11-16",
@@ -283,41 +229,41 @@
      {
       "label": "This week",
       "desk_pct": 0.0,
-      "spx_pct": -1.9,
-      "excess_pct": 1.9,
+      "spx_pct": -2.06,
+      "excess_pct": 2.06,
       "beat": true,
       "from": "2026-11-13",
-      "to": "2026-11-16",
+      "to": "2026-11-17",
       "pnl_usd": 0.0
      },
      {
       "label": "This month",
       "desk_pct": 0.0,
-      "spx_pct": -2.07,
-      "excess_pct": 2.07,
+      "spx_pct": -2.24,
+      "excess_pct": 2.24,
       "beat": true,
       "from": "2026-10-30",
-      "to": "2026-11-16",
+      "to": "2026-11-17",
       "pnl_usd": 0.0
      },
      {
       "label": "Since Aug 17",
       "desk_pct": 1.23,
-      "spx_pct": -2.96,
-      "excess_pct": 4.19,
+      "spx_pct": -3.12,
+      "excess_pct": 4.35,
       "beat": true,
       "from": "2026-08-20",
-      "to": "2026-11-16",
+      "to": "2026-11-17",
       "pnl_usd": 1232.14
      }
     ],
     "since_start": {
      "desk_pct": 1.23,
-     "spx_pct": -2.96,
-     "excess_pct": 4.19,
+     "spx_pct": -3.12,
+     "excess_pct": 4.35,
      "beat": true,
      "from": "2026-08-20",
-     "to": "2026-11-16",
+     "to": "2026-11-17",
      "pnl_usd": 1232.14
     },
     "open_pnl_usd": 0.0,
@@ -332,56 +278,56 @@
     "started": "2026-11-16",
     "windows": [
      {
-      "label": "Today",
-      "desk_pct": 0.12,
-      "spx_pct": -1.9,
+      "label": "Nov 16",
+      "desk_pct": 0.1,
+      "spx_pct": -1.91,
       "excess_pct": 2.02,
       "beat": true,
       "from": "2026-11-13",
       "to": "2026-11-16",
-      "pnl_usd": 117.5
+      "pnl_usd": 105.0
      },
      {
       "label": "This week",
-      "desk_pct": 0.12,
-      "spx_pct": -1.9,
-      "excess_pct": 2.02,
+      "desk_pct": 0.1,
+      "spx_pct": -2.06,
+      "excess_pct": 2.17,
       "beat": true,
       "from": "2026-11-13",
-      "to": "2026-11-16",
-      "pnl_usd": 117.5
+      "to": "2026-11-17",
+      "pnl_usd": 105.0
      },
      {
       "label": "This month",
-      "desk_pct": 0.12,
-      "spx_pct": -1.9,
-      "excess_pct": 2.02,
+      "desk_pct": 0.1,
+      "spx_pct": -2.06,
+      "excess_pct": 2.17,
       "beat": true,
       "from": "2026-11-13",
-      "to": "2026-11-16",
-      "pnl_usd": 117.5
+      "to": "2026-11-17",
+      "pnl_usd": 105.0
      },
      {
       "label": "Since Aug 17",
-      "desk_pct": 0.12,
-      "spx_pct": -1.9,
-      "excess_pct": 2.02,
+      "desk_pct": 0.1,
+      "spx_pct": -2.06,
+      "excess_pct": 2.17,
       "beat": true,
       "from": "2026-11-13",
-      "to": "2026-11-16",
-      "pnl_usd": 117.5
+      "to": "2026-11-17",
+      "pnl_usd": 105.0
      }
     ],
     "since_start": {
-     "desk_pct": 0.12,
-     "spx_pct": -1.9,
-     "excess_pct": 2.02,
+     "desk_pct": 0.1,
+     "spx_pct": -2.06,
+     "excess_pct": 2.17,
      "beat": true,
      "from": "2026-11-13",
-     "to": "2026-11-16",
-     "pnl_usd": 117.5
+     "to": "2026-11-17",
+     "pnl_usd": 105.0
     },
-    "open_pnl_usd": 117.5,
+    "open_pnl_usd": 105.0,
     "trades": 0
    },
    {
@@ -393,10 +339,10 @@
     "started": "2026-11-16",
     "windows": [
      {
-      "label": "Today",
+      "label": "Nov 16",
       "desk_pct": -0.4,
-      "spx_pct": -1.9,
-      "excess_pct": 1.5,
+      "spx_pct": -1.91,
+      "excess_pct": 1.51,
       "beat": true,
       "from": "2026-11-13",
       "to": "2026-11-16",
@@ -405,41 +351,41 @@
      {
       "label": "This week",
       "desk_pct": -0.4,
-      "spx_pct": -1.9,
-      "excess_pct": 1.5,
+      "spx_pct": -2.06,
+      "excess_pct": 1.66,
       "beat": true,
       "from": "2026-11-13",
-      "to": "2026-11-16",
+      "to": "2026-11-17",
       "pnl_usd": -402.13
      },
      {
       "label": "This month",
       "desk_pct": -0.4,
-      "spx_pct": -1.9,
-      "excess_pct": 1.5,
+      "spx_pct": -2.06,
+      "excess_pct": 1.66,
       "beat": true,
       "from": "2026-11-13",
-      "to": "2026-11-16",
+      "to": "2026-11-17",
       "pnl_usd": -402.13
      },
      {
       "label": "Since Aug 17",
       "desk_pct": -0.4,
-      "spx_pct": -1.9,
-      "excess_pct": 1.5,
+      "spx_pct": -2.06,
+      "excess_pct": 1.66,
       "beat": true,
       "from": "2026-11-13",
-      "to": "2026-11-16",
+      "to": "2026-11-17",
       "pnl_usd": -402.13
      }
     ],
     "since_start": {
      "desk_pct": -0.4,
-     "spx_pct": -1.9,
-     "excess_pct": 1.5,
+     "spx_pct": -2.06,
+     "excess_pct": 1.66,
      "beat": true,
      "from": "2026-11-13",
-     "to": "2026-11-16",
+     "to": "2026-11-17",
      "pnl_usd": -402.13
     },
     "open_pnl_usd": 0.0,
@@ -454,56 +400,56 @@
     "started": "2026-11-16",
     "windows": [
      {
-      "label": "Today",
+      "label": "Nov 16",
       "desk_pct": -0.03,
-      "spx_pct": -1.9,
-      "excess_pct": 1.87,
+      "spx_pct": -1.91,
+      "excess_pct": 1.88,
       "beat": true,
       "from": "2026-11-13",
       "to": "2026-11-16",
-      "pnl_usd": -129.42
+      "pnl_usd": -133.11
      },
      {
       "label": "This week",
       "desk_pct": -0.03,
-      "spx_pct": -1.9,
-      "excess_pct": 1.87,
+      "spx_pct": -2.06,
+      "excess_pct": 2.03,
       "beat": true,
       "from": "2026-11-13",
-      "to": "2026-11-16",
-      "pnl_usd": -129.42
+      "to": "2026-11-17",
+      "pnl_usd": -133.11
      },
      {
       "label": "This month",
       "desk_pct": -0.03,
-      "spx_pct": -1.9,
-      "excess_pct": 1.87,
+      "spx_pct": -2.06,
+      "excess_pct": 2.03,
       "beat": true,
       "from": "2026-11-13",
-      "to": "2026-11-16",
-      "pnl_usd": -129.42
+      "to": "2026-11-17",
+      "pnl_usd": -133.11
      },
      {
       "label": "Since Aug 17",
       "desk_pct": -0.03,
-      "spx_pct": -1.9,
-      "excess_pct": 1.87,
+      "spx_pct": -2.06,
+      "excess_pct": 2.03,
       "beat": true,
       "from": "2026-11-13",
-      "to": "2026-11-16",
-      "pnl_usd": -129.42
+      "to": "2026-11-17",
+      "pnl_usd": -133.11
      }
     ],
     "since_start": {
      "desk_pct": -0.03,
-     "spx_pct": -1.9,
-     "excess_pct": 1.87,
+     "spx_pct": -2.06,
+     "excess_pct": 2.03,
      "beat": true,
      "from": "2026-11-13",
-     "to": "2026-11-16",
-     "pnl_usd": -129.42
+     "to": "2026-11-17",
+     "pnl_usd": -133.11
     },
-    "open_pnl_usd": -129.42,
+    "open_pnl_usd": -133.11,
     "trades": 0
    }
   ],
@@ -512,54 +458,54 @@
    "capital_usd": 800000,
    "windows": [
     {
-     "label": "Today",
+     "label": "Nov 16",
      "desk_pct": -0.02,
-     "spx_pct": -1.9,
-     "excess_pct": 1.88,
+     "spx_pct": -1.91,
+     "excess_pct": 1.89,
      "beat": true,
      "from": "2026-11-13",
      "to": "2026-11-16",
-     "pnl_usd": -171.85
+     "pnl_usd": -188.04
     },
     {
      "label": "This week",
      "desk_pct": -0.02,
-     "spx_pct": -1.9,
-     "excess_pct": 1.88,
+     "spx_pct": -2.06,
+     "excess_pct": 2.04,
      "beat": true,
      "from": "2026-11-13",
-     "to": "2026-11-16",
-     "pnl_usd": -171.85
+     "to": "2026-11-17",
+     "pnl_usd": -188.04
     },
     {
      "label": "This month",
-     "desk_pct": 0.76,
-     "spx_pct": -2.07,
-     "excess_pct": 2.83,
+     "desk_pct": 0.75,
+     "spx_pct": -2.24,
+     "excess_pct": 2.99,
      "beat": true,
      "from": "2026-10-30",
-     "to": "2026-11-16",
-     "pnl_usd": 387.35
+     "to": "2026-11-17",
+     "pnl_usd": 371.16
     },
     {
      "label": "Since Aug 17",
      "desk_pct": 1.56,
-     "spx_pct": -4.68,
-     "excess_pct": 6.24,
+     "spx_pct": -4.84,
+     "excess_pct": 6.39,
      "beat": true,
      "from": "2026-08-14",
-     "to": "2026-11-16",
-     "pnl_usd": 1982.24
+     "to": "2026-11-17",
+     "pnl_usd": 1966.05
     }
    ],
    "since_start": {
     "desk_pct": 1.56,
-    "spx_pct": -4.68,
-    "excess_pct": 6.24,
+    "spx_pct": -4.84,
+    "excess_pct": 6.39,
     "beat": true,
     "from": "2026-08-14",
-    "to": "2026-11-16",
-    "pnl_usd": 1982.24
+    "to": "2026-11-17",
+    "pnl_usd": 1966.05
    }
   },
   "beats": 15,
