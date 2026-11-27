@@ -24,7 +24,7 @@ type Swing = { symbol: string; entry?: number | null; stop?: number | null; targ
 type Research = { symbol: string; date: string; requested_by: string; headline: string; href: string };
 
 type WinRet = { label: string; desk_pct?: number | null; spx_pct?: number | null; excess_pct?: number | null; beat?: boolean | null; from?: string; to?: string; pnl_usd?: number | null };
-type DeskRet = { desk: string; label: string; what?: string; capital_usd?: number; started?: string | null; windows: WinRet[]; since_start?: WinRet | null; open_pnl_usd?: number | null; trades?: number };
+type DeskRet = { desk: string; label: string; what?: string; capital_usd?: number; started?: string | null; windows: WinRet[]; since_start?: WinRet | null; headline?: WinRet | null; open_pnl_usd?: number | null; trades?: number };
 type Returns = { as_of?: string; epoch?: string; windows?: string[]; desks?: DeskRet[]; total?: DeskRet; beats?: number; tries?: number; benchmark?: string; note?: string };
 type Spread = { id?: string; underlying?: string; expiry?: string; dte?: number | null; short_strike?: number | null; long_strike?: number | null; qty?: number; credit?: number | null; max_risk_usd?: number; opened?: string };
 type Scout = { underlying?: string; spot?: number | null; expiry?: string | null; dte?: number | null; short_strike?: number | null; long_strike?: number | null; credit?: number | null; delta?: number | null; iv?: number | null; rv?: number | null; vrp?: number | null; score?: number | null; yield_pct?: number | null; signal?: boolean; reason?: string };
@@ -192,7 +192,8 @@ export default function Page() {
                 <div className="font-serif text-[30px]">{fullBeats} of {fullRuns.length}</div>
                 <div className="text-[13px] text-zinc-600 mt-1">desks, each over its full record</div>
               </div>
-              {returns.total?.windows?.slice(-1).map((w) => (
+              {/* the combined line's own start when it carries one (from 2026-11-16), else its last window */}
+              {[returns.total?.headline ?? returns.total?.windows?.slice(-1)[0]].filter((w): w is WinRet => !!w).map((w) => (
                 <div key={w.label} className="card p-7">
                   <div className="font-mono text-[11px] tracking-[0.14em] text-zinc-500 mb-3">{(returns.total?.label ?? "All desks").toUpperCase()} · {w.label.toUpperCase()}</div>
                   <div className={`font-serif text-[30px] ${tone(w.desk_pct)}`}>{pct(w.desk_pct)}{w.pnl_usd != null ? <span className="text-[20px]"> ({usdSigned(w.pnl_usd)})</span> : null}</div>
