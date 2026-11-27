@@ -1,5 +1,5 @@
 {
- "stamp": "Friday, November 27, 2026 15:51 ET",
+ "stamp": "Friday, November 27, 2026 16:17 ET",
  "leads": [
   {
    "rank": 1,
@@ -137,23 +137,23 @@
    "label": "This week",
    "n": 11,
    "win_rate": "55%",
-   "pnl_usd": "+2,352"
+   "pnl_usd": "+18,088"
   },
   {
    "label": "This month",
-   "n": 44,
-   "win_rate": "43%",
-   "pnl_usd": "-8,492"
+   "n": 32,
+   "win_rate": "41%",
+   "pnl_usd": "+5,249"
   },
   {
-   "label": "Since 2026-08-17",
-   "n": 117,
-   "win_rate": "45%",
-   "pnl_usd": "-6,897"
+   "label": "Since 2026-11-16",
+   "n": 32,
+   "win_rate": "41%",
+   "pnl_usd": "+5,249"
   }
  ],
  "public_epoch": "2026-08-17",
- "epoch_note": "Track record restarted August 17, 2026 after a round of execution fixes (entry timing, closed-bar confirmation, regime parity, bracket geometry). Earlier results are archived and excluded here.",
+ "epoch_note": "Track record restarted August 17, 2026 after a round of execution fixes (entry timing, closed-bar confirmation, regime parity, bracket geometry). Earlier results are archived and excluded here. The scoreboard counts the five desks together from November 16, 2026: its dollars include open positions marked at the close, its trades and win rates count closed trades. Each desk's own record is in the returns table below.",
  "swing": [
   {
    "symbol": "GLD",
