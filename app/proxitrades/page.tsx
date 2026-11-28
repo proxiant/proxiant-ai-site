@@ -19,7 +19,7 @@ const DISCLAIMER =
 
 type Lead = { rank?: number; symbol: string; side: string; entry?: number; stop?: number; target?: number; why?: string };
 type Trade = { symbol: string; side: string; entry?: number; exit?: number; pnl_pct: number; reason?: string };
-type Board = { label: string; n: number; win_rate: string; pnl_usd: string };
+type Board = { label: string; n: number; win_rate: string; pnl_usd: string; closed_usd?: string; open_usd?: string | null };
 type Swing = { symbol: string; entry?: number | null; stop?: number | null; target?: number | null };
 type Research = { symbol: string; date: string; requested_by: string; headline: string; href: string };
 
@@ -173,7 +173,16 @@ export default function Page() {
               <div key={b.label} className="card p-7">
                 <div className="font-mono text-[11px] tracking-[0.14em] text-zinc-500 mb-3">{b.label.toUpperCase()}</div>
                 <div className="font-serif text-[30px]">{b.pnl_usd}</div>
-                <div className="text-[13px] text-zinc-600 mt-1">{b.n} trades · {b.win_rate} win rate</div>
+                {b.closed_usd !== undefined ? (
+                  <>
+                    <div className="text-[13px] text-zinc-600 mt-1">
+                      {b.n ? `${b.n} closed trade${b.n === 1 ? "" : "s"} ${b.closed_usd} · ${b.win_rate} win rate` : "no closed trades"}
+                    </div>
+                    {b.open_usd ? <div className="text-[13px] text-zinc-600">open positions {b.open_usd}</div> : null}
+                  </>
+                ) : (
+                  <div className="text-[13px] text-zinc-600 mt-1">{b.n} trades · {b.win_rate} win rate</div>
+                )}
               </div>
             ))}
           </div>
